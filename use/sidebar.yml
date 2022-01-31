@@ -1,0 +1,47 @@
+---
+section: use
+title: Astra Control Service를 사용합니다
+entries:
+- title: 로그인합니다
+  url: "/use/log-in.html"
+- title: 애플리케이션 관리 및 보호
+  entries:
+  - title: 앱 관리를 시작합니다
+    url: "/use/manage-apps.html"
+  - title: 앱 보호
+    url: "/use/protect-apps.html"
+  - title: 앱 복원
+    url: "/use/restore-apps.html"
+  - title: 애플리케이션 클론 복제 및 마이그레이션
+    url: "/use/clone-apps.html"
+  - title: 앱 실행 후크 관리
+    url: "/use/manage-app-execution-hooks.html"
+    entries:
+    - title: 실행 후크 예
+      url: "/use/execution-hook-examples.html"
+- title: 앱 및 컴퓨팅 상태 보기
+  entries:
+  - title: 대시보드 요약
+    url: "/use/view-dashboard.html"
+  - title: 클러스터 상태 및 세부 정보
+    url: "/use/view-clusters.html"
+  - title: 앱 상태 및 세부 정보
+    url: "/use/view-apps.html"
+- title: 버킷을 관리합니다
+  url: "/use/manage-buckets.html"
+- title: 계정을 관리합니다
+  entries:
+  - title: 대금 청구를 설정합니다
+    url: "/use/set-up-billing.html"
+  - title: 사용자를 초대하고 관리합니다
+    url: "/use/manage-users.html"
+  - title: 클라우드 공급자 자격 증명을 관리합니다
+    url: "/use/manage-credentials.html"
+  - title: 계정 활동을 봅니다
+    url: "/use/view-account-activity.html"
+  - title: 알림을 관리합니다
+    url: "/use/manage-notifications.html"
+  - title: 계정을 닫습니다
+    url: "/use/close-account.html"
+- title: 앱 및 클러스터 관리를 취소합니다
+  url: "/use/unmanage.html"

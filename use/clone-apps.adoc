@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: use/clone-apps.html 
+keywords: clone app, clone storage, clone persistent storage, clone data, move workload, clone data, migrate data, data migration, move storage, move application, move data 
+summary: 기존 앱을 클론 복제하여 동일한 Kubernetes 클러스터 또는 다른 클러스터에 중복 앱을 생성합니다. Kubernetes 클러스터 간에 애플리케이션 및 스토리지를 이동해야 하는 경우 클로닝에 도움이 될 수 있습니다. 예를 들어, CI CD 파이프라인을 통해 또는 Kubernetes 네임스페이스 간에 워크로드를 이동할 수 있습니다. 
+---
+= 애플리케이션 클론 복제 및 마이그레이션
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+기존 앱을 클론 복제하여 동일한 Kubernetes 클러스터 또는 다른 클러스터에 중복 앱을 생성합니다. Kubernetes 클러스터 간에 애플리케이션 및 스토리지를 이동해야 하는 경우 클로닝에 도움이 될 수 있습니다. 예를 들어, CI/CD 파이프라인과 Kubernetes 네임스페이스 전체에서 워크로드를 이동할 수 있습니다.
+
+Astra Control은 앱을 클론할 때 애플리케이션 구성 및 영구 스토리지의 클론을 생성합니다.
+
+
+NOTE: Jenkins CI의 운영자 배포 인스턴스를 복제하는 경우 영구 데이터를 수동으로 복원해야 합니다. 이는 앱 배포 모델의 제한 사항입니다.
+
+
+NOTE: StorageClass가 명시적으로 설정된 앱을 배포하고 앱을 복제해야 하는 경우 타겟 클러스터에 원래 지정된 StorageClass가 있어야 합니다. 명시적으로 StorageClass를 동일한 StorageClass가 없는 클러스터로 설정한 애플리케이션을 클론 복제하면 실패합니다.
+
+.단계
+. 응용 프로그램 * 을 선택합니다.
+. 원하는 앱의 * Action * 열에서 드롭다운 목록을 선택합니다.
+. 클론 * 을 선택합니다.
++
+image:screenshot-create-clone.gif["작업 열에서 드롭다운 목록을 선택하고 클론 을 선택할 수 있는 앱 페이지의 스크린 샷"]
+
+. * 클론 세부 정보 *: 클론에 대한 세부 정보 지정:
++
+** 기본 이름과 네임스페이스를 유지하거나 편집합니다.
+** 클론의 대상 클러스터를 선택합니다.
+** 기존 스냅샷이나 백업에서 클론을 생성할지 여부를 선택합니다. 이 옵션을 선택하지 않으면 Astra Control이 앱의 현재 상태에서 클론을 생성합니다.
+
+
+. * 클론 요약 *: 클론에 대한 세부 정보를 검토하고 * Clone App * 을 선택합니다.
++
+image:screenshot-clone-summary.gif["클론 요약 대화 상자의 스크린샷으로, 원래 앱과 복제된 앱에 대한 클론 정보를 검토할 수 있습니다."]
+
+
+
+Astra Control은 사용자가 제공한 정보를 기반으로 해당 앱을 복제합니다.

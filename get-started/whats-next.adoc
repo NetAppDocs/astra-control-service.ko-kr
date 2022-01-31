@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: get-started/whats-next.html 
+keywords: get started, manage apps, manage account 
+summary: Astra Control에 로그인하고 클러스터를 추가했으므로 이제 Astra Control의 애플리케이션 데이터 관리 기능을 사용할 준비가 되었습니다. 
+---
+= 다음 단계
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+이제 Astra Control에 로그인하여 클러스터를 추가하면 Astra Control의 애플리케이션 데이터 관리 기능을 사용할 수 있습니다.
+
+* link:../use/manage-apps.html["앱 관리를 시작합니다"]
+* link:../use/protect-apps.html["앱 보호"]
+* link:../use/clone-apps.html["앱 클론 복제"]
+* link:../use/set-up-billing.html["대금 청구를 설정합니다"]
+* link:../use/manage-users.html["사용자를 초대하고 관리합니다"]
+* link:../use/manage-credentials.html["클라우드 공급자 자격 증명을 관리합니다"]
+* link:../use/manage-notifications.html["알림을 관리합니다"]
+

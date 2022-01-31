@@ -1,0 +1,80 @@
+---
+sidebar: sidebar 
+permalink: get-started/add-first-cluster.html 
+keywords: discover cluster, add cluster, add kubernetes cluster, discover kubernetes cluster, add cluster 
+summary: 환경을 설정한 후에는 Kubernetes 클러스터를 생성하고 Astra Control Service에 추가할 준비가 된 것입니다. 
+---
+= Astra Control Service에서 Kubernetes 클러스터 관리를 시작합니다
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+환경을 설정한 후에는 Kubernetes 클러스터를 생성하고 Astra Control Service에 추가할 준비가 된 것입니다.
+
+
+
+== Kubernetes 클러스터를 생성합니다
+
+클러스터가 아직 없으면 와(과) 일치하는 클러스터를 생성합니다 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine(GKE)에 대한 Astra Control Service 요구 사항"], , 또는  .
+
+
+
+== Kubernetes 클러스터 관리를 시작합니다
+
+Astra Control Service에 로그인한 후 첫 번째 단계는 클러스터 관리를 시작하는 것입니다.
+
+.무엇을 &#8217;필요로 할거야
+* GKE의 경우 필요한 권한이 있는 서비스 계정에 대한 서비스 계정 키 파일이 있어야 합니다. link:../get-started/set-up-google-cloud.html#create-a-service-account["서비스 계정 설정 방법에 대해 알아보십시오"].
+* AKS의 경우 서비스 보안 주체를 생성할 때 Azure CLI의 출력이 포함된 JSON 파일이 있어야 합니다. link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["서비스 보안 주체를 설정하는 방법에 대해 알아봅니다"].
++
+JSON 파일에 추가하지 않은 경우 Azure 구독 ID도 필요합니다.
+
+
+
+.단계
+. 대시보드에서 * Kubernetes 클러스터 관리 * 를 선택합니다.
++
+표시되는 메시지에 따라 클러스터를 추가합니다.
+
+. * 공급자 *: 클라우드 공급자를 선택한 다음 필요한 자격 증명을 입력합니다.
++
+.. * Microsoft Azure *: JSON 파일을 업로드하거나 클립보드에서 해당 JSON 파일의 내용을 붙여넣어 Azure 서비스 보안 주체에 대한 세부 정보를 제공합니다.
++
+JSON 파일에는 서비스 보안 주체를 생성할 때 Azure CLI의 출력이 포함되어야 합니다. 또한 구독 ID를 포함할 수 있으므로 Astra에 자동으로 추가됩니다. 그렇지 않으면 JSON을 제공한 후 ID를 수동으로 입력해야 합니다.
+
+.. * Google Cloud Platform *: 파일을 업로드하거나 클립보드의 콘텐츠를 붙여 넣어 서비스 계정 키 파일을 제공합니다.
++
+Astra Control Service는 서비스 계정을 사용하여 Google Kubernetes Engine에서 실행 중인 클러스터를 검색합니다.
+
+
+
+. * 클러스터 *: 추가할 클러스터를 선택합니다.
++
+자격 있는 탭에 주의를 기울이십시오. 경고가 나타나면 경고 위로 마우스를 이동하여 클러스터에 문제가 있는지 확인합니다. 예를 들어 클러스터에 작업자 노드가 없는 것을 식별할 수 있습니다.
+
++
+Azure NetApp Files for Google Cloud 또는 Cloud Volumes Service에 대해 구성되지 않은 클러스터를 선택하면 경고가 표시됩니다. 이 클러스터에 NetApp Trident가 설치 및 구성되지 않았습니다. 다른 스토리지 서비스를 사용하려는 경우 클러스터를 계속 추가할 수 있습니다.
+
+. * 스토리지 *: 기본적으로 이 클러스터에 Kubernetes 애플리케이션을 배포할 스토리지 클래스를 선택합니다.
++
+가격, 성능 및 복원력 정보는 목록에 있는 각 Cloud Volumes Service for Google Cloud 서비스에 대해 표시됩니다. 각 Azure NetApp Files 서비스의 성능 및 복원력 정보가 표시됩니다. Google Persistent Disk 또는 Azure 관리 디스크와 같은 NetApp 이외의 스토리지 클래스에서는 가격, 성능 및 복원력 정보를 사용할 수 없습니다.
+
++
+각 스토리지 클래스는 다음 서비스 중 하나를 활용할 수 있습니다.
+
++
+** https://cloud.netapp.com/cloud-volumes-service-for-gcp["Google Cloud용 Cloud Volumes Service"^]
+** https://cloud.google.com/persistent-disk/["Google 영구 디스크"^]
+** https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^]
+** https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure로 관리되는 디스크"^]
++
+에 대해 자세히 알아보십시오 link:../learn/choose-class-and-size.html["GKE 클러스터용 저장소 클래스"] 및 .
+
+
+
+. * 검토 및 승인 *: 구성 세부 정보를 검토하고 * 클러스터 추가 * 를 선택합니다.
+
+
+Astra Control Service는 적합한 클러스터에서 애플리케이션 백업을 위한 객체 저장소를 생성하고, 클러스터에 관리자 계정을 생성하고, 사용자가 지정한 기본 스토리지 클래스를 설정합니다. 이 프로세스는 최대 5분 정도 소요될 수 있습니다.

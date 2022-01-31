@@ -1,0 +1,164 @@
+---
+sidebar: sidebar 
+permalink: get-started/faq.html 
+keywords: faq, frequently asked questions 
+summary: 이 FAQ는 질문에 대한 간단한 답변을 찾는 경우에 도움이 될 수 있습니다. 
+---
+= Astra Control Service에 대한 질문과 대답
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+
+이 FAQ는 질문에 대한 간단한 답변을 찾는 경우에 도움이 될 수 있습니다.
+
+
+
+== 개요
+
+Astra Control은 Kubernetes 네이티브 애플리케이션을 위한 애플리케이션 데이터 라이프사이클 관리 운영을 간소화하고자 합니다. Astra Control Service는 GKE(Google Kubernetes Engine) 및 AKS(Azure Kubernetes Service)에서 실행되는 Kubernetes 클러스터를 지원합니다.
+
+다음 섹션에서는 Astra Control을 사용할 때 나타날 수 있는 몇 가지 추가 질문에 대한 답변을 제공합니다. 자세한 내용은 astra.feedback@netapp.com 으로 문의하십시오
+
+
+
+== Astra Control에 액세스합니다
+
+* Astra Control에 등록할 때 왜 그렇게 많은 세부 정보를 제공해야 하나요? *
+
+등록 시 Astra Control에 정확한 고객 정보가 필요합니다. 이 정보는 글로벌 무역 규정 준수(GTC) 확인을 거쳐야 합니다.
+
+* Astra Control에 등록할 때 "등록 실패" 오류가 발생하는 이유는 무엇입니까? *
+
+Astra Control은 온보딩 섹션에서 정확한 고객 정보를 제공해야 합니다. 잘못된 정보를 입력하면 "등록 실패" 오류가 표시됩니다. 자신이 속한 다른 계정도 잠깁니다.
+
+* Astra Control Service URL은 무엇입니까? *
+
+에서 Astra Control Service에 액세스할 수 있습니다 https://astra.netapp.io[].
+
+* 동료에게 이메일 초대를 보냈지만 받은 적이 없습니다. 어떻게 해야 합니까? *
+
+스팸 폴더에서 do-not-reply@netapp.com 이메일을 확인하거나 받은 편지함에서 "초대장"을 검색하도록 요청하십시오. 사용자를 제거하고 다시 추가할 수도 있습니다.
+
+* 무료 플랜에서 프리미엄 PayGO 플랜으로 업그레이드했습니다. 처음 10개 애플리케이션에 대한 요금이 부과됩니까? *
+
+예. Premium Plan으로 업그레이드한 후 Astra Control은 계정에 있는 모든 관리되는 애플리케이션에 대해 요금을 부과하기 시작합니다.
+
+* 한 달 이내에 프리미엄 PayGO 계획으로 업그레이드했습니다. 월 한 달 동안 요금이 청구되나요? *
+
+아니요. 프리미엄 요금제로 업그레이드한 시간부터 청구가 시작됩니다.
+
+* 무료 플랜을 사용 중입니다. 영구 볼륨 청구에 대한 요금이 청구됩니까? *
+
+예. GKE 클러스터에서 Google Cloud용 Cloud Volumes Service 또는 Azure NetApp Files의 AKS 클러스터에서 사용하는 영구 볼륨에 대해 비용이 청구됩니다.
+
+
+
+== Kubernetes 클러스터를 등록하는 중입니다
+
+* Astra Control Service에 추가하기 전에 내 클러스터에 CSI 드라이버를 설치해야 합니까? *
+
+아니요 클러스터가 Astra Control에 추가되면 서비스가 Kubernetes 클러스터에 NetApp의 Trident Container Storage Interface(CSI) 드라이버를 자동으로 설치합니다. 이 CSI 드라이버는 Google Cloud용 NetApp Cloud Volumes Service 및 Azure NetApp Files에서 지원하는 AKS 클러스터에 영구 볼륨을 프로비저닝하는 데 사용됩니다.
+
+* Astra Control Service에 추가한 후 클러스터에 작업자 노드를 추가해야 합니다. 어떻게 해야 합니까? *
+
+새 작업자 노드를 기존 풀에 추가하거나 Ubuntu 이미지 유형인 경우 새 풀을 생성할 수 있습니다. 이러한 정보는 Astra Control에서 자동으로 발견됩니다. Astra Control에서 새 노드가 보이지 않으면 새 작업자 노드가 지원되는 이미지 유형을 실행하고 있는지 확인합니다. kubeck get nodes 명령을 사용하여 새 작업자 노드의 상태를 확인할 수도 있습니다.
+
+
+
+== GKE 클러스터를 등록하는 중입니다
+
+* 개인 GKE 클러스터를 Astra Control Service에 추가할 수 있습니까? *
+
+예, Astra Control Service에 프라이빗 클러스터를 추가할 수 있습니다. GKE(Google Kubernetes Engine) 프라이빗 클러스터를 생성하려면 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra["이 기술 자료 문서의 지침을 따르십시오"^].
+
+프라이빗 클러스터에는 가 있어야 합니다 https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["인증된 네트워크"^] Astra Control IP 주소를 허용하도록 설정합니다.
+
+* 54.164.233.140/32
+* 3.218.120.204/32
+* 34.193.99.138/32
+
+
+* 내 GKE 클러스터가 공유 VPC에 상주할 수 있습니까? *
+
+예. Astra Control은 공유 VPC에 상주하는 클러스터를 관리할 수 있습니다. link:set-up-google-cloud.html["공유 VPC 구성을 위해 Astra 서비스 계정을 설정하는 방법에 대해 알아보십시오"].
+
+* GCP에서 서비스 계정 자격 증명을 어디에서 찾을 수 있습니까? *
+
+에 로그인한 후 https://console.cloud.google.com/["Google Cloud Console을 선택합니다"^]서비스 계정 세부 정보는 * IAM 및 Admin * 섹션에서 확인할 수 있습니다. 자세한 내용은 을 참조하십시오 link:set-up-google-cloud.html["Google Cloud for Astra Control을 설정하는 방법"].
+
+* 다른 GCP 프로젝트의 다른 GKE 클러스터를 추가하고 싶습니다. Astra Control에서 지원됩니까? *
+
+아니요. 이 구성은 지원되지 않습니다. 하나의 GCP 프로젝트만 지원됩니다.
+
+
+
+== 클러스터를 제거하는 중입니다
+
+* 올바르게 등록 취소하고, 클러스터를 가져오고, 관련 볼륨을 삭제하려면 어떻게 해야 합니까? *
+
+. link:../use/unmanage.html["Astra Control에서 애플리케이션을 관리합니다"].
+. link:../use/unmanage.html#stop-managing-compute["Astra Control에서 클러스터 등록을 취소합니다"].
+. link:../use/unmanage.html#deleting-clusters-from-your-cloud-provider["영구 볼륨 클레임을 삭제합니다"].
+. 클러스터를 삭제합니다.
+
+
+* Astra Control에서 클러스터를 제거한 후 애플리케이션과 데이터는 어떻게 됩니까? *
+
+Astra Control에서 클러스터를 제거해도 클러스터의 구성(애플리케이션 및 영구 스토리지)은 변경되지 않습니다. Astra Control 스냅샷 또는 해당 클러스터의 애플리케이션 백업을 복구할 수 없습니다. 스토리지 백엔드 내에 저장된 볼륨 스냅샷 데이터는 제거되지 않습니다. Astra Control에서 생성한 영구 스토리지 백업은 클라우드 공급자의 오브젝트 저장소 내에 남아 있지만 복원에는 사용할 수 없습니다.
+
+
+WARNING: GCP를 통해 삭제하기 전에 항상 Astra Control에서 클러스터를 제거하십시오. Astra Control에서 관리하는 동안 GCP에서 클러스터를 삭제하면 Astra Control 계정에 문제가 발생할 수 있습니다.
+
+* Astra Control에서 클러스터를 제거할 때 Astra Trident가 제거됩니까? *
+
+Astra Trident는 Astra Control에서 제거할 때 클러스터에서 제거되지 않습니다.
+
+
+
+== 응용 프로그램 관리
+
+* Astra Control이 응용 프로그램을 배포할 수 있습니까? *
+
+Astra Control은 애플리케이션을 배포하지 않습니다. 응용 프로그램은 Astra Control 외부에서 배포해야 합니다.
+
+* 내 애플리케이션이 검색된 앱 목록에 표시되지 않습니다. 문제를 식별하기 위해 무엇을 확인할 수 있습니까? *
+
+애플리케이션이 * Discovered Apps * 에 나열되지 않으면 'kubtl get pod-A | grep [pod name]'을 실행하여 Kubernetes Pod의 상태와 상태를 확인하십시오. Pod가 정상 실행 중이면 * Ignored Apps * 아래에 응용 프로그램이 나열되어 있는지 확인합니다.
+
+* Astra Control이 NetApp이 아닌 스토리지에 있는 애플리케이션을 관리할 수 있습니까? *
+
+아니요 Astra Control은 NetApp이 아닌 스토리지를 사용하는 애플리케이션을 검색할 수 있지만, NetApp이 아닌 스토리지를 사용하는 애플리케이션은 관리할 수 없습니다.
+
+* 응용 프로그램의 PVC가 GCP CVS에 바인딩된 것은 보이지 않습니다. 무엇이 문제입니까? *
+
+Astra Trident 운영자는 Astra Control에 성공적으로 추가된 후 기본 스토리지 클래스를 'NetApp-cvs-perf-premium'으로 설정합니다. 애플리케이션의 PVC가 Cloud Volumes Service for Google Cloud에 바인딩되지 않은 경우 다음과 같은 몇 가지 단계를 수행할 수 있습니다.
+
+* kubeck get SC를 실행하고 기본 스토리지 클래스를 확인합니다.
+* 애플리케이션 배포에 사용된 YAML 파일 또는 H제어 차트를 확인하고 다른 스토리지 클래스가 정의되어 있는지 확인하십시오.
+* 작업자 노드 이미지 유형이 Ubuntu이고 NFS 마운트가 성공했는지 확인합니다.
+
+
+* Astra Control에서 관리를 중지한 후 응용 프로그램은 어떻게 됩니까? *
+
+기존 백업 또는 스냅샷이 삭제됩니다. 애플리케이션과 데이터는 사용 가능한 상태로 유지됩니다. 관리되지 않는 응용 프로그램 또는 해당 응용 프로그램에 속한 백업 또는 스냅숏에는 데이터 관리 작업을 사용할 수 없습니다.
+
+
+
+== 데이터 관리 작업
+
+* Astra Control은 어디에서 오브젝트 저장소 버킷을 생성합니까? *
+
+첫 번째 관리되는 클러스터의 지리적 위치에 따라 오브젝트 저장소의 위치가 결정됩니다. 예를 들어, 추가한 첫 번째 클러스터가 유럽 구역에 있는 경우 해당 지역에서 버킷이 생성됩니다. 필요한 경우, 할 수 있습니다 link:../use/manage-buckets.html["추가 버킷을 추가합니다"].
+
+* 내 계정에 생성하지 않은 스냅샷이 있습니다. 어디에서 왔습니까? *
+
+경우에 따라 Astra Control은 다른 프로세스를 수행할 때 스냅샷을 자동으로 생성합니다. 스냅샷이 몇 분 이상 오래된 경우 안전하게 삭제할 수 있습니다.
+
+* My Application은 여러 PVS를 사용합니다. Astra Control이 이러한 모든 PVC의 스냅샷 및 백업을 수행할까요? *
+
+예. Astra Control의 애플리케이션에 대한 스냅샷 작업에는 애플리케이션의 PVC에 바인딩된 모든 PVS의 스냅샷이 포함됩니다.
+
+* 클라우드 공급업체를 통해 Astra Control에서 생성한 스냅샷을 직접 관리할 수 있습니까? *
+
+아니요 Astra Control에서 생성한 스냅샷 및 백업은 Astra Control에서만 관리할 수 있습니다.

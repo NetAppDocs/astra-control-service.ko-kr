@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: use/close-account.html 
+keywords: close account, delete account, delete my account, close my account 
+summary: Astra Control 계정이 더 이상 필요하지 않으면 언제든지 계정을 종료할 수 있습니다. 
+---
+= 계정을 닫습니다
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+
+Astra Control 계정이 더 이상 필요하지 않으면 언제든지 계정을 종료할 수 있습니다.
+
+
+NOTE: 계정을 닫으면 Astra Control이 자동으로 생성한 버킷이 자동으로 삭제됩니다.
+
+.단계
+. link:unmanage.html["모든 앱 및 클러스터 관리를 취소합니다"].
+. link:manage-credentials.html["Astra Control에서 자격 증명을 제거합니다"].
+. 계정 > 청구 > 결제 방법 * 을 선택합니다.
+. 계정 닫기 * 를 선택합니다.
+. 계정 이름을 입력하고 확인 을 클릭하여 계정을 닫습니다.
+

@@ -1,0 +1,75 @@
+---
+sidebar: sidebar 
+permalink: release-notes/known-issues.html 
+keywords: bugs, known issues, problems 
+summary: 알려진 문제점은 이 제품 릴리스를 성공적으로 사용하지 못하게 만들 수 있는 문제를 식별합니다. 
+---
+= 알려진 문제
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/release-notes/
+
+
+알려진 문제점은 이 제품 릴리스를 성공적으로 사용하지 못하게 만들 수 있는 문제를 식별합니다.
+
+현재 릴리즈에는 다음과 같은 알려진 문제가 영향을 줍니다.
+
+* <<App clones fail after an application is deployed with a set storage class>>
+* <<App clones fail using a specific version of PostgreSQL>>
+* <<Backup taken from new snapshot instead of existing snapshot>>
+* <<Custom app execution hook scripts time out and cause post-snapshot scripts not to execute>>
+* <<Clone performance impacted by large persistent volumes>>
+* <<Simultaneous app restore operations in the same namespace can fail>>
+* <<Snapshots eventually begin to fail when using external-snapshotter version 4.2.0>>
+* <<Unable to stop running app backup>>
+
+
+
+
+== 애플리케이션 클론을 세트 스토리지 클래스로 구축한 후에는 애플리케이션 클론이 실패합니다
+
+애플리케이션이 명시적으로 설정된 스토리지 클래스(예: 'helm install...-set global.storageClass=NetApp-cvs-perf-extreme')로 구축된 후 애플리케이션을 복제하려는 이후에 타겟 클러스터에 원래 지정된 스토리지 클래스가 있어야 합니다. 명시적으로 설정된 스토리지 클래스를 가진 애플리케이션을 동일한 스토리지 클래스가 없는 클러스터로 클론 복제하면 실패합니다. 이 시나리오에서는 복구 단계가 없습니다.
+
+
+
+== 특정 버전의 PostgreSQL을 사용하여 앱 클론이 실패합니다
+
+동일한 클러스터 내의 앱 클론은 Bitnami PostgreSQL 11.5.0 차트와 함께 일관되게 실패합니다. 클론을 성공적으로 생성하려면 이전 또는 이후 버전의 차트를 사용하십시오.
+
+
+
+== 기존 스냅샷 대신 새 스냅샷에서 생성된 백업
+
+백업을 생성하고 * Backup from existing snapshot * 을 선택하면 Astra Control이 임시 스냅샷을 생성하고 해당 스냅샷을 사용하여 백업을 생성합니다. Astra Control은 기존 스냅샷을 사용하지 않습니다.
+
+
+
+== 사용자 지정 앱 실행 후크 스크립트가 시간 초과되어 스냅샷 후 스크립트가 실행되지 않습니다
+
+실행 후크를 실행하는 데 25분 이상 걸리는 경우 후크에 장애가 발생하고 반환 코드가 "N/A"인 이벤트 로그 항목이 생성됩니다. 영향을 받는 모든 스냅샷은 시간 초과로 표시되며, 그 결과로 이벤트 로그 항목이 시간 초과로 표시됩니다.
+
+실행 후크는 실행 중인 응용 프로그램의 기능을 줄이거나 완전히 비활성화하기 때문에 사용자 지정 실행 후크가 실행되는 시간을 최소화해야 합니다.
+
+
+
+== 대규모 영구 볼륨의 클론 성능에 영향을 줍니다
+
+오브젝트 저장소에 대한 클러스터 액세스에 따라 매우 크고 사용되는 영구 볼륨의 클론이 간헐적으로 느려질 수 있습니다. 클론이 멈추고 30분 이상 데이터가 복제되지 않은 경우 Astra Control이 클론 작업을 종료합니다.
+
+
+
+== 동일한 네임스페이스에서 앱 복원 작업을 동시에 수행하는 데 실패할 수 있습니다
+
+네임스페이스 내에서 개별적으로 관리되는 하나 이상의 앱을 동시에 복원하려고 하면 오랜 시간이 지난 후 복원 작업이 실패할 수 있습니다. 이 문제를 해결하려면 각 앱을 한 번에 하나씩 복원하십시오.
+
+
+
+== 외부 스냅샷 버전 4.2.0 사용 시 결국 스냅숏이 실패하기 시작합니다
+
+Kubernetes 1.20 또는 1.21이 포함된 Kubernetes 스냅샷 컨트롤러(외부 스냅샷 샷터라고도 함) 버전 4.2.0 을 사용하면 스냅샷이 실패할 수 있습니다. 이를 방지하려면 다른 을 사용하십시오 https://kubernetes-csi.github.io/docs/snapshot-controller.html["지원되는 버전입니다"^] 4.2.1과 같은 외부 스냅샷 기능을 Kubernetes 버전 1.20 또는 1.21과 함께 사용할 수 있습니다.
+
+
+
+== 앱 백업 실행을 중지할 수 없습니다
+
+실행 중인 백업을 중지할 방법은 없습니다. 백업을 삭제해야 하는 경우 백업이 완료될 때까지 기다린 다음 의 지침을 따르십시오 link:../use/protect-apps.html#delete-backups["백업을 삭제합니다"]. 실패한 백업을 삭제하려면 를 사용합니다 link:https://docs.netapp.com/us-en/astra-automation/index.html["아스트라 API"^].

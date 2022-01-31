@@ -1,0 +1,274 @@
+---
+sidebar: sidebar 
+permalink: get-started/set-up-google-cloud.html 
+keywords: google cloud, google cloud platform, gcp, set up google cloud, set up gcp, set up service account, create service account, project, gcp project, permissions gcp permissions, service account permissions, key, service account key, json, key json, roles, service account roles, gcp roles, cvs, cvs for aws, cloud volumes service apis, apis, networking, cvs networking, cloud volumes service networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, google cloud regions, gcp regions, kubernetes version, ubuntu, image type, networking, container os 
+summary: Astra Control Service로 Google Kubernetes Engine 클러스터를 관리하려면 Google Cloud 프로젝트를 준비하기 위해 몇 가지 단계가 필요합니다. 
+---
+= Google Cloud를 설정합니다
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+Astra Control Service로 Google Kubernetes Engine 클러스터를 관리하려면 Google Cloud 프로젝트를 준비하기 위해 몇 가지 단계가 필요합니다.
+
+
+NOTE: Google Cloud용 Google Cloud Volumes Service를 스토리지 백엔드로 사용하지 않고 나중에 사용할 계획이라면 Google Cloud용 Google Cloud Volumes Service를 지금 구성하는 데 필요한 단계를 완료해야 합니다. 나중에 서비스 계정을 생성하면 기존 스토리지 버킷에 대한 액세스가 손실될 수 있습니다.
+
+
+
+== Google Cloud 설정을 빠르게 시작합니다
+
+다음 단계를 따라 빠르게 시작하거나 나머지 섹션으로 스크롤하여 자세한 내용을 확인하십시오.
+
+
+
+==== Google Kubernetes Engine에 대한 Astra Control Service 요구 사항을 검토합니다
+
+[role="quick-margin-para"]
+클러스터가 정상 상태이며 1.19 ~ 1.21.x 범위의 Kubernetes 버전을 실행 중인지, 작업자 노드가 온라인 상태이고 컨테이너 최적화 OS 또는 Ubuntu를 실행 중인지 확인합니다. <<GKE cluster requirements,이 단계에 대해 자세히 알아보십시오>>.
+
+
+
+==== (선택 사항): Google Cloud용 Cloud Volumes Service를 구입합니다
+
+[role="quick-margin-para"]
+Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하려면 Google Cloud 마켓플레이스의 NetApp Cloud Volumes Service 페이지로 이동하여 구매 를 선택합니다. <<Purchase Cloud Volumes Service for Google Cloud (optional),이 단계에 대해 자세히 알아보십시오>>.
+
+
+
+==== Google Cloud 프로젝트에서 API를 활성화합니다
+
+[role="quick-margin-para"]
+다음 Google Cloud API를 활성화합니다.
+
+* Google Kubernetes 엔진
+* 클라우드 스토리지
+* 클라우드 스토리지 JSON API
+* 서비스 사용
+* Cloud Resource Manager API를 참조하십시오
+* NetApp Cloud Volumes Service를 참조하십시오
++
+** Cloud Volumes Service for Google Cloud에 필요합니다
+** Google 영구 디스크의 경우 선택 사항(권장)입니다
+
+
+* 서비스 소비자 관리 API
+* 서비스 네트워킹 API
+* 서비스 관리 API
+
+
+[role="quick-margin-para"]
+<<Enable APIs in your project,단계별 지침을 따릅니다>>.
+
+
+
+==== 필요한 권한이 있는 서비스 계정을 만듭니다
+
+[role="quick-margin-para"]
+다음 권한이 있는 Google Cloud 서비스 계정을 만듭니다.
+
+* Kubernetes 엔진 관리자
+* NetApp Cloud Volumes 관리자
++
+** Cloud Volumes Service for Google Cloud에 필요합니다
+** Google 영구 디스크의 경우 선택 사항(권장)입니다
+
+
+* 스토리지 관리자
+* 서비스 사용 뷰어
+* 네트워크 뷰어 계산
+
+
+[role="quick-margin-para"]
+<<Create a service account,단계별 지침을 읽습니다>>.
+
+
+
+==== 서비스 계정 키를 생성합니다
+
+[role="quick-margin-para"]
+서비스 계정의 키를 생성하고 키 파일을 안전한 위치에 저장합니다. <<Create a service account key,단계별 지침을 따릅니다>>.
+
+
+
+==== (선택 사항): VPC용 네트워크 피어링을 설정합니다
+
+[role="quick-margin-para"]
+Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하려는 경우 VPC에서 Cloud Volumes Service for Google Cloud로 네트워크 피어링을 설정합니다. <<Set up network peering for your VPC (optional),단계별 지침을 따릅니다>>.
+
+
+
+== GKE 클러스터 요구 사항
+
+Kubernetes 클러스터는 Astra Control Service에서 검색 및 관리할 수 있도록 다음 요구사항을 충족해야 합니다. 이러한 요구사항 중 일부는 Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하려는 경우에만 적용됩니다.
+
+Kubernetes 버전:: 클러스터는 1.19~1.21.x 범위의 Kubernetes 버전을 실행해야 합니다
+이미지 유형::
++
+--
+* Containerd가 있는 컨테이너 최적화 OS입니다
+* Docker를 포함한 컨테이너 최적화 OS
+* Ubuntu 및 Docker
+
+
+--
+클러스터 상태입니다:: 클러스터가 정상 상태에서 실행되고 있어야 하며 오류가 발생한 상태의 작업자 노드가 없는 온라인 작업자 노드가 하나 이상 있어야 합니다.
+Google Cloud 지역:: Google Cloud용 Cloud Volumes Service를 스토리지 백엔드로 사용하려는 경우 클러스터가 에서 실행 중이어야 합니다 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["Google Cloud용 Cloud Volumes Service가 지원되는 Google Cloud 지역"] Astra Control Service는 CVS 및 CVS 성능 두 가지 서비스 유형을 모두 지원합니다. 모범 사례로서, 스토리지 백엔드로 사용하지 않더라도 Cloud Volumes Service for Google Cloud를 지원하는 영역을 선택해야 합니다. 따라서 성능 요구사항이 변경될 경우 향후에 Google Cloud용 Cloud Volumes Service를 스토리지 백엔드로 손쉽게 사용할 수 있습니다.
+네트워킹:: Google Cloud용 Cloud Volumes Service를 스토리지 백엔드로 사용하려는 경우, 클러스터가 Cloud Volumes Service for Google Cloud에서 내다보는 VPC에 상주해야 합니다. <<Set up network peering for your VPC,이 단계는 아래에 설명되어 있습니다>>.
+프라이빗 클러스터::
++
+--
+* 54.164.233.140/32
+* 3.218.120.204/32
+* 34.193.99.138/32
+
+
+--
+GKE 클러스터의 작동 모드입니다:: 표준 작동 모드를 사용해야 합니다. 현재 Autopilot 모드가 테스트되지 않았습니다. link:https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes["작동 모드에 대해 자세히 알아보십시오"^].
+
+
+
+
+== Google Cloud용 Cloud Volumes Service 구매(선택 사항)
+
+Astra Control Service는 Cloud Volumes Service for Google Cloud를 영구 볼륨의 스토리지 백엔드로 사용할 수 있습니다. 이 서비스를 사용하려면 영구 볼륨에 대한 청구를 활성화하려면 Google Cloud Marketplace에서 Cloud Volumes Service for Google Cloud를 구입해야 합니다.
+
+.단계
+. 로 이동합니다 https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com["NetApp Cloud Volumes Service 페이지를 참조하십시오"^] Google Cloud Marketplace에서 * 구매 * 를 선택하고 화면의 지시를 따릅니다.
++
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#purchase_the_service["Google Cloud 설명서의 단계별 지침에 따라 서비스를 구매하고 활성화합니다"^].
+
+
+
+
+
+== 프로젝트에서 API를 사용하도록 설정합니다
+
+프로젝트에 특정 Google Cloud API에 액세스할 수 있는 권한이 필요합니다. API는 GKE(Google Kubernetes Engine) 클러스터 및 NetApp Cloud Volumes Service 스토리지와 같은 Google Cloud 리소스와 상호 작용하는 데 사용됩니다.
+
+.단계
+. https://cloud.google.com/endpoints/docs/openapi/enable-api["Google Cloud 콘솔 또는 gcloud CLI를 사용하여 다음 API를 활성화합니다"^]:
++
+** Google Kubernetes 엔진
+** 클라우드 스토리지
+** 클라우드 스토리지 JSON API
+** 서비스 사용
+** Cloud Resource Manager API를 참조하십시오
+** NetApp Cloud Volumes Service(Google Cloud용 Cloud Volumes Service에 필요)
+** 서비스 소비자 관리 API
+** 서비스 네트워킹 API
+** 서비스 관리 API
+
+
+
+
+다음 비디오에서는 Google Cloud 콘솔에서 API를 활성화하는 방법을 보여줍니다.
+
+video::video-enable-gcp-apis.mp4[width=848,height=480]
+
+
+== 서비스 계정을 생성합니다
+
+Astra Control Service는 Google Cloud 서비스 계정을 사용하여 Kubernetes 애플리케이션 데이터를 사용자 대신 관리합니다.
+
+.단계
+. Google Cloud로 이동하고 https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["콘솔, gcloud 명령 또는 다른 기본 설정 방법을 사용하여 서비스 계정을 만듭니다"^].
+. 서비스 계정에 다음 역할을 부여합니다.
++
+** * Kubernetes Engine Admin * - 클러스터를 나열하고 앱 관리를 위한 관리자 액세스를 생성하는 데 사용됩니다.
+** * NetApp Cloud Volumes Admin * - 앱의 영구 스토리지를 관리하는 데 사용됩니다.
+** * 스토리지 관리자 * - 애플리케이션 백업을 위한 버킷 및 객체를 관리하는 데 사용됩니다.
+** * 서비스 사용 뷰어 * - 필요한 Cloud Volumes Service for Google Cloud API가 활성화되어 있는지 확인하는 데 사용됩니다.
+** * 컴퓨팅 네트워크 뷰어 * - Kubernetes VPC가 Google Cloud용 Cloud Volumes Service에 연결할 수 있는지 확인하는 데 사용됩니다.
+
+
+
+
+gcloud를 사용하려면 Astra Control 인터페이스 내의 단계를 따르십시오. 계정 > 자격 증명 > 자격 증명 추가 * 를 선택한 다음 * 지침 * 을 선택합니다.
+
+Google Cloud 콘솔을 사용하려는 경우 다음 비디오에서 콘솔에서 서비스 계정을 만드는 방법을 확인할 수 있습니다.
+
+video::video-create-gcp-service-account.mp4[width=848,height=480]
+
+
+=== 공유 VPC에 대한 서비스 계정을 구성합니다
+
+하나의 프로젝트에 상주하지만 다른 프로젝트(공유 VPC)의 VPC를 사용하는 GKE 클러스터를 관리하려면 * Compute Network Viewer * 역할이 있는 호스트 프로젝트의 구성원으로 Astra 서비스 계정을 지정해야 합니다.
+
+.단계
+. Google Cloud 콘솔에서 * IAM & Admin * 으로 이동하여 * Service Accounts * 를 선택합니다.
+. 이(가) 있는 Astra 서비스 계정을 찾습니다 link:set-up-google-cloud.html#create-a-service-account["필요한 권한"] 그런 다음 전자 메일 주소를 복사합니다.
+. 호스트 프로젝트로 이동한 다음 * IAM & Admin * > * IAM * 을 선택합니다.
+. 추가 * 를 선택하고 서비스 계정에 대한 항목을 추가합니다.
++
+.. * 새 회원 *: 서비스 계정의 이메일 주소를 입력합니다.
+.. * 역할 *: * Compute Network Viewer * 를 선택합니다.
+.. 저장 * 을 선택합니다.
+
+
+
+
+공유 VPC를 사용하여 GKE 클러스터를 추가하면 Astra와 완전히 연동됩니다.
+
+
+
+== 서비스 계정 키를 생성합니다
+
+Astra Control Service에 사용자 이름과 암호를 제공하는 대신 첫 번째 클러스터를 추가할 때 서비스 계정 키를 제공합니다. Astra Control Service는 서비스 계정 키를 사용하여 방금 설정한 서비스 계정의 ID를 설정합니다.
+
+서비스 계정 키는 JSON(JavaScript Object Notation) 형식으로 저장된 일반 텍스트입니다. 액세스 권한이 있는 GCP 리소스에 대한 정보가 포함되어 있습니다.
+
+키를 생성할 때만 JSON 파일을 보거나 다운로드할 수 있습니다. 그러나 언제든지 새 키를 만들 수 있습니다.
+
+.단계
+. Google Cloud로 이동하고 https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys["콘솔, gcloud 명령 또는 다른 기본 설정 방법을 사용하여 서비스 계정 키를 생성합니다"^].
+. 메시지가 표시되면 서비스 계정 키 파일을 안전한 위치에 저장합니다.
+
+
+다음 비디오에서는 Google Cloud 콘솔에서 서비스 계정 키를 생성하는 방법을 보여줍니다.
+
+video::video-create-gcp-service-account-key.mp4[width=848,height=480]
+
+
+== VPC용 네트워크 피어링 설정(옵션)
+
+Google Cloud용 Cloud Volumes Service를 스토리지 백엔드 서비스로 사용하려는 경우 마지막 단계는 VPC에서 Cloud Volumes Service for Google Cloud로 네트워킹 피어링을 설정하는 것입니다.
+
+네트워크 피어링을 설정하는 가장 쉬운 방법은 Cloud Volumes Service에서 gcloud 명령을 직접 가져오는 것입니다. 새 파일 시스템을 생성할 때 Cloud Volumes Service에서 명령을 사용할 수 있습니다.
+
+.단계
+. https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["NetApp Cloud Central의 글로벌 지역 맵 으로 이동합니다"^] 클러스터가 있는 Google Cloud 영역에서 사용할 서비스 유형을 식별하십시오.
++
+Cloud Volumes Service는 CVS와 CVS - 성능이라는 두 가지 서비스 유형을 제공합니다. https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types["이러한 서비스 유형에 대해 자세히 알아보십시오"^].
+
+. https://console.cloud.google.com/netapp/cloud-volumes/volumes["Google Cloud Platform에서 Cloud Volumes로 이동합니다"^].
+. 볼륨 * 페이지에서 * 생성 * 을 선택합니다.
+. 서비스 유형 * 에서 * CVS * 또는 * CVS - 성능 * 을 선택합니다.
++
+Google Cloud 지역에 맞는 서비스 유형을 선택해야 합니다. 1단계에서 확인한 서비스 유형입니다. 서비스 유형을 선택하면 페이지의 영역 목록이 해당 서비스 유형이 지원되는 지역으로 업데이트됩니다.
+
++
+이 단계를 수행한 후에는 네트워킹 정보만 입력하면 명령을 얻을 수 있습니다.
+
+. 지역 * 에서 지역 및 구역을 선택합니다.
+. Network Details * 에서 VPC를 선택합니다.
++
+네트워크 피어링을 설정하지 않은 경우 다음 알림이 표시됩니다.
+
++
+image:gcp-peering.gif["보기 명령 네트워크 피어링을 설정하는 방법 이라는 버튼이 나타나는 Google Cloud 콘솔의 스크린샷."]
+
+. 네트워크 피어링 설정 명령을 보려면 버튼을 선택합니다.
+. 명령을 복사하여 Cloud Shell에서 실행합니다.
++
+이러한 명령 사용에 대한 자세한 내용은 를 참조하십시오 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#configure_private_services_access_and_set_up_network_peering["Cloud Volumes Service for GCP용 QuickStart"^].
+
++
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access["개인 서비스 액세스 구성 및 네트워크 피어링 설정에 대해 자세히 알아보십시오"^].
+
+. 완료되면 * 파일 시스템 생성 * 페이지에서 취소를 선택할 수 있습니다.
++
+이 볼륨은 네트워크 피어링을 위한 명령만 얻기 위해 만들어지기 시작했습니다.
+
+

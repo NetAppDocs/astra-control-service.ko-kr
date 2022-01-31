@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: get-started/quick-start.html 
+keywords: get started, quick start 
+summary: 몇 단계만 거치하면 Astra Control Service를 시작할 수 있습니다. 
+---
+= Astra Control Service를 빠르게 시작합니다
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+이 페이지에서는 Astra Control Service를 시작하는 데 필요한 단계에 대한 개괄적인 개요를 제공합니다. 각 단계의 링크를 클릭하면 자세한 내용을 제공하는 페이지로 이동합니다.
+
+
+
+==== 클라우드 공급자를 설정합니다
+
+. Google 클라우드:
++
+** Google Kubernetes Engine 클러스터 요구 사항을 검토합니다.
+** Google Cloud Marketplace에서 Cloud Volumes Service for Google Cloud를 구입합니다.
+** 필요한 API를 사용하도록 설정합니다.
+** 서비스 계정 및 서비스 계정 키를 생성합니다.
+** VPC에서 Google Cloud용 Cloud Volumes Service로 네트워크 피어링을 설정합니다.
++
+link:set-up-google-cloud.html["Google Cloud 요구 사항에 대해 자세히 알아보십시오"].
+
+
+
+. Microsoft Azure:
++
+** 사용할 스토리지 백엔드에 대한 Azure Kubernetes Service 클러스터 요구 사항을 검토하십시오.
++
+link:set-up-microsoft-azure-with-anf.html["Microsoft Azure 및 Azure NetApp Files 요구 사항에 대해 자세히 알아보십시오"].
+
++
+link:set-up-microsoft-azure-with-amd.html["Microsoft Azure 및 Azure 관리 디스크 요구 사항에 대해 자세히 알아보십시오"].
+
+
+
+
+
+
+
+==== Astra Control 등록을 완료합니다
+
+. 을 생성합니다 https://cloud.netapp.com["NetApp Cloud Central에서"^] 계정.
+. Astra Control 계정을 생성할 때 NetApp Cloud Central 이메일 ID를 지정하십시오 https://cloud.netapp.com/astra["Astra 제품 페이지"^].
+
+
+[role="quick-margin-para"]
+link:register.html["등록 프로세스에 대해 자세히 알아보십시오"].
+
+
+
+==== Astra Control에 클러스터를 추가합니다
+
+[role="quick-margin-para"]
+로그인한 후 * 클러스터 추가 * 를 선택하여 Astra Control을 사용하여 클러스터 관리를 시작합니다.
+
+[role="quick-margin-para"]
+link:add-first-cluster.html["클러스터 추가에 대해 자세히 알아보십시오"].

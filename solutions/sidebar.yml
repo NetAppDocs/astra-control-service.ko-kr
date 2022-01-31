@@ -1,0 +1,12 @@
+---
+section: solutions
+title: 애플리케이션 구축
+entries:
+- title: Jenkins를 배포합니다
+  url: "/solutions/jenkins-deploy-from-helm-chart.html"
+- title: MariaDB 배포
+  url: "/solutions/mariadb-deploy-from-helm-chart.html"
+- title: MySQL 배포
+  url: "/solutions/mysql-deploy-from-helm-chart.html"
+- title: Postgres를 배포합니다
+  url: "/solutions/postgres-deploy-from-helm-chart.html"

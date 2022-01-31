@@ -1,0 +1,15 @@
+---
+sidebar: sidebar 
+permalink: automation.html 
+keywords: api, rest api, automate, automation, endpoints, api reference, curl, ansible, automation, token 
+summary: Astra Control에는 Curl과 같은 프로그래밍 언어나 유틸리티를 사용하여 Astra Control 기능에 직접 액세스할 수 있는 REST API가 있습니다. Ansible 및 기타 자동화 기술을 사용하여 Astra Control 배포를 관리할 수도 있습니다. 
+---
+= Astra Control REST API를 사용한 자동화
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+Astra Control에는 Curl과 같은 프로그래밍 언어나 유틸리티를 사용하여 Astra Control 기능에 직접 액세스할 수 있는 REST API가 있습니다. Ansible 및 기타 자동화 기술을 사용하여 Astra Control 배포를 관리할 수도 있습니다.
+
+자세한 내용은 https://docs.netapp.com/us-en/astra-automation["Astra 자동화 문서로 이동합니다"^].

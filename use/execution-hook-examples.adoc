@@ -1,0 +1,621 @@
+---
+sidebar: sidebar 
+permalink: use/execution-hook-examples.html 
+keywords: execution hook, hook, script, examples 
+summary: 다음 예제를 사용하여 실행 후크를 구조화하는 방법에 대해 알아보십시오. 
+---
+= 실행 후크 예
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+다음 예제를 사용하여 실행 후크를 구조화하는 방법에 대해 알아보십시오. 이러한 후크를 템플릿 또는 테스트 스크립트로 사용할 수 있습니다.
+
+
+
+== 간단한 성공 사례
+
+다음은 표준 출력 및 표준 오류에 성공하여 메시지를 기록하는 간단한 후크의 예입니다.
+
+[source]
+----
+#!/bin/sh
+
+# success_sample.sh
+#
+# A simple noop success hook script for testing purposes.
+#
+# args: None
+#
+
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+
+#
+# main
+#
+
+# log something to stdout
+info "running success_sample.sh"
+
+# exit with 0 to indicate success
+info "exit 0"
+exit 0
+----
+
+
+== 단순한 성공 사례(bash 버전)
+
+다음은 bash용으로 작성된 표준 출력 및 표준 오류에 성공하여 메시지를 쓰는 간단한 후크의 예입니다.
+
+[source]
+----
+#!/bin/bash
+
+# success_sample.bash
+#
+# A simple noop success hook script for testing purposes.
+#
+# args: None
+
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+
+#
+# main
+#
+
+# log something to stdout
+info "running success_sample.bash"
+
+# exit with 0 to indicate success
+info "exit 0"
+exit 0
+----
+
+
+== 간단한 성공 사례(zsh 버전)
+
+다음은 Z 셸에 대해 작성된 표준 출력 및 표준 오류에 성공하여 메시지를 기록하는 간단한 후크의 예입니다.
+
+[source]
+----
+#!/bin/zsh
+
+# success_sample.zsh
+#
+# A simple noop success hook script for testing purposes.
+#
+# args: None
+#
+
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+#
+# main
+#
+
+# log something to stdout
+info "running success_sample.zsh"
+
+# exit with 0 to indicate success
+info "exit 0"
+exit 0
+----
+
+
+== 인수 성공 예제
+
+다음 예제에서는 후크에 args를 사용하는 방법을 보여 줍니다.
+
+[source]
+----
+#!/bin/sh
+
+# success_sample_args.sh
+#
+# A simple success hook script with args for testing purposes.
+#
+# args: Up to two optional args that are echoed to stdout
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+
+#
+# main
+#
+
+# log something to stdout
+info "running success_sample_args.sh"
+
+
+# collect args
+arg1=$1
+arg2=$2
+
+# output args and arg count to stdout
+info "number of args: $#"
+info "arg1 ${arg1}"
+info "arg2 ${arg2}"
+
+# exit with 0 to indicate success
+info "exit 0"
+exit 0
+----
+
+
+== 사전 스냅샷/사후 스냅샷 후크의 예
+
+다음 예제에서는 사전 스냅샷 및 사후 스냅샷 후크에 대해 동일한 스크립트를 사용하는 방법을 보여 줍니다.
+
+[source]
+----
+#!/bin/sh
+
+# success_sample_pre_post.sh
+#
+# A simple success hook script example with an arg for testing purposes
+# to demonstrate how the same script can be used for both a prehook and posthook
+#
+# args: [pre|post]
+
+# unique error codes for every error case
+ebase=100
+eusage=$((ebase+1))
+ebadstage=$((ebase+2))
+epre=$((ebase+3))
+epost=$((ebase+4))
+
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+
+#
+# Would run prehook steps here
+#
+prehook() {
+    info "Running noop prehook"
+    return 0
+}
+
+#
+# Would run posthook steps here
+#
+posthook() {
+    info "Running noop posthook"
+    return 0
+}
+
+
+#
+# main
+#
+
+# check arg
+stage=$1
+if [ -z "${stage}" ]; then
+    echo "Usage: $0 <pre|post>"
+    exit ${eusage}
+fi
+
+if [ "${stage}" != "pre" ] && [ "${stage}" != "post" ]; then
+    echo "Invalid arg: ${stage}"
+    exit ${ebadstage}
+fi
+
+# log something to stdout
+info "running success_sample_pre_post.sh"
+
+if [ "${stage}" = "pre" ]; then
+    prehook
+    rc=$?
+    if [ ${rc} -ne 0 ]; then
+        error "Error during prehook"
+    fi
+fi
+
+if [ "${stage}" = "post" ]; then
+    posthook
+    rc=$?
+    if [ ${rc} -ne 0 ]; then
+        error "Error during posthook"
+    fi
+fi
+
+exit ${rc}
+----
+
+
+== 실패 예
+
+다음 예제에서는 후크의 장애를 처리하는 방법을 보여 줍니다.
+
+[source]
+----
+#!/bin/sh
+
+# failure_sample_arg_exit_code.sh
+#
+# A simple failure hook script for testing purposes.
+#
+# args: [the exit code to return]
+#
+
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+
+#
+# main
+#
+
+# log something to stdout
+info "running failure_sample_arg_exit_code.sh"
+
+argexitcode=$1
+
+# log to stderr
+error "script failed, returning exit code ${argexitcode}"
+
+# exit with specified exit code
+exit ${argexitcode}
+----
+
+
+== 자세한 정보 표시 실패 예
+
+다음 예제에서는 더 자세한 정보 로깅을 사용하여 후크의 오류를 처리하는 방법을 보여 줍니다.
+
+[source]
+----
+#!/bin/sh
+
+# failure_sample_verbose.sh
+#
+# A simple failure hook script with args for testing purposes.
+#
+# args: [The number of lines to output to stdout]
+
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+
+#
+# main
+#
+
+# log something to stdout
+info "running failure_sample_verbose.sh"
+
+
+# output arg value to stdout
+linecount=$1
+info "line count ${linecount}"
+
+# write out a line to stdout based on line count arg
+i=1
+while [ "$i" -le ${linecount} ]; do
+    info "This is line ${i} from failure_sample_verbose.sh"
+    i=$(( i + 1 ))
+done
+
+error "exiting with error code 8"
+exit 8
+----
+
+
+== 종료 코드 예제에 오류가 발생했습니다
+
+다음 예제에서는 종료 코드와 함께 후크 실패를 보여 줍니다.
+
+[source]
+----
+#!/bin/sh
+
+# failure_sample_arg_exit_code.sh
+#
+# A simple failure hook script for testing purposes.
+#
+# args: [the exit code to return]
+#
+
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+
+#
+# main
+#
+
+# log something to stdout
+info "running failure_sample_arg_exit_code.sh"
+
+argexitcode=$1
+
+# log to stderr
+error "script failed, returning exit code ${argexitcode}"
+
+# exit with specified exit code
+exit ${argexitcode}
+----
+
+
+== 실패 후 성공 예
+
+다음 예제에서는 후크가 처음 실행될 때 후크가 실패하지만 두 번째 실행 후에 후크가 발생하는 방법을 보여 줍니다.
+
+[source]
+----
+#!/bin/sh
+
+# failure_then_success_sample.sh
+#
+# A hook script that fails on initial run but succeeds on second run for testing purposes.
+#
+# Helpful for testing retry logic for post hooks.
+#
+# args: None
+#
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+
+#
+# main
+#
+
+# log something to stdout
+info "running failure_success sample.sh"
+
+
+if [ -e /tmp/hook-test.junk ] ; then
+    info "File does exist.  Removing /tmp/hook-test.junk"
+    rm /tmp/hook-test.junk
+    info "Second run so returning exit code 0"
+    exit 0
+else
+    info "File does not exist.  Creating /tmp/hook-test.junk"
+    echo "test" > /tmp/hook-test.junk
+    error "Failed first run, returning exit code 5"
+    exit 5
+fi
+----

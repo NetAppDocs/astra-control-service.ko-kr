@@ -1,0 +1,13 @@
+---
+sidebar: sidebar 
+permalink: learn/validated-vs-standard.html 
+keywords: supported apps 
+summary: Astra Control, Validated 및 Standard에는 두 가지 유형의 애플리케이션이 있습니다. 이 두 가지 범주의 차이점과 프로젝트와 전략에 미칠 수 있는 영향에 대해 알아보십시오. 
+---
+= 검증된 vs 표준 애플리케이션
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/learn/
+
+
+link:https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-validated-vs-standard.adoc[""]

@@ -1,0 +1,18 @@
+---
+sidebar: sidebar 
+permalink: get-started/supported-deployments.html 
+keywords: gke, aks, google kubernetes engine, azure kubernetes service 
+summary: 'Astra Control Service는 GKE(Google Kubernetes Engine) 및 AKS(Azure Kubernetes Service)의 관리되는 Kubernetes 클러스터에서 실행 중인 앱을 관리할 수 있습니다.' 
+---
+= 지원되는 Kubernetes 구축
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+Astra Control Service는 GKE(Google Kubernetes Engine) 및 AKS(Azure Kubernetes Service)의 관리되는 Kubernetes 클러스터에서 실행 중인 앱을 관리할 수 있습니다.
+
+* link:set-up-google-cloud.html["Google Cloud for Astra Control Service를 설정하는 방법을 알아보십시오"].
+* link:set-up-microsoft-azure-with-anf.html["Astra Control Service용 Azure NetApp Files를 사용하여 Microsoft Azure를 설정하는 방법에 대해 알아보십시오"].
+* link:set-up-microsoft-azure-with-amd.html["Astra Control Service용 Azure 관리 디스크를 사용하여 Microsoft Azure를 설정하는 방법에 대해 알아보십시오"].
+

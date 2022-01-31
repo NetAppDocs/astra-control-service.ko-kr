@@ -1,0 +1,10 @@
+---
+section: support
+title: 지식 및 지원
+entries:
+- title: 지원을 위해 등록하십시오
+  url: "/support/register-support.html"
+- title: 문제 해결
+  url: "/support/troubleshooting.html"
+- title: 도움을 받으십시오
+  url: "/support/get-help.html"

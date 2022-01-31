@@ -1,0 +1,146 @@
+---
+sidebar: sidebar 
+permalink: use/set-up-billing.html 
+keywords: billing, set up billing, payments, set up payments, credit card, update credit card, change credit card, free plan, free trial, premium, premium plan 
+summary: Astra Control의 무료 플랜을 사용하면 최대 10개의 앱을 계정에서 관리할 수 있습니다. 10개 이상의 앱을 관리하려면 무료 요금에서 프리미엄 요금제로 업그레이드하여 청구서를 설정해야 합니다. 
+---
+= 대금 청구를 설정합니다
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+
+Astra Control의 무료 플랜을 사용하면 최대 10개의 앱을 계정에서 관리할 수 있습니다. 10개 이상의 앱을 관리하려면 무료 요금에서 프리미엄 요금제로 업그레이드하여 청구서를 설정해야 합니다.
+
+
+
+== 대금 청구 개요
+
+Astra Control Service와 관련된 비용에는 두 가지 유형이 있습니다. Astra Control Service에는 NetApp이 비용을 청구하며, 영구 볼륨 및 오브젝트 스토리지에 대해서는 클라우드 공급자가 비용을 청구합니다.
+
+
+
+=== Astra Control 서비스 청구
+
+Astra Control Service는 다음과 같은 세 가지 계획을 제공합니다.
+
+무료 플랜:: 최대 10개의 앱을 무료로 관리할 수 있습니다.
+프리미엄 페이고:: 앱당 분당 $.005의 속도로 앱을 무제한으로 관리할 수 있습니다.
+프리미엄 구독::
++
+--
+아직 Astra Control 계정이 없는 경우 Premium Subscription을 구매하면 자동으로 Astra Control 계정이 생성됩니다. 기존 무료 플랜이 있는 경우 프리미엄 구독으로 자동 변환됩니다.
+
+--
+
+
+Astra Control 계정을 만들면 무료 플랜에 자동으로 등록됩니다. Astra Control의 대시보드에는 현재 관리하고 있는 앱 10개 중 허용되는 무료 앱 수가 표시됩니다.
+
+image:screenshot-dashboard.gif["리소스 요약 및 시작할 수 있는 링크를 제공하는 Astra 대시보드를 보여 주는 스크린샷"]
+
+11번째 앱을 관리하려고 하면 Astra Control에서 무료 요금제 한도에 도달했음을 알립니다. 그런 다음 무료 플랜에서 프리미엄 플랜으로 업그레이드하라는 메시지가 표시됩니다.
+
+언제든지 프리미엄 요금제로 업그레이드할 수 있습니다. 업그레이드 후 Astra Control은 계정에 있는 _ALL_MANDATED 앱에 대해 귀하에게 요금을 부과하기 시작합니다. 처음 10개 앱은 무료 요금제에 머무르고 있지 않습니다.
+
+
+
+=== Google Cloud 청구
+
+Astra Control Service를 사용하여 GKE 클러스터를 관리할 경우, 영구 볼륨은 NetApp Cloud Volumes Service에 의해 백업되고 앱의 백업은 Google 클라우드 스토리지 버킷에 저장됩니다.
+
+* https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs["Cloud Volumes Service에 대한 가격 세부 정보를 봅니다"^].
++
+Astra Control Service는 모든 서비스 유형과 서비스 수준을 지원합니다. 사용하는 서비스 유형은 에 따라 다릅니다 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["Google Cloud 지역"^].
+
+* https://cloud.google.com/storage/pricing["Google Cloud 스토리지 버킷의 가격 세부 정보를 확인하십시오"^].
+
+
+
+
+=== Microsoft Azure 청구
+
+Astra Control Service를 사용하여 AKS 클러스터를 관리할 경우 영구 볼륨은 Azure NetApp Files에 의해 백업되고 앱 백업은 Azure Blob 컨테이너에 저장됩니다.
+
+* https://azure.microsoft.com/en-us/pricing/details/netapp["Azure NetApp Files에 대한 가격 세부 정보를 봅니다"^].
+* https://azure.microsoft.com/en-us/pricing/details/storage/blobs["Microsoft Azure Blob 스토리지의 가격 세부 정보를 봅니다"^].
+
+
+
+
+== 중요 참고 사항
+
+* 귀하의 청구 계획은 Astra Control 계정입니다.
++
+계정이 여러 개인 경우 각 계정마다 자체 청구 계획이 있습니다.
+
+* Astra Control 청구서에는 Kubernetes 앱 관리에 대한 비용이 포함되어 있습니다. 영구 볼륨의 스토리지 백엔드에 대해서는 클라우드 공급자가 별도로 요금을 부과합니다.
++
+link:../get-started/intro.html["Astra Control 가격에 대해 자세히 알아보십시오"].
+
+* 각 청구 기간은 해당 월의 마지막 날에 종료됩니다.
+* 프리미엄 요금제의 경우 무료 요금제로 다운그레이드할 수 없습니다.
+
+
+
+
+== 무료 요금제의 프리미엄 페이고 요금제로 업그레이드하세요
+
+언제든지 결제 계획을 업그레이드하면 Astra Control에서 10개 이상의 앱을 관리할 수 있습니다. 유효한 신용 카드만 있으면 됩니다.
+
+.단계
+. 계정 * 을 선택한 다음 * 청구 * 를 선택합니다.
+. 요금제 * 에서 * Premium PayGo * 로 이동하여 * 지금 업그레이드 * 를 선택합니다.
+. 유효한 신용 카드에 대한 결제 세부 정보를 제공하고 * 프리미엄 요금제로 업그레이드 * 를 선택하십시오.
++
+
+NOTE: Astra Control은 신용 카드 만료일이 다가오면 이메일로 발송합니다.
+
+
+
+이제 10개 이상의 앱을 관리할 수 있습니다. Astra Control은 현재 관리하고 있는 모든 앱에 대해 귀하에게 요금을 부과하기 시작합니다.
+
+
+
+== 무료 요금제로부터 프리미엄 요금제로 업그레이드하세요
+
+NetApp 세일즈 팀에 연락하여 연간 구독과 함께 할인된 요금으로 사전 결제할 수 있습니다.
+
+.단계
+. 계정 * 을 선택한 다음 * 청구 * 를 선택합니다.
+. 요금제 * 에서 * 프리미엄 이용 * 으로 이동하여 * 판매 연락처 * 를 선택합니다.
+. 프로세스를 시작할 수 있도록 세일즈 팀에 세부 정보를 제공합니다.
+
+
+NetApp 세일즈 담당자가 구매 주문서를 처리하기 위해 연락을 드릴 것입니다. 주문이 완료되면 Astra Control이 청구 탭에 현재 계획을 반영합니다.
+
+image:screenshot-premium-subscription.gif["계정 탭과 프리미엄 구독에 대해 활성화된 계정을 보여 주는 스크린샷."]
+
+
+
+== 현재 비용 및 청구 기록을 봅니다
+
+Astra Control은 현재 월간 비용 및 앱별 상세 청구 내역을 보여 줍니다.
+
+.단계
+. 계정 * 을 선택한 다음 * 청구 * 를 선택합니다.
++
+현재 비용이 청구 개요 아래에 표시됩니다.
+
+. 앱별 청구 내역을 보려면 * 청구 내역 * 을 선택합니다.
++
+Astra Control은 각 앱의 사용 시간 및 비용을 표시합니다. 사용 시간은 Astra Control이 청구 기간 동안 앱을 관리하는 시간(분)입니다.
+
+. 드롭다운 목록을 선택하여 이전 달을 선택합니다.
+
+
+
+
+== Premium PayGo의 신용 카드를 변경합니다
+
+필요한 경우 Astra Control이 청구하기 위해 파일에 가지고 있는 신용 카드를 변경할 수 있습니다.
+
+.단계
+. 계정 > 청구 > 결제 방법 * 을 선택합니다.
+. 구성 아이콘을 선택합니다.
+. 신용 카드를 수정합니다.
+

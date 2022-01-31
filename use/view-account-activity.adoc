@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: use/view-account-activity.html 
+keywords: activity, log, activities, download log, download csv, csv 
+summary: Astra Control 계정의 활동에 대한 세부 정보를 볼 수 있습니다. 예를 들어, 새 사용자를 초대하거나, 컴퓨팅을 추가하거나, 스냅샷을 생성할 때 사용할 수 있습니다. 계정 활동을 CSV 파일로 내보낼 수도 있습니다. 
+---
+= 계정 활동을 봅니다
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Astra Control 계정의 활동에 대한 세부 정보를 볼 수 있습니다. 예를 들어, 새 사용자를 초대하거나, 클러스터를 추가하거나, 스냅샷을 생성할 때 사용할 수 있습니다. 계정 활동을 CSV 파일로 내보낼 수도 있습니다.
+
+.Astra Control의 모든 계정 활동을 보는 단계
+. Activity * 를 선택합니다.
+. 필터를 사용하여 활동 목록의 범위를 좁히거나 검색 상자를 사용하여 원하는 항목을 정확하게 찾을 수 있습니다.
+. CSV로 내보내기 * 를 선택하여 계정 활동을 CSV 파일로 다운로드합니다.
+
+
+.특정 앱의 계정 활동을 보는 단계
+. 응용 프로그램 * 을 선택한 다음 앱 이름을 선택합니다.
+. Activity * 를 선택합니다.
+
+
+.클러스터의 계정 활동을 확인하는 단계입니다
+. 클러스터 * 를 선택한 다음 클러스터 이름을 선택합니다.
+. Activity * 를 선택합니다.
+

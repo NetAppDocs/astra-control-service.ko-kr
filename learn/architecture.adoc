@@ -1,0 +1,13 @@
+---
+sidebar: sidebar 
+permalink: learn/architecture.html 
+keywords: astra, astra control, architecture, astra control center, kubernetes, netapp, clusters, trident, astra control service 
+summary: Astra Control 환경의 다양한 구성 요소에 대해 간략하게 살펴보겠습니다. 
+---
+= 아키텍처 및 구성 요소
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/learn/
+
+
+link:https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-architecture.adoc[""]
