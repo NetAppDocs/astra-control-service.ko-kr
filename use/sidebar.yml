@@ -37,8 +37,8 @@ entries:
     url: "/use/manage-users.html"
   - title: 클라우드 공급자 자격 증명을 관리합니다
     url: "/use/manage-credentials.html"
-  - title: 계정 활동을 봅니다
-    url: "/use/view-account-activity.html"
+  - title: 계정 활동을 모니터링합니다
+    url: "/use/monitor-account-activity.html"
   - title: 알림을 관리합니다
     url: "/use/manage-notifications.html"
   - title: 계정을 닫습니다
