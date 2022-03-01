@@ -1499,4 +1499,7 @@
   <block id="91b0fccd50fc200b9aa9a40a0cc5a82d" category="list-text">주의가 필요한 이벤트를 선택합니다.</block>
   <block id="e2900726473d9bdf15d18c496f0edc96" category="list-text">실행 * 드롭다운 옵션을 선택합니다.</block>
   <block id="02251349687d4a85c56e4346486d3ad4" category="paragraph">이 목록에서 수행할 수 있는 수정 조치를 확인하고, 문제와 관련된 문서를 보고, 문제 해결을 위한 지원을 받을 수 있습니다.</block>
+  <block id="f4105577bf107396cef41e7fc8b36c75" category="paragraph">Astra Control이 클러스터를 관리할 때 클러스터의 기본 StorageClass를 추적합니다. kubeck 명령을 사용하여 StorageClass를 변경하면 Astra Control에서 변경 내용을 되돌립니다. Astra Control에서 관리하는 클러스터의 기본 StorageClass를 변경하려면 다음 방법 중 하나를 사용하십시오.</block>
+  <block id="e9fac85aa2673b1b448faa45d2eeb596" category="list-text">Astra Control API의 Put/managedClusters 끝점을 사용하고 defaultStorageClass 매개변수를 사용하여 다른 기본 StorageClass를 할당합니다</block>
+  <block id="11937632e52ddd422c6068df5f4a8641" category="list-text">Astra Control 관리에서 클러스터를 제거하고 다른 기본 StorageClass를 선택하여 다시 추가합니다</block>
 </blocks>
