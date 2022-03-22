@@ -6,6 +6,7 @@ summary: Astra Control Service는 NetApp Cloud Central의 인증 서비스에 �
 ---
 = Astra Control Service 계정에 등록하십시오
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 

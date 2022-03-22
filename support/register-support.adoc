@@ -6,6 +6,7 @@ summary: Astra Control은 계정을 설정할 때 자동으로 계정을 등록�
 ---
 = 지원을 위해 등록하십시오
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/support/
 

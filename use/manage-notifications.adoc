@@ -6,6 +6,7 @@ summary: Astra Control은 작업이 완료되거나 실패했을 때 알려줍�
 ---
 = 알림을 보고 관리합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

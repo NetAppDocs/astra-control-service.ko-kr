@@ -6,6 +6,7 @@ summary: Astra Control에서 더 이상 관리하지 않으려는 응용 프로�
 ---
 = 앱 및 클러스터 관리를 취소합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

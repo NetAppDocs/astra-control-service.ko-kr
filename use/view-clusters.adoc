@@ -6,6 +6,7 @@ summary: Astra Control에 Kubernetes 클러스터를 추가한 후에는 클러�
 ---
 = 클러스터의 상태 및 세부 정보를 봅니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

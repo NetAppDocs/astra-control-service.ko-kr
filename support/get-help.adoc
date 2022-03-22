@@ -6,6 +6,7 @@ summary: 'NetApp은 다양한 방법으로 Astra Control을 지원합니다. 기
 ---
 = 도움을 받으십시오
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/support/
 

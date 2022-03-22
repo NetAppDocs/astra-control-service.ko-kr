@@ -6,6 +6,7 @@ summary: Astra Control Service는 SaaS 기반 사용자 인터페이스를 통�
 ---
 = Astra Control Service에 로그인합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -20,7 +21,7 @@ TIP: Single Sign-On을 사용하여 회사 디렉터리(통합 ID)의 자격 증
 
 .무엇을 &#8217;필요로 할거야
 * link:../get-started/register.html["Cloud Central 사용자 ID입니다"].
-* link:../get-started/register.html["새로운 Astra Control 계정"] 또는 .
+* link:../get-started/register.html["새로운 Astra Control 계정"] 또는 link:manage-users.html["기존 계정에 대한 초대"].
 * 지원되는 웹 브라우저입니다.
 +
 Astra Control Service는 최신 버전의 Firefox, Safari 및 Chrome을 최소 1280 x 720의 해상도로 지원합니다.

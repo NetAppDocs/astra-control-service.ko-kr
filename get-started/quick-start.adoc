@@ -6,6 +6,7 @@ summary: 몇 단계만 거치하면 Astra Control Service를 시작할 수 있�
 ---
 = Astra Control Service를 빠르게 시작합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 

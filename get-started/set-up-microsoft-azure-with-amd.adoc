@@ -6,6 +6,7 @@ summary: Astra Control Service로 Azure Kubernetes Service 클러스터를 관�
 ---
 = Azure 관리 디스크를 사용하여 Microsoft Azure를 설정합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 

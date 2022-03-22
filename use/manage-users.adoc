@@ -6,6 +6,7 @@ summary: Astra Control 계정에 가입하도록 사용자를 초대하고 더 �
 ---
 = 사용자를 초대하고 제거합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

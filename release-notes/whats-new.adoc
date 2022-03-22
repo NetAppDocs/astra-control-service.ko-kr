@@ -6,6 +6,7 @@ summary: NetApp은 새로운 기능, 개선 사항 및 버그 수정을 제공�
 ---
 = Astra Control Service의 새로운 기능
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/release-notes/
 
@@ -22,7 +23,7 @@ NetApp은 새로운 기능, 개선 사항 및 버그 수정을 제공하기 위�
 
 Astra Control Service는 이제 Google Persistent Disk 및 Azure 관리 디스크를 스토리지 백엔드 옵션으로 지원합니다.
 
-link:../get-started/set-up-google-cloud.html["Google Cloud를 설정합니다"]..
+link:../get-started/set-up-google-cloud.html["Google Cloud를 설정합니다"].link:../get-started/set-up-microsoft-azure-with-amd.html["Azure 관리 디스크를 사용하여 Microsoft Azure를 설정합니다"].
 
 
 

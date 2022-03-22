@@ -6,6 +6,7 @@ summary: 실행 후크는 관리되는 앱의 스냅샷 전후에 실행할 수 
 ---
 = 앱 실행 후크 관리
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

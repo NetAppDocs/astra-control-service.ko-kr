@@ -6,6 +6,7 @@ summary: 사용자 지정 앱을 생성하면 Kubernetes 클러스터의 요소�
 ---
 = 사용자 지정 앱을 정의합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/learn/
 

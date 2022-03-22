@@ -6,6 +6,7 @@ summary: Astra Control 계정의 활동에 대한 세부 정보를 볼 수 있�
 ---
 = 계정 활동을 모니터링합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

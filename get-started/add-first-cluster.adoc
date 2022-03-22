@@ -6,6 +6,7 @@ summary: 환경을 설정한 후에는 Kubernetes 클러스터를 생성하고 A
 ---
 = Astra Control Service에서 Kubernetes 클러스터 관리를 시작합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 
@@ -17,7 +18,7 @@ summary: 환경을 설정한 후에는 Kubernetes 클러스터를 생성하고 A
 
 == Kubernetes 클러스터를 생성합니다
 
-클러스터가 아직 없으면 와(과) 일치하는 클러스터를 생성합니다 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine(GKE)에 대한 Astra Control Service 요구 사항"], , 또는  .
+클러스터가 아직 없으면 와(과) 일치하는 클러스터를 생성합니다 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine(GKE)에 대한 Astra Control Service 요구 사항"], link:set-up-microsoft-azure-with-anf.html["Azure NetApp Files를 사용하는 Azure Kubernetes Service(AKS)에 대한 Astra Control 서비스 요구사항"], 또는 link:set-up-microsoft-azure-with-amd.html["Azure 관리 디스크를 사용하는 Azure Kubernetes Service(AKS)에 대한 Astra Control Service 요구 사항"] .
 
 
 
@@ -79,7 +80,7 @@ Azure NetApp Files for Google Cloud 또는 Cloud Volumes Service에 대해 구�
 ** https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^]
 ** https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure로 관리되는 디스크"^]
 +
-에 대해 자세히 알아보십시오 link:../learn/choose-class-and-size.html["GKE 클러스터용 저장소 클래스"] 및 .
+에 대해 자세히 알아보십시오 link:../learn/choose-class-and-size.html["GKE 클러스터용 저장소 클래스"] 및 link:../learn/azure-storage.html["AKS 클러스터용 스토리지 클래스입니다"].
 
 
 

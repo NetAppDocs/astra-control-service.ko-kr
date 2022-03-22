@@ -6,6 +6,7 @@ summary: 대시보드 를 클릭하여 앱, 클러스터 및 해당 상태에 �
 ---
 = 앱 및 클러스터 상태 요약 보기
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

@@ -6,6 +6,7 @@ summary: 기존 앱을 클론 복제하여 동일한 Kubernetes 클러스터 또
 ---
 = 애플리케이션 클론 복제 및 마이그레이션
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

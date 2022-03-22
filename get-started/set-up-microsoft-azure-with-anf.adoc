@@ -6,6 +6,7 @@ summary: Astra Control Service로 Azure Kubernetes Service 클러스터를 관�
 ---
 = Azure NetApp Files를 사용하여 Microsoft Azure를 설정합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 
@@ -78,7 +79,7 @@ Kubernetes 버전:: 클러스터는 Kubernetes 버전 1.19~1.21.x를 실행해�
 클러스터 상태입니다:: 클러스터가 정상 상태에서 실행되고 있어야 하며 오류가 발생한 상태의 작업자 노드가 없는 온라인 작업자 노드가 하나 이상 있어야 합니다.
 Azure 지역:: 클러스터는 Azure NetApp Files를 사용할 수 있는 지역에 상주해야 합니다. https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["지역별 Azure 제품 보기"^].
 구독:: 클러스터는 Azure NetApp Files가 설정된 구독에 상주해야 합니다. 구독은 필요할 때 선택할 수 있습니다 <<Register for Azure NetApp Files,Azure NetApp Files에 등록하십시오>>.
-VNET::
+VNET:: 다음 VNET 요구 사항을 고려하십시오.
 +
 --
 * 클러스터는 Azure NetApp Files 위임 서브넷에 직접 액세스할 수 있는 VNET에 상주해야 합니다. <<Delegate a subnet to Azure NetApp Files,위임된 서브넷을 설정하는 방법에 대해 알아봅니다>>.

@@ -6,6 +6,7 @@ summary: '이 문서 사이트의 많은 페이지에는 Astra Control Service�
 ---
 = Astra Control Service 비디오
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

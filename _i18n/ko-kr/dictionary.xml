@@ -839,8 +839,6 @@
   <block id="35165f9b14f6cde03fa7f6f9b03732ba" category="list-text">Update * 를 선택합니다.</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="summary">법적 고지 사항은 저작권 선언, 상표, 특허 등에 대한 액세스를 제공합니다.</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">법적 고지</block>
-  <block id="c59ae8d7beeb519a23478ab048af482c" category="paragraph"><block ref="c59ae8d7beeb519a23478ab048af482c" category="inline-link-macro-rx"></block></block>
-  <block id="6f2ac1cf1da8ec34232c651d4bba0149" category="paragraph"><block ref="6f2ac1cf1da8ec34232c651d4bba0149" category="inline-link-macro-rx"></block></block>
   <block id="fbd3ad11889bebf7ba34d30c64465dc9" category="inline-link-macro">Astra에 대한 고지</block>
   <block id="ac03979daf772f92e5a936c29416f083" category="paragraph"><block ref="ac03979daf772f92e5a936c29416f083" category="inline-link-macro-rx"></block></block>
   <block id="e81b0f8fae224ca0c3d3258b75a989dd" category="section-title">Astra Control API 라이센스</block>
@@ -903,7 +901,6 @@
   <block id="c08852984e8c25f32d46962fb339726f" category="paragraph"><block ref="b74a328bba8a5da0f4307f58e738dc15" category="inline-link-rx"></block>.</block>
   <block id="ef8ee09fa3337e5d951394563bcf6ba8" category="summary">Astra Control 환경의 다양한 구성 요소에 대해 간략하게 살펴보겠습니다.</block>
   <block id="9282ad3aef7e124a3b2b9c7eab52b33d" category="doc">아키텍처 및 구성 요소</block>
-  <block id="8b018fbf1e19d6ad546cbbccef829ba8" category="paragraph"><block ref="8b018fbf1e19d6ad546cbbccef829ba8" category="inline-link-macro-rx"></block></block>
   <block id="2938a5725f8de8bc6cfbe9bdd59f796f" category="summary">Astra Control Service는 Azure Kubernetes Service(AKS) 클러스터를 위한 스토리지 백엔드로 Azure NetApp Files를 사용합니다. 스토리지 클래스 및 영구 볼륨 크기를 선택하면 성능 목표를 달성하는 데 어떤 도움이 되는지 알아야 합니다.</block>
   <block id="7aaaeb3c621282cab2d3ea9432c3fbe0" category="doc">AKS 클러스터의 스토리지 클래스 및 PV 크기입니다</block>
   <block id="b2cd1a47d11cab60dfbd0e59e1c5cdaa" category="paragraph">Astra Control Service는 Azure Kubernetes Service(AKS) 클러스터를 위한 스토리지 백엔드로 Azure NetApp Files 또는 Azure 관리 디스크를 지원합니다.</block>
@@ -959,16 +956,11 @@
   <block id="09fcc57d953e448e733bfa37d444c81b" category="paragraph">두 개의 사용자 지정 앱을 생성한 후 관리자는 이러한 리소스를 다른 Astra Control 애플리케이션으로 처리할 수 있습니다. 관리자는 Kubernetes 레이블을 기반으로 리소스를 클론 복제하고, 백업과 스냅샷을 생성하고, 각 리소스 그룹에 대한 사용자 지정 보호 정책을 생성할 수 있습니다.</block>
   <block id="7bdb5bed9124f4cb8ef00cb0eb64a04a" category="summary">Astra Control, Validated 및 Standard에는 두 가지 유형의 애플리케이션이 있습니다. 이 두 가지 범주의 차이점과 프로젝트와 전략에 미칠 수 있는 영향에 대해 알아보십시오.</block>
   <block id="c8a8951e747490d31a329c8be8936189" category="doc">검증된 vs 표준 애플리케이션</block>
-  <block id="2c0f8c5a84761b79b6e1174632297f5c" category="paragraph"><block ref="2c0f8c5a84761b79b6e1174632297f5c" category="inline-link-macro-rx"></block></block>
   <block id="3e7ce18250825ebe097f3b6178f9d04a" category="summary">Bitnami Helm 차트에서 MariaDB를 배포하는 방법을 알아보십시오. 클러스터에 MariaDB를 배포한 후 Astra Control을 사용하여 애플리케이션을 관리할 수 있습니다.</block>
-  <block id="a15f81bc6fc43123ae2b2fd94d3160ad" category="paragraph"><block ref="a15f81bc6fc43123ae2b2fd94d3160ad" category="inline-link-macro-rx"></block></block>
   <block id="46e99d499ce6f7990ef9f220c50ce56d" category="summary">Bitnami Helm 차트에서 MySQL을 배포하는 방법을 알아보십시오. Kubernetes 클러스터에 MySQL을 구축한 후 Astra Control을 사용하여 애플리케이션을 관리할 수 있습니다.</block>
-  <block id="5526bb94851e769663b72deb3d57ba3c" category="paragraph"><block ref="5526bb94851e769663b72deb3d57ba3c" category="inline-link-macro-rx"></block></block>
   <block id="f2d1d98a3481f0962642b8cbefa4b5c8" category="summary">제어 차트에서 PostgreSQL을 배포하는 방법에 대해 알아봅니다. 클러스터에 PostgreSQL을 구축한 후 Astra Control에 애플리케이션을 등록할 수 있습니다.</block>
   <block id="39a9cd4c5a8b26df94de4486fbceaf05" category="doc">Helm 차트에서 PostgreSQL을 배포합니다</block>
-  <block id="71cdf80f0a6842021d0f5b6e4246a743" category="paragraph"><block ref="71cdf80f0a6842021d0f5b6e4246a743" category="inline-link-macro-rx"></block></block>
   <block id="8af1c34244700f810760890ac853ae2b" category="summary">Bitnami Helm 차트에서 Jenkins를 배포하는 방법을 알아보십시오. 클러스터에 Jenkins를 배포한 후 Astra Control에 애플리케이션을 등록할 수 있습니다.</block>
-  <block id="e8e0a6f955276be561895d1f7b9500be" category="paragraph"><block ref="e8e0a6f955276be561895d1f7b9500be" category="inline-link-macro-rx"></block></block>
   <block id="739ea6bf2562737f66933a182c8d0c06" category="summary">Astra Control Service로 Azure Kubernetes Service 클러스터를 관리하려면 Microsoft Azure 구독을 준비하기 위해 몇 가지 단계가 필요합니다.</block>
   <block id="044c3fd83fc36378aaf291c493c120cd" category="paragraph">Astra Control Service로 Azure Kubernetes Service 클러스터를 관리하려면 Microsoft Azure 구독을 준비하기 위해 몇 가지 단계가 필요합니다. Azure 관리 디스크를 스토리지 백엔드로 사용하려는 경우 다음 지침을 따르십시오.</block>
   <block id="dc76c51bff59af0886e7f54ab9ef049d" category="section-title">Azure 설정을 위한 빠른 시작</block>
@@ -1375,7 +1367,6 @@
   <block id="83a7557c5cbaf7c83dfb60426a040f0d" category="paragraph"><block ref="08870732ab38e40fc73b515a443d25f4" category="inline-link-macro-rx"></block>.</block>
   <block id="0e1998253be388fcd1c18fc76ead9054" category="summary">Astra Control은 Kubernetes 애플리케이션 데이터 라이프사이클 관리 솔루션으로, 상태 저장 애플리케이션의 운영을 단순화합니다. Kubernetes 워크로드를 손쉽게 보호, 백업, 마이그레이션하고 정상 작동하는 애플리케이션 클론을 즉시 생성할 수 있습니다.</block>
   <block id="7e073986fe6af6ce1775bdfd558def36" category="doc">Astra Control 소개</block>
-  <block id="763c4b3703292a7be770180e0471a713" category="paragraph"><block ref="763c4b3703292a7be770180e0471a713" category="inline-link-macro-rx"></block></block>
   <block id="4e0607432990160c5925f87a3a84fa17" category="summary">Astra Control Service는 GKE(Google Kubernetes Engine) 및 AKS(Azure Kubernetes Service)의 관리되는 Kubernetes 클러스터에서 실행 중인 앱을 관리할 수 있습니다.</block>
   <block id="acb13b8754d0f14e58090cb4826d589f" category="doc">지원되는 Kubernetes 구축</block>
   <block id="06b1a7d4e1877b69bcb6fcbd9fc3f7d2" category="inline-link-macro">Google Cloud for Astra Control Service를 설정하는 방법을 알아보십시오</block>
@@ -1502,4 +1493,181 @@
   <block id="e9fac85aa2673b1b448faa45d2eeb596" category="list-text">Astra Control API의 Put/managedClusters 끝점을 사용하고 defaultStorageClass 매개변수를 사용하여 다른 기본 StorageClass를 할당합니다</block>
   <block id="11937632e52ddd422c6068df5f4a8641" category="list-text">Astra Control 관리에서 클러스터를 제거하고 다른 기본 StorageClass를 선택하여 다시 추가합니다</block>
   <block id="88555feb409cba41792254e4f06581c9" category="list-text">네임스페이스 내에서 Kubernetes 레이블(Astra Control의 _custom app_이라고 함)으로 식별되는 리소스 그룹입니다</block>
+  <block id="17f47137e3c74939946bb140e4cbdf1d" category="inline-link">Bitnami Helm 차트</block>
+  <block id="63b460525cdf532239754239be0dd49b" category="paragraph">에서 Postgres를 배포하는 방법에 대해 알아보십시오<block ref="c1944f63284fe1469cc0b7628473e785" category="inline-link-rx"></block>. 클러스터에 Postgres를 구축한 후 Astra Control에 애플리케이션을 등록할 수 있습니다.</block>
+  <block id="5f8bde6f1311a11a4a7e241bbb75b8af" category="paragraph">Postgres는 Astra에 대해 검증된 앱입니다.</block>
+  <block id="be46076931cd53387cf526748531fc6f" category="inline-link">Astra Control Service에서 검증된 앱과 표준 앱의 차이점을 알아보십시오</block>
+  <block id="ea62af9d3d4954730fa2c07009e49c66" category="list-text"><block ref="d674c8ed82f2facf048e5aa68e13df70" category="inline-link-rx"></block>.</block>
+  <block id="823eb2faefa80af2ef88a171cfc0a501" category="inline-link">Astra Control Center에서 검증된 앱과 표준 앱의 차이점을 알아보십시오</block>
+  <block id="75e27f7256629bea1f115d1a2e35ff6a" category="list-text"><block ref="9d3644841f7a0a31e08f219b3140c67c" category="inline-link-rx"></block>.</block>
+  <block id="a5d80e4d072d6d19415d551335ac7924" category="paragraph">이 지침은 Astra Control Service 및 Astra Control Center에 모두 적용됩니다.</block>
+  <block id="b378f4eaa86416f659084c99619ab92c" category="admonition">Google Marketplace에서 배포된 애플리케이션은 검증되지 않았습니다. 일부 사용자는 Postgres, MariaDB 및 MySQL의 Google Marketplace 배포에서 검색 및/또는 백업과 관련된 문제를 보고합니다.</block>
+  <block id="ab18cc4346e2e3d8a032a31039afba17" category="list-text">Astra Control에 추가된 클러스터.</block>
+  <block id="321e17c956a0f11a93fb3113131da56e" category="admonition">Astra Control Center의 경우 먼저 클러스터를 Astra Control Center에 추가하거나 앱을 먼저 추가할 수 있습니다.</block>
+  <block id="43d084833af96d5fa7b52fee8769b44d" category="list-text">클러스터에 적합한 kubecon무화과 함께 로컬 시스템에 설치된 Helm(버전 3.2+) 및 Kubectl의 업데이트 버전</block>
+  <block id="fd97bc95e932a3b652c02757f9dd0ee7" category="section-title">Postgres를 설치합니다</block>
+  <block id="bd6d523df7fc61f437b6bcf95c84e6ab" category="paragraph">이 프로세스에 대한 두 가지 중요한 참고 사항:</block>
+  <block id="209d9f7d3ed72d86bff8e960b7efb31f" category="list-text">클러스터를 Astra Control Service에 추가한 후에 앱을 배포해야 합니다. Astra Control Center는 클러스터를 Astra Control Center에 추가하기 전이나 후에 애플리케이션을 수락합니다.</block>
+  <block id="ea534a4997c41ebaeedc962e00a4862d" category="list-text">매개 변수는 기본적으로 설정되어 있는 것이 아닙니다.</block>
+  <block id="dc702442c7de31408b54856404ef54c5" category="list-text">Bitnami 차트 repo 추가:</block>
+  <block id="7eaf2e848faefd841526bcab567b42d2" category="list-text">다음 명령을 사용하여 Postgres를 배포합니다.</block>
+  <block id="9834325e5db7a6fd1294df25eb3c3003" category="admonition">볼륨 크기가 변경되면 KI(Kibibyte), Mi(Mebibyte) 또는 Gi(gibibibyte) 단위를 사용합니다.</block>
+  <block id="cafa0dd1c432e6dbdb1fbdf59e566ad4" category="paragraph">다음과 같은 경우에만 스토리지 클래스를 정의해야 합니다.</block>
+  <block id="1de9addd4871f1d857a3df16d960a0f0" category="list-text">Astra Control Service를 사용 중이며 기본 스토리지 클래스를 사용하고 싶지 않습니다.</block>
+  <block id="9f661d823153d138cd0dd585255af30e" category="list-text">Astra Control Center를 사용 중이며 아직 클러스터를 Astra Control Center로 가져오지 않았습니다. 또는 클러스터를 가져왔지만 기본 스토리지 클래스를 사용하지 않으려는 경우</block>
+  <block id="a066057b0baac664a05fecacafe54676" category="paragraph">이렇게 하면 다음과 같은 작업을 수행할 수 있습니다.</block>
+  <block id="5299efec4db7fee00fd52cc320607de2" category="list-text">네임스페이스를 만듭니다.</block>
+  <block id="4339679e0fca3b2c77b834f0f446ef21" category="list-text">네임스페이스에 Postgres를 배포합니다.</block>
+  <block id="d3e32d3f18bc354fb95311457a473e01" category="paragraph">Pod가 온라인 상태가 되면 Astra Control을 사용하여 앱을 관리할 수 있습니다. Astra Control을 사용하면 네임스페이스 수준이나 Helm 레이블을 사용하여 앱을 관리할 수 있습니다.</block>
+  <block id="a56b526c34e9937174e56abb65254144" category="paragraph">에서 Jenkins를 배포하는 방법을 알아보십시오<block ref="fc6337016e79ed6d645aee7cd92889d4" category="inline-link-rx"></block>. 클러스터에 Jenkins를 배포한 후 Astra Control에 애플리케이션을 등록할 수 있습니다.</block>
+  <block id="727aa1830d849b84f28cd8ae21dcce88" category="paragraph">Jenkins는 Astra Control의 검증된 애플리케이션입니다.</block>
+  <block id="0c320ff93a31e2f55637d0776b8377f4" category="inline-link">Jenkins용 Kubernetes 플러그인</block>
+  <block id="e7fd20fba91edea83cd789e5dd3145f7" category="paragraph">Astra Control은 현재 를 지원하지 않습니다<block ref="7941b88a09668dbb84e99be4c077654b" category="inline-link-rx"></block>. 플러그인 없이 Kubernetes 클러스터에서 Jenkins를 실행할 수 있습니다. 플러그인은 Jenkins 클러스터에 확장성을 제공합니다.</block>
+  <block id="1329521b4ee9e281002e69575656af51" category="section-title">Jenkins를 설치합니다</block>
+  <block id="edf97ce0355bb2ec287dafe27d9062d4" category="list-text">Jenkins 네임스페이스를 만들고 다음 명령을 사용하여 Jenkins를 배포합니다.</block>
+  <block id="75a5e02d69cb7561b79d87479d3dbcad" category="list-text">올바른 스토리지 클래스를 설정합니다.</block>
+  <block id="714155e461eec02d5c30ef60dab7f7a9" category="paragraph">에서 MariaDB를 배포하는 방법을 알아보십시오<block ref="5ae9144b50737379425dfd1ed831944a" category="inline-link-rx"></block>. 클러스터에 MariaDB를 배포한 후 Astra Control을 사용하여 애플리케이션을 관리할 수 있습니다.</block>
+  <block id="8d8a10c824ff4e1f5dc89c30c6e0960e" category="paragraph">MariaDB는 Astra의 검증된 애플리케이션입니다.</block>
+  <block id="4edc6e3711a7b2b1f3ee14f852711a72" category="section-title">MariaDB를 설치합니다</block>
+  <block id="03d31232188172ba57e277511835a7df" category="list-text">다음 명령을 사용하여 MariaDB를 배포합니다.</block>
+  <block id="058e20040046a4fb9ce23f043893c802" category="list-text">네임스페이스에 MariaDB를 배포합니다.</block>
+  <block id="9a2eac9459e2e6eafe0dd031df575602" category="list-text">데이터베이스를 생성합니다.</block>
+  <block id="3b9fc826dadbde960b59991dbfb3dc09" category="admonition">배포 시 이 암호 설정 방법은 안전하지 않습니다. 운영 환경에서는 이 방법을 사용하지 않는 것이 좋습니다.</block>
+  <block id="1b5fa0188e8ea3c73983cbacc6bad658" category="paragraph">에서 MySQL을 배포하는 방법을 알아보십시오<block ref="89d30ca06936e36075136ad48e711aa1" category="inline-link-rx"></block>. Kubernetes 클러스터에 MySQL을 구축한 후 Astra Control을 사용하여 애플리케이션을 관리할 수 있습니다.</block>
+  <block id="c1f777b14f22e813997f5b2a0fdcf2b1" category="paragraph">MySQL은 Astra Control용으로 검증된 앱입니다.</block>
+  <block id="2f4f94cc5a0950a910a46c35cf923e05" category="section-title">MySQL을 설치합니다</block>
+  <block id="e13d9dd518c3f3a9ada2a60d9d1c6beb" category="list-text">기본값 이외의 네임스페이스에 제어 차트를 배포하는 것이 좋습니다.</block>
+  <block id="3d6981732463d68a06db716d371fdfa9" category="list-text">다음 명령을 사용하여 MySQL 배포:</block>
+  <block id="970aeac42c94256cd1b3fff9b82095eb" category="list-text">네임스페이스에서 MySQL을 배포합니다.</block>
+  <block id="e6da9fbe947bc16784aef00d8b644cf5" category="paragraph">Pod가 온라인 상태가 되면 Astra Control을 사용하여 앱을 관리할 수 있습니다. Astra Control을 사용하면 이름, 네임스페이스 수준 또는 helm 레이블을 사용하여 앱을 관리할 수 있습니다.</block>
+  <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">피처</block>
+  <block id="c66fd3d61ca9e5331b05a6bd70d4a1df" category="paragraph">Astra Control은 Kubernetes 애플리케이션 데이터 라이프사이클 관리에 중요한 기능을 제공합니다.</block>
+  <block id="842f680f400de3b6ee92728ef695d366" category="list-text">영구 스토리지를 자동으로 관리합니다</block>
+  <block id="0a5245490d6d6f511bbdb3db35acfe54" category="list-text">애플리케이션 인식 필요 시 스냅샷과 백업을 생성합니다</block>
+  <block id="f107a6e34d3d0df36d460bc5b3a5fe8b" category="list-text">정책 기반 스냅샷 및 백업 작업 자동화</block>
+  <block id="ae3099cc177fc161f80c6965fe89a71a" category="list-text">Kubernetes 클러스터 간에 애플리케이션 및 데이터를 마이그레이션합니다</block>
+  <block id="053d6e036cc8c9d7a8c57234d6bfc574" category="list-text">운영 환경에서 스테이징으로 애플리케이션을 손쉽게 클론 복제할 수 있습니다</block>
+  <block id="1c26e7db082840fcbfcd87527c92e1aa" category="list-text">애플리케이션 상태 및 보호 상태를 시각화합니다</block>
+  <block id="3e09a55ad40337db37927865855151a9" category="list-text">사용자 인터페이스 또는 API를 사용하여 백업 및 마이그레이션 워크플로우를 구현합니다</block>
+  <block id="894b9b2b2a66efc8393eed6013d32a66" category="paragraph">Astra Control은 컴퓨터의 상태 변화를 지속적으로 감시하기 때문에 새로 추가한 앱을 인식합니다.</block>
+  <block id="6762973af9b127d271f0d2b2aea0bc96" category="section-title">구축 모델</block>
+  <block id="db1905d057dd6fde6f8b7bd6afe60e41" category="paragraph">Astra Control은 두 가지 배포 모델로 제공됩니다.</block>
+  <block id="5ac9f21bb5ada8cf5c614ea23fce4131" category="list-text">* Astra Control Service *: GKE(Google Kubernetes Engine) 및 AKS(Azure Kubernetes Service)에서 Kubernetes 클러스터의 애플리케이션 인식 데이터 관리를 제공하는 NetApp 관리 서비스입니다.</block>
+  <block id="ddbf9f0ee6e908772df862b9cb9312d3" category="list-text">* Astra Control Center *: 사내 환경에서 실행되는 Kubernetes 클러스터의 애플리케이션 인식 데이터 관리를 제공하는 자체 관리 소프트웨어입니다.</block>
+  <block id="72fa0b165b80dd423c3cca71e56e6e85" category="cell">어떻게 제공됩니까?</block>
+  <block id="f7b1d494056b7a9289f329a721d9f318" category="cell">NetApp에서 제공하는 완전 관리형 클라우드 서비스</block>
+  <block id="aff53210beade5ba79414ae13eb6b73d" category="paragraph">소프트웨어를 다운로드, 설치 및 관리할 수 있습니다</block>
+  <block id="7cae1429bdc4131db46365e8fc893a77" category="cell">어디에 호스팅됩니까?</block>
+  <block id="7ab48d8d90e46b91aa73c1832b7681f9" category="cell">NetApp에서 제공하는 다양한 퍼블릭 클라우드 지원</block>
+  <block id="6cc0042ffe94d2cdea2bf7b80705f4ef" category="paragraph">에 제공한 Kubernetes 클러스터</block>
+  <block id="a564f860d9dd9df279c4ea80b08d026a" category="cell">어떻게 업데이트됩니까?</block>
+  <block id="b2929741e98ca2c366d8d7dfda36e2b9" category="cell">NetApp에서 관리합니다</block>
+  <block id="091f846d60c1037c90ba7580f37ef9fa" category="paragraph">모든 업데이트를 관리합니다</block>
+  <block id="cef5c6ab0b7d20ab7cd426689afb9fa5" category="cell">애플리케이션 데이터 관리 기능은 무엇입니까?</block>
+  <block id="1598aaab2cb9865732925d064c6978c2" category="cell">스토리지 백엔드 또는 외부 서비스를 제외한 두 플랫폼에서 동일한 기능을 사용할 수 있습니다</block>
+  <block id="c1d5f7fc5daa2ea9189ee2df5ca15da2" category="cell">스토리지 백엔드 지원이란 무엇입니까?</block>
+  <block id="d1c86529e5adfef0855455a2e0bd54bd" category="cell">NetApp 클라우드 서비스 오퍼링</block>
+  <block id="d6fc0eb1930e7e56affc953c237c5514" category="list-text">NetApp ONTAP AFF 및 FAS 시스템</block>
+  <block id="b5f2cd553d6a44d90b26f50dcb979f46" category="list-text">스토리지 백엔드로 Astra Data Store를 사용합니다</block>
+  <block id="4d9496325ef678735e8ac8b99b7a562b" category="section-title">지원되는 앱</block>
+  <block id="9ceaa15e10dc0e56e79bbb4822552022" category="paragraph">NetApp은 스냅샷 및 백업의 안전성과 일관성을 보장하기 위해 일부 앱을 검증했습니다.</block>
+  <block id="3cf57593346f365ce163d769c70a8cab" category="paragraph">Astra Control과 함께 사용하는 애플리케이션 유형에 관계없이 재해 복구 요구 사항을 충족할 수 있도록 항상 백업 및 복원 워크플로우를 직접 테스트해야 합니다.</block>
+  <block id="5f4b9e6660ba4e73dc9c6aa214e60cde" category="section-title">Astra Control Service의 작동 방식</block>
+  <block id="972dbc054c14df6a8a668ad2c71b9afa" category="paragraph">Astra Control Service는 NetApp에서 관리하는 클라우드 서비스로, 항상 최신 기능을 사용하여 업데이트 가능합니다. 이 솔루션은 여러 구성 요소를 활용하여 애플리케이션 데이터 수명 주기 관리를 지원합니다.</block>
+  <block id="29346571353a36c4c8e378195149db77" category="paragraph">높은 수준에서 Astra Control Service는 다음과 같이 작동합니다.</block>
+  <block id="5e44a260fc47d95ab78eb0e97efe4e7d" category="list-text">클라우드 공급자를 설정하고 Astra 계정에 등록하여 Astra Control Service를 시작할 수 있습니다.</block>
+  <block id="a3b5183ae6f5c3f1d6644448f795b5cb" category="inline-link">Google Cloud용 NetApp Cloud Volumes Service</block>
+  <block id="052766753c4902f7b4dda44f55923c85" category="list-text">GKE 클러스터의 경우 Astra Control Service가 사용합니다<block ref="33441d63a8e7ace6860eab2024320819" category="inline-link-rx"></block> 또는 Google 영구 디스크를 영구 볼륨의 스토리지 백엔드로 사용합니다.</block>
+  <block id="e6b1925e4e775a70bcb5b95deee417b9" category="list-text">AKS 클러스터의 경우 Astra Control Service가 사용합니다<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> 또는 Azure Disk Storage를 영구 볼륨의 스토리지 백엔드로 사용합니다.</block>
+  <block id="1ae8e0ca715d9854cf1c69ead32e4931" category="list-text">첫 번째 Kubernetes 컴퓨팅을 Astra Control Service에 추가합니다. 그러면 Astra Control Service에서 다음을 수행합니다.</block>
+  <block id="e99f973393b40d224e0166ec9b211177" category="list-text">클라우드 공급자 계정에 백업 복사본이 저장되는 개체 저장소를 만듭니다.</block>
+  <block id="2fe87449d125b0daf20d2fc8de53081e" category="paragraph">Azure에서 Astra Control Service는 Blob 컨테이너용 리소스 그룹, 스토리지 계정 및 키도 생성합니다.</block>
+  <block id="c2fd5ecb26eed8762bfa518199e6199f" category="list-text">클러스터에 새 관리 역할 및 Kubernetes 서비스 계정을 생성합니다.</block>
+  <block id="086e6c16e3fe8e13c336612ef636aa02" category="inline-link">아스트라 트리덴트</block>
+  <block id="51fbabc51080a419e6a5019a1c169ab4" category="list-text">에서는 새 관리자 역할을 사용하여 를 설치합니다<block ref="0ff0cd427dac64ddc62afadc9a52e9d0" category="inline-link-rx"></block> 를 클릭하여 하나 이상의 스토리지 클래스를 생성합니다.</block>
+  <block id="53a30ad173bc821551d7bc21cfd2f4c8" category="list-text">Azure NetApp Files 또는 NetApp Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하는 경우, Astra Control Service는 Astra Trident를 사용하여 앱에 영구 볼륨을 프로비저닝합니다.</block>
+  <block id="a853ecb1e1044a3ae5762294407c0fda" category="list-text">이제 앱을 클러스터에 추가할 수 있습니다. 영구 볼륨은 새로운 기본 스토리지 클래스에 프로비저닝됩니다.</block>
+  <block id="67d2a2db6f77778acc532b68658f63cc" category="list-text">그런 다음 Astra Control Service를 사용하여 이러한 애플리케이션을 관리하고 스냅샷, 백업 및 클론 생성을 시작합니다.</block>
+  <block id="a7eb0ba32f9706a479c6037bea16e1ca" category="paragraph">Astra Control Service는 상태 변화를 위해 컴퓨팅 작업을 지속적으로 감시하기 때문에 새로 추가한 앱을 인식합니다.</block>
+  <block id="b714fdd25acef8e71be758de7ff02f0b" category="section-title">Astra Control Center의 작동 방식</block>
+  <block id="90d397f2aa31c2e6d9f5dfda5d12adca" category="paragraph">Astra Control Center는 프라이빗 클라우드에서 로컬로 실행됩니다.</block>
+  <block id="ddc2777e7e3988524f6957cc7bc12179" category="paragraph">Astra Control Center는 다음과 같은 기능을 갖춘 OpenShift Kubernetes 클러스터를 지원합니다.</block>
+  <block id="c3314925ef2c97256c3237a450d6f4f5" category="list-text">ONTAP 9.5 이상의 Trident 스토리지 백엔드</block>
+  <block id="5b4b1a973a4751fbfc2fda3bd9bac412" category="list-text">Astra Data Store 스토리지 백엔드</block>
+  <block id="51269e2584d26b04961877ec77db6da7" category="paragraph">클라우드 연결 환경에서 Astra Control Center는 Cloud Insights를 사용하여 고급 모니터링 및 원격 측정 기능을 제공합니다. Cloud Insights 연결이 없을 경우 Astra Control Center에서 제한된(7일 메트릭) 모니터링 및 원격 측정 기능을 사용할 수 있으며, 개방형 메트릭 엔드 포인트를 통해 Kubernetes 기본 모니터링 툴(예: Prometheus 및 Grafana)으로 내보낼 수 있습니다.</block>
+  <block id="1bc8163319d46bff9915aa0226885a42" category="paragraph">Astra Control Center는 AutoSupport 및 Active IQ 에코시스템에 완전히 통합되어 사용자와 NetApp 지원 팀에 문제 해결 및 사용 정보를 제공합니다.</block>
+  <block id="26849905a5aa23f71bc18ee28e352604" category="paragraph">90일 평가판 라이센스를 사용하여 Astra Control Center를 사용해 볼 수 있습니다. 평가 버전은 이메일 및 커뮤니티(Slack 채널) 옵션을 통해 지원됩니다. 또한 제품 내 지원 대시보드에서 Knowledgebase 문서 및 문서에 액세스할 수 있습니다.</block>
+  <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-link">요구 사항</block>
+  <block id="e63cc3795b9216d59b085bd3111a248d" category="paragraph">Astra Control Center를 설치하고 사용하려면 반드시 충족해야 합니다<block ref="bdde32b2c988689d803729c06660acb4" category="inline-link-rx"></block>.</block>
+  <block id="6319f881d45c326a5f6222a746f50981" category="paragraph">Astra Control Center는 다음과 같이 높은 수준에서 작동합니다.</block>
+  <block id="2cb07ff1146f3d6896d00ffdcea250ef" category="inline-link">Astra Control Center를 설치합니다</block>
+  <block id="0d08719ec11c87fa13ed3f09c281e77a" category="list-text">현지 환경에 Astra Control Center를 설치합니다. 에 대해 자세히 알아보십시오<block ref="a402644a33a8b2cb75883dcdaa5bea8c" category="inline-link-rx"></block>.</block>
+  <block id="700b690f37b8bd2c5567e27f33a6ebc3" category="list-text">다음과 같은 몇 가지 설정 작업을 완료합니다.</block>
+  <block id="7201cacbec2885cd7fb3b75613cca8c9" category="list-text">라이센스를 설정합니다.</block>
+  <block id="eb5c57b6e151d53821e4b23967e81377" category="list-text">첫 번째 클러스터를 추가합니다.</block>
+  <block id="6adefb23833ae29ed830d55a8a9ae713" category="list-text">클러스터를 추가할 때 검색된 스토리지 백엔드를 추가합니다.</block>
+  <block id="71aa2846410bae740856b6176a203f5f" category="list-text">앱 백업을 저장할 오브젝트 저장소 버킷을 추가합니다.</block>
+  <block id="41d8c63c7f85077d4a2d906119683f17" category="inline-link">Astra Control Center를 설정합니다</block>
+  <block id="8797309fdabab1846a95a0aa2a7562ca" category="paragraph">에 대해 자세히 알아보십시오<block ref="76291acbbbed703f1210502e4bd01c93" category="inline-link-rx"></block>.</block>
+  <block id="656961e00441efa04ed529308b30c882" category="paragraph">Astra Control Center는 다음과 같은 작업을 수행합니다.</block>
+  <block id="2d5c8076b3d85d3578def0c82397a6ae" category="list-text">관리되는 Kubernetes 클러스터에 대한 세부 정보를 검색합니다.</block>
+  <block id="21851175980d7652914dca11867c1656" category="list-text">관리하려는 클러스터에서 Astra Trident 또는 Astra Data Store 구성을 검색하고 스토리지 백엔드를 모니터링할 수 있습니다.</block>
+  <block id="ddea1bc3a5a7c042e2e20073bf2da7ef" category="list-text">클러스터에서 앱을 검색하고 이를 통해 앱을 관리 및 보호할 수 있습니다.</block>
+  <block id="9a55692aae5c5e67eb30bd651d29bc66" category="paragraph">앱을 클러스터에 추가할 수 있습니다. 클러스터에 이미 관리 중인 앱이 있는 경우 Astra Control Center를 사용하여 앱을 검색하고 관리할 수 있습니다. 그런 다음 Astra Control Center를 사용하여 스냅샷, 백업 및 클론을 생성합니다.</block>
+  <block id="6762180adf48075df77efbf264e982ec" category="list-text"><block ref="6762180adf48075df77efbf264e982ec" category="inline-link-rx"></block></block>
+  <block id="3a4b2c66d4bdac6ce0e3340c71a39eda" category="inline-link">Astra Control Center 문서</block>
+  <block id="ea643bf7aaf130341a17f697a7009368" category="list-text"><block ref="ea643bf7aaf130341a17f697a7009368" category="inline-link-rx"></block></block>
+  <block id="be1c3d3113c4023e29e8dd947523c711" category="inline-link">Astra Data Store 문서</block>
+  <block id="050916fdc75ec9ba557049b316bbfa98" category="list-text"><block ref="050916fdc75ec9ba557049b316bbfa98" category="inline-link-rx"></block></block>
+  <block id="14d9b10c6196045941347a9e85704b50" category="inline-link">Astra Trident 문서</block>
+  <block id="4a2ab62188738135163aaaaeab1d6cfe" category="list-text"><block ref="4a2ab62188738135163aaaaeab1d6cfe" category="inline-link-rx"></block></block>
+  <block id="d418042930eb178009f4c27360b349f6" category="inline-link">Astra Control API를 사용합니다</block>
+  <block id="35e127abdc4e59a01dd3fd4f63603bf1" category="list-text"><block ref="35e127abdc4e59a01dd3fd4f63603bf1" category="inline-link-rx"></block></block>
+  <block id="5858ee4031acd7b896faa2d3d2c1a299" category="inline-link">Cloud Insights 설명서</block>
+  <block id="2b93b48daf034e4100d00b85950e109d" category="list-text"><block ref="2b93b48daf034e4100d00b85950e109d" category="inline-link-rx"></block></block>
+  <block id="eb75aeb3b4b2b9734ba3e52f5483f0b2" category="inline-link">ONTAP 설명서</block>
+  <block id="8217522f2b9eea86f1099a2aba54aebd" category="list-text"><block ref="8217522f2b9eea86f1099a2aba54aebd" category="inline-link-rx"></block></block>
+  <block id="60f694f21643599c137f6c610e48124e" category="paragraph">이 슬라이드에는 Astra Control 환경의 다양한 구성 요소에 대한 개요가 나와 있습니다.</block>
+  <block id="2325c645f4d2112a8e96b127fbad7bf2" category="inline-image-macro">Astra Control 아키텍처 다이어그램 및 구성 요소</block>
+  <block id="28f3b0cd697bf5f33c7eab89e20baff4" category="paragraph"><block ref="28f3b0cd697bf5f33c7eab89e20baff4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="51d249216b03414f10b242b851af7951" category="section-title">Astra Control 구성 요소</block>
+  <block id="a8d77bbb11d2e1a349811767d194e9ba" category="list-text">* Kubernetes 클러스터 *: Kubernetes는 컨테이너식 워크로드 및 서비스를 관리할 수 있는 확장 가능한 휴대용 오픈 소스 플랫폼으로, 선언적 구성과 자동화를 모두 지원합니다. Astra는 Kubernetes 클러스터에서 호스팅되는 애플리케이션에 관리 서비스를 제공합니다.</block>
+  <block id="b11f09eb1179914138fa8f5a15ba016a" category="list-text">* Astra Trident *: NetApp에서 관리하며 완벽한 지원을 제공하는 오픈 소스 스토리지 공급자 및 오케스트레이터로서, Trident는 Docker 및 Kubernetes에서 관리하는 컨테이너식 애플리케이션용 스토리지 볼륨을 생성할 수 있도록 지원합니다. Astra Control Center와 함께 구축한 경우, Trident는 구성된 ONTAP 스토리지 백엔드를 포함하며 Astra 데이터 저장소를 스토리지 백엔드로 지원합니다.</block>
+  <block id="951fe18cc6e59e05fca3c0ca7de399fa" category="list-text">* 스토리지 백엔드 *:</block>
+  <block id="e64a7ac3db2aba4dd93ec2430e457fd3" category="list-text">Astra Control Service가 사용합니다<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block> GKE 클러스터 및 용 스토리지 백엔드로 사용됩니다<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block> AKS 클러스터의 스토리지 백엔드로 사용됩니다.</block>
+  <block id="dd069ab6d74011bb108bf219e092a2d0" category="list-text">Astra Control Center는 다음과 같은 스토리지 백엔드를 사용합니다.</block>
+  <block id="69a0ead95fc9c4c42592c123ebbf437a" category="list-text">Astra Data Store 스토리지 백엔드</block>
+  <block id="fc8adf6067b9e369fbebc9abf2891bce" category="list-text">ONTAP AFF 및 FAS 스토리지 백엔드 스토리지 소프트웨어 및 하드웨어 플랫폼인 ONTAP는 핵심 스토리지 서비스, 다중 스토리지 액세스 프로토콜 지원 및 스냅샷, 미러링과 같은 스토리지 관리 기능을 제공합니다.</block>
+  <block id="415ba7b6a21fb373d9c5b72207313c1c" category="list-text">* Cloud Insights *: NetApp 클라우드 인프라 모니터링 툴인 Cloud Insights를 사용하면 Astra Control Center에서 관리하는 Kubernetes 클러스터의 성능과 활용률을 모니터링할 수 있습니다. Cloud Insights는 스토리지 사용량과 워크로드를 상호 연관시킵니다. Astra Control Center에서 Cloud Insights 연결을 활성화하면 Astra Control Center UI 페이지에 원격 측정 정보가 표시됩니다.</block>
+  <block id="de0c45e94d4b178203631d55e65d1b62" category="section-title">Astra Control 인터페이스</block>
+  <block id="d015aca78df45458ee1d6533c5246919" category="paragraph">다른 인터페이스를 사용하여 작업을 완료할 수 있습니다.</block>
+  <block id="085434e07821849d9d71c59516ad591f" category="list-text">* 웹 UI(사용자 인터페이스) *: Astra Control Service와 Astra Control Center는 동일한 웹 기반 UI를 사용하여 앱을 관리, 마이그레이션 및 보호할 수 있습니다. UI를 사용하여 사용자 계정 및 구성 설정을 관리할 수도 있습니다.</block>
+  <block id="2a531f6e1eec4782b314fc38a518cc75" category="list-text">* API *: Astra Control Service와 Astra Control Center는 동일한 Astra Control API를 사용합니다. API를 사용하면 UI를 사용할 때와 동일한 작업을 수행할 수 있습니다.</block>
+  <block id="ff66234381e2d5213adaf96c742cb4c3" category="paragraph">또한 Astra Control Center를 사용하면 VM 환경 내에서 실행 중인 Kubernetes 클러스터를 관리, 마이그레이션 및 보호할 수 있습니다.</block>
+  <block id="b23ef96d36d87073557480c2b234ea32" category="paragraph">Astra Control에는 검증 및 표준의 두 가지 유형의 애플리케이션이 있습니다. 이러한 두 가지 범주 간의 차이점과 프로젝트와 전략에 미칠 수 있는 영향에 대해 알아보십시오.</block>
+  <block id="7d1cb03e94822990df4c59766603b06b" category="admonition">이 두 가지 범주를 "지원" 및 "지원되지 않음"으로 생각하는 것이 좋습니다. 하지만 아스트라 콘트롤(Astra Control)에는 "지원되지 않는" 앱이 없습니다. Astra Control에 앱을 추가할 수 있습니다. 검증된 애플리케이션은 표준 앱에 비해 Astra Control 워크플로우를 기반으로 구축된 인프라가 더 많습니다.</block>
+  <block id="7da45bffbc2b7dd4a3e9d6bb1f5ba42d" category="section-title">검증된 애플리케이션</block>
+  <block id="7388dc32b164c94f50f4e5903d312739" category="paragraph">Astra Control의 검증된 애플리케이션은 다음과 같습니다.</block>
+  <block id="1ece605cd00d41af8dc443d1a7e8d483" category="list-text">MySQL 8.0.25</block>
+  <block id="164ca3dca5bbc5500a7d687a15378bb4" category="list-text">MariaDB 10.5.9</block>
+  <block id="a1e062afcc92ec9a592109b13abed79a" category="list-text">PostgreSQL 11.12</block>
+  <block id="c75f933b1227ccfe48df09502acc21bd" category="list-text">Jenkins 2.277.4 LTS 및 2.289.1 LTS</block>
+  <block id="95025d64d10cc1c6787a3df2af9e9eef" category="paragraph">검증된 애플리케이션 목록은 Astra Control이 인식하는 애플리케이션을 나타냅니다. Astra Control 팀은 이러한 앱을 분석하고 복구 테스트를 완전히 마친 것으로 확인했습니다. Astra Control은 사용자 지정 워크플로우를 실행하여 스냅샷 및 백업의 애플리케이션 레벨 일관성을 보장합니다.</block>
+  <block id="1f96702afd4bb2de6463ea14308cd9f4" category="paragraph">애플리케이션이 검증된 경우 Astra Control 팀은 애플리케이션 정합성 보장 스냅샷을 얻기 위해 스냅샷을 생성하기 전에 앱을 정지하기 위해 수행할 수 있는 단계를 파악하고 구현했습니다. 예를 들어, Astra Control에서 PostgreSQL 데이터베이스의 백업을 수행할 때 먼저 데이터베이스를 중지하게 됩니다. 백업이 완료되면 Astra Control이 데이터베이스를 정상 작업으로 복구합니다.</block>
+  <block id="1ab0ccfcd696f5ac57b9af7b716b47fa" category="paragraph">Astra Control과 함께 사용하는 애플리케이션 유형에 관계없이 재해 복구 요구 사항을 충족할 수 있도록 항상 백업 및 복원 워크플로우를 직접 테스트하십시오.</block>
+  <block id="a24eb896919448322db917136ec9653f" category="section-title">Standard 앱</block>
+  <block id="a95be331354598988e2841a20e47eeb5" category="paragraph">사용자 지정 프로그램을 비롯한 다른 앱은 표준 앱으로 간주됩니다. Astra Control을 통해 표준 앱을 추가하고 관리할 수 있습니다. 또한 표준 앱의 기본, 충돌 시에도 정합성이 보장되는 스냅샷 및 백업을 생성할 수 있습니다. 그러나 앱을 원래 상태로 복원하기 위해 완전히 테스트되지 않았습니다.</block>
+  <block id="12aba2d981754a861db01ab18a83ffc0" category="admonition">Astra Control 자체는 표준 앱이 아니며 "시스템 앱"입니다. 관리 시 Astra Control 자체는 기본적으로 표시되지 않습니다. Astra Control 자체를 관리하려고 해서는 안 됩니다.</block>
+  <block id="6016a2b341113bf496b719905398ecd2" category="section-title">저작권</block>
+  <block id="09e95b77ffe81fe465a83ba99efad5c8" category="paragraph"><block ref="09e95b77ffe81fe465a83ba99efad5c8" category="inline-link-rx"></block></block>
+  <block id="126a02652da6de02962cf1b654fd6376" category="section-title">상표</block>
+  <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp, NetApp 로고, NetApp 상표 페이지에 나열된 마크는 NetApp Inc.의 상표입니다. 기타 회사 및 제품 이름은 해당 소유자의 상표일 수 있습니다.</block>
+  <block id="7aa531e9acfe2b98e34d2c92fe9846ff" category="paragraph"><block ref="7aa531e9acfe2b98e34d2c92fe9846ff" category="inline-link-rx"></block></block>
+  <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">특허</block>
+  <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">NetApp 소유 특허 목록은 다음 사이트에서 확인할 수 있습니다.</block>
+  <block id="d7f1fbcf9ce4e42f705add574d262b2c" category="paragraph"><block ref="d7f1fbcf9ce4e42f705add574d262b2c" category="inline-link-rx"></block></block>
+  <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">개인 정보 보호 정책</block>
+  <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
+  <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">오픈 소스</block>
+  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">통지 파일은 NetApp 소프트웨어에 사용된 타사의 저작권 및 라이센스에 대한 정보를 제공합니다.</block>
 </blocks>

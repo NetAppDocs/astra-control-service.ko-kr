@@ -6,6 +6,7 @@ summary: 'Astra Control Service는 GKE(Google Kubernetes Engine) 및 AKS(Azure K
 ---
 = 지원되는 Kubernetes 구축
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 

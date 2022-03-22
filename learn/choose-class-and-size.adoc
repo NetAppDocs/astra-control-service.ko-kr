@@ -6,6 +6,7 @@ summary: Astra Control Service는 Cloud Volumes Service for Google Cloud를 영�
 ---
 = 서비스 유형, 스토리지 클래스 및 GKE 클러스터의 PV 크기입니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/learn/
 

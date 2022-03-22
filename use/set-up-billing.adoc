@@ -6,6 +6,7 @@ summary: Astra Control의 무료 플랜을 사용하면 최대 10개의 앱을 �
 ---
 = 대금 청구를 설정합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 
@@ -26,7 +27,7 @@ Astra Control Service는 다음과 같은 세 가지 계획을 제공합니다.
 
 무료 플랜:: 최대 10개의 앱을 무료로 관리할 수 있습니다.
 프리미엄 페이고:: 앱당 분당 $.005의 속도로 앱을 무제한으로 관리할 수 있습니다.
-프리미엄 구독::
+프리미엄 구독:: 연 단위 가입으로 할인된 요금으로 선결제하면 _application pack_당 최대 10개의 앱을 관리할 수 있습니다. NetApp 세일즈 팀에 문의하여 조직에 필요한 만큼 팩을 구매하십시오. 예를 들어, Astra Control Service에서 30개의 앱을 관리하려면 3팩 을 구입하십시오. 연간 구독에서 허용하는 것보다 더 많은 앱을 관리하는 경우 응용 프로그램당 분당 $0.005의 초과 요금(Premium PayGo와 동일)으로 청구됩니다.
 +
 --
 아직 Astra Control 계정이 없는 경우 Premium Subscription을 구매하면 자동으로 Astra Control 계정이 생성됩니다. 기존 무료 플랜이 있는 경우 프리미엄 구독으로 자동 변환됩니다.

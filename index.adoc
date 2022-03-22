@@ -7,6 +7,7 @@ summary: 'Astra Control Service는 GKE(Google Kubernetes Engine) 및 AKS(Azure K
 ---
 = Astra Control Service 문서
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
