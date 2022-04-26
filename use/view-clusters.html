@@ -292,11 +292,11 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/astra-control-service/use/view-clusters.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/astra-control-service/use/view-clusters.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/astra-control-service/use/view-clusters.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/astra-control-service/use/view-clusters.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/view-clusters.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
@@ -612,6 +612,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -649,6 +651,8 @@
             개념
           </a>
           
+
+
 
 
 
@@ -849,6 +853,8 @@
         대금 청구를 설정합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/astra-control-service/use/manage-users.html">
         사용자를 초대하고 관리합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/astra-control-service/use/manage-roles.html">
+        역할을 관리합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/astra-control-service/use/manage-credentials.html">
         클라우드 공급자 자격 증명을 관리합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/astra-control-service/use/monitor-account-activity.html">
@@ -874,6 +880,8 @@
         검증된 애플리케이션 vs 표준 애플리케이션
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/astra-control-service/learn/define-custom-app.html">
         사용자 지정 앱 정의
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/astra-control-service/learn/user-roles-namespaces.html">
+        사용자 역할 및 네임스페이스
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 애플리케이션 구축</div>
       </a>
@@ -961,7 +969,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 06:59:26 +0000">04/13/2022</time>
+    <time datetime="2022-04-26 16:30:24 +0000">04/26/2022</time>
     
   
 
@@ -975,31 +983,52 @@
 <div class="title">단계</div>
 <ol class="arabic">
 <li>
-<p>클러스터 * 를 선택합니다.</p>
+<p>Astra Control Service UI에서 * Clusters * 를 선택합니다.</p>
 </li>
 <li>
-<p>클러스터 이름을 선택합니다.</p>
+<p>클러스터 * 페이지에서 세부 정보를 확인할 클러스터를 선택합니다.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="참고">
+</td>
+<td class="content">
+클러스터가 "이동된" 상태에 있지만 클러스터 및 네트워크 연결이 양호한 것으로 나타나는 경우(Kubernetes API를 사용하여 클러스터에 액세스하려는 외부 시도가 성공한 경우), Astra Control에 제공한 kubeconfig는 더 이상 유효하지 않을 수 있습니다. 클러스터의 인증서 순환 또는 만료 때문일 수 있습니다. 이 문제를 해결하려면 을 사용하여 Astra Control의 클러스터와 연결된 자격 증명을 업데이트하십시오 <a href="https://docs.netapp.com/us-en/astra-automation/index.html">"Astra Control API를 참조하십시오"</a>.
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
-<p>Overview * 및 * Storage * 탭에서 원하는 정보를 찾아보십시오.</p>
+<p>Overview *, * Storage * 및 * Activity * 탭에서 원하는 정보를 확인할 수 있습니다.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>* 개요 *: 해당 상태를 포함한 작업자 노드에 대한 세부 정보.</p>
 </li>
 <li>
-<p>* 스토리지 *: 스토리지 클래스 및 상태를 포함하여 클러스터와 연결된 영구 볼륨입니다.</p>
+<p>* 스토리지 *: 스토리지 클래스 및 상태를 비롯하여 컴퓨팅과 연관된 영구 볼륨입니다.</p>
 </li>
 <li>
-<p>* 활동 *: 클러스터와 관련된 Astra 활동.</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-cluster-overview.gif" alt="클러스터에 대한 개요 탭의 스크린샷"></span></p>
-</div>
+<p>* 활동 *: 클러스터와 관련된 활동</p>
 </li>
 </ul>
 </div>
 </li>
 </ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="참고">
+</td>
+<td class="content">
+Astra Control Service * Dashboard * 부터 클러스터 정보를 볼 수도 있습니다. 리소스 요약 * 의 * 클러스터 * 탭에서 * 클러스터 * 페이지로 이동하는 관리 클러스터를 선택할 수 있습니다. 클러스터 * 페이지로 이동한 후 위에 설명된 단계를 따릅니다.
+</td>
+</tr>
+</table>
 </div>
 
     </article>

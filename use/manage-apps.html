@@ -292,11 +292,11 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/astra-control-service/use/manage-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/astra-control-service/use/manage-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/astra-control-service/use/manage-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/astra-control-service/use/manage-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
@@ -612,6 +612,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -649,6 +651,8 @@
             개념
           </a>
           
+
+
 
 
 
@@ -849,6 +853,8 @@
         대금 청구를 설정합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/astra-control-service/use/manage-users.html">
         사용자를 초대하고 관리합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/astra-control-service/use/manage-roles.html">
+        역할을 관리합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/astra-control-service/use/manage-credentials.html">
         클라우드 공급자 자격 증명을 관리합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/astra-control-service/use/monitor-account-activity.html">
@@ -874,6 +880,8 @@
         검증된 애플리케이션 vs 표준 애플리케이션
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/astra-control-service/learn/define-custom-app.html">
         사용자 지정 앱 정의
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/astra-control-service/learn/user-roles-namespaces.html">
+        사용자 역할 및 네임스페이스
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 애플리케이션 구축</div>
       </a>
@@ -961,7 +969,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 06:59:26 +0000">04/13/2022</time>
+    <time datetime="2022-04-26 16:30:24 +0000">04/26/2022</time>
     
   
 
@@ -994,76 +1002,63 @@
 </li>
 <li>
 <p>* Kubernetes 리소스 *: Astra Control에서 수집하지 않은 Kubernetes 리소스를 사용하는 앱에는 전체 앱 데이터 관리 기능이 없을 수 있습니다. Astra Control은 다음과 같은 Kubernetes 리소스를 수집합니다.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>클러스터 역할</p>
-</li>
-<li>
-<p>ClusterRoleBinding 을 참조하십시오</p>
-</li>
-<li>
-<p>ConfigMap을 클릭합니다</p>
-</li>
-<li>
-<p>사용자 지정 리소스 정의</p>
-</li>
-<li>
-<p>CustomResource 를 선택합니다</p>
-</li>
-<li>
-<p>DemonSet</p>
-</li>
-<li>
-<p>구축</p>
-</li>
-<li>
-<p>DeploymentConfig(배포 구성</p>
-</li>
-<li>
-<p>침투</p>
-</li>
-<li>
-<p>뮤atingWebhook</p>
-</li>
-<li>
-<p>PersistentVolumeClaim</p>
-</li>
-<li>
-<p>포드</p>
-</li>
-<li>
-<p>ReplicaSet입니다</p>
-</li>
-<li>
-<p>RoleBinding 을 클릭합니다</p>
-</li>
-<li>
-<p>역할</p>
-</li>
-<li>
-<p>루트</p>
-</li>
-<li>
-<p>비밀</p>
-</li>
-<li>
-<p>서비스</p>
-</li>
-<li>
-<p>서비스 계정</p>
-</li>
-<li>
-<p>StatefulSet 을 선택합니다</p>
-</li>
-<li>
-<p>Webhook을 확인합니다</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">클러스터 역할</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ClusterRoleBinding 을 참조하십시오</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ConfigMap을 클릭합니다</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">사용자 지정 리소스 정의</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CustomResource 를 선택합니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">경작업</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DemonSet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HorizontalPodAutoscaler</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">침투</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeploymentConfig(배포 구성</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">뮤atingWebhook</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PersistentVolumeClaim</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">포드</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">팟캐스트 예산</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">팟캐스트 템플릿</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">네트워크 정책</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ReplicaSet입니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">역할</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RoleBinding 을 클릭합니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">루트</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">비밀</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">서비스</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">서비스 계정</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">StatefulSet 을 선택합니다</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Webhook을 확인합니다</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 <div class="sect2">
 <h3 id="지원되는-앱-설치-방법">지원되는 앱 설치 방법</h3>
 <div class="paragraph">
@@ -1088,6 +1083,18 @@
 <ul>
 <li>
 <p><a href="https://github.com/k8ssandra/cass-operator/tree/v1.7.1" target="_blank" rel="noopener">"아파치 K8ssandra"</a></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="참고">
+</td>
+<td class="content">
+k8ssandra 의 경우 현재 위치 복원 작업이 지원됩니다. 새 네임스페이스 또는 클러스터에 대한 복원 작업을 수행하려면 응용 프로그램의 원래 인스턴스를 중단해야 합니다. 이는 이월된 피어 그룹 정보가 인스턴스 간 통신으로 이어지지 않도록 하기 위한 것입니다. 앱 복제는 지원되지 않습니다.
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p><a href="https://github.com/jenkinsci/kubernetes-operator" target="_blank" rel="noopener">"젠킨스 CI"</a></p>
@@ -1205,20 +1212,11 @@
 <ol class="arabic">
 <li>
 <p>응용 프로그램 * 을 선택한 다음 * 검색됨 * 을 선택합니다.</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-app-discovery.gif" alt="검색된 탭을 보여 주는 앱 페이지의 스크린샷"></span></p>
-</div>
 </li>
 <li>
 <p>검색된 네임스페이스 목록을 보고 네임스페이스를 확장하여 앱 및 관련 리소스를 봅니다.</p>
 <div class="paragraph">
 <p>Astra Control은 Helm 앱 및 사용자 지정 레이블 앱을 네임스페이스에서 보여 줍니다. H제어 레이블을 사용할 수 있는 경우 태그 아이콘으로 지정됩니다.</p>
-</div>
-<div class="paragraph">
-<p>다음은 네임스페이스에서 두 개의 앱을 사용하는 예입니다.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-group.gif" alt="네임스페이스가 확장되어 해당 네임스페이스에서 두 개의 앱을 표시하는 앱 페이지의 스크린샷"></span></p>
 </div>
 </li>
 <li>
@@ -1226,17 +1224,11 @@
 </li>
 <li>
 <p>계층 구조의 원하는 레벨에서 * Actions * 열의 드롭다운 목록을 선택하고 * Manage * 를 선택합니다.</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-app-manage.gif" alt="네임스페이스 또는 앱을 관리하거나 무시하도록 선택할 수 있는 앱 페이지의 확장된 드롭다운 목록 스크린샷"></span></p>
-</div>
 </li>
 <li>
 <p>앱을 관리하지 않으려면 원하는 앱의 * Actions * 열에서 드롭다운 목록을 선택하고 * Ignore * 를 선택합니다.</p>
 <div class="paragraph">
 <p>예를 들어, "Jenkins" 네임스페이스의 모든 앱을 함께 관리하여 동일한 스냅샷 및 백업 정책을 가지려면 네임스페이스를 관리하고 네임스페이스의 앱을 무시해야 합니다.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-app-manage-and-ignore.gif" alt="네임스페이스 또는 앱을 관리하거나 무시하도록 선택할 수 있는 앱 페이지의 확장된 드롭다운 목록 스크린샷"></span></p>
 </div>
 </li>
 </ol>
@@ -1267,48 +1259,29 @@
 <p>* 클러스터 *: 앱이 있는 클러스터를 선택합니다.</p>
 </li>
 <li>
-<p>* 네임스페이스: * 앱의 네임스페이스를 선택합니다.</p>
+<p>* 네임스페이스 *: 앱의 네임스페이스를 선택합니다.</p>
 </li>
 <li>
-<p>* 레이블: * 레이블을 입력하거나 아래 리소스에서 레이블을 선택합니다.</p>
+<p>* Label *: 라벨을 입력하거나 아래 리소스에서 라벨을 선택합니다.</p>
 </li>
 <li>
 <p>* 선택한 리소스 *: 보호하려는 선택한 Kubernetes 리소스(Pod, 기밀, 영구 볼륨 등)를 보고 관리합니다.</p>
-<div class="paragraph">
-<p>예를 들면 다음과 같습니다.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-selected-resources.gif" alt="구성 맵 및 영구 볼륨 청구와 같이 보호할 수 있는 리소스의 스크린샷"></span></p>
-</div>
 <div class="ulist">
 <ul>
 <li>
 <p>리소스를 확장하고 레이블 수를 선택하여 사용 가능한 레이블을 봅니다.</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-view-labels.gif" alt="확장된 리소스와 해당 리소스의 레이블 수를 보여 주는 스크린샷"></span></p>
-</div>
 </li>
 <li>
 <p>레이블 중 하나를 선택합니다.</p>
 <div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-select-label.gif" alt="레이블 수를 선택한 후 선택할 수 있는 레이블 목록이 표시된 스크린샷"></span></p>
+<p>레이블을 선택하면 * Label * (레이블 *) 필드에 표시됩니다. 또한 Astra Control은 선택한 레이블과 일치하지 않는 리소스를 표시하도록 * 선택되지 않은 리소스 * 섹션을 업데이트합니다.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
-</ol>
-</div>
-<div class="paragraph">
-<p>레이블을 선택하면 * Label * (레이블 *) 필드에 표시됩니다. 또한 Astra Control은 선택한 레이블과 일치하지 않는 리소스를 표시하도록 * 선택되지 않은 리소스 * 섹션을 업데이트합니다.</p>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>선택하지 않은 리소스 *: 보호하지 않을 앱 리소스를 확인합니다.</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-selected-label.gif" alt="자원 패인에서 레이블을 선택한 후 레이블 필드에 레이블을 표시하는 스크린샷"></span></p>
-</div>
 </li>
 </ol>
 </div>
@@ -1331,7 +1304,7 @@
 <p>Astra Control은 Kubernetes 클러스터에서 실행 중인 시스템 앱을 검색합니다. 앱 목록을 필터링하여 볼 수 있습니다.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-system-apps.gif" alt="앱 화면에서 모든 클러스터를 선택할 때 사용할 수 있는 시스템 앱 표시 옵션을 보여 주는 스크린샷"></span></p>
+<p><span class="image"><img src="../media/use/acs_apps_system_apps3.png" alt="응용 프로그램 화면에서 모든 클러스터를 선택할 때 사용할 수 있는 시스템 응용 프로그램 표시 옵션을 보여 주는 스크린샷"></span></p>
 </div>
 <div class="paragraph">
 <p>이러한 시스템 앱은 기본적으로 표시되지 않습니다. 백업해야 하는 경우는 드뭅니다.</p>
