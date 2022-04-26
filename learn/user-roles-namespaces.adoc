@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: learn/user-roles-namespaces.html 
+keywords: users, roles, user roles, namespace, namespaces, account, accounts, permissions, restriction, restrict, constraint 
+summary: Astra Control Center에서 사용 가능한 데이터 보호 유형과 이를 사용하여 앱을 보호하는 최선의 방법에 대해 알아보십시오. 
+---
+= 사용자 역할 및 네임스페이스
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/learn/
+
+
+Astra Control의 사용자 역할 및 네임스페이스, 그리고 이를 사용하여 조직의 리소스에 대한 액세스를 제어하는 방법에 대해 알아봅니다.
+
+
+
+== 사용자 역할
+
+역할을 사용하여 Astra Control의 리소스 또는 기능에 대한 사용자의 액세스를 제어할 수 있습니다. Astra Control의 사용자 역할은 다음과 같습니다.
+
+* 소유자 * 는 관리자 권한을 가지며 계정을 삭제할 수 있습니다.
+* Admin * 은 구성원 권한을 가지며 다른 사용자를 초대할 수 있습니다.
+* 회원 * 은 앱과 클러스터를 완벽하게 관리할 수 있습니다.
+* Viewer * 는 리소스를 볼 수 있습니다.
+
+
+멤버 또는 뷰어 사용자에게 제약 조건을 추가하여 사용자를 하나 이상의 사용자로 제한할 수 있습니다 <<Namespaces>>.
+
+
+
+== 네임스페이스
+
+네임스페이스는 Astra Control에서 관리하는 클러스터 내의 특정 리소스에 할당할 수 있는 범위입니다. Astra Control은 클러스터를 Astra Control에 추가할 때 클러스터의 네임스페이스를 검색합니다. 네임스페이스가 검색되면 사용자에게 제약 조건으로 할당할 수 있습니다. 해당 네임스페이스에 대한 액세스 권한이 있는 멤버만 해당 리소스를 사용할 수 있습니다. 회사 내의 물리적 영역이나 부서 등 조직에 적합한 패러다임을 사용하여 네임스페이스에 대한 액세스를 제어할 수 있습니다. 사용자에게 제약 조건을 추가하면 해당 사용자가 모든 네임스페이스에 액세스하거나 특정 네임스페이스 집합만 액세스하도록 구성할 수 있습니다. 네임스페이스 레이블을 사용하여 네임스페이스 제약 조건을 할당할 수도 있습니다.
+
+
+
+== 자세한 내용을 확인하십시오
+
+link:../use/manage-roles.html["역할을 관리합니다"]

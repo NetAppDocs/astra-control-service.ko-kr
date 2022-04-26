@@ -68,6 +68,7 @@ Astra Control은 두 가지 배포 모델로 제공됩니다.
 | 스토리지 백엔드 지원이란 무엇입니까? | NetApp 클라우드 서비스 오퍼링  a| 
 * NetApp ONTAP AFF 및 FAS 시스템
 * 스토리지 백엔드로 Astra Data Store를 사용합니다
+* Cloud Volumes ONTAP 스토리지 백엔드
 
 
 |===
@@ -131,7 +132,7 @@ Astra Control Center는 다음과 같은 기능을 갖춘 OpenShift Kubernetes �
 
 클라우드 연결 환경에서 Astra Control Center는 Cloud Insights를 사용하여 고급 모니터링 및 원격 측정 기능을 제공합니다. Cloud Insights 연결이 없을 경우 Astra Control Center에서 제한된(7일 메트릭) 모니터링 및 원격 측정 기능을 사용할 수 있으며, 개방형 메트릭 엔드 포인트를 통해 Kubernetes 기본 모니터링 툴(예: Prometheus 및 Grafana)으로 내보낼 수 있습니다.
 
-Astra Control Center는 AutoSupport 및 Active IQ 에코시스템에 완전히 통합되어 사용자와 NetApp 지원 팀에 문제 해결 및 사용 정보를 제공합니다.
+Astra Control Center는 AutoSupport 및 Active IQ 에코시스템에 완전히 통합되어 사용자와 NetApp 지원에 문제 해결 및 사용 정보를 제공합니다.
 
 90일 평가판 라이센스를 사용하여 Astra Control Center를 사용해 볼 수 있습니다. 평가 버전은 이메일 및 커뮤니티(Slack 채널) 옵션을 통해 지원됩니다. 또한 제품 내 지원 대시보드에서 Knowledgebase 문서 및 문서에 액세스할 수 있습니다.
 

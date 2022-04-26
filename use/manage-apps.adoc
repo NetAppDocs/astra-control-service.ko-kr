@@ -23,32 +23,38 @@ summary: 'Kubernetes 클러스터를 Astra Control에 추가한 후에는 해당
 * * Namespaces *: Astra Control은 앱이 단일 네임스페이스 이상의 범위를 포괄하지 않도록 하지만 네임스페이스에는 여러 개의 앱이 포함될 수 있습니다.
 * * StorageClass *: StorageClass가 명시적으로 설정된 앱을 설치하고 앱을 복제해야 하는 경우 클론 작업의 타겟 클러스터에 원래 지정된 StorageClass가 있어야 합니다. 명시적으로 StorageClass를 동일한 StorageClass가 없는 클러스터로 설정한 애플리케이션을 클론 복제하면 실패합니다.
 * * Kubernetes 리소스 *: Astra Control에서 수집하지 않은 Kubernetes 리소스를 사용하는 앱에는 전체 앱 데이터 관리 기능이 없을 수 있습니다. Astra Control은 다음과 같은 Kubernetes 리소스를 수집합니다.
-+
-** 클러스터 역할
-** ClusterRoleBinding 을 참조하십시오
-** ConfigMap을 클릭합니다
-** 사용자 지정 리소스 정의
-** CustomResource 를 선택합니다
-** DemonSet
-** 구축
-** DeploymentConfig(배포 구성
-** 침투
-** 뮤atingWebhook
-** PersistentVolumeClaim
-** 포드
-** ReplicaSet입니다
-** RoleBinding 을 클릭합니다
-** 역할
-** 루트
-** 비밀
-** 서비스
-** 서비스 계정
-** StatefulSet 을 선택합니다
-** Webhook을 확인합니다
 
 
+[cols="1,1,1"]
+|===
 
 
+| 클러스터 역할 | ClusterRoleBinding 을 참조하십시오 | ConfigMap을 클릭합니다 
+
+
+| 사용자 지정 리소스 정의 | CustomResource 를 선택합니다 | 경작업 
+
+
+| DemonSet | HorizontalPodAutoscaler | 침투 
+
+
+| DeploymentConfig(배포 구성 | 뮤atingWebhook | PersistentVolumeClaim 
+
+
+| 포드 | 팟캐스트 예산 | 팟캐스트 템플릿 
+
+
+| 네트워크 정책 | ReplicaSet입니다 | 역할 
+
+
+| RoleBinding 을 클릭합니다 | 루트 | 비밀 
+
+
+| 서비스 | 서비스 계정 | StatefulSet 을 선택합니다 
+
+
+| Webhook을 확인합니다 |  |  
+|===
 
 
 === 지원되는 앱 설치 방법
@@ -65,6 +71,10 @@ kubectl apply -f myapp.yaml
 * * 운용자 구축 앱 *: Astra Control은 네임스페이스 범위 연산자와 함께 설치된 앱을 지원합니다. 이러한 연산자는 일반적으로 "pass-by-reference" 아키텍처가 아니라 "pass-by-value"로 설계되었습니다. 다음은 이러한 패턴을 따르는 일부 운영자 앱에 대한 설명입니다.
 +
 ** https://github.com/k8ssandra/cass-operator/tree/v1.7.1["아파치 K8ssandra"^]
++
+
+NOTE: k8ssandra 의 경우 현재 위치 복원 작업이 지원됩니다. 새 네임스페이스 또는 클러스터에 대한 복원 작업을 수행하려면 응용 프로그램의 원래 인스턴스를 중단해야 합니다. 이는 이월된 피어 그룹 정보가 인스턴스 간 통신으로 이어지지 않도록 하기 위한 것입니다. 앱 복제는 지원되지 않습니다.
+
 ** https://github.com/jenkinsci/kubernetes-operator["젠킨스 CI"^]
 ** https://github.com/percona/percona-xtradb-cluster-operator["Percona XtraDB 클러스터"^]
 
@@ -130,30 +140,15 @@ Astra Control을 사용하면 계층 구조의 수준(네임스페이스 및 해
 
 .단계
 . 응용 프로그램 * 을 선택한 다음 * 검색됨 * 을 선택합니다.
-+
-image:screenshot-app-discovery.gif["검색된 탭을 보여 주는 앱 페이지의 스크린샷"]
-
 . 검색된 네임스페이스 목록을 보고 네임스페이스를 확장하여 앱 및 관련 리소스를 봅니다.
 +
 Astra Control은 Helm 앱 및 사용자 지정 레이블 앱을 네임스페이스에서 보여 줍니다. H제어 레이블을 사용할 수 있는 경우 태그 아이콘으로 지정됩니다.
 
-+
-다음은 네임스페이스에서 두 개의 앱을 사용하는 예입니다.
-
-+
-image:screenshot-group.gif["네임스페이스가 확장되어 해당 네임스페이스에서 두 개의 앱을 표시하는 앱 페이지의 스크린샷"]
-
 . 각 앱을 개별적으로 관리할지 아니면 네임스페이스 수준에서 관리할지 결정합니다.
 . 계층 구조의 원하는 레벨에서 * Actions * 열의 드롭다운 목록을 선택하고 * Manage * 를 선택합니다.
-+
-image:screenshot-app-manage.gif["네임스페이스 또는 앱을 관리하거나 무시하도록 선택할 수 있는 앱 페이지의 확장된 드롭다운 목록 스크린샷"]
-
 . 앱을 관리하지 않으려면 원하는 앱의 * Actions * 열에서 드롭다운 목록을 선택하고 * Ignore * 를 선택합니다.
 +
 예를 들어, "Jenkins" 네임스페이스의 모든 앱을 함께 관리하여 동일한 스냅샷 및 백업 정책을 가지려면 네임스페이스를 관리하고 네임스페이스의 앱을 무시해야 합니다.
-
-+
-image:screenshot-app-manage-and-ignore.gif["네임스페이스 또는 앱을 관리하거나 무시하도록 선택할 수 있는 앱 페이지의 확장된 드롭다운 목록 스크린샷"]
 
 
 
@@ -171,33 +166,18 @@ Astra Control에는 응용 프로그램 페이지 상단에 * 사용자 정의 �
 +
 .. * 새 앱 *: 앱의 표시 이름을 입력합니다.
 .. * 클러스터 *: 앱이 있는 클러스터를 선택합니다.
-.. * 네임스페이스: * 앱의 네임스페이스를 선택합니다.
-.. * 레이블: * 레이블을 입력하거나 아래 리소스에서 레이블을 선택합니다.
+.. * 네임스페이스 *: 앱의 네임스페이스를 선택합니다.
+.. * Label *: 라벨을 입력하거나 아래 리소스에서 라벨을 선택합니다.
 .. * 선택한 리소스 *: 보호하려는 선택한 Kubernetes 리소스(Pod, 기밀, 영구 볼륨 등)를 보고 관리합니다.
 +
-예를 들면 다음과 같습니다.
-
-+
-image:screenshot-selected-resources.gif["구성 맵 및 영구 볼륨 청구와 같이 보호할 수 있는 리소스의 스크린샷"]
-
-+
 *** 리소스를 확장하고 레이블 수를 선택하여 사용 가능한 레이블을 봅니다.
-+
-image:screenshot-view-labels.gif["확장된 리소스와 해당 리소스의 레이블 수를 보여 주는 스크린샷"]
-
 *** 레이블 중 하나를 선택합니다.
-+
-image:screenshot-select-label.gif["레이블 수를 선택한 후 선택할 수 있는 레이블 목록이 표시된 스크린샷"]
-
 +
 레이블을 선택하면 * Label * (레이블 *) 필드에 표시됩니다. 또한 Astra Control은 선택한 레이블과 일치하지 않는 리소스를 표시하도록 * 선택되지 않은 리소스 * 섹션을 업데이트합니다.
 
 
 
 .. 선택하지 않은 리소스 *: 보호하지 않을 앱 리소스를 확인합니다.
-+
-image:screenshot-selected-label.gif["자원 패인에서 레이블을 선택한 후 레이블 필드에 레이블을 표시하는 스크린샷"]
-
 
 
 . 사용자 지정 앱 정의 * 를 선택합니다.
@@ -211,6 +191,6 @@ Astra Control은 앱 관리를 지원합니다. 이제 * Managed * 탭에서 찾
 
 Astra Control은 Kubernetes 클러스터에서 실행 중인 시스템 앱을 검색합니다. 앱 목록을 필터링하여 볼 수 있습니다.
 
-image:screenshot-system-apps.gif["앱 화면에서 모든 클러스터를 선택할 때 사용할 수 있는 시스템 앱 표시 옵션을 보여 주는 스크린샷"]
+image:acs_apps_system_apps3.png["응용 프로그램 화면에서 모든 클러스터를 선택할 때 사용할 수 있는 시스템 응용 프로그램 표시 옵션을 보여 주는 스크린샷"]
 
 이러한 시스템 앱은 기본적으로 표시되지 않습니다. 백업해야 하는 경우는 드뭅니다.

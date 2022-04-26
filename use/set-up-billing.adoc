@@ -35,9 +35,7 @@ Astra Control Service는 다음과 같은 세 가지 계획을 제공합니다.
 --
 
 
-Astra Control 계정을 만들면 무료 플랜에 자동으로 등록됩니다. Astra Control의 대시보드에는 현재 관리하고 있는 앱 10개 중 허용되는 무료 앱 수가 표시됩니다.
-
-image:screenshot-dashboard.gif["리소스 요약 및 시작할 수 있는 링크를 제공하는 Astra 대시보드를 보여 주는 스크린샷"]
+Astra Control 계정을 만들면 무료 플랜에 자동으로 등록됩니다. Astra Control의 대시보드에는 현재 관리하고 있는 앱 10개 중 허용된 무료 앱 10개 중 몇 개가 표시됩니다.
 
 11번째 앱을 관리하려고 하면 Astra Control에서 무료 요금제 한도에 도달했음을 알립니다. 그런 다음 무료 플랜에서 프리미엄 플랜으로 업그레이드하라는 메시지가 표시됩니다.
 
@@ -113,8 +111,6 @@ NetApp 세일즈 팀에 연락하여 연간 구독과 함께 할인된 요금으
 
 
 NetApp 세일즈 담당자가 구매 주문서를 처리하기 위해 연락을 드릴 것입니다. 주문이 완료되면 Astra Control이 청구 탭에 현재 계획을 반영합니다.
-
-image:screenshot-premium-subscription.gif["계정 탭과 프리미엄 구독에 대해 활성화된 계정을 보여 주는 스크린샷."]
 
 
 

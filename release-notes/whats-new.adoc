@@ -15,7 +15,39 @@ NetApp은 새로운 기능, 개선 사항 및 버그 수정을 제공하기 위�
 
 
 
+== 2022년 4월 26일
+
+이 릴리즈에는 다음과 같은 새로운 기능과 향상된 기능이 포함되어 있습니다.
+
+
+
+=== 네임스페이스 역할 기반 액세스 제어(RBAC)
+
+Astra Control Service는 이제 구성원 또는 뷰어 사용자에게 네임스페이스 제약 조건을 할당할 수 있도록 지원합니다.
+
+link:../use/manage-roles.html["역할을 관리합니다"].
+
+
+
+=== 전용 AKS 클러스터 지원
+
+이제 전용 IP 주소를 사용하는 AKS 클러스터를 관리할 수 있습니다.
+
+link:../get-started/add-first-cluster.html["Astra Control Service에서 Kubernetes 클러스터 관리를 시작합니다"].
+
+
+
+=== Astra Control에서 버킷 제거
+
+이제 Astra Control Service에서 버킷을 제거할 수 있습니다.
+
+link:../use/manage-buckets.html["버킷을 탈거하십시오"].
+
+
+
 == 2021년 12월 14일
+
+이 릴리즈에는 다음과 같은 새로운 기능과 향상된 기능이 포함되어 있습니다.
 
 
 

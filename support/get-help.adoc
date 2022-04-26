@@ -17,8 +17,6 @@ NetApp은 다양한 방법으로 Astra Control을 지원합니다. 기술 자료
 
 기본 메뉴에서 * 지원 * 탭을 선택하면 Astra Control UI에서 지원 옵션에 액세스할 수 있습니다.
 
-image:screenshot-support.gif["Astra Control의 지원 페이지 스크린샷으로, 도움을 받고 NetApp에 연락할 수 있는 리소스를 확인할 수 있습니다."]
-
 
 
 == 자체 지원

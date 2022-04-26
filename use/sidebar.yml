@@ -35,6 +35,8 @@ entries:
     url: "/use/set-up-billing.html"
   - title: 사용자를 초대하고 관리합니다
     url: "/use/manage-users.html"
+  - title: 역할을 관리합니다
+    url: "/use/manage-roles.html"
   - title: 클라우드 공급자 자격 증명을 관리합니다
     url: "/use/manage-credentials.html"
   - title: 계정 활동을 모니터링합니다

@@ -24,10 +24,12 @@ image:astra-ads-architecture-diagram-v3.png["Astra Control 아키텍처 다이�
 * * 스토리지 백엔드 *:
 +
 ** Astra Control Service가 사용합니다 https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/["Google Cloud용 NetApp Cloud Volumes Service"^] GKE 클러스터 및 용 스토리지 백엔드로 사용됩니다 https://www.netapp.com/cloud-services/azure-netapp-files/["Azure NetApp Files"^] AKS 클러스터의 스토리지 백엔드로 사용됩니다.
+** 또한 Astra Control Service는 Azure Managed Disks 및 Google Persistent Disk를 백엔드 스토리지 옵션으로 지원합니다.
 ** Astra Control Center는 다음과 같은 스토리지 백엔드를 사용합니다.
 +
 *** Astra Data Store 스토리지 백엔드
 *** ONTAP AFF 및 FAS 스토리지 백엔드 스토리지 소프트웨어 및 하드웨어 플랫폼인 ONTAP는 핵심 스토리지 서비스, 다중 스토리지 액세스 프로토콜 지원 및 스냅샷, 미러링과 같은 스토리지 관리 기능을 제공합니다.
+*** Cloud Volumes ONTAP 스토리지 백엔드
 
 
 
