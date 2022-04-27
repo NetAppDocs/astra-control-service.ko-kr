@@ -120,10 +120,7 @@ Google Cloud 지역:: Google Cloud용 Cloud Volumes Service를 스토리지 백�
 프라이빗 클러스터:: 클러스터가 프라이빗 인 경우, 를 참조하십시오 https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["인증된 네트워크"^] Astra Control Service IP 주소를 허용해야 합니다.
 +
 --
-* 54.164.233.140/32
-* 3.218.120.204/32
-* 34.193.99.138/32
-
+52.188.218.166/32
 
 --
 GKE 클러스터의 작동 모드입니다:: 표준 작동 모드를 사용해야 합니다. 현재 Autopilot 모드가 테스트되지 않았습니다. link:https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes["작동 모드에 대해 자세히 알아보십시오"^].
