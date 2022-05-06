@@ -324,7 +324,6 @@
   <block id="d8fcf72bfd3b99486c35821d3f2e44f4" category="paragraph">이제 Astra Control에 클러스터를 추가할 때 자격 증명을 선택할 수 있습니다.</block>
   <block id="25f033e226552b2f5ae002edb8e5fd2f" category="section-title">자격 증명을 제거합니다</block>
   <block id="82f2b96e6fd3cf7bfa88172cb51c9afc" category="inline-link-macro">모든 클러스터 관리를 취소합니다</block>
-  <block id="5074e7a91e497a22dc0714abe6e771dd" category="paragraph">언제든지 계정에서 자격 증명을 제거합니다. 자격 증명은 이후에 제거해야 합니다 <block ref="7193f1b7f27bd5505d89cc1e5724fb4b" category="inline-link-macro-rx"></block>.</block>
   <block id="12fce85c2a771804bf71c2607b90e479" category="admonition">Astra Control에 추가하는 첫 번째 자격 증명 세트는 항상 사용 중입니다. Astra Control은 자격 증명을 사용하여 백업 버킷에 인증하기 때문입니다. 이러한 자격 증명을 제거하지 않는 것이 좋습니다.</block>
   <block id="1a5f98a95779208d9234fca9491f7096" category="list-text">제거할 자격 증명에 대한 * 상태 * 열의 드롭다운 목록을 선택합니다.</block>
   <block id="6f99fa9b2e1f4893851a8aeb82d171f9" category="list-text">제거 * 를 선택합니다.</block>
@@ -880,8 +879,6 @@
   <block id="0b21fb3864d43aad91ca35b2b5d2354d" category="list-text">Azure 지역</block>
   <block id="5fdc7d711b9ee1a40d68a09729fb4e9f" category="inline-link">지역별 Azure 제품 보기</block>
   <block id="35878b9641dbe3802b4757bd1077fbb8" category="list-text">모범 사례로서, 스토리지 백엔드로 사용하지 않더라도 Azure NetApp Files를 지원하는 영역을 선택해야 합니다. 따라서 성능 요구 사항이 변경될 경우 향후에 Azure NetApp Files를 스토리지 백엔드로 사용할 수 있습니다.<block ref="044693425a398e22f4ef06b4ccda4a31" category="inline-link-rx"></block>.</block>
-  <block id="609775d4b1f048a0f6500161bd460e47" category="list-text">사설 네트워킹</block>
-  <block id="bc287e95f5c3144752a8a8d09fbe96b1" category="list-text">프라이빗 네트워킹은 클러스터에서 활성화되어서는 안 됩니다.</block>
   <block id="5b033d6a3f89da3c19247af957fdeadd" category="list-text">외부 볼륨 스냅샷 컨트롤러</block>
   <block id="fe86e9ef31fe3697198ba10d3c208d2d" category="inline-link">주문형 볼륨 스냅숏용 외부 스냅샷 컨트롤러에 대해 자세히 알아보십시오</block>
   <block id="7d653ff1ba76f45cb793405b89658cd9" category="list-text">클러스터에는 CSI 볼륨 스냅샷 컨트롤러가 설치되어 있어야 합니다. 이 컨트롤러는 K8s 버전 1.21부터 기본적으로 설치되지만 버전 1.19 및 1.20을 실행하는 클러스터를 확인해야 합니다.<block ref="005ac06c428589f925784bc23d35b2d8" category="inline-link-rx"></block>.</block>
@@ -1699,4 +1696,14 @@
   <block id="5ffd50b83740bc0749b40034cddea615" category="paragraph">앱 클러스터의 Astra Trident가 오프라인 상태가 되고 다시 온라인 상태가 되고 앱 데이터 관리를 시도할 때 500 내부 서비스 오류가 발생하는 경우, 앱 클러스터의 모든 Kubernetes 노드를 다시 시작하여 기능을 복원합니다.</block>
   <block id="d551a2e881c7a8c13113e2a9e28d0b91" category="list-text">클러스터가 프라이빗 인 경우, 를 참조하십시오<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> Astra Control Service IP 주소를 허용해야 합니다.</block>
   <block id="81a948049e34f0b0478cdb4d7fee5cb1" category="list-text">네임스페이스 이름/ID 또는 네임스페이스 레이블에 의해 네임스페이스 제한이 있는 구성원 사용자는 동일한 클러스터 또는 조직 계정의 다른 클러스터에 있는 새 네임스페이스에 앱을 클론 복제하거나 복원할 수 있습니다. 그러나 동일한 사용자가 새 네임스페이스에서 복제되거나 복원된 앱에 액세스할 수 없습니다. 클론 또는 복원 작업을 통해 새 네임스페이스를 생성한 후 계정 관리자/소유자는 구성원 사용자 계정을 편집하고 영향을 받는 사용자의 역할 제약 조건을 업데이트하여 새 네임스페이스에 대한 액세스 권한을 부여할 수 있습니다.</block>
+  <block id="ae67f9136c5a827541839e278a3b8b0a" category="paragraph">언제든지 계정에서 자격 증명을 제거합니다. 자격 증명은 이후에 제거해야 합니다 <block ref="7193f1b7f27bd5505d89cc1e5724fb4b" category="inline-link-macro-rx"></block>자격 증명을 순환하지 않는 경우( 참조 <block ref="029b7394eded829c95ca3b86c4cd802d" category="inline-xref-macro-rx"></block>)를 클릭합니다.</block>
+  <block id="85149e5821bdf494d4eaf0a96d8f46a8" category="section-title">자격 증명 회전</block>
+  <block id="8e945e6a79e0bf8da80606ed9d20bc53" category="paragraph">계정에서 자격 증명을 회전할 수 있습니다. 자격 증명을 회전하는 경우 백업이 진행 중인 상태(예약 또는 필요 시)가 없을 때 유지 관리 창에서 자격 증명을 회전합니다.</block>
+  <block id="d05c0825b09f53538ae182820f680709" category="list-text">의 단계에 따라 기존 자격 증명을 제거합니다 <block ref="d2f3a923bca17e66f3f1dad217fa3a1a" category="inline-xref-macro-rx"></block>.</block>
+  <block id="60ab1991a8b8c64a87882fcdf3740be4" category="list-text">의 단계에 따라 새 자격 증명을 추가합니다 <block ref="3ba4bf3dfb819b290465624916ee777a" category="inline-xref-macro-rx"></block>.</block>
+  <block id="dc8364087e4f87791e74e061f41f25d8" category="list-text">새 자격 증명을 사용하도록 모든 버킷을 업데이트합니다.</block>
+  <block id="071ef8ace6c74c9a1515550077974172" category="list-text">편집 * 을 선택합니다.</block>
+  <block id="d2b49295684369e8eca9915ebf3725b5" category="list-text">자격 증명 선택 * 섹션에서 Astra Control에 추가한 새 자격 증명을 선택합니다.</block>
+  <block id="fe7fbb88eb579dd44896aecd5e694bc8" category="list-text">시스템에 남아 있는 버킷에 대해 * b * ~ * e * 단계를 반복합니다.</block>
+  <block id="83a2a676c481bd5eeebf1ca2831091df" category="paragraph">Astra Control은 새로운 클라우드 공급자 자격 증명을 사용하기 시작합니다.</block>
 </blocks>
