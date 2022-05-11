@@ -25,7 +25,15 @@ NetApp은 새로운 기능, 개선 사항 및 버그 수정을 제공하기 위�
 
 Astra Control Service는 이제 구성원 또는 뷰어 사용자에게 네임스페이스 제약 조건을 할당할 수 있도록 지원합니다.
 
-link:../use/manage-roles.html["역할을 관리합니다"].
+link:../learn/user-roles-namespaces.html["네임스페이스 역할 기반 액세스 제어(RBAC)"].
+
+
+
+=== Azure Active Directory 지원
+
+Astra Control Service는 인증 및 ID 관리를 위해 Azure Active Directory를 사용하는 AKS 클러스터를 지원합니다.
+
+link:../get-started/add-first-cluster.html["Astra Control Service에서 Kubernetes 클러스터 관리를 시작합니다"].
 
 
 

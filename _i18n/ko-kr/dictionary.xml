@@ -1373,9 +1373,6 @@
   <block id="91b0fccd50fc200b9aa9a40a0cc5a82d" category="list-text">주의가 필요한 이벤트를 선택합니다.</block>
   <block id="e2900726473d9bdf15d18c496f0edc96" category="list-text">실행 * 드롭다운 옵션을 선택합니다.</block>
   <block id="02251349687d4a85c56e4346486d3ad4" category="paragraph">이 목록에서 수행할 수 있는 수정 조치를 확인하고, 문제와 관련된 문서를 보고, 문제 해결을 위한 지원을 받을 수 있습니다.</block>
-  <block id="f4105577bf107396cef41e7fc8b36c75" category="paragraph">Astra Control이 클러스터를 관리할 때 클러스터의 기본 StorageClass를 추적합니다. kubeck 명령을 사용하여 StorageClass를 변경하면 Astra Control에서 변경 내용을 되돌립니다. Astra Control에서 관리하는 클러스터의 기본 StorageClass를 변경하려면 다음 방법 중 하나를 사용하십시오.</block>
-  <block id="e9fac85aa2673b1b448faa45d2eeb596" category="list-text">Astra Control API의 Put/managedClusters 끝점을 사용하고 defaultStorageClass 매개변수를 사용하여 다른 기본 StorageClass를 할당합니다</block>
-  <block id="11937632e52ddd422c6068df5f4a8641" category="list-text">Astra Control 관리에서 클러스터를 제거하고 다른 기본 StorageClass를 선택하여 다시 추가합니다</block>
   <block id="88555feb409cba41792254e4f06581c9" category="list-text">네임스페이스 내에서 Kubernetes 레이블(Astra Control의 _custom app_이라고 함)으로 식별되는 리소스 그룹입니다</block>
   <block id="17f47137e3c74939946bb140e4cbdf1d" category="inline-link">Bitnami Helm 차트</block>
   <block id="63b460525cdf532239754239be0dd49b" category="paragraph">에서 Postgres를 배포하는 방법에 대해 알아보십시오<block ref="c1944f63284fe1469cc0b7628473e785" category="inline-link-rx"></block>. 클러스터에 Postgres를 구축한 후 Astra Control에 애플리케이션을 등록할 수 있습니다.</block>
@@ -1666,7 +1663,6 @@
   <block id="67dec75e07f11637dbb129889d6bf6ae" category="section-title">2022년 4월 26일</block>
   <block id="0097e428776046ceb8cd1fcde6d6fa2e" category="section-title">네임스페이스 역할 기반 액세스 제어(RBAC)</block>
   <block id="382d0f3f80a6edc90145fa9f5e248570" category="paragraph">Astra Control Service는 이제 구성원 또는 뷰어 사용자에게 네임스페이스 제약 조건을 할당할 수 있도록 지원합니다.</block>
-  <block id="20f1bb3f9f567f6aa7b19e591c3a1f51" category="paragraph"><block ref="73b2ad293eda73ca2acff9008e7ac0e8" category="inline-link-macro-rx"></block>.</block>
   <block id="81c45fdf5fa9c193ad7e22c5fd4785ef" category="section-title">전용 AKS 클러스터 지원</block>
   <block id="c490fa82068b0f1b8aef0ce959352ea7" category="paragraph">이제 전용 IP 주소를 사용하는 AKS 클러스터를 관리할 수 있습니다.</block>
   <block id="2a37eca094676cc6b6a4bfa0ea9fcc57" category="paragraph"><block ref="04d97bec7f4fa11002764129cf40d13a" category="inline-link-macro-rx"></block>.</block>
@@ -1706,4 +1702,21 @@
   <block id="d2b49295684369e8eca9915ebf3725b5" category="list-text">자격 증명 선택 * 섹션에서 Astra Control에 추가한 새 자격 증명을 선택합니다.</block>
   <block id="fe7fbb88eb579dd44896aecd5e694bc8" category="list-text">시스템에 남아 있는 버킷에 대해 * b * ~ * e * 단계를 반복합니다.</block>
   <block id="83a2a676c481bd5eeebf1ca2831091df" category="paragraph">Astra Control은 새로운 클라우드 공급자 자격 증명을 사용하기 시작합니다.</block>
+  <block id="600875fce016d4eddadf3675fe4ec0a6" category="paragraph"><block ref="24c3dfd752dd86b23d8384546f638c63" category="inline-link-macro-rx"></block>.</block>
+  <block id="c232f387cd35833fa7dbddc853981552" category="section-title">Azure Active Directory 지원</block>
+  <block id="19a67907b2de4999a969b7863b0d05e9" category="paragraph">Astra Control Service는 인증 및 ID 관리를 위해 Azure Active Directory를 사용하는 AKS 클러스터를 지원합니다.</block>
+  <block id="54d90be7ed2f484693994a0a44b349d2" category="inline-link">공식 문서</block>
+  <block id="ac4eb04549d46b875b9c5a712e733c6f" category="admonition">Astra Control Service는 인증 및 ID 관리를 위해 Azure Active Directory(Azure AD)를 사용하는 AKS 클러스터를 지원합니다. 클러스터를 생성할 때 의 지침을 따릅니다<block ref="ba1ce5a57a4d347a0e1e2ecf2a2c91ba" category="inline-link-rx"></block> Azure AD를 사용하도록 클러스터를 구성합니다. 클러스터가 AKS로 관리되는 Azure AD 통합에 대한 요구 사항을 충족하는지 확인해야 합니다.</block>
+  <block id="846cdda4ee8e60864d52aaeeb040485c" category="paragraph">Astra Control이 클러스터를 관리할 때 클러스터의 기본 스토리지 클래스를 추적합니다. kubbeck 명령을 사용하여 스토리지 클래스를 변경하면 Astra Control에서 변경 사항을 되돌립니다. Astra Control에서 관리하는 클러스터의 기본 스토리지 클래스를 변경하려면 다음 방법 중 하나를 사용하십시오.</block>
+  <block id="d284e4138e540279377b96192064bb64" category="list-text">Astra Control API의 Put/managedClusters 끝점을 사용하고 defaultStorageClass 매개변수를 사용하여 다른 기본 스토리지 클래스를 할당합니다.</block>
+  <block id="4cb8b00c0937a1220b88468763322f15" category="list-text">Astra Control 웹 UI를 사용하여 다른 기본 스토리지 클래스를 할당합니다. 을 참조하십시오 <block ref="5b6a21e2a1084a5e4b159e62f7829741" category="inline-xref-macro-rx"></block>.</block>
+  <block id="3664703675e6ea0fab0e620eb7c74fb0" category="section-title">기본 스토리지 클래스를 변경합니다</block>
+  <block id="38219c9a076c4f4be6883cf24fcb296d" category="paragraph">클러스터의 기본 스토리지 클래스를 변경할 수 있습니다.</block>
+  <block id="fe575e20478d6256f2449963730fd738" category="list-text">클러스터 * 페이지에서 변경할 클러스터를 선택합니다.</block>
+  <block id="b84cf83ec24af3992507d72057b607f6" category="list-text">Storage * 탭을 선택합니다.</block>
+  <block id="a57d95e33fbdffe3b4bd71d5b0be74cd" category="list-text">스토리지 클래스 * 범주를 선택합니다.</block>
+  <block id="b76660fac98aeb4fc46b77e989e6d8b0" category="list-text">기본값으로 설정할 스토리지 클래스에 대해 * Actions * 메뉴를 선택합니다.</block>
+  <block id="b4789b0ec041cd5e51f32c2f901a0951" category="list-text">Set as default * 를 선택합니다.</block>
+  <block id="2dd2a1bdae3516df1950c153f6135366" category="paragraph">* Active Directory를 사용하여 AKS 클러스터에 대한 인증을 관리할 수 있습니까? *</block>
+  <block id="e4b4463df81090495a7820578ac936d9" category="paragraph">예. 인증 및 ID 관리에 Azure Active Directory(Azure AD)를 사용하도록 AKS 클러스터를 구성할 수 있습니다. 클러스터를 생성할 때 의 지침을 따릅니다<block ref="ba1ce5a57a4d347a0e1e2ecf2a2c91ba" category="inline-link-rx"></block> Azure AD를 사용하도록 클러스터를 구성합니다. 클러스터가 AKS로 관리되는 Azure AD 통합에 대한 요구 사항을 충족하는지 확인해야 합니다.</block>
 </blocks>

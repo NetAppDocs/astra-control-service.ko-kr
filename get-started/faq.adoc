@@ -73,6 +73,10 @@ Astra Control은 온보딩 섹션에서 정확한 고객 정보를 제공해야 
 
 예, Astra Control Service에 전용 AKS 클러스터를 추가할 수 있습니다. 전용 AKS 클러스터를 추가하려면 를 참조하십시오 link:add-first-cluster.html["Astra Control Service에서 Kubernetes 클러스터 관리를 시작합니다"].
 
+* Active Directory를 사용하여 AKS 클러스터에 대한 인증을 관리할 수 있습니까? *
+
+예. 인증 및 ID 관리에 Azure Active Directory(Azure AD)를 사용하도록 AKS 클러스터를 구성할 수 있습니다. 클러스터를 생성할 때 의 지침을 따릅니다 https://docs.microsoft.com/en-us/azure/aks/managed-aad["공식 문서"^] Azure AD를 사용하도록 클러스터를 구성합니다. 클러스터가 AKS로 관리되는 Azure AD 통합에 대한 요구 사항을 충족하는지 확인해야 합니다.
+
 
 
 == GKE 클러스터를 등록하는 중입니다
