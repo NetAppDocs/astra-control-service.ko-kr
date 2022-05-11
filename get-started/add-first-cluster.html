@@ -971,7 +971,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-26 16:30:24 +0000">04/26/2022</time>
+    <time datetime="2022-05-11 14:48:35 +0000">05/11/2022</time>
     
   
 
@@ -991,6 +991,18 @@
 <div class="paragraph">
 <p>클러스터가 아직 없으면 와(과) 일치하는 클러스터를 생성합니다 <a href="set-up-google-cloud.html#gke-cluster-requirements">"Google Kubernetes Engine(GKE)에 대한 Astra Control Service 요구 사항"</a>, <a href="set-up-microsoft-azure-with-anf.html">"Azure NetApp Files를 사용하는 Azure Kubernetes Service(AKS)에 대한 Astra Control 서비스 요구사항"</a>, 또는 <a href="set-up-microsoft-azure-with-amd.html">"Azure 관리 디스크를 사용하는 Azure Kubernetes Service(AKS)에 대한 Astra Control Service 요구 사항"</a> .</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="참고">
+</td>
+<td class="content">
+Astra Control Service는 인증 및 ID 관리를 위해 Azure Active Directory(Azure AD)를 사용하는 AKS 클러스터를 지원합니다. 클러스터를 생성할 때 의 지침을 따릅니다 <a href="https://docs.microsoft.com/en-us/azure/aks/managed-aad" target="_blank" rel="noopener">"공식 문서"</a> Azure AD를 사용하도록 클러스터를 구성합니다. 클러스터가 AKS로 관리되는 Azure AD 통합에 대한 요구 사항을 충족하는지 확인해야 합니다.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1007,15 +1019,15 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Astra Control이 클러스터를 관리할 때 클러스터의 기본 StorageClass를 추적합니다. kubeck 명령을 사용하여 StorageClass를 변경하면 Astra Control에서 변경 내용을 되돌립니다. Astra Control에서 관리하는 클러스터의 기본 StorageClass를 변경하려면 다음 방법 중 하나를 사용하십시오.</p>
+<p>Astra Control이 클러스터를 관리할 때 클러스터의 기본 스토리지 클래스를 추적합니다. kubbeck 명령을 사용하여 스토리지 클래스를 변경하면 Astra Control에서 변경 사항을 되돌립니다. Astra Control에서 관리하는 클러스터의 기본 스토리지 클래스를 변경하려면 다음 방법 중 하나를 사용하십시오.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Astra Control API의 Put/managedClusters 끝점을 사용하고 defaultStorageClass 매개변수를 사용하여 다른 기본 StorageClass를 할당합니다</p>
+<p>Astra Control API의 Put/managedClusters 끝점을 사용하고 defaultStorageClass 매개변수를 사용하여 다른 기본 스토리지 클래스를 할당합니다.</p>
 </li>
 <li>
-<p>Astra Control 관리에서 클러스터를 제거하고 다른 기본 StorageClass를 선택하여 다시 추가합니다</p>
+<p>Astra Control 웹 UI를 사용하여 다른 기본 스토리지 클래스를 할당합니다. 을 참조하십시오 <a href="#Change the default storage class">[Change the default storage class]</a>.</p>
 </li>
 </ul>
 </div>
@@ -1185,6 +1197,37 @@
 astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19</pre>
 </div>
 </div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="기본-스토리지-클래스를-변경합니다">기본 스토리지 클래스를 변경합니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>클러스터의 기본 스토리지 클래스를 변경할 수 있습니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>Astra Control Service UI에서 * Clusters * 를 선택합니다.</p>
+</li>
+<li>
+<p>클러스터 * 페이지에서 변경할 클러스터를 선택합니다.</p>
+</li>
+<li>
+<p>Storage * 탭을 선택합니다.</p>
+</li>
+<li>
+<p>스토리지 클래스 * 범주를 선택합니다.</p>
+</li>
+<li>
+<p>기본값으로 설정할 스토리지 클래스에 대해 * Actions * 메뉴를 선택합니다.</p>
+</li>
+<li>
+<p>Set as default * 를 선택합니다.</p>
 </li>
 </ol>
 </div>
