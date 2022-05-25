@@ -792,7 +792,7 @@
         <div class="na-navbar-padding"> 시작하십시오</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/astra-control-service/get-started/intro.html">
-        Astra Control 소개
+        Astra Control에 대해 알아보십시오
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/astra-control-service/get-started/supported-deployments.html">
         지원되는 Kubernetes 구축
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/astra-control-service/get-started/quick-start.html">
@@ -938,6 +938,10 @@
         
 
         
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/ko-kr/astra-family/">Astra</a>
+        </li>
+        
 
         <li class="n-breadcrumb__list-item">
           <a href="/ko-kr/astra-control-service/">Astra&nbsp;Control&nbsp;Service</a>
@@ -971,7 +975,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-27 21:04:57 +0000">04/27/2022</time>
+    <time datetime="2022-05-25 20:52:28 +0000">05/25/2022</time>
     
   
 
@@ -1003,20 +1007,20 @@ Google Cloud용 Google Cloud Volumes Service를 스토리지 백엔드로 사용
 <div class="paragraph">
 <p>다음 단계를 따라 빠르게 시작하거나 나머지 섹션으로 스크롤하여 자세한 내용을 확인하십시오.</p>
 </div>
-<div class="sect3">
-<h4 id="google-kubernetes-engine에-대한-astra-control-service-요구-사항을-검토합니다">Google Kubernetes Engine에 대한 Astra Control Service 요구 사항을 검토합니다</h4>
+<div class="sect2">
+<h3 id="google-kubernetes-engine에-대한-astra-control-service-요구-사항을-검토합니다">Google Kubernetes Engine에 대한 Astra Control Service 요구 사항을 검토합니다</h3>
 <div class="paragraph quick-margin-para">
 <p>클러스터가 정상 상태이며 1.19 ~ 1.23 범위의 Kubernetes 버전을 실행 중인지, 작업자 노드가 온라인 상태이고 컨테이너 최적화 OS 또는 Ubuntu를 실행 중인지 확인합니다. <a href="#GKE cluster requirements">이 단계에 대해 자세히 알아보십시오</a>.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="선택-사항-google-cloud용-cloud-volumes-service를-구입합니다">(선택 사항): Google Cloud용 Cloud Volumes Service를 구입합니다</h4>
+<div class="sect2">
+<h3 id="선택-사항-google-cloud용-cloud-volumes-service를-구입합니다">(선택 사항): Google Cloud용 Cloud Volumes Service를 구입합니다</h3>
 <div class="paragraph quick-margin-para">
 <p>Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하려면 Google Cloud 마켓플레이스의 NetApp Cloud Volumes Service 페이지로 이동하여 구매 를 선택합니다. <a href="#Purchase Cloud Volumes Service for Google Cloud (optional)">이 단계에 대해 자세히 알아보십시오</a>.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="google-cloud-프로젝트에서-api를-활성화합니다">Google Cloud 프로젝트에서 API를 활성화합니다</h4>
+<div class="sect2">
+<h3 id="google-cloud-프로젝트에서-api를-활성화합니다">Google Cloud 프로젝트에서 API를 활성화합니다</h3>
 <div class="paragraph quick-margin-para">
 <p>다음 Google Cloud API를 활성화합니다.</p>
 </div>
@@ -1065,8 +1069,8 @@ Google Cloud용 Google Cloud Volumes Service를 스토리지 백엔드로 사용
 <p><a href="#Enable APIs in your project">단계별 지침을 따릅니다</a>.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="필요한-권한이-있는-서비스-계정을-만듭니다">필요한 권한이 있는 서비스 계정을 만듭니다</h4>
+<div class="sect2">
+<h3 id="필요한-권한이-있는-서비스-계정을-만듭니다">필요한 권한이 있는 서비스 계정을 만듭니다</h3>
 <div class="paragraph quick-margin-para">
 <p>다음 권한이 있는 Google Cloud 서비스 계정을 만듭니다.</p>
 </div>
@@ -1103,14 +1107,14 @@ Google Cloud용 Google Cloud Volumes Service를 스토리지 백엔드로 사용
 <p><a href="#Create a service account">단계별 지침을 읽습니다</a>.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="서비스-계정-키를-생성합니다">서비스 계정 키를 생성합니다</h4>
+<div class="sect2">
+<h3 id="서비스-계정-키를-생성합니다">서비스 계정 키를 생성합니다</h3>
 <div class="paragraph quick-margin-para">
 <p>서비스 계정의 키를 생성하고 키 파일을 안전한 위치에 저장합니다. <a href="#Create a service account key">단계별 지침을 따릅니다</a>.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="선택-사항-vpc용-네트워크-피어링을-설정합니다">(선택 사항): VPC용 네트워크 피어링을 설정합니다</h4>
+<div class="sect2">
+<h3 id="선택-사항-vpc용-네트워크-피어링을-설정합니다">(선택 사항): VPC용 네트워크 피어링을 설정합니다</h3>
 <div class="paragraph quick-margin-para">
 <p>Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하려는 경우 VPC에서 Cloud Volumes Service for Google Cloud로 네트워크 피어링을 설정합니다. <a href="#Set up network peering for your VPC (optional)">단계별 지침을 따릅니다</a>.</p>
 </div>
