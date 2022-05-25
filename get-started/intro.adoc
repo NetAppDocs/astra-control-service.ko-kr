@@ -4,7 +4,7 @@ permalink: get-started/intro.html
 keywords: introduction, how astra works, how Astra works, what Astra is, concept, understanding, overview 
 summary: Astra Control은 Kubernetes 애플리케이션 데이터 라이프사이클 관리 솔루션으로, 상태 저장 애플리케이션의 운영을 단순화합니다. Kubernetes 워크로드를 손쉽게 보호, 백업, 마이그레이션하고 정상 작동하는 애플리케이션 클론을 즉시 생성할 수 있습니다. 
 ---
-= Astra Control 소개
+= Astra Control에 대해 알아보십시오
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

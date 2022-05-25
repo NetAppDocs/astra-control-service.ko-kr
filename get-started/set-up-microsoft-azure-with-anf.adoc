@@ -21,49 +21,49 @@ Astra Control Service로 Azure Kubernetes Service 클러스터를 관리하려�
 
 
 
-==== Azure Kubernetes Service에 대한 Astra Control Service 요구 사항을 검토합니다
+=== Azure Kubernetes Service에 대한 Astra Control Service 요구 사항을 검토합니다
 
 [role="quick-margin-para"]
 클러스터 상태가 양호하고 Kubernetes 버전 1.21.x에서 1.23까지 실행 중이며 노드 풀이 온라인 상태이고 Linux * 등을 실행 중인지 확인합니다. <<Azure Kubernetes Service cluster requirements,이 단계에 대해 자세히 알아보십시오>>.
 
 
 
-==== Microsoft Azure에 등록하십시오
+=== Microsoft Azure에 등록하십시오
 
 [role="quick-margin-para"]
 Microsoft Azure 계정을 만듭니다. <<Sign up for Microsoft Azure,이 단계에 대해 자세히 알아보십시오>>.
 
 
 
-==== Azure NetApp Files에 등록하십시오
+=== Azure NetApp Files에 등록하십시오
 
 [role="quick-margin-para"]
 NetApp 리소스 공급자를 등록합니다. <<Register for Azure NetApp Files,이 단계에 대해 자세히 알아보십시오>>.
 
 
 
-==== NetApp 계정을 만듭니다
+=== NetApp 계정을 만듭니다
 
 [role="quick-margin-para"]
 Azure 포털에서 Azure NetApp Files로 이동하여 NetApp 계정을 생성합니다. <<Create a NetApp account,이 단계에 대해 자세히 알아보십시오>>.
 
 
 
-==== 용량 풀 설정
+=== 용량 풀 설정
 
 [role="quick-margin-para"]
 영구 볼륨에 대해 하나 이상의 용량 풀을 설정합니다. <<Set up a capacity pool,이 단계에 대해 자세히 알아보십시오>>.
 
 
 
-==== Azure NetApp Files에 서브넷 위임
+=== Azure NetApp Files에 서브넷 위임
 
 [role="quick-margin-para"]
 Astra Control Service가 해당 서브넷에 영구 볼륨을 생성할 수 있도록 Azure NetApp Files에 서브넷을 위임합니다. <<Delegate a subnet to Azure NetApp Files,이 단계에 대해 자세히 알아보십시오>>.
 
 
 
-==== Azure 서비스 보안 주체 만들기
+=== Azure 서비스 보안 주체 만들기
 
 [role="quick-margin-para"]
 Contributor 역할이 있는 Azure 서비스 보안 주체를 만듭니다. <<Create an Azure service principal,이 단계에 대해 자세히 알아보십시오>>.

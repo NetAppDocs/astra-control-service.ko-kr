@@ -21,28 +21,28 @@ Astra Control Service로 Azure Kubernetes Service 클러스터를 관리하려�
 
 
 
-==== Azure Kubernetes Service에 대한 Astra Control Service 요구 사항을 검토합니다
+=== Azure Kubernetes Service에 대한 Astra Control Service 요구 사항을 검토합니다
 
 [role="quick-margin-para"]
 클러스터 상태가 양호하고 Kubernetes 버전 1.21.x에서 1.23까지 실행 중이며 노드 풀이 온라인 상태이고 Linux * 등을 실행 중인지 확인합니다. <<Azure Kubernetes Service cluster requirements,이 단계에 대해 자세히 알아보십시오>>.
 
 
 
-==== Microsoft Azure에 등록하십시오
+=== Microsoft Azure에 등록하십시오
 
 [role="quick-margin-para"]
 Microsoft Azure 계정을 만듭니다. <<Sign up for Microsoft Azure,이 단계에 대해 자세히 알아보십시오>>.
 
 
 
-==== Azure 서비스 보안 주체 만들기
+=== Azure 서비스 보안 주체 만들기
 
 [role="quick-margin-para"]
 Contributor 역할이 있는 Azure 서비스 보안 주체를 만듭니다. <<Create an Azure service principal,이 단계에 대해 자세히 알아보십시오>>.
 
 
 
-==== 컨테이너 스토리지 인터페이스(CSI) 드라이버 세부 정보를 구성합니다
+=== 컨테이너 스토리지 인터페이스(CSI) 드라이버 세부 정보를 구성합니다
 
 [role="quick-margin-para"]
 CSI 드라이버와 함께 작동하도록 Azure 가입 및 클러스터를 구성해야 합니다. <<Configure Container Storage Interface (CSI) driver details,이 단계에 대해 자세히 알아보십시오>>.

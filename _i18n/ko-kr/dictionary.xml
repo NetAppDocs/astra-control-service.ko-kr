@@ -1253,7 +1253,6 @@
   <block id="ce22cdbaf9c7b2a84e52b372cf44f51d" category="inline-link-macro">클러스터 추가에 대해 자세히 알아보십시오</block>
   <block id="83a7557c5cbaf7c83dfb60426a040f0d" category="paragraph"><block ref="08870732ab38e40fc73b515a443d25f4" category="inline-link-macro-rx"></block>.</block>
   <block id="0e1998253be388fcd1c18fc76ead9054" category="summary">Astra Control은 Kubernetes 애플리케이션 데이터 라이프사이클 관리 솔루션으로, 상태 저장 애플리케이션의 운영을 단순화합니다. Kubernetes 워크로드를 손쉽게 보호, 백업, 마이그레이션하고 정상 작동하는 애플리케이션 클론을 즉시 생성할 수 있습니다.</block>
-  <block id="7e073986fe6af6ce1775bdfd558def36" category="doc">Astra Control 소개</block>
   <block id="4e0607432990160c5925f87a3a84fa17" category="summary">Astra Control Service는 GKE(Google Kubernetes Engine) 및 AKS(Azure Kubernetes Service)의 관리되는 Kubernetes 클러스터에서 실행 중인 앱을 관리할 수 있습니다.</block>
   <block id="acb13b8754d0f14e58090cb4826d589f" category="doc">지원되는 Kubernetes 구축</block>
   <block id="06b1a7d4e1877b69bcb6fcbd9fc3f7d2" category="inline-link-macro">Google Cloud for Astra Control Service를 설정하는 방법을 알아보십시오</block>
@@ -1719,4 +1718,5 @@
   <block id="b4789b0ec041cd5e51f32c2f901a0951" category="list-text">Set as default * 를 선택합니다.</block>
   <block id="2dd2a1bdae3516df1950c153f6135366" category="paragraph">* Active Directory를 사용하여 AKS 클러스터에 대한 인증을 관리할 수 있습니까? *</block>
   <block id="e4b4463df81090495a7820578ac936d9" category="paragraph">예. 인증 및 ID 관리에 Azure Active Directory(Azure AD)를 사용하도록 AKS 클러스터를 구성할 수 있습니다. 클러스터를 생성할 때 의 지침을 따릅니다<block ref="ba1ce5a57a4d347a0e1e2ecf2a2c91ba" category="inline-link-rx"></block> Azure AD를 사용하도록 클러스터를 구성합니다. 클러스터가 AKS로 관리되는 Azure AD 통합에 대한 요구 사항을 충족하는지 확인해야 합니다.</block>
+  <block id="35766360770e699f50fa8f51d1c6ff36" category="doc">Astra Control에 대해 알아보십시오</block>
 </blocks>
