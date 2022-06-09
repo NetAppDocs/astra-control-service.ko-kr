@@ -22,6 +22,7 @@ summary: 알려진 문제점은 이 제품 릴리스를 성공적으로 사용�
 .백업, 복원, 클론
 * <<Restore of an app results in PV size larger than original PV>>
 * <<App clones fail using a specific version of PostgreSQL>>
+* <<Azure backup buckets use LRS redundancy by default>>
 
 
 .기타 문제
@@ -46,6 +47,16 @@ summary: 알려진 문제점은 이 제품 릴리스를 성공적으로 사용�
 == 특정 버전의 PostgreSQL을 사용하여 앱 클론이 실패합니다
 
 동일한 클러스터 내의 앱 클론은 Bitnami PostgreSQL 11.5.0 차트와 함께 일관되게 실패합니다. 클론을 성공적으로 생성하려면 이전 또는 이후 버전의 차트를 사용하십시오.
+
+
+
+== Azure 백업 버킷은 기본적으로 LRS 이중화를 사용합니다
+
+기본적으로 Astra Control Service 버킷은 Azure Kubernetes Service 백업을 저장하는 데 사용되며 LRS(Locally Redundant Storage) 이중화 옵션을 사용합니다. Azure 버킷에 보다 내구성이 뛰어난 이중화 옵션을 사용하려면 Azure 클라우드 공급자 설정 지침의 옵션 단계를 참조하십시오.
+
+* link:../get-started/set-up-microsoft-azure-with-amd.html["Azure 관리 디스크를 사용하여 Microsoft Azure를 설정합니다"]
+* link:../get-started/set-up-microsoft-azure-with-anf.html["Azure NetApp Files를 사용하여 Microsoft Azure를 설정합니다"]
+
 
 
 

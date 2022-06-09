@@ -49,6 +49,13 @@ CSI 드라이버와 함께 작동하도록 Azure 가입 및 클러스터를 구�
 
 
 
+=== 선택 사항: Azure 백업 버킷의 중복성을 구성합니다
+
+[role="quick-margin-para"]
+기본적으로 Astra Control Service 버킷은 Azure Kubernetes Service 백업을 저장하는 데 사용되며 LRS(Locally Redundant Storage) 이중화 옵션을 사용합니다. 선택적 단계로서 Azure 버킷을 위한 더욱 내구성 있는 이중화 수준을 구성할 수 있습니다. <<Optional: Configure redundancy for Azure backup buckets,이 단계에 대해 자세히 알아보십시오>>.
+
+
+
 == Azure Kubernetes Service 클러스터 요구사항
 
 Kubernetes 클러스터는 Astra Control Service에서 검색 및 관리할 수 있도록 다음 요구사항을 충족해야 합니다.
@@ -263,4 +270,17 @@ Azure CSI 드라이버를 설치하여 준비를 완료할 수 있습니다.
 .단계
 . 로 이동합니다 https://docs.microsoft.com/en-us/azure/aks/csi-storage-drivers["Microsoft CSI 드라이버 문서"^].
 . 지침에 따라 필요한 CSI 드라이버를 설치합니다.
+
+
+
+
+== 선택 사항: Azure 백업 버킷의 중복성을 구성합니다
+
+Azure 백업 버킷에 대해 보다 내구성이 뛰어난 이중화 수준을 구성할 수 있습니다. 기본적으로 Astra Control Service 버킷은 Azure Kubernetes Service 백업을 저장하는 데 사용되며 LRS(Locally Redundant Storage) 이중화 옵션을 사용합니다. Azure 버킷에 보다 내구성이 뛰어난 이중화 옵션을 사용하려면 다음을 수행해야 합니다.
+
+.단계
+. 필요한 중복 수준을 사용하는 Azure 저장소 계정을 만듭니다 https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal["참조하십시오"^].
+. 를 사용하여 새 저장소 계정에 Azure 컨테이너를 생성합니다 https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal["참조하십시오"^].
+. 컨테이너를 Astra Control Service에 버킷으로 추가합니다. 을 참조하십시오 link:../use/manage-buckets.html#add-an-additional-bucket["추가 버킷을 추가합니다"].
+. (선택 사항) 새로 생성한 버킷을 Azure 백업의 기본 버킷으로 사용하려면 이 버킷을 Azure의 기본 버킷으로 설정합니다. 을 참조하십시오 link:../use/manage-buckets.html#change-the-default-bucket["기본 버킷을 변경합니다"].
 
