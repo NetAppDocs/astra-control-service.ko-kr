@@ -36,7 +36,13 @@ Astra Control은 앱 관리를 중지합니다.
 
 == 클러스터 관리를 중지합니다
 
-Astra Control에서 더 이상 관리하지 않으려는 클러스터 관리를 중지합니다. 모범 사례로서, GCP를 통해 클러스터를 삭제하기 전에 Astra Control에서 클러스터를 삭제하는 것이 좋습니다.
+Astra Control에서 더 이상 관리하지 않으려는 클러스터 관리를 중지합니다.
+
+ifdef::gcp[]
+
+모범 사례로서, GCP를 통해 클러스터를 삭제하기 전에 Astra Control에서 클러스터를 삭제하는 것이 좋습니다.
+
+endif::gcp[]
 
 * 이 작업을 수행하면 Astra Control에서 클러스터를 관리할 수 없습니다. 클러스터 구성을 변경하지 않고 클러스터를 삭제하지 않습니다.
 * Astra Trident가 클러스터에서 제거되지 않습니다. https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Astra Trident를 제거하는 방법을 알아보십시오"^].
@@ -61,8 +67,18 @@ NetApp 스토리지 클래스에 상주하는 PV(영구적 볼륨)가 있는 Kub
 * * 방법 #2 *: PVC와 POD를 삭제하거나 PVS가 마운트된 구축을 삭제합니다.
 
 
-Astra Control에서 Kubernetes 클러스터를 관리할 경우, 해당 클러스터의 애플리케이션은 Azure NetApp Files 또는 Cloud Volumes Service를 영구 볼륨의 스토리지 백엔드로 사용합니다. PVS를 먼저 제거하지 않고 클라우드 공급자에서 클러스터를 삭제하는 경우 백엔드 볼륨은 클러스터와 함께 _NOT_DELETED가 됩니다.
+Astra Control에서 Kubernetes 클러스터를 관리할 경우, 해당 클러스터의 애플리케이션은 클라우드 공급자를 영구 볼륨의 스토리지 백엔드로 사용합니다. PVS를 먼저 제거하지 않고 클라우드 공급자에서 클러스터를 삭제하는 경우 백엔드 볼륨은 클러스터와 함께 _NOT_DELETED가 됩니다.
 
 위의 방법 중 하나를 사용하면 클러스터에서 해당 PVS가 삭제됩니다. 삭제하기 전에 클러스터의 NetApp 스토리지 클래스에 PVS가 없는지 확인하십시오.
 
-클러스터를 삭제하기 전에 영구 볼륨을 삭제하지 않은 경우 Cloud Volumes Service for Google Cloud 또는 Azure NetApp Files에서 백엔드 볼륨을 수동으로 삭제해야 합니다.
+ifdef::azure[]
+
+클러스터를 삭제하기 전에 영구 볼륨을 삭제하지 않은 경우 Azure NetApp Files에서 백엔드 볼륨을 수동으로 삭제해야 합니다.
+
+endif::azure[]
+
+ifdef::gcp[]
+
+클러스터를 삭제하기 전에 영구 볼륨을 삭제하지 않은 경우 Cloud Volumes Service for Google Cloud에서 백엔드 볼륨을 수동으로 삭제해야 합니다.
+
+endif::gcp[]

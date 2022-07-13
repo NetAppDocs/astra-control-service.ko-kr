@@ -11,10 +11,13 @@ entries:
 - title: 클라우드 공급자를 설정합니다
   entries:
   - title: Google Cloud를 설정합니다
+    flavor: gcp
     url: "/get-started/set-up-google-cloud.html"
   - title: Azure NetApp Files를 사용하여 Microsoft Azure를 설정합니다
+    flavor: azure
     url: "/get-started/set-up-microsoft-azure-with-anf.html"
   - title: Azure 관리 디스크를 사용하여 Microsoft Azure를 설정합니다
+    flavor: azure
     url: "/get-started/set-up-microsoft-azure-with-amd.html"
 - title: 계정을 등록하십시오
   url: "/get-started/register.html"

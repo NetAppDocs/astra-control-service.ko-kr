@@ -22,8 +22,14 @@ summary: 알려진 문제점은 이 제품 릴리스를 성공적으로 사용�
 .백업, 복원, 클론
 * <<Restore of an app results in PV size larger than original PV>>
 * <<App clones fail using a specific version of PostgreSQL>>
+
+
+ifdef::azure[]
+
 * <<Azure backup buckets use LRS redundancy by default>>
 
+
+endif::azure[]
 
 .기타 문제
 * <<Snapshots eventually begin to fail when using external-snapshotter version 4.2.0>>
@@ -48,6 +54,8 @@ summary: 알려진 문제점은 이 제품 릴리스를 성공적으로 사용�
 
 동일한 클러스터 내의 앱 클론은 Bitnami PostgreSQL 11.5.0 차트와 함께 일관되게 실패합니다. 클론을 성공적으로 생성하려면 이전 또는 이후 버전의 차트를 사용하십시오.
 
+ifdef::azure[]
+
 
 
 == Azure 백업 버킷은 기본적으로 LRS 이중화를 사용합니다
@@ -57,6 +65,8 @@ summary: 알려진 문제점은 이 제품 릴리스를 성공적으로 사용�
 * link:../get-started/set-up-microsoft-azure-with-amd.html["Azure 관리 디스크를 사용하여 Microsoft Azure를 설정합니다"]
 * link:../get-started/set-up-microsoft-azure-with-anf.html["Azure NetApp Files를 사용하여 Microsoft Azure를 설정합니다"]
 
+
+endif::azure[]
 
 
 

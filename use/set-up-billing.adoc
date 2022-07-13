@@ -41,6 +41,8 @@ Astra Control 계정을 만들면 무료 플랜에 자동으로 등록됩니다.
 
 언제든지 프리미엄 요금제로 업그레이드할 수 있습니다. 업그레이드 후 Astra Control은 계정에 있는 _ALL_MANDATED 앱에 대해 귀하에게 요금을 부과하기 시작합니다. 처음 10개 앱은 무료 요금제에 머무르고 있지 않습니다.
 
+ifdef::gcp[]
+
 
 
 === Google Cloud 청구
@@ -54,6 +56,10 @@ Astra Control Service는 모든 서비스 유형과 서비스 수준을 지원�
 * https://cloud.google.com/storage/pricing["Google Cloud 스토리지 버킷의 가격 세부 정보를 확인하십시오"^].
 
 
+endif::gcp[]
+
+ifdef::azure[]
+
 
 
 === Microsoft Azure 청구
@@ -63,6 +69,8 @@ Astra Control Service를 사용하여 AKS 클러스터를 관리할 경우 영�
 * https://azure.microsoft.com/en-us/pricing/details/netapp["Azure NetApp Files에 대한 가격 세부 정보를 봅니다"^].
 * https://azure.microsoft.com/en-us/pricing/details/storage/blobs["Microsoft Azure Blob 스토리지의 가격 세부 정보를 봅니다"^].
 
+
+endif::azure[]
 
 
 

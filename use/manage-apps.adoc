@@ -94,9 +94,19 @@ NOTE: 운영자와 설치하는 앱은 동일한 네임스페이스를 사용해
 
 Astra Control은 스토리지가 Astra Control에서 설치한 스토리지 클래스에 있는 경우에만 상태 저장 앱을 관리합니다.
 
+ifdef::gcp[]
+
 * link:../learn/choose-class-and-size.html["GKE 클러스터용 저장소 클래스에 대해 알아봅니다"]
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
 * link:../learn/azure-storage.html["AKS 클러스터용 스토리지 클래스에 대해 알아보십시오"]
 
+
+endif::azure[]
 
 제어 차트에서 일반적인 응용 프로그램을 배포하는 방법에 대한 도움말은 다음을 참조하십시오.
 

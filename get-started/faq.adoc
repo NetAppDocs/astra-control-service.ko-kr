@@ -17,7 +17,7 @@ summary: 이 FAQ는 질문에 대한 간단한 답변을 찾는 경우에 도움
 
 == 개요
 
-Astra Control은 Kubernetes 네이티브 애플리케이션을 위한 애플리케이션 데이터 라이프사이클 관리 운영을 간소화하고자 합니다. Astra Control Service는 GKE(Google Kubernetes Engine) 및 AKS(Azure Kubernetes Service)에서 실행되는 Kubernetes 클러스터를 지원합니다.
+Astra Control은 Kubernetes 네이티브 애플리케이션을 위한 애플리케이션 데이터 라이프사이클 관리 운영을 간소화하고자 합니다. Astra Control Service는 여러 클라우드 공급자 환경에서 실행되는 Kubernetes 클러스터를 지원합니다.
 
 다음 섹션에서는 Astra Control을 사용할 때 나타날 수 있는 몇 가지 추가 질문에 대한 답변을 제공합니다. 자세한 내용은 astra.feedback@netapp.com 으로 문의하십시오
 
@@ -51,7 +51,7 @@ Astra Control은 온보딩 섹션에서 정확한 고객 정보를 제공해야 
 
 * 무료 플랜을 사용 중입니다. 영구 볼륨 청구에 대한 요금이 청구됩니까? *
 
-예. GKE 클러스터에서 Google Cloud용 Cloud Volumes Service 또는 Azure NetApp Files의 AKS 클러스터에서 사용하는 영구 볼륨에 대해 비용이 청구됩니다.
+예, 클라우드 공급자가 사용하는 영구 볼륨에 대해 비용이 청구됩니다.
 
 
 
@@ -59,11 +59,13 @@ Astra Control은 온보딩 섹션에서 정확한 고객 정보를 제공해야 
 
 * Astra Control Service에 추가하기 전에 내 클러스터에 CSI 드라이버를 설치해야 합니까? *
 
-아니요 클러스터가 Astra Control에 추가되면 서비스가 Kubernetes 클러스터에 NetApp의 Trident Container Storage Interface(CSI) 드라이버를 자동으로 설치합니다. 이 CSI 드라이버는 Google Cloud용 NetApp Cloud Volumes Service 및 Azure NetApp Files에서 지원하는 AKS 클러스터에 영구 볼륨을 프로비저닝하는 데 사용됩니다.
+아니요 클러스터가 Astra Control에 추가되면 서비스가 Kubernetes 클러스터에 NetApp의 Trident Container Storage Interface(CSI) 드라이버를 자동으로 설치합니다. 이 CSI 드라이버는 클라우드 공급자가 지원하는 클러스터에 영구 볼륨을 프로비저닝하는 데 사용됩니다.
 
 * Astra Control Service에 추가한 후 클러스터에 작업자 노드를 추가해야 합니다. 어떻게 해야 합니까? *
 
 새 작업자 노드를 기존 풀에 추가하거나 Ubuntu 이미지 유형인 경우 새 풀을 생성할 수 있습니다. 이러한 정보는 Astra Control에서 자동으로 발견됩니다. Astra Control에서 새 노드가 보이지 않으면 새 작업자 노드가 지원되는 이미지 유형을 실행하고 있는지 확인합니다. kubeck get nodes 명령을 사용하여 새 작업자 노드의 상태를 확인할 수도 있습니다.
+
+ifdef::azure[]
 
 
 
@@ -76,6 +78,10 @@ Astra Control은 온보딩 섹션에서 정확한 고객 정보를 제공해야 
 * Active Directory를 사용하여 AKS 클러스터에 대한 인증을 관리할 수 있습니까? *
 
 예. 인증 및 ID 관리에 Azure Active Directory(Azure AD)를 사용하도록 AKS 클러스터를 구성할 수 있습니다. 클러스터를 생성할 때 의 지침을 따릅니다 https://docs.microsoft.com/en-us/azure/aks/managed-aad["공식 문서"^] Azure AD를 사용하도록 클러스터를 구성합니다. 클러스터가 AKS로 관리되는 Azure AD 통합에 대한 요구 사항을 충족하는지 확인해야 합니다.
+
+endif::azure[]
+
+ifdef::gcp[]
 
 
 
@@ -101,6 +107,8 @@ Astra Control은 온보딩 섹션에서 정확한 고객 정보를 제공해야 
 
 아니요. 이 구성은 지원되지 않습니다. 하나의 GCP 프로젝트만 지원됩니다.
 
+endif::gcp[]
+
 
 
 == 클러스터를 제거하는 중입니다
@@ -117,8 +125,12 @@ Astra Control은 온보딩 섹션에서 정확한 고객 정보를 제공해야 
 
 Astra Control에서 클러스터를 제거해도 클러스터의 구성(애플리케이션 및 영구 스토리지)은 변경되지 않습니다. Astra Control 스냅샷 또는 해당 클러스터의 애플리케이션 백업을 복구할 수 없습니다. 스토리지 백엔드 내에 저장된 볼륨 스냅샷 데이터는 제거되지 않습니다. Astra Control에서 생성한 영구 스토리지 백업은 클라우드 공급자의 오브젝트 저장소 내에 남아 있지만 복원에는 사용할 수 없습니다.
 
+ifdef::gcp[]
+
 
 WARNING: GCP를 통해 삭제하기 전에 항상 Astra Control에서 클러스터를 제거하십시오. Astra Control에서 관리하는 동안 GCP에서 클러스터를 삭제하면 Astra Control 계정에 문제가 발생할 수 있습니다.
+
+endif::gcp[]
 
 * Astra Control에서 클러스터를 제거할 때 Astra Trident가 제거됩니까? *
 
@@ -140,6 +152,8 @@ Astra Control은 애플리케이션을 배포하지 않습니다. 응용 프로�
 
 아니요 Astra Control은 NetApp이 아닌 스토리지를 사용하는 애플리케이션을 검색할 수 있지만, NetApp이 아닌 스토리지를 사용하는 애플리케이션은 관리할 수 없습니다.
 
+ifdef::gcp[]
+
 * 응용 프로그램의 PVC가 GCP CVS에 바인딩된 것은 보이지 않습니다. 무엇이 문제입니까? *
 
 Astra Trident 운영자는 Astra Control에 성공적으로 추가된 후 기본 스토리지 클래스를 'NetApp-cvs-perf-premium'으로 설정합니다. 애플리케이션의 PVC가 Cloud Volumes Service for Google Cloud에 바인딩되지 않은 경우 다음과 같은 몇 가지 단계를 수행할 수 있습니다.
@@ -148,6 +162,8 @@ Astra Trident 운영자는 Astra Control에 성공적으로 추가된 후 기본
 * 애플리케이션 배포에 사용된 YAML 파일 또는 H제어 차트를 확인하고 다른 스토리지 클래스가 정의되어 있는지 확인하십시오.
 * 작업자 노드 이미지 유형이 Ubuntu이고 NFS 마운트가 성공했는지 확인합니다.
 
+
+endif::gcp[]
 
 * Astra Control에서 관리를 중지한 후 응용 프로그램은 어떻게 됩니까? *
 

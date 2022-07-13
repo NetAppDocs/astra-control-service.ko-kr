@@ -17,6 +17,8 @@ summary: 몇 단계만 거치하면 Astra Control Service를 시작할 수 있�
 
 == 클라우드 공급자를 설정합니다
 
+ifdef::gcp[]
+
 . Google 클라우드:
 +
 ** Google Kubernetes Engine 클러스터 요구 사항을 검토합니다.
@@ -28,6 +30,12 @@ summary: 몇 단계만 거치하면 Astra Control Service를 시작할 수 있�
 link:set-up-google-cloud.html["Google Cloud 요구 사항에 대해 자세히 알아보십시오"].
 
 
+
+
+
+endif::gcp[]
+
+ifdef::azure[]
 
 . Microsoft Azure:
 +
@@ -41,6 +49,8 @@ link:set-up-microsoft-azure-with-amd.html["Microsoft Azure 및 Azure 관리 디�
 
 
 
+
+endif::azure[]
 
 
 

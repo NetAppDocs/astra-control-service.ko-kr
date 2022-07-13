@@ -18,10 +18,16 @@ summary: 환경을 설정한 후에는 Kubernetes 클러스터를 생성하고 A
 
 == Kubernetes 클러스터를 생성합니다
 
-클러스터가 아직 없으면 와(과) 일치하는 클러스터를 생성합니다 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine(GKE)에 대한 Astra Control Service 요구 사항"], link:set-up-microsoft-azure-with-anf.html["Azure NetApp Files를 사용하는 Azure Kubernetes Service(AKS)에 대한 Astra Control 서비스 요구사항"], 또는 link:set-up-microsoft-azure-with-amd.html["Azure 관리 디스크를 사용하는 Azure Kubernetes Service(AKS)에 대한 Astra Control Service 요구 사항"] .
+클러스터가 아직 없으면 와(과) 일치하는 클러스터를 생성합니다 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine(GKE)에 대한 Astra Control Service 요구 사항"].
+
+endif::azure[]
+
+클러스터가 아직 없으면 와(과) 일치하는 클러스터를 생성합니다 link:set-up-microsoft-azure-with-anf.html["Azure NetApp Files를 사용하는 Azure Kubernetes Service(AKS)에 대한 Astra Control 서비스 요구사항"] 또는 link:set-up-microsoft-azure-with-amd.html["Azure 관리 디스크를 사용하는 Azure Kubernetes Service(AKS)에 대한 Astra Control Service 요구 사항"].
 
 
 NOTE: Astra Control Service는 인증 및 ID 관리를 위해 Azure Active Directory(Azure AD)를 사용하는 AKS 클러스터를 지원합니다. 클러스터를 생성할 때 의 지침을 따릅니다 https://docs.microsoft.com/en-us/azure/aks/managed-aad["공식 문서"^] Azure AD를 사용하도록 클러스터를 구성합니다. 클러스터가 AKS로 관리되는 Azure AD 통합에 대한 요구 사항을 충족하는지 확인해야 합니다.
+
+endif::gcp[]
 
 
 
@@ -38,8 +44,15 @@ Astra Control이 클러스터를 관리할 때 클러스터의 기본 스토리�
 
 
 ====
-.무엇을 &#8217;필요로 할거야
+ifdef::gcp[]
+
 * GKE의 경우 필요한 권한이 있는 서비스 계정에 대한 서비스 계정 키 파일이 있어야 합니다. link:../get-started/set-up-google-cloud.html#create-a-service-account["서비스 계정 설정 방법에 대해 알아보십시오"].
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
 * AKS의 경우 서비스 보안 주체를 생성할 때 Azure CLI의 출력이 포함된 JSON 파일이 있어야 합니다. link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["서비스 보안 주체를 설정하는 방법에 대해 알아봅니다"].
 +
 JSON 파일에 추가하지 않은 경우 Azure 구독 ID도 필요합니다.
@@ -52,54 +65,116 @@ JSON 파일에 추가하지 않은 경우 Azure 구독 ID도 필요합니다.
 
 
 
+endif::azure[]
+
 .단계
 . 대시보드에서 * Kubernetes 클러스터 관리 * 를 선택합니다.
 +
 표시되는 메시지에 따라 클러스터를 추가합니다.
 
 . * 공급자 *: 클라우드 공급자를 선택한 다음 필요한 자격 증명을 입력합니다.
-+
-.. * Microsoft Azure *: JSON 파일을 업로드하거나 클립보드에서 해당 JSON 파일의 내용을 붙여넣어 Azure 서비스 보안 주체에 대한 세부 정보를 제공합니다.
+
+
+ifdef::azure[]
+
+. * Microsoft Azure *: JSON 파일을 업로드하거나 클립보드에서 해당 JSON 파일의 내용을 붙여넣어 Azure 서비스 보안 주체에 대한 세부 정보를 제공합니다.
 +
 JSON 파일에는 서비스 보안 주체를 생성할 때 Azure CLI의 출력이 포함되어야 합니다. 또한 구독 ID를 포함할 수 있으므로 Astra에 자동으로 추가됩니다. 그렇지 않으면 JSON을 제공한 후 ID를 수동으로 입력해야 합니다.
 
-.. * Google Cloud Platform *: 파일을 업로드하거나 클립보드의 콘텐츠를 붙여 넣어 서비스 계정 키 파일을 제공합니다.
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+. * Google Cloud Platform *: 파일을 업로드하거나 클립보드의 콘텐츠를 붙여 넣어 서비스 계정 키 파일을 제공합니다.
 +
 Astra Control Service는 서비스 계정을 사용하여 Google Kubernetes Engine에서 실행 중인 클러스터를 검색합니다.
 
 
+
+endif::gcp[]
 
 . * 클러스터 *: 추가할 클러스터를 선택합니다.
 +
 자격 있는 탭에 주의를 기울이십시오. 경고가 나타나면 경고 위로 마우스를 이동하여 클러스터에 문제가 있는지 확인합니다. 예를 들어 클러스터에 작업자 노드가 없는 것을 식별할 수 있습니다.
 
 +
-Azure NetApp Files for Google Cloud 또는 Cloud Volumes Service에 대해 구성되지 않은 클러스터를 선택하면 경고가 표시됩니다. 이 클러스터에 NetApp Trident가 설치 및 구성되지 않았습니다. 다른 스토리지 서비스를 사용하려는 경우 클러스터를 계속 추가할 수 있습니다.
+Cloud Volumes Service for Google Cloud용으로 구성되지 않은 클러스터를 선택하면 경고가 나타납니다. 이 클러스터에 NetApp Trident가 설치 및 구성되지 않았습니다. 다른 스토리지 서비스를 사용하려는 경우 클러스터를 계속 추가할 수 있습니다.
 
 +
 "Private" 아이콘이 표시된 클러스터를 선택하면 해당 클러스터는 전용 IP 주소를 사용하며 Astra Control이 클러스터를 관리하는 데 Astra Connector가 필요합니다. Astra Connector를 설치해야 한다는 메시지가 나타나면 <<Manage a private cluster,다음 지침을 따르십시오>> Astra Connector를 설치하고 클러스터 관리를 활성화합니다. Astra Connector를 설치한 후에는 클러스터를 사용할 수 있으며 클러스터를 계속 추가할 수 있습니다.
 
+
+
+endif::gcp[]
+
++ 해당 탭에 세심한 주의를 기울이십시오. 경고가 나타나면 경고 위로 마우스를 이동하여 클러스터에 문제가 있는지 확인합니다. 예를 들어 클러스터에 작업자 노드가 없는 것을 식별할 수 있습니다.
+
++ Azure NetApp Files에 대해 구성되지 않은 클러스터를 선택하면 경고가 표시됩니다. 이 클러스터에 NetApp Trident가 설치 및 구성되지 않았습니다. 다른 스토리지 서비스를 사용하려는 경우 클러스터를 계속 추가할 수 있습니다.
+
++ "Private" 아이콘이 표시된 클러스터를 선택하면 해당 클러스터는 전용 IP 주소를 사용하며 Astra Control이 클러스터를 관리하는 데 Astra Connector가 필요합니다. Astra Connector를 설치해야 한다는 메시지가 나타나면 <<Manage a private cluster,다음 지침을 따르십시오>> Astra Connector를 설치하고 클러스터 관리를 활성화합니다. Astra Connector를 설치한 후에는 클러스터를 사용할 수 있으며 클러스터를 계속 추가할 수 있습니다.
+
+endif::azure[]
+
 . * 스토리지 *: 기본적으로 이 클러스터에 Kubernetes 애플리케이션을 배포할 스토리지 클래스를 선택합니다.
 +
-가격, 성능 및 복원력 정보는 목록에 있는 각 Cloud Volumes Service for Google Cloud 서비스에 대해 표시됩니다. 각 Azure NetApp Files 서비스의 성능 및 복원력 정보가 표시됩니다. Google Persistent Disk 또는 Azure 관리 디스크와 같은 NetApp 이외의 스토리지 클래스에서는 가격, 성능 및 복원력 정보를 사용할 수 없습니다.
+[NOTE]
+====
+각 클라우드 공급자의 스토리지 서비스에는 다음과 같은 가격, 성능 및 복원력 정보가 표시됩니다.
 
+ifdef::gcp[]
+
+** Google Cloud용 Cloud Volumes Service: 가격, 성능 및 복원력 정보
+** Google 영구 디스크: 가격, 성능 또는 복원력 정보를 사용할 수 없습니다
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
+** Azure NetApp Files: 성능 및 복원력 정보
+** Azure 관리 디스크: 사용 가능한 가격, 성능 또는 복원력 정보가 없습니다
+
+
+endif::azure[]
+
+====
 +
 각 스토리지 클래스는 다음 서비스 중 하나를 활용할 수 있습니다.
 
-+
-** https://cloud.netapp.com/cloud-volumes-service-for-gcp["Google Cloud용 Cloud Volumes Service"^]
-** https://cloud.google.com/persistent-disk/["Google 영구 디스크"^]
-** https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^]
-** https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure로 관리되는 디스크"^]
-+
-에 대해 자세히 알아보십시오 link:../learn/choose-class-and-size.html["GKE 클러스터용 저장소 클래스"] 및 link:../learn/azure-storage.html["AKS 클러스터용 스토리지 클래스입니다"].
 
 
+ifdef::gcp[]
+
+* https://cloud.netapp.com/cloud-volumes-service-for-gcp["Google Cloud용 Cloud Volumes Service"^]
+* https://cloud.google.com/persistent-disk/["Google 영구 디스크"^]
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
+* https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure로 관리되는 디스크"^]
+
+
+endif::azure[]
+
++에 대해 자세히 알아보십시오 link:../learn/azure-storage.html["AKS 클러스터용 스토리지 클래스입니다"].
+
+endif::gcp[]
+
+에 대해 자세히 알아보십시오 link:../learn/choose-class-and-size.html["GKE 클러스터용 저장소 클래스"].
+
+endif::azure[]
 
 . * 검토 및 승인 *: 구성 세부 정보를 검토하고 * 클러스터 추가 * 를 선택합니다.
 
 
 Astra Control Service는 적합한 클러스터에서 애플리케이션 백업을 위한 객체 저장소를 생성하고, 클러스터에 관리자 계정을 생성하고, 사용자가 지정한 기본 스토리지 클래스를 설정합니다. 이 프로세스는 최대 5분 정도 소요될 수 있습니다.
+
+ifdef::azure[]
 
 
 
@@ -148,6 +223,8 @@ NAME              REGISTERED   ASTRACONNECTORID
 astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 ----
 
+
+endif::azure[]
 
 
 

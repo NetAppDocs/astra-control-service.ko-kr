@@ -5,8 +5,10 @@ entries:
 - title: 아키텍처 및 구성 요소
   url: "/learn/architecture.html"
 - title: AKS 클러스터용 스토리지
+  flavor: azure
   url: "/learn/azure-storage.html"
 - title: GKE 클러스터용 스토리지
+  flavor: gcp
   url: "/learn/choose-class-and-size.html"
 - title: 검증된 애플리케이션 vs 표준 애플리케이션
   url: "/learn/validated-vs-standard.html"

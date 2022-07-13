@@ -13,6 +13,8 @@ summary: '이 문서 사이트의 많은 페이지에는 Astra Control Service�
 
 이 문서 사이트의 많은 페이지에는 Astra Control Service의 작업을 완료하는 방법을 보여 주는 비디오가 포함되어 있습니다. 동영상에 관심이 있다면 이 단일 페이지(재생 목록 등)에서 모든 동영상을 손쉽게 수집할 수 있습니다.
 
+ifdef::gcp[]
+
 
 
 == Google Cloud 설정을 위한 동영상
@@ -40,6 +42,8 @@ video::get-started/video-create-gcp-service-account.mp4[width=848,height=480]
 Astra Control Service는 서비스 계정 키를 사용하여 방금 설정한 서비스 계정의 ID를 설정합니다. 다음 비디오에서는 Google Cloud 콘솔에서 서비스 계정 키를 생성하는 방법을 보여줍니다. link:set-up-google-cloud.html#create-a-service-account-key-2["서비스 계정 키 생성에 대해 자세히 알아보십시오"].
 
 video::get-started/video-create-gcp-service-account-key.mp4[width=848,height=480]
+endif::gcp[]
+
 
 
 == Astra Control 사용에 대한 비디오입니다

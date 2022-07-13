@@ -36,7 +36,7 @@ Astra Control은 컴퓨터의 상태 변화를 지속적으로 감시하기 때�
 
 Astra Control은 두 가지 배포 모델로 제공됩니다.
 
-* * Astra Control Service *: GKE(Google Kubernetes Engine) 및 AKS(Azure Kubernetes Service)에서 Kubernetes 클러스터의 애플리케이션 인식 데이터 관리를 제공하는 NetApp 관리 서비스입니다.
+* * Astra Control Service *: 여러 클라우드 공급자 환경에서 Kubernetes 클러스터의 애플리케이션 인식 데이터 관리를 제공하는 NetApp 관리 서비스입니다.
 * * Astra Control Center *: 사내 환경에서 실행되는 Kubernetes 클러스터의 애플리케이션 인식 데이터 관리를 제공하는 자체 관리 소프트웨어입니다.
 
 
@@ -93,26 +93,43 @@ Astra Control Service는 NetApp에서 관리하는 클라우드 서비스로, �
 높은 수준에서 Astra Control Service는 다음과 같이 작동합니다.
 
 * 클라우드 공급자를 설정하고 Astra 계정에 등록하여 Astra Control Service를 시작할 수 있습니다.
-+
-** GKE 클러스터의 경우 Astra Control Service가 사용합니다 https://cloud.netapp.com/cloud-volumes-service-for-gcp["Google Cloud용 NetApp Cloud Volumes Service"^] 또는 Google 영구 디스크를 영구 볼륨의 스토리지 백엔드로 사용합니다.
-** AKS 클러스터의 경우 Astra Control Service가 사용합니다 https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^] 또는 Azure Disk Storage를 영구 볼륨의 스토리지 백엔드로 사용합니다.
 
+
+ifdef::gcp[]
+
++** GKE 클러스터의 경우 Astra Control Service가 사용합니다 https://cloud.netapp.com/cloud-volumes-service-for-gcp["Google Cloud용 NetApp Cloud Volumes Service"^] 또는 Google 영구 디스크를 영구 볼륨의 스토리지 백엔드로 사용합니다.
+
+endif::gcp[]
+
+ifdef::azure[]
+
+AKS 클러스터의 경우 Astra Control Service가 사용합니다 https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^] 또는 Azure Disk Storage를 영구 볼륨의 스토리지 백엔드로 사용합니다.
+
+endif::azure[]
 
 * 첫 번째 Kubernetes 컴퓨팅을 Astra Control Service에 추가합니다. 그러면 Astra Control Service에서 다음을 수행합니다.
 +
 ** 클라우드 공급자 계정에 백업 복사본이 저장되는 개체 저장소를 만듭니다.
-+
+
+
+
+
+ifdef::azure[]
+
 Azure에서 Astra Control Service는 Blob 컨테이너용 리소스 그룹, 스토리지 계정 및 키도 생성합니다.
 
-** 클러스터에 새 관리 역할 및 Kubernetes 서비스 계정을 생성합니다.
-** 에서는 새 관리자 역할을 사용하여 를 설치합니다 https://docs.netapp.com/us-en/trident/index.html["아스트라 트리덴트"^] 를 클릭하여 하나 이상의 스토리지 클래스를 생성합니다.
-** Azure NetApp Files 또는 NetApp Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하는 경우, Astra Control Service는 Astra Trident를 사용하여 앱에 영구 볼륨을 프로비저닝합니다.
+endif::azure[]
 
-
-* 이제 앱을 클러스터에 추가할 수 있습니다. 영구 볼륨은 새로운 기본 스토리지 클래스에 프로비저닝됩니다.
-* 그런 다음 Astra Control Service를 사용하여 이러한 애플리케이션을 관리하고 스냅샷, 백업 및 클론 생성을 시작합니다.
+* 클러스터에 새 관리 역할 및 Kubernetes 서비스 계정을 생성합니다.
+* 에서는 새 관리자 역할을 사용하여 를 설치합니다 https://docs.netapp.com/us-en/trident/index.html["아스트라 트리덴트"^] 를 클릭하여 하나 이상의 스토리지 클래스를 생성합니다.
+* 클라우드 공급자 스토리지 서비스를 스토리지 백엔드로 사용하는 경우, Astra Control Service는 Astra Trident를 사용하여 앱에 영구 볼륨을 프로비저닝합니다.
++
+** 이제 앱을 클러스터에 추가할 수 있습니다. 영구 볼륨은 새로운 기본 스토리지 클래스에 프로비저닝됩니다.
+** 그런 다음 Astra Control Service를 사용하여 이러한 애플리케이션을 관리하고 스냅샷, 백업 및 클론 생성을 시작합니다.
 +
 Astra Control Service는 상태 변화를 위해 컴퓨팅 작업을 지속적으로 감시하기 때문에 새로 추가한 앱을 인식합니다.
+
+
 
 
 
