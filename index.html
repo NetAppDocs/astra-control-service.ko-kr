@@ -9,14 +9,14 @@
   <meta property="og:title" content="Astra Control Service 문서 | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/ko-kr/astra-control-service/index.html" />
-	<meta property="og:description" content="Astra Control Service는 GKE(Google Kubernetes Engine) 및 AKS(Azure Kubernetes Service)에서 Kubernetes 클러스터의 애플리케이션 인식 데이터 관리를 제공하는 NetApp 관리 서비스입니다. 온프레미스 환경에서 실..." />
+	<meta property="og:description" content="Astra Control Service는 NetApp에서 관리하는 서비스로서, 여러 클라우드 환경에서 Kubernetes 클러스터의 애플리케이션 인식 데이터 관리를 제공합니다. 온프레미스 환경에서 실행되는 Kubernetes 애플리케이션을 관리해야 하는 경우에는 Astra Cont..." />
   <meta property="og:image" content="https://docs.netapp.com/ko-kr/astra-control-service/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Astra Control Service는 GKE(Google Kubernetes Engine) 및 AKS(Azure Kubernetes Service)에서 Kubernetes 클러스터의 애플리케이션 인식 데이터 관리를 제공하는 NetApp 관리 서비스입니다. 온프레미스 환경에서 실...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Astra Control Service는 NetApp에서 관리하는 서비스로서, 여러 클라우드 환경에서 Kubernetes 클러스터의 애플리케이션 인식 데이터 관리를 제공합니다. 온프레미스 환경에서 실행되는 Kubernetes 애플리케이션을 관리해야 하는 경우에는 Astra Cont...">
   <meta name="keywords" content=" "><!-- Icons -->
   <link rel="icon" href="/ko-kr/astra-control-service/images/favicon.ico" type="image/x-icon">
 
@@ -169,7 +169,33 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[Astra Control Service 문서](https://docs.netapp.com/ko-kr/astra-control-service/index.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/index.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/edit-sm.svg" alt="" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/astra-control-service/images/article-sm.svg" alt="" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ko-kr/astra-control-service/index.html">
+  
+  <div class="custom-dropdown-select unselected" title="모든 클라우드 공급자">
+    <label>클라우드 공급자</label>
+    <span>모든 클라우드 공급자</span>
+    <img src="/ko-kr/astra-control-service/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="gcp" data-url="/ko-kr/astra-control-service/gcp/index.html">
+      <img alt="" src="/ko-kr/astra-control-service/images/gcp-ico.svg" onerror="this.src='/ko-kr/astra-control-service/images/blank-ico.png'" class="custom-icon" />Google 클라우드
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ko-kr/astra-control-service/azure/index.html">
+      <img alt="" src="/ko-kr/astra-control-service/images/azure-ico.svg" onerror="this.src='/ko-kr/astra-control-service/images/blank-ico.png'" class="custom-icon" />Microsoft Azure를 참조하십시오
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[Astra Control Service 문서](https://docs.netapp.com/ko-kr/astra-control-service/index.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/index.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/edit-sm.svg" alt="" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/astra-control-service/images/article-sm.svg" alt="" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -258,11 +284,13 @@
           <div id="react-search" 
           data-search-html="/ko-kr/astra-control-service/search.html"
           data-type="widget" 
-          data-placeholder="설명서 검색" 
-          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
-          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
-          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
-          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-placeholder="설명서 검색"
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음"
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오."
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?"
+          data-results-found="{hitCount}개의 결과를 찾음"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -936,7 +964,7 @@
           <h1 class="n-doc__component-detail-heading">Astra Control Service 문서</h1>
         </div>
         <section class="n-band__section">
-  <p>Astra Control Service is a NetApp-managed service that provides application-aware data management of Kubernetes clusters in Google Kubernetes Engine (GKE) and Azure Kubernetes Service (AKS). Go to the docs for Astra Control Center if you need to manage Kubernetes apps running in your on-premises environment.</p>
+  <p>Astra Control Service is a NetApp-managed service that provides application-aware data management of Kubernetes clusters in multiple cloud environments. Go to the docs for Astra Control Center if you need to manage Kubernetes apps running in your on-premises environment.</p>
 </section><div class="n-band__content">
   <div class="n-layout-flex" data-ntap-layout="4">
     

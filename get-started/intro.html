@@ -169,7 +169,33 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[Astra Control에 대해 알아보십시오](https://docs.netapp.com/ko-kr/astra-control-service/get-started/intro.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/get-started/intro.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/edit-sm.svg" alt="" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/astra-control-service/images/article-sm.svg" alt="" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ko-kr/astra-control-service/get-started/intro.html">
+  
+  <div class="custom-dropdown-select unselected" title="모든 클라우드 공급자">
+    <label>클라우드 공급자</label>
+    <span>모든 클라우드 공급자</span>
+    <img src="/ko-kr/astra-control-service/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="gcp" data-url="/ko-kr/astra-control-service/gcp/get-started/intro.html">
+      <img alt="" src="/ko-kr/astra-control-service/images/gcp-ico.svg" onerror="this.src='/ko-kr/astra-control-service/images/blank-ico.png'" class="custom-icon" />Google 클라우드
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ko-kr/astra-control-service/azure/get-started/intro.html">
+      <img alt="" src="/ko-kr/astra-control-service/images/azure-ico.svg" onerror="this.src='/ko-kr/astra-control-service/images/blank-ico.png'" class="custom-icon" />Microsoft Azure를 참조하십시오
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[Astra Control에 대해 알아보십시오](https://docs.netapp.com/ko-kr/astra-control-service/get-started/intro.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/get-started/intro.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/edit-sm.svg" alt="" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/astra-control-service/images/article-sm.svg" alt="" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -258,11 +284,13 @@
           <div id="react-search" 
           data-search-html="/ko-kr/astra-control-service/search.html"
           data-type="widget" 
-          data-placeholder="설명서 검색" 
-          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
-          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
-          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
-          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-placeholder="설명서 검색"
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음"
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오."
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?"
+          data-results-found="{hitCount}개의 결과를 찾음"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -937,7 +965,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-25 20:52:28 +0000">05/25/2022</time>
+    <time datetime="2022-07-13 17:02:17 +0000">07/13/2022</time>
     
   
 
@@ -996,7 +1024,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>* Astra Control Service *: GKE(Google Kubernetes Engine) 및 AKS(Azure Kubernetes Service)에서 Kubernetes 클러스터의 애플리케이션 인식 데이터 관리를 제공하는 NetApp 관리 서비스입니다.</p>
+<p>* Astra Control Service *: 여러 클라우드 공급자 환경에서 Kubernetes 클러스터의 애플리케이션 인식 데이터 관리를 제공하는 NetApp 관리 서비스입니다.</p>
 </li>
 <li>
 <p>* Astra Control Center *: 사내 환경에서 실행되는 Kubernetes 클러스터의 애플리케이션 인식 데이터 관리를 제공하는 자체 관리 소프트웨어입니다.</p>
@@ -1100,27 +1128,34 @@
 <ul>
 <li>
 <p>클라우드 공급자를 설정하고 Astra 계정에 등록하여 Astra Control Service를 시작할 수 있습니다.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>GKE 클러스터의 경우 Astra Control Service가 사용합니다 <a href="https://cloud.netapp.com/cloud-volumes-service-for-gcp" target="_blank" rel="noopener">"Google Cloud용 NetApp Cloud Volumes Service"</a> 또는 Google 영구 디스크를 영구 볼륨의 스토리지 백엔드로 사용합니다.</p>
-</li>
-<li>
-<p>AKS 클러스터의 경우 Astra Control Service가 사용합니다 <a href="https://cloud.netapp.com/azure-netapp-files" target="_blank" rel="noopener">"Azure NetApp Files"</a> 또는 Azure Disk Storage를 영구 볼륨의 스토리지 백엔드로 사용합니다.</p>
 </li>
 </ul>
 </div>
-</li>
+<div class="paragraph">
+<p>+** GKE 클러스터의 경우 Astra Control Service가 사용합니다 <a href="https://cloud.netapp.com/cloud-volumes-service-for-gcp" target="_blank" rel="noopener">"Google Cloud용 NetApp Cloud Volumes Service"</a> 또는 Google 영구 디스크를 영구 볼륨의 스토리지 백엔드로 사용합니다.</p>
+</div>
+<div class="paragraph">
+<p>AKS 클러스터의 경우 Astra Control Service가 사용합니다 <a href="https://cloud.netapp.com/azure-netapp-files" target="_blank" rel="noopener">"Azure NetApp Files"</a> 또는 Azure Disk Storage를 영구 볼륨의 스토리지 백엔드로 사용합니다.</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>첫 번째 Kubernetes 컴퓨팅을 Astra Control Service에 추가합니다. 그러면 Astra Control Service에서 다음을 수행합니다.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>클라우드 공급자 계정에 백업 복사본이 저장되는 개체 저장소를 만듭니다.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p>Azure에서 Astra Control Service는 Blob 컨테이너용 리소스 그룹, 스토리지 계정 및 키도 생성합니다.</p>
 </div>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>클러스터에 새 관리 역할 및 Kubernetes 서비스 계정을 생성합니다.</p>
 </li>
@@ -1128,11 +1163,9 @@
 <p>에서는 새 관리자 역할을 사용하여 를 설치합니다 <a href="https://docs.netapp.com/us-en/trident/index.html" target="_blank" rel="noopener">"아스트라 트리덴트"</a> 를 클릭하여 하나 이상의 스토리지 클래스를 생성합니다.</p>
 </li>
 <li>
-<p>Azure NetApp Files 또는 NetApp Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하는 경우, Astra Control Service는 Astra Trident를 사용하여 앱에 영구 볼륨을 프로비저닝합니다.</p>
-</li>
-</ul>
-</div>
-</li>
+<p>클라우드 공급자 스토리지 서비스를 스토리지 백엔드로 사용하는 경우, Astra Control Service는 Astra Trident를 사용하여 앱에 영구 볼륨을 프로비저닝합니다.</p>
+<div class="ulist">
+<ul>
 <li>
 <p>이제 앱을 클러스터에 추가할 수 있습니다. 영구 볼륨은 새로운 기본 스토리지 클래스에 프로비저닝됩니다.</p>
 </li>
@@ -1140,6 +1173,9 @@
 <p>그런 다음 Astra Control Service를 사용하여 이러한 애플리케이션을 관리하고 스냅샷, 백업 및 클론 생성을 시작합니다.</p>
 <div class="paragraph">
 <p>Astra Control Service는 상태 변화를 위해 컴퓨팅 작업을 지속적으로 감시하기 때문에 새로 추가한 앱을 인식합니다.</p>
+</div>
+</li>
+</ul>
 </div>
 </li>
 </ul>

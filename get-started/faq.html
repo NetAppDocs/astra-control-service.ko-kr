@@ -169,7 +169,33 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[Astra Control Service에 대한 질문과 대답](https://docs.netapp.com/ko-kr/astra-control-service/get-started/faq.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/get-started/faq.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/edit-sm.svg" alt="" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/astra-control-service/images/article-sm.svg" alt="" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ko-kr/astra-control-service/get-started/faq.html">
+  
+  <div class="custom-dropdown-select unselected" title="모든 클라우드 공급자">
+    <label>클라우드 공급자</label>
+    <span>모든 클라우드 공급자</span>
+    <img src="/ko-kr/astra-control-service/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="gcp" data-url="/ko-kr/astra-control-service/gcp/get-started/faq.html">
+      <img alt="" src="/ko-kr/astra-control-service/images/gcp-ico.svg" onerror="this.src='/ko-kr/astra-control-service/images/blank-ico.png'" class="custom-icon" />Google 클라우드
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ko-kr/astra-control-service/azure/get-started/faq.html">
+      <img alt="" src="/ko-kr/astra-control-service/images/azure-ico.svg" onerror="this.src='/ko-kr/astra-control-service/images/blank-ico.png'" class="custom-icon" />Microsoft Azure를 참조하십시오
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[Astra Control Service에 대한 질문과 대답](https://docs.netapp.com/ko-kr/astra-control-service/get-started/faq.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/get-started/faq.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/edit-sm.svg" alt="" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/astra-control-service/images/article-sm.svg" alt="" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -258,11 +284,13 @@
           <div id="react-search" 
           data-search-html="/ko-kr/astra-control-service/search.html"
           data-type="widget" 
-          data-placeholder="설명서 검색" 
-          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
-          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
-          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
-          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-placeholder="설명서 검색"
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음"
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오."
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?"
+          data-results-found="{hitCount}개의 결과를 찾음"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -937,7 +965,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-11 14:48:35 +0000">05/11/2022</time>
+    <time datetime="2022-07-13 17:02:17 +0000">07/13/2022</time>
     
   
 
@@ -955,7 +983,7 @@
 <h2 id="개요">개요</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Astra Control은 Kubernetes 네이티브 애플리케이션을 위한 애플리케이션 데이터 라이프사이클 관리 운영을 간소화하고자 합니다. Astra Control Service는 GKE(Google Kubernetes Engine) 및 AKS(Azure Kubernetes Service)에서 실행되는 Kubernetes 클러스터를 지원합니다.</p>
+<p>Astra Control은 Kubernetes 네이티브 애플리케이션을 위한 애플리케이션 데이터 라이프사이클 관리 운영을 간소화하고자 합니다. Astra Control Service는 여러 클라우드 공급자 환경에서 실행되는 Kubernetes 클러스터를 지원합니다.</p>
 </div>
 <div class="paragraph">
 <p>다음 섹션에서는 Astra Control을 사용할 때 나타날 수 있는 몇 가지 추가 질문에 대한 답변을 제공합니다. 자세한 내용은 <a href="mailto:astra.feedback@netapp.com">astra.feedback@netapp.com</a> 으로 문의하십시오</p>
@@ -1033,7 +1061,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>예. GKE 클러스터에서 Google Cloud용 Cloud Volumes Service 또는 Azure NetApp Files의 AKS 클러스터에서 사용하는 영구 볼륨에 대해 비용이 청구됩니다.</p>
+<p>예, 클라우드 공급자가 사용하는 영구 볼륨에 대해 비용이 청구됩니다.</p>
 </div>
 </div>
 </div>
@@ -1048,7 +1076,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>아니요 클러스터가 Astra Control에 추가되면 서비스가 Kubernetes 클러스터에 NetApp의 Trident Container Storage Interface(CSI) 드라이버를 자동으로 설치합니다. 이 CSI 드라이버는 Google Cloud용 NetApp Cloud Volumes Service 및 Azure NetApp Files에서 지원하는 AKS 클러스터에 영구 볼륨을 프로비저닝하는 데 사용됩니다.</p>
+<p>아니요 클러스터가 Astra Control에 추가되면 서비스가 Kubernetes 클러스터에 NetApp의 Trident Container Storage Interface(CSI) 드라이버를 자동으로 설치합니다. 이 CSI 드라이버는 클라우드 공급자가 지원하는 클러스터에 영구 볼륨을 프로비저닝하는 데 사용됩니다.</p>
 </div>
 <div class="ulist">
 <ul>

@@ -169,7 +169,33 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[아키텍처 및 구성 요소](https://docs.netapp.com/ko-kr/astra-control-service/learn/architecture.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/learn/architecture.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/edit-sm.svg" alt="" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/astra-control-service/images/article-sm.svg" alt="" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ko-kr/astra-control-service/learn/architecture.html">
+  
+  <div class="custom-dropdown-select unselected" title="모든 클라우드 공급자">
+    <label>클라우드 공급자</label>
+    <span>모든 클라우드 공급자</span>
+    <img src="/ko-kr/astra-control-service/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="gcp" data-url="/ko-kr/astra-control-service/gcp/learn/architecture.html">
+      <img alt="" src="/ko-kr/astra-control-service/images/gcp-ico.svg" onerror="this.src='/ko-kr/astra-control-service/images/blank-ico.png'" class="custom-icon" />Google 클라우드
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ko-kr/astra-control-service/azure/learn/architecture.html">
+      <img alt="" src="/ko-kr/astra-control-service/images/azure-ico.svg" onerror="this.src='/ko-kr/astra-control-service/images/blank-ico.png'" class="custom-icon" />Microsoft Azure를 참조하십시오
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[아키텍처 및 구성 요소](https://docs.netapp.com/ko-kr/astra-control-service/learn/architecture.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/learn/architecture.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/edit-sm.svg" alt="" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/astra-control-service/images/article-sm.svg" alt="" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -258,11 +284,13 @@
           <div id="react-search" 
           data-search-html="/ko-kr/astra-control-service/search.html"
           data-type="widget" 
-          data-placeholder="설명서 검색" 
-          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
-          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
-          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
-          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-placeholder="설명서 검색"
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음"
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오."
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?"
+          data-results-found="{hitCount}개의 결과를 찾음"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -937,7 +965,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-26 16:30:24 +0000">04/26/2022</time>
+    <time datetime="2022-07-13 17:02:17 +0000">07/13/2022</time>
     
   
 
@@ -970,13 +998,25 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Astra Control Service가 사용합니다 <a href="https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/" target="_blank" rel="noopener">"Google Cloud용 NetApp Cloud Volumes Service"</a> GKE 클러스터 및 용 스토리지 백엔드로 사용됩니다 <a href="https://www.netapp.com/cloud-services/azure-netapp-files/" target="_blank" rel="noopener">"Azure NetApp Files"</a> AKS 클러스터의 스토리지 백엔드로 사용됩니다.</p>
+<p>Astra Control Service가 사용합니다 <a href="https://www.netapp.com/cloud-services/azure-netapp-files/" target="_blank" rel="noopener">"Azure NetApp Files"</a> AKS 클러스터의 스토리지 백엔드로 사용됩니다.</p>
 </li>
 <li>
-<p>또한 Astra Control Service는 Azure Managed Disks 및 Google Persistent Disk를 백엔드 스토리지 옵션으로 지원합니다.</p>
+<p>Astra Control Service는 백엔드 스토리지 옵션으로 Azure Managed Disks도 지원합니다.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Astra Control Center는 다음과 같은 스토리지 백엔드를 사용합니다.</p>
+<p>Astra Control Service가 사용합니다 <a href="https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/" target="_blank" rel="noopener">"Google Cloud용 NetApp Cloud Volumes Service"</a> GKE 클러스터를 위한 스토리지 백엔드로 사용됩니다.</p>
+</li>
+<li>
+<p>Astra Control Service는 백엔드 스토리지 옵션으로 Google Persistent Disk도 지원합니다.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>+** Astra Control Center는 다음과 같은 스토리지 백엔드를 사용합니다.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -987,15 +1027,13 @@
 </li>
 <li>
 <p>Cloud Volumes ONTAP 스토리지 백엔드</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>* Cloud Insights *: NetApp 클라우드 인프라 모니터링 툴인 Cloud Insights를 사용하면 Astra Control Center에서 관리하는 Kubernetes 클러스터의 성능과 활용률을 모니터링할 수 있습니다. Cloud Insights는 스토리지 사용량과 워크로드를 상호 연관시킵니다. Astra Control Center에서 Cloud Insights 연결을 활성화하면 Astra Control Center UI 페이지에 원격 측정 정보가 표시됩니다.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>

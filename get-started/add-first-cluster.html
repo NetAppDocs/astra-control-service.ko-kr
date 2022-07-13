@@ -169,7 +169,33 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[Astra Control Service에서 Kubernetes 클러스터 관리를 시작합니다](https://docs.netapp.com/ko-kr/astra-control-service/get-started/add-first-cluster.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/get-started/add-first-cluster.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/edit-sm.svg" alt="" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/astra-control-service/images/article-sm.svg" alt="" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ko-kr/astra-control-service/get-started/add-first-cluster.html">
+  
+  <div class="custom-dropdown-select unselected" title="모든 클라우드 공급자">
+    <label>클라우드 공급자</label>
+    <span>모든 클라우드 공급자</span>
+    <img src="/ko-kr/astra-control-service/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="gcp" data-url="/ko-kr/astra-control-service/gcp/get-started/add-first-cluster.html">
+      <img alt="" src="/ko-kr/astra-control-service/images/gcp-ico.svg" onerror="this.src='/ko-kr/astra-control-service/images/blank-ico.png'" class="custom-icon" />Google 클라우드
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ko-kr/astra-control-service/azure/get-started/add-first-cluster.html">
+      <img alt="" src="/ko-kr/astra-control-service/images/azure-ico.svg" onerror="this.src='/ko-kr/astra-control-service/images/blank-ico.png'" class="custom-icon" />Microsoft Azure를 참조하십시오
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[Astra Control Service에서 Kubernetes 클러스터 관리를 시작합니다](https://docs.netapp.com/ko-kr/astra-control-service/get-started/add-first-cluster.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/get-started/add-first-cluster.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/astra-control-service/images/edit-sm.svg" alt="" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/astra-control-service/images/article-sm.svg" alt="" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">이 페이지의 내용</div>
@@ -258,11 +284,13 @@
           <div id="react-search" 
           data-search-html="/ko-kr/astra-control-service/search.html"
           data-type="widget" 
-          data-placeholder="설명서 검색" 
-          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
-          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
-          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
-          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-placeholder="설명서 검색"
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음"
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오."
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?"
+          data-results-found="{hitCount}개의 결과를 찾음"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -937,7 +965,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-11 14:48:35 +0000">05/11/2022</time>
+    <time datetime="2022-07-13 17:02:17 +0000">07/13/2022</time>
     
   
 
@@ -955,7 +983,10 @@
 <h2 id="kubernetes-클러스터를-생성합니다">Kubernetes 클러스터를 생성합니다</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>클러스터가 아직 없으면 와(과) 일치하는 클러스터를 생성합니다 <a href="set-up-google-cloud.html#gke-cluster-requirements">"Google Kubernetes Engine(GKE)에 대한 Astra Control Service 요구 사항"</a>, <a href="set-up-microsoft-azure-with-anf.html">"Azure NetApp Files를 사용하는 Azure Kubernetes Service(AKS)에 대한 Astra Control 서비스 요구사항"</a>, 또는 <a href="set-up-microsoft-azure-with-amd.html">"Azure 관리 디스크를 사용하는 Azure Kubernetes Service(AKS)에 대한 Astra Control Service 요구 사항"</a> .</p>
+<p>클러스터가 아직 없으면 와(과) 일치하는 클러스터를 생성합니다 <a href="set-up-google-cloud.html#gke-cluster-requirements">"Google Kubernetes Engine(GKE)에 대한 Astra Control Service 요구 사항"</a>.</p>
+</div>
+<div class="paragraph">
+<p>클러스터가 아직 없으면 와(과) 일치하는 클러스터를 생성합니다 <a href="set-up-microsoft-azure-with-anf.html">"Azure NetApp Files를 사용하는 Azure Kubernetes Service(AKS)에 대한 Astra Control 서비스 요구사항"</a> 또는 <a href="set-up-microsoft-azure-with-amd.html">"Azure 관리 디스크를 사용하는 Azure Kubernetes Service(AKS)에 대한 Astra Control Service 요구 사항"</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1002,7 +1033,6 @@ Astra Control Service는 인증 및 ID 관리를 위해 Azure Active Directory(A
 </table>
 </div>
 <div class="ulist">
-<div class="title">무엇을 &#8217;필요로 할거야</div>
 <ul>
 <li>
 <p>GKE의 경우 필요한 권한이 있는 서비스 계정에 대한 서비스 계정 키 파일이 있어야 합니다. <a href="../get-started/set-up-google-cloud.html#create-a-service-account">"서비스 계정 설정 방법에 대해 알아보십시오"</a>.</p>
@@ -1039,8 +1069,7 @@ Astra Control Service는 인증 및 ID 관리를 위해 Azure Active Directory(A
 </li>
 <li>
 <p>* 공급자 *: 클라우드 공급자를 선택한 다음 필요한 자격 증명을 입력합니다.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</li>
 <li>
 <p>* Microsoft Azure *: JSON 파일을 업로드하거나 클립보드에서 해당 JSON 파일의 내용을 붙여넣어 Azure 서비스 보안 주체에 대한 세부 정보를 제공합니다.</p>
 <div class="paragraph">
@@ -1053,25 +1082,62 @@ Astra Control Service는 인증 및 ID 관리를 위해 Azure Active Directory(A
 <p>Astra Control Service는 서비스 계정을 사용하여 Google Kubernetes Engine에서 실행 중인 클러스터를 검색합니다.</p>
 </div>
 </li>
-</ol>
-</div>
-</li>
 <li>
 <p>* 클러스터 *: 추가할 클러스터를 선택합니다.</p>
 <div class="paragraph">
 <p>자격 있는 탭에 주의를 기울이십시오. 경고가 나타나면 경고 위로 마우스를 이동하여 클러스터에 문제가 있는지 확인합니다. 예를 들어 클러스터에 작업자 노드가 없는 것을 식별할 수 있습니다.</p>
 </div>
 <div class="paragraph">
-<p>Azure NetApp Files for Google Cloud 또는 Cloud Volumes Service에 대해 구성되지 않은 클러스터를 선택하면 경고가 표시됩니다. 이 클러스터에 NetApp Trident가 설치 및 구성되지 않았습니다. 다른 스토리지 서비스를 사용하려는 경우 클러스터를 계속 추가할 수 있습니다.</p>
+<p>Cloud Volumes Service for Google Cloud용으로 구성되지 않은 클러스터를 선택하면 경고가 나타납니다. 이 클러스터에 NetApp Trident가 설치 및 구성되지 않았습니다. 다른 스토리지 서비스를 사용하려는 경우 클러스터를 계속 추가할 수 있습니다.</p>
 </div>
 <div class="paragraph">
 <p>"Private" 아이콘이 표시된 클러스터를 선택하면 해당 클러스터는 전용 IP 주소를 사용하며 Astra Control이 클러스터를 관리하는 데 Astra Connector가 필요합니다. Astra Connector를 설치해야 한다는 메시지가 나타나면 <a href="#Manage a private cluster">다음 지침을 따르십시오</a> Astra Connector를 설치하고 클러스터 관리를 활성화합니다. Astra Connector를 설치한 후에는 클러스터를 사용할 수 있으며 클러스터를 계속 추가할 수 있습니다.</p>
 </div>
 </li>
+</ol>
+</div>
+<div class="paragraph">
+<p>+ 해당 탭에 세심한 주의를 기울이십시오. 경고가 나타나면 경고 위로 마우스를 이동하여 클러스터에 문제가 있는지 확인합니다. 예를 들어 클러스터에 작업자 노드가 없는 것을 식별할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>+ Azure NetApp Files에 대해 구성되지 않은 클러스터를 선택하면 경고가 표시됩니다. 이 클러스터에 NetApp Trident가 설치 및 구성되지 않았습니다. 다른 스토리지 서비스를 사용하려는 경우 클러스터를 계속 추가할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>+ "Private" 아이콘이 표시된 클러스터를 선택하면 해당 클러스터는 전용 IP 주소를 사용하며 Astra Control이 클러스터를 관리하는 데 Astra Connector가 필요합니다. Astra Connector를 설치해야 한다는 메시지가 나타나면 <a href="#Manage a private cluster">다음 지침을 따르십시오</a> Astra Connector를 설치하고 클러스터 관리를 활성화합니다. Astra Connector를 설치한 후에는 클러스터를 사용할 수 있으며 클러스터를 계속 추가할 수 있습니다.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>* 스토리지 *: 기본적으로 이 클러스터에 Kubernetes 애플리케이션을 배포할 스토리지 클래스를 선택합니다.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="참고">
+</td>
+<td class="content">
 <div class="paragraph">
-<p>가격, 성능 및 복원력 정보는 목록에 있는 각 Cloud Volumes Service for Google Cloud 서비스에 대해 표시됩니다. 각 Azure NetApp Files 서비스의 성능 및 복원력 정보가 표시됩니다. Google Persistent Disk 또는 Azure 관리 디스크와 같은 NetApp 이외의 스토리지 클래스에서는 가격, 성능 및 복원력 정보를 사용할 수 없습니다.</p>
+<p>각 클라우드 공급자의 스토리지 서비스에는 다음과 같은 가격, 성능 및 복원력 정보가 표시됩니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Google Cloud용 Cloud Volumes Service: 가격, 성능 및 복원력 정보</p>
+</li>
+<li>
+<p>Google 영구 디스크: 가격, 성능 또는 복원력 정보를 사용할 수 없습니다</p>
+</li>
+<li>
+<p>Azure NetApp Files: 성능 및 복원력 정보</p>
+</li>
+<li>
+<p>Azure 관리 디스크: 사용 가능한 가격, 성능 또는 복원력 정보가 없습니다</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>각 스토리지 클래스는 다음 서비스 중 하나를 활용할 수 있습니다.</p>
@@ -1089,13 +1155,20 @@ Astra Control Service는 인증 및 ID 관리를 위해 Azure Active Directory(A
 </li>
 <li>
 <p><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview" target="_blank" rel="noopener">"Azure로 관리되는 디스크"</a></p>
-<div class="paragraph">
-<p>에 대해 자세히 알아보십시오 <a href="../learn/choose-class-and-size.html">"GKE 클러스터용 저장소 클래스"</a> 및 <a href="../learn/azure-storage.html">"AKS 클러스터용 스토리지 클래스입니다"</a>.</p>
-</div>
 </li>
 </ul>
 </div>
 </li>
+</ol>
+</div>
+<div class="paragraph">
+<p>+에 대해 자세히 알아보십시오 <a href="../learn/azure-storage.html">"AKS 클러스터용 스토리지 클래스입니다"</a>.</p>
+</div>
+<div class="paragraph">
+<p>에 대해 자세히 알아보십시오 <a href="../learn/choose-class-and-size.html">"GKE 클러스터용 저장소 클래스"</a>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>* 검토 및 승인 *: 구성 세부 정보를 검토하고 * 클러스터 추가 * 를 선택합니다.</p>
 </li>
