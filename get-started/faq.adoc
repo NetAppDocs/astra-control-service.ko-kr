@@ -65,11 +65,23 @@ Astra Control은 온보딩 섹션에서 정확한 고객 정보를 제공해야 
 
 새 작업자 노드를 기존 풀에 추가하거나 Ubuntu 이미지 유형인 경우 새 풀을 생성할 수 있습니다. 이러한 정보는 Astra Control에서 자동으로 발견됩니다. Astra Control에서 새 노드가 보이지 않으면 새 작업자 노드가 지원되는 이미지 유형을 실행하고 있는지 확인합니다. kubeck get nodes 명령을 사용하여 새 작업자 노드의 상태를 확인할 수도 있습니다.
 
+ifdef::aws[]
+
+
+
+== EKS(Elastic Kubernetes Service) 클러스터를 등록하는 중입니다
+
+"Astra Control Service에 개인 EKS 클러스터를 추가할 수 있습니까?" *
+
+현재 Astra Control Service에서는 전용 EKS 클러스터를 지원하지 않습니다.
+
+endif::aws[]
+
 ifdef::azure[]
 
 
 
-== AKS 클러스터를 등록하는 중입니다
+== Azure Kubernetes Service(AKS) 클러스터를 등록 중입니다
 
 "Astra Control Service에 개인 AKS 클러스터를 추가할 수 있습니까?" *
 
@@ -85,11 +97,11 @@ ifdef::gcp[]
 
 
 
-== GKE 클러스터를 등록하는 중입니다
+== GKE(Google Kubernetes Engine) 클러스터를 등록하는 중입니다
 
 * 개인 GKE 클러스터를 Astra Control Service에 추가할 수 있습니까? *
 
-예, Astra Control Service에 개인 GKE 클러스터를 추가할 수 있습니다. GKE(Google Kubernetes Engine) 프라이빗 클러스터를 생성하려면 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra["이 기술 자료 문서의 지침을 따르십시오"^].
+예, Astra Control Service에 개인 GKE 클러스터를 추가할 수 있습니다. 전용 GKE 클러스터를 만들려면 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra["이 기술 자료 문서의 지침을 따르십시오"^].
 
 프라이빗 클러스터에는 가 있어야 합니다 https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["인증된 네트워크"^] Astra Control IP 주소를 허용하도록 설정합니다.
 
@@ -134,7 +146,7 @@ endif::gcp[]
 
 * Astra Control에서 클러스터를 제거할 때 Astra Trident가 제거됩니까? *
 
-Astra Trident는 Astra Control에서 제거할 때 클러스터에서 제거되지 않습니다.
+Astra Control에서 클러스터를 제거하면 Astra Trident가 클러스터에서 제거되지 않습니다.
 
 
 
@@ -143,10 +155,6 @@ Astra Trident는 Astra Control에서 제거할 때 클러스터에서 제거되�
 * Astra Control이 응용 프로그램을 배포할 수 있습니까? *
 
 Astra Control은 애플리케이션을 배포하지 않습니다. 응용 프로그램은 Astra Control 외부에서 배포해야 합니다.
-
-* 내 애플리케이션이 검색된 앱 목록에 표시되지 않습니다. 문제를 식별하기 위해 무엇을 확인할 수 있습니까? *
-
-애플리케이션이 * Discovered Apps * 에 나열되지 않으면 'kubtl get pod-A | grep [pod name]'을 실행하여 Kubernetes Pod의 상태와 상태를 확인하십시오. Pod가 정상 실행 중이면 * Ignored Apps * 아래에 응용 프로그램이 나열되어 있는지 확인합니다.
 
 * Astra Control이 NetApp이 아닌 스토리지에 있는 애플리케이션을 관리할 수 있습니까? *
 

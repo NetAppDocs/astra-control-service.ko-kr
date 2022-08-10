@@ -15,6 +15,66 @@ NetApp은 새로운 기능, 개선 사항 및 버그 수정을 제공하기 위�
 
 
 
+== 2022년 8월 10일
+
+이 릴리즈에는 다음과 같은 새로운 기능과 향상된 기능이 포함되어 있습니다.
+
+
+
+=== 애플리케이션 관리 워크플로우 개선
+
+향상된 애플리케이션 관리 워크플로를 통해 Astra Control에서 관리하는 애플리케이션을 정의할 때 유연성을 높일 수 있습니다.
+
+link:../use/manage-apps.html#manage-apps["앱 관리"].
+
+ifdef::aws[]
+
+
+
+=== Amazon Web Services 클러스터 지원
+
+Astra Control Service는 이제 Amazon Elastic Kubernetes Service에 호스팅된 클러스터에서 실행 중인 앱을 관리할 수 있습니다. Amazon Elastic Block Store 또는 NetApp ONTAP용 Amazon FSx를 스토리지 백엔드로 사용하도록 클러스터를 구성할 수 있습니다.
+
+link:../get-started/set-up-amazon-web-services.html["Amazon Web Services를 설정합니다"].
+
+endif::aws[]
+
+
+
+=== 향상된 실행 후크
+
+사전 및 사후 스냅샷 실행 후크뿐만 아니라 이제 다음과 같은 유형의 실행 후크를 구성할 수 있습니다.
+
+* 사전 백업
+* 백업 후
+* 사후 복원
+
+
+그 외에도 Astra Control은 이제 여러 실행 후크에 대해 동일한 스크립트를 사용할 수 있도록 지원합니다.
+
+
+NOTE: 이 릴리즈에서는 특정 애플리케이션에 대해 NetApp에서 제공한 기본 사전/사후 스냅샷 실행 후크가 제거되었습니다. 스냅샷에 대한 실행 후크를 제공하지 않으면 Astra Control Service는 2022년 8월 4일부터 충돌 시에도 정합성이 보장되는 스냅샷을 생성합니다. 를 방문하십시오 https://github.com/NetApp/Verda["NetApp Verda GitHub 저장소"^] 사용자 환경에 맞게 수정할 수 있는 샘플 실행 후크 스크립트의 경우
+
+link:../use/manage-app-execution-hooks.html["앱 실행 후크 관리"].
+
+ifdef::azure[]
+
+
+
+=== Azure 마켓플레이스 지원
+
+이제 Azure Marketplace를 통해 Astra Control Service에 등록할 수 있습니다.
+
+endif::azure[]
+
+
+
+=== 클라우드 공급자 선택
+
+Astra Control Service 설명서를 읽는 동안 페이지 오른쪽 상단에서 클라우드 공급자를 선택할 수 있습니다. 선택한 클라우드 공급자와 관련된 설명서만 표시됩니다.
+
+
+
 == 2022년 4월 26일
 
 이 릴리즈에는 다음과 같은 새로운 기능과 향상된 기능이 포함되어 있습니다.

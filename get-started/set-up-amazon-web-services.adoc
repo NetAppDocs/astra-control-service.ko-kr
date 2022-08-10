@@ -1,0 +1,280 @@
+---
+sidebar: sidebar 
+permalink: get-started/set-up-amazon-web-services.html 
+keywords: set up service account, create service account, project, permissions, service account permissions, key, service account key, json, key json, roles, service account roles, apis, networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, kubernetes version, ubuntu, image type, networking, container os 
+summary: Astra Control Service로 Amazon Elastic Kubernetes Service 클러스터를 관리하려면 Amazon Web Services 프로젝트를 준비하기 위해 몇 가지 단계가 필요합니다. 
+---
+= Amazon Web Services를 설정합니다
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+Astra Control Service로 Amazon Elastic Kubernetes Service(EKS) 클러스터를 관리하려면 Amazon Web Services 프로젝트를 준비하기 위해 몇 가지 단계가 필요합니다.
+
+
+
+== Amazon Web Services 설정을 빠르게 시작합니다
+
+다음 단계를 따라 빠르게 시작하거나 나머지 섹션으로 스크롤하여 자세한 내용을 확인하십시오.
+
+
+
+=== Amazon Web Services에 대한 Astra Control 서비스 요구 사항을 검토합니다
+
+[role="quick-margin-para"]
+클러스터가 정상 상태이며 지원되는 Kubernetes 버전을 실행 중인지, 작업자 노드가 온라인 상태이고 Linux 또는 Windows가 실행 중인지 등을 확인합니다. <<EKS cluster requirements,이 단계에 대해 자세히 알아보십시오>>.
+
+
+
+=== 아마존 계정을 생성합니다
+
+[role="quick-margin-para"]
+아마존 계정이 없는 경우 EKS를 사용할 수 있도록 계정을 만들어야 합니다. <<Create an Amazon account,이 단계에 대해 자세히 알아보십시오>>.
+
+
+
+=== Amazon Web Services CLI를 설치합니다
+
+[role="quick-margin-para"]
+명령줄에서 AWS를 관리할 수 있도록 AWS CLI를 설치합니다. <<Install the Amazon Web Services CLI,단계별 지침을 따릅니다>>.
+
+
+
+=== 선택 사항: IAM 사용자를 생성합니다
+
+[role="quick-margin-para"]
+IAM(Amazon Identity and Access Management) 사용자를 생성합니다. 또한 이 단계를 건너뛰고 Astra Control Service에서 기존 IAM 사용자를 사용할 수도 있습니다.
+
+[role="quick-margin-para"]
+<<Optional: Create an IAM user,단계별 지침을 읽습니다>>.
+
+
+
+=== 사용 권한 정책을 만들고 첨부합니다
+
+[role="quick-margin-para"]
+Astra Control Service가 AWS 계정과 상호 작용하기 위해 필요한 권한이 있는 정책을 생성합니다.
+
+[role="quick-margin-para"]
+<<Create and attach a permissions policy,단계별 지침을 읽습니다>>.
+
+
+
+=== IAM 사용자에 대한 자격 증명을 저장합니다
+
+[role="quick-margin-para"]
+Astra Control Service로 자격 증명을 가져올 수 있도록 IAM 사용자의 자격 증명을 저장합니다.
+
+[role="quick-margin-para"]
+<<Save the credentials for the IAM user,단계별 지침을 읽습니다>>.
+
+
+
+== EKS 클러스터 요구 사항
+
+Kubernetes 클러스터는 Astra Control Service에서 검색 및 관리할 수 있도록 다음 요구사항을 충족해야 합니다.
+
+Kubernetes 버전:: 클러스터는 1.20~1.22 범위의 Kubernetes 버전을 실행해야 합니다.
+이미지 유형:: 각 작업자 노드의 이미지 유형은 Linux여야 합니다.
+클러스터 상태입니다:: 클러스터가 정상 상태에서 실행되고 있어야 하며 오류가 발생한 상태의 작업자 노드가 없는 온라인 작업자 노드가 하나 이상 있어야 합니다.
+
+
+Amazon FSx for NetApp ONTAP를 위한 Astra Trident:: NetApp ONTAP 스토리지 백엔드에 Amazon FSx를 사용하는 경우 Astra Trident를 설치해야 합니다. 자세한 내용은 을 참조하십시오 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident 구축 개요"^]. NetApp ONTAP용 FSx와 함께 Astra Trident를 사용하는 방법에 대한 자세한 내용은 를 참조하십시오 https://docs.netapp.com/us-en/trident/trident-use/trident-fsx.html["NetApp ONTAP용 Amazon FSx와 함께 Astra Trident를 사용하십시오"^].
+Amazon EBS(Elastic Block Store)용 CSI 드라이버:: Amazon EBS 스토리지 백엔드를 사용하는 경우 EBS용 컨테이너 스토리지 인터페이스(CSI) 드라이버를 설치해야 합니다(자동으로 설치되지 않음).
++
+--
+CSI 드라이버 설치에 대한 자세한 내용은 를 참조하십시오.
+
+====
+.외부 스냅샷 프로그램을 설치합니다
+. 볼륨 스냅샷 CRD를 생성합니다.
++
+Kubernetes 1.20 이상의 경우 v5.0의 스냅샷 구성 요소에 v1 스냅샷 CRD를 사용하십시오.
+
++
+[role="tabbed-block"]
+=====
+.v5.0 구성 요소
+--
+[source, yaml]
+----
+$ cat snapshot-setup.sh
+#!/bin/bash
+# Create volume snapshot CRDs
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+----
+--
+=====
+. 원하는 네임스페이스에 스냅샷 컨트롤러를 생성합니다. 아래 YAML 매니페스트를 편집하여 네임스페이스를 수정하십시오.
++
+Kubernetes 1.20 이상인 경우 v5.0을 사용합니다.
+
++
+[role="tabbed-block"]
+=====
+.v5.0 컨트롤러
+--
+[source, yaml]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+----
+--
+=====
+
+
+.CSI 드라이버를 Amazon EKS 애드온으로 설치합니다
+. 서비스 계정에 대한 Amazon EBS CSI 드라이버 IAM 역할을 생성합니다. 지침을 따릅니다 https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html["아마존 문서"^]의 지침에 따라 AWS CLI 명령을 사용합니다.
+. 다음 AWS CLI 명령을 사용하여 Amazon EBS CSI 애드온을 추가합니다. 괄호 <>의 정보를 사용자 환경에 맞는 값으로 바꿉니다. driver_role>을 이전 단계에서 생성한 EBS CSI 드라이버 역할의 이름으로 바꿉니다.
++
+[listing]
+----
+aws eks create-addon \
+  --cluster-name <CLUSTER_NAME> \
+  --addon-name aws-ebs-csi-driver \
+  --service-account-role-arn arn:aws:iam::<ACCOUNT_ID>:role/<DRIVER_ROLE>
+----
+
+
+.EBS 스토리지 클래스를 구성합니다
+. Amazon EBS CSI 드라이버 GitHub 리포지토리를 시스템에 복제합니다.
++
+[listing]
+----
+git clone https://github.com/kubernetes-sigs/aws-ebs-csi-driver.git
+----
+. 동적 프로비저닝 예제 디렉토리로 이동합니다.
++
+[listing]
+----
+cd aws-ebs-csi-driver/examples/kubernetes/dynamic-provisioning/
+----
+. EBS-SC 스토리지 클래스 및 EBS-Claim 영구 볼륨 클레임을 매니페스트 디렉토리에서 배포합니다.
++
+[listing]
+----
+kubectl apply -f manifests/storageclass.yaml
+kubectl apply -f manifests/claim.yaml
+----
+. EBS-SC 스토리지 클래스를 설명합니다.
++
+[listing]
+----
+kubectl describe storageclass ebs-sc
+----
++
+스토리지 클래스 속성을 설명하는 출력이 표시됩니다.
+
+
+
+====
+--
+
+
+
+
+== 아마존 계정을 생성합니다
+
+아마존 계정이 없는 경우 아마존 EKS에 대한 청구를 활성화하려면 계정을 생성해야 합니다.
+
+.단계
+. 로 이동합니다 https://www.amazon.com["아마존 홈페이지"^] 오른쪽 상단에서 * 로그인 * 을 선택하고 * 여기서 시작 * 을 선택합니다.
+. 표시되는 메시지에 따라 계정을 만듭니다.
+
+
+
+
+== Amazon Web Services CLI를 설치합니다
+
+명령줄에서 AWS 리소스를 관리할 수 있도록 AWS CLI를 설치합니다.
+
+.단계
+. 로 이동합니다 https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html["AWS CLI 시작하기"^] 지침에 따라 CLI를 설치합니다.
+
+
+
+
+== 선택 사항: IAM 사용자를 생성합니다
+
+IAM 사용자를 생성하여 보안을 강화하고 AWS 서비스 및 리소스를 사용 및 관리할 수 있습니다. 이 단계를 건너뛰고 Astra Control Service에서 기존 IAM 사용자를 사용할 수도 있습니다.
+
+.단계
+. 로 이동합니다 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_cliwpsapi["IAM 사용자 생성"^] 지침에 따라 IAM 사용자를 생성합니다.
+
+
+
+
+== 사용 권한 정책을 만들고 첨부합니다
+
+Astra Control Service가 AWS 계정과 상호 작용하기 위해 필요한 권한이 있는 정책을 생성합니다.
+
+.단계
+. policy.json이라는 새 파일을 만듭니다.
+. 다음 JSON 콘텐츠를 파일에 복사합니다.
++
+[listing]
+----
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:GetMetricData",
+                "fsx:DescribeVolumes",
+                "ec2:DescribeRegions",
+                "s3:CreateBucket",
+                "s3:ListBucket",
+                "s3:PutObject",
+                "s3:GetObject",
+                "iam:SimulatePrincipalPolicy",
+                "s3:ListAllMyBuckets",
+                "eks:DescribeCluster",
+                "eks:ListNodegroups",
+                "eks:DescribeNodegroup",
+                "eks:ListClusters",
+                "iam:GetUser",
+                "s3:DeleteObject",
+                "s3:DeleteBucket",
+                "autoscaling:DescribeAutoScalingGroups"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+----
+. 정책을 생성합니다.
++
+[listing]
+----
+POLICY_ARN=$(aws iam create-policy  --policy-name <policy-name> --policy-document file://policy.json  --query='Policy.Arn' --output=text)
+----
+. 정책을 IAM 사용자에게 연결합니다. '<IAM-user-name>'을(를) 생성한 IAM 사용자의 사용자 이름 또는 기존 IAM 사용자로 대체합니다.
++
+[listing]
+----
+aws iam attach-user-policy --user-name <IAM-USER-NAME> --policy-arn=$POLICY_ARN
+----
+
+
+
+
+== IAM 사용자에 대한 자격 증명을 저장합니다
+
+Astra Control Service가 사용자를 인식할 수 있도록 IAM 사용자의 자격 증명을 저장합니다.
+
+.단계
+. 자격 증명을 다운로드합니다. '<IAM-user-name>'을(를) 사용하려는 IAM 사용자의 사용자 이름으로 바꿉니다.
++
+[listing]
+----
+aws iam create-access-key --user-name <IAM-USER-NAME> --output json > credential.json
+----
+
+
+자격 증명.json 파일이 생성되어 Astra Control Service로 자격 증명을 가져올 수 있습니다.

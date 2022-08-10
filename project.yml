@@ -11,12 +11,16 @@ settings:
     label: 클라우드 공급자
     default: 모든 클라우드 공급자
     options:
+    - name: Amazon Web Services에서 직접 지원합니다
+      alias: Amazon Web Services에서 직접 지원합니다
+      id: aws
     - name: Google 클라우드
       alias: Google 클라우드
       id: gcp
     - name: Microsoft Azure를 참조하십시오
       alias: Azure를 지원합니다
       id: azure
+  rss_page: release-notes/whats-new.html
   langs: ko-kr,us-en,ja-jp,zh-cn,zh-tw
 sidebar:
   entries:
@@ -28,7 +32,6 @@ sidebar:
   - title: Astra Control REST API로 자동화
     url: "/automation.html"
   - section: learn
-  - section: solutions
   - section: support
   - title: 법적 고지
     url: "/legal-notices.html"
@@ -64,14 +67,6 @@ homepage:
     links:
     - title: Astra Control Service 비디오
       url: "/get-started/videos.html"
-    - title: Jenkins를 배포합니다
-      url: "/solutions/jenkins-deploy-from-helm-chart.html"
-    - title: MariaDB 배포
-      url: "/solutions/mariadb-deploy-from-helm-chart.html"
-    - title: MySQL 배포
-      url: "/solutions/mysql-deploy-from-helm-chart.html"
-    - title: Postgres를 배포합니다
-      url: "/solutions/postgres-deploy-from-helm-chart.html"
   - title: Astra 제어 센터
     links:
     - title: Astra Control Center 소개

@@ -35,6 +35,25 @@ link:set-up-google-cloud.html["Google Cloud 요구 사항에 대해 자세히 �
 
 endif::gcp[]
 
+ifdef::aws[]
+
+. Amazon 웹 서비스:
++
+** Amazon Web Services 클러스터 요구사항을 검토합니다.
+** 아마존 계정을 생성합니다.
+** Amazon Web Services CLI를 설치합니다.
+** IAM 사용자를 생성합니다.
+** 사용 권한 정책을 만들고 첨부합니다.
+** IAM 사용자에 대한 자격 증명을 저장합니다.
++
+link:set-up-amazon-web-services.html["Amazon Web Services 요구 사항에 대해 자세히 알아보십시오"].
+
+
+
+
+
+endif::aws[]
+
 ifdef::azure[]
 
 . Microsoft Azure:

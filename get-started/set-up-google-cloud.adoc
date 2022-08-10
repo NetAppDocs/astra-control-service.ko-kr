@@ -27,14 +27,14 @@ NOTE: Google Cloud용 Google Cloud Volumes Service를 스토리지 백엔드로 
 === Google Kubernetes Engine에 대한 Astra Control Service 요구 사항을 검토합니다
 
 [role="quick-margin-para"]
-클러스터가 정상 상태이며 1.19 ~ 1.23 범위의 Kubernetes 버전을 실행 중인지, 작업자 노드가 온라인 상태이고 컨테이너 최적화 OS 또는 Ubuntu를 실행 중인지 확인합니다. <<GKE cluster requirements,이 단계에 대해 자세히 알아보십시오>>.
+클러스터가 정상 상태이며 지원되는 Kubernetes 버전을 실행 중인지, 작업자 노드가 온라인 상태이고 컨테이너 최적화 OS 또는 Ubuntu를 실행 중인지 확인합니다. <<GKE cluster requirements,이 단계에 대해 자세히 알아보십시오>>.
 
 
 
 === (선택 사항): Google Cloud용 Cloud Volumes Service를 구입합니다
 
 [role="quick-margin-para"]
-Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하려면 Google Cloud 마켓플레이스의 NetApp Cloud Volumes Service 페이지로 이동하여 구매 를 선택합니다. <<Purchase Cloud Volumes Service for Google Cloud (optional),이 단계에 대해 자세히 알아보십시오>>.
+Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하려면 Google Cloud 마켓플레이스의 NetApp Cloud Volumes Service 페이지로 이동하여 구매 를 선택합니다. <<Optional: Purchase Cloud Volumes Service for Google Cloud,이 단계에 대해 자세히 알아보십시오>>.
 
 
 
@@ -96,7 +96,7 @@ Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하려
 === (선택 사항): VPC용 네트워크 피어링을 설정합니다
 
 [role="quick-margin-para"]
-Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하려는 경우 VPC에서 Cloud Volumes Service for Google Cloud로 네트워크 피어링을 설정합니다. <<Set up network peering for your VPC (optional),단계별 지침을 따릅니다>>.
+Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하려는 경우 VPC에서 Cloud Volumes Service for Google Cloud로 네트워크 피어링을 설정합니다. <<Optional: Set up network peering for your VPC,단계별 지침을 따릅니다>>.
 
 
 
@@ -104,7 +104,7 @@ Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하려
 
 Kubernetes 클러스터는 Astra Control Service에서 검색 및 관리할 수 있도록 다음 요구사항을 충족해야 합니다. 이러한 요구사항 중 일부는 Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하려는 경우에만 적용됩니다.
 
-Kubernetes 버전:: 클러스터는 1.19~1.23 범위의 Kubernetes 버전을 실행해야 합니다.
+Kubernetes 버전:: 클러스터는 1.20~1.23 범위의 Kubernetes 버전을 실행해야 합니다.
 이미지 유형:: 각 작업자 노드의 이미지 유형은 다음 중 하나여야 합니다.
 +
 --
@@ -116,7 +116,7 @@ Kubernetes 버전:: 클러스터는 1.19~1.23 범위의 Kubernetes 버전을 실
 --
 클러스터 상태입니다:: 클러스터가 정상 상태에서 실행되고 있어야 하며 오류가 발생한 상태의 작업자 노드가 없는 온라인 작업자 노드가 하나 이상 있어야 합니다.
 Google Cloud 지역:: Google Cloud용 Cloud Volumes Service를 스토리지 백엔드로 사용하려는 경우 클러스터가 에서 실행 중이어야 합니다 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["Google Cloud용 Cloud Volumes Service가 지원되는 Google Cloud 지역"] Astra Control Service는 CVS 및 CVS 성능 두 가지 서비스 유형을 모두 지원합니다. 모범 사례로서, 스토리지 백엔드로 사용하지 않더라도 Cloud Volumes Service for Google Cloud를 지원하는 영역을 선택해야 합니다. 따라서 성능 요구사항이 변경될 경우 향후에 Google Cloud용 Cloud Volumes Service를 스토리지 백엔드로 손쉽게 사용할 수 있습니다.
-네트워킹:: Google Cloud용 Cloud Volumes Service를 스토리지 백엔드로 사용하려는 경우, 클러스터가 Cloud Volumes Service for Google Cloud에서 내다보는 VPC에 상주해야 합니다. <<Set up network peering for your VPC,이 단계는 아래에 설명되어 있습니다>>.
+네트워킹:: Google Cloud용 Cloud Volumes Service를 스토리지 백엔드로 사용하려는 경우, 클러스터가 Cloud Volumes Service for Google Cloud에서 내다보는 VPC에 상주해야 합니다. <<Optional: Set up network peering for your VPC,이 단계는 아래에 설명되어 있습니다>>.
 프라이빗 클러스터:: 클러스터가 프라이빗 인 경우, 를 참조하십시오 https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["인증된 네트워크"^] Astra Control Service IP 주소를 허용해야 합니다.
 +
 --
@@ -128,7 +128,7 @@ GKE 클러스터의 작동 모드입니다:: 표준 작동 모드를 사용해�
 
 
 
-== Google Cloud용 Cloud Volumes Service 구매(선택 사항)
+== 선택 사항: Google Cloud용 Cloud Volumes Service를 구입합니다
 
 Astra Control Service는 Cloud Volumes Service for Google Cloud를 영구 볼륨의 스토리지 백엔드로 사용할 수 있습니다. 이 서비스를 사용하려면 영구 볼륨에 대한 청구를 활성화하려면 Google Cloud Marketplace에서 Cloud Volumes Service for Google Cloud를 구입해야 합니다.
 
@@ -229,7 +229,7 @@ Astra Control Service에 사용자 이름과 암호를 제공하는 대신 첫 �
 video::video-create-gcp-service-account-key.mp4[width=848,height=480]
 
 
-== VPC용 네트워크 피어링 설정(옵션)
+== 선택 사항: VPC용 네트워크 피어링을 설정합니다
 
 Google Cloud용 Cloud Volumes Service를 스토리지 백엔드 서비스로 사용하려는 경우 마지막 단계는 VPC에서 Cloud Volumes Service for Google Cloud로 네트워킹 피어링을 설정하는 것입니다.
 

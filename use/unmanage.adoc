@@ -71,14 +71,4 @@ Astra Control에서 Kubernetes 클러스터를 관리할 경우, 해당 클러�
 
 위의 방법 중 하나를 사용하면 클러스터에서 해당 PVS가 삭제됩니다. 삭제하기 전에 클러스터의 NetApp 스토리지 클래스에 PVS가 없는지 확인하십시오.
 
-ifdef::azure[]
-
-클러스터를 삭제하기 전에 영구 볼륨을 삭제하지 않은 경우 Azure NetApp Files에서 백엔드 볼륨을 수동으로 삭제해야 합니다.
-
-endif::azure[]
-
-ifdef::gcp[]
-
-클러스터를 삭제하기 전에 영구 볼륨을 삭제하지 않은 경우 Cloud Volumes Service for Google Cloud에서 백엔드 볼륨을 수동으로 삭제해야 합니다.
-
-endif::gcp[]
+클러스터를 삭제하기 전에 영구 볼륨을 삭제하지 않은 경우 클라우드 공급자에서 백엔드 볼륨을 수동으로 삭제해야 합니다.

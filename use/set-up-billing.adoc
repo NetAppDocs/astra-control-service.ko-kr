@@ -72,6 +72,19 @@ Astra Control Service를 사용하여 AKS 클러스터를 관리할 경우 영�
 
 endif::azure[]
 
+ifdef::aws[]
+
+
+
+=== Amazon Web Services 청구
+
+Astra Control Service를 통해 AWS 클러스터를 관리할 경우, 영구적 볼륨은 EBS 또는 FSx for NetApp ONTAP를 통해 지원되며, 앱의 백업은 AWS 버킷에 저장됩니다.
+
+* https://aws.amazon.com/eks/pricing/["Amazon Web Services에 대한 가격 세부 정보를 봅니다"^].
+
+
+endif::aws[]
+
 
 
 == 중요 참고 사항

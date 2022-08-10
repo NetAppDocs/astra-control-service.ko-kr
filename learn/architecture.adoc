@@ -23,29 +23,19 @@ image:astra-ads-architecture-diagram-v3.png["Astra Control 아키텍처 다이�
 * * Astra Trident *: NetApp에서 관리하며 완벽한 지원을 제공하는 오픈 소스 스토리지 공급자 및 오케스트레이터로서, Trident는 Docker 및 Kubernetes에서 관리하는 컨테이너식 애플리케이션용 스토리지 볼륨을 생성할 수 있도록 지원합니다. Astra Control Center와 함께 구축한 경우, Trident는 구성된 ONTAP 스토리지 백엔드를 포함하며 Astra 데이터 저장소를 스토리지 백엔드로 지원합니다.
 * * 스토리지 백엔드 *:
 +
-** Astra Control Service가 사용합니다 https://www.netapp.com/cloud-services/azure-netapp-files/["Azure NetApp Files"^] AKS 클러스터의 스토리지 백엔드로 사용됩니다.
-** Astra Control Service는 백엔드 스토리지 옵션으로 Azure Managed Disks도 지원합니다.
-
-
-
-
-endif::gcp[]
-
-* Astra Control Service가 사용합니다 https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/["Google Cloud용 NetApp Cloud Volumes Service"^] GKE 클러스터를 위한 스토리지 백엔드로 사용됩니다.
-* Astra Control Service는 백엔드 스토리지 옵션으로 Google Persistent Disk도 지원합니다.
-
-
-endif::azure[]
-
-+** Astra Control Center는 다음과 같은 스토리지 백엔드를 사용합니다.
-
-* Astra Data Store 스토리지 백엔드
-* ONTAP AFF 및 FAS 스토리지 백엔드 스토리지 소프트웨어 및 하드웨어 플랫폼인 ONTAP는 핵심 스토리지 서비스, 다중 스토리지 액세스 프로토콜 지원 및 스냅샷, 미러링과 같은 스토리지 관리 기능을 제공합니다.
-* Cloud Volumes ONTAP 스토리지 백엔드
+** Astra Control Service가 사용합니다 https://www.netapp.com/cloud-services/azure-netapp-files/["Azure NetApp Files"^] 또는 Azure 관리 디스크를 AKS 클러스터의 스토리지 백엔드에 사용합니다.
+** Astra Control Service가 사용합니다 https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/["Google Cloud용 NetApp Cloud Volumes Service"^] 또는 GKE 클러스터의 저장소 백엔드의 Google 영구 디스크입니다.
+** Astra Control Service가 사용합니다 https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store를 클릭합니다"^] 및 https://docs.aws.amazon.com/fsx/["NetApp ONTAP용 Amazon FSx"^] EKS 클러스터의 스토리지 백엔드에 사용됩니다.
+** Astra Control Center는 다음과 같은 스토리지 백엔드를 사용합니다.
 +
-** * Cloud Insights *: NetApp 클라우드 인프라 모니터링 툴인 Cloud Insights를 사용하면 Astra Control Center에서 관리하는 Kubernetes 클러스터의 성능과 활용률을 모니터링할 수 있습니다. Cloud Insights는 스토리지 사용량과 워크로드를 상호 연관시킵니다. Astra Control Center에서 Cloud Insights 연결을 활성화하면 Astra Control Center UI 페이지에 원격 측정 정보가 표시됩니다.
+*** Astra Data Store 스토리지 백엔드
+*** ONTAP AFF 및 FAS 스토리지 백엔드 스토리지 소프트웨어 및 하드웨어 플랫폼인 ONTAP는 핵심 스토리지 서비스, 다중 스토리지 액세스 프로토콜 지원 및 스냅샷, 미러링과 같은 스토리지 관리 기능을 제공합니다.
+*** Cloud Volumes ONTAP 스토리지 백엔드
 
 
+
+
+* * Cloud Insights *: NetApp 클라우드 인프라 모니터링 툴인 Cloud Insights를 사용하면 Astra Control Center에서 관리하는 Kubernetes 클러스터의 성능과 활용률을 모니터링할 수 있습니다. Cloud Insights는 스토리지 사용량과 워크로드를 상호 연관시킵니다. Astra Control Center에서 Cloud Insights 연결을 활성화하면 Astra Control Center UI 페이지에 원격 측정 정보가 표시됩니다.
 
 
 

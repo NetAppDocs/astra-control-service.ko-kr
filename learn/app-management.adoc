@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: learn/app-management.html 
+keywords: custom app, labels, kubernetes labels, kubernetes resources, pods, define custom app 
+summary: Astra Control의 관리되는 앱 유형을 설명합니다. 
+---
+= 앱 관리 이해
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/learn/
+
+
+[role="lead"]
+Astra Control이 클러스터를 검색할 때 해당 클러스터의 앱은 관리 방법을 선택할 때까지 관리되지 않습니다. Astra Control에서 관리되는 응용 프로그램은 다음 중 하나일 수 있습니다.
+
+* 네임스페이스에서 모든 리소스를 포함하는 네임스페이스입니다
++
+image:diagram-managed-app1.png["네임스페이스에서 모든 리소스를 관리하는 Astra를 보여 주는 개념 이미지입니다."]
+
+* 네임스페이스 내에 배포된 개별 응용 프로그램(이 예제에서는 H제어 3이 사용됨)
++
+image:diagram-managed-app2.png["다른 응용 프로그램을 포함하는 네임스페이스로 배포된 개별 응용 프로그램을 관리하는 Astra를 보여 주는 개념적 이미지입니다."]
+
+* 네임스페이스 내의 Kubernetes 레이블로 식별되는 리소스 그룹입니다
++
+image:diagram-managed-app3.png["Kubernetes 레이블을 기반으로 하는 사용자 지정 앱을 관리하는 Astra를 보여주는 개념적 이미지입니다."]
+
+
