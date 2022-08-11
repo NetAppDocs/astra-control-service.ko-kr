@@ -1543,12 +1543,9 @@
   <block id="879701946bb2bc7241d0f85fd843455a" category="paragraph">endif::azure[]</block>
   <block id="310c228207a0f8446bbe4c5d16978cb7" category="paragraph">endif::gcp[]</block>
   <block id="6e1e9c83b80f4d22d34cbdf60a71383b" category="paragraph">ifdef::gcp[]</block>
-  <block id="fd047d25a2a9b2ef34ee24ff5c9ea9bf" category="list-text"><block ref="09fabaad32e4dddeaea039f6573c7c2c" category="inline-xref-macro-rx"></block></block>
   <block id="f71e012ed046328c8d64aaabfb2eaac1" category="list-text"><block ref="cbe527e26a3f74a21725a85c9fa46b07" category="inline-xref-macro-rx"></block></block>
   <block id="f4c36c8148a1c2baf23d917e226d50fa" category="list-text"><block ref="703e5962f4e6c982183fbea5d4a0ed0f" category="inline-xref-macro-rx"></block></block>
   <block id="ea9063ae1f93b97201fb6f5157ef64b8" category="paragraph">애플리케이션이 명시적으로 설정된 스토리지 클래스(예: 'helm install...-set global.storageClass=NetApp-cvs-perf-extreme')로 구축된 후 애플리케이션을 복제하려는 이후에 타겟 클러스터에 원래 지정된 스토리지 클래스가 있어야 합니다. 명시적으로 설정된 스토리지 클래스를 가진 애플리케이션을 동일한 스토리지 클래스가 없는 클러스터로 클론 복제하면 실패합니다. 이 시나리오에서는 복구 단계가 없습니다.</block>
-  <block id="b0db64e4be5840028b999177c14ba4c0" category="section-title">삭제된 응용 프로그램을 복원하려고 하면 응용 프로그램 페이지가 영구적으로 로드됩니다</block>
-  <block id="078b19fac0594ce7699c6bd310d7010f" category="paragraph">응용 프로그램 페이지를 사용하여 삭제된 클러스터에서 앱을 복원하려고 하면 응용 프로그램 페이지 로드가 완료되지 않습니다. 이 문제를 해결하려면 응용 프로그램 목록의 앱 작업 메뉴에서 앱을 복원하십시오.</block>
   <block id="bc2727235d82d8b7c78a69fd565295f3" category="section-title">삭제되어 다시 생성된 네임스페이스에 앱을 정의할 수 없습니다</block>
   <block id="586ace51c405474a5c0172b8c1cf7afd" category="paragraph">네임스페이스로 응용 프로그램을 정의하고 네임스페이스를 삭제한 다음 같은 네임스페이스에 응용 프로그램을 다시 설치하면 409 오류 코드와 함께 작업이 실패합니다. 다시 생성된 네임스페이스를 사용하여 앱을 정의하려면 먼저 이전 응용 프로그램 인스턴스를 삭제합니다.</block>
   <block id="3460be97ad18de8f927ac029b73aea1e" category="section-title">클러스터를 관리하고 볼륨을 추가한 경우 앱 백업 및 스냅숏이 실패합니다</block>
@@ -1903,4 +1900,7 @@
   <block id="b45f0d80639ec80f5586318d3c5bd31d" category="sidebar">스토리지를 구축할 수 있습니다</block>
   <block id="5a81378cdc7edd9ea960cf02d6ca78d2" category="paragraph">ifdef::aws[]</block>
   <block id="6beb2fa01dc121194547db1bfbe03408" category="paragraph">endif::aws[]</block>
+  <block id="868ecbbbd8b1e28b5199c1b1690c500b" category="list-text"><block ref="9db9aa8838c1418469991d8a206fd28d" category="inline-xref-macro-rx"></block></block>
+  <block id="e43994c24bb8c97f2a5c5d923ac69298" category="section-title">삭제된 클러스터에 속한 애플리케이션을 복구하려고 하면 애플리케이션 페이지가 영구적으로 로드됩니다</block>
+  <block id="f578c128901fc5a492793e5a929e4673" category="paragraph">응용 프로그램 페이지에서 삭제된 클러스터에서 응용 프로그램을 복원하려고 하면 응용 프로그램 페이지의 로딩이 절대 마무리되지 않습니다. 이 문제를 해결하려면 응용 프로그램 목록 페이지의 앱 작업 메뉴에서 앱을 복원하십시오.</block>
 </blocks>

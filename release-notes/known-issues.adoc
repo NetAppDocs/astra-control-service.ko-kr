@@ -17,7 +17,7 @@ summary: 알려진 문제점은 이 제품 릴리스를 성공적으로 사용�
 
 .인프라
 * <<App clones fail after an application is deployed with a set storage class>>
-* <<Applications page loads forever when trying to restore a deleted application>>
+* <<Applications page loads forever when trying to restore an application belonging to a deleted cluster>>
 * <<Unable to define an app on a namespace that has been deleted and recreated>>
 
 
@@ -47,9 +47,9 @@ endif::azure[]
 
 
 
-== 삭제된 응용 프로그램을 복원하려고 하면 응용 프로그램 페이지가 영구적으로 로드됩니다
+== 삭제된 클러스터에 속한 애플리케이션을 복구하려고 하면 애플리케이션 페이지가 영구적으로 로드됩니다
 
-응용 프로그램 페이지를 사용하여 삭제된 클러스터에서 앱을 복원하려고 하면 응용 프로그램 페이지 로드가 완료되지 않습니다. 이 문제를 해결하려면 응용 프로그램 목록의 앱 작업 메뉴에서 앱을 복원하십시오.
+응용 프로그램 페이지에서 삭제된 클러스터에서 응용 프로그램을 복원하려고 하면 응용 프로그램 페이지의 로딩이 절대 마무리되지 않습니다. 이 문제를 해결하려면 응용 프로그램 목록 페이지의 앱 작업 메뉴에서 앱을 복원하십시오.
 
 
 
