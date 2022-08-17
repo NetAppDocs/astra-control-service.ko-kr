@@ -111,6 +111,8 @@ ifdef::aws[]
 
 +** Amazon EKS 클러스터의 경우 Astra Control Service가 사용합니다 https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store를 클릭합니다"^] 또는 https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["NetApp ONTAP용 Amazon FSx"^] 영구 볼륨의 스토리지 백엔드로 사용됩니다.
 
+endif::aws[]
+
 * 첫 번째 Kubernetes 컴퓨팅을 Astra Control Service에 추가합니다. 그러면 Astra Control Service에서 다음을 수행합니다.
 +
 ** 클라우드 공급자 계정에 백업 복사본이 저장되는 개체 저장소를 만듭니다.
