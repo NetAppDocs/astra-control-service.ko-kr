@@ -1878,4 +1878,6 @@
   <block id="a13f2262ff8b5ec001ba8f41398e1a6c" category="list-text">사용자 인터페이스 향상 데이터 보호 마법사가 향상되어 사용이 간편했습니다. 예를 들어 보호 정책 마법사를 정의하여 보호 스케줄을 보다 쉽게 확인할 수 있습니다.</block>
   <block id="aad7f3d472e654aef7d2a492a3d54210" category="list-text">활동 개선 사항 Astra Control 계정의 활동에 대한 세부 정보를 보다 쉽게 확인할 수 있도록 했습니다.</block>
   <block id="ca0a782901da0ca119f401851ac90842" category="paragraph"><block ref="78b785a9e2d028de12ce9f3f40284661" category="inline-link-macro-rx"></block>.</block>
+  <block id="3fc3ba3c5f20ea640e5be46d8c9ca467" category="inline-link">NetApp Astra 제품군 관련 문서</block>
+  <block id="c5bc786725b0b61976497d5d0c73be96" category="list-text"><block ref="c5bc786725b0b61976497d5d0c73be96" category="inline-link-rx"></block></block>
 </blocks>

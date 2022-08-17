@@ -187,6 +187,7 @@ Astra Control Center는 다음과 같은 작업을 수행합니다.
 
 == 를 참조하십시오
 
+* https://docs.netapp.com/us-en/astra-family/["NetApp Astra 제품군 관련 문서"^]
 * https://docs.netapp.com/us-en/astra/index.html["Astra Control Service 문서"^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Astra Control Center 문서"^]
 * https://docs.netapp.com/us-en/astra-data-store/index.html["Astra Data Store 문서"]
