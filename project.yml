@@ -87,8 +87,8 @@ homepage:
       url: https://cloud.netapp.com/hubfs/SB-4100-Jenkins%20(2).pdf
   - title: 블로그 커뮤니티
     links:
-    - title: '"컨테이너" 채널을 느슨하게 합니다'
-      url: https://netapp.io/slack
+    - title: 아스트라 불화 채널
+      url: https://discord.gg/NetApp
     - title: Astra Control 블로그
       url: https://cloud.netapp.com/blog/topic/astra
     - title: Astra Control – 하이브리드 클라우드를 위한 애플리케이션 데이터 관리를 간소화합니다

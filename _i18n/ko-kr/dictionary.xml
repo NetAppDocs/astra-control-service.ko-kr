@@ -5,7 +5,6 @@
   <block id="ab3e2d6ef736bd8d26778b2e7113b6f7" category="inline-link">Astra 자동화 문서로 이동합니다</block>
   <block id="0175163d6395e694e3b8efa4f3884e4d" category="paragraph">자세한 내용은<block ref="bfa33a3653b9adb3eeffbdd741a1c8dc" category="inline-link-rx"></block>.</block>
   <block id="ef22ff17624b3faeed227ce5c717eb5f" category="doc">Astra Control Service 문서</block>
-  <block id="5bc8792f4d0618bc7421137123233c68" category="summary">NetApp은 다양한 방법으로 Astra Control을 지원합니다. 기술 자료(KB) 기사 및 Slack 채널과 같은 광범위한 무료 셀프 지원 옵션을 24x7 이용할 수 있습니다. Astra Control 계정에는 웹 발권 서비스를 통한 원격 기술 지원이 포함되어 있습니다.</block>
   <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">도움을 받으십시오</block>
   <block id="9f1a9252fa8e7cccfce329f81193d946" category="inline-link-macro">NetApp 일련 번호에 대한 지원을 활성화합니다</block>
   <block id="bc81d4a64e11b988c024ee890e91e099" category="paragraph">먼저 해야 합니다 <block ref="50b527056876367f64e162872389171b" category="inline-link-macro-rx"></block> 이러한 비 셀프 서비스 지원 옵션을 사용하려면 NetApp NSS(Support Site) SSO 계정은 케이스 관리와 함께 채팅 및 웹 티켓팅에 필요합니다.</block>
@@ -17,9 +16,6 @@
   <block id="1cd3b87947307e63f017eb7a59b02313" category="paragraph">Astra Control과 관련된 문서, FAQ 또는 고장 수리 정보를 검색합니다.</block>
   <block id="5b6cf869265c13af8566f192b4ab3d2a" category="list-text">문서화</block>
   <block id="9a4d3fdb6af496c18bc70f14153f8c4f" category="paragraph">현재 보고 있는 문서 사이트입니다.</block>
-  <block id="3561f3a3c5576e2ce0dc0d1e268bb9b2" category="inline-link">슬랙</block>
-  <block id="935d650ae57bf919ec511d8f5c18b480" category="list-text"><block ref="935d650ae57bf919ec511d8f5c18b480" category="inline-link-rx"></block></block>
-  <block id="7e8d8ed6b8d09e924666569bac3e7749" category="paragraph">Pub 작업 공간의 컨테이너 채널로 이동하여 동료 및 전문가와 교류하십시오.</block>
   <block id="9945b7c9f8a0452d5794aa8f1b4132db" category="list-text">피드백 이메일</block>
   <block id="ddcadc1ed2a47b8718aecd096c744e15" category="paragraph">귀하의 생각, 아이디어 또는 우려 사항을 당사에 알릴 수 있도록 astra.feedback@netapp.com 으로 이메일을 보내주십시오.</block>
   <block id="8db3548aa0cf9e934fb9643f28ae8058" category="section-title">구독 지원</block>
@@ -1161,7 +1157,6 @@
   <block id="b1cb177a36a717434db632021b6d91bc" category="sidebar">Astra Control이 포함된 MySQL DBaaS</block>
   <block id="332153f6f1b31602ac3418cdf4d18170" category="sidebar">Jenkins 라이프사이클 관리 단순화</block>
   <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">블로그 커뮤니티</block>
-  <block id="b97c82950a650a87db9198b9545b1715" category="sidebar">"컨테이너" 채널을 느슨하게 합니다</block>
   <block id="36910a95584c53fdc9ed97782ef3965c" category="sidebar">Astra Control 블로그</block>
   <block id="dbfc769b7e821664736a653f70155476" category="sidebar">Astra Control – 하이브리드 클라우드를 위한 애플리케이션 데이터 관리를 간소화합니다</block>
   <block id="a984dc296b5a86b8097f515731aee987" category="sidebar">Cloud Central의 Kubernetes Hub</block>
@@ -1278,13 +1273,10 @@
   <block id="eb75aeb3b4b2b9734ba3e52f5483f0b2" category="inline-link">ONTAP 설명서</block>
   <block id="8217522f2b9eea86f1099a2aba54aebd" category="list-text"><block ref="8217522f2b9eea86f1099a2aba54aebd" category="inline-link-rx"></block></block>
   <block id="60f694f21643599c137f6c610e48124e" category="paragraph">이 슬라이드에는 Astra Control 환경의 다양한 구성 요소에 대한 개요가 나와 있습니다.</block>
-  <block id="2325c645f4d2112a8e96b127fbad7bf2" category="inline-image-macro">Astra Control 아키텍처 다이어그램 및 구성 요소</block>
-  <block id="28f3b0cd697bf5f33c7eab89e20baff4" category="paragraph"><block ref="28f3b0cd697bf5f33c7eab89e20baff4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="51d249216b03414f10b242b851af7951" category="section-title">Astra Control 구성 요소</block>
   <block id="a8d77bbb11d2e1a349811767d194e9ba" category="list-text">* Kubernetes 클러스터 *: Kubernetes는 컨테이너식 워크로드 및 서비스를 관리할 수 있는 확장 가능한 휴대용 오픈 소스 플랫폼으로, 선언적 구성과 자동화를 모두 지원합니다. Astra는 Kubernetes 클러스터에서 호스팅되는 애플리케이션에 관리 서비스를 제공합니다.</block>
   <block id="b11f09eb1179914138fa8f5a15ba016a" category="list-text">* Astra Trident *: NetApp에서 관리하며 완벽한 지원을 제공하는 오픈 소스 스토리지 공급자 및 오케스트레이터로서, Trident는 Docker 및 Kubernetes에서 관리하는 컨테이너식 애플리케이션용 스토리지 볼륨을 생성할 수 있도록 지원합니다. Astra Control Center와 함께 구축한 경우, Trident는 구성된 ONTAP 스토리지 백엔드를 포함하며 Astra 데이터 저장소를 스토리지 백엔드로 지원합니다.</block>
   <block id="951fe18cc6e59e05fca3c0ca7de399fa" category="list-text">* 스토리지 백엔드 *:</block>
-  <block id="69a0ead95fc9c4c42592c123ebbf437a" category="list-text">Astra Data Store 스토리지 백엔드</block>
   <block id="fc8adf6067b9e369fbebc9abf2891bce" category="list-text">ONTAP AFF 및 FAS 스토리지 백엔드 스토리지 소프트웨어 및 하드웨어 플랫폼인 ONTAP는 핵심 스토리지 서비스, 다중 스토리지 액세스 프로토콜 지원 및 스냅샷, 미러링과 같은 스토리지 관리 기능을 제공합니다.</block>
   <block id="415ba7b6a21fb373d9c5b72207313c1c" category="list-text">* Cloud Insights *: NetApp 클라우드 인프라 모니터링 툴인 Cloud Insights를 사용하면 Astra Control Center에서 관리하는 Kubernetes 클러스터의 성능과 활용률을 모니터링할 수 있습니다. Cloud Insights는 스토리지 사용량과 워크로드를 상호 연관시킵니다. Astra Control Center에서 Cloud Insights 연결을 활성화하면 Astra Control Center UI 페이지에 원격 측정 정보가 표시됩니다.</block>
   <block id="de0c45e94d4b178203631d55e65d1b62" category="section-title">Astra Control 인터페이스</block>
@@ -1880,4 +1872,9 @@
   <block id="ca0a782901da0ca119f401851ac90842" category="paragraph"><block ref="78b785a9e2d028de12ce9f3f40284661" category="inline-link-macro-rx"></block>.</block>
   <block id="3fc3ba3c5f20ea640e5be46d8c9ca467" category="inline-link">NetApp Astra 제품군 관련 문서</block>
   <block id="c5bc786725b0b61976497d5d0c73be96" category="list-text"><block ref="c5bc786725b0b61976497d5d0c73be96" category="inline-link-rx"></block></block>
+  <block id="1c90591655cdfe7d885b02ed72ae2509" category="summary">NetApp은 다양한 방법으로 Astra Control을 지원합니다. 기술 자료(KB) 기사 및 불화 채널 같은 광범위한 무료 셀프 지원 옵션이 24x7 제공됩니다. Astra Control 계정에는 웹 발권 서비스를 통한 원격 기술 지원이 포함되어 있습니다.</block>
+  <block id="693cb2bb220908f09f97aaa6a8b56df7" category="inline-link">불화를 통해 도움을 받습니다</block>
+  <block id="2f51207f8c21afcb21d10ae77181f276" category="list-text"><block ref="2f51207f8c21afcb21d10ae77181f276" category="inline-link-rx"></block></block>
+  <block id="157f95d9b7b20cbe9d3c3c22ffdfbe18" category="paragraph">Pub 카테고리의 Astra로 이동하여 동료 및 전문가와 교류하십시오.</block>
+  <block id="d1b9bd0c14af2ff8d25891d12987a68b" category="sidebar">아스트라 불화 채널</block>
 </blocks>
