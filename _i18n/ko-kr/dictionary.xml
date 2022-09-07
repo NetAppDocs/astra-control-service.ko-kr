@@ -93,7 +93,6 @@
   <block id="de00c1e27be1485dd099e4cd2aaa554d" category="inline-link-macro">백업을 삭제합니다</block>
   <block id="598d6fe4e43f08217f8edf064d9a7fa3" category="summary">NetApp은 새로운 기능, 개선 사항 및 버그 수정을 제공하기 위해 Astra Control Service를 정기적으로 업데이트합니다.</block>
   <block id="124d123607fcd1192a3750d68c2110f7" category="doc">Astra Control Service의 새로운 기능</block>
-  <block id="d3af82049064083c07416b3ed040dba2" category="section-title">2021년 12월 14일</block>
   <block id="8f82aca9abb16b6ff389726d5fbe355a" category="section-title">새로운 스토리지 백엔드 옵션</block>
   <block id="40b96cc305f26bed96812c2920065f5d" category="inline-link-macro">Google Cloud를 설정합니다</block>
   <block id="87716101cfca255da11056a624dbce47" category="inline-link-macro">Azure 관리 디스크를 사용하여 Microsoft Azure를 설정합니다</block>
@@ -101,7 +100,6 @@
   <block id="372ba25517e6092baf2e0abc0ae2ef65" category="inline-link-macro">앱 실행 후크 관리</block>
   <block id="32139554c6b5c9a48dcfdd0ff983a9eb" category="inline-link-macro">앱 관리를 시작합니다</block>
   <block id="0f3f1a1eeb0e902fae62b05e28417935" category="inline-link-macro">Azure 서비스 보안 주체 만들기</block>
-  <block id="1ccff085c8843e6df85f630c0b00453e" category="section-title">2021년 8월 5일</block>
   <block id="40bde2f2e0e627e3fcf147169d6d315a" category="paragraph">이 릴리즈에는 다음과 같은 새로운 기능과 향상된 기능이 포함되어 있습니다.</block>
   <block id="9c634046a90a62883b122e76b9afcef2" category="section-title">Astra 제어 센터</block>
   <block id="40e5c10855fbafbea8290f73a6d04f70" category="section-title">2021년 6월 2일</block>
@@ -110,7 +108,6 @@
   <block id="033c399986bd3d9b7ef54b989611f70b" category="paragraph"><block ref="ae94f8298ace086e6c054e879241557e" category="inline-link-macro-rx"></block>.</block>
   <block id="33b49ba36195927db2411b412cfe0b4c" category="inline-link-macro">GKE 클러스터 요구 사항에 대해 자세히 알아보십시오</block>
   <block id="94aa6fa7719fbfefbbd46c4b08c22b4b" category="paragraph"><block ref="c3bd8fba045cfa6e89cf51e6e5781d5d" category="inline-link-macro-rx"></block>.</block>
-  <block id="d969bda7dc53cca4ba270eee303936b3" category="section-title">2021년 4월 15일</block>
   <block id="7d782479a41a3941b57cc7c2b60d318a" category="inline-link-macro">시작하는 방법을 알아보십시오</block>
   <block id="a916818021b3f228baef189d6dcd5538" category="paragraph"><block ref="bc25b49e1030874d11222c9fe6a36711" category="inline-link-macro-rx"></block>.</block>
   <block id="d0c288db47307237677ead5ae8dbf32b" category="inline-link">REST API를 사용하여 애플리케이션 데이터 라이프사이클 관리를 자동화하는 방법에 대해 알아보십시오</block>
@@ -129,14 +126,12 @@
   <block id="ed9548dfd7d1dc91cfcaf2dcc939a60a" category="list-text">Astra Control 계정 활동을 CSV 파일로 다운로드합니다.</block>
   <block id="2dd8ae234b96a1455259ff84939f6f55" category="list-text">클러스터 또는 앱을 선택한 후 클러스터 페이지 또는 앱 페이지에서 직접 활동을 봅니다.</block>
   <block id="44a04d6eee1ac7c339c8312bc5e23831" category="inline-link-macro">계정 활동 보기에 대해 자세히 알아보세요</block>
-  <block id="be80b8547cba74eaaaa246128e9f505b" category="section-title">2021년 3월 1일</block>
   <block id="176950460e5100915fe78bc4e6ffe82b" category="inline-link">_CVS_서비스 유형입니다</block>
   <block id="2c86b251dbdee05a59434e44da5fb462" category="paragraph">이제 Astra Control Service가 를 지원합니다<block ref="1760b78b440a877c4a7a7d217ccc8ada" category="inline-link-rx"></block> Google Cloud용 Cloud Volumes Service와 함께. 이는 이미 _CVS - Performance_service 유형을 지원하는 것 외에도 가능합니다. Astra Control Service는 Cloud Volumes Service for Google Cloud를 영구 볼륨의 스토리지 백엔드로 사용합니다.</block>
   <block id="429b81900737e151eef475ff31869fa3" category="inline-link">Cloud Volumes Service가 지원되는 Google 클라우드 지역</block>
   <block id="28d262f7686b19b993c8250943518a7f" category="paragraph">이는 Astra Control Service가 이제 _any_에서 실행 중인 Kubernetes 클러스터의 애플리케이션 데이터를 관리할 수 있다는 것을 의미합니다<block ref="69fa08b6ef6184ae8dd1a91cecb10b56" category="inline-link-rx"></block>.</block>
   <block id="b536aa5bb92e93036b2454d38b99f56f" category="inline-link-macro">서비스 유형 선택에 대해 자세히 알아보십시오</block>
   <block id="7a5679db41601d3fecb409a68ce4c9b2" category="paragraph">Google Cloud 지역 중에서 선택할 수 있는 유연성이 있다면 성능 요구사항에 따라 CVS 또는 CVS 성능을 선택할 수 있습니다. <block ref="89000b13767f1a83f8086c1cc2e31c7d" category="inline-link-macro-rx"></block>.</block>
-  <block id="6be34d6a2ee1ffb3d4e2e46cce282f44" category="section-title">2021년 1월 25일</block>
   <block id="d13993f9f9e60a93ba268e59c921381d" category="paragraph">이제 Astra Control Service가 GA될 예정입니다. 당사는 베타 릴리스로부터 받은 많은 피드백을 통합하여 몇 가지 주목할 만한 개선 사항을 만들었습니다.</block>
   <block id="f1b3e68a6481f423fd5c59659b18560d" category="inline-link-macro">청구에 대해 자세히 알아보십시오</block>
   <block id="964a70c45a61f521ea1c4cb06403d4ee" category="list-text">무료 요금제로 전환하여 프리미엄 요금제로 전환할 수 있습니다. <block ref="2e7d11d76129cc6bc66120b2bffcd33e" category="inline-link-macro-rx"></block>.</block>
@@ -145,7 +140,6 @@
   <block id="f0823272d746557a316d9b1a6fcb7c28" category="list-text">이제 직접 계정을 만들고 삭제할 수 있습니다.</block>
   <block id="acf41b9e4222ac75667601aca8b7f0c3" category="list-text">Astra Control Service에서 Kubernetes 클러스터에 더 이상 액세스할 수 없을 때 알림 기능이 개선되었습니다.</block>
   <block id="80e17306b4086e61c6dfce35aec5d447" category="paragraph">Astra Control Service는 연결이 끊긴 클러스터에 대한 앱을 관리할 수 없기 때문에 이러한 알림이 중요합니다.</block>
-  <block id="73980d377c8b298a2609da3a955bc2e8" category="section-title">2020년 12월 17일(베타 업데이트)</block>
   <block id="b23449f655e47c7a7c436fa04f6dda52" category="paragraph">사용자 경험을 개선하기 위해 주로 버그 픽스에 초점을 맞추었지만 주목할 만한 몇 가지 개선 사항은 다음과 같습니다.</block>
   <block id="1a1973d9db3099685cb4f302f3120000" category="list-text">첫 번째 Kubernetes 컴퓨팅을 Astra Control Service에 추가하면 클러스터가 있는 지역에 오브젝트 저장소가 생성됩니다.</block>
   <block id="0f46ccf25e283000bdf73f5292b4b20e" category="list-text">이제 컴퓨팅 레벨에서 스토리지 세부 정보를 볼 때 영구 볼륨에 대한 세부 정보를 확인할 수 있습니다.</block>
@@ -852,8 +846,6 @@
   <block id="f75d983d4bc87e1a244c894a4357e93a" category="section-title">응용 프로그램 관리</block>
   <block id="eaeb56aabe324b7270ae7355bb58edcb" category="paragraph">* Astra Control이 응용 프로그램을 배포할 수 있습니까? *</block>
   <block id="48df7f09a242df239385ebae869133b8" category="paragraph">Astra Control은 애플리케이션을 배포하지 않습니다. 응용 프로그램은 Astra Control 외부에서 배포해야 합니다.</block>
-  <block id="b3d3212b84b66c52decacb83fca1191d" category="paragraph">* Astra Control이 NetApp이 아닌 스토리지에 있는 애플리케이션을 관리할 수 있습니까? *</block>
-  <block id="43c9583c5f06b5003113b84316a2a65c" category="paragraph">아니요 Astra Control은 NetApp이 아닌 스토리지를 사용하는 애플리케이션을 검색할 수 있지만, NetApp이 아닌 스토리지를 사용하는 애플리케이션은 관리할 수 없습니다.</block>
   <block id="395007096dc9e0b54c09749dc82a8941" category="paragraph">* 응용 프로그램의 PVC가 GCP CVS에 바인딩된 것은 보이지 않습니다. 무엇이 문제입니까? *</block>
   <block id="a90204b381b7967a04938156531da34e" category="paragraph">Astra Trident 운영자는 Astra Control에 성공적으로 추가된 후 기본 스토리지 클래스를 'NetApp-cvs-perf-premium'으로 설정합니다. 애플리케이션의 PVC가 Cloud Volumes Service for Google Cloud에 바인딩되지 않은 경우 다음과 같은 몇 가지 단계를 수행할 수 있습니다.</block>
   <block id="baaf63e6e2361e11fa4ae44151218b4e" category="list-text">kubeck get SC를 실행하고 기본 스토리지 클래스를 확인합니다.</block>
@@ -1391,7 +1383,6 @@
   <block id="13d28e8dfc702e3456e0767dff9a128a" category="section-title">네임스페이스</block>
   <block id="d9cc676cc9f27a51d1e6de8201649cfb" category="paragraph">네임스페이스는 Astra Control에서 관리하는 클러스터 내의 특정 리소스에 할당할 수 있는 범위입니다. Astra Control은 클러스터를 Astra Control에 추가할 때 클러스터의 네임스페이스를 검색합니다. 네임스페이스가 검색되면 사용자에게 제약 조건으로 할당할 수 있습니다. 해당 네임스페이스에 대한 액세스 권한이 있는 멤버만 해당 리소스를 사용할 수 있습니다. 회사 내의 물리적 영역이나 부서 등 조직에 적합한 패러다임을 사용하여 네임스페이스에 대한 액세스를 제어할 수 있습니다. 사용자에게 제약 조건을 추가하면 해당 사용자가 모든 네임스페이스에 액세스하거나 특정 네임스페이스 집합만 액세스하도록 구성할 수 있습니다. 네임스페이스 레이블을 사용하여 네임스페이스 제약 조건을 할당할 수도 있습니다.</block>
   <block id="73b2ad293eda73ca2acff9008e7ac0e8" category="paragraph"><block ref="73b2ad293eda73ca2acff9008e7ac0e8" category="inline-link-macro-rx"></block></block>
-  <block id="67dec75e07f11637dbb129889d6bf6ae" category="section-title">2022년 4월 26일</block>
   <block id="0097e428776046ceb8cd1fcde6d6fa2e" category="section-title">네임스페이스 역할 기반 액세스 제어(RBAC)</block>
   <block id="1815092c8149587d0b20c39d938df877" category="admonition">K8ssandra 의 경우 현재 위치 복원 작업이 지원됩니다. 새 네임스페이스 또는 클러스터에 대한 복원 작업을 수행하려면 응용 프로그램의 원래 인스턴스를 중단해야 합니다. 이는 이월된 피어 그룹 정보가 인스턴스 간 통신으로 이어지지 않도록 하기 위한 것입니다. 앱 복제는 지원되지 않습니다.</block>
   <block id="19c1911c15404b466d1dbdce1f447fa5" category="section-title">역할 기반 액세스 제어(RBAC) 제한 사항</block>
@@ -1493,7 +1484,6 @@
   <block id="2628d7b5cc84b024c4b920441addcb86" category="section-title">인증서 관리자를 사용하는 앱의 데이터 이동 없는 복원 작업은 지원되지 않습니다</block>
   <block id="0d7cda4c63f06aa1eaf0682a607c5601" category="paragraph">이 Astra Control Service 릴리스는 인증서 관리자와의 응용 프로그램 데이터 이동 없는 복원을 지원하지 않습니다. 복원 작업을 다른 네임스페이스로 복원하고 클론 작업을 지원합니다.</block>
   <block id="33e9a46dfde5bb0f5a8b8327623cb998" category="paragraph">네임스페이스 이름/ID에 따라 RBAC 제한이 있는 모든 '멤버' 사용자는 동일한 클러스터 또는 조직 계정의 다른 클러스터에 있는 새 네임스페이스로 앱을 클론 복제하거나 복원할 수 있습니다. 그러나 동일한 사용자가 새 네임스페이스에서 복제되거나 복원된 앱에 액세스할 수 없습니다. 클론 또는 복원 작업을 통해 새 네임스페이스를 생성한 후 계정 관리자/소유자는 'ember' 사용자 계정을 편집하고 영향을 받는 사용자의 역할 제약 조건을 업데이트하여 새 네임스페이스에 대한 액세스 권한을 부여할 수 있습니다.</block>
-  <block id="99715e391085188513c21fdab4ee4d3f" category="section-title">2022년 8월 10일</block>
   <block id="d55b05877d0dd6743f47d3442323323e" category="inline-link-macro">Amazon Web Services를 설정합니다</block>
   <block id="0a2055495a94f091655a2e4d421cffe2" category="list-text">사전 백업</block>
   <block id="cf6e97e89c4b36c29252fcb7b0728d2f" category="list-text">백업 후</block>
@@ -1877,4 +1867,14 @@
   <block id="2f51207f8c21afcb21d10ae77181f276" category="list-text"><block ref="2f51207f8c21afcb21d10ae77181f276" category="inline-link-rx"></block></block>
   <block id="157f95d9b7b20cbe9d3c3c22ffdfbe18" category="paragraph">Pub 카테고리의 Astra로 이동하여 동료 및 전문가와 교류하십시오.</block>
   <block id="d1b9bd0c14af2ff8d25891d12987a68b" category="sidebar">아스트라 불화 채널</block>
+  <block id="bc820d3a1aae6d8ead4b69263979fc38" category="section-title">2022년 9월 7일</block>
+  <block id="511d4d523a06b0375a96d77287f62ee1" category="paragraph">이 릴리스에는 Astra Control Service 인프라의 안정성 및 복원성 향상 기능이 포함되어 있습니다.</block>
+  <block id="d682eef4b137af2945bc67775777a9ae" category="section-title">2022년 8월 10일</block>
+  <block id="ae4d5046a6cc232f0a797ff6885ed980" category="section-title">2022년 4월 26일</block>
+  <block id="574a814695667d43e14497d0d18ea597" category="section-title">2021년 12월 14일</block>
+  <block id="bf2952986042f5403c53bded609c0d9b" category="section-title">2021년 8월 5일</block>
+  <block id="12b25d2d9c1a5b6acd85bf6a54697871" category="section-title">2021년 4월 15일</block>
+  <block id="f0f3d2a56548b1d53077b0b5eff5bb54" category="section-title">2021년 3월 1일</block>
+  <block id="3bdf2e1f16a21b037f1f56168c9e298b" category="section-title">2021년 1월 25일</block>
+  <block id="c8b4516515e1372ec542880d39c0b12d" category="section-title">2020년 12월 17일(베타 업데이트)</block>
 </blocks>
