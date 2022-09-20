@@ -103,7 +103,7 @@ endif::gcp[]
 
 ifdef::azure[]
 
-AKS 클러스터의 경우 Astra Control Service가 사용합니다 https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^] 또는 Azure Disk Storage를 영구 볼륨의 스토리지 백엔드로 사용합니다.
+AKS 클러스터의 경우 Astra Control Service가 사용합니다 https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^] 또는 Azure 관리 디스크를 영구 볼륨의 스토리지 백엔드로 사용합니다.
 
 endif::azure[]
 

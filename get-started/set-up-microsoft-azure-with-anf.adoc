@@ -24,56 +24,56 @@ Astra Control Service로 Azure Kubernetes Service 클러스터를 관리하려�
 === Azure Kubernetes Service에 대한 Astra Control Service 요구 사항을 검토합니다
 
 [role="quick-margin-para"]
-클러스터가 정상 상태이며 지원되는 Kubernetes 버전을 실행 중인지, 노드 풀이 온라인 상태이고 Linux가 실행 중인지 등을 확인합니다. <<Azure Kubernetes Service cluster requirements,이 단계에 대해 자세히 알아보십시오>>.
+클러스터가 정상 상태이며 지원되는 Kubernetes 버전을 실행 중인지, 노드 풀이 온라인 상태이고 Linux가 실행 중인지 등을 확인합니다.  Kubernetes Service cluster requirements,이 단계에 대해 자세히 알아보십시오.
 
 
 
 === Microsoft Azure에 등록하십시오
 
 [role="quick-margin-para"]
-Microsoft Azure 계정을 만듭니다. <<Sign up for Microsoft Azure,이 단계에 대해 자세히 알아보십시오>>.
+Microsoft Azure 계정을 만듭니다.  up for Microsoft Azure,이 단계에 대해 자세히 알아보십시오.
 
 
 
 === Azure NetApp Files에 등록하십시오
 
 [role="quick-margin-para"]
-NetApp 리소스 공급자를 등록합니다. <<Register for Azure NetApp Files,이 단계에 대해 자세히 알아보십시오>>.
+NetApp 리소스 공급자를 등록합니다.  for Azure NetApp Files,이 단계에 대해 자세히 알아보십시오.
 
 
 
 === NetApp 계정을 만듭니다
 
 [role="quick-margin-para"]
-Azure 포털에서 Azure NetApp Files로 이동하여 NetApp 계정을 생성합니다. <<Create a NetApp account,이 단계에 대해 자세히 알아보십시오>>.
+Azure 포털에서 Azure NetApp Files로 이동하여 NetApp 계정을 생성합니다.  a NetApp account,이 단계에 대해 자세히 알아보십시오.
 
 
 
 === 용량 풀 설정
 
 [role="quick-margin-para"]
-영구 볼륨에 대해 하나 이상의 용량 풀을 설정합니다. <<Set up a capacity pool,이 단계에 대해 자세히 알아보십시오>>.
+영구 볼륨에 대해 하나 이상의 용량 풀을 설정합니다.  up a capacity pool,이 단계에 대해 자세히 알아보십시오.
 
 
 
 === Azure NetApp Files에 서브넷 위임
 
 [role="quick-margin-para"]
-Astra Control Service가 해당 서브넷에 영구 볼륨을 생성할 수 있도록 Azure NetApp Files에 서브넷을 위임합니다. <<Delegate a subnet to Azure NetApp Files,이 단계에 대해 자세히 알아보십시오>>.
+Astra Control Service가 해당 서브넷에 영구 볼륨을 생성할 수 있도록 Azure NetApp Files에 서브넷을 위임합니다.  a subnet to Azure NetApp Files,이 단계에 대해 자세히 알아보십시오.
 
 
 
 === Azure 서비스 보안 주체 만들기
 
 [role="quick-margin-para"]
-Contributor 역할이 있는 Azure 서비스 보안 주체를 만듭니다. <<Create an Azure service principal,이 단계에 대해 자세히 알아보십시오>>.
+Contributor 역할이 있는 Azure 서비스 보안 주체를 만듭니다.  an Azure service principal,이 단계에 대해 자세히 알아보십시오.
 
 
 
 === 선택 사항: Azure 백업 버킷의 중복성을 구성합니다
 
 [role="quick-margin-para"]
-기본적으로 Astra Control Service 버킷은 Azure Kubernetes Service 백업을 저장하는 데 사용되며 LRS(Locally Redundant Storage) 이중화 옵션을 사용합니다. 선택적 단계로서 Azure 버킷을 위한 더욱 내구성 있는 이중화 수준을 구성할 수 있습니다. <<Optional: Configure redundancy for Azure backup buckets,이 단계에 대해 자세히 알아보십시오>>.
+기본적으로 Astra Control Service 버킷은 Azure Kubernetes Service 백업을 저장하는 데 사용되며 LRS(Locally Redundant Storage) 이중화 옵션을 사용합니다. 선택적 단계로서 Azure 버킷을 위한 더욱 내구성 있는 이중화 수준을 구성할 수 있습니다.  Configure redundancy for Azure backup buckets,이 단계에 대해 자세히 알아보십시오.
 
 
 
@@ -85,11 +85,11 @@ Kubernetes 버전:: 클러스터는 Kubernetes 버전 1.21~1.24를 실행해야 
 이미지 유형:: 모든 노드 풀의 이미지 유형은 Linux여야 합니다.
 클러스터 상태입니다:: 클러스터가 정상 상태에서 실행되고 있어야 하며 오류가 발생한 상태의 작업자 노드가 없는 온라인 작업자 노드가 하나 이상 있어야 합니다.
 Azure 지역:: 클러스터는 Azure NetApp Files를 사용할 수 있는 지역에 상주해야 합니다. https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["지역별 Azure 제품 보기"^].
-구독:: 클러스터는 Azure NetApp Files가 설정된 구독에 상주해야 합니다. 구독은 필요할 때 선택할 수 있습니다 <<Register for Azure NetApp Files,Azure NetApp Files에 등록하십시오>>.
+구독:: 클러스터는 Azure NetApp Files가 설정된 구독에 상주해야 합니다. 구독은 필요할 때 선택할 수 있습니다  for Azure NetApp Files,Azure NetApp Files에 등록하십시오.
 VNET:: 다음 VNET 요구 사항을 고려하십시오.
 +
 --
-* 클러스터는 Azure NetApp Files 위임 서브넷에 직접 액세스할 수 있는 VNET에 상주해야 합니다. <<Delegate a subnet to Azure NetApp Files,위임된 서브넷을 설정하는 방법에 대해 알아봅니다>>.
+* 클러스터는 Azure NetApp Files 위임 서브넷에 직접 액세스할 수 있는 VNET에 상주해야 합니다.  a subnet to Azure NetApp Files,위임된 서브넷을 설정하는 방법에 대해 알아봅니다.
 * Kubernetes 클러스터가 다른 VNET에 있는 Azure NetApp Files 위임 서브넷을 통해 피어링된 VNET에 있는 경우 피어링 연결의 양측이 온라인 상태여야 합니다.
 * Azure NetApp Files가 있는 VNET(즉시 피어링된 VNets 포함)에서 사용되는 IP 수의 기본 제한은 1,000입니다. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits["Azure NetApp Files 리소스 제한을 봅니다"^].
 +
@@ -112,7 +112,7 @@ VNET:: 다음 VNET 요구 사항을 고려하십시오.
 
 === CSI 볼륨 스냅샷 컨트롤러를 설치합니다
 
-에 설명된 대로 <<Azure Kubernetes Service cluster requirements>>Kubernetes 클러스터에는 CSI 볼륨 스냅샷 컨트롤러가 설치되어 있어야 합니다. 다음 단계에 따라 클러스터에 컨트롤러를 설치합니다.
+에 설명된 대로  Kubernetes Service cluster requirementsKubernetes 클러스터에는 CSI 볼륨 스냅샷 컨트롤러가 설치되어 있어야 합니다. 다음 단계에 따라 클러스터에 컨트롤러를 설치합니다.
 
 .K8s 버전 1.19의 단계
 . 볼륨 스냅샷 CRD를 설치합니다.

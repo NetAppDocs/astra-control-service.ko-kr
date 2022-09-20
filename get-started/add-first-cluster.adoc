@@ -14,25 +14,25 @@ summary: 환경을 설정한 후에는 Kubernetes 클러스터를 생성하고 A
 [role="lead"]
 환경을 설정한 후에는 Kubernetes 클러스터를 생성하고 Astra Control Service에 추가할 준비가 된 것입니다.
 
-* <<Create a Kubernetes cluster>>
-* <<Start managing Kubernetes clusters>>
+*  a Kubernetes cluster
+*  managing Kubernetes clusters
 
 
 ifdef::azure[]
 
-* <<Manage a private cluster>>
+*  a private cluster
 
 
 endif::azure[]
 
 ifdef::aws[]
 
-* <<Provide cluster access to other users>>
+*  cluster access to other users
 
 
 endif::aws[]
 
-* <<Change the default storage class>>
+*  the default storage class
 
 
 
@@ -57,7 +57,7 @@ Astra Control Service에 로그인한 후 첫 번째 단계는 클러스터 관�
 Astra Control이 클러스터를 관리할 때 클러스터의 기본 스토리지 클래스를 추적합니다. kubbeck 명령을 사용하여 스토리지 클래스를 변경하면 Astra Control에서 변경 사항을 되돌립니다. Astra Control에서 관리하는 클러스터의 기본 스토리지 클래스를 변경하려면 다음 방법 중 하나를 사용하십시오.
 
 * Astra Control API의 Put/managedClusters 끝점을 사용하고 defaultStorageClass 매개변수를 사용하여 다른 기본 스토리지 클래스를 할당합니다.
-* Astra Control 웹 UI를 사용하여 다른 기본 스토리지 클래스를 할당합니다. 을 참조하십시오 <<Change the default storage class>>.
+* Astra Control 웹 UI를 사용하여 다른 기본 스토리지 클래스를 할당합니다. 을 참조하십시오  the default storage class.
 
 
 ====
@@ -85,7 +85,7 @@ JSON 파일에 추가하지 않은 경우 Azure 구독 ID도 필요합니다.
 * 전용 AKS 클러스터의 경우:
 +
 ** 클러스터는 에 나와 있는 요구 사항을 충족해야 합니다 https://docs.microsoft.com/en-us/azure/aks/private-clusters["Azure 설명서"^].
-** AKS 서비스 클러스터에 Astra Connector를 설치하여 Astra Control Service가 클러스터를 관리할 수 있도록 해야 합니다. Astra 커넥터를 설치하려면 <<Manage a private cluster,다음 지침을 따르십시오>>.
+** AKS 서비스 클러스터에 Astra Connector를 설치하여 Astra Control Service가 클러스터를 관리할 수 있도록 해야 합니다. Astra 커넥터를 설치하려면  a private cluster,다음 지침을 따르십시오.
 
 
 
@@ -150,7 +150,7 @@ Amazon Web Services에 대해 구성되지 않은 클러스터를 선택하면 �
 Azure NetApp Files에 대해 구성되지 않은 클러스터를 선택하면 경고가 표시됩니다. 이 클러스터에 NetApp Trident가 설치 및 구성되지 않았습니다. 다른 스토리지 서비스를 사용하려는 경우 클러스터를 계속 추가할 수 있습니다.
 
 +
-"Private" 아이콘이 표시된 클러스터를 선택하면 해당 클러스터는 전용 IP 주소를 사용하며 Astra Control이 클러스터를 관리하는 데 Astra Connector가 필요합니다. Astra Connector를 설치해야 한다는 메시지가 나타나면 <<Manage a private cluster,다음 지침을 따르십시오>> Astra Connector를 설치하고 클러스터 관리를 활성화합니다. Astra Connector를 설치한 후에는 클러스터를 사용할 수 있으며 클러스터를 계속 추가할 수 있습니다.
+"Private" 아이콘이 표시된 클러스터를 선택하면 해당 클러스터는 전용 IP 주소를 사용하며 Astra Control이 클러스터를 관리하는 데 Astra Connector가 필요합니다. Astra Connector를 설치해야 한다는 메시지가 나타나면  a private cluster,다음 지침을 따르십시오 Astra Connector를 설치하고 클러스터 관리를 활성화합니다. Astra Connector를 설치한 후에는 클러스터를 사용할 수 있으며 클러스터를 계속 추가할 수 있습니다.
 
 . * 스토리지 *: 기본적으로 이 클러스터에 Kubernetes 애플리케이션을 배포할 스토리지 클래스를 선택합니다.
 +

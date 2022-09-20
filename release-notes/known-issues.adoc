@@ -16,27 +16,27 @@ summary: 알려진 문제점은 이 제품 릴리스를 성공적으로 사용�
 현재 릴리즈에는 다음과 같은 알려진 문제가 영향을 줍니다.
 
 .인프라
-* <<App clones fail after an application is deployed with a set storage class>>
-* <<Applications page loads forever when trying to restore an application belonging to a deleted cluster>>
-* <<Unable to define an app on a namespace that has been deleted and recreated>>
+*  clones fail after an application is deployed with a set storage class
+*  page loads forever when trying to restore an application belonging to a deleted cluster
+*  to define an app on a namespace that has been deleted and recreated
 
 
 .백업, 복원, 클론
-* <<Restore of an app results in PV size larger than original PV>>
-* <<App clones fail using a specific version of PostgreSQL>>
-* <<App backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed>>
+*  of an app results in PV size larger than original PV
+*  clones fail using a specific version of PostgreSQL
+*  backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed
 
 
 ifdef::azure[]
 
-* <<Azure backup buckets use LRS redundancy by default>>
+*  backup buckets use LRS redundancy by default
 
 
 endif::azure[]
 
 .기타 문제
-* <<Snapshots eventually begin to fail when using external-snapshotter version 4.2.0>>
-* <<App data management operations fail with Internal Service Error (500) when Astra Trident is offline>>
+*  eventually begin to fail when using external-snapshotter version 4.2.0
+*  data management operations fail with Internal Service Error (500) when Astra Trident is offline
 
 
 
