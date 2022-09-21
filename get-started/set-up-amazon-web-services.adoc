@@ -131,7 +131,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 . 서비스 계정에 대한 Amazon EBS CSI 드라이버 IAM 역할을 생성합니다. 지침을 따릅니다 https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html["아마존 문서"^]의 지침에 따라 AWS CLI 명령을 사용합니다.
 . 다음 AWS CLI 명령을 사용하여 Amazon EBS CSI 애드온을 추가합니다. 괄호 <>의 정보를 사용자 환경에 맞는 값으로 바꿉니다. driver_role>을 이전 단계에서 생성한 EBS CSI 드라이버 역할의 이름으로 바꿉니다.
 +
-[listing]
+[source, sh]
 ----
 aws eks create-addon \
   --cluster-name <CLUSTER_NAME> \
@@ -143,26 +143,26 @@ aws eks create-addon \
 .EBS 스토리지 클래스를 구성합니다
 . Amazon EBS CSI 드라이버 GitHub 리포지토리를 시스템에 복제합니다.
 +
-[listing]
+[source, sh]
 ----
 git clone https://github.com/kubernetes-sigs/aws-ebs-csi-driver.git
 ----
 . 동적 프로비저닝 예제 디렉토리로 이동합니다.
 +
-[listing]
+[source, sh]
 ----
 cd aws-ebs-csi-driver/examples/kubernetes/dynamic-provisioning/
 ----
 . EBS-SC 스토리지 클래스 및 EBS-Claim 영구 볼륨 클레임을 매니페스트 디렉토리에서 배포합니다.
 +
-[listing]
+[source, sh]
 ----
 kubectl apply -f manifests/storageclass.yaml
 kubectl apply -f manifests/claim.yaml
 ----
 . EBS-SC 스토리지 클래스를 설명합니다.
 +
-[listing]
+[source, sh]
 ----
 kubectl describe storageclass ebs-sc
 ----
@@ -216,7 +216,7 @@ Astra Control Service가 AWS 계정과 상호 작용하기 위해 필요한 권�
 . policy.json이라는 새 파일을 만듭니다.
 . 다음 JSON 콘텐츠를 파일에 복사합니다.
 +
-[listing]
+[source, JSON]
 ----
 {
     "Version": "2012-10-17",
@@ -250,13 +250,13 @@ Astra Control Service가 AWS 계정과 상호 작용하기 위해 필요한 권�
 ----
 . 정책을 생성합니다.
 +
-[listing]
+[source, sh]
 ----
 POLICY_ARN=$(aws iam create-policy  --policy-name <policy-name> --policy-document file://policy.json  --query='Policy.Arn' --output=text)
 ----
 . 정책을 IAM 사용자에게 연결합니다. '<IAM-user-name>'을(를) 생성한 IAM 사용자의 사용자 이름 또는 기존 IAM 사용자로 대체합니다.
 +
-[listing]
+[source, sh]
 ----
 aws iam attach-user-policy --user-name <IAM-USER-NAME> --policy-arn=$POLICY_ARN
 ----
@@ -271,7 +271,7 @@ Astra Control Service가 사용자를 인식할 수 있도록 IAM 사용자의 �
 .단계
 . 자격 증명을 다운로드합니다. '<IAM-user-name>'을(를) 사용하려는 IAM 사용자의 사용자 이름으로 바꿉니다.
 +
-[listing]
+[source, sh]
 ----
 aws iam create-access-key --user-name <IAM-USER-NAME> --output json > credential.json
 ----

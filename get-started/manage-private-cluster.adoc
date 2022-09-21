@@ -1,0 +1,93 @@
+---
+sidebar: sidebar 
+permalink: get-started/manage-private-cluster.html 
+keywords: discover private cluster, add cluster, add kubernetes cluster, private, discover kubernetes cluster, add private cluster 
+summary: 환경을 설정한 후에는 Kubernetes 클러스터를 생성하고 Astra Control Service에 추가할 준비가 된 것입니다. 
+---
+= Astra Control Service에서 프라이빗 클러스터를 관리합니다
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Astra Control Service를 사용하여 전용 AKS 클러스터를 관리할 수 있습니다. 이 지침에서는 이미 전용 AKS 클러스터를 생성하고 원격으로 액세스할 수 있는 안전한 방법을 준비했다고 가정합니다. 전용 AKS 클러스터 생성 및 액세스에 대한 자세한 내용은 을 참조하십시오 https://docs.microsoft.com/azure/aks/private-clusters["Azure 문서"^].
+
+*  the Astra Connector operator
+*  up persistent storage
+*  the private cluster to Astra Control Service
+
+
+
+
+== Astra Connector 운용자를 설치한다
+
+전용 AKS 클러스터에 Astra Connector 운영자를 설치해야 합니다. 방호 호스트를 사용하는 경우 방호 호스트의 명령줄에서 이러한 명령을 실행하십시오.
+
+.단계
+. Astra Connector operator GitHub 리포지토리 클론 생성:
++
+[source, sh]
+----
+git clone https://github.com/NetApp/astra-connector-operator.git
+----
+. 목록을 압축을 푼 운영자 패키지의 최상위 수준으로 변경하여 "ls" 명령으로 "astraconnector_operator.yaML" 파일을 볼 수 있습니다.
+. Astra Connector 연산자에 대한 네임스페이스를 만듭니다.
++
+[source, sh]
+----
+kubectl create ns astra-connector-operator
+----
+. astraconnector_operator.yaML 파일을 운용자 namespace에 적용한다.
++
+[source, sh]
+----
+kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
+----
+. 프라이빗 클러스터 구성 요소의 네임스페이스를 생성합니다.
++
+[source, sh]
+----
+kubectl create ns astra-connector
+----
+. 의 지침에 따라 Astra Control API 토큰을 생성합니다 https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra 자동화 문서"^].
+. 필요에 맞게 Astra Connector 운영자 리포지토리의 config/samples 디렉토리에서 예제 구성 파일을 수정합니다.
+. Astra Connector CRD(Custom Resource Definition)를 적용합니다.
++
+[source, sh]
+----
+kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
+----
+. Astra Connector의 상태를 확인한다.
++
+[source, sh]
+----
+kubectl get astraconnector astra-connector -n astra-connector
+----
++
+다음과 유사한 출력이 표시됩니다.
+
++
+[source, sh]
+----
+NAME              REGISTERED   ASTRACONNECTORID
+astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
+----
+
+
+
+
+== 영구 스토리지를 설정합니다
+
+클러스터의 영구 스토리지를 구성합니다. Azure NetApp Files 또는 Azure 관리 디스크를 사용할 수 있습니다. 다음 옵션을 사용하여 Azure를 구성하는 방법에 대한 자세한 내용은 시작 설명서를 참조하십시오.
+
+* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-anf.html["Azure NetApp Files를 사용하여 Microsoft Azure를 설정합니다"]
+* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html["Azure 관리 디스크를 사용하여 Microsoft Azure를 설정합니다"]
+
+
+
+
+== 프라이빗 클러스터를 Astra Control Service에 추가합니다
+
+이제 Astra Control Service에 전용 AKS 클러스터를 추가할 수 있습니다. 표준 워크플로우를 따라 클러스터를 Astra Control Service에 추가합니다. https://docs.netapp.com/us-en/astra-control-service/get-started/add-first-cluster.html["Astra Control Service에서 Kubernetes 클러스터 관리를 시작합니다"].

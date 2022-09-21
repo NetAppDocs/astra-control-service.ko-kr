@@ -18,13 +18,6 @@ summary: 환경을 설정한 후에는 Kubernetes 클러스터를 생성하고 A
 *  managing Kubernetes clusters
 
 
-ifdef::azure[]
-
-*  a private cluster
-
-
-endif::azure[]
-
 ifdef::aws[]
 
 *  cluster access to other users
@@ -219,58 +212,6 @@ endif::aws[]
 
 Astra Control Service는 적합한 클러스터에서 애플리케이션 백업을 위한 객체 저장소를 생성하고, 클러스터에 관리자 계정을 생성하고, 사용자가 지정한 기본 스토리지 클래스를 설정합니다. 이 프로세스는 최대 5분 정도 소요될 수 있습니다.
 
-ifdef::azure[]
-
-
-
-== 프라이빗 클러스터 관리
-
-Astra Control Service를 사용하여 전용 AKS 클러스터를 관리할 수 있습니다. 이렇게 하려면 전용 AKS 서비스 클러스터에 Astra Connector 연산자를 설치해야 합니다. 관리용으로 클러스터를 추가하거나 추가 프로세스 중에 메시지가 표시될 때 이 단계를 완료할 수 있습니다.
-
-.단계
-. Astra Connector 연산자에 대한 네임스페이스를 만듭니다.
-+
-[listing]
-----
-kubectl create ns astra-connector-operator
-----
-. astraconnector_operator.yaML 파일을 운용자 namespace에 적용한다.
-+
-[listing]
-----
-kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
-----
-. 프라이빗 클러스터 구성 요소의 네임스페이스를 생성합니다.
-+
-[listing]
-----
-kubectl create ns astra-connector
-----
-. Astra Connector CRD(Custom Resource Definition)를 적용합니다.
-+
-[listing]
-----
-kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
-----
-. Astra Connector의 상태를 확인한다.
-+
-[listing]
-----
-kubectl get astraconnector astra-connector -n astra-connector
-----
-+
-다음과 유사한 출력이 표시됩니다.
-
-+
-[listing]
-----
-NAME              REGISTERED   ASTRACONNECTORID
-astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
-----
-
-
-endif::azure[]
-
 ifdef::aws[]
 
 
@@ -297,3 +238,14 @@ endif::aws[]
 . 기본값으로 설정할 스토리지 클래스에 대해 * Actions * 메뉴를 선택합니다.
 . Set as default * 를 선택합니다.
 
+
+ifdef::azure[]
+
+
+
+== 를 참조하십시오
+
+* link:manage-private-cluster.html["프라이빗 클러스터 관리"]
+
+
+endif::azure[]

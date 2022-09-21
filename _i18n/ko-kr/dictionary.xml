@@ -1363,7 +1363,6 @@
   <block id="5a737c67c0b2ac2e4c643d72c95e0526" category="list-text">AKS 서비스 클러스터에 Astra Connector를 설치하여 Astra Control Service가 클러스터를 관리할 수 있도록 해야 합니다. Astra 커넥터를 설치하려면 <block ref="fc3252390c96b6337e381be01d1e4c4d" category="inline-xref-macro-rx"></block>.</block>
   <block id="40d304e5f3629b7ff733d026fd7435db" category="paragraph">"Private" 아이콘이 표시된 클러스터를 선택하면 해당 클러스터는 전용 IP 주소를 사용하며 Astra Control이 클러스터를 관리하는 데 Astra Connector가 필요합니다. Astra Connector를 설치해야 한다는 메시지가 나타나면 <block ref="fc3252390c96b6337e381be01d1e4c4d" category="inline-xref-macro-rx"></block> Astra Connector를 설치하고 클러스터 관리를 활성화합니다. Astra Connector를 설치한 후에는 클러스터를 사용할 수 있으며 클러스터를 계속 추가할 수 있습니다.</block>
   <block id="e2422705f78eff49e43f16a31a8f0847" category="section-title">프라이빗 클러스터 관리</block>
-  <block id="e3b8879cdcd728379544300db10524e6" category="paragraph">Astra Control Service를 사용하여 전용 AKS 클러스터를 관리할 수 있습니다. 이렇게 하려면 전용 AKS 서비스 클러스터에 Astra Connector 연산자를 설치해야 합니다. 관리용으로 클러스터를 추가하거나 추가 프로세스 중에 메시지가 표시될 때 이 단계를 완료할 수 있습니다.</block>
   <block id="37d0b0adf169e682e19c955d0cd73c29" category="list-text">Astra Connector 연산자에 대한 네임스페이스를 만듭니다.</block>
   <block id="38da14ec20cf0841c7dc45fab0adbf07" category="list-text">astraconnector_operator.yaML 파일을 운용자 namespace에 적용한다.</block>
   <block id="48812784c9e7b02bc76402c5a0c3ca10" category="list-text">프라이빗 클러스터 구성 요소의 네임스페이스를 생성합니다.</block>
@@ -1492,7 +1491,6 @@
   <block id="26ae3a5d2c5a3a4f3c4f0b04cfffc752" category="admonition">이 릴리즈에서는 특정 애플리케이션에 대해 NetApp에서 제공한 기본 사전/사후 스냅샷 실행 후크가 제거되었습니다. 스냅샷에 대한 실행 후크를 제공하지 않으면 Astra Control Service는 2022년 8월 4일부터 충돌 시에도 정합성이 보장되는 스냅샷을 생성합니다. 를 방문하십시오<block ref="69dbcb4811fc57c117bef8c6ba2044f3" category="inline-link-rx"></block> 사용자 환경에 맞게 수정할 수 있는 샘플 실행 후크 스크립트의 경우</block>
   <block id="adabbba2cda50397a2a91db015a0fb30" category="list-text"><block ref="f2d47b38ed223b066a7a87406f2f9770" category="inline-xref-macro-rx"></block></block>
   <block id="d78023f397f8f2b4e5064ff5b049c27d" category="list-text"><block ref="fedf37c1e98889c2b8f08b9cf9723656" category="inline-xref-macro-rx"></block></block>
-  <block id="b298fe033ee9c6e6fa6b70e12da0ba4c" category="list-text"><block ref="4acbdba125acbc504ebdea4084fa75ab" category="inline-xref-macro-rx"></block></block>
   <block id="ed7291e973c048296182e3f6f96d78cc" category="list-text"><block ref="1ec2d3ec46ffecb37d7f6e133c4431da" category="inline-xref-macro-rx"></block></block>
   <block id="5f058e70cc3d142ad7669a7f04b97b31" category="list-text"><block ref="5b6a21e2a1084a5e4b159e62f7829741" category="inline-xref-macro-rx"></block></block>
   <block id="630a415dcb42ff22d041d168cc5afc59" category="inline-link-macro">Amazon Elastic Kubernetes Service(EKS)에 대한 Astra Control 서비스 요구사항</block>
@@ -1882,4 +1880,25 @@
   <block id="46c53b029194c1de2930d506c617135a" category="inline-link">아마존 문서</block>
   <block id="67923dd978919e4cfb6eefb99c5e9b2b" category="list-text">* S3 서버 이름 또는 IP 주소 * (AWS만 해당): 해당 지역에 해당하는 S3 엔드포인트의 정규화된 도메인 이름을 "https://" 없이 입력합니다. 을 참조하십시오<block ref="398d47c523652edc934ec11e2f213d87" category="inline-link-rx"></block> 를 참조하십시오.</block>
   <block id="00aad21491943f355fbfdfc6d4402aab" category="paragraph">AKS 클러스터의 경우 Astra Control Service가 사용합니다<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> 또는 Azure 관리 디스크를 영구 볼륨의 스토리지 백엔드로 사용합니다.</block>
+  <block id="2e0924d60f841b17b95f6a2808bdd804" category="doc">Astra Control Service에서 프라이빗 클러스터를 관리합니다</block>
+  <block id="3cedfb797d3e1bc073ba2b0b4d2502cf" category="inline-link">Azure 문서</block>
+  <block id="c8fcc51aeb3108d7803f70ec023b3a68" category="paragraph">Astra Control Service를 사용하여 전용 AKS 클러스터를 관리할 수 있습니다. 이 지침에서는 이미 전용 AKS 클러스터를 생성하고 원격으로 액세스할 수 있는 안전한 방법을 준비했다고 가정합니다. 전용 AKS 클러스터 생성 및 액세스에 대한 자세한 내용은 을 참조하십시오<block ref="bfdd887fc5c3338c9209fd10a121cfd7" category="inline-link-rx"></block>.</block>
+  <block id="9e4605ceac83f35027fa891eaf2bb9eb" category="list-text"><block ref="05078d418bde535da37d6932b80e8a20" category="inline-xref-macro-rx"></block></block>
+  <block id="e8ce2464bf37469ae2c62738acfbb711" category="list-text"><block ref="5e32b52882fb881cccde1bbea6854039" category="inline-xref-macro-rx"></block></block>
+  <block id="4279e57b0ffd5584ad9180bad366d154" category="list-text"><block ref="a43da73cfccd4e57608242913dee505f" category="inline-xref-macro-rx"></block></block>
+  <block id="18b73e29f7da6f9330f1f9e4d3b28341" category="section-title">Astra Connector 운용자를 설치한다</block>
+  <block id="3538cec9c84a6b7ba08b5071675736bd" category="paragraph">전용 AKS 클러스터에 Astra Connector 운영자를 설치해야 합니다. 방호 호스트를 사용하는 경우 방호 호스트의 명령줄에서 이러한 명령을 실행하십시오.</block>
+  <block id="756856619863426af3279d53a81b018d" category="list-text">Astra Connector operator GitHub 리포지토리 클론 생성:</block>
+  <block id="a968d335ed6555127f3fbdb020cecd5f" category="list-text">목록을 압축을 푼 운영자 패키지의 최상위 수준으로 변경하여 "ls" 명령으로 "astraconnector_operator.yaML" 파일을 볼 수 있습니다.</block>
+  <block id="e36d851dc2ff79e16c7cfbbb4e4fbe97" category="inline-link">Astra 자동화 문서</block>
+  <block id="e9c498c38ce73fcff282ff152abd7d47" category="list-text">의 지침에 따라 Astra Control API 토큰을 생성합니다<block ref="c02899be0babfb1350e3b2576a6e8c97" category="inline-link-rx"></block>.</block>
+  <block id="70160237033add78fccb2b80be4b76e6" category="list-text">필요에 맞게 Astra Connector 운영자 리포지토리의 config/samples 디렉토리에서 예제 구성 파일을 수정합니다.</block>
+  <block id="61ddd26ba79b5e63c1e52be1beb28889" category="section-title">영구 스토리지를 설정합니다</block>
+  <block id="238fef6639bfc4fa1851b172d5f2391f" category="paragraph">클러스터의 영구 스토리지를 구성합니다. Azure NetApp Files 또는 Azure 관리 디스크를 사용할 수 있습니다. 다음 옵션을 사용하여 Azure를 구성하는 방법에 대한 자세한 내용은 시작 설명서를 참조하십시오.</block>
+  <block id="395e3e6bfbbde5a5e2d5c7679dcc81e9" category="list-text"><block ref="395e3e6bfbbde5a5e2d5c7679dcc81e9" category="inline-link-rx"></block></block>
+  <block id="19d863b4572c9f53c276383bbf2540e0" category="list-text"><block ref="19d863b4572c9f53c276383bbf2540e0" category="inline-link-rx"></block></block>
+  <block id="1cef3f8b6a3670bf3c09d6cab3c3c3d1" category="section-title">프라이빗 클러스터를 Astra Control Service에 추가합니다</block>
+  <block id="d33c63b2eec196ebbb8a7cfc84258759" category="paragraph">이제 Astra Control Service에 전용 AKS 클러스터를 추가할 수 있습니다. 표준 워크플로우를 따라 클러스터를 Astra Control Service에 추가합니다.<block ref="240044c611ecbc1dfa48c963d44f13ca" category="inline-link-rx"></block>.</block>
+  <block id="e722e71a936852b8a6cd89cd5c31feb9" category="list-text"><block ref="e722e71a936852b8a6cd89cd5c31feb9" category="inline-link-macro-rx"></block></block>
+  <block id="b0a64c8dbe133ff5b49120ddb00f788a" category="sidebar">프라이빗 클러스터 관리</block>
 </blocks>
