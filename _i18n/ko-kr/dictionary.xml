@@ -1901,4 +1901,5 @@
   <block id="d33c63b2eec196ebbb8a7cfc84258759" category="paragraph">이제 Astra Control Service에 전용 AKS 클러스터를 추가할 수 있습니다. 표준 워크플로우를 따라 클러스터를 Astra Control Service에 추가합니다.<block ref="240044c611ecbc1dfa48c963d44f13ca" category="inline-link-rx"></block>.</block>
   <block id="e722e71a936852b8a6cd89cd5c31feb9" category="list-text"><block ref="e722e71a936852b8a6cd89cd5c31feb9" category="inline-link-macro-rx"></block></block>
   <block id="b0a64c8dbe133ff5b49120ddb00f788a" category="sidebar">프라이빗 클러스터 관리</block>
+  <block id="f21f22dde0e0692333a7a28cce456b08" category="sidebar">모든 Astra 문서</block>
 </blocks>
