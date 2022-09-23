@@ -21,7 +21,7 @@ settings:
       alias: Azure를 지원합니다
       id: azure
   rss_page: release-notes/whats-new.html
-  langs: ko-kr,us-en,ja-jp,zh-cn,zh-tw
+  langs: ko-kr,us-en,ja-jp,zh-cn,zh-tw,fr-fr,de-de
 sidebar:
   entries:
   - title: Astra Control Service 문서
