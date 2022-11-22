@@ -11,6 +11,7 @@ summary: Astra Control은 계정을 설정할 때 자동으로 계정을 등록�
 :imagesdir: ../media/support/
 
 
+[role="lead"]
 Astra Control은 계정을 설정할 때 자동으로 계정을 등록하여 지원을 받려고 시도합니다. 그럴 수 없는 경우 직접 지원을 등록할 수 있습니다. NetApp 기술 지원의 도움을 받으려면 지원 등록을 해야 합니다.
 
 

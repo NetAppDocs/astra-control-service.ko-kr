@@ -11,6 +11,7 @@ summary: 'NetApp은 다양한 방법으로 Astra Control을 지원합니다. 기
 :imagesdir: ../media/support/
 
 
+[role="lead"]
 NetApp은 다양한 방법으로 Astra Control을 지원합니다. 기술 자료(KB) 기사 및 불화 채널 같은 광범위한 무료 셀프 지원 옵션이 24x7 제공됩니다. Astra Control 계정에는 웹 발권 서비스를 통한 원격 기술 지원이 포함되어 있습니다.
 
 먼저 해야 합니다 link:register-support.html["NetApp 일련 번호에 대한 지원을 활성화합니다"] 이러한 비 셀프 서비스 지원 옵션을 사용하려면 NetApp NSS(Support Site) SSO 계정은 케이스 관리와 함께 채팅 및 웹 티켓팅에 필요합니다.

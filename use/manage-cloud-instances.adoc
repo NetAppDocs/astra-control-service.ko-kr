@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: use/manage-cloud-instances.html 
+keywords: cloud, instance, manage, delete, remove, edit 
+summary: 새 클러스터를 추가할 때 추가한 클라우드 인스턴스를 관리합니다. 
+---
+= 클라우드 인스턴스 관리
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+클라우드 인스턴스는 클라우드 공급자 내의 고유한 도메인입니다. 각 클라우드 공급자에 대해 여러 클라우드 인스턴스를 생성할 수 있으며 각 클라우드 인스턴스에는 고유한 이름, 자격 증명 및 관련 클러스터가 있습니다.
+
+Astra Control에 새 클러스터를 추가할 때 클라우드 인스턴스를 생성합니다. Astra Control UI를 사용하여 클라우드 인스턴스를 편집하여 이름 또는 기본 버킷을 변경하고, Astra Control API를 사용하여 클라우드 인스턴스에서 다른 작업을 수행할 수 있습니다.
+
+
+
+== 클라우드 인스턴스를 추가합니다
+
+Astra Control에 새 클러스터를 추가할 때 새 클라우드 인스턴스를 추가할 수 있습니다. 을 참조하십시오 link:../add-first-cluster.html["Astra Control Service에서 Kubernetes 클러스터 관리를 시작합니다"] 를 참조하십시오.
+
+
+
+== 클라우드 인스턴스를 편집합니다
+
+클라우드 공급자의 기존 클라우드 인스턴스를 수정할 수 있습니다.
+
+.단계
+. 클라우드 인스턴스 * 로 이동합니다.
+. 클라우드 인스턴스 목록에서 편집하려는 클라우드 인스턴스의 * 작업 * 메뉴를 선택합니다.
+. 편집 * 을 선택합니다.
++
+이 페이지에서 클라우드 인스턴스의 이름과 기본 버킷을 업데이트할 수 있습니다.
+
++
+
+NOTE: Astra Control의 각 클라우드 인스턴스는 고유한 이름을 가져야 합니다.
+
+
+
+
+
+== 클라우드 인스턴스의 자격 증명을 회전합니다
+
+Astra Control API를 사용하여 클라우드 인스턴스의 자격 증명을 회전할 수 있습니다. 자세한 내용은 https://docs.netapp.com/us-en/astra-automation["Astra 자동화 문서로 이동합니다"^].
+
+
+
+== 클라우드 인스턴스를 제거합니다
+
+Astra Control API를 사용하여 클라우드 공급자에서 클라우드 인스턴스를 제거할 수 있습니다. 자세한 내용은 https://docs.netapp.com/us-en/astra-automation["Astra 자동화 문서로 이동합니다"^].

@@ -11,6 +11,7 @@ summary: Astra Control Service로 Azure Kubernetes Service 클러스터를 관�
 :imagesdir: ../media/get-started/
 
 
+[role="lead"]
 Astra Control Service로 Azure Kubernetes Service 클러스터를 관리하려면 Microsoft Azure 구독을 준비하기 위해 몇 가지 단계가 필요합니다. Azure NetApp Files를 스토리지 백엔드로 사용하려는 경우 다음 지침을 따르십시오.
 
 
@@ -81,7 +82,7 @@ Contributor 역할이 있는 Azure 서비스 보안 주체를 만듭니다.  an 
 
 Kubernetes 클러스터는 Astra Control Service에서 검색 및 관리할 수 있도록 다음 요구사항을 충족해야 합니다.
 
-Kubernetes 버전:: 클러스터는 Kubernetes 버전 1.21~1.24를 실행해야 합니다.
+Kubernetes 버전:: 클러스터는 Kubernetes 버전 1.23 - 1.25를 실행해야 합니다.
 이미지 유형:: 모든 노드 풀의 이미지 유형은 Linux여야 합니다.
 클러스터 상태입니다:: 클러스터가 정상 상태에서 실행되고 있어야 하며 오류가 발생한 상태의 작업자 노드가 없는 온라인 작업자 노드가 하나 이상 있어야 합니다.
 Azure 지역:: 클러스터는 Azure NetApp Files를 사용할 수 있는 지역에 상주해야 합니다. https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["지역별 Azure 제품 보기"^].
@@ -103,57 +104,6 @@ VNET:: 다음 VNET 요구 사항을 고려하십시오.
 
 
 --
-
-
-외부 볼륨 스냅샷 컨트롤러:: 클러스터에는 CSI 볼륨 스냅샷 컨트롤러가 설치되어 있어야 합니다. 이 컨트롤러는 K8s 버전 1.21부터 기본적으로 설치되지만 버전 1.19 및 1.20을 실행하는 클러스터를 확인해야 합니다. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["주문형 볼륨 스냅숏용 외부 스냅샷 컨트롤러에 대해 자세히 알아보십시오"^].
-
-
-
-
-=== CSI 볼륨 스냅샷 컨트롤러를 설치합니다
-
-에 설명된 대로  Kubernetes Service cluster requirementsKubernetes 클러스터에는 CSI 볼륨 스냅샷 컨트롤러가 설치되어 있어야 합니다. 다음 단계에 따라 클러스터에 컨트롤러를 설치합니다.
-
-.K8s 버전 1.19의 단계
-. 볼륨 스냅샷 CRD를 설치합니다.
-+
-[source, kubectl]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
-----
-. 스냅샷 컨트롤러를 생성합니다.
-+
-특정 네임스페이스에 스냅샷 컨트롤러를 적용하려면 적용하기 전에 다음 파일을 다운로드하여 편집합니다.
-
-+
-[source, kubectl]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
-----
-
-
-.K8s 버전 1.20의 단계
-. 볼륨 스냅샷 CRD를 설치합니다.
-+
-[source, kubectl]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
-----
-. 스냅샷 컨트롤러를 생성합니다.
-+
-특정 네임스페이스에 스냅샷 컨트롤러를 적용하려면 적용하기 전에 다음 파일을 다운로드하여 편집합니다.
-
-+
-[source, kubectl]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
-----
 
 
 

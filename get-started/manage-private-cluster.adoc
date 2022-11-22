@@ -28,26 +28,26 @@ Astra Control Service를 사용하여 전용 AKS 클러스터를 관리할 수 �
 .단계
 . Astra Connector operator GitHub 리포지토리 클론 생성:
 +
-[source, sh]
+[source, console]
 ----
 git clone https://github.com/NetApp/astra-connector-operator.git
 ----
 . 목록을 압축을 푼 운영자 패키지의 최상위 수준으로 변경하여 "ls" 명령으로 "astraconnector_operator.yaML" 파일을 볼 수 있습니다.
 . Astra Connector 연산자에 대한 네임스페이스를 만듭니다.
 +
-[source, sh]
+[source, console]
 ----
 kubectl create ns astra-connector-operator
 ----
 . astraconnector_operator.yaML 파일을 운용자 namespace에 적용한다.
 +
-[source, sh]
+[source, console]
 ----
 kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
 ----
 . 프라이빗 클러스터 구성 요소의 네임스페이스를 생성합니다.
 +
-[source, sh]
+[source, console]
 ----
 kubectl create ns astra-connector
 ----
@@ -55,13 +55,13 @@ kubectl create ns astra-connector
 . 필요에 맞게 Astra Connector 운영자 리포지토리의 config/samples 디렉토리에서 예제 구성 파일을 수정합니다.
 . Astra Connector CRD(Custom Resource Definition)를 적용합니다.
 +
-[source, sh]
+[source, console]
 ----
 kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
 ----
 . Astra Connector의 상태를 확인한다.
 +
-[source, sh]
+[source, console]
 ----
 kubectl get astraconnector astra-connector -n astra-connector
 ----
@@ -69,7 +69,7 @@ kubectl get astraconnector astra-connector -n astra-connector
 다음과 유사한 출력이 표시됩니다.
 
 +
-[source, sh]
+[source, console]
 ----
 NAME              REGISTERED   ASTRACONNECTORID
 astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19

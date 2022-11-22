@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: get-started/set-up-google-cloud.html 
-keywords: google cloud, google cloud platform, gcp, set up google cloud, set up gcp, set up service account, create service account, project, gcp project, permissions gcp permissions, service account permissions, key, service account key, json, key json, roles, service account roles, gcp roles, cvs, cvs for aws, cloud volumes service apis, apis, networking, cvs networking, cloud volumes service networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, google cloud regions, gcp regions, kubernetes version, ubuntu, image type, networking, container os 
+keywords: google cloud, google cloud platform, gcp, set up google cloud, set up gcp, set up service account, create service account, project, gcp project, permissions gcp permissions, service account permissions, key, service account key, json, key json, roles, service account roles, gcp roles, cvs, cvs for aws, cloud volumes service apis, apis, networking, cvs networking, cloud volumes service networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, google cloud regions, gcp regions, kubernetes version, image type, networking, container os 
 summary: Astra Control Service로 Google Kubernetes Engine 클러스터를 관리하려면 Google Cloud 프로젝트를 준비하기 위해 몇 가지 단계가 필요합니다. 
 ---
 = Google Cloud를 설정합니다
@@ -11,6 +11,7 @@ summary: Astra Control Service로 Google Kubernetes Engine 클러스터를 관�
 :imagesdir: ../media/get-started/
 
 
+[role="lead"]
 Astra Control Service로 Google Kubernetes Engine 클러스터를 관리하려면 Google Cloud 프로젝트를 준비하기 위해 몇 가지 단계가 필요합니다.
 
 
@@ -27,7 +28,7 @@ NOTE: Google Cloud용 Google Cloud Volumes Service를 스토리지 백엔드로 
 === Google Kubernetes Engine에 대한 Astra Control Service 요구 사항을 검토합니다
 
 [role="quick-margin-para"]
-클러스터가 정상 상태이며 지원되는 Kubernetes 버전을 실행 중인지, 작업자 노드가 온라인 상태이고 컨테이너 최적화 OS 또는 Ubuntu를 실행 중인지 확인합니다.  cluster requirements,이 단계에 대해 자세히 알아보십시오.
+클러스터가 정상 상태이며 지원되는 Kubernetes 버전을 실행 중인지, 작업자 노드가 온라인 상태이고 지원되는 이미지 유형 등을 실행 중인지 확인합니다.  cluster requirements,이 단계에 대해 자세히 알아보십시오.
 
 
 
@@ -104,16 +105,8 @@ Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하려
 
 Kubernetes 클러스터는 Astra Control Service에서 검색 및 관리할 수 있도록 다음 요구사항을 충족해야 합니다. 이러한 요구사항 중 일부는 Cloud Volumes Service for Google Cloud를 스토리지 백엔드로 사용하려는 경우에만 적용됩니다.
 
-Kubernetes 버전:: 클러스터는 1.20~1.23 범위의 Kubernetes 버전을 실행해야 합니다.
-이미지 유형:: 각 작업자 노드의 이미지 유형은 다음 중 하나여야 합니다.
-+
---
-* Containerd가 있는 컨테이너 최적화 OS입니다
-* Docker를 포함한 컨테이너 최적화 OS
-* Ubuntu 및 Docker
-
-
---
+Kubernetes 버전:: 클러스터는 1.22~1.24 범위의 Kubernetes 버전을 실행해야 합니다.
+이미지 유형:: 각 작업자 노드의 이미지 유형은 이어야 합니다 `COS_CONTAINERD`.
 클러스터 상태입니다:: 클러스터가 정상 상태에서 실행되고 있어야 하며 오류가 발생한 상태의 작업자 노드가 없는 온라인 작업자 노드가 하나 이상 있어야 합니다.
 Google Cloud 지역:: Google Cloud용 Cloud Volumes Service를 스토리지 백엔드로 사용하려는 경우 클러스터가 에서 실행 중이어야 합니다 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["Google Cloud용 Cloud Volumes Service가 지원되는 Google Cloud 지역"] Astra Control Service는 CVS 및 CVS 성능 두 가지 서비스 유형을 모두 지원합니다. 모범 사례로서, 스토리지 백엔드로 사용하지 않더라도 Cloud Volumes Service for Google Cloud를 지원하는 영역을 선택해야 합니다. 따라서 성능 요구사항이 변경될 경우 향후에 Google Cloud용 Cloud Volumes Service를 스토리지 백엔드로 손쉽게 사용할 수 있습니다.
 네트워킹:: Google Cloud용 Cloud Volumes Service를 스토리지 백엔드로 사용하려는 경우, 클러스터가 Cloud Volumes Service for Google Cloud에서 내다보는 VPC에 상주해야 합니다.  Set up network peering for your VPC,이 단계는 아래에 설명되어 있습니다.

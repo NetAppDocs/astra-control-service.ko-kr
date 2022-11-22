@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: get-started/set-up-amazon-web-services.html 
-keywords: set up service account, create service account, project, permissions, service account permissions, key, service account key, json, key json, roles, service account roles, apis, networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, kubernetes version, ubuntu, image type, networking, container os 
+keywords: set up service account, create service account, project, permissions, service account permissions, key, service account key, json, key json, roles, service account roles, apis, networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, kubernetes version, image type, networking, container os 
 summary: Astra Control Service로 Amazon Elastic Kubernetes Service 클러스터를 관리하려면 Amazon Web Services 프로젝트를 준비하기 위해 몇 가지 단계가 필요합니다. 
 ---
 = Amazon Web Services를 설정합니다
@@ -11,6 +11,7 @@ summary: Astra Control Service로 Amazon Elastic Kubernetes Service 클러스터
 :imagesdir: ../media/get-started/
 
 
+[role="lead"]
 Astra Control Service로 Amazon Elastic Kubernetes Service(EKS) 클러스터를 관리하려면 Amazon Web Services 프로젝트를 준비하기 위해 몇 가지 단계가 필요합니다.
 
 
@@ -76,7 +77,7 @@ Astra Control Service로 자격 증명을 가져올 수 있도록 IAM 사용자�
 
 Kubernetes 클러스터는 Astra Control Service에서 검색 및 관리할 수 있도록 다음 요구사항을 충족해야 합니다.
 
-Kubernetes 버전:: 클러스터는 1.20~1.22 범위의 Kubernetes 버전을 실행해야 합니다.
+Kubernetes 버전:: 클러스터는 1.22~1.24 범위의 Kubernetes 버전을 실행해야 합니다.
 이미지 유형:: 각 작업자 노드의 이미지 유형은 Linux여야 합니다.
 클러스터 상태입니다:: 클러스터가 정상 상태에서 실행되고 있어야 하며 오류가 발생한 상태의 작업자 노드가 없는 온라인 작업자 노드가 하나 이상 있어야 합니다.
 
@@ -131,7 +132,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 . 서비스 계정에 대한 Amazon EBS CSI 드라이버 IAM 역할을 생성합니다. 지침을 따릅니다 https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html["아마존 문서"^]의 지침에 따라 AWS CLI 명령을 사용합니다.
 . 다음 AWS CLI 명령을 사용하여 Amazon EBS CSI 애드온을 추가합니다. 괄호 <>의 정보를 사용자 환경에 맞는 값으로 바꿉니다. driver_role>을 이전 단계에서 생성한 EBS CSI 드라이버 역할의 이름으로 바꿉니다.
 +
-[source, sh]
+[source, console]
 ----
 aws eks create-addon \
   --cluster-name <CLUSTER_NAME> \
@@ -143,26 +144,26 @@ aws eks create-addon \
 .EBS 스토리지 클래스를 구성합니다
 . Amazon EBS CSI 드라이버 GitHub 리포지토리를 시스템에 복제합니다.
 +
-[source, sh]
+[source, console]
 ----
 git clone https://github.com/kubernetes-sigs/aws-ebs-csi-driver.git
 ----
 . 동적 프로비저닝 예제 디렉토리로 이동합니다.
 +
-[source, sh]
+[source, console]
 ----
 cd aws-ebs-csi-driver/examples/kubernetes/dynamic-provisioning/
 ----
 . EBS-SC 스토리지 클래스 및 EBS-Claim 영구 볼륨 클레임을 매니페스트 디렉토리에서 배포합니다.
 +
-[source, sh]
+[source, console]
 ----
 kubectl apply -f manifests/storageclass.yaml
 kubectl apply -f manifests/claim.yaml
 ----
 . EBS-SC 스토리지 클래스를 설명합니다.
 +
-[source, sh]
+[source, console]
 ----
 kubectl describe storageclass ebs-sc
 ----
@@ -250,13 +251,13 @@ Astra Control Service가 AWS 계정과 상호 작용하기 위해 필요한 권�
 ----
 . 정책을 생성합니다.
 +
-[source, sh]
+[source, console]
 ----
 POLICY_ARN=$(aws iam create-policy  --policy-name <policy-name> --policy-document file://policy.json  --query='Policy.Arn' --output=text)
 ----
 . 정책을 IAM 사용자에게 연결합니다. '<IAM-user-name>'을(를) 생성한 IAM 사용자의 사용자 이름 또는 기존 IAM 사용자로 대체합니다.
 +
-[source, sh]
+[source, console]
 ----
 aws iam attach-user-policy --user-name <IAM-USER-NAME> --policy-arn=$POLICY_ARN
 ----
@@ -271,7 +272,7 @@ Astra Control Service가 사용자를 인식할 수 있도록 IAM 사용자의 �
 .단계
 . 자격 증명을 다운로드합니다. '<IAM-user-name>'을(를) 사용하려는 IAM 사용자의 사용자 이름으로 바꿉니다.
 +
-[source, sh]
+[source, console]
 ----
 aws iam create-access-key --user-name <IAM-USER-NAME> --output json > credential.json
 ----

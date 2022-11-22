@@ -11,6 +11,7 @@ summary: Astra Control 계정에 가입하도록 사용자를 초대하고 더 �
 :imagesdir: ../media/use/
 
 
+[role="lead"]
 Astra Control 계정에 가입하도록 사용자를 초대하고 더 이상 계정에 액세스할 수 없는 사용자를 제거합니다.
 
 

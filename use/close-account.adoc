@@ -11,6 +11,7 @@ summary: Astra Control 계정이 더 이상 필요하지 않으면 언제든지 
 :imagesdir: ../media/use/
 
 
+[role="lead"]
 Astra Control 계정이 더 이상 필요하지 않으면 언제든지 계정을 종료할 수 있습니다.
 
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/set-up-billing.html 
 keywords: billing, set up billing, payments, set up payments, credit card, update credit card, change credit card, free plan, free trial, premium, premium plan 
-summary: Astra Control의 무료 플랜을 사용하면 최대 10개의 앱을 계정에서 관리할 수 있습니다. 10개 이상의 앱을 관리하려면 무료 요금에서 프리미엄 요금제로 업그레이드하여 청구서를 설정해야 합니다. 
+summary: Astra Control Service는 네임스페이스를 위한 두 가지 청구 방법을 제공합니다. 무료 플랜을 사용하면 계정에서 최대 10개의 앱을 관리할 수 있습니다. 10개 이상의 네임스페이스를 관리하려면 Free Plan에서 Premium Plan으로 업그레이드하여 요금 청구를 설정해야 합니다. 또는 Azure 또는 AWS 마켓플레이스에서 Azure 또는 AWS에 대한 청구를 관리할 수 있습니다. 
 ---
 = 대금 청구를 설정합니다
 :hardbreaks:
@@ -11,7 +11,10 @@ summary: Astra Control의 무료 플랜을 사용하면 최대 10개의 앱을 �
 :imagesdir: ../media/use/
 
 
-Astra Control의 무료 플랜을 사용하면 최대 10개의 앱을 계정에서 관리할 수 있습니다. 10개 이상의 앱을 관리하려면 무료 요금에서 프리미엄 요금제로 업그레이드하여 청구서를 설정해야 합니다.
+[role="lead"]
+Astra Control Service 계정 청구를 관리하기 위해 두 가지 이상의 방법을 사용할 수 있습니다. Azure 또는 Amazon AWS를 사용하는 경우 Microsoft Azure Marketplace 또는 AWS Marketplace를 통해 Astra Control Service 계획을 신청할 수 있습니다. 이렇게 하면 마켓플레이스를 통해 청구 세부 정보를 관리할 수 있습니다. 또는 NetApp을 통해 직접 가입할 수 있습니다. NetApp에 직접 구독하면 Astra Control Service를 통해 청구 세부 정보를 관리할 수 있습니다. 가입 없이 Astra Control Service를 사용하는 경우 무료 요금제에 자동으로 가입됩니다.
+
+Astra Control Service Free Plan을 사용하면 계정에서 최대 10개의 네임스페이스를 관리할 수 있습니다. 10개 이상의 네임스페이스를 관리하려면 무료 요금제로 업그레이드할 때 또는 Azure Marketplace 또는 AWS Marketplace를 통해 구독하여 청구를 설정해야 합니다.
 
 
 
@@ -25,9 +28,9 @@ Astra Control Service와 관련된 비용에는 두 가지 유형이 있습니�
 
 Astra Control Service는 다음과 같은 세 가지 계획을 제공합니다.
 
-무료 플랜:: 최대 10개의 앱을 무료로 관리할 수 있습니다.
-프리미엄 페이고:: 앱당 분당 $.005의 속도로 앱을 무제한으로 관리할 수 있습니다.
-프리미엄 구독:: 연 단위 가입으로 할인된 요금으로 선결제하면 _application pack_당 최대 10개의 앱을 관리할 수 있습니다. NetApp 세일즈 팀에 문의하여 조직에 필요한 만큼 팩을 구매하십시오. 예를 들어, Astra Control Service에서 30개의 앱을 관리하려면 3팩 을 구입하십시오. 연간 구독에서 허용하는 것보다 더 많은 앱을 관리하는 경우 응용 프로그램당 분당 $0.005의 초과 요금(Premium PayGo와 동일)으로 청구됩니다.
+무료 플랜:: 최대 10개의 네임스페이스를 무료로 관리할 수 있습니다.
+프리미엄 페이고:: 네임스페이스당 시간당 특정 비율로 무제한의 네임스페이스를 관리합니다.
+프리미엄 구독:: 연 단위 가입으로 할인된 요금으로 선결제하면 _namespace pack_ 당 최대 10개의 네임스페이스를 관리할 수 있습니다. NetApp 세일즈 팀에 문의하여 조직에 필요한 만큼 팩을 구매합니다. 예를 들어, Astra Control Service에서 30개의 네임스페이스를 관리하기 위해 3개의 팩을 구입합니다. 연간 구독에서 허용하는 것보다 많은 네임스페이스를 관리하는 경우 추가 네임스페이스당 구독 종속 초과 요금이 부과됩니다.
 +
 --
 아직 Astra Control 계정이 없는 경우 Premium Subscription을 구매하면 자동으로 Astra Control 계정이 생성됩니다. 기존 무료 플랜이 있는 경우 프리미엄 구독으로 자동 변환됩니다.
@@ -35,11 +38,11 @@ Astra Control Service는 다음과 같은 세 가지 계획을 제공합니다.
 --
 
 
-Astra Control 계정을 만들면 무료 플랜에 자동으로 등록됩니다. Astra Control의 대시보드에는 현재 관리하고 있는 앱 10개 중 허용된 무료 앱 10개 중 몇 개가 표시됩니다.
+Astra Control 계정을 만들면 무료 플랜이 자동으로 가입됩니다. Astra Control의 대시보드는 현재 허용 가능한 10개의 네임스페이스 중 관리하고 있는 네임스페이스 수를 보여 줍니다. 네임스페이스가 포함된 첫 번째 앱이 관리되는 경우 네임스페이스에 대한 청구가 시작되고 네임스페이스가 포함된 마지막 앱이 관리되지 않을 때 해당 네임스페이스에 대한 청구가 중지됩니다.
 
-11번째 앱을 관리하려고 하면 Astra Control에서 무료 요금제 한도에 도달했음을 알립니다. 그런 다음 무료 플랜에서 프리미엄 플랜으로 업그레이드하라는 메시지가 표시됩니다.
+11번째 네임스페이스를 관리하려고 하면 Astra Control이 Free Plan의 한계에 도달했음을 알려줍니다. 그런 다음 무료 플랜에서 프리미엄 플랜으로 업그레이드하라는 메시지가 표시됩니다. 추가 네임스페이스당 구독 종속 초과 요금이 부과됩니다.
 
-언제든지 프리미엄 요금제로 업그레이드할 수 있습니다. 업그레이드 후 Astra Control은 계정에 있는 _ALL_MANDATED 앱에 대해 귀하에게 요금을 부과하기 시작합니다. 처음 10개 앱은 무료 요금제에 머무르고 있지 않습니다.
+언제든지 프리미엄 요금제로 업그레이드할 수 있습니다. 업그레이드 후 Astra Control은 계정의 _ALL_Namespaces에 대해 귀하에게 요금을 부과하기 시작합니다. 처음 10개 네임스페이스는 무료 요금제에 머무르고 있지 않습니다.
 
 ifdef::gcp[]
 
@@ -87,25 +90,39 @@ endif::aws[]
 
 
 
-== 중요 참고 사항
+== Azure Marketplace에서 Astra Control Service를 구독하십시오
 
-* 귀하의 청구 계획은 Astra Control 계정입니다.
-+
-계정이 여러 개인 경우 각 계정마다 자체 청구 계획이 있습니다.
+Azure Marketplace를 사용하여 Astra Control Service에 가입할 수 있습니다. 계정 및 청구 세부 정보는 마켓플레이스를 통해 관리됩니다.
 
-* Astra Control 청구서에는 Kubernetes 앱 관리에 대한 비용이 포함되어 있습니다. 영구 볼륨의 스토리지 백엔드에 대해서는 클라우드 공급자가 별도로 요금을 부과합니다.
-+
-link:../get-started/intro.html["Astra Control 가격에 대해 자세히 알아보십시오"].
-
-* 각 청구 기간은 해당 월의 마지막 날에 종료됩니다.
-* 프리미엄 요금제의 경우 무료 요금제로 다운그레이드할 수 없습니다.
+.단계
+. 로 이동합니다 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-astra-acs?tab=Overview["Azure 마켓플레이스 를 참조하십시오"^].
+. 지금 다운로드 * 를 선택합니다.
+. 지침에 따라 계획을 구독합니다.
 
 
 
 
-== 무료 요금제의 프리미엄 페이고 요금제로 업그레이드하세요
+== AWS Marketplace에서 Astra Control Service를 구독하십시오
 
-언제든지 결제 계획을 업그레이드하면 Astra Control에서 10개 이상의 앱을 관리할 수 있습니다. 유효한 신용 카드만 있으면 됩니다.
+AWS Marketplace를 사용하여 Astra Control Service를 구독할 수 있습니다. 계정 및 청구 세부 정보는 마켓플레이스를 통해 관리됩니다.
+
+.단계
+. 로 이동합니다 https://aws.amazon.com/marketplace/["AWS 마켓플레이스 를 참조하십시오"^].
+. Continue to Subscribe * 를 선택합니다.
+. 지침에 따라 계획을 구독합니다.
+
+
+
+
+== NetApp에 직접 Astra Control Service를 구독하십시오
+
+Astra Control Service UI 내에서 또는 NetApp 세일즈 팀에 연락하여 Astra Control Service를 구독할 수 있습니다.
+
+
+
+=== 무료 요금제의 프리미엄 페이고 요금제로 업그레이드하세요
+
+언제든지 결제 계획을 업그레이드하여 Astra Control에서 10개 이상의 네임스페이스를 관리할 수 있습니다. 유효한 신용 카드만 있으면 됩니다.
 
 .단계
 . 계정 * 을 선택한 다음 * 청구 * 를 선택합니다.
@@ -117,11 +134,11 @@ NOTE: Astra Control은 신용 카드 만료일이 다가오면 이메일로 발�
 
 
 
-이제 10개 이상의 앱을 관리할 수 있습니다. Astra Control은 현재 관리하고 있는 모든 앱에 대해 귀하에게 요금을 부과하기 시작합니다.
+이제 10개 이상의 네임스페이스를 관리할 수 있습니다. Astra Control은 현재 관리하고 있는 _ all_namespaces에 대해 충전 작업을 시작합니다.
 
 
 
-== 무료 요금제로부터 프리미엄 요금제로 업그레이드하세요
+=== 무료 요금제로부터 프리미엄 요금제로 업그레이드하세요
 
 NetApp 세일즈 팀에 연락하여 연간 구독과 함께 할인된 요금으로 사전 결제할 수 있습니다.
 
@@ -131,22 +148,22 @@ NetApp 세일즈 팀에 연락하여 연간 구독과 함께 할인된 요금으
 . 프로세스를 시작할 수 있도록 세일즈 팀에 세부 정보를 제공합니다.
 
 
-NetApp 세일즈 담당자가 구매 주문서를 처리하기 위해 연락을 드릴 것입니다. 주문이 완료되면 Astra Control이 청구 탭에 현재 계획을 반영합니다.
+NetApp 세일즈 담당자가 구매 주문서를 처리하기 위해 연락을 드릴 것입니다. 주문이 완료되면 Astra Control은 * 청구 * 탭에 현재 계획을 반영합니다.
 
 
 
 == 현재 비용 및 청구 기록을 봅니다
 
-Astra Control은 현재 월간 비용 및 앱별 상세 청구 내역을 보여 줍니다.
+Astra Control은 현재 월별 비용 및 네임스페이스별 상세 청구 내역을 보여 줍니다. 마켓플레이스를 통해 요금제를 구독한 경우 청구 내역이 표시되지 않지만 마켓플레이스에 로그인하여 확인할 수 있습니다.
 
 .단계
 . 계정 * 을 선택한 다음 * 청구 * 를 선택합니다.
 +
 현재 비용이 청구 개요 아래에 표시됩니다.
 
-. 앱별 청구 내역을 보려면 * 청구 내역 * 을 선택합니다.
+. 네임스페이스로 청구 내역을 보려면 * 청구 내역 * 을 선택합니다.
 +
-Astra Control은 각 앱의 사용 시간 및 비용을 표시합니다. 사용 시간은 Astra Control이 청구 기간 동안 앱을 관리하는 시간(분)입니다.
+Astra Control은 각 네임스페이스의 사용 시간 및 비용을 보여 줍니다. 사용 시간은 Astra Control이 청구 기간 동안 네임스페이스를 관리하는 시간(분)입니다.
 
 . 드롭다운 목록을 선택하여 이전 달을 선택합니다.
 
@@ -161,4 +178,20 @@ Astra Control은 각 앱의 사용 시간 및 비용을 표시합니다. 사용 
 . 계정 > 청구 > 결제 방법 * 을 선택합니다.
 . 구성 아이콘을 선택합니다.
 . 신용 카드를 수정합니다.
+
+
+
+
+== 중요 참고 사항
+
+* 귀하의 청구 계획은 Astra Control 계정입니다.
++
+계정이 여러 개인 경우 각 계정마다 자체 청구 계획이 있습니다.
+
+* Astra Control 청구서에는 네임스페이스 관리에 대한 비용이 포함되어 있습니다. 영구 볼륨의 스토리지 백엔드는 클라우드 공급자가 별도로 요금을 부과합니다.
++
+link:../get-started/intro.html["Astra Control 가격에 대해 자세히 알아보십시오"].
+
+* 각 청구 기간은 해당 월의 마지막 날에 종료됩니다.
+* 프리미엄 요금제의 경우 무료 요금제로 다운그레이드할 수 없습니다.
 

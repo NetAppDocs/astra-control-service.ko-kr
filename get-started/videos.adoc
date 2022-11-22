@@ -11,6 +11,7 @@ summary: '이 문서 사이트의 많은 페이지에는 Astra Control Service�
 :imagesdir: ../media/
 
 
+[role="lead"]
 이 문서 사이트의 많은 페이지에는 Astra Control Service의 작업을 완료하는 방법을 보여 주는 비디오가 포함되어 있습니다. 동영상에 관심이 있다면 이 단일 페이지(재생 목록 등)에서 모든 동영상을 손쉽게 수집할 수 있습니다.
 
 ifdef::gcp[]
