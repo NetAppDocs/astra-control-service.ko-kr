@@ -1480,7 +1480,6 @@
   <block id="1574db16d74f7537711f20b07293065e" category="list-text">Astra Control Service가 사용합니다<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> 및<block ref="789fe92e2b55f108a4e50dd78da73d71" category="inline-link-rx"></block> EKS 클러스터의 스토리지 백엔드에 사용됩니다.</block>
   <block id="dd069ab6d74011bb108bf219e092a2d0" category="list-text">Astra Control Center는 다음과 같은 스토리지 백엔드를 사용합니다.</block>
   <block id="a7da53d86332105dcae80a12f3e8b7a5" category="summary">Astra Control의 관리되는 앱 유형을 설명합니다.</block>
-  <block id="0aec310f3808bce2063a2292e6052cf8" category="doc">앱 관리 이해</block>
   <block id="848f207b3c4594754aa82fd21b5fc5e0" category="paragraph">Astra Control이 클러스터를 검색할 때 해당 클러스터의 앱은 관리 방법을 선택할 때까지 관리되지 않습니다. Astra Control에서 관리되는 응용 프로그램은 다음 중 하나일 수 있습니다.</block>
   <block id="594284cddefbf771912acc53c31ca2b3" category="list-text">Kubernetes의 앱 상태를 반영하는 상태를 제공합니다.</block>
   <block id="07eb1eefb9996b52d1fdfe23101a2b03" category="paragraph">Astra Control에는 다음과 같은 앱 관리 요구 사항이 있습니다.</block>
@@ -2043,4 +2042,5 @@
   <block id="400b9c72badfc397898ae034a400c0f8" category="section-title">클라우드 인스턴스를 제거합니다</block>
   <block id="f4e39691a17b55519cdcd9b3fe953c77" category="paragraph">Astra Control API를 사용하여 클라우드 공급자에서 클라우드 인스턴스를 제거할 수 있습니다. 자세한 내용은<block ref="bfa33a3653b9adb3eeffbdd741a1c8dc" category="inline-link-rx"></block>.</block>
   <block id="2af1f66f8f47d8339a96c1cd543cd3a8" category="list-text">* Astra Trident *: NetApp에서 관리하는 완전 지원되는 오픈 소스 스토리지 공급자 및 오케스트레이터로서, Astra Trident를 사용하면 Docker 및 Kubernetes에서 관리하는 컨테이너 형태의 애플리케이션용 스토리지 볼륨을 생성할 수 있습니다. Astra Control Center와 함께 구축한 경우, Astra Trident에는 구성된 ONTAP 스토리지 백엔드가 포함됩니다.</block>
+  <block id="934c5edffa8e732ecb866cb319c8454a" category="doc">애플리케이션 관리</block>
 </blocks>
