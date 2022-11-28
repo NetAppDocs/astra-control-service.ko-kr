@@ -42,12 +42,6 @@ GKE(Google Kubernetes Engine)에서 Kubernetes 클러스터 관리에 다음과 
 
 
 
-=== 하나의 GCP 프로젝트와 하나의 서비스 계정이 지원됩니다
-
-Astra Control Service는 하나의 Google Cloud Platform 프로젝트와 하나의 서비스 계정을 지원합니다. Astra Control Service에 서비스 계정을 두 개 이상 추가할 수 없으며 서비스 계정 자격 증명을 회전해서는 안 됩니다.
-
-
-
 === Google Marketplace 앱의 유효성을 검증하지 않았습니다
 
 NetApp은 Google Marketplace에서 배포된 앱을 검증하지 않았습니다. 일부 사용자는 Google Marketplace에서 배포된 Postgres, MariaDB 및 MySQL 앱의 검색 또는 백업 관련 문제를 보고합니다.
