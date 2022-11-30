@@ -29,7 +29,7 @@ Astra Control은 Kubernetes 애플리케이션 데이터 라이프사이클 관�
 * 사용자 인터페이스 또는 API를 사용하여 백업 및 마이그레이션 워크플로우를 구현합니다
 
 
-Astra Control은 컴퓨터의 상태 변화를 지속적으로 감시하기 때문에 새로 추가한 앱을 인식합니다.
+Astra Control은 상태 변화를 위해 컴퓨팅 환경을 지속적으로 주시하므로, 추가되는 새로운 앱을 모두 파악할 수 있습니다.
 
 
 
@@ -66,7 +66,27 @@ Astra Control은 두 가지 배포 모델로 제공됩니다.
 
 
 
-| 스토리지 백엔드 지원이란 무엇입니까? | NetApp 클라우드 서비스 오퍼링  a| 
+| 스토리지 백엔드 지원이란 무엇입니까?  a| 
+* Amazon 웹 서비스:
++
+** Amazon EBS
+** NetApp ONTAP용 Amazon FSx
+
+
+* Google 클라우드:
++
+** Google 영구 디스크
+** NetApp Cloud Volumes Service를 참조하십시오
+
+
+* Microsoft Azure:
++
+** Azure 관리 디스크
+** Azure NetApp Files
+
+
+
+ a| 
 * NetApp ONTAP AFF 및 FAS 시스템
 * Cloud Volumes ONTAP 스토리지 백엔드
 
@@ -116,7 +136,7 @@ endif::azure[]
 
 * 클러스터에 새 관리 역할 및 Kubernetes 서비스 계정을 생성합니다.
 * 에서는 새 관리자 역할을 사용하여 를 설치합니다 https://docs.netapp.com/us-en/trident/index.html["아스트라 트리덴트"^] 를 클릭하여 하나 이상의 스토리지 클래스를 생성합니다.
-* 클라우드 공급자 스토리지 서비스를 스토리지 백엔드로 사용하는 경우, Astra Control Service는 Astra Trident를 사용하여 앱에 영구 볼륨을 프로비저닝합니다.
+* NetApp 클라우드 서비스 스토리지 오퍼링을 스토리지 백엔드로 사용하는 경우, Astra Control Service는 Astra Trident를 사용하여 앱에 영구 볼륨을 프로비저닝합니다. Amazon EBS 또는 Azure 관리 디스크를 스토리지 백엔드로 사용하는 경우 공급자별 CSI 드라이버를 설치해야 합니다. 설치 지침은 에 나와 있습니다 link:set-up-amazon-web-services.html["Amazon Web Services를 설정합니다"^] 및 link:set-up-microsoft-azure-with-amd.html["Azure 관리 디스크를 사용하여 Microsoft Azure를 설정합니다"^].
 +
 ** 이제 앱을 클러스터에 추가할 수 있습니다. 영구 볼륨은 새로운 기본 스토리지 클래스에 프로비저닝됩니다.
 ** 그런 다음 Astra Control Service를 사용하여 이러한 애플리케이션을 관리하고 스냅샷, 백업 및 클론 생성을 시작합니다.
@@ -160,7 +180,7 @@ Astra Control Center는 다음과 같이 높은 수준에서 작동합니다.
 
 에 대해 자세히 알아보십시오 https://docs.netapp.com/us-en/astra-control-center/get-started/setup_overview.html["Astra Control Center를 설정합니다"].
 
-앱을 클러스터에 추가할 수 있습니다. 클러스터에 이미 관리 중인 앱이 있으면 Astra Control Center를 사용하여 관리할 수 있습니다. 그런 다음 Astra Control Center를 사용하여 스냅샷, 백업, 클론 및 복제 관계를 생성합니다.
+클러스터에 애플리케이션을 추가할 수 있습니다. 클러스터에 이미 관리 중인 일부 애플리케이션이 있는 경우 Astra Control Center를 사용하여 관리할 수 있습니다. 그런 다음 Astra Control Center를 사용하여 스냅샷, 백업, 클론 및 복제 관계를 생성합니다.
 
 
 
