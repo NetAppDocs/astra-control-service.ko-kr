@@ -16,9 +16,6 @@ entries:
     url: "/use/clone-apps.html"
   - title: 앱 실행 후크 관리
     url: "/use/manage-app-execution-hooks.html"
-    entries:
-    - title: 실행 후크 예
-      url: "/use/execution-hook-examples.html"
 - title: 앱 및 컴퓨팅 상태 보기
   entries:
   - title: 대시보드 요약

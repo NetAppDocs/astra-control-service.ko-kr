@@ -122,34 +122,34 @@ endif::aws[]
 
 == 앱 정의
 
-Astra Control이 클러스터에서 네임스페이스를 검색한 후 관리할 애플리케이션을 정의할 수 있습니다. 선택할 수 있습니다  resources to manage as an app,하나 이상의 네임스페이스를 포괄하는 응용 프로그램을 관리합니다 또는  a namespace to manage as an app,전체 네임스페이스를 단일 애플리케이션으로 관리합니다. 데이터 보호 작업에 필요한 세분화 수준으로 세분화됩니다.
+Astra Control이 클러스터에서 네임스페이스를 검색한 후 관리할 애플리케이션을 정의할 수 있습니다. 선택할 수 있습니다 <<앱으로 관리할 리소스를 정의합니다,하나 이상의 네임스페이스를 포괄하는 응용 프로그램을 관리합니다>> 또는 <<앱으로 관리할 네임스페이스를 정의합니다,전체 네임스페이스를 단일 애플리케이션으로 관리합니다>>. 데이터 보호 작업에 필요한 세분화 수준으로 세분화됩니다.
 
 Astra Control을 사용하면 계층 구조의 수준(네임스페이스 및 해당 네임스페이스 또는 스패닝 네임스페이스의 응용 프로그램)을 별도로 관리할 수 있지만 가장 좋은 방법은 하나 또는 다른 수준을 선택하는 것입니다. 작업이 네임스페이스 및 앱 수준에서 동시에 발생하면 Astra Control에서 수행하는 작업이 실패할 수 있습니다.
 
 
 TIP: 예를 들어, "Maria"에 대해 주간 백업 주기를 갖는 백업 정책을 설정할 수 있지만 "MariaDB"(동일한 네임스페이스)를 더 자주 백업해야 할 수 있습니다. 이러한 요구사항에 따라 단일 네임스페이스 앱이 아니라 앱을 별도로 관리해야 합니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * Astra Control에 Kubernetes 클러스터가 추가되었습니다.
-* 클러스터에 설치된 애플리케이션 하나 이상  app installation methods,지원되는 앱 설치 방법에 대해 자세히 알아보십시오.
+* 클러스터에 설치된 애플리케이션 하나 이상 <<지원되는 앱 설치 방법,지원되는 앱 설치 방법에 대해 자세히 알아보십시오>>.
 * 하나 이상의 활성 포드.
 * Astra Control에 추가한 Kubernetes 클러스터의 기존 네임스페이스
 * (선택 사항) Any의 Kubernetes 레이블 link:../use/manage-apps.html#app-management-requirements["지원되는 Kubernetes 리소스"].
 +
 
-TIP: 레이블은 식별을 위해 Kubernetes 객체에 할당할 수 있는 키/값 쌍입니다. 레이블을 사용하면 Kubernetes 오브젝트를 더 쉽게 정렬, 구성 및 찾을 수 있습니다. Kubernetes 레이블에 대해 자세히 알아보려면 https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/["Kubernetes 공식 문서를 참조하십시오"^].
+TIP: 레이블은 식별을 위해 Kubernetes 객체에 할당할 수 있는 키/값 쌍입니다. 레이블을 사용하면 Kubernetes 오브젝트를 더 쉽게 정렬, 구성 및 찾을 수 있습니다. Kubernetes 레이블에 대해 자세히 알아보려면 https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/["공식 Kubernetes 설명서를 참조하십시오"^].
 
 
 
 .이 작업에 대해
 * 시작하기 전에, 또한 이해해야 합니다 link:../use/manage-apps.html#what-about-system-namespaces["표준 및 시스템 네임스페이스 관리"].
 * Astra Control에서 앱과 여러 네임스페이스를 사용하려는 경우 고려해 보십시오 link:../use/manage-roles.html["네임스페이스 제약 조건을 사용하여 사용자 역할 수정"] 앱을 정의하기 전에
-* Astra Control API를 사용하여 앱을 관리하는 방법에 대한 지침은 를 참조하십시오 link:https://docs.netapp.com/us-en/astra-automation/["Astra 자동화 및 API 정보"^].
+* Astra Control API를 사용하여 앱을 관리하는 방법에 대한 지침은 을 참조하십시오 link:https://docs.netapp.com/us-en/astra-automation/["Astra 자동화 및 API 정보"^].
 
 
 .애플리케이션 관리 옵션
-*  resources to manage as an app
-*  a namespace to manage as an app
+* <<앱으로 관리할 리소스를 정의합니다>>
+* <<앱으로 관리할 네임스페이스를 정의합니다>>
 
 
 
@@ -210,7 +210,7 @@ NOTE: Astra Control을 사용하여 단일 클러스터에서 하나 이상의 �
 . (선택 사항) 각 네임스페이스에서 Kubernetes 리소스에 대한 레이블을 입력합니다. 단일 레이블 또는 레이블 선택 조건(쿼리)을 지정할 수 있습니다.
 +
 
-TIP: Kubernetes 레이블에 대해 자세히 알아보려면 https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/["Kubernetes 공식 문서를 참조하십시오"^].
+TIP: Kubernetes 레이블에 대해 자세히 알아보려면 https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/["공식 Kubernetes 설명서를 참조하십시오"^].
 
 . (선택 사항) * 네임스페이스 추가 * 를 선택하고 드롭다운 목록에서 네임스페이스를 선택하여 앱에 대한 네임스페이스를 추가합니다.
 . (선택 사항) 추가하는 모든 추가 네임스페이스에 대한 단일 레이블 또는 레이블 선택기 조건을 입력합니다.
@@ -255,7 +255,7 @@ TIP: 특정 앱의 세부 정보를 보려면 앱 이름을 선택합니다.
 . 관리하려는 앱 리소스가 포함된 네임스페이스의 작업 메뉴를 선택하고 * 응용 프로그램으로 정의 * 를 선택합니다.
 +
 
-TIP: 여러 응용 프로그램을 정의하려면 네임스페이스 목록에서 선택하고 왼쪽 위 모서리에 있는 * 작업 * 버튼을 선택한 다음 * 응용 프로그램으로 정의 * 를 선택합니다. 이렇게 하면 개별 네임스페이스에 여러 개의 개별 응용 프로그램이 정의됩니다. 다중 네임스페이스 응용 프로그램의 경우 를 참조하십시오  resources to manage as an app.
+TIP: 여러 응용 프로그램을 정의하려면 네임스페이스 목록에서 선택하고 왼쪽 위 모서리에 있는 * 작업 * 버튼을 선택한 다음 * 응용 프로그램으로 정의 * 를 선택합니다. 이렇게 하면 개별 네임스페이스에 여러 개의 개별 응용 프로그램이 정의됩니다. 다중 네임스페이스 응용 프로그램의 경우 을 참조하십시오 <<앱으로 관리할 리소스를 정의합니다>>.
 
 +
 
