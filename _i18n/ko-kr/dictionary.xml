@@ -1791,7 +1791,6 @@
   <block id="e1392cd5a84b9e2661cec2830d5c10bf" category="list-text">복원하려는 스냅샷 또는 백업의 * 작업 * 열에 있는 옵션 메뉴에서 * 응용 프로그램 복원 * 을 선택합니다.</block>
   <block id="8d7c216bc17d281838efafaa3704677b" category="list-text">복원 유형 선택:</block>
   <block id="90d21d98503ddae05ddf0a1a34b7d790" category="list-text">* 원래 네임스페이스로 복원 *: 이 절차를 사용하여 원래 클러스터로 응용 프로그램을 원래 상태로 복원할 수 있습니다.</block>
-  <block id="d6163245aff1d495d4414480b1d33f38" category="admonition">다른 앱과 리소스를 공유하는 앱에서 데이터 이동 없이 복원 작업을 수행하면 의도하지 않은 결과가 발생할 수 있습니다.</block>
   <block id="eb543a53c7bc9830323c1e31b5a68dc4" category="list-text">앱을 원래 상태로 복원하는 데 사용할 스냅샷을 선택합니다. 그러면 앱이 이전 버전으로 되돌아갑니다.</block>
   <block id="e6cd86d61f4639c8a27006c6c29b3e9f" category="list-text">다음 * 을 선택합니다.</block>
   <block id="3b015c7e8b671c5a6b88a902ad59e853" category="list-text">복원 작업에 대한 세부 정보를 검토하고 "restore"를 입력한 다음 * Restore * 를 선택합니다.</block>
@@ -2049,4 +2048,5 @@
   <block id="edb74efc05972c268b6cccf83996ac3e" category="section-title">사용자의 역할을 변경합니다</block>
   <block id="bfba5acdae4cf2cfa2c86cce302038d4" category="paragraph">언제든지 계정에서 자격 증명을 제거합니다. 자격 증명은 이후에 제거해야 합니다 <block ref="7193f1b7f27bd5505d89cc1e5724fb4b" category="inline-link-macro-rx"></block>자격 증명을 순환하지 않는 경우( 참조 <block ref="029b7394eded829c95ca3b86c4cd802d" category="inline-xref-macro-rx"></block>)를 클릭합니다.</block>
   <block id="df1dd0475d7e25b9e368f8f45f636062" category="list-text">* S3 서버 이름 또는 IP 주소 * (AWS만 해당): 해당 지역에 해당하는 S3 엔드포인트의 정규화된 도메인 이름을 입력하지 않고 입력합니다<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block>. 을 참조하십시오<block ref="398d47c523652edc934ec11e2f213d87" category="inline-link-rx"></block> 를 참조하십시오.</block>
+  <block id="ce461936438c7221ad2aecef67b1e35b" category="paragraph">다른 앱과 리소스를 공유하는 앱에서 데이터 이동 없이 복원 작업을 수행하면 의도하지 않은 결과가 발생할 수 있습니다. 앱 간에 공유되는 모든 리소스는 앱 중 하나에서 데이터 이동 없이 복원이 수행될 때 교체됩니다.</block>
 </blocks>
