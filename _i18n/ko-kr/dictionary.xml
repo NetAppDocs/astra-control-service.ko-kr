@@ -490,9 +490,7 @@
   <block id="5d2bbbb5e8eadfe7beda56382db3b48e" category="paragraph">Astra Control Service에서 사용할 수 있는 버킷 목록이 표시됩니다.</block>
   <block id="97051796d8399cbd22e680d3212aa1c0" category="section-title">추가 버킷을 추가합니다</block>
   <block id="9c6ebb12d9cd173ee88e3b73cabe77b4" category="paragraph">클라우드 공급자에서 클러스터 관리를 시작한 후에는 언제든지 추가 버킷을 추가할 수 있습니다. 따라서 보호 정책을 생성할 때 버킷 중에서 선택하고 임시 백업 및 클론의 기본 버킷을 변경할 수 있습니다.</block>
-  <block id="59eaa325284587d87d8a183c0fcffbdf" category="paragraph">Astra Control Service를 사용하면 추가한 버킷을 제거할 수 없습니다.</block>
   <block id="dd6354a9b0182f27b3ea1d07811a3bdd" category="list-text">클라우드 공급자에 있는 기존 버킷의 이름입니다.</block>
-  <block id="69655d7e1814b014798597363d3d2639" category="list-text">Azure에 있는 버킷은 _Astra-backup-rg_라는 리소스 그룹에 속해야 합니다.</block>
   <block id="b21aa3a75aa9fe5b7c4320c651dd6004" category="list-text">추가 * 를 선택하고 프롬프트에 따라 버킷을 추가합니다.</block>
   <block id="833eb3b04501929e168dbcfe3328a358" category="list-text">* 유형 *: 클라우드 공급자를 선택하십시오.</block>
   <block id="3cb658c17327b8e0fdf35e63798291f2" category="paragraph">클라우드 공급자는 Astra Control Service가 해당 클라우드 공급자에서 실행 중인 클러스터를 관리하기 시작한 후에만 사용할 수 있습니다.</block>
@@ -2049,4 +2047,7 @@
   <block id="bfba5acdae4cf2cfa2c86cce302038d4" category="paragraph">언제든지 계정에서 자격 증명을 제거합니다. 자격 증명은 이후에 제거해야 합니다 <block ref="7193f1b7f27bd5505d89cc1e5724fb4b" category="inline-link-macro-rx"></block>자격 증명을 순환하지 않는 경우( 참조 <block ref="029b7394eded829c95ca3b86c4cd802d" category="inline-xref-macro-rx"></block>)를 클릭합니다.</block>
   <block id="df1dd0475d7e25b9e368f8f45f636062" category="list-text">* S3 서버 이름 또는 IP 주소 * (AWS만 해당): 해당 지역에 해당하는 S3 엔드포인트의 정규화된 도메인 이름을 입력하지 않고 입력합니다<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block>. 을 참조하십시오<block ref="398d47c523652edc934ec11e2f213d87" category="inline-link-rx"></block> 를 참조하십시오.</block>
   <block id="ce461936438c7221ad2aecef67b1e35b" category="paragraph">다른 앱과 리소스를 공유하는 앱에서 데이터 이동 없이 복원 작업을 수행하면 의도하지 않은 결과가 발생할 수 있습니다. 앱 간에 공유되는 모든 리소스는 앱 중 하나에서 데이터 이동 없이 복원이 수행될 때 교체됩니다.</block>
+  <block id="e13d6ee2f9c34bcf7366950e0434777b" category="list-text">버킷이 Azure에 있는 경우:</block>
+  <block id="49030d2f464d7bb39691809e5ab16174" category="list-text">버킷은 _Astra-backup-rg_이라는 리소스 그룹에 속해야 합니다.</block>
+  <block id="88bdaf7536fdf70e3c93df4a9b10bb82" category="list-text">Azure 저장소 계정 인스턴스 성능 설정이 "프리미엄"으로 설정된 경우 "프리미엄 계정 유형" 설정을 "Blob 차단"으로 설정해야 합니다.</block>
 </blocks>
