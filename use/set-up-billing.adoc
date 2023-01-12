@@ -94,6 +94,9 @@ endif::aws[]
 
 Azure Marketplace를 사용하여 Astra Control Service에 가입할 수 있습니다. 계정 및 청구 세부 정보는 마켓플레이스를 통해 관리됩니다.
 
+
+NOTE: Azure Marketplace 구독 프로세스에 대한 비디오 안내를 보려면 를 방문하십시오 https://www.netapp.tv/details/29979["NetApp TV를 참조하십시오"^].
+
 .단계
 . 로 이동합니다 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-astra-acs?tab=Overview["Azure 마켓플레이스 를 참조하십시오"^].
 . 지금 다운로드 * 를 선택합니다.
