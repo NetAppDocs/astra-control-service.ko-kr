@@ -433,6 +433,9 @@ ifdef::aws[]
 
 endif::aws[]
 
+** NetApp Cloud Volumes ONTAP: 가격, 성능 또는 복원력 정보를 제공할 수 없습니다
+
+
 ====
 +
 각 스토리지 클래스는 다음 서비스 중 하나를 활용할 수 있습니다.
@@ -463,9 +466,14 @@ ifdef::aws[]
 
 endif::aws[]
 
-+에 대해 자세히 알아보십시오 link:../learn/aws-storage.html["Amazon Web Services 클러스터용 스토리지 클래스입니다"]. 에 대해 자세히 알아보십시오 link:../learn/azure-storage.html["AKS 클러스터용 스토리지 클래스입니다"]. 에 대해 자세히 알아보십시오 link:../learn/choose-class-and-size.html["GKE 클러스터용 저장소 클래스"].
+* https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/["NetApp Cloud Volumes ONTAP를 참조하십시오"^]
++
+에 대해 자세히 알아보십시오 link:../learn/aws-storage.html["Amazon Web Services 클러스터용 스토리지 클래스입니다"]. 에 대해 자세히 알아보십시오 link:../learn/azure-storage.html["AKS 클러스터용 스토리지 클래스입니다"]. 에 대해 자세히 알아보십시오 link:../learn/choose-class-and-size.html["GKE 클러스터용 저장소 클래스"].
 
-. * 검토 및 승인 *: 구성 세부 정보를 검토하고 * 클러스터 추가 * 를 선택합니다.
++
+.. * 검토 및 승인 *: 구성 세부 정보를 검토하고 * 클러스터 추가 * 를 선택합니다.
+
+
 
 
 .결과

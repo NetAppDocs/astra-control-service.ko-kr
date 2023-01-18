@@ -345,7 +345,6 @@
   <block id="f1ec6389b6d19d3be02f29f4a7d29051" category="inline-link-macro">실행 후크 예</block>
   <block id="4069b8bd7c11bc17efc85c9bb6d794c1" category="list-text">후크의 고유한 이름을 입력합니다.</block>
   <block id="cc56ac336e2ae46c348055eabdb31910" category="list-text">(선택 사항) 실행 중에 후크에 전달할 인수를 입력하고 각 인수 뒤에 Enter 키를 눌러 각 인수를 기록합니다.</block>
-  <block id="bdc506e89ee9aec709d8e40132db20f3" category="list-text">Container Images * (컨테이너 이미지 *) 영역에서 응용 프로그램에 포함된 모든 컨테이너 이미지에 대해 후크를 실행해야 하는 경우 * Apply to all container images * (모든 컨테이너 이미지에 적용) 확인란을 활성화합니다. 대신 후크가 하나 이상의 지정된 컨테이너 이미지에만 동작해야 하는 경우 일치시킬 * 컨테이너 이미지 이름 필드에 컨테이너 이미지 이름을 입력합니다.</block>
   <block id="1144b2f2ea8eccb66bf20cdea686b3d2" category="list-text">Script * 영역에서 다음 중 하나를 수행합니다.</block>
   <block id="489a27c3b545dfadcd33d3ce67932718" category="list-text">사용자 지정 스크립트를 업로드합니다.</block>
   <block id="e3f243bc33219b29c2a12b59c90be96c" category="list-text">파일 업로드 * 옵션을 선택합니다.</block>
@@ -354,7 +353,6 @@
   <block id="7ecdb873e1239bfeaf5c617b779dd434" category="list-text">(선택 사항) 다른 관리자가 스크립트에 대해 알아야 하는 참고 사항을 입력합니다.</block>
   <block id="c1b97a456b241d38af9df8418fe93955" category="list-text">클립보드에서 사용자 정의 스크립트를 붙여 넣습니다.</block>
   <block id="1a71cd2313095cebe3a5bf76adff4cae" category="list-text">텍스트 필드를 선택하고 필드에 스크립트 텍스트를 붙여 넣습니다.</block>
-  <block id="6d4a5ef582e95d5022946acc47ce0f2e" category="list-text">후크 추가 * 를 선택합니다.</block>
   <block id="12bf76ea0a88e9814b22daef0831337b" category="section-title">실행 후크를 비활성화합니다</block>
   <block id="df61c20b7e6ebb23392c4395835c3e51" category="paragraph">앱 스냅샷 전후에 실행 후크가 실행되지 않도록 임시로 설정하려면 실행 후크를 사용하지 않도록 설정할 수 있습니다. 실행 후크를 비활성화하려면 소유자, 관리자 또는 구성원 권한이 있어야 합니다.</block>
   <block id="dbf8ea65a71d9e2042b03a97a0da4095" category="list-text">비활성화 * 를 선택합니다.</block>
@@ -510,7 +508,6 @@
   <block id="f7c79ca7f13fd9da78390d5a97db7042" category="paragraph"><block ref="f7c79ca7f13fd9da78390d5a97db7042" category="inline-link-rx"></block></block>
   <block id="bd5cde8fc544622a3633d73962bcd705" category="summary">Astra Control Service는 Cloud Volumes Service for Google Cloud를 영구 볼륨의 스토리지 백엔드로 사용합니다. 서비스 수준, 스토리지 클래스 및 영구 볼륨 크기를 선택하면 성능 목표를 달성하는 데 어떤 도움이 되는지 알아야 합니다.</block>
   <block id="afd5c3412d8aaa89e4ade2ddff8cac9b" category="doc">서비스 유형, 스토리지 클래스 및 GKE 클러스터의 PV 크기입니다</block>
-  <block id="9a2e6b3f1f716d445d67874207aea6af" category="paragraph">Astra Control Service는 영구 볼륨의 스토리지 백엔드 옵션으로 Cloud Volumes Service for Google Cloud 또는 Google Persistent Disk를 지원합니다.</block>
   <block id="b0cee72642f5457a71ddd0b49efb6d93" category="section-title">Google Cloud용 Cloud Volumes Service</block>
   <block id="2cafdb551953c7afd397b12eee1ce505" category="paragraph">Astra Control Service는 Cloud Volumes Service for Google Cloud를 영구 볼륨의 스토리지 백엔드로 사용할 수 있습니다. 서비스 유형, 스토리지 클래스 및 영구 볼륨 크기를 선택하면 성능 목표를 달성하는 데 어떤 도움이 되는지 알아야 합니다.</block>
   <block id="d0c77e6bcdf6b3675b78f5039ab722db" category="inline-link">NetApp Cloud Central의 글로벌 지역 맵 으로 이동합니다</block>
@@ -568,7 +565,6 @@
   <block id="9282ad3aef7e124a3b2b9c7eab52b33d" category="doc">아키텍처 및 구성 요소</block>
   <block id="2938a5725f8de8bc6cfbe9bdd59f796f" category="summary">Astra Control Service는 Azure Kubernetes Service(AKS) 클러스터를 위한 스토리지 백엔드로 Azure NetApp Files를 사용합니다. 스토리지 클래스 및 영구 볼륨 크기를 선택하면 성능 목표를 달성하는 데 어떤 도움이 되는지 알아야 합니다.</block>
   <block id="7aaaeb3c621282cab2d3ea9432c3fbe0" category="doc">AKS 클러스터의 스토리지 클래스 및 PV 크기입니다</block>
-  <block id="b2cd1a47d11cab60dfbd0e59e1c5cdaa" category="paragraph">Astra Control Service는 Azure Kubernetes Service(AKS) 클러스터를 위한 스토리지 백엔드로 Azure NetApp Files 또는 Azure 관리 디스크를 지원합니다.</block>
   <block id="7450cfde7058dc5e1f7909d0280fd7ae" category="section-title">Azure NetApp Files</block>
   <block id="45f2ca5e315e585458c55fea41d5b448" category="paragraph">Astra Control Service는 Azure Kubernetes Service(AKS) 클러스터를 위한 스토리지 백엔드로 Azure NetApp Files를 지원합니다. 스토리지 클래스 및 영구 볼륨 크기를 선택하면 성능 목표를 달성하는 데 어떤 도움이 되는지 알아야 합니다.</block>
   <block id="45b76beee2cc117208c893ba100df166" category="section-title">서비스 수준 및 스토리지 클래스</block>
@@ -1314,7 +1310,6 @@
   <block id="4d82a1ec1af02725042c8c785564ee7a" category="inline-link">NetApp ONTAP용 Amazon FSx</block>
   <block id="6a2736fcbb5755dd03d114a5153506eb" category="list-text"><block ref="6a2736fcbb5755dd03d114a5153506eb" category="inline-link-rx"></block></block>
   <block id="37cb798eeadd3da7723607246ebf2339" category="inline-link-macro">Amazon Web Services 클러스터용 스토리지 클래스입니다</block>
-  <block id="516e3f0030567c9bbad612df88d2db95" category="paragraph">+에 대해 자세히 알아보십시오 <block ref="669f060d339cad3efcb29baff91fd410" category="inline-link-macro-rx"></block>. 에 대해 자세히 알아보십시오 <block ref="b4547358b744ca3b28812f444dc5a38f" category="inline-link-macro-rx"></block>. 에 대해 자세히 알아보십시오 <block ref="fd0a3bed584d87df18438d86772a2aaf" category="inline-link-macro-rx"></block>.</block>
   <block id="457022d51f2e6150dfa70037b30d57b5" category="section-title">다른 사용자에게 클러스터 액세스 권한을 제공합니다</block>
   <block id="436e78c3dd196f680aab83eb69543658" category="paragraph">필요에 따라 클러스터의 생성자가 아닌 다른 IAM 사용자에게 클러스터에 대한 "kubeck" 명령 액세스를 제공할 수 있습니다.</block>
   <block id="043e32602230f742d954f613b7b5ce25" category="inline-link">Amazon EKS에서 클러스터를 생성한 후 다른 IAM 사용자 및 역할에 대한 액세스를 제공하려면 어떻게 해야 합니까?</block>
@@ -1414,9 +1409,6 @@
   <block id="978b82e4298231e68c6ac005c5e649aa" category="inline-link">Amazon EBS 가격</block>
   <block id="bc4bb24d5e702fb79be623b84e7cf47e" category="inline-link">NetApp ONTAP 성능을 위한 Amazon FSx</block>
   <block id="86305be6273e5fd50120867e93897613" category="inline-link">NetApp ONTAP용 Amazon FSx 가격</block>
-  <block id="64871be4acf54750c11b07ff3203cf03" category="list-text">Astra Control Service가 사용합니다<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block> 또는 Azure 관리 디스크를 AKS 클러스터의 스토리지 백엔드에 사용합니다.</block>
-  <block id="bc808c2dc319f0278e897f16cfe24a95" category="list-text">Astra Control Service가 사용합니다<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block> 또는 GKE 클러스터의 저장소 백엔드의 Google 영구 디스크입니다.</block>
-  <block id="1574db16d74f7537711f20b07293065e" category="list-text">Astra Control Service가 사용합니다<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> 및<block ref="789fe92e2b55f108a4e50dd78da73d71" category="inline-link-rx"></block> EKS 클러스터의 스토리지 백엔드에 사용됩니다.</block>
   <block id="dd069ab6d74011bb108bf219e092a2d0" category="list-text">Astra Control Center는 다음과 같은 스토리지 백엔드를 사용합니다.</block>
   <block id="a7da53d86332105dcae80a12f3e8b7a5" category="summary">Astra Control의 관리되는 앱 유형을 설명합니다.</block>
   <block id="848f207b3c4594754aa82fd21b5fc5e0" category="paragraph">Astra Control이 클러스터를 검색할 때 해당 클러스터의 앱은 관리 방법을 선택할 때까지 관리되지 않습니다. Astra Control에서 관리되는 응용 프로그램은 다음 중 하나일 수 있습니다.</block>
@@ -1481,7 +1473,6 @@
   <block id="ea63117998199b7febd9cbf694fff31a" category="section-title">백업을 취소합니다</block>
   <block id="11ea61a300036053e79076bf8d2a27d0" category="paragraph">진행 중인 백업을 취소할 수 있습니다.</block>
   <block id="5a74785c1f7b64991b4e6c1995f2e049" category="list-text">원하는 백업에 대한 * Actions * 열의 Options 메뉴에서 * Cancel * 을 선택합니다.</block>
-  <block id="d77a72056cdc02124a845066bec0d946" category="paragraph">실행 후크는 관리되는 앱의 데이터 보호 작업과 함께 실행되도록 구성할 수 있는 사용자 지정 작업입니다. 예를 들어 데이터베이스 앱이 있는 경우 실행 후크를 사용하여 스냅샷 전에 모든 데이터베이스 트랜잭션을 일시 중지하고 스냅샷이 완료된 후 트랜잭션을 다시 시작할 수 있습니다. 따라서 애플리케이션 정합성이 보장되는 스냅샷이 보장됩니다.</block>
   <block id="83fbf1604bedff410ea11872b40ab9f0" category="section-title">실행 후크 유형</block>
   <block id="2e0239d0ab48ff8e287445ee24093e64" category="paragraph">Astra Control은 실행 가능 시점을 기준으로 다음과 같은 유형의 실행 후크를 지원합니다.</block>
   <block id="9c6a9cc04a4d5840a5d237b232190a35" category="list-text">사전 스냅샷</block>
@@ -1492,7 +1483,6 @@
   <block id="7fdb6925e171ac617262d69ebf119664" category="list-text">Astra Control은 실행 후크 설정과 모든 일치 기준을 사용하여 스냅샷, 백업 또는 복구 작업에 적용할 수 있는 후크를 결정합니다.</block>
   <block id="71bd0199539278d83c2eb3eaf817b710" category="list-text">모든 실행 후크 장애는 소프트 장애이며, 후크가 실패하더라도 다른 후크와 데이터 보호 작업은 계속 시도됩니다. 그러나 후크가 실패하면 * Activity * 페이지 이벤트 로그에 경고 이벤트가 기록됩니다.</block>
   <block id="7b1a9d930edd4676e6aca05c81245d86" category="list-text">임시 데이터 보호 작업의 경우 모든 후크 이벤트가 생성되고 * Activity * 페이지 이벤트 로그에 저장됩니다. 그러나 예약된 데이터 보호 작업의 경우 후크 장애 이벤트만 이벤트 로그에 기록됩니다(예약된 데이터 보호 작업 자체에서 생성되는 이벤트는 계속 기록됨).</block>
-  <block id="e44e874b44364a30ee06654e352ede59" category="paragraph">실행 후크는 실행 중인 응용 프로그램의 기능을 줄이거나 완전히 비활성화하기 때문에 사용자 지정 실행 후크가 실행되는 시간을 최소화해야 합니다. 연결된 실행 후크와 함께 백업 또는 스냅샷 작업을 시작한 다음 취소하면 백업 또는 스냅샷 작업이 이미 시작된 경우에도 후크를 실행할 수 있습니다. 즉, 백업 후 실행 후크는 백업이 완료된 것으로 가정할 수 없습니다.</block>
   <block id="a9f57378169166a88acf61a71442e5fb" category="section-title">실행 순서</block>
   <block id="e8132483e0cae3565c87c193b3fd8f57" category="paragraph">데이터 보호 작업이 실행되면 실행 후크 이벤트가 다음 순서로 발생합니다.</block>
   <block id="4a6ccf1757fd10978b3fb28d81187dcc" category="list-text">해당되는 모든 사용자 정의 사전 작업 실행 후크는 해당 컨테이너에서 실행됩니다. 필요한 만큼 사용자 지정 사전 작업 후크를 만들고 실행할 수 있지만, 이 후크의 실행 순서는 보장되거나 구성할 수 없습니다.</block>
@@ -1544,14 +1534,12 @@
   <block id="d3d9446802a44259755d38e6d163e820" category="cell">10</block>
   <block id="6512bd43d9caa6e02c990b0a82652dca" category="cell">11</block>
   <block id="d77b4a468fb488142be1db1cb4f3b30a" category="paragraph">앱의 기존 사용자 지정 실행 후크를 볼 수 있습니다.</block>
-  <block id="f8394306e8105b9804b880be5da4e874" category="paragraph">결과 목록에서 사용 가능하거나 비활성화된 실행 후크를 모두 볼 수 있습니다. 후크의 상태, 소스 및 실행 시간(사전 또는 사후 작업)을 확인할 수 있습니다. 실행 후크를 둘러싼 이벤트 로그를 보려면 왼쪽 탐색 영역의 * Activity * 페이지로 이동합니다.</block>
   <block id="348d9142b6e812d430105231b6b22f7b" category="section-title">기존 스크립트 보기</block>
   <block id="9a25c0423497a3b78185a1dcbd83ee56" category="paragraph">업로드된 기존 스크립트를 볼 수 있습니다. 또한 이 페이지에서 사용 중인 스크립트와 해당 스크립트를 사용하는 후크를 확인할 수 있습니다.</block>
   <block id="9847e9d0ad4bd0b4ebd33ef807c5de85" category="list-text">계정 * 으로 이동합니다.</block>
   <block id="38f83cc7b29ed2a740a9c8456659a293" category="list-text">스크립트 * 탭을 선택합니다.</block>
   <block id="8c9fd3633020b4d6c051241f7be9c138" category="paragraph">이 페이지에서는 업로드된 기존 스크립트 목록을 볼 수 있습니다. Used By* 열에는 각 스크립트를 사용하는 실행 후크가 표시됩니다.</block>
   <block id="6efeb013da42bda9a0b005c8fb3d9e7b" category="section-title">스크립트를 추가합니다</block>
-  <block id="52bf2b6b8ab697098c999c634d60de41" category="paragraph">실행 후크가 참조할 수 있는 스크립트를 하나 이상 추가할 수 있습니다. 많은 실행 후크가 동일한 스크립트를 참조할 수 있으므로 하나의 스크립트만 변경하여 여러 실행 후크를 업데이트할 수 있습니다.</block>
   <block id="fa12509cfb8e8ccded16e2a254e988c4" category="list-text">추가 * 를 선택합니다.</block>
   <block id="365d382b2d9ecca9b0d40171c69b38ff" category="list-text">다음 중 하나를 수행합니다.</block>
   <block id="99df3a53037c83c9f94b22e58d038498" category="list-text">Save script * 를 선택합니다.</block>
@@ -1562,7 +1550,6 @@
   <block id="85dd64e22968350ca681ba621d4bc560" category="list-text">제거할 스크립트를 선택하고 * Actions * 열에서 메뉴를 선택합니다.</block>
   <block id="9dd5d4388456b71f9b71c1021d390f06" category="admonition">스크립트가 하나 이상의 실행 후크에 연결되어 있으면 * 삭제 * 작업을 사용할 수 없습니다. 스크립트를 삭제하려면 먼저 연결된 실행 후크를 편집하여 다른 스크립트에 연결합니다.</block>
   <block id="88cf147ac90a429c61c32e7ab09e79bd" category="admonition">실행 후크로 사용할 사용자 정의 쉘 스크립트를 작성할 때는 특정 명령을 실행하거나 실행 파일에 대한 전체 경로를 제공하지 않는 한 파일 시작 부분에 적절한 셸을 지정해야 합니다.</block>
-  <block id="646a0acc29f56871519ed10b81ce1989" category="list-text">Hook Details * (후크 세부 정보 *) 영역에서 * Operation * (작업 *) 드롭다운 메뉴에서 작업 유형을 선택하여 후크를 실행할 시기를 결정합니다.</block>
   <block id="be22134446ec0047c1f901e0ef639bba" category="list-text">새 스크립트를 추가합니다.</block>
   <block id="8b7f83d064fa53247eb45928442a6628" category="list-text">목록에서 기존 스크립트를 선택합니다.</block>
   <block id="35517af1363cb45c60a97af004151365" category="paragraph">이렇게 하면 실행 후크에 이 스크립트를 사용하도록 지시합니다.</block>
@@ -1763,20 +1750,12 @@
   <block id="a54ffcf601d3cad8846bb3488b0fc812" category="admonition">클론 작업 중에 IngressClass 리소스 또는 Webhook가 필요한 애플리케이션에는 대상 클러스터에 이미 정의된 리소스가 없어야 합니다.</block>
   <block id="d187001d501dee0ac96f1c4520418b01" category="section-title">2022년 11월 22일</block>
   <block id="9ed67fb9a4ad2ebd97ca13fe2eb81541" category="list-title">새로운 기능 및 지원</block>
-  <block id="8a839dbb28e85696069bbc2c4085cb75" category="list-text">여러 네임스페이스에 걸쳐 있는 응용 프로그램 지원</block>
   <block id="4eba5ba43cc624385f276658a22c51a8" category="inline-link-macro">앱 정의</block>
   <block id="615bfdde03d6ca17ceb25db1da7a8950" category="paragraph"><block ref="615bfdde03d6ca17ceb25db1da7a8950" category="inline-link-macro-rx"></block></block>
-  <block id="fbed0a0742c59aa2f0516e302eb19172" category="list-text">애플리케이션 정의에 클러스터 리소스 포함 지원</block>
-  <block id="a75cc842b54759877cde075e6d7b123b" category="list-text">백업, 복원 및 클론 작업에 대한 향상된 진행률 보고 기능</block>
   <block id="92131ec58f7cefa34d38f2fee2e98c42" category="inline-link-macro">실행 중인 작업을 모니터링합니다</block>
   <block id="7ae618b5d6c1a9768cb0ddc2627b32d0" category="paragraph"><block ref="7ae618b5d6c1a9768cb0ddc2627b32d0" category="inline-link-macro-rx"></block></block>
-  <block id="ffcef21176963cb229c78971c4867b5e" category="list-text">이미 호환되는 버전의 Astra Trident가 설치된 클러스터 관리 지원</block>
-  <block id="0c26609d927c6fd9f0a23dd079134b80" category="list-text">단일 Astra Control Service 계정으로 여러 클라우드 공급자 서브스크립션 관리 지원</block>
   <block id="e0b7652da21db7cd16f8155afc64e87b" category="inline-link-macro">클라우드 인스턴스 관리</block>
   <block id="9df52d082eaf22280b9667a382b64298" category="paragraph"><block ref="9df52d082eaf22280b9667a382b64298" category="inline-link-macro-rx"></block></block>
-  <block id="8800f5d275e5928d65cbcb5f023cb6a8" category="list-text">자가 관리 Kubernetes 클러스터를 Astra Control Service에 추가할 수 있도록 지원합니다.</block>
-  <block id="c34eb65732649a4231a17e2623c9a979" category="list-text">이제 Astra Control Service에 대한 청구는 애플리케이션별로 계산되지 않고 네임스페이스당 지불됩니다.</block>
-  <block id="ebd7baa8bca4e519b3b1dcc85e15069b" category="list-text">AWS 마켓플레이스를 통해 Astra Control Service 계약 기간 기반 혜택에 대한 구독을 지원합니다.</block>
   <block id="3a3b7ac2e39541ea05707ccd6eb054d4" category="list-title">알려진 문제 및 제한 사항</block>
   <block id="740eb4189d3efee5546cc5fba4fded77" category="inline-link-macro">이 릴리스에 대해 알려진 문제입니다</block>
   <block id="d1dd5fb317ad23b395c8c846c80e0e5f" category="list-text"><block ref="d1dd5fb317ad23b395c8c846c80e0e5f" category="inline-link-macro-rx"></block></block>
@@ -2052,4 +2031,58 @@
   <block id="88bdaf7536fdf70e3c93df4a9b10bb82" category="list-text">Azure 저장소 계정 인스턴스 성능 설정이 "프리미엄"으로 설정된 경우 "프리미엄 계정 유형" 설정을 "Blob 차단"으로 설정해야 합니다.</block>
   <block id="ceeca391c3348d53722ec9783ba88430" category="inline-link">NetApp TV를 참조하십시오</block>
   <block id="b504b02d5498a8b09080b1e621f4d1aa" category="admonition">Azure Marketplace 구독 프로세스에 대한 비디오 안내를 보려면 를 방문하십시오<block ref="bfd2f59ca3f14f5fb5037b1bda5b7515" category="inline-link-rx"></block>.</block>
+  <block id="ccd62d676165e34c2e9c6d088c06e70f" category="paragraph">실행 후크는 관리되는 앱의 데이터 보호 작업과 함께 실행되도록 구성할 수 있는 사용자 지정 작업입니다. 예를 들어 데이터베이스 앱이 있는 경우 실행 후크를 사용하여 스냅샷 전에 모든 데이터베이스 트랜잭션을 일시 중지하고 스냅샷이 완료된 후 트랜잭션을 다시 시작할 수 있습니다. 따라서 애플리케이션 정합성이 보장되는 스냅샷이 보장됩니다.</block>
+  <block id="99dc882fc0f61d1db87631ed9f156913" category="section-title">실행 후크 필터</block>
+  <block id="d335f82eb07728e66330e5d345123e4e" category="paragraph">실행 후크를 응용 프로그램에 추가하거나 편집할 때 실행 후크에 필터를 추가하여 후크가 일치하는 컨테이너를 관리할 수 있습니다. 필터는 모든 컨테이너에서 동일한 컨테이너 이미지를 사용하는 응용 프로그램에 유용하지만 각 이미지를 다른 용도(예: Elasticsearch)로 사용할 수 있습니다. 필터를 사용하면 실행 후크가 동일한 컨테이너 중 일부에서 실행되는 시나리오를 만들 수 있지만 반드시 모든 컨테이너를 실행하는 것은 아닙니다. 단일 실행 후크에 대해 여러 개의 필터를 만들면 논리적 필터 및 연산자와 결합됩니다. 실행 후크당 최대 10개의 활성 필터를 사용할 수 있습니다.</block>
+  <block id="1f7268b251b886be0fbed048e85fcbae" category="paragraph">실행 후크에 추가하는 각 필터는 클러스터의 컨테이너와 일치시키기 위해 정규식을 사용합니다. 후크가 컨테이너와 일치하면 후크는 해당 컨테이너에서 연결된 스크립트를 실행합니다.</block>
+  <block id="8f00b1ba5cf1b5159598a4201b24c485" category="admonition">필터에 대한 정규식은 정규식 2(RE2) 구문을 사용합니다. 이 구문은 일치 목록에서 컨테이너를 제외하는 필터를 만드는 것을 지원하지 않습니다.</block>
+  <block id="7caae75448dbc59fcadd621099e170b3" category="inline-link">정규식 2(RE2) 구문 지원</block>
+  <block id="348be7b5ea322b3d9f3cc7f3638347e8" category="paragraph">Astra Control이 실행 후크 필터의 정규식에 대해 지원하는 구문에 대한 자세한 내용은 을 참조하십시오<block ref="d4d0dd655d04b2dc5b031206e1febd50" category="inline-link-rx"></block>.</block>
+  <block id="a00c0d5dc029d521b5d82eba2c9f84ec" category="paragraph">실행 후크는 실행 중인 응용 프로그램의 기능을 줄이거나 완전히 비활성화하기 때문에 사용자 지정 실행 후크가 실행되는 시간을 최소화해야 합니다. 연결된 실행 후크와 함께 백업 또는 스냅샷 작업을 시작한 다음 취소하면 백업 또는 스냅샷 작업이 이미 시작된 경우에도 후크를 실행할 수 있습니다. 즉, 백업 후 실행 후크에 사용되는 논리는 백업이 완료된 것으로 가정할 수 없습니다.</block>
+  <block id="ad06e01fed5c441edb22a5ad730a28c4" category="paragraph">결과 목록에서 사용 가능하거나 비활성화된 실행 후크를 모두 볼 수 있습니다. 후크의 상태, 일치하는 컨테이너 수, 생성 시간 및 실행 시간(사전 또는 사후 작업)을 확인할 수 있습니다. 를 선택할 수 있습니다<block ref="26b17225b626fb9238849fd60eabdf60" prefix=" " category="inline-code"></block> 실행할 컨테이너 목록을 확장하려면 후크 이름 옆에 있는 아이콘을 클릭합니다. 이 응용 프로그램의 실행 후크를 둘러싼 이벤트 로그를 보려면 * Activity * 탭으로 이동하십시오.</block>
+  <block id="fdccfeac6686fcf9ef3545d27c98ebd9" category="paragraph">각 실행 후크는 스크립트를 사용하여 작업을 수행해야 합니다. 실행 후크가 참조할 수 있는 스크립트를 하나 이상 추가할 수 있습니다. 많은 실행 후크가 동일한 스크립트를 참조할 수 있으므로 하나의 스크립트만 변경하여 여러 실행 후크를 업데이트할 수 있습니다.</block>
+  <block id="730e56f4151d257d4be9b69d500491b1" category="list-text">후크 세부 정보 * 영역에서:</block>
+  <block id="754306132541c264b899699072715a8d" category="list-text">작업 * 드롭다운 메뉴에서 작업 유형을 선택하여 후크를 언제 실행해야 하는지 결정합니다.</block>
+  <block id="b3bf4b7c4fe4ab9fd4c927146b958c29" category="list-text">(선택 사항) * Hook Filter Details * 영역에서 실행 후크가 실행되는 컨테이너를 제어하는 필터를 추가할 수 있습니다.</block>
+  <block id="26e5ad6aeb15088310dc7f5f94ac6b1c" category="list-text">필터 추가 * 를 선택합니다.</block>
+  <block id="046bbeb096523a6c2a52a82b7a1a144a" category="list-text">Hook filter type * 열의 드롭다운 메뉴에서 필터링할 특성을 선택합니다.</block>
+  <block id="7f5c33cf7bc03894aef7093b46c50ba3" category="inline-link">정규식 2(RE2) regex 구문</block>
+  <block id="40bf80a4152341fe23b78ee81bdae830" category="list-text">Regex * 열에 필터로 사용할 정규식을 입력합니다. Astra Control은 를 사용합니다<block ref="5a0c17cee4b408e519a995b1f313a559" category="inline-link-rx"></block>.</block>
+  <block id="f3ed8a73ba34dec99a6dc46c809c190b" category="admonition">정규식 필드에 다른 텍스트가 없는 특성(예: pod 이름)의 정확한 이름을 필터링하면 부분 문자열 일치가 수행됩니다. 정확한 이름과 해당 이름만 일치시키려면 정확한 문자열 일치 구문(예:<block ref="008d171d630f0108aa5ebd55b36c9d01" prefix=" " category="inline-code"></block>)를 클릭합니다.</block>
+  <block id="f587a978a9522295d00811bafac25b74" category="list-text">필터를 더 추가하려면 * 필터 추가 * 를 선택합니다.</block>
+  <block id="e45aa7d1b7841e860b561b3f17ed3626" category="admonition">실행 후크에 대한 여러 필터가 논리 및 연산자와 결합됩니다. 실행 후크당 최대 10개의 활성 필터를 사용할 수 있습니다.</block>
+  <block id="d3b15dd314c60647e826dddaf876252c" category="list-text">완료되면 * Next * 를 선택합니다.</block>
+  <block id="245ac12acb7bc3829b2f5656f25ce8f9" category="list-text">실행 후크 구성을 검토합니다.</block>
+  <block id="e7e278b27ed2ba8a9f0a89cea227a0aa" category="section-title">실행 후크를 편집합니다</block>
+  <block id="48077e8945995c9af9cf3beb5a95e222" category="paragraph">실행 후크를 편집하여 속성, 필터 또는 사용하는 스크립트를 변경할 수 있습니다. 실행 후크를 편집하려면 소유자, 관리자 또는 구성원 권한이 있어야 합니다.</block>
+  <block id="1dbaed14db949844ab67cca7fa804ec9" category="list-text">편집할 후크의 경우 * Actions * 열에서 옵션 메뉴를 선택합니다.</block>
+  <block id="d6b31513755644b14ff0352ed78ee5d0" category="list-text">필요한 사항을 변경하고 각 섹션을 완료한 후 * 다음 * 을 선택합니다.</block>
+  <block id="4c5848fdf558a402deead01b3a7267ca" category="list-text">결과 대화 상자에 "delete"를 입력하여 확인합니다.</block>
+  <block id="4bc73956dcf3b9d92b687a0e41330027" category="list-text">예, 실행 후크 삭제 * 를 선택합니다.</block>
+  <block id="cd9365bcc5200e0100ab1291e25e536a" category="section-title">2023년 1월 17일</block>
+  <block id="dc76043b82b478d28285ae514fece7b7" category="list-text">추가 필터링 옵션이 포함된 향상된 실행 후크 기능</block>
+  <block id="a02fef9177dafc1ed65c31506043a788" category="list-text">NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 지원(Microsoft Azure 및 Google Cloud 플랫폼에서 공식 지원)</block>
+  <block id="9873d3282f5b305c09e3384bd4cc642f" category="paragraph"><block ref="9873d3282f5b305c09e3384bd4cc642f" category="inline-link-macro-rx"></block></block>
+  <block id="3aed836d77f6857f6adf310ab3a489e9" category="list-text">여러 네임스페이스에 걸쳐 있는 응용 프로그램 지원</block>
+  <block id="71e6b5ca832527695b724cd4030ff69f" category="list-text">애플리케이션 정의에 클러스터 리소스 포함 지원</block>
+  <block id="d57729d6a002792bd1640f00b3c60a6d" category="list-text">백업, 복원 및 클론 작업에 대한 향상된 진행률 보고 기능</block>
+  <block id="ee22ee616d03d0b788bbae8035a8d53d" category="list-text">이미 호환되는 버전의 Astra Trident가 설치된 클러스터 관리 지원</block>
+  <block id="22289318dae293d59005c72969da78c0" category="list-text">단일 Astra Control Service 계정으로 여러 클라우드 공급자 서브스크립션 관리 지원</block>
+  <block id="16522d4241295dd4aacfffd076bdab35" category="list-text">자가 관리 Kubernetes 클러스터를 Astra Control Service에 추가할 수 있도록 지원합니다</block>
+  <block id="340fb7807661130b471c746bcb32778d" category="list-text">이제 Astra Control Service에 대한 청구는 애플리케이션별로 계산되지 않고 네임스페이스당 지불됩니다</block>
+  <block id="7c560ce667e00f7fb7277e3e40274958" category="list-text">AWS 마켓플레이스를 통해 Astra Control Service 계약 기간 기반 혜택에 대한 구독을 지원합니다</block>
+  <block id="1825b9e766e0b0cdba1d02a62126146f" category="section-title">NetApp Cloud Volumes ONTAP은 Amazon Web Services에 대해 공식적으로 지원되지 않습니다</block>
+  <block id="06a37277cf290af4d70f99c3def289f6" category="paragraph">2023년 1월 17일 Astra Control Service의 릴리즈 현재 NetApp Cloud Volumes ONTAP은 Amazon Web Services에 대해 아직 공식적으로 지원되지 않습니다.</block>
+  <block id="0bf305437e764438b0cefa4feeab361a" category="paragraph">Astra Control Service는 영구 볼륨의 스토리지 백엔드 옵션으로 Cloud Volumes Service for Google Cloud, Google Persistent Disk 또는 NetApp Cloud Volumes ONTAP를 지원합니다.</block>
+  <block id="0f0b99ea2f70cd363c2c6a279f74e760" category="section-title">NetApp Cloud Volumes ONTAP를 참조하십시오</block>
+  <block id="e472e0844cec8046d5a3eed1d37de0ed" category="inline-link">NetApp Cloud Volumes ONTAP 문서</block>
+  <block id="b311f4f89f8edf2c494c59166cea789e" category="paragraph">성능 권장사항을 비롯한 NetApp Cloud Volumes ONTAP 구성에 대한 자세한 내용은 를 참조하십시오<block ref="c94772fe83b69960a6ebea80e6f83cf2" category="inline-link-rx"></block>.</block>
+  <block id="1da547253b2bff6a97f16457ba6c7659" category="list-text">Astra Control Service가 사용합니다<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block>, Azure 관리 디스크 , 및<block ref="3d43fd73820648564776fa140e465af6" category="inline-link-rx"></block> AKS 클러스터의 스토리지 백엔드에 사용됩니다.</block>
+  <block id="068755ba9601ac78582444cf9563d28b" category="list-text">Astra Control Service가 사용합니다<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block>, Google 영구 디스크 및<block ref="3d43fd73820648564776fa140e465af6" category="inline-link-rx"></block> GKE 클러스터용 스토리지 백엔드.</block>
+  <block id="9ff64e735ff169bd9cc9554b0d5d8108" category="list-text">Astra Control Service가 사용합니다<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> 및<block ref="789fe92e2b55f108a4e50dd78da73d71" category="inline-link-rx"></block> AWS 클러스터에 대한 스토리지 백엔드를 수행합니다.</block>
+  <block id="88ede18f1c4b4384b20f2ce56a75bd80" category="paragraph">Astra Control Service는 Azure Kubernetes Service(AKS) 클러스터를 위한 스토리지 백엔드로 Azure NetApp Files, Azure 관리 디스크 또는 NetApp Cloud Volumes ONTAP를 지원합니다.</block>
+  <block id="2281a4480d392ba38bb5a7a535c3d0a6" category="list-text">Cloud Volumes ONTAP 스토리지 백엔드(Azure 및 Google 클라우드 플랫폼에서 공식 지원)</block>
+  <block id="cf2023b42357e47bef18c127980bd1c6" category="list-text">NetApp Cloud Volumes ONTAP: 가격, 성능 또는 복원력 정보를 제공할 수 없습니다</block>
+  <block id="d52e07d1d595c838fa6dd650fe711cd0" category="list-text"><block ref="d52e07d1d595c838fa6dd650fe711cd0" category="inline-link-rx"></block></block>
+  <block id="ec9e8ebd4a4bf176cd70f6a24863b17a" category="paragraph">에 대해 자세히 알아보십시오 <block ref="669f060d339cad3efcb29baff91fd410" category="inline-link-macro-rx"></block>. 에 대해 자세히 알아보십시오 <block ref="b4547358b744ca3b28812f444dc5a38f" category="inline-link-macro-rx"></block>. 에 대해 자세히 알아보십시오 <block ref="fd0a3bed584d87df18438d86772a2aaf" category="inline-link-macro-rx"></block>.</block>
 </blocks>

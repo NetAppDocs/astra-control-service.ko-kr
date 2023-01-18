@@ -12,7 +12,7 @@ summary: 'Astra Control Service는 Azure Kubernetes Service(AKS) 클러스터를
 
 
 [role="lead"]
-Astra Control Service는 Azure Kubernetes Service(AKS) 클러스터를 위한 스토리지 백엔드로 Azure NetApp Files 또는 Azure 관리 디스크를 지원합니다.
+Astra Control Service는 Azure Kubernetes Service(AKS) 클러스터를 위한 스토리지 백엔드로 Azure NetApp Files, Azure 관리 디스크 또는 NetApp Cloud Volumes ONTAP를 지원합니다.
 
 
 
@@ -56,3 +56,9 @@ Astra Control Service는 PVC가 더 작은 볼륨 크기를 요구하더라도 �
 Astra Control Service는 Azure 관리 디스크를 스토리지 백엔드 옵션으로 지원합니다. 이 서비스는 Azure에서 관리하는 블록 레벨 스토리지를 제공합니다.
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure 관리 디스크에 대해 자세히 알아보십시오"^].
+
+
+
+== NetApp Cloud Volumes ONTAP를 참조하십시오
+
+성능 권장사항을 비롯한 NetApp Cloud Volumes ONTAP 구성에 대한 자세한 내용은 를 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["NetApp Cloud Volumes ONTAP 문서"^].

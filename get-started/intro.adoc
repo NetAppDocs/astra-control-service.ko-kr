@@ -88,7 +88,7 @@ Astra Control은 두 가지 배포 모델로 제공됩니다.
 
  a| 
 * NetApp ONTAP AFF 및 FAS 시스템
-* Cloud Volumes ONTAP 스토리지 백엔드
+* Cloud Volumes ONTAP 스토리지 백엔드(Azure 및 Google 클라우드 플랫폼에서 공식 지원)
 
 
 |===

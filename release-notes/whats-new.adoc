@@ -16,6 +16,21 @@ NetApp은 새로운 기능, 개선 사항 및 버그 수정을 제공하기 위�
 
 
 
+== 2023년 1월 17일
+
+.새로운 기능 및 지원
+* 추가 필터링 옵션이 포함된 향상된 실행 후크 기능
++
+link:../use/manage-app-execution-hooks.html["앱 실행 후크 관리"]
+
+* NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 지원(Microsoft Azure 및 Google Cloud 플랫폼에서 공식 지원)
++
+link:../learn/architecture.html#astra-control-components["아키텍처 및 구성 요소"]
+
+
+
+
+
 == 2022년 11월 22일
 
 .새로운 기능 및 지원
@@ -39,15 +54,15 @@ link:../get-started/add-first-cluster.html["Astra Control Service에서 Kubernet
 +
 link:../use/manage-cloud-instances.html["클라우드 인스턴스 관리"]
 
-* 자가 관리 Kubernetes 클러스터를 Astra Control Service에 추가할 수 있도록 지원합니다.
+* 자가 관리 Kubernetes 클러스터를 Astra Control Service에 추가할 수 있도록 지원합니다
 +
 link:../get-started/add-first-cluster.html["Astra Control Service에서 Kubernetes 클러스터 관리를 시작합니다"]
 
-* 이제 Astra Control Service에 대한 청구는 애플리케이션별로 계산되지 않고 네임스페이스당 지불됩니다.
+* 이제 Astra Control Service에 대한 청구는 애플리케이션별로 계산되지 않고 네임스페이스당 지불됩니다
 +
 link:../use/set-up-billing.html["대금 청구를 설정합니다"]
 
-* AWS 마켓플레이스를 통해 Astra Control Service 계약 기간 기반 혜택에 대한 구독을 지원합니다.
+* AWS 마켓플레이스를 통해 Astra Control Service 계약 기간 기반 혜택에 대한 구독을 지원합니다
 +
 link:../use/set-up-billing.html["대금 청구를 설정합니다"]
 
