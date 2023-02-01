@@ -1089,8 +1089,6 @@
   <block id="60f694f21643599c137f6c610e48124e" category="paragraph">이 슬라이드에는 Astra Control 환경의 다양한 구성 요소에 대한 개요가 나와 있습니다.</block>
   <block id="51d249216b03414f10b242b851af7951" category="section-title">Astra Control 구성 요소</block>
   <block id="a8d77bbb11d2e1a349811767d194e9ba" category="list-text">* Kubernetes 클러스터 *: Kubernetes는 컨테이너식 워크로드 및 서비스를 관리할 수 있는 확장 가능한 휴대용 오픈 소스 플랫폼으로, 선언적 구성과 자동화를 모두 지원합니다. Astra는 Kubernetes 클러스터에서 호스팅되는 애플리케이션에 관리 서비스를 제공합니다.</block>
-  <block id="951fe18cc6e59e05fca3c0ca7de399fa" category="list-text">* 스토리지 백엔드 *:</block>
-  <block id="fc8adf6067b9e369fbebc9abf2891bce" category="list-text">ONTAP AFF 및 FAS 스토리지 백엔드 스토리지 소프트웨어 및 하드웨어 플랫폼인 ONTAP는 핵심 스토리지 서비스, 다중 스토리지 액세스 프로토콜 지원 및 스냅샷, 미러링과 같은 스토리지 관리 기능을 제공합니다.</block>
   <block id="415ba7b6a21fb373d9c5b72207313c1c" category="list-text">* Cloud Insights *: NetApp 클라우드 인프라 모니터링 툴인 Cloud Insights를 사용하면 Astra Control Center에서 관리하는 Kubernetes 클러스터의 성능과 활용률을 모니터링할 수 있습니다. Cloud Insights는 스토리지 사용량과 워크로드를 상호 연관시킵니다. Astra Control Center에서 Cloud Insights 연결을 활성화하면 Astra Control Center UI 페이지에 원격 측정 정보가 표시됩니다.</block>
   <block id="de0c45e94d4b178203631d55e65d1b62" category="section-title">Astra Control 인터페이스</block>
   <block id="d015aca78df45458ee1d6533c5246919" category="paragraph">다른 인터페이스를 사용하여 작업을 완료할 수 있습니다.</block>
@@ -1179,7 +1177,6 @@
   <block id="48812784c9e7b02bc76402c5a0c3ca10" category="list-text">프라이빗 클러스터 구성 요소의 네임스페이스를 생성합니다.</block>
   <block id="f831baeb7ae8c560addc2916d8b1096e" category="list-text">Astra Connector CRD(Custom Resource Definition)를 적용합니다.</block>
   <block id="138db2318815f6b9fc7cc55dd6a6ad32" category="list-text">Astra Connector의 상태를 확인한다.</block>
-  <block id="570fa99ce4fbf8deb198b97a6931d63a" category="list-text">Cloud Volumes ONTAP 스토리지 백엔드</block>
   <block id="ea2708b459fc0cad6936ec216bd9405e" category="paragraph">Astra Control Center는 AutoSupport 및 Active IQ 에코시스템에 완전히 통합되어 사용자와 NetApp 지원에 문제 해결 및 사용 정보를 제공합니다.</block>
   <block id="970cfe22b76fecaa99669dbc6dd2643e" category="paragraph">"Astra Control Service에 개인 AKS 클러스터를 추가할 수 있습니까?" *</block>
   <block id="51e84df52b4888344ecda584885aaabd" category="paragraph">프라이빗 클러스터에는 가 있어야 합니다<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> Astra Control IP 주소를 허용하도록 설정합니다.</block>
@@ -1393,7 +1390,6 @@
   <block id="978b82e4298231e68c6ac005c5e649aa" category="inline-link">Amazon EBS 가격</block>
   <block id="bc4bb24d5e702fb79be623b84e7cf47e" category="inline-link">NetApp ONTAP 성능을 위한 Amazon FSx</block>
   <block id="86305be6273e5fd50120867e93897613" category="inline-link">NetApp ONTAP용 Amazon FSx 가격</block>
-  <block id="dd069ab6d74011bb108bf219e092a2d0" category="list-text">Astra Control Center는 다음과 같은 스토리지 백엔드를 사용합니다.</block>
   <block id="a7da53d86332105dcae80a12f3e8b7a5" category="summary">Astra Control의 관리되는 앱 유형을 설명합니다.</block>
   <block id="848f207b3c4594754aa82fd21b5fc5e0" category="paragraph">Astra Control이 클러스터를 검색할 때 해당 클러스터의 앱은 관리 방법을 선택할 때까지 관리되지 않습니다. Astra Control에서 관리되는 응용 프로그램은 다음 중 하나일 수 있습니다.</block>
   <block id="594284cddefbf771912acc53c31ca2b3" category="list-text">Kubernetes의 앱 상태를 반영하는 상태를 제공합니다.</block>
@@ -2049,9 +2045,6 @@
   <block id="0f0b99ea2f70cd363c2c6a279f74e760" category="section-title">NetApp Cloud Volumes ONTAP를 참조하십시오</block>
   <block id="e472e0844cec8046d5a3eed1d37de0ed" category="inline-link">NetApp Cloud Volumes ONTAP 문서</block>
   <block id="b311f4f89f8edf2c494c59166cea789e" category="paragraph">성능 권장사항을 비롯한 NetApp Cloud Volumes ONTAP 구성에 대한 자세한 내용은 를 참조하십시오<block ref="c94772fe83b69960a6ebea80e6f83cf2" category="inline-link-rx"></block>.</block>
-  <block id="1da547253b2bff6a97f16457ba6c7659" category="list-text">Astra Control Service가 사용합니다<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block>, Azure 관리 디스크 , 및<block ref="3d43fd73820648564776fa140e465af6" category="inline-link-rx"></block> AKS 클러스터의 스토리지 백엔드에 사용됩니다.</block>
-  <block id="068755ba9601ac78582444cf9563d28b" category="list-text">Astra Control Service가 사용합니다<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block>, Google 영구 디스크 및<block ref="3d43fd73820648564776fa140e465af6" category="inline-link-rx"></block> GKE 클러스터용 스토리지 백엔드.</block>
-  <block id="9ff64e735ff169bd9cc9554b0d5d8108" category="list-text">Astra Control Service가 사용합니다<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> 및<block ref="789fe92e2b55f108a4e50dd78da73d71" category="inline-link-rx"></block> AWS 클러스터에 대한 스토리지 백엔드를 수행합니다.</block>
   <block id="88ede18f1c4b4384b20f2ce56a75bd80" category="paragraph">Astra Control Service는 Azure Kubernetes Service(AKS) 클러스터를 위한 스토리지 백엔드로 Azure NetApp Files, Azure 관리 디스크 또는 NetApp Cloud Volumes ONTAP를 지원합니다.</block>
   <block id="cf2023b42357e47bef18c127980bd1c6" category="list-text">NetApp Cloud Volumes ONTAP: 가격, 성능 또는 복원력 정보를 제공할 수 없습니다</block>
   <block id="d52e07d1d595c838fa6dd650fe711cd0" category="list-text"><block ref="d52e07d1d595c838fa6dd650fe711cd0" category="inline-link-rx"></block></block>
@@ -2086,4 +2079,11 @@
   <block id="a3060d8563d84f399ad045a8f074e953" category="cell">지원되는 스토리지 백엔드는 무엇입니까?</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
   <block id="e76d01158a51318d708ef8185fb06b2d" category="list-text">이때 클러스터에서 앱을 정의할 수 있습니다. 영구 볼륨은 새로운 기본 스토리지 클래스를 통해 스토리지 백엔드에서 프로비저닝됩니다.</block>
+  <block id="38e3b2d02a57ef89462103f8dcf36ab0" category="list-text"><block ref="38e3b2d02a57ef89462103f8dcf36ab0" category="inline-link-rx"></block></block>
+  <block id="ab819072ff4cb02cb39723b20e2ec373" category="list-text"><block ref="ab819072ff4cb02cb39723b20e2ec373" category="inline-link-rx"></block></block>
+  <block id="55b6146ebe43b01a290a7aad48a66943" category="list-text">자가 관리 클러스터:</block>
+  <block id="ec2e9418f579c84a41733c6bb0adb789" category="list-text"><block ref="ec2e9418f579c84a41733c6bb0adb789" category="inline-link-rx"></block></block>
+  <block id="1bdec68ba7ba69d1cfefb7e18a857ef4" category="inline-link">설치 설명서</block>
+  <block id="e7f7ae1f9423fb8774a02e2ae647e158" category="list-text">NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 사용하려는 경우 Microsoft Azure와 연동하도록 Cloud Volumes ONTAP를 구성해야 합니다. Cloud Volumes ONTAP를 참조하십시오<block ref="8bd14818004729c0926343811de7e4e9" category="inline-link-rx"></block>.</block>
+  <block id="d75122947e3b2c3b0a4b44dfa3966432" category="list-text">NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 사용하려는 경우 Cloud Volumes ONTAP이 Google Cloud와 연동되도록 구성해야 합니다. Cloud Volumes ONTAP를 참조하십시오<block ref="3a89728ad1d2dcbb16e661d8af8129b1" category="inline-link-rx"></block>.</block>
 </blocks>

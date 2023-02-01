@@ -72,24 +72,46 @@ Astra Control은 두 가지 배포 모델로 제공됩니다.
 ** NetApp ONTAP용 Amazon FSx
 
 
+
+
+endif::aws[]
+
+ifdef::gcp[]
+
 * Google 클라우드:
 +
 ** Google 영구 디스크
 ** NetApp Cloud Volumes Service를 참조하십시오
-** Cloud Volumes ONTAP
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["Cloud Volumes ONTAP"^]
 
+
+
+
+endif::gcp[]
+
+ifdef::azure[]
 
 * Microsoft Azure:
 +
 ** Azure 관리 디스크
 ** Azure NetApp Files
-** Cloud Volumes ONTAP
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html["Cloud Volumes ONTAP"^]
+
+
+
+
+endif::azure[]
+
+* 자가 관리 클러스터:
++
+** NetApp ONTAP AFF 및 FAS 시스템
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
 
 
 
  a| 
 * NetApp ONTAP AFF 및 FAS 시스템
-* Cloud Volumes ONTAP
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
 
 
 |===
