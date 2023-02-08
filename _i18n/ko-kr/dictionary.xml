@@ -270,28 +270,7 @@
   <block id="e092bbb33142502c7f40032f677677d8" category="paragraph">클러스터 타일은 클러스터 상태에 대한 유사한 세부 정보를 제공하며 앱을 사용하는 것처럼 드릴다운하여 자세한 정보를 얻을 수 있습니다.</block>
   <block id="a41861b6e8134096202b0c039ad91943" category="inline-link-macro">Astra Control에 Kubernetes 클러스터를 추가합니다</block>
   <block id="7b7f260c982647b3aee51c681be792ef" category="section-title">설명합니다</block>
-  <block id="a23e8e619b2ffd1ec1e37fd1f16eee74" category="list-text">* StorageClass *: StorageClass가 명시적으로 설정된 앱을 설치하고 앱을 복제해야 하는 경우 클론 작업의 타겟 클러스터에 원래 지정된 StorageClass가 있어야 합니다. 명시적으로 StorageClass를 동일한 StorageClass가 없는 클러스터로 설정한 애플리케이션을 클론 복제하면 실패합니다.</block>
   <block id="7a9f49c6cd6dca3bc35b755523c76570" category="list-text">* Kubernetes 리소스 *: Astra Control에서 수집하지 않은 Kubernetes 리소스를 사용하는 앱에는 전체 앱 데이터 관리 기능이 없을 수 있습니다. Astra Control은 다음과 같은 Kubernetes 리소스를 수집합니다.</block>
-  <block id="d7d354d0f9d0780e168c895c92a32c24" category="list-text">클러스터 역할</block>
-  <block id="e866afd8290d5c73cda6260e04e6eef0" category="list-text">ClusterRoleBinding 을 참조하십시오</block>
-  <block id="a941f8adb5ae079ebc739cb59407fd30" category="list-text">ConfigMap을 클릭합니다</block>
-  <block id="99bc4b850e05bafd67cf5f5f49344c1e" category="list-text">사용자 지정 리소스 정의</block>
-  <block id="2597d86efa761b80f198c7208e859dd7" category="list-text">CustomResource 를 선택합니다</block>
-  <block id="0d4eb61dc57afc7f3f8d51439c96eedd" category="list-text">DemonSet</block>
-  <block id="788c34b60baf42eb1cac433ba1f0b64a" category="list-text">DeploymentConfig(배포 구성</block>
-  <block id="7d05c708b92b4809bfe9bf66edf8f765" category="list-text">침투</block>
-  <block id="1fcd027e4be180b1536eba3afa93e6be" category="list-text">뮤atingWebhook</block>
-  <block id="2b3f8e4d49589c4452db0a07d619d824" category="list-text">PersistentVolumeClaim</block>
-  <block id="8a0813c70cf4bf1529f25c411a039130" category="list-text">포드</block>
-  <block id="3f402161942e4154684cf3f56c76cead" category="list-text">ReplicaSet입니다</block>
-  <block id="ec7eab019566cfca91934ab1e0073511" category="list-text">RoleBinding 을 클릭합니다</block>
-  <block id="bbbabdbe1b262f75d99d62880b953be1" category="list-text">역할</block>
-  <block id="9405c3aff9112c3c60d03b94792877dc" category="list-text">루트</block>
-  <block id="1e6947ac7fb3a9529a9726eb692c8cc5" category="list-text">비밀</block>
-  <block id="c2ba7e785c49050f48da9aacc45c2b85" category="list-text">서비스</block>
-  <block id="5c24ffd6438853b537bd99b3fccd3340" category="list-text">서비스 계정</block>
-  <block id="f202d1133673fa6cfe280880cbc3ee66" category="list-text">StatefulSet 을 선택합니다</block>
-  <block id="91e292ade0a336af19f1ac0977215b91" category="list-text">Webhook을 확인합니다</block>
   <block id="b8f3bc1c4097cf013ff9bb82ec30af2e" category="section-title">지원되는 앱 설치 방법</block>
   <block id="1633320139361ee32414ab0910725238" category="list-text">* 매니페스트 파일 *: Astra Control은 kubctl을 사용하여 매니페스트 파일에서 설치된 앱을 지원합니다. 예를 들면 다음과 같습니다.</block>
   <block id="a117e5ae155bb69285242a4c89875dd6" category="list-text">* Helm 3 *: Helm을 사용하여 앱을 설치하는 경우 Astra Control에 Helm 버전 3이 필요합니다. Helm 3(또는 Helm 2에서 Helm 3으로 업그레이드)과 함께 설치된 앱의 관리 및 클론 생성이 완벽하게 지원됩니다. Helm 2가 설치된 앱 관리는 지원되지 않습니다.</block>
@@ -1164,11 +1143,6 @@
   <block id="a11a0e1d242df8616f3c50d7c65bb304" category="list-text">작업을 확인하려면 "remove"를 입력합니다.</block>
   <block id="ba2f6425b8f267dbd5a2f8ddb2f7116a" category="list-text">예, 버킷 제거 * 를 선택합니다.</block>
   <block id="9c83e144e5481ac6766f4055e566594d" category="section-title">자세한 내용을 확인하십시오</block>
-  <block id="639125955d3128c08b048bc254433dbf" category="cell">경작업</block>
-  <block id="f82570cd8dd080fcb0fe525f9b081bdb" category="cell">HorizontalPodAutoscaler</block>
-  <block id="d8babd242bd93046572e7f50a3fbb394" category="cell">팟캐스트 예산</block>
-  <block id="3f4dbf8b7a689375f651090e7a111098" category="cell">팟캐스트 템플릿</block>
-  <block id="c794a682153b998c6dca3efddf650512" category="cell">네트워크 정책</block>
   <block id="e2422705f78eff49e43f16a31a8f0847" category="section-title">프라이빗 클러스터 관리</block>
   <block id="37d0b0adf169e682e19c955d0cd73c29" category="list-text">Astra Connector 연산자에 대한 네임스페이스를 만듭니다.</block>
   <block id="38da14ec20cf0841c7dc45fab0adbf07" category="list-text">astraconnector_operator.yaML 파일을 운용자 namespace에 적용한다.</block>
@@ -1785,8 +1759,6 @@
   <block id="5c227ef4d58eed958f28dbf199bfbaad" category="list-text">시작하기 전에, 또한 이해해야 합니다 <block ref="8168216ca124f830e0a917cd26a29d8e" category="inline-link-macro-rx"></block>.</block>
   <block id="9c2493f3c86c9672c359e50cc2e1f743" category="inline-link-macro">네임스페이스 제약 조건을 사용하여 사용자 역할 수정</block>
   <block id="64443e478ec258a769dbd46a51e212af" category="list-text">Astra Control에서 앱과 여러 네임스페이스를 사용하려는 경우 고려해 보십시오 <block ref="f6ecb96773fcc25458fe25947dd92e28" category="inline-link-macro-rx"></block> 앱을 정의하기 전에</block>
-  <block id="23933fe5cfee8cef6dcf2e9c76674773" category="example-title">&lt;strong&gt; 클러스터 범위 리소스를 앱 네임스페이스에 추가하는 방법에 대한 &lt;/strong&gt;에 대해 자세히 알아보십시오.</block>
-  <block id="42eb29ab06c150f146256489fbb31f3d" category="paragraph">Namesed-Paced 리소스와 연결된 클러스터 리소스와 함께 자동으로 포함된 Astra Control을 가져올 수 있습니다. 특정 그룹, 종류, 버전 및 레이블(선택 사항)의 리소스를 포함할 규칙을 추가할 수 있습니다. Astra Control에 자동으로 포함되지 않는 리소스가 있는 경우 이 작업을 수행할 수 있습니다.</block>
   <block id="86584cfcf6ac47eda80aaeeb3808d02b" category="paragraph">Astra Control에 의해 자동으로 포함되는 클러스터 범위 리소스는 제외할 수 없습니다.</block>
   <block id="8b3aa3648af6fe384bf33e5384fcc7b4" category="paragraph">다음을 추가할 수 있습니다<block ref="aec49c7ac598bde0d65853ea9807c58f" prefix=" " category="inline-code"></block> (API 버전과 결합된 그룹):</block>
   <block id="3ba5d3eff61255f7c7727fb4ed8cdbc6" category="cell">자원 종류</block>
@@ -1822,7 +1794,6 @@
   <block id="43448f8497139ffbc9a461d85db8c731" category="paragraph">Kubernetes 클러스터 간에 애플리케이션 및 스토리지를 이동해야 하는 경우 클로닝에 도움이 될 수 있습니다. 예를 들어, CI/CD 파이프라인과 Kubernetes 네임스페이스 전체에서 워크로드를 이동할 수 있습니다.</block>
   <block id="7d754e7d4f4a324710302cf0fc4d80c2" category="list-text">앱을 다른 클러스터에 클론 복제하려면 소스 및 대상 클러스터가 포함된 클라우드 인스턴스(동일하지 않은 경우)에 기본 버킷이 있는지 확인해야 합니다. 각 클라우드 인스턴스에 대해 기본 버킷을 할당해야 합니다.</block>
   <block id="81eb21a03d5ee9fbe847337ca76b57dc" category="list-title">클론 제한 사항</block>
-  <block id="676ff7d1c1d92284765be9dd54f79974" category="list-text">* 명시적 스토리지 클래스 *: StorageClass가 명시적으로 설정된 앱을 배포하고 앱을 복제해야 하는 경우 타겟 클러스터에 원래 지정된 StorageClass가 있어야 합니다. 명시적으로 StorageClass를 동일한 StorageClass가 없는 클러스터로 설정한 애플리케이션을 클론 복제하면 실패합니다.</block>
   <block id="d32d7bd30d168502b9d4ee99b9925378" category="list-text">* 클론 및 사용자 제약 조건 *: 네임스페이스 이름/ID 또는 네임스페이스 레이블에 의해 네임스페이스 제한이 있는 구성원 사용자는 동일한 클러스터의 새 네임스페이스 또는 조직 계정의 다른 클러스터에 앱을 클론 복제하거나 복원할 수 있습니다. 그러나 동일한 사용자가 새 네임스페이스에서 복제되거나 복원된 앱에 액세스할 수 없습니다. 클론 또는 복원 작업을 통해 새 네임스페이스를 생성한 후 계정 관리자/소유자는 구성원 사용자 계정을 편집하고 영향을 받는 사용자의 역할 제약 조건을 업데이트하여 새 네임스페이스에 대한 액세스 권한을 부여할 수 있습니다.</block>
   <block id="c65bdc145f9acf12c31ad3d52e08fe52" category="list-text">* 클론은 기본 버킷 사용 *:</block>
   <block id="1ade1b88410965a836b19fcf7588f87f" category="list-text">애플리케이션 백업 또는 애플리케이션 복원 중에 사용할 버킷을 지정할 수 있습니다. 클러스터 간에 클론을 생성할 때 기본 버킷을 지정해야 하지만 같은 클러스터 내에서 클론을 생성할 때는 버킷을 지정할 필요가 없습니다.</block>
@@ -2081,4 +2052,29 @@
   <block id="e7f7ae1f9423fb8774a02e2ae647e158" category="list-text">NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 사용하려는 경우 Microsoft Azure와 연동하도록 Cloud Volumes ONTAP를 구성해야 합니다. Cloud Volumes ONTAP를 참조하십시오<block ref="8bd14818004729c0926343811de7e4e9" category="inline-link-rx"></block>.</block>
   <block id="d75122947e3b2c3b0a4b44dfa3966432" category="list-text">NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 사용하려는 경우 Cloud Volumes ONTAP이 Google Cloud와 연동되도록 구성해야 합니다. Cloud Volumes ONTAP를 참조하십시오<block ref="3a89728ad1d2dcbb16e661d8af8129b1" category="inline-link-rx"></block>.</block>
   <block id="cac25a8107e0ae4e458a81d1cd3dc8d2" category="list-text">NetApp 스토리지를 사용 중이거나 사용할 계획인 경우, 최신 버전의 Astra Trident를 설치했는지 확인합니다.</block>
+  <block id="972bcf4ffaa6d6b2c50833f0c86517d2" category="list-text">* 스토리지 클래스 *: 스토리지 클래스가 명시적으로 설정된 앱을 설치하고 앱을 복제해야 하는 경우 클론 작업의 타겟 클러스터에 원래 지정된 스토리지 클래스가 있어야 합니다. 명시적으로 설정된 스토리지 클래스를 가진 애플리케이션을 동일한 스토리지 클래스가 없는 클러스터로 클론 복제하면 실패합니다.</block>
+  <block id="e5de374e1d369bfc7e8ec51b5b744933" category="cell"><block ref="a941f8adb5ae079ebc739cb59407fd30" prefix="" category="inline-code"></block></block>
+  <block id="be5e0e20ce0e311437852c90af7c8276" category="cell"><block ref="639125955d3128c08b048bc254433dbf" prefix="" category="inline-code"></block></block>
+  <block id="0302c657e0585c41f2f6278beec1daa8" category="cell"><block ref="0d4eb61dc57afc7f3f8d51439c96eedd" prefix="" category="inline-code"></block></block>
+  <block id="3ef1c1f8bb4a9f17e4c3be129db67366" category="cell"><block ref="788c34b60baf42eb1cac433ba1f0b64a" prefix="" category="inline-code"></block></block>
+  <block id="fd8848399c1c55827bc0b79969e1e4a0" category="cell"><block ref="f82570cd8dd080fcb0fe525f9b081bdb" prefix="" category="inline-code"></block></block>
+  <block id="965155af507b897bd6e77dffd6aa0722" category="cell"><block ref="7d05c708b92b4809bfe9bf66edf8f765" prefix="" category="inline-code"></block></block>
+  <block id="77a106c2fd00e72732b9ca603f027479" category="cell"><block ref="1fcd027e4be180b1536eba3afa93e6be" prefix="" category="inline-code"></block></block>
+  <block id="e4fee35090e28014a028d2aacbc2dfd5" category="cell"><block ref="c794a682153b998c6dca3efddf650512" prefix="" category="inline-code"></block></block>
+  <block id="663d2d3603ff41da6cc6ee0a9ff5b975" category="cell"><block ref="2b3f8e4d49589c4452db0a07d619d824" prefix="" category="inline-code"></block></block>
+  <block id="82873de0f5b2ce17a8ae3c45fcdec32d" category="cell"><block ref="8a0813c70cf4bf1529f25c411a039130" prefix="" category="inline-code"></block></block>
+  <block id="11a7948f05eed04b034eed441c4f1d17" category="cell"><block ref="d8babd242bd93046572e7f50a3fbb394" prefix="" category="inline-code"></block></block>
+  <block id="93bca2ba13d4fcb7387baa5778fc009d" category="cell"><block ref="3f4dbf8b7a689375f651090e7a111098" prefix="" category="inline-code"></block></block>
+  <block id="2670a6aa236e5c7b5bd441bb5649af10" category="cell"><block ref="3f402161942e4154684cf3f56c76cead" prefix="" category="inline-code"></block></block>
+  <block id="b4686556afaf1bba0c5270574ca15c54" category="cell"><block ref="bbbabdbe1b262f75d99d62880b953be1" prefix="" category="inline-code"></block></block>
+  <block id="048d158959fcf004be385e1567033fe6" category="cell"><block ref="ec7eab019566cfca91934ab1e0073511" prefix="" category="inline-code"></block></block>
+  <block id="256f986a2a64bf0d93697e4176b13a4a" category="cell"><block ref="9405c3aff9112c3c60d03b94792877dc" prefix="" category="inline-code"></block></block>
+  <block id="793e5af2d1d35f01083c2714054795ba" category="cell"><block ref="1e6947ac7fb3a9529a9726eb692c8cc5" prefix="" category="inline-code"></block></block>
+  <block id="4074550b4bbee6a4267a989b94eb3c28" category="cell"><block ref="c2ba7e785c49050f48da9aacc45c2b85" prefix="" category="inline-code"></block></block>
+  <block id="650c66e0a27f30ae0cf2d7b83b772b35" category="cell"><block ref="5c24ffd6438853b537bd99b3fccd3340" prefix="" category="inline-code"></block></block>
+  <block id="9c396e0c60d319972f63a0023186f42a" category="cell"><block ref="f202d1133673fa6cfe280880cbc3ee66" prefix="" category="inline-code"></block></block>
+  <block id="e69175cacbe45336f1df22a8b3b32254" category="cell"><block ref="91e292ade0a336af19f1ac0977215b91" prefix="" category="inline-code"></block></block>
+  <block id="dcb9a5ddd39d8514ddcd5a64c129a6b0" category="example-title">앱 네임스페이스에 클러스터 범위 리소스를 추가하는 방법에 대해 자세히 알아보십시오.</block>
+  <block id="9497a649f72a465537e088cd33f63b26" category="paragraph">Namespace 리소스와 연결된 클러스터 리소스 및 자동으로 포함된 Astra Control을 가져올 수 있습니다. 특정 그룹, 종류, 버전 및 레이블(선택 사항)의 리소스를 포함할 규칙을 추가할 수 있습니다. Astra Control에 자동으로 포함되지 않는 리소스가 있는 경우 이 작업을 수행할 수 있습니다.</block>
+  <block id="b9e5ceb3ee51c79795e57043d65ace4f" category="list-text">* 명시적 스토리지 클래스 *: 스토리지 클래스가 명시적으로 설정된 앱을 배포하고 앱을 복제해야 하는 경우 타겟 클러스터에 원래 지정된 스토리지 클래스가 있어야 합니다. 명시적으로 설정된 스토리지 클래스를 가진 애플리케이션을 동일한 스토리지 클래스가 없는 클러스터로 클론 복제하면 실패합니다.</block>
 </blocks>
