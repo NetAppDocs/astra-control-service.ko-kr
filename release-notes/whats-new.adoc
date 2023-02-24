@@ -23,9 +23,9 @@ NetApp은 새로운 기능, 개선 사항 및 버그 수정을 제공하기 위�
 +
 link:../use/manage-app-execution-hooks.html["앱 실행 후크 관리"]
 
-* NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 지원(Microsoft Azure 및 Google Cloud 플랫폼에서 공식 지원)
+* NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 지원합니다
 +
-link:../learn/architecture.html#astra-control-components["아키텍처 및 구성 요소"]
+link:../get-started/intro.html["Astra Control에 대해 알아보십시오"]
 
 
 

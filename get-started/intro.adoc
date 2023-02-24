@@ -64,6 +64,7 @@ Astra Control은 두 가지 배포 모델로 제공됩니다.
 +
 ** Amazon EBS
 ** NetApp ONTAP용 Amazon FSx
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["Cloud Volumes ONTAP"^]
 
 
 
