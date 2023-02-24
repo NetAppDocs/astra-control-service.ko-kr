@@ -51,9 +51,9 @@ Astra Control Service는 PVC가 더 작은 볼륨 크기를 요구하더라도 �
 
 
 
-== Azure로 관리되는 디스크
+== Azure 관리 디스크
 
-Astra Control Service는 Azure 관리 디스크를 스토리지 백엔드 옵션으로 지원합니다. 이 서비스는 Azure에서 관리하는 블록 레벨 스토리지를 제공합니다.
+Astra Control Service는 CSI(Container Storage Interface) 드라이버를 사용하여 Azure 관리 디스크와 스토리지 백엔드로 인터페이스할 수 있습니다. 이 서비스는 Azure에서 관리하는 블록 레벨 스토리지를 제공합니다.
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure 관리 디스크에 대해 자세히 알아보십시오"^].
 

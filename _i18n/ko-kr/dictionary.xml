@@ -535,7 +535,6 @@
   <block id="a5f0d81b6dacdc3d6dd4b5e1957fc397" category="paragraph">Astra Control Service는 PVC가 더 작은 볼륨 크기를 요청하더라도 CVS 서비스 유형의 최소 볼륨 크기 300GiB를 사용하여 영구 볼륨을 프로비저닝합니다. 예를 들어 20GiB가 요청되면 Astra Control Service는 300GiB 볼륨을 자동으로 프로비저닝합니다.</block>
   <block id="a6970f67086975857f95d5d598afacd7" category="paragraph">제한 사항으로 인해 PVC가 700-999 GiB의 볼륨을 요청하는 경우 Astra Control Service는 자동으로 1000GiB의 볼륨 크기를 프로비저닝합니다.</block>
   <block id="4ea21227490cfda88113ac9e09c3d896" category="section-title">Google 영구 디스크</block>
-  <block id="5165c93eed8a6988e2abc470bf4d0bbe" category="paragraph">Astra Control Service는 Google 영구 디스크를 스토리지 백엔드 옵션으로 지원합니다. 이 서비스는 Google에서 관리하는 블록 레벨 스토리지를 제공합니다.</block>
   <block id="c533b58a8522da4b56509ffdf8f54226" category="inline-link">Google 영구 디스크에 대해 자세히 알아보십시오</block>
   <block id="39c44ccf09904735b47f23a89ee2e724" category="paragraph"><block ref="055a60e2d0748ea0284ea572aa51a82d" category="inline-link-rx"></block>.</block>
   <block id="a314ef41007da089aa4ae498f35e3a10" category="inline-link">Google 영구 디스크의 다양한 성능 수준에 대해 자세히 알아보십시오</block>
@@ -562,7 +561,6 @@
   <block id="1c4c03fddfe9018e07fad3e8219a1aae" category="paragraph">위에서 설명한 것처럼 각 서비스 수준의 처리량은 프로비저닝된 용량의 1TiB입니다. 다시 말해, 볼륨이 클수록 성능이 향상됩니다. 따라서 볼륨을 프로비저닝할 때 용량 및 성능 요구사항을 모두 고려해야 합니다.</block>
   <block id="73d58bce64935ac37f26ef1b6d250e13" category="paragraph">Astra Control Service는 PVC가 더 작은 볼륨 크기를 요구하더라도 최소 볼륨 크기 100GiB를 사용하여 영구 볼륨을 프로비저닝합니다. 예를 들어, Hrom 차트의 PVC가 6GiB를 요청하는 경우 Astra Control Service는 자동으로 100GiB 볼륨을 프로비저닝합니다.</block>
   <block id="7a4db5e977cc2bc82255e20ed9b93c4d" category="section-title">Azure로 관리되는 디스크</block>
-  <block id="a78513acd713c2d45f9956aec22c3e19" category="paragraph">Astra Control Service는 Azure 관리 디스크를 스토리지 백엔드 옵션으로 지원합니다. 이 서비스는 Azure에서 관리하는 블록 레벨 스토리지를 제공합니다.</block>
   <block id="9c92b8240042e913292ad9bea8c7698f" category="inline-link">Azure 관리 디스크에 대해 자세히 알아보십시오</block>
   <block id="ff42fb74ba93da15d304e42948c0b518" category="paragraph"><block ref="250fe5b998dd6cb4de09bf9afa3806e9" category="inline-link-rx"></block>.</block>
   <block id="ff24590464659ee8cdec688128c35f89" category="list-text">복제</block>
@@ -1939,7 +1937,6 @@
   <block id="adb43c383a88e1f2946ab2e72ac03918" category="section-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> Azure 서비스 보안 주체 만들기</block>
   <block id="115d465e8b862905dee97dfc00687f80" category="section-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> 컨테이너 스토리지 인터페이스(CSI) 드라이버 세부 정보를 구성합니다</block>
   <block id="4ba43802facfe67533d744cbe8965137" category="section-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> 선택 사항: Azure 백업 버킷의 중복성을 구성합니다</block>
-  <block id="c969f450a50c240b276b1959fc3eb534" category="paragraph">EBS를 EKS 클러스터의 스토리지 백엔드로 사용하는 경우 일부 스토리지 클래스 매개 변수를 구성할 수 있습니다. 매개 변수의 의미와 매개 변수를 구성하는 방법에 대한 자세한 내용은 을 참조하십시오<block ref="efa17ec338493b6d9caef44d32a8989a" category="inline-link-rx"></block>.</block>
   <block id="37a9edbcd89980d7a6ec52943de6e692" category="paragraph">각 볼륨 유형 및 성능에 대한 자세한 내용은 을 참조하십시오<block ref="7ac340f30d3ddae2dcb4baa266ef78ba" category="inline-link-rx"></block>. 가격 정보는 을 참조하십시오<block ref="7729091ef10325fb607ffe76c346cfed" category="inline-link-rx"></block>.</block>
   <block id="573eae71a4ffbba9a137bcf0add56e46" category="paragraph">NetApp ONTAP용 FSx를 AWS 클러스터의 스토리지 백엔드로 사용하는 경우, I/O 성능은 파일 시스템의 구성과 워크로드의 특성에 따라 달라집니다. NetApp ONTAP 성능을 위한 FSx에 대한 자세한 내용은 을 참조하십시오<block ref="45a884cbefaf34ae6fd7defa1c6be8c3" category="inline-link-rx"></block>. 가격 정보는 을 참조하십시오<block ref="1fe52440a36dc241abcf36facca2f97a" category="inline-link-rx"></block>.</block>
   <block id="676a48d63ffa9fc8110c816cc1f05f58" category="section-title">Astra Trident가 클러스터에서 제거되지 않았습니다</block>
@@ -2018,7 +2015,6 @@
   <block id="bb17f0baba089b794a1fc9ae3b93d1ea" category="list-text">(선택 사항) 제공해야 하는 경우<block ref="0f12ee5c9f1dd90158580f1c292b0d37" prefix=" " category="inline-code"></block> 클러스터 생성자가 아닌 다른 IAM 사용자에 대한 클러스터에 대한 명령 액세스는 의 지침을 참조하십시오<block ref="47c83e7583e126455b2245655ede1c60" category="inline-link-rx"></block>.</block>
   <block id="aeb77ff86c2121f885bfa9ef656948a5" category="list-text">서비스 보안 주체를 생성할 때 Azure CLI의 출력이 포함된 JSON 파일이 있어야 합니다. <block ref="63026405246b8ab97c47baaea735ffe8" category="inline-link-macro-rx"></block>.</block>
   <block id="2419fe48841fc722c6b0c9167faf2fb9" category="list-text">필요한 권한이 있는 서비스 계정에 대한 서비스 계정 키 파일이 있어야 합니다. <block ref="9215258f7e020d0c05367a1a3bfd0982" category="inline-link-macro-rx"></block>.</block>
-  <block id="ac3bb3e8177657e75082233c58971d93" category="paragraph">자체 관리 클러스터는 Astra Trident를 사용하여 NetApp 스토리지 서비스와 인터페이스하거나 CSI(컨테이너 스토리지 인터페이스) 드라이버를 사용하여 다른 스토리지 서비스와 인터페이스할 수 있습니다.</block>
   <block id="3b9c73125ae4cc5ab9bb00104b4598d8" category="paragraph">Astra Control Service는 다음과 같은 Kubernetes 배포를 사용하여 자체 관리 클러스터를 지원합니다.</block>
   <block id="fd89bb4228981d3b22187eb451421cd6" category="list-text">Red Hat OpenShift Container Platform</block>
   <block id="bbd7c7ef752c876494ec0af98dd0b63a" category="list-text">Rancher Kubernetes 엔진</block>
@@ -2078,4 +2074,8 @@
   <block id="afe823403603f8e45a82a192de4f1f39" category="paragraph"><block ref="afe823403603f8e45a82a192de4f1f39" category="inline-link-macro-rx"></block></block>
   <block id="43f10e14cfc78f2dccf4af9115390a26" category="list-text"><block ref="43f10e14cfc78f2dccf4af9115390a26" category="inline-link-rx"></block></block>
   <block id="aa2317f5569d30b7aac1b41dd02ffe97" category="list-text">NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 사용하려는 경우 Amazon Web Services와 연동되도록 Cloud Volumes ONTAP를 구성해야 합니다. Cloud Volumes ONTAP를 참조하십시오<block ref="c40ff22452592aa319388d1d94a0a32e" category="inline-link-rx"></block>.</block>
+  <block id="892bb983e85684c863a4bf11d26d064e" category="paragraph">Astra Control Service는 CSI(Container Storage Interface) 드라이버를 사용하여 Azure 관리 디스크와 스토리지 백엔드로 인터페이스할 수 있습니다. 이 서비스는 Azure에서 관리하는 블록 레벨 스토리지를 제공합니다.</block>
+  <block id="46625131314080c123c1a23c969aa3a8" category="paragraph">Astra Control Service는 CSI(Container Storage Interface) 드라이버를 사용하여 Google 영구 디스크와 스토리지 백엔드로 인터페이스할 수 있습니다. 이 서비스는 Google에서 관리하는 블록 레벨 스토리지를 제공합니다.</block>
+  <block id="4d2a3e63d994334eaa09e7217ed0d01d" category="paragraph">클러스터는 컨테이너 스토리지 인터페이스(CSI) 드라이버를 사용하여 EBS와 인터페이스할 수 있습니다. EBS를 EKS 클러스터의 스토리지 백엔드로 사용하는 경우 일부 스토리지 클래스 매개 변수를 구성할 수 있습니다. 매개 변수의 의미와 매개 변수를 구성하는 방법에 대한 자세한 내용은 을 참조하십시오<block ref="efa17ec338493b6d9caef44d32a8989a" category="inline-link-rx"></block>.</block>
+  <block id="4c59c334ed6b80e6cd8237e6f14cf9cb" category="paragraph">자체 관리 클러스터는 Astra Trident를 사용하여 NetApp 스토리지 서비스와 인터페이스하거나 CSI(컨테이너 스토리지 인터페이스) 드라이버를 사용하여 Amazon EBS(Elastic Block Store), Azure Managed Disks 및 Google Persistent Disk와 인터페이스할 수 있습니다.</block>
 </blocks>
