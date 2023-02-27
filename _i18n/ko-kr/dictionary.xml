@@ -447,35 +447,23 @@
   <block id="b50343ac8865ee6508570846230e18d5" category="list-text">기존 스냅샷이나 백업에서 클론을 생성할지 여부를 선택합니다. 이 옵션을 선택하지 않으면 Astra Control이 앱의 현재 상태에서 클론을 생성합니다.</block>
   <block id="5dfe25ebe8ed6ed27f2613aa48ba8e44" category="summary">추가 버킷을 추가하고 클라우드 공급자의 클러스터에 대한 기본 버킷을 변경하여 Astra가 백업 및 클론에 사용하는 버킷을 관리합니다.</block>
   <block id="79aa9197dc185dded5eb383a683a5219" category="doc">버킷을 관리합니다</block>
-  <block id="701fefec60508e3dfbab28e42cc34eec" category="paragraph">관리자만 버킷을 추가하고 수정할 수 있습니다.</block>
   <block id="281b980af7a696eab76fe5424a68e4d7" category="section-title">Astra Control이 버킷을 사용하는 방식</block>
-  <block id="7235bf4965aea4d7801668a2ba85f9bd" category="paragraph">첫 번째 Kubernetes 클러스터 관리를 시작할 때 Astra Control Service는 관리형 클러스터와 같은 지리적 위치에서의 클라우드 공급자 기본 버킷을 생성합니다.</block>
-  <block id="2a84d8a5024fb227d8832c858544bc54" category="paragraph">Astra Control Service는 사용자가 생성한 백업 및 클론에 이 기본 버킷을 사용합니다. 그런 다음 백업을 사용하여 클러스터 간에 앱을 복원 및 클론 복제할 수 있습니다.</block>
-  <block id="29de4658324b1b89cfc8d2758855b3af" category="paragraph">Astra Control Service에 추가 버킷을 추가하는 경우 보호 정책을 생성할 때 해당 버킷 중에서 선택할 수 있습니다. 또한 Astra Control Service가 임시 백업 및 클론에 사용하는 기본 버킷을 변경할 수 있습니다. 하나의 클라우드 공급자에서 다른 클라우드 공급자로 버킷을 클론 복제할 수 없습니다. 클라우드 공급자 간에 데이터를 마이그레이션하려면 연결된 애플리케이션을 클론 복제하십시오.</block>
   <block id="1c5f75566062a39b61ef6696a869091d" category="admonition">Astra Control Service는 백업 또는 클론을 시작하기 전에 대상 버킷에 액세스할 수 있는지 여부를 확인합니다.</block>
   <block id="29e296e0892cf7d05ecaa6f006dc0cfe" category="section-title">기존 버킷을 봅니다</block>
-  <block id="6565a5299bf8c25c8e365589000e2011" category="paragraph">Astra Control Service에서 사용할 수 있는 버킷 목록을 보고 해당 상태를 확인하고 클라우드 공급자의 기본 버킷을 식별합니다.</block>
   <block id="43d755e706daf2d2de44fad5f4d40c32" category="paragraph">버킷은 다음 상태 중 하나를 가질 수 있습니다.</block>
   <block id="2d13df6f8b5e4c5af9f87e0dc39df69d" category="list-text">보류 중</block>
-  <block id="7cd977582dd42dece1bfe950a66ada8d" category="list-text">버킷을 추가한 후 보류 중인 상태에서 시작하여 Astra Control이 처음으로 이 버킷을 확인합니다.</block>
   <block id="78945de8de090e90045d299651a68a9b" category="list-text">사용 가능</block>
   <block id="b929c2e306e0e2ca8ce456f7f94f1faa" category="list-text">이 버킷은 Astra Control에서 사용할 수 있습니다.</block>
   <block id="93f07b720ebf7d1246512569761a5804" category="list-text">제거되었습니다</block>
   <block id="b41363ff8976fae49b049f0329b8f1ba" category="list-text">현재는 버킷이 작동하지 않습니다. 상태 아이콘 위에 마우스를 올려 놓으면 문제가 무엇인지 확인할 수 있습니다.</block>
   <block id="3ad229e98a040883d52a865d289709ef" category="paragraph">버킷이 제거된 상태인 경우에도 기본 버킷으로 설정하고 보호 일정에 할당할 수 있습니다. 하지만 데이터 보호 작업이 시작될 때 버킷이 가용 상태가 아니면 해당 작업이 실패합니다.</block>
   <block id="48c7c41b72e1d678923ce3571aa65b2d" category="list-title">단계</block>
-  <block id="5d2bbbb5e8eadfe7beda56382db3b48e" category="paragraph">Astra Control Service에서 사용할 수 있는 버킷 목록이 표시됩니다.</block>
   <block id="97051796d8399cbd22e680d3212aa1c0" category="section-title">추가 버킷을 추가합니다</block>
-  <block id="9c6ebb12d9cd173ee88e3b73cabe77b4" category="paragraph">클라우드 공급자에서 클러스터 관리를 시작한 후에는 언제든지 추가 버킷을 추가할 수 있습니다. 따라서 보호 정책을 생성할 때 버킷 중에서 선택하고 임시 백업 및 클론의 기본 버킷을 변경할 수 있습니다.</block>
-  <block id="dd6354a9b0182f27b3ea1d07811a3bdd" category="list-text">클라우드 공급자에 있는 기존 버킷의 이름입니다.</block>
   <block id="b21aa3a75aa9fe5b7c4320c651dd6004" category="list-text">추가 * 를 선택하고 프롬프트에 따라 버킷을 추가합니다.</block>
   <block id="833eb3b04501929e168dbcfe3328a358" category="list-text">* 유형 *: 클라우드 공급자를 선택하십시오.</block>
-  <block id="3cb658c17327b8e0fdf35e63798291f2" category="paragraph">클라우드 공급자는 Astra Control Service가 해당 클라우드 공급자에서 실행 중인 클러스터를 관리하기 시작한 후에만 사용할 수 있습니다.</block>
   <block id="48dbd6506b2a3bf46642f68dced2c90f" category="list-text">* 기존 버킷 이름 *: 버킷의 이름을 입력합니다.</block>
   <block id="2748cc7be12db184f15633496762281f" category="list-text">* 설명 *: 버킷에 대한 설명을 선택적으로 입력합니다.</block>
-  <block id="833ccc7f60627a26323104a362bc1335" category="list-text">* 자격 증명 선택 *: Astra Control Service에 버킷 관리에 필요한 권한을 제공하는 자격 증명을 선택합니다.</block>
   <block id="621fd3eeb2e69c8bf3ab93a1c00d4627" category="list-text">버킷을 추가하려면 * 추가 * 를 선택합니다.</block>
-  <block id="eca980095ee0892315ee71b705935c75" category="paragraph">Astra Control Service는 추가 버킷을 추가합니다. 이제 보호 정책을 생성할 때 버킷을 선택할 수 있습니다.</block>
   <block id="05cec507b249987c2956da6a81ee5bfc" category="section-title">기본 버킷을 변경합니다</block>
   <block id="a322f45d2fd04fbfd61da44bba143d00" category="list-text">편집할 버킷의 * Actions * 열에서 드롭다운 목록을 선택합니다.</block>
   <block id="35165f9b14f6cde03fa7f6f9b03732ba" category="list-text">Update * 를 선택합니다.</block>
@@ -1732,10 +1720,7 @@
   <block id="bc044e78d97d319b1d70c1a7d2370e89" category="list-text">클러스터 관리를 해제할지 확인한 다음 * 예, 클러스터 관리 취소 * 를 선택합니다.</block>
   <block id="f4d5e36ed4f7235403e25ad1183d2684" category="paragraph">클러스터의 상태가 * Removing * 으로 변경됩니다. 그 이후에는 클러스터가 * Clusters * 페이지에서 제거되고 Astra Control Center에서 더 이상 관리되지 않습니다.</block>
   <block id="4271789f0046cfd66563e8d252266146" category="list-text">원하는 정보를 찾습니다.</block>
-  <block id="9af184e84356995ac4c8918f51c7485b" category="paragraph">추가 버킷을 추가하고 클라우드 인스턴스의 Kubernetes 클러스터에 대한 기본 버킷을 변경하여 Astra가 백업 및 클론에 사용하는 버킷을 관리합니다.</block>
   <block id="e1758c6f6621a3e5a0bfaa943496e946" category="list-text">버킷 * 으로 이동합니다.</block>
-  <block id="4a886d9c605f2bf7f4aea900d070fe5d" category="paragraph">Astra Control Service가 백업 및 클론에 사용해야 하는 기본 버킷을 변경합니다. 각 클라우드 인스턴스에는 고유한 기본 버킷이 있습니다.</block>
-  <block id="75af845e4fa71c7a41c06c0a3c88b4c9" category="paragraph">Astra Control Service는 기존 백업에서 클론을 생성하지 않도록 선택할 경우 임시 백업 및 임시 클론의 클라우드 인스턴스에 기본 버킷을 사용합니다.</block>
   <block id="38867862280a9a74de68db4ff64b0c99" category="admonition">Astra Control은 클라우드 인스턴스에 대해 기본 버킷을 자동으로 할당하지 않습니다. 두 클러스터 간에 애플리케이션 클론 작업을 수행하기 전에 클라우드 인스턴스의 기본 버킷을 수동으로 설정해야 합니다.</block>
   <block id="c8f4356f9cdb6220b5a26c45a1f08f5c" category="list-text">클라우드 인스턴스 * 로 이동합니다.</block>
   <block id="a12bc220068e139158f916293280d5ca" category="list-text">편집할 클라우드 인스턴스의 * 작업 * 열에서 구성 메뉴를 선택합니다.</block>
@@ -1956,9 +1941,7 @@
   <block id="3bbb62d82d2439f5a711823da7c1b762" category="paragraph">제약 조건 추가에 대한 자세한 내용은 을 참조하십시오 <block ref="f9b0c5590ff6fff298698f3844cae23c" category="inline-link-macro-rx"></block>.</block>
   <block id="edb74efc05972c268b6cccf83996ac3e" category="section-title">사용자의 역할을 변경합니다</block>
   <block id="bfba5acdae4cf2cfa2c86cce302038d4" category="paragraph">언제든지 계정에서 자격 증명을 제거합니다. 자격 증명은 이후에 제거해야 합니다 <block ref="7193f1b7f27bd5505d89cc1e5724fb4b" category="inline-link-macro-rx"></block>자격 증명을 순환하지 않는 경우( 참조 <block ref="029b7394eded829c95ca3b86c4cd802d" category="inline-xref-macro-rx"></block>)를 클릭합니다.</block>
-  <block id="df1dd0475d7e25b9e368f8f45f636062" category="list-text">* S3 서버 이름 또는 IP 주소 * (AWS만 해당): 해당 지역에 해당하는 S3 엔드포인트의 정규화된 도메인 이름을 입력하지 않고 입력합니다<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block>. 을 참조하십시오<block ref="398d47c523652edc934ec11e2f213d87" category="inline-link-rx"></block> 를 참조하십시오.</block>
   <block id="ce461936438c7221ad2aecef67b1e35b" category="paragraph">다른 앱과 리소스를 공유하는 앱에서 데이터 이동 없이 복원 작업을 수행하면 의도하지 않은 결과가 발생할 수 있습니다. 앱 간에 공유되는 모든 리소스는 앱 중 하나에서 데이터 이동 없이 복원이 수행될 때 교체됩니다.</block>
-  <block id="e13d6ee2f9c34bcf7366950e0434777b" category="list-text">버킷이 Azure에 있는 경우:</block>
   <block id="49030d2f464d7bb39691809e5ab16174" category="list-text">버킷은 _Astra-backup-rg_이라는 리소스 그룹에 속해야 합니다.</block>
   <block id="88bdaf7536fdf70e3c93df4a9b10bb82" category="list-text">Azure 저장소 계정 인스턴스 성능 설정이 "프리미엄"으로 설정된 경우 "프리미엄 계정 유형" 설정을 "Blob 차단"으로 설정해야 합니다.</block>
   <block id="ceeca391c3348d53722ec9783ba88430" category="inline-link">NetApp TV를 참조하십시오</block>
@@ -2080,4 +2063,27 @@
   <block id="8a69b368bc97dc428e1c6ae2e1c9127a" category="paragraph">자가 관리형 클러스터는 직접 프로비저닝하고 관리하는 클러스터입니다. Astra Control Service는 퍼블릭 클라우드 환경에서 실행되는 자체 관리형 클러스터를 지원합니다. 자체 관리 클러스터는 Astra Trident를 사용하여 NetApp 스토리지 서비스와 인터페이스하거나 CSI(컨테이너 스토리지 인터페이스) 드라이버를 사용하여 Amazon EBS(Elastic Block Store), Azure Managed Disks 및 Google Persistent Disk와 인터페이스할 수 있습니다.</block>
   <block id="84f2be4894042bb275e318dfd8a0a200" category="paragraph">Astra Control Service는 다음과 같은 Kubernetes 배포를 사용하는 자체 관리 클러스터를 지원합니다.</block>
   <block id="285cc7142d57c8f6e6a93562de77e160" category="list-text">클러스터는 사내 네트워크 내에서 호스팅할 수 없으며 퍼블릭 클라우드 환경에서 호스팅되어야 합니다.</block>
+  <block id="640efa26f79993654952b993dc173913" category="paragraph">Astra가 백업 및 클론에 사용하는 버킷을 관리할 수 있습니다. 클라우드 인스턴스에서 추가 버킷을 추가하고, 기존 버킷을 제거하고, Kubernetes 클러스터의 기본 버킷을 변경할 수 있습니다.</block>
+  <block id="dc84232f20d32b91962832143f003245" category="paragraph">소유자 및 관리자만 버킷을 관리할 수 있습니다.</block>
+  <block id="7848032099422e8ae377c985c3705168" category="inline-link-macro">클라우드 인스턴스</block>
+  <block id="bf0bf04063e1cb468dd2fb54de6873a5" category="paragraph">클라우드 인스턴스를 위한 첫 번째 Kubernetes 클러스터 관리를 시작할 때 Astra Control Service는 이를 위한 초기 버킷을 생성합니다 <block ref="bdf25979e5bbf85e72ec962a155a6460" category="inline-link-macro-rx"></block>.</block>
+  <block id="aa0c2d75f93fb0c2505fd3e861c58f2b" category="paragraph">수동으로 버킷을 클라우드 인스턴스의 기본 버킷으로 지정할 수 있습니다. 이 경우 Astra Control Service는 해당 클라우드 인스턴스의 관리되는 클러스터에서 생성한 백업 및 클론에 대해 기본적으로 이 버킷을 사용합니다(백업에 다른 버킷을 선택할 수 있음). 클라우드 인스턴스의 관리되는 클러스터에서 다른 클러스터로 애플리케이션의 라이브 클론을 수행하는 경우 Astra Control Service는 소스 클라우드 인스턴스에 대한 기본 버킷을 사용하여 클론 작업을 수행합니다.</block>
+  <block id="040c36c32cc16921a0d8e76864205f97" category="paragraph">여러 클라우드 인스턴스의 기본 버킷과 동일한 버킷을 설정할 수 있습니다.</block>
+  <block id="9cdc08c74979b53d19e32179009aee53" category="paragraph">보호 정책을 생성하거나 임시 백업을 시작할 때 모든 버킷에서 선택할 수 있습니다.</block>
+  <block id="51cb52f23ae88bfed8fd836ebbd95b20" category="paragraph">Astra Control Service에서 사용할 수 있는 버킷 목록을 보고 해당 상태를 확인하고 클라우드 인스턴스의 기본 버킷(정의된 경우)을 식별합니다.</block>
+  <block id="e0fea9249f8803684ddfc8a69358dae3" category="list-text">버킷을 추가하면 보류 중인 상태에서 시작되고 Astra Control이 이를 검색합니다.</block>
+  <block id="ebbb38114e12d2cf2a64401d66e59ee5" category="paragraph">Astra Control Service에서 사용할 수 있는 버킷 목록이 표시됩니다.</block>
+  <block id="b92c43f0ea0738d58f6db69143cc92c2" category="paragraph">언제든지 추가 버킷을 추가할 수 있습니다. 따라서 보호 정책을 생성하거나 임시 백업을 시작할 때 버킷 중에서 선택할 수 있으며, 클라우드 인스턴스에서 사용하는 기본 버킷을 변경할 수 있습니다.</block>
+  <block id="a2bebd837e70248fe12869981cf1dc7a" category="paragraph">다음 유형의 버킷을 추가할 수 있습니다.</block>
+  <block id="b2aa71ee04e531f0b6d1f084ba45f52f" category="list-text">일반 S3</block>
+  <block id="5c9ef0d871938dccceb29ee63fad8ddb" category="list-text">Google 클라우드 플랫폼</block>
+  <block id="df2c24964ca3e99761acc48b2c8a75c9" category="list-text">NetApp ONTAP S3</block>
+  <block id="ddcd79fba6592bc379dfa1df9f804760" category="list-text">NetApp StorageGRID S3</block>
+  <block id="6672ccc56ea3c90a45c58fe80c9b4ffb" category="list-text">기존 버킷의 이름입니다.</block>
+  <block id="318c639fce992245cde7b30e3ffd90cc" category="list-text">Astra Control Service를 제공하는 버킷에 대한 자격 증명에는 해당 버킷을 관리하는 데 필요한 권한이 부여됩니다.</block>
+  <block id="4405fa3b4f1902a766c5e3c5f421f98f" category="list-text">버킷이 Microsoft Azure에 있는 경우:</block>
+  <block id="637233086f906601c1bf3c43f9e1503a" category="list-text">* S3 서버 이름 또는 IP 주소 * (AWS 및 S3 버킷 유형만 해당): 해당 지역에 해당하는 S3 엔드포인트의 정규화된 도메인 이름을 에 입력합니다<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block>. 을 참조하십시오<block ref="398d47c523652edc934ec11e2f213d87" category="inline-link-rx"></block> 를 참조하십시오.</block>
+  <block id="8640a7c7370301ca0c61fe2e7d0e5170" category="list-text">* 자격 증명 선택 *: Astra Control Service에 버킷 관리에 필요한 권한을 제공하는 자격 증명을 입력합니다. 제공해야 하는 정보는 버킷 유형에 따라 다릅니다.</block>
+  <block id="21f6901f1009f7b8fc1d4c9d614493d7" category="paragraph">Astra Control Service가 버킷을 추가합니다. 이제 보호 정책을 생성하거나 임시 백업을 수행할 때 이 버킷을 선택할 수 있습니다. 이 버킷을 클라우드 인스턴스의 기본 버킷으로 설정할 수도 있습니다.</block>
+  <block id="68a2953dae168f957410960ed303cfe1" category="paragraph">클라우드 인스턴스의 기본 버킷을 변경할 수 있습니다. Astra Control Service는 기본적으로 백업 및 클론에 이 버킷을 사용합니다. 각 클라우드 인스턴스에는 고유한 기본 버킷이 있습니다.</block>
 </blocks>
