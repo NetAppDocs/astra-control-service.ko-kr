@@ -99,7 +99,9 @@ endif::azure[]
 
 * 자가 관리 클러스터:
 +
-** NetApp ONTAP AFF 및 FAS 시스템
+** Amazon EBS
+** Google 영구 디스크
+** Azure 관리 디스크
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
 
 
