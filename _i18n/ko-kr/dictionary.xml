@@ -409,10 +409,6 @@
   <block id="65e352dceaad77df9cf6dd1a76755c5c" category="list-text">앱과 관련된 Astra Control 활동입니다.</block>
   <block id="60487fcdacfcf0e2feb2363106047906" category="summary">자동화된 보호 정책을 사용하거나 필요에 따라 스냅샷과 백업을 생성하여 앱을 보호합니다.</block>
   <block id="c48341950d06dc5b2b657a869930da35" category="doc">스냅샷 및 백업으로 애플리케이션 보호</block>
-  <block id="a21e997b73eef6d37e2890a1fa07e1a9" category="section-title">스냅샷 및 백업</block>
-  <block id="703cd4ad217eb545975bc04b7fc26153" category="paragraph">snapshot_은 앱과 동일한 프로비저닝된 볼륨에 저장된 앱의 시점 복사본입니다. 대개 빠릅니다. 로컬 스냅샷은 애플리케이션을 이전 시점으로 복구하는 데 사용됩니다.</block>
-  <block id="2747db310010aa1d5a7b961fb241fcb0" category="paragraph">백업 _ 은(는) 클라우드의 오브젝트 스토리지에 저장됩니다. 로컬 스냅샷에 비해 백업 속도가 느려질 수 있습니다. 하지만 클라우드 내 여러 지역에서 액세스하여 앱을 마이그레이션할 수 있습니다. 또한 백업의 보존 기간을 더 길게 선택할 수도 있습니다.</block>
-  <block id="408410e994005339450ed31eabd8f6af" category="admonition">_최근 백업 _ 이(가) 있을 때까지 완전히 보호할 수 없습니다. 백업은 영구 볼륨으로부터 멀리 떨어진 개체 저장소에 저장되기 때문에 이 작업이 중요합니다. 장애 또는 사고로 인해 클러스터와 영구 스토리지가 손상된 경우 복구할 백업이 필요합니다. 스냅샷을 사용하면 복구할 수 없습니다.</block>
   <block id="2b44ed9b51c4c625419cf0a113f71811" category="section-title">보호 정책을 구성합니다</block>
   <block id="592d363442bda9d231d57bf7cf1b36d3" category="inline-link">Astra Control REST API를 사용하여 스냅샷과 백업을 생성합니다</block>
   <block id="33e0dd7ca49703e72c3862b5ef0de975" category="paragraph">보호 정책은 정의된 일정에 따라 스냅샷, 백업 또는 둘 다를 생성하여 앱을 보호합니다. 시간별, 일별, 주별 및 월별 스냅샷과 백업을 생성하도록 선택할 수 있으며, 보존할 복제본 수를 지정할 수 있습니다. 시간당 한 번 이상 백업 또는 스냅샷을 자주 실행해야 하는 경우 를 수행할 수 있습니다<block ref="e7190f2033c7866ebb246bbdd297729e" category="inline-link-rx"></block>.</block>
@@ -2087,4 +2083,18 @@
   <block id="7c68315054de23a17c2a6febe9d9d149" category="sidebar">Astra Control - 하이브리드 클라우드를 위한 애플리케이션 데이터 관리를 간소화합니다</block>
   <block id="aa396af981d56ce9483fdf506c608dee" category="list-text">앱을 다른 클러스터에 클론 복제하려면 소스 클러스터가 포함된 클라우드 인스턴스에 대한 기본 버킷을 할당해야 합니다. 소스 클라우드 인스턴스에 기본 버킷 세트가 없으면 클러스터 간 클론 작업이 실패합니다.</block>
   <block id="4c004df391027b81952b788a3802e37c" category="list-text">복원 또는 클론 작업 후에 실행되는 실행 후크에 네임스페이스 필터를 추가하고 복원 또는 클론 소스와 대상이 서로 다른 네임스페이스에 있는 경우 네임스페이스 필터는 대상 네임스페이스에만 적용됩니다.</block>
+  <block id="a969ea74e186a4736ce18134eaf42f1a" category="summary">Astra Control Service에서 사용 가능한 데이터 보호 유형과 이를 사용하여 앱을 보호하는 최선의 방법에 대해 알아보십시오.</block>
+  <block id="646e605e86066bd9485e0c23704757f2" category="section-title">스냅샷, 백업 및 보호 정책</block>
+  <block id="cca8aaa6dccaa81bdbc26387b1f1bc63" category="paragraph">스냅샷과 백업 모두 다음과 같은 유형의 데이터를 보호합니다.</block>
+  <block id="adac08ac006f9d65c559347c106461c7" category="list-text">애플리케이션 자체입니다</block>
+  <block id="6c94a6e4d564092b6e6d44dbc8e77b07" category="list-text">애플리케이션과 연결된 모든 영구 데이터 볼륨</block>
+  <block id="7dfd52c396a70e3d3406a3363ed74be4" category="list-text">응용 프로그램에 속하는 모든 리소스 아티팩트가 있습니다</block>
+  <block id="8d2f06a986c63f2706decd28b4e24967" category="paragraph">snapshot_은 앱과 동일한 프로비저닝된 볼륨에 저장된 앱의 시점 복사본입니다. 대개 빠릅니다. 로컬 스냅샷을 사용하여 애플리케이션을 이전 시점으로 복원할 수 있습니다. 스냅샷은 빠른 클론에 유용합니다. 스냅샷에는 구성 파일을 포함하여 앱의 모든 Kubernetes 객체가 포함됩니다. 스냅샷은 동일한 클러스터 내에서 앱을 클론 생성하거나 복원하는 데 유용합니다.</block>
+  <block id="d3472e0a53fc9484c0dd7ec15e76da1d" category="paragraph">백업 _ 은(는) 스냅샷을 기반으로 합니다. 외부 오브젝트 저장소에 저장되며, 이로 인해 로컬 스냅샷과 비교하여 촬영 속도가 느려질 수 있습니다. 앱 백업을 동일한 클러스터에 복원하거나 백업을 다른 클러스터에 복원하여 앱을 마이그레이션할 수 있습니다. 또한 백업의 보존 기간을 더 길게 선택할 수도 있습니다. 이러한 백업은 외부 개체 저장소에 저장되므로 일반적으로 서버 장애 또는 데이터 손실 시 스냅샷보다 더 뛰어난 보호 기능을 제공합니다.</block>
+  <block id="5becefddd70e438fb63cc4c816b5f6cc" category="paragraph">보호 정책 _ 은(는) 해당 앱에 대해 정의한 일정에 따라 스냅샷, 백업 또는 둘 모두를 자동으로 생성하여 앱을 보호하는 방법입니다. 또한 보호 정책을 사용하여 스케줄에 보관할 스냅샷과 백업의 수를 선택하고 스케줄 세분화 수준을 다르게 설정할 수 있습니다. 보호 정책을 통해 백업 및 스냅샷을 자동화하는 것이 각 애플리케이션이 조직의 요구 사항과 SLA(서비스 수준 계약) 요구 사항에 따라 보호되도록 하는 가장 좋은 방법입니다.</block>
+  <block id="33bb9df0e608c1dab17890f54a41a8db" category="admonition">_최근 백업 _ 이(가) 있을 때까지 완전히 보호할 수 없습니다. 백업은 영구 볼륨으로부터 멀리 떨어진 개체 저장소에 저장되기 때문에 이 작업이 중요합니다. 장애 또는 사고로 인해 클러스터와 관련 영구 스토리지가 삭제되면 복구할 백업이 필요합니다. 스냅샷을 사용하면 복구할 수 없습니다.</block>
+  <block id="999cc42b236c7aee1157ff02d6f1bcd5" category="section-title">복제</block>
+  <block id="5d18a3d426ac931bca06d705d79d80cf" category="paragraph">clone_은 앱, 해당 구성 및 영구 데이터 볼륨의 정확한 복제입니다. 동일한 Kubernetes 클러스터 또는 다른 클러스터에 클론을 수동으로 생성할 수 있습니다. 애플리케이션 및 스토리지를 Kubernetes 클러스터 간에 이동해야 하는 경우 앱 클론을 생성하는 것이 유용할 수 있습니다.</block>
+  <block id="ed732ea9c1e91d97f98c7332ade8ccdc" category="inline-link-macro">Astra Control의 데이터 보호</block>
+  <block id="efe10d9d842c9e231cc488725ee92859" category="paragraph">에 대해 자세히 알아보십시오 <block ref="0675148237c2e40e6d4648cd7be7bdff" category="inline-link-macro-rx"></block>.</block>
 </blocks>
