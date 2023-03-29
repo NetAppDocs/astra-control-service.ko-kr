@@ -37,7 +37,7 @@ indexpage:
   - title: Astra 제어 센터
     links:
     - title: Astra Control Center 소개
-      url: https://docs.netapp.com/us-en/astra-control-center/concepts/intro.html
+      url: https://docs.netapp.com/us-en/astra-control-center/get-started/intro.html
     - title: 새로운 소식
       url: https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html
     - title: 빠른 시작
