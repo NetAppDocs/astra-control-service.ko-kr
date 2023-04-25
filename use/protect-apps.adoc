@@ -31,7 +31,9 @@ summary: 자동화된 보호 정책을 사용하거나 필요에 따라 스냅�
 
 == 보호 정책을 구성합니다
 
-보호 정책은 정의된 일정에 따라 스냅샷, 백업 또는 둘 다를 생성하여 앱을 보호합니다. 시간별, 일별, 주별 및 월별 스냅샷과 백업을 생성하도록 선택할 수 있으며, 보존할 복제본 수를 지정할 수 있습니다. 시간당 한 번 이상 백업 또는 스냅샷을 자주 실행해야 하는 경우 를 수행할 수 있습니다 https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html["Astra Control REST API를 사용하여 스냅샷과 백업을 생성합니다"^].
+보호 정책은 정의된 일정에 따라 스냅샷, 백업 또는 둘 다를 생성하여 앱을 보호합니다. 시간별, 일별, 주별 및 월별 스냅샷과 백업을 생성하도록 선택할 수 있으며, 보존할 복제본 수를 지정할 수 있습니다.
+
+시간당 한 번 이상 백업 또는 스냅샷을 자주 실행해야 하는 경우 를 수행할 수 있습니다 https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html["Astra Control REST API를 사용하여 스냅샷과 백업을 생성합니다"^].
 
 .단계
 . 응용 프로그램 * 을 선택한 다음 관리되는 응용 프로그램의 이름을 선택합니다.
@@ -78,6 +80,15 @@ Astra Control은 정의한 스케줄 및 보존 정책을 사용하여 스냅샷
 == 백업을 생성합니다
 
 언제든지 앱을 백업할 수도 있습니다.
+
+ifdef::azure[]
+
+[NOTE]
+====
+Azure NetApp Files 스토리지에서 호스트되는 애플리케이션을 백업할 때 스토리지 공간이 처리되는 방식에 유의하십시오. 을 참조하십시오 link:../learn/azure-storage.html#application-backups["애플리케이션 백업"] 를 참조하십시오.
+
+====
+endif::azure[]
 
 .단계
 . 응용 프로그램 * 을 선택합니다.

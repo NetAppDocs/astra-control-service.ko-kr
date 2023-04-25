@@ -27,6 +27,7 @@ entries:
 - title: 클러스터 관리
   url: "/get-started/add-first-cluster.html"
 - title: 프라이빗 클러스터 관리
+  flavor: azure
   url: "/get-started/manage-private-cluster.html"
 - title: 다음 단계
   url: "/get-started/whats-next.html"

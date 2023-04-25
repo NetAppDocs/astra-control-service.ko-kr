@@ -406,6 +406,11 @@ NOTE: "Private" 아이콘이 표시된 클러스터를 선택하면 해당 클�
 endif::azure[]
 
 . * 자격 증명 이름 * (자체 관리 클러스터의 경우): Astra Control에 업로드하는 자체 관리 클러스터 자격 증명의 이름을 입력합니다. 기본적으로 자격 증명 이름은 클러스터 이름으로 자동 채워집니다.
+. (선택 사항) * Private route ID *: Astra Connector로부터 얻을 수 있는 private route identifier를 입력합니다.
++
+
+NOTE: 프라이빗 경로 ID는 Astra Connector와 연결된 이름으로, 프라이빗 Kubernetes 클러스터를 Astra에서 관리할 수 있도록 지원합니다. 이런 맥락에서 프라이빗 클러스터는 API 서버를 인터넷에 노출하지 않는 Kubernetes 클러스터입니다.
+
 . (선택 사항) * 스토리지 *: 기본적으로 이 클러스터에 Kubernetes 애플리케이션을 배포할 스토리지 클래스를 선택하십시오.
 +
 [NOTE]

@@ -12,56 +12,8 @@ summary: '이 문서 사이트의 많은 페이지에는 Astra Control Service�
 
 
 [role="lead"]
-이 문서 사이트의 많은 페이지에는 Astra Control Service의 작업을 완료하는 방법을 보여 주는 비디오가 포함되어 있습니다. 동영상에 관심이 있다면 이 단일 페이지(재생 목록 등)에서 모든 동영상을 손쉽게 수집할 수 있습니다.
+Astra Control Service의 최신 비디오 콘텐츠를 보려면 NetApp TV를 확인하십시오. NetApp TV에는 Astra Control Service의 특정 기능을 시연하거나 특정 일반 작업을 완료하는 방법을 보여 주는 비디오가 포함되어 있습니다.
 
-ifdef::gcp[]
+https://www.netapp.tv/search/astra%20control%20service["Astra Control Service 비디오"^]
 
-
-
-== Google Cloud 설정을 위한 동영상
-
-다음 동영상은 GCP에서 실행 중인 Kubernetes 클러스터를 검색하기 전에 Google Cloud의 설정 요구사항을 완료하는 방법을 보여줍니다.
-
-
-
-=== API를 사용하도록 설정합니다
-
-프로젝트에 특정 Google Cloud API에 액세스할 수 있는 권한이 필요합니다. 다음 비디오에서는 Google Cloud 콘솔에서 API를 활성화하는 방법을 보여줍니다. link:set-up-google-cloud.html#enable-apis-in-your-project["API 사용에 대해 자세히 알아보십시오"].
-
-video::get-started/video-enable-gcp-apis.mp4[width=848,height=480]
-
-
-=== 서비스 계정을 생성합니다
-
-Astra Control Service는 Google Cloud 서비스 계정을 사용하여 Kubernetes 애플리케이션 데이터를 사용자 대신 관리합니다. 다음 비디오에서는 Google Cloud 콘솔에서 서비스 계정을 만드는 방법을 보여줍니다. link:set-up-google-cloud.html#create-a-service-account["서비스 계정 생성에 대해 자세히 알아보십시오"].
-
-video::get-started/video-create-gcp-service-account.mp4[width=848,height=480]
-
-
-=== 서비스 계정 키를 생성합니다
-
-Astra Control Service는 서비스 계정 키를 사용하여 방금 설정한 서비스 계정의 ID를 설정합니다. 다음 비디오에서는 Google Cloud 콘솔에서 서비스 계정 키를 생성하는 방법을 보여줍니다. link:set-up-google-cloud.html#create-a-service-account-key-2["서비스 계정 키 생성에 대해 자세히 알아보십시오"].
-
-video::get-started/video-create-gcp-service-account-key.mp4[width=848,height=480]
 endif::gcp[]
-
-
-
-== Astra Control 사용에 대한 비디오입니다
-
-다음 비디오에서는 Astra Control을 사용하여 일반적인 작업을 완료하는 방법을 보여 줍니다.
-
-
-
-=== Astra Control에서 클러스터를 관리합니다
-
-Astra Control Service에 로그인한 후 첫 번째 단계는 Kubernetes 컴퓨팅을 추가하는 것입니다. link:add-first-cluster.html["클러스터 관리에 대해 자세히 알아보십시오"].
-
-video::get-started/video-manage-cluster.mp4[width=848,height=480]
-
-
-=== 보호 정책을 구성합니다
-
-보호 정책은 정의된 일정에 따라 스냅샷, 백업 또는 둘 다를 생성하여 앱을 보호합니다. 시간별, 일별, 주별 및 월별 스냅샷과 백업을 생성하도록 선택할 수 있으며, 보존할 복제본 수를 지정할 수 있습니다. link:../use/protect-apps.html["보호 정책 구성에 대해 자세히 알아보십시오"].
-
-video::use/video-set-protection-policy.mp4[width=848,height=480]
