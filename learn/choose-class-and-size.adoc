@@ -123,4 +123,4 @@ https://cloud.google.com/compute/docs/disks/performance["Google 영구 디스크
 
 == NetApp Cloud Volumes ONTAP를 참조하십시오
 
-성능 권장사항을 비롯한 NetApp Cloud Volumes ONTAP 구성에 대한 자세한 내용은 를 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["NetApp Cloud Volumes ONTAP 문서"^].
+성능 권장사항을 비롯한 NetApp Cloud Volumes ONTAP 구성에 대한 자세한 내용은 를 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-performance.html["NetApp Cloud Volumes ONTAP 문서"^].
