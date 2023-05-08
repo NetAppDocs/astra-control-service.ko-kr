@@ -20,7 +20,7 @@ Astra Control에 새 클러스터를 추가할 때 클라우드 인스턴스를 
 
 == 클라우드 인스턴스를 추가합니다
 
-Astra Control에 새 클러스터를 추가할 때 새 클라우드 인스턴스를 추가할 수 있습니다. 을 참조하십시오 link:../add-first-cluster.html["Astra Control Service에서 Kubernetes 클러스터 관리를 시작합니다"] 를 참조하십시오.
+Astra Control에 새 클러스터를 추가할 때 새 클라우드 인스턴스를 추가할 수 있습니다. 을 참조하십시오 link:../get-started/add-first-cluster.html["Astra Control Service에서 Kubernetes 클러스터 관리를 시작합니다"] 를 참조하십시오.
 
 
 

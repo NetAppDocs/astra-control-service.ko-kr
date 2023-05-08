@@ -1880,7 +1880,6 @@
   <block id="307510f97d5f134d0b9ee5ee86d6a53f" category="list-text">Astra Control API를 사용하여 앱을 관리하는 방법에 대한 지침은 을 참조하십시오 <block ref="ef5b26cd6e9ab40377842cc20d2b4ebf" category="inline-link-macro-rx"></block>.</block>
   <block id="b5e44ee7e6c2c0ee0f81c8df96014092" category="admonition">Kubernetes 레이블에 대해 자세히 알아보려면<block ref="6258ba1c56e61c3e07dc318965d7f24b" category="inline-link-rx"></block>.</block>
   <block id="e4b1bae16e2dcbf3661583ef6a1d3b0f" category="admonition">여러 응용 프로그램을 정의하려면 네임스페이스 목록에서 선택하고 왼쪽 위 모서리에 있는 * 작업 * 버튼을 선택한 다음 * 응용 프로그램으로 정의 * 를 선택합니다. 이렇게 하면 개별 네임스페이스에 여러 개의 개별 응용 프로그램이 정의됩니다. 다중 네임스페이스 응용 프로그램의 경우 을 참조하십시오 <block ref="7befd9a72212c345f0396ef5748860f3" category="inline-xref-macro-rx"></block>.</block>
-  <block id="f3ed27964ccf64e77e1488f7d2a16145" category="paragraph">Astra Control에 새 클러스터를 추가할 때 새 클라우드 인스턴스를 추가할 수 있습니다. 을 참조하십시오 <block ref="957d53ce26004606b67720b5be4bf2a4" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
   <block id="f500108e4498090784d5a65b95413035" category="paragraph">실패한 작업에 대한 자세한 내용은 을 참조하십시오 <block ref="a18f0b9d9f08915c2171339d482533ca" category="inline-link-macro-rx"></block>.</block>
   <block id="0370124d48bfc5af2def19c48f433283" category="inline-link">NetApp Verda GitHub 프로젝트</block>
   <block id="a59e4fa5cc01a3a4bdebbff4cec60b47" category="paragraph">를 방문하십시오<block ref="84d9961ef5a89731849bc2055780d0b6" category="inline-link-rx"></block> Apache Cassandra 및 Elasticsearch와 같은 인기 있는 앱의 실제 실행 후크를 다운로드하려면 다음을 수행합니다. 예제를 보고 사용자 지정 실행 후크를 구조화하는 아이디어를 얻을 수도 있습니다.</block>
@@ -2129,4 +2128,5 @@
   <block id="68bd054170816bc3e89c4e00c3a23bfd" category="paragraph">성능 권장사항을 비롯한 NetApp Cloud Volumes ONTAP 구성에 대한 자세한 내용은 를 참조하십시오<block ref="b17f0a969868e5279849aa167864d3ad" category="inline-link-rx"></block>.</block>
   <block id="5e45edcd9985e188c258e7b6515feeea" category="paragraph">Astra Control Service는 Azure Kubernetes Service(AKS) 클러스터를 위한 스토리지 백엔드로 Azure NetApp Files, Azure 관리 디스크 또는 NetApp Cloud Volumes ONTAP를 지원합니다.</block>
   <block id="6bab6ac71f743f37f154b7b0219c56a8" category="paragraph">Astra Control Service는 영구 볼륨의 스토리지 백엔드 옵션으로 Cloud Volumes Service for Google Cloud, Google Persistent Disk 또는 NetApp Cloud Volumes ONTAP를 지원합니다.</block>
+  <block id="09a08aa51d9a5d34a5bc6cecdb1f03bf" category="paragraph">Astra Control에 새 클러스터를 추가할 때 새 클라우드 인스턴스를 추가할 수 있습니다. 을 참조하십시오 <block ref="04d97bec7f4fa11002764129cf40d13a" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
 </blocks>
