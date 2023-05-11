@@ -82,26 +82,52 @@ Kubernetes 버전:: 클러스터는 1.23~1.25 범위의 Kubernetes 버전을 실
 클러스터 상태입니다:: 클러스터가 정상 상태에서 실행되고 있어야 하며 오류가 발생한 상태의 작업자 노드가 없는 온라인 작업자 노드가 하나 이상 있어야 합니다.
 
 
-아스트라 트리덴트:: 스토리지 백엔드가 있는 작업에는 Astra Trident와 외부 스냅샷 컨트롤러가 필요합니다. 설치하려면 다음을 수행합니다.
-
-
-[%collapsible%open]
-====
-. https://["스냅샷 CRD 및 스냅샷 컨트롤러를 설치합니다"^].
-. https://["최신 Astra Trident 버전을 설치합니다"^].
-. https://["VolumeSnapshotClass를 생성합니다"^].
-
-
-====
+73faaa1b4bb064878667455dd879f4ba:: 3ea391c9e6fd8068a48c5105ab95e68f
 Amazon EBS(Elastic Block Store)용 CSI 드라이버:: Amazon EBS 스토리지 백엔드를 사용하는 경우 EBS용 컨테이너 스토리지 인터페이스(CSI) 드라이버를 설치해야 합니다(자동으로 설치되지 않음).
 +
 --
-CSI 드라이버 설치에 대한 지침은 단계를 참조하십시오.
+20fc0f0b676e68d276bd1ffa1267ac50
 
 [%collapsible%open]
 ====
 .외부 스냅샷 프로그램을 설치합니다
-아직 수행하지 않았다면 https://["스냅샷 CRD 및 스냅샷 컨트롤러를 설치합니다"^].
+. 469f7ca16938508b5dcb777767828b70
++
+cb9d6d1ca0b4fda3b1206ae38a007824
+
++
+[role="tabbed-block"]
+=====
+.351d6da9c87ca81d91cd4755e4730d82
+--
+[source, yaml]
+----
+$ cat snapshot-setup.sh
+#!/bin/bash
+# Create volume snapshot CRDs
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+----
+--
+=====
+. 65b146df7d5c27b212f54a7c9980960b
++
+6b4ca223a0a2bf649306756ade54b043
+
++
+[role="tabbed-block"]
+=====
+.5e393c0ca8392e0c84201770c8b544ca
+--
+[source, yaml]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+----
+--
+=====
+
 
 .CSI 드라이버를 Amazon EKS 애드온으로 설치합니다
 . 서비스 계정에 대한 Amazon EBS CSI 드라이버 IAM 역할을 생성합니다. 지침을 따릅니다 https://["아마존 문서"^]의 지침에 따라 AWS CLI 명령을 사용합니다.
