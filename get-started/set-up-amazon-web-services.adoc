@@ -82,55 +82,29 @@ Kubernetes 버전:: 클러스터는 1.23~1.25 범위의 Kubernetes 버전을 실
 클러스터 상태입니다:: 클러스터가 정상 상태에서 실행되고 있어야 하며 오류가 발생한 상태의 작업자 노드가 없는 온라인 작업자 노드가 하나 이상 있어야 합니다.
 
 
-Amazon FSx for NetApp ONTAP를 위한 Astra Trident:: NetApp ONTAP 스토리지 백엔드에 Amazon FSx를 사용하는 경우 Astra Trident를 설치해야 합니다. 자세한 지침은 을 참조하십시오 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident 구축 개요"^]. NetApp ONTAP용 FSx와 함께 Astra Trident를 사용하는 방법에 대한 자세한 내용은 을 참조하십시오 https://docs.netapp.com/us-en/trident/trident-use/trident-fsx.html["NetApp ONTAP용 Amazon FSx와 함께 Astra Trident를 사용하십시오"^].
+아스트라 트리덴트:: 스토리지 백엔드가 있는 작업에는 Astra Trident와 외부 스냅샷 컨트롤러가 필요합니다. 설치하려면 다음을 수행합니다.
+
+
+[%collapsible%open]
+====
+. https://["스냅샷 CRD 및 스냅샷 컨트롤러를 설치합니다"^].
+. https://["최신 Astra Trident 버전을 설치합니다"^].
+. https://["VolumeSnapshotClass를 생성합니다"^].
+
+
+====
 Amazon EBS(Elastic Block Store)용 CSI 드라이버:: Amazon EBS 스토리지 백엔드를 사용하는 경우 EBS용 컨테이너 스토리지 인터페이스(CSI) 드라이버를 설치해야 합니다(자동으로 설치되지 않음).
 +
 --
-CSI 드라이버 설치에 대한 자세한 내용은 를 참조하십시오.
+CSI 드라이버 설치에 대한 지침은 단계를 참조하십시오.
 
 [%collapsible%open]
 ====
 .외부 스냅샷 프로그램을 설치합니다
-. 볼륨 스냅샷 CRD를 생성합니다.
-+
-Kubernetes 1.20 이상의 경우 v5.0의 스냅샷 구성 요소에 v1 스냅샷 CRD를 사용하십시오.
-
-+
-[role="tabbed-block"]
-=====
-.v5.0 구성 요소
---
-[source, yaml]
-----
-$ cat snapshot-setup.sh
-#!/bin/bash
-# Create volume snapshot CRDs
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
-----
---
-=====
-. 원하는 네임스페이스에 스냅샷 컨트롤러를 생성합니다. 아래 YAML 매니페스트를 편집하여 네임스페이스를 수정하십시오.
-+
-Kubernetes 1.20 이상인 경우 v5.0을 사용합니다.
-
-+
-[role="tabbed-block"]
-=====
-.v5.0 컨트롤러
---
-[source, yaml]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
-----
---
-=====
-
+아직 수행하지 않았다면 https://["스냅샷 CRD 및 스냅샷 컨트롤러를 설치합니다"^].
 
 .CSI 드라이버를 Amazon EKS 애드온으로 설치합니다
-. 서비스 계정에 대한 Amazon EBS CSI 드라이버 IAM 역할을 생성합니다. 지침을 따릅니다 https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html["아마존 문서"^]의 지침에 따라 AWS CLI 명령을 사용합니다.
+. 서비스 계정에 대한 Amazon EBS CSI 드라이버 IAM 역할을 생성합니다. 지침을 따릅니다 https://["아마존 문서"^]의 지침에 따라 AWS CLI 명령을 사용합니다.
 . 다음 AWS CLI 명령을 사용하여 Amazon EBS CSI 애드온을 추가합니다. 괄호 <>의 정보를 사용자 환경에 맞는 값으로 바꿉니다. driver_role>을 이전 단계에서 생성한 EBS CSI 드라이버 역할의 이름으로 바꿉니다.
 +
 [source, console]
@@ -184,7 +158,7 @@ kubectl describe storageclass ebs-sc
 아마존 계정이 없는 경우 아마존 EKS에 대한 청구를 활성화하려면 계정을 생성해야 합니다.
 
 .단계
-. 로 이동합니다 https://www.amazon.com["아마존 홈페이지"^] 오른쪽 상단에서 * 로그인 * 을 선택하고 * 여기서 시작 * 을 선택합니다.
+. 로 이동합니다 https://["아마존 홈페이지"^] 오른쪽 상단에서 * 로그인 * 을 선택하고 * 여기서 시작 * 을 선택합니다.
 . 표시되는 메시지에 따라 계정을 만듭니다.
 
 
@@ -195,7 +169,7 @@ kubectl describe storageclass ebs-sc
 명령줄에서 AWS 리소스를 관리할 수 있도록 AWS CLI를 설치합니다.
 
 .단계
-. 로 이동합니다 https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html["AWS CLI 시작하기"^] 지침에 따라 CLI를 설치합니다.
+. 로 이동합니다 https://["AWS CLI 시작하기"^] 지침에 따라 CLI를 설치합니다.
 
 
 
@@ -205,7 +179,7 @@ kubectl describe storageclass ebs-sc
 IAM 사용자를 생성하여 보안을 강화하고 AWS 서비스 및 리소스를 사용 및 관리할 수 있습니다. 이 단계를 건너뛰고 Astra Control Service에서 기존 IAM 사용자를 사용할 수도 있습니다.
 
 .단계
-. 로 이동합니다 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_cliwpsapi["IAM 사용자 생성"^] 지침에 따라 IAM 사용자를 생성합니다.
+. 로 이동합니다 https://["IAM 사용자 생성"^] 지침에 따라 IAM 사용자를 생성합니다.
 
 
 

@@ -52,11 +52,11 @@ ifdef::gcp[]
 
 Astra Control Service를 사용하여 GKE 클러스터를 관리할 경우, 영구 볼륨은 NetApp Cloud Volumes Service에 의해 백업되고 앱의 백업은 Google 클라우드 스토리지 버킷에 저장됩니다.
 
-* https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs["Cloud Volumes Service에 대한 가격 세부 정보를 봅니다"^].
+* https://["Cloud Volumes Service에 대한 가격 세부 정보를 봅니다"^].
 +
-Astra Control Service는 모든 서비스 유형과 서비스 수준을 지원합니다. 사용하는 서비스 유형은 에 따라 다릅니다 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["Google Cloud 지역"^].
+Astra Control Service는 모든 서비스 유형과 서비스 수준을 지원합니다. 사용하는 서비스 유형은 에 따라 다릅니다 https://["Google Cloud 지역"^].
 
-* https://cloud.google.com/storage/pricing["Google Cloud 스토리지 버킷의 가격 세부 정보를 확인하십시오"^].
+* https://["Google Cloud 스토리지 버킷의 가격 세부 정보를 확인하십시오"^].
 
 
 endif::gcp[]
@@ -69,8 +69,8 @@ ifdef::azure[]
 
 Astra Control Service를 사용하여 AKS 클러스터를 관리할 경우 영구 볼륨은 Azure NetApp Files에 의해 백업되고 앱 백업은 Azure Blob 컨테이너에 저장됩니다.
 
-* https://azure.microsoft.com/en-us/pricing/details/netapp["Azure NetApp Files에 대한 가격 세부 정보를 봅니다"^].
-* https://azure.microsoft.com/en-us/pricing/details/storage/blobs["Microsoft Azure Blob 스토리지의 가격 세부 정보를 봅니다"^].
+* https://["Azure NetApp Files에 대한 가격 세부 정보를 봅니다"^].
+* https://["Microsoft Azure Blob 스토리지의 가격 세부 정보를 봅니다"^].
 
 
 endif::azure[]
@@ -83,7 +83,7 @@ ifdef::aws[]
 
 Astra Control Service를 통해 AWS 클러스터를 관리할 경우, 영구적 볼륨은 EBS 또는 FSx for NetApp ONTAP를 통해 지원되며, 앱의 백업은 AWS 버킷에 저장됩니다.
 
-* https://aws.amazon.com/eks/pricing/["Amazon Web Services에 대한 가격 세부 정보를 봅니다"^].
+* https://["Amazon Web Services에 대한 가격 세부 정보를 봅니다"^].
 
 
 endif::aws[]
@@ -95,10 +95,10 @@ endif::aws[]
 Azure Marketplace를 사용하여 Astra Control Service에 가입할 수 있습니다. 계정 및 청구 세부 정보는 마켓플레이스를 통해 관리됩니다.
 
 
-NOTE: Azure Marketplace 구독 프로세스에 대한 비디오 안내를 보려면 를 방문하십시오 https://www.netapp.tv/details/29979["NetApp TV를 참조하십시오"^].
+NOTE: Azure Marketplace 구독 프로세스에 대한 비디오 안내를 보려면 를 방문하십시오 https://["NetApp TV를 참조하십시오"^].
 
 .단계
-. 로 이동합니다 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-astra-acs?tab=Overview["Azure 마켓플레이스 를 참조하십시오"^].
+. 로 이동합니다 https://["Azure 마켓플레이스 를 참조하십시오"^].
 . 지금 다운로드 * 를 선택합니다.
 . 지침에 따라 계획을 구독합니다.
 
@@ -110,7 +110,7 @@ NOTE: Azure Marketplace 구독 프로세스에 대한 비디오 안내를 보려
 AWS Marketplace를 사용하여 Astra Control Service를 구독할 수 있습니다. 계정 및 청구 세부 정보는 마켓플레이스를 통해 관리됩니다.
 
 .단계
-. 로 이동합니다 https://aws.amazon.com/marketplace/["AWS 마켓플레이스 를 참조하십시오"^].
+. 로 이동합니다 https://["AWS 마켓플레이스 를 참조하십시오"^].
 . Continue to Subscribe * 를 선택합니다.
 . 지침에 따라 계획을 구독합니다.
 

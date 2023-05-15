@@ -31,4 +31,4 @@ NOTE: 클론 작업의 경우 작업 하위 작업은 스냅샷과 스냅샷 복
 
 
 
-NOTE: 태스크는 최대 24시간 동안 * 작업 * 목록에 유지됩니다. 을 사용하여 이 제한 및 기타 작업 모니터 설정을 구성할 수 있습니다 https://docs.netapp.com/us-en/astra-automation/["Astra Control API를 참조하십시오"^].
+NOTE: 태스크는 최대 24시간 동안 * 작업 * 목록에 유지됩니다. 을 사용하여 이 제한 및 기타 작업 모니터 설정을 구성할 수 있습니다 https://["Astra Control API를 참조하십시오"^].

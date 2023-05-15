@@ -24,7 +24,7 @@ summary: 알려진 제한 사항은 이 제품 릴리스에서 지원하지 않�
 
 === Astra Trident가 클러스터에서 제거되지 않았습니다
 
-Astra Control Service에서 클러스터를 관리 해제하면 Astra Trident가 클러스터에서 자동으로 제거되지 않습니다. Astra Trident를 제거하려면 다음을 수행해야 합니다 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Astra Trident 문서의 다음 단계를 따릅니다"^].
+Astra Control Service에서 클러스터를 관리 해제하면 Astra Trident가 클러스터에서 자동으로 제거되지 않습니다. Astra Trident를 제거하려면 다음을 수행해야 합니다 https://["Astra Trident 문서의 다음 단계를 따릅니다"^].
 
 
 
@@ -92,13 +92,13 @@ Astra Control은 클라우드 인스턴스에 대해 기본 버킷을 자동으�
 
 Astra Control은 네임스페이스 범위 연산자와 함께 설치된 앱을 지원합니다. 이러한 연산자는 일반적으로 "pass-by-reference" 아키텍처가 아니라 "pass-by-value"로 설계되었습니다. 다음은 이러한 패턴을 따르는 일부 운영자 앱에 대한 설명입니다.
 
-* https://github.com/k8ssandra/cass-operator/tree/v1.7.1["아파치 K8ssandra"^]
+* https://["아파치 K8ssandra"^]
 +
 
 NOTE: K8ssandra 의 경우 현재 위치 복원 작업이 지원됩니다. 새 네임스페이스 또는 클러스터에 대한 복원 작업을 수행하려면 응용 프로그램의 원래 인스턴스를 중단해야 합니다. 이는 이월된 피어 그룹 정보가 인스턴스 간 통신으로 이어지지 않도록 하기 위한 것입니다. 앱 복제는 지원되지 않습니다.
 
-* https://github.com/jenkinsci/kubernetes-operator["젠킨스 CI"^]
-* https://github.com/percona/percona-xtradb-cluster-operator["Percona XtraDB 클러스터"^]
+* https://["젠킨스 CI"^]
+* https://["Percona XtraDB 클러스터"^]
 
 
 Astra Control은 "pass-by-reference" 아키텍처(예: CockroachDB 운영자)로 설계된 운영자를 복제하지 못할 수 있습니다. 이러한 유형의 클론 복제 작업 중에 클론 복제 운영자는 클론 복제 프로세스의 일부로 고유한 새로운 암호가 있음에도 불구하고 소스 운영자의 Kubernetes 암호를 참조하려고 합니다. Astra Control이 소스 운영자의 Kubernetes 암호를 모르기 때문에 클론 작업이 실패할 수 있습니다.
@@ -123,3 +123,18 @@ Astra Control에서 리소스 또는 기능에 대한 사용자 액세스를 제
 === 네임스페이스 제약 조건을 가진 멤버 사용자는 관리자 사용자가 제약 조건에 네임스페이스를 추가할 때까지 복제되거나 복원된 앱에 액세스할 수 없습니다
 
 네임스페이스 이름/ID에 따라 RBAC 제한이 있는 모든 '멤버' 사용자는 동일한 클러스터 또는 조직 계정의 다른 클러스터에 있는 새 네임스페이스로 앱을 클론 복제하거나 복원할 수 있습니다. 그러나 동일한 사용자가 새 네임스페이스에서 복제되거나 복원된 앱에 액세스할 수 없습니다. 클론 또는 복원 작업을 통해 새 네임스페이스를 생성한 후 계정 관리자/소유자는 'ember' 사용자 계정을 편집하고 영향을 받는 사용자의 역할 제약 조건을 업데이트하여 새 네임스페이스에 대한 액세스 권한을 부여할 수 있습니다.
+
+
+
+=== Amazon EKS 1.25 이상 클러스터의 경우 스냅샷이 실패할 수 있습니다
+
+잘못된 스냅샷 컨트롤러가 사용되었기 때문에 버전 1.25 이상의 Amazon EKS 클러스터에서 스냅샷이 실패할 수 있습니다.
+
+이 문제를 해결하려면 기존 EKS 1.25 이상 설치를 업그레이드할 때 다음을 수행하십시오.
+
+. 기존 스냅샷 CRD 및 기존 스냅샷 컨트롤러를 모두 제거합니다.
+. https://["Astra Trident를 제거합니다"^].
+. https://["스냅샷 CRD 및 스냅샷 컨트롤러를 설치합니다"^].
+. https://["최신 Astra Trident 버전을 설치합니다"^].
+. https://["VolumeSnapshotClass를 생성합니다"^].
+

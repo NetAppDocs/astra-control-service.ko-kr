@@ -14,6 +14,6 @@ summary: '이 문서 사이트의 많은 페이지에는 Astra Control Service�
 [role="lead"]
 Astra Control Service의 최신 비디오 콘텐츠를 보려면 NetApp TV를 확인하십시오. NetApp TV에는 Astra Control Service의 특정 기능을 시연하거나 특정 일반 작업을 완료하는 방법을 보여 주는 비디오가 포함되어 있습니다.
 
-https://www.netapp.tv/search/astra%20control%20service["Astra Control Service 비디오"^]
+https://["Astra Control Service 비디오"^]
 
 endif::gcp[]

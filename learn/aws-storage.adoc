@@ -18,7 +18,7 @@ Astra Control Service는 Amazon EBS(Elastic Block Store), NetApp ONTAP용 Amazon
 
 == Amazon EBS(Elastic Block Store)
 
-클러스터는 컨테이너 스토리지 인터페이스(CSI) 드라이버를 사용하여 EBS와 인터페이스할 수 있습니다. EBS를 EKS 클러스터의 스토리지 백엔드로 사용하는 경우 일부 스토리지 클래스 매개 변수를 구성할 수 있습니다. 매개 변수의 의미와 매개 변수를 구성하는 방법에 대한 자세한 내용은 을 참조하십시오 https://kubernetes.io/docs/concepts/storage/storage-classes/#aws-ebs["Kubernetes 문서"^].
+클러스터는 컨테이너 스토리지 인터페이스(CSI) 드라이버를 사용하여 EBS와 인터페이스할 수 있습니다. EBS를 EKS 클러스터의 스토리지 백엔드로 사용하는 경우 일부 스토리지 클래스 매개 변수를 구성할 수 있습니다. 매개 변수의 의미와 매개 변수를 구성하는 방법에 대한 자세한 내용은 을 참조하십시오 https://["Kubernetes 문서"^].
 
 EBS에 여러 가지 유형의 볼륨을 사용할 수 있습니다.
 
@@ -27,16 +27,16 @@ EBS에 여러 가지 유형의 볼륨을 사용할 수 있습니다.
 * 이전 세대
 
 
-각 볼륨 유형 및 성능에 대한 자세한 내용은 을 참조하십시오 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html["Amazon EBS 문서"^]. 가격 정보는 을 참조하십시오 https://aws.amazon.com/ebs/pricing/["Amazon EBS 가격"^].
+각 볼륨 유형 및 성능에 대한 자세한 내용은 을 참조하십시오 https://["Amazon EBS 문서"^]. 가격 정보는 을 참조하십시오 https://["Amazon EBS 가격"^].
 
 
 
 == NetApp ONTAP용 Amazon FSx
 
-NetApp ONTAP용 FSx를 AWS 클러스터의 스토리지 백엔드로 사용하는 경우, I/O 성능은 파일 시스템의 구성과 워크로드의 특성에 따라 달라집니다. NetApp ONTAP 성능을 위한 FSx에 대한 자세한 내용은 을 참조하십시오 https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/performance.html["NetApp ONTAP 성능을 위한 Amazon FSx"^]. 가격 정보는 을 참조하십시오 https://aws.amazon.com/fsx/netapp-ontap/pricing/["NetApp ONTAP용 Amazon FSx 가격"^].
+NetApp ONTAP용 FSx를 AWS 클러스터의 스토리지 백엔드로 사용하는 경우, I/O 성능은 파일 시스템의 구성과 워크로드의 특성에 따라 달라집니다. NetApp ONTAP 성능을 위한 FSx에 대한 자세한 내용은 을 참조하십시오 https://["NetApp ONTAP 성능을 위한 Amazon FSx"^]. 가격 정보는 을 참조하십시오 https://["NetApp ONTAP용 Amazon FSx 가격"^].
 
 
 
 == NetApp Cloud Volumes ONTAP를 참조하십시오
 
-성능 권장사항을 비롯한 NetApp Cloud Volumes ONTAP 구성에 대한 자세한 내용은 를 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-performance.html["NetApp Cloud Volumes ONTAP 문서"^].
+성능 권장사항을 비롯한 NetApp Cloud Volumes ONTAP 구성에 대한 자세한 내용은 를 참조하십시오 https://["NetApp Cloud Volumes ONTAP 문서"^].
