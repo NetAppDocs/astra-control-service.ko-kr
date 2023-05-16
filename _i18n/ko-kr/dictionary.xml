@@ -654,7 +654,6 @@
   <block id="b892fe302a6a7df4519761ccd72b7c2f" category="section-title">Kubernetes 클러스터를 등록하는 중입니다</block>
   <block id="b588fb2a2e55643a23cbafdb1879e478" category="paragraph">* Astra Control Service에 추가하기 전에 내 클러스터에 CSI 드라이버를 설치해야 합니까? *</block>
   <block id="a48e52ca315005bd57971ddff57c7bf1" category="paragraph">* Astra Control Service에 추가한 후 클러스터에 작업자 노드를 추가해야 합니다. 어떻게 해야 합니까? *</block>
-  <block id="af2b33bb637866cca13ababa2653601d" category="paragraph">* 개인 GKE 클러스터를 Astra Control Service에 추가할 수 있습니까? *</block>
   <block id="14404c0506ad155270835b42ac26b048" category="inline-link">인증된 네트워크</block>
   <block id="952200664143e727f3f65397759fe5e8" category="paragraph">* 내 GKE 클러스터가 공유 VPC에 상주할 수 있습니까? *</block>
   <block id="5d346778751cb328795e29ad6aed29a4" category="inline-link-macro">공유 VPC 구성을 위해 Astra 서비스 계정을 설정하는 방법에 대해 알아보십시오</block>
@@ -1106,7 +1105,6 @@
   <block id="138db2318815f6b9fc7cc55dd6a6ad32" category="list-text">Astra Connector의 상태를 확인한다.</block>
   <block id="ea2708b459fc0cad6936ec216bd9405e" category="paragraph">Astra Control Center는 AutoSupport 및 Active IQ 에코시스템에 완전히 통합되어 사용자와 NetApp 지원에 문제 해결 및 사용 정보를 제공합니다.</block>
   <block id="970cfe22b76fecaa99669dbc6dd2643e" category="paragraph">"Astra Control Service에 개인 AKS 클러스터를 추가할 수 있습니까?" *</block>
-  <block id="51e84df52b4888344ecda584885aaabd" category="paragraph">프라이빗 클러스터에는 가 있어야 합니다<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> Astra Control IP 주소를 허용하도록 설정합니다.</block>
   <block id="0cc78d43619515d263f8e91071f2ed83" category="paragraph">52.188.218.166/32</block>
   <block id="f26ee8a93c95de7a50a14b73f85172c5" category="paragraph">Astra Control의 사용자 역할 및 네임스페이스, 그리고 이를 사용하여 조직의 리소스에 대한 액세스를 제어하는 방법에 대해 알아봅니다.</block>
   <block id="f4040f71a7d553f2519487070892b115" category="section-title">사용자 역할</block>
@@ -2113,9 +2111,25 @@
   <block id="5e45edcd9985e188c258e7b6515feeea" category="paragraph">Astra Control Service는 Azure Kubernetes Service(AKS) 클러스터를 위한 스토리지 백엔드로 Azure NetApp Files, Azure 관리 디스크 또는 NetApp Cloud Volumes ONTAP를 지원합니다.</block>
   <block id="6bab6ac71f743f37f154b7b0219c56a8" category="paragraph">Astra Control Service는 영구 볼륨의 스토리지 백엔드 옵션으로 Cloud Volumes Service for Google Cloud, Google Persistent Disk 또는 NetApp Cloud Volumes ONTAP를 지원합니다.</block>
   <block id="09a08aa51d9a5d34a5bc6cecdb1f03bf" category="paragraph">Astra Control에 새 클러스터를 추가할 때 새 클라우드 인스턴스를 추가할 수 있습니다. 을 참조하십시오 <block ref="04d97bec7f4fa11002764129cf40d13a" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
-  <block id="3151d43bcd1c27b32e26e2270e5f6365" category="inline-link">이 기술 자료 문서의 지침을 따릅니다</block>
-  <block id="89ee4e626d8ee5cecc8bc20164109dc0" category="paragraph">예, Astra Control Service에 개인 GKE 클러스터를 추가할 수 있습니다. 전용 GKE 클러스터를 만들려면<block ref="99bba183cf709d565e021b59be5fb393" category="inline-link-rx"></block>.</block>
   <block id="9743b1bac661724fbae098bb88f6131d" category="list-text"><block ref="9743b1bac661724fbae098bb88f6131d" category="inline-link-rx"></block></block>
-  <block id="1012a371df8509745561ebc7fb6c67ed" category="paragraph"><block ref="1012a371df8509745561ebc7fb6c67ed" category="inline-link-rx"></block></block>
-  <block id="ed0a05533716082066f8bcf9280a4c5f" category="list-text"><block ref="ed0a05533716082066f8bcf9280a4c5f" category="inline-link-rx"></block></block>
+  <block id="84810f606cf208e2aa62628838041ba8" category="list-text">스토리지 백엔드가 있는 작업에는 Astra Trident와 외부 스냅샷 컨트롤러가 필요합니다. 설치하려면 다음을 수행합니다.</block>
+  <block id="a9b10c3e99be35f3f8a9c7dc7fadd754" category="inline-link">스냅샷 CRD 및 스냅샷 컨트롤러를 설치합니다</block>
+  <block id="fc49eec2e1350c70e0ee83082938896c" category="list-text"><block ref="40a914e8068809539f086034e13549c6" category="inline-link-rx"></block>.</block>
+  <block id="e5b001692c70f874108d4c3517741181" category="inline-link">최신 Astra Trident 버전을 설치합니다</block>
+  <block id="a303c00b0d0d4a1b4adf9ac86b7be2cc" category="list-text"><block ref="6b04d2c2cadce52e000fe64978797f65" category="inline-link-rx"></block>.</block>
+  <block id="48d0b044dd9368b2691ff16393a31d86" category="inline-link">VolumeSnapshotClass를 생성합니다</block>
+  <block id="0fa487fe8680011a1e8590273692a729" category="list-text"><block ref="7780c580e1dcefaf97af849cafb81d68" category="inline-link-rx"></block>.</block>
+  <block id="7acbd9a679c6d9e0677acd3b0514110d" category="paragraph">CSI 드라이버 설치에 대한 지침은 단계를 참조하십시오.</block>
+  <block id="b112804ac2e50d1a247c4e71c3315d8c" category="inline-link">스냅샷 CRD 및 스냅샷 컨트롤러를 설치합니다</block>
+  <block id="6c190cb8b2ab4bcec637bcea54946bee" category="paragraph">아직 수행하지 않았다면<block ref="0e5afab18fbd6e0f822d02155d04d2bd" category="inline-link-rx"></block>.</block>
+  <block id="de6aa62d63707ee7d0d8147e0441da62" category="paragraph"><block ref="de6aa62d63707ee7d0d8147e0441da62" category="inline-link-rx"></block></block>
+  <block id="bbc78db47a3fe23dc96746668da3d287" category="list-text"><block ref="bbc78db47a3fe23dc96746668da3d287" category="inline-link-rx"></block></block>
+  <block id="abfeaf5dc3fa1bf4a2a2cba84c5e546c" category="section-title">2023년 5월 15일</block>
+  <block id="7dfc25c1548ba836ed04c79f8fbd1825" category="paragraph">이것은 사소한 버그 수정 릴리스입니다.</block>
+  <block id="5a5355eda2f1cf003d25254ee2c311a3" category="section-title">특정 스냅샷 컨트롤러 버전을 사용하는 Kubernetes 1.25 이상 클러스터의 경우 스냅샷이 실패할 수 있습니다</block>
+  <block id="f9f1ea7c0040d9bdb077f9ce68de31e3" category="paragraph">버전 1.25 이상을 실행하는 Kubernetes 클러스터의 스냅샷은 버전 v1beta1 의 스냅샷 컨트롤러 API가 클러스터에 설치된 경우 실패할 수 있습니다.</block>
+  <block id="2ad74d9f76ccccd37e4f9c6cb27f1cbd" category="paragraph">이 문제를 해결하려면 기존 Kubernetes 1.25 이상 설치를 업그레이드할 때 다음을 수행하십시오.</block>
+  <block id="d5d53109cd766da789a263c6e2051051" category="list-text">기존 스냅샷 CRD 및 기존 스냅샷 컨트롤러를 모두 제거합니다.</block>
+  <block id="43f17763173fe230bdd78477152f5f7d" category="inline-link">Astra Trident를 제거합니다</block>
+  <block id="478393a7bc00211c00b84b91bd7270e1" category="list-text"><block ref="ae36d1cdd520df7c3eaefc0ce2deb814" category="inline-link-rx"></block>.</block>
 </blocks>
