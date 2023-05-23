@@ -14,10 +14,10 @@ summary: Astra Control Service는 SaaS 기반 사용자 인터페이스를 통�
 
 
 [role="lead"]
-Astra Control Service는 로 이동하여 SaaS 기반 사용자 인터페이스를 통해 액세스할 수 있습니다 https://[].
+Astra Control Service는 로 이동하여 SaaS 기반 사용자 인터페이스를 통해 액세스할 수 있습니다 https://astra.netapp.io[].
 
 
-TIP: Single Sign-On을 사용하여 회사 디렉터리(통합 ID)의 자격 증명을 사용하여 로그인할 수 있습니다. 자세한 내용은 로 이동하십시오 https://["Cloud Central 도움말 센터"^] 그런 다음 * Cloud Central 로그인 옵션 * 을 선택합니다.
+TIP: Single Sign-On을 사용하여 회사 디렉터리(통합 ID)의 자격 증명을 사용하여 로그인할 수 있습니다. 자세한 내용은 로 이동하십시오 https://cloud.netapp.com/help-center["Cloud Central 도움말 센터"^] 그런 다음 * Cloud Central 로그인 옵션 * 을 선택합니다.
 
 .시작하기 전에
 * link:../get-started/register.html["Cloud Central 사용자 ID입니다"].
@@ -29,6 +29,6 @@ Astra Control Service는 최신 버전의 Firefox, Safari 및 Chrome을 최소 1
 
 
 .단계
-. 웹 브라우저를 열고 로 이동합니다 https://[].
+. 웹 브라우저를 열고 로 이동합니다 https://astra.netapp.io[].
 . NetApp Cloud Central 자격 증명을 사용하여 로그인합니다.
 

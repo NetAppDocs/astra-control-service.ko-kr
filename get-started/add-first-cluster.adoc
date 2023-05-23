@@ -26,7 +26,7 @@ summary: 환경을 설정한 후에는 Kubernetes 클러스터를 생성하고 A
 클러스터가 아직 없는 경우 요건에 맞는 클러스터를 생성할 수 있습니다 link:set-up-amazon-web-services.html#eks-cluster-requirements["Amazon Elastic Kubernetes Service(EKS)에 대한 Astra Control 서비스 요구사항"]. 클러스터가 아직 없는 경우 요건에 맞는 클러스터를 생성할 수 있습니다 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine(GKE)에 대한 Astra Control Service 요구 사항"]. 클러스터가 아직 없는 경우 요건에 맞는 클러스터를 생성할 수 있습니다 link:set-up-microsoft-azure-with-anf.html#azure-kubernetes-service-cluster-requirements["Azure NetApp Files를 사용하는 Azure Kubernetes Service(AKS)에 대한 Astra Control 서비스 요구사항"] 또는 link:set-up-microsoft-azure-with-amd.html#azure-kubernetes-service-cluster-requirements["Azure 관리 디스크를 사용하는 Azure Kubernetes Service(AKS)에 대한 Astra Control Service 요구 사항"].
 
 
-NOTE: Astra Control Service는 인증 및 ID 관리를 위해 Azure Active Directory(Azure AD)를 사용하는 AKS 클러스터를 지원합니다. 클러스터를 생성할 때 의 지침을 따릅니다 https://["공식 문서"^] Azure AD를 사용하도록 클러스터를 구성합니다. 클러스터가 AKS로 관리되는 Azure AD 통합에 대한 요구 사항을 충족하는지 확인해야 합니다.
+NOTE: Astra Control Service는 인증 및 ID 관리를 위해 Azure Active Directory(Azure AD)를 사용하는 AKS 클러스터를 지원합니다. 클러스터를 생성할 때 의 지침을 따릅니다 https://docs.microsoft.com/en-us/azure/aks/managed-aad["공식 문서"^] Azure AD를 사용하도록 클러스터를 구성합니다. 클러스터가 AKS로 관리되는 Azure AD 통합에 대한 요구 사항을 충족하는지 확인해야 합니다.
 
 
 
@@ -48,8 +48,8 @@ ifdef::aws[]
 .Amazon Web Services에서 직접 지원합니다
 * 클러스터를 생성한 IAM 사용자의 자격 증명이 포함된 JSON 파일이 있어야 합니다. link:../get-started/set-up-amazon-web-services.html#create-an-iam-user["IAM 사용자를 생성하는 방법을 알아봅니다"].
 * NetApp ONTAP용 Amazon FSx에는 Astra Trident가 필요합니다. NetApp ONTAP용 Amazon FSx를 EKS 클러스터의 스토리지 백엔드로 사용하려는 경우 의 Astra Trident 정보를 참조하십시오 link:set-up-amazon-web-services.html#eks-cluster-requirements["EKS 클러스터 요구 사항"].
-* (선택 사항) 제공해야 하는 경우 `kubectl` 클러스터 생성자가 아닌 다른 IAM 사용자에 대한 클러스터에 대한 명령 액세스는 의 지침을 참조하십시오 https://["Amazon EKS에서 클러스터를 생성한 후 다른 IAM 사용자 및 역할에 대한 액세스를 제공하려면 어떻게 해야 합니까?"^].
-* NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 사용하려는 경우 Amazon Web Services와 연동되도록 Cloud Volumes ONTAP를 구성해야 합니다. Cloud Volumes ONTAP를 참조하십시오 https://["설치 설명서"^].
+* (선택 사항) 제공해야 하는 경우 `kubectl` 클러스터 생성자가 아닌 다른 IAM 사용자에 대한 클러스터에 대한 명령 액세스는 의 지침을 참조하십시오 https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/["Amazon EKS에서 클러스터를 생성한 후 다른 IAM 사용자 및 역할에 대한 액세스를 제공하려면 어떻게 해야 합니까?"^].
+* NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 사용하려는 경우 Amazon Web Services와 연동되도록 Cloud Volumes ONTAP를 구성해야 합니다. Cloud Volumes ONTAP를 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["설치 설명서"^].
 
 
 endif::aws[]
@@ -62,7 +62,7 @@ ifdef::azure[]
 JSON 파일에 추가하지 않은 경우 Azure 구독 ID도 필요합니다.
 
 * 전용 AKS 클러스터의 경우 를 참조하십시오 link:manage-private-cluster.html["Astra Control Service에서 프라이빗 클러스터를 관리합니다"^].
-* NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 사용하려는 경우 Microsoft Azure와 연동하도록 Cloud Volumes ONTAP를 구성해야 합니다. Cloud Volumes ONTAP를 참조하십시오 https://["설치 설명서"^].
+* NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 사용하려는 경우 Microsoft Azure와 연동하도록 Cloud Volumes ONTAP를 구성해야 합니다. Cloud Volumes ONTAP를 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html["설치 설명서"^].
 
 
 endif::azure[]
@@ -71,7 +71,7 @@ ifdef::gcp[]
 
 .Google 클라우드
 * 필요한 권한이 있는 서비스 계정에 대한 서비스 계정 키 파일이 있어야 합니다. link:../get-started/set-up-google-cloud.html#create-a-service-account["서비스 계정 설정 방법에 대해 알아보십시오"].
-* NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 사용하려는 경우 Cloud Volumes ONTAP이 Google Cloud와 연동되도록 구성해야 합니다. Cloud Volumes ONTAP를 참조하십시오 https://["설치 설명서"^].
+* NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 사용하려는 경우 Cloud Volumes ONTAP이 Google Cloud와 연동되도록 구성해야 합니다. Cloud Volumes ONTAP를 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["설치 설명서"^].
 
 
 endif::gcp[]
@@ -97,12 +97,12 @@ Astra Control Service는 다음과 같은 Kubernetes 배포를 사용하는 자�
 * NetApp 스토리지를 사용 중이거나 사용할 계획인 경우, 최신 버전의 Astra Trident를 설치했는지 확인합니다.
 +
 
-NOTE: 가능합니다 https://["Astra Trident 구축"^] Trident 연산자(수동 또는 제어 차트 사용) 또는 를 사용합니다 `tridentctl`. Astra Trident를 설치 또는 업그레이드하기 전에 을 검토하십시오 https://["지원되는 프런트엔드, 백엔드 및 호스트 구성"^].
+NOTE: 가능합니다 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method["Astra Trident 구축"^] Trident 연산자(수동 또는 제어 차트 사용) 또는 를 사용합니다 `tridentctl`. Astra Trident를 설치 또는 업그레이드하기 전에 을 검토하십시오 https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html["지원되는 프런트엔드, 백엔드 및 호스트 구성"^].
 
 +
-** * Trident 스토리지 백엔드가 구성됨 *: Astra Trident 스토리지 백엔드가 하나 이상 있어야 합니다 https://["구성됨"^] 클러스터에서.
-** * 구성된 Trident 스토리지 클래스 *: Astra Trident 스토리지 클래스가 하나 이상 있어야 합니다 https://["구성됨"^] 클러스터에서. 기본 스토리지 클래스가 구성된 경우 하나의 스토리지 클래스에만 해당 주석이 있어야 합니다.
-** * Astra Trident 볼륨 스냅샷 컨트롤러 및 볼륨 스냅샷 클래스 설치 및 구성 *: 볼륨 스냅샷 컨트롤러가 되어야 합니다 https://["설치되어 있습니다"^] 따라서 Astra Control에서 스냅샷을 생성할 수 있습니다. Astra Trident가 하나 이상 있어야 합니다 `VolumeSnapshotClass` 있습니다 https://["설정"^] 관리자의 경우.
+** * Trident 스토리지 백엔드가 구성됨 *: Astra Trident 스토리지 백엔드가 하나 이상 있어야 합니다 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["구성됨"^] 클러스터에서.
+** * 구성된 Trident 스토리지 클래스 *: Astra Trident 스토리지 클래스가 하나 이상 있어야 합니다 https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["구성됨"^] 클러스터에서. 기본 스토리지 클래스가 구성된 경우 하나의 스토리지 클래스에만 해당 주석이 있어야 합니다.
+** * Astra Trident 볼륨 스냅샷 컨트롤러 및 볼륨 스냅샷 클래스 설치 및 구성 *: 볼륨 스냅샷 컨트롤러가 되어야 합니다 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["설치되어 있습니다"^] 따라서 Astra Control에서 스냅샷을 생성할 수 있습니다. Astra Trident가 하나 이상 있어야 합니다 `VolumeSnapshotClass` 있습니다 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["설정"^] 관리자의 경우.
 
 
 * * Kubecon무화과 액세스 가능 *: 에 액세스할 수 있습니다 <<kubeconfig,클러스터 쿠베토무화과>> 여기에는 하나의 컨텍스트 요소만 포함됩니다.
@@ -138,7 +138,7 @@ error: the server doesn't have a resource type "tridentversions"
 ----
 +
 
-NOTE: Astra Trident가 설치되지 않았거나 최신 버전이 아닌 경우, 클러스터에서 스토리지 서비스에 Astra Trident를 사용하려면 계속하기 전에 최신 버전의 Astra Trident를 설치해야 합니다. 을 참조하십시오 https://["Astra Trident 문서"^] 를 참조하십시오.
+NOTE: Astra Trident가 설치되지 않았거나 최신 버전이 아닌 경우, 클러스터에서 스토리지 서비스에 Astra Trident를 사용하려면 계속하기 전에 최신 버전의 Astra Trident를 설치해야 합니다. 을 참조하십시오 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident 문서"^] 를 참조하십시오.
 
 . Pod가 실행 중인지 확인합니다.
 +
@@ -384,7 +384,7 @@ endif::gcp[]
 . * 기타 *: 을 업로드하여 자체 관리되는 클러스터에 대한 세부 정보를 제공합니다 `kubeconfig.yaml` 파일을 클릭하거나 의 내용을 붙여 넣습니다 `kubeconfig.yaml` 파일을 클립보드에 저장합니다.
 +
 
-NOTE: 직접 만드는 경우 `kubeconfig` 파일에서 * 하나의 * 컨텍스트 요소만 정의해야 합니다. 을 참조하십시오 https://["Kubernetes 문서"^] 을 참조하십시오 `kubeconfig` 파일.
+NOTE: 직접 만드는 경우 `kubeconfig` 파일에서 * 하나의 * 컨텍스트 요소만 정의해야 합니다. 을 참조하십시오 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes 문서"^] 을 참조하십시오 `kubeconfig` 파일.
 
 +
 .. * 클라우드 인스턴스 이름 * (공급자 관리 클러스터의 경우): 이 클러스터를 추가할 때 생성될 새 클라우드 인스턴스의 이름을 입력합니다. 에 대해 자세히 알아보십시오 link:../use/manage-cloud-instances.html["클라우드 인스턴스"].
@@ -452,29 +452,29 @@ endif::aws[]
 
 ifdef::gcp[]
 
-* https://["Google Cloud용 Cloud Volumes Service"^]
-* https://["Google 영구 디스크"^]
+* https://cloud.netapp.com/cloud-volumes-service-for-gcp["Google Cloud용 Cloud Volumes Service"^]
+* https://cloud.google.com/persistent-disk/["Google 영구 디스크"^]
 
 
 endif::gcp[]
 
 ifdef::azure[]
 
-* https://["Azure NetApp Files"^]
-* https://["Azure로 관리되는 디스크"^]
+* https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure로 관리되는 디스크"^]
 
 
 endif::azure[]
 
 ifdef::aws[]
 
-* https://["Amazon Elastic Block Store를 클릭합니다"^]
-* https://["NetApp ONTAP용 Amazon FSx"^]
+* https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store를 클릭합니다"^]
+* https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["NetApp ONTAP용 Amazon FSx"^]
 
 
 endif::aws[]
 
-* https://["NetApp Cloud Volumes ONTAP를 참조하십시오"^]
+* https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/["NetApp Cloud Volumes ONTAP를 참조하십시오"^]
 +
 에 대해 자세히 알아보십시오 link:../learn/aws-storage.html["Amazon Web Services 클러스터용 스토리지 클래스입니다"]. 에 대해 자세히 알아보십시오 link:../learn/azure-storage.html["AKS 클러스터용 스토리지 클래스입니다"]. 에 대해 자세히 알아보십시오 link:../learn/choose-class-and-size.html["GKE 클러스터용 저장소 클래스"].
 

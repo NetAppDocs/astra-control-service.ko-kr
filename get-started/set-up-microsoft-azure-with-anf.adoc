@@ -85,19 +85,19 @@ Kubernetes 클러스터는 Astra Control Service에서 검색 및 관리할 수 
 Kubernetes 버전:: 클러스터는 Kubernetes 버전 1.23 - 1.25를 실행해야 합니다.
 이미지 유형:: 모든 노드 풀의 이미지 유형은 Linux여야 합니다.
 클러스터 상태입니다:: 클러스터가 정상 상태에서 실행되고 있어야 하며 오류가 발생한 상태의 작업자 노드가 없는 온라인 작업자 노드가 하나 이상 있어야 합니다.
-Azure 지역:: 클러스터는 Azure NetApp Files를 사용할 수 있는 지역에 상주해야 합니다. https://["지역별 Azure 제품 보기"^].
+Azure 지역:: 클러스터는 Azure NetApp Files를 사용할 수 있는 지역에 상주해야 합니다. https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["지역별 Azure 제품 보기"^].
 구독:: 클러스터는 Azure NetApp Files가 설정된 구독에 상주해야 합니다. 구독은 필요할 때 선택할 수 있습니다 <<Azure NetApp Files에 등록하십시오,Azure NetApp Files에 등록하십시오>>.
 VNET:: 다음 VNET 요구 사항을 고려하십시오.
 +
 --
 * 클러스터는 Azure NetApp Files 위임 서브넷에 직접 액세스할 수 있는 VNET에 상주해야 합니다. <<Azure NetApp Files에 서브넷 위임,위임된 서브넷을 설정하는 방법에 대해 알아봅니다>>.
 * Kubernetes 클러스터가 다른 VNET에 있는 Azure NetApp Files 위임 서브넷을 통해 피어링된 VNET에 있는 경우 피어링 연결의 양측이 온라인 상태여야 합니다.
-* Azure NetApp Files가 있는 VNET(즉시 피어링된 VNets 포함)에서 사용되는 IP 수의 기본 제한은 1,000입니다. https://["Azure NetApp Files 리소스 제한을 봅니다"^].
+* Azure NetApp Files가 있는 VNET(즉시 피어링된 VNets 포함)에서 사용되는 IP 수의 기본 제한은 1,000입니다. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits["Azure NetApp Files 리소스 제한을 봅니다"^].
 +
 제한에 근접하면 다음 두 가지 옵션을 사용할 수 있습니다.
 
 +
-** 가능합니다 https://["한도 증수에 대한 요청을 제출합니다"^]. 도움이 필요하면 NetApp 담당자에게 문의하십시오.
+** 가능합니다 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits#request-limit-increase-["한도 증수에 대한 요청을 제출합니다"^]. 도움이 필요하면 NetApp 담당자에게 문의하십시오.
 ** 새 AKS(Amazon Kubernetes Service) 클러스터를 생성할 때 클러스터에 대한 새 네트워크를 지정합니다. 새 네트워크가 생성되면 새 서브넷을 프로비저닝하고 Azure NetApp Files에 서브넷을 위임합니다.
 
 
@@ -113,7 +113,7 @@ VNET:: 다음 VNET 요구 사항을 고려하십시오.
 Microsoft Azure 계정이 없는 경우 먼저 Microsoft Azure에 가입합니다.
 
 .단계
-. 로 이동합니다 https://["Azure 구독 페이지입니다"^] Azure 서비스에 가입하려면
+. 로 이동합니다 https://azure.microsoft.com/en-us/free/["Azure 구독 페이지입니다"^] Azure 서비스에 가입하려면
 . 계획을 선택하고 지침에 따라 구독을 완료합니다.
 
 
@@ -125,7 +125,7 @@ NetApp 리소스 공급자를 등록하여 Azure NetApp Files에 액세스하십
 
 .단계
 . Azure 포털에 로그인합니다.
-. https://["Azure NetApp Files 설명서에 따라 NetApp 리소스 공급자를 등록하십시오"^].
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register["Azure NetApp Files 설명서에 따라 NetApp 리소스 공급자를 등록하십시오"^].
 
 
 
@@ -135,7 +135,7 @@ NetApp 리소스 공급자를 등록하여 Azure NetApp Files에 액세스하십
 Azure NetApp Files에서 NetApp 계정을 만듭니다.
 
 .단계
-. https://["Azure NetApp Files 설명서에 따라 Azure 포털에서 NetApp 계정을 만드십시오"^].
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account["Azure NetApp Files 설명서에 따라 Azure 포털에서 NetApp 계정을 만드십시오"^].
 
 
 
@@ -162,7 +162,7 @@ link:../learn/azure-storage.html["Azure NetApp Files의 서비스 수준에 대�
 
 
 .단계
-. https://["Azure NetApp Files 설명서에 따라 자동 QoS 용량 풀을 설정합니다"^].
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool["Azure NetApp Files 설명서에 따라 자동 QoS 용량 풀을 설정합니다"^].
 
 
 
@@ -174,7 +174,7 @@ Astra Control Service가 해당 서브넷에 영구 볼륨을 생성할 수 있�
 피어링된 VNets를 사용하는 경우 피어링 연결의 양쪽이 모두 온라인 상태여야 합니다. 즉, Kubernetes 클러스터가 있는 VNET와 Azure NetApp Files에서 위임한 서브넷이 있는 VNET입니다.
 
 .단계
-. https://["Azure NetApp Files 설명서에 따라 Azure NetApp Files에 서브넷을 위임합니다"^].
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet["Azure NetApp Files 설명서에 따라 Azure NetApp Files에 서브넷을 위임합니다"^].
 
 
 .모두 끝냈군요
@@ -188,7 +188,7 @@ Astra Control Service에는 Contributor 역할이 할당된 Azure 서비스 보�
 
 서비스 보안 주체는 응용 프로그램, 서비스 및 도구와 함께 사용하기 위해 특별히 만들어진 ID입니다. 서비스 보안 주체에 역할을 할당하면 특정 Azure 리소스에 대한 액세스가 제한됩니다.
 
-Azure CLI를 사용하여 서비스 보안 주체를 만들려면 다음 단계를 수행하십시오. 출력 내용을 JSON 파일에 저장하고 나중에 Astra Control Service에 제공해야 합니다. https://["CLI 사용에 대한 자세한 내용은 Azure 설명서를 참조하십시오"^].
+Azure CLI를 사용하여 서비스 보안 주체를 만들려면 다음 단계를 수행하십시오. 출력 내용을 JSON 파일에 저장하고 나중에 Astra Control Service에 제공해야 합니다. https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli["CLI 사용에 대한 자세한 내용은 Azure 설명서를 참조하십시오"^].
 
 다음 단계에서는 서비스 보안 주체를 만들 수 있는 권한이 있고 Microsoft Azure SDK(az 명령)가 컴퓨터에 설치되어 있다고 가정합니다.
 
@@ -271,8 +271,8 @@ az aks list --subscription SUBSCRIPTION-ID --resource-group RESOURCE-GROUP-ID
 Azure 백업 버킷에 대해 보다 내구성이 뛰어난 이중화 수준을 구성할 수 있습니다. 기본적으로 Astra Control Service 버킷은 Azure Kubernetes Service 백업을 저장하는 데 사용되며 LRS(Locally Redundant Storage) 이중화 옵션을 사용합니다. Azure 버킷에 보다 내구성이 뛰어난 이중화 옵션을 사용하려면 다음을 수행해야 합니다.
 
 .단계
-. 필요한 중복 수준을 사용하는 Azure 저장소 계정을 만듭니다 https://["참조하십시오"^].
-. 를 사용하여 새 저장소 계정에 Azure 컨테이너를 생성합니다 https://["참조하십시오"^].
+. 필요한 중복 수준을 사용하는 Azure 저장소 계정을 만듭니다 https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal["참조하십시오"^].
+. 를 사용하여 새 저장소 계정에 Azure 컨테이너를 생성합니다 https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal["참조하십시오"^].
 . 컨테이너를 Astra Control Service에 버킷으로 추가합니다. 을 참조하십시오 link:../use/manage-buckets.html#add-an-additional-bucket["추가 버킷을 추가합니다"].
 . (선택 사항) 새로 생성한 버킷을 Azure 백업의 기본 버킷으로 사용하려면 이 버킷을 Azure의 기본 버킷으로 설정합니다. 을 참조하십시오 link:../use/manage-buckets.html#change-the-default-bucket["기본 버킷을 변경합니다"].
 

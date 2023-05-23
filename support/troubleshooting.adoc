@@ -14,11 +14,11 @@ summary: 일반적인 문제에 대한 문제 해결 팁을 찾아보십시오.
 [role="lead"]
 발생할 수 있는 몇 가지 일반적인 문제를 해결하는 방법에 대해 알아봅니다.
 
-https://[]
+https://kb.netapp.com/Cloud/Astra/Control[]
 
 
 
 == 를 참조하십시오
 
-* https://["문제 해결"^]
+* https://kb.netapp.com/Cloud/Astra/Control["문제 해결"^]
 

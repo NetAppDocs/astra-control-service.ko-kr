@@ -12,7 +12,7 @@ summary: Astra Control은 스냅샷 또는 백업에서 애플리케이션 구�
 
 
 [role="lead"]
-Astra Control은 스냅샷 또는 백업에서 애플리케이션을 복원할 수 있습니다. 애플리케이션을 동일한 클러스터로 복구할 경우 기존 스냅샷에서 복구하는 속도가 빨라집니다. Astra Control UI 또는 를 사용할 수 있습니다 https://["Astra Control API"^] 앱을 복원합니다.
+Astra Control은 스냅샷 또는 백업에서 애플리케이션을 복원할 수 있습니다. 애플리케이션을 동일한 클러스터로 복구할 경우 기존 스냅샷에서 복구하는 속도가 빨라집니다. Astra Control UI 또는 를 사용할 수 있습니다 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 앱을 복원합니다.
 
 
 NOTE: 복원 또는 클론 작업 후에 실행되는 실행 후크에 네임스페이스 필터를 추가하고 복원 또는 클론 소스와 대상이 서로 다른 네임스페이스에 있는 경우 네임스페이스 필터는 대상 네임스페이스에만 적용됩니다.
@@ -123,7 +123,7 @@ NOTE: 적어도 하나의 네임스페이스, 레이블 또는 GVK를 지정해�
 NOTE: 응용 프로그램에 원래 여러 네임스페이스가 포함되어 있고 이를 새 네임스페이스로 복원하면 리소스에 포함되지 않은 네임스페이스도 모두 만들어집니다.
 
 .. (선택 사항) 리소스 이름을 입력합니다.
-.. (선택 사항) * 라벨 선택기 *: 포함 https://["라벨 선택기"^] 규칙에 추가합니다. 레이블 선택기는 선택한 레이블과 일치하는 자원만 필터링하는 데 사용됩니다.
+.. (선택 사항) * 라벨 선택기 *: 포함 https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors["라벨 선택기"^] 규칙에 추가합니다. 레이블 선택기는 선택한 레이블과 일치하는 자원만 필터링하는 데 사용됩니다.
 .. (선택 사항) 추가 필터링 옵션을 사용하려면 GVK(GroupVersionKind) SET * 를 선택하여 리소스 * 를 필터링합니다.
 +
 

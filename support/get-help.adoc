@@ -24,7 +24,7 @@ NetApp은 다양한 방법으로 Astra Control을 지원합니다. 기술 자료
 
 이러한 옵션은 24x7 무료로 제공됩니다.
 
-* https://["기술 자료"^]
+* https://kb.netapp.com/Cloud/Astra/Control["기술 자료"^]
 +
 Astra Control과 관련된 문서, FAQ 또는 고장 수리 정보를 검색합니다.
 
@@ -32,7 +32,7 @@ Astra Control과 관련된 문서, FAQ 또는 고장 수리 정보를 검색합�
 +
 현재 보고 있는 문서 사이트입니다.
 
-* https://["불화를 통해 도움을 받습니다"^]
+* https://discord.gg/NetApp["불화를 통해 도움을 받습니다"^]
 +
 Pub 카테고리의 Astra로 이동하여 동료 및 전문가와 교류하십시오.
 
@@ -48,7 +48,7 @@ Pub 카테고리의 Astra로 이동하여 동료 및 전문가와 교류하십�
 
 위의 자체 지원 옵션 외에도 NetApp 지원 엔지니어와 협력하여 이후의 문제를 해결할 수 있습니다 link:register-support.html["NetApp 일련 번호에 대한 지원을 활성화합니다"].
 
-Astra Control 일련 번호가 활성화되면 을 생성하여 NetApp 기술 지원 리소스에 액세스할 수 있습니다 https://["지원 티켓"].
+Astra Control 일련 번호가 활성화되면 을 생성하여 NetApp 기술 지원 리소스에 액세스할 수 있습니다 https://mysupport.netapp.com/site/cases/mine/create["지원 티켓"].
 
 클라우드 데이터 서비스 > Astra * 를 선택합니다.
 
