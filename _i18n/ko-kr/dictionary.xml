@@ -1533,8 +1533,6 @@
   <block id="e36d851dc2ff79e16c7cfbbb4e4fbe97" category="inline-link">Astra 자동화 문서</block>
   <block id="e9c498c38ce73fcff282ff152abd7d47" category="list-text">의 지침에 따라 Astra Control API 토큰을 생성합니다<block ref="c02899be0babfb1350e3b2576a6e8c97" category="inline-link-rx"></block>.</block>
   <block id="61ddd26ba79b5e63c1e52be1beb28889" category="section-title">영구 스토리지를 설정합니다</block>
-  <block id="395e3e6bfbbde5a5e2d5c7679dcc81e9" category="list-text"><block ref="395e3e6bfbbde5a5e2d5c7679dcc81e9" category="inline-link-rx"></block></block>
-  <block id="19d863b4572c9f53c276383bbf2540e0" category="list-text"><block ref="19d863b4572c9f53c276383bbf2540e0" category="inline-link-rx"></block></block>
   <block id="1cef3f8b6a3670bf3c09d6cab3c3c3d1" category="section-title">프라이빗 클러스터를 Astra Control Service에 추가합니다</block>
   <block id="e722e71a936852b8a6cd89cd5c31feb9" category="list-text"><block ref="e722e71a936852b8a6cd89cd5c31feb9" category="inline-link-macro-rx"></block></block>
   <block id="b0a64c8dbe133ff5b49120ddb00f788a" category="sidebar">프라이빗 클러스터 관리</block>
@@ -1555,14 +1553,10 @@
   <block id="e9f0d7eb2b9e30339763cb7819bdf45e" category="inline-link">지원되는 프런트엔드, 백엔드 및 호스트 구성</block>
   <block id="3c172a48713bf18882de70235bb9b4ee" category="admonition">가능합니다<block ref="ec89e21f8106b8624273185ce464dfb2" category="inline-link-rx"></block> Trident 연산자(수동 또는 제어 차트 사용) 또는 를 사용합니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>. Astra Trident를 설치 또는 업그레이드하기 전에 을 검토하십시오<block ref="c11537a174ec95a098cfff995b6e8b14" category="inline-link-rx"></block>.</block>
   <block id="48e54afcf03ca45bfe38f6b7ff58764a" category="inline-link">구성됨</block>
-  <block id="a0129d46679c1e10fbee3d462fc52fa1" category="list-text">* Trident 스토리지 백엔드가 구성됨 *: Astra Trident 스토리지 백엔드가 하나 이상 있어야 합니다<block ref="5225aa45493862e8671db3c546f615ec" category="inline-link-rx"></block> 클러스터에서.</block>
-  <block id="83dff6768dc3337083f9e61fb96d773b" category="list-text">* 구성된 Trident 스토리지 클래스 *: Astra Trident 스토리지 클래스가 하나 이상 있어야 합니다<block ref="56eee92baaddefbebda4bc1d0011f25b" category="inline-link-rx"></block> 클러스터에서. 기본 스토리지 클래스가 구성된 경우 하나의 스토리지 클래스에만 해당 주석이 있어야 합니다.</block>
   <block id="73329564760013a7824ff9d5d1af91ff" category="inline-link">설치되어 있습니다</block>
   <block id="d5158c215f75d40b3dc3a9efd519b60a" category="inline-link">설정</block>
   <block id="6e623f58f3de0088c1a5e9284fd0aba0" category="list-text">* Astra Trident 볼륨 스냅샷 컨트롤러 및 볼륨 스냅샷 클래스 설치 및 구성 *: 볼륨 스냅샷 컨트롤러가 되어야 합니다<block ref="8c0af001953d4be1cc072658538e955b" category="inline-link-rx"></block> 따라서 Astra Control에서 스냅샷을 생성할 수 있습니다. Astra Trident가 하나 이상 있어야 합니다<block ref="19476662cd814e0aa085eca121de89b8" prefix=" " category="inline-code"></block> 있습니다<block ref="75fbdf7a5c036fb3ab281101e48530be" category="inline-link-rx"></block> 관리자의 경우.</block>
-  <block id="9d9542e5b4db9b70118c8d71a180a912" category="inline-link">클러스터 쿠베토무화과</block>
   <block id="cf6c596a44d2e4c76a3a7da085c47495" category="list-text">* Rancher 전용 *: Rancher 환경에서 애플리케이션 클러스터를 관리할 때 Rancher가 제공하는 kubecon무화과 파일에서 애플리케이션 클러스터의 기본 컨텍스트를 수정하여 Rancher API 서버 컨텍스트 대신 컨트롤 플레인 컨텍스트를 사용합니다. 따라서 Rancher API 서버의 부하가 줄어들고 성능이 향상됩니다.</block>
-  <block id="2ed51f16f28e4dd32dfd5df75788423d" category="paragraph">클러스터에서 스토리지 서비스에 Astra Trident를 사용하는 경우 설치된 버전의 Astra Trident가 최신 버전인지 확인하십시오.</block>
   <block id="617eb1530b145e1d6b1e3a0d2ec1478d" category="list-text">Astra Trident 버전을 확인합니다.</block>
   <block id="296a853ce5b2af1089a92d18fb98dbf2" category="paragraph">Astra Trident가 설치된 경우 다음과 유사한 출력이 표시됩니다.</block>
   <block id="ffcc0feca3c8cd069d4965c88a5c1ebb" category="paragraph">Astra Trident가 설치되지 않은 경우 다음과 유사한 출력이 표시됩니다.</block>
@@ -1638,7 +1632,6 @@
   <block id="8d7c216bc17d281838efafaa3704677b" category="list-text">복원 유형 선택:</block>
   <block id="90d21d98503ddae05ddf0a1a34b7d790" category="list-text">* 원래 네임스페이스로 복원 *: 이 절차를 사용하여 원래 클러스터로 응용 프로그램을 원래 상태로 복원할 수 있습니다.</block>
   <block id="e6cd86d61f4639c8a27006c6c29b3e9f" category="list-text">다음 * 을 선택합니다.</block>
-  <block id="440c25a54f1d6be365d93551da3bc3f9" category="list-text">* 새 네임스페이스로 복원 *: 이 절차를 사용하여 응용 프로그램을 다른 클러스터나 소스의 다른 네임스페이스로 복원할 수 있습니다.</block>
   <block id="5ffc80657fe4c0bd046f794a0b287613" category="list-text">복원하려는 앱의 대상 클러스터를 선택합니다.</block>
   <block id="2e9b30622dd6f4053fb1f81819061361" category="list-text">앱과 연결된 각 소스 네임스페이스의 대상 네임스페이스를 입력합니다.</block>
   <block id="bc35b4ce5d7fa04a3a0b91c5621c2022" category="admonition">Astra Control은 이 복원 옵션의 일부로 새 대상 네임스페이스를 만듭니다. 지정한 대상 네임스페이스가 대상 클러스터에 이미 있으면 안 됩니다.</block>
@@ -1745,8 +1738,6 @@
   <block id="e426491368911ddd627b7404e37bfba5" category="section-title">AWS Marketplace에서 Astra Control Service를 구독하십시오</block>
   <block id="72496bd39fd9ae39a72c45e51248b6ab" category="paragraph">AWS Marketplace를 사용하여 Astra Control Service를 구독할 수 있습니다. 계정 및 청구 세부 정보는 마켓플레이스를 통해 관리됩니다.</block>
   <block id="cab27dc53edb571cac663ce2e16450dc" category="inline-link">AWS 마켓플레이스 를 참조하십시오</block>
-  <block id="4e0cb716824c5bbf10b6615c5ec77360" category="list-text">로 이동합니다<block ref="90a631d717728c768cce45f0f9d8f736" category="inline-link-rx"></block>.</block>
-  <block id="9afef6b2e6bfae3c1516f6a5615e147a" category="list-text">Continue to Subscribe * 를 선택합니다.</block>
   <block id="91038e0679273c26bc019c15bd0d5c26" category="section-title">NetApp에 직접 Astra Control Service를 구독하십시오</block>
   <block id="a08810c868c50b2d6d63acd21453e57e" category="paragraph">Astra Control Service UI 내에서 또는 NetApp 세일즈 팀에 연락하여 Astra Control Service를 구독할 수 있습니다.</block>
   <block id="efd5332dcf8c11a124fee11aa67e1764" category="paragraph">언제든지 결제 계획을 업그레이드하여 Astra Control에서 10개 이상의 네임스페이스를 관리할 수 있습니다. 유효한 신용 카드만 있으면 됩니다.</block>
@@ -1812,7 +1803,6 @@
   <block id="45fa555347c1a658490523d14396d6f7" category="section-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> Astra Control에 클러스터를 추가합니다</block>
   <block id="672560be9cf97dc26e5d58123e1236bd" category="list-text">NetApp ONTAP용 Amazon FSx에는 Astra Trident가 필요합니다. NetApp ONTAP용 Amazon FSx를 EKS 클러스터의 스토리지 백엔드로 사용하려는 경우 의 Astra Trident 정보를 참조하십시오 <block ref="e68d00178a10629977a40b55006d1823" category="inline-link-macro-rx"></block>.</block>
   <block id="055c68f4a4baed3cf8af5f0b817d97aa" category="list-text">전용 AKS 클러스터의 경우 를 참조하십시오 <block ref="104a7dd39d72f9f66f9cd954ba655942" category="inline-link-macro-rx"></block>.</block>
-  <block id="f18a26b9b45443052e0fe2464848258b" category="paragraph-title">(선택 사항) Astra Trident 버전을 확인하십시오</block>
   <block id="133059778c759500900ac3e31f9124f6" category="admonition">Astra Trident가 설치되지 않았거나 최신 버전이 아닌 경우, 클러스터에서 스토리지 서비스에 Astra Trident를 사용하려면 계속하기 전에 최신 버전의 Astra Trident를 설치해야 합니다. 을 참조하십시오<block ref="0a4eeddcb63a166e3ea6149a4a33d4e7" category="inline-link-rx"></block> 를 참조하십시오.</block>
   <block id="ceb1396f571b46844bfc0042be1d74da" category="list-text">스토리지 클래스가 지원되는 Astra Trident 드라이버를 사용하고 있는지 확인합니다. 공급자 이름은 이어야 합니다<block ref="08044207e9f63bb0fd474dab347a776c" prefix=" " category="inline-code"></block>. 다음 예를 참조하십시오.</block>
   <block id="275b3f11dca994bdaad9403b50379839" category="admonition">직접 만드는 경우<block ref="deabc6332aa53495b56c51d2e3eca54f" prefix=" " category="inline-code"></block> 파일에서 * 하나의 * 컨텍스트 요소만 정의해야 합니다. 을 참조하십시오<block ref="54676762f2eb4e7149fe4e9996a20b1c" category="inline-link-rx"></block> 을 참조하십시오<block ref="deabc6332aa53495b56c51d2e3eca54f" prefix=" " category="inline-code"></block> 파일.</block>
@@ -1842,8 +1832,6 @@
   <block id="1d7c1d2f297451f6eaf4e76901db96d2" category="list-text">(선택 사항) 새로 생성한 버킷을 Azure 백업의 기본 버킷으로 사용하려면 이 버킷을 Azure의 기본 버킷으로 설정합니다. 을 참조하십시오 <block ref="d1523cf11113b501cc0e7216254bf527" category="inline-link-macro-rx"></block>.</block>
   <block id="463f412773d00aae6c4b3709aadd2b57" category="paragraph">예, Astra Control Service에 전용 AKS 클러스터를 추가할 수 있습니다. 전용 AKS 클러스터를 추가하려면 을 참조하십시오 <block ref="d51718998c7312025a3cf72e62416cc2" category="inline-link-macro-rx"></block>.</block>
   <block id="0f0939624ea35d3dd7896d9216bee5d4" category="paragraph">* 응용 프로그램의 PVC가 GCP CVS에 바인딩된 것은 보이지 않습니다. 무엇이 문제입니까? *</block>
-  <block id="6a1ee7a7d4b8f2fc793568f158af438f" category="paragraph">다음과 유사한 출력을 참조해야 합니다.</block>
-  <block id="2497006a3d717fa05f4253255b4682d2" category="paragraph">클러스터의 영구 스토리지를 구성합니다. Azure NetApp Files 또는 Azure 관리 디스크를 사용할 수 있습니다. 다음 옵션을 사용하여 Azure를 구성하는 방법에 대한 자세한 내용은 시작 설명서를 참조하십시오.</block>
   <block id="0ab04539adb80fe9a1c9f5dc0be183d2" category="section-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Amazon Web Services에 대한 Astra Control 서비스 요구 사항을 검토합니다</block>
   <block id="dd8153a2eaefa2ca6b22e74080a45577" category="section-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 아마존 계정을 생성합니다</block>
   <block id="d2d49f8b074c326544953d30a666756a" category="section-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> Amazon Web Services CLI를 설치합니다</block>
@@ -1928,8 +1916,6 @@
   <block id="c965062d34f97b8a807d6043b0889aa4" category="paragraph">자가 관리형 클러스터는 다음 요구사항을 충족해야 합니다.</block>
   <block id="58585810a4337be95bcfebedb828d056" category="list-text">클러스터를 인터넷을 통해 액세스할 수 있어야 합니다.</block>
   <block id="834a9cd206312978cd28b32979a72bf7" category="list-text">CSI 드라이버로 활성화된 스토리지를 사용 중이거나 사용할 계획이면 해당 CSI 드라이버가 클러스터에 설치되어 있어야 합니다. CSI 드라이버를 사용하여 스토리지를 통합하는 방법에 대한 자세한 내용은 스토리지 서비스 설명서를 참조하십시오.</block>
-  <block id="1aec847a00d9758f901c82fc829ba738" category="list-text">* Kubecon무화과 액세스 가능 *: 에 액세스할 수 있습니다 <block ref="5c481c89be9c4fdcaa80bfd3c3829692" category="inline-xref-macro-rx"></block> 여기에는 하나의 컨텍스트 요소만 포함됩니다.</block>
-  <block id="1a6b6e95b95a8e0de09a6566562ea376" category="paragraph-title">관리자 역할 kubecononfig 생성(Rancher, OpenShift 및 업스트림 Kubernetes를 실행하는 클러스터에 적용)</block>
   <block id="17fc42c08affacba5657de8d171ed30e" category="list-text">* 클라우드 인스턴스 이름 * (공급자 관리 클러스터의 경우): 이 클러스터를 추가할 때 생성될 새 클라우드 인스턴스의 이름을 입력합니다. 에 대해 자세히 알아보십시오 <block ref="32e60ef2ecbf9cc1dffc20ea8b07ceea" category="inline-link-macro-rx"></block>.</block>
   <block id="1fe883570039bf797197aff2f9905e79" category="list-text">(선택 사항) * 스토리지 *: 기본적으로 이 클러스터에 Kubernetes 애플리케이션을 배포할 스토리지 클래스를 선택하십시오.</block>
   <block id="a0652b7f26bfa45b4a805218ab132fd2" category="paragraph">* 공급자 관리 클러스터 *: 이 클라우드 공급자를 위해 추가한 첫 번째 클러스터인 경우 Astra Control Service는 해당 클러스터에서 실행되는 애플리케이션 백업을 위해 클라우드 공급자를 위한 오브젝트 저장소를 생성합니다. (이 클라우드 공급자에 후속 클러스터를 추가할 경우 더 이상 오브젝트 저장소가 생성되지 않습니다.) 기본 스토리지 클래스를 지정한 경우 Astra Control Service는 사용자가 지정한 기본 스토리지 클래스를 설정합니다. Amazon Web Services 또는 Google Cloud Platform에서 관리되는 클러스터의 경우 Astra Control Service는 클러스터에 관리자 계정도 생성합니다. 이 작업은 몇 분 정도 걸릴 수 있습니다.</block>
@@ -1949,7 +1935,6 @@
   <block id="1bdec68ba7ba69d1cfefb7e18a857ef4" category="inline-link">설치 설명서</block>
   <block id="e7f7ae1f9423fb8774a02e2ae647e158" category="list-text">NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 사용하려는 경우 Microsoft Azure와 연동하도록 Cloud Volumes ONTAP를 구성해야 합니다. Cloud Volumes ONTAP를 참조하십시오<block ref="8bd14818004729c0926343811de7e4e9" category="inline-link-rx"></block>.</block>
   <block id="d75122947e3b2c3b0a4b44dfa3966432" category="list-text">NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 사용하려는 경우 Cloud Volumes ONTAP이 Google Cloud와 연동되도록 구성해야 합니다. Cloud Volumes ONTAP를 참조하십시오<block ref="3a89728ad1d2dcbb16e661d8af8129b1" category="inline-link-rx"></block>.</block>
-  <block id="cac25a8107e0ae4e458a81d1cd3dc8d2" category="list-text">NetApp 스토리지를 사용 중이거나 사용할 계획인 경우, 최신 버전의 Astra Trident를 설치했는지 확인합니다.</block>
   <block id="972bcf4ffaa6d6b2c50833f0c86517d2" category="list-text">* 스토리지 클래스 *: 스토리지 클래스가 명시적으로 설정된 앱을 설치하고 앱을 복제해야 하는 경우 클론 작업의 타겟 클러스터에 원래 지정된 스토리지 클래스가 있어야 합니다. 명시적으로 설정된 스토리지 클래스를 가진 애플리케이션을 동일한 스토리지 클래스가 없는 클러스터로 클론 복제하면 실패합니다.</block>
   <block id="e5de374e1d369bfc7e8ec51b5b744933" category="cell"><block ref="a941f8adb5ae079ebc739cb59407fd30" prefix="" category="inline-code"></block></block>
   <block id="be5e0e20ce0e311437852c90af7c8276" category="cell"><block ref="639125955d3128c08b048bc254433dbf" prefix="" category="inline-code"></block></block>
@@ -2041,7 +2026,6 @@
   <block id="24411cb39fcec9426e23c56d3c9322ae" category="inline-link">전용 OpenShift 클러스터를 위한 Azure 문서</block>
   <block id="72eb22c3894670c20dfb331bb6054d14" category="list-text"><block ref="72eb22c3894670c20dfb331bb6054d14" category="inline-link-rx"></block></block>
   <block id="1c485bc46ff352eb7977d1a404cd382e" category="paragraph">프라이빗 클러스터에 Astra Connector 운영자를 설치해야 합니다. 방호 호스트를 사용하는 경우 방호 호스트의 명령줄에서 이러한 명령을 실행하십시오.</block>
-  <block id="fe81019bf8ba8d2ac0185cd8a4af1faa" category="list-text">를 포함하도록 Astra Connector 운영자 리포지토리의 config/samples 디렉토리에서 예제 구성 파일을 수정합니다<block ref="ee45b718b9170963d4b014935dcf1f92" prefix=" " category="inline-code"></block> 키. 예를 들면 다음과 같습니다.</block>
   <block id="ed22187ccd9f4d7245c81d9a6c00b947" category="paragraph">이제 Astra Control Service에 프라이빗 클러스터를 추가할 수 있습니다. 표준 워크플로우를 따라 클러스터를 Astra Control Service에 추가합니다.<block ref="240044c611ecbc1dfa48c963d44f13ca" category="inline-link-rx"></block>.</block>
   <block id="9854a9d6e0852fc6b22871974ea749cf" category="paragraph">아니요 클러스터가 Astra Control에 추가되면 서비스가 Kubernetes 클러스터에 NetApp의 Trident Container Storage Interface(CSI) 드라이버를 자동으로 설치합니다. 이 CSI 드라이버는 클라우드 공급자가 지원하는 클러스터에 영구 볼륨을 프로비저닝하는 데 사용됩니다.</block>
   <block id="f8f1ef03f08e7d1c3e62dd87dde91f57" category="paragraph">예. Astra Control의 애플리케이션에 대한 스냅샷 작업에는 애플리케이션의 PVC에 바인딩된 모든 PVS의 스냅샷이 포함됩니다.</block>
@@ -2109,7 +2093,6 @@
   <block id="9a8d086014c5bd3e4ccfd14a881f8fcd" category="paragraph">Astra Control Service는 Amazon EBS(Elastic Block Store), NetApp ONTAP용 Amazon FSx 또는 NetApp Cloud Volumes ONTAP를 EKS(Elastic Kubernetes Service) 클러스터의 스토리지 백엔드로 사용할 수 있습니다.</block>
   <block id="68bd054170816bc3e89c4e00c3a23bfd" category="paragraph">성능 권장사항을 비롯한 NetApp Cloud Volumes ONTAP 구성에 대한 자세한 내용은 를 참조하십시오<block ref="b17f0a969868e5279849aa167864d3ad" category="inline-link-rx"></block>.</block>
   <block id="5e45edcd9985e188c258e7b6515feeea" category="paragraph">Astra Control Service는 Azure Kubernetes Service(AKS) 클러스터를 위한 스토리지 백엔드로 Azure NetApp Files, Azure 관리 디스크 또는 NetApp Cloud Volumes ONTAP를 지원합니다.</block>
-  <block id="6bab6ac71f743f37f154b7b0219c56a8" category="paragraph">Astra Control Service는 영구 볼륨의 스토리지 백엔드 옵션으로 Cloud Volumes Service for Google Cloud, Google Persistent Disk 또는 NetApp Cloud Volumes ONTAP를 지원합니다.</block>
   <block id="09a08aa51d9a5d34a5bc6cecdb1f03bf" category="paragraph">Astra Control에 새 클러스터를 추가할 때 새 클라우드 인스턴스를 추가할 수 있습니다. 을 참조하십시오 <block ref="04d97bec7f4fa11002764129cf40d13a" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
   <block id="9743b1bac661724fbae098bb88f6131d" category="list-text"><block ref="9743b1bac661724fbae098bb88f6131d" category="inline-link-rx"></block></block>
   <block id="84810f606cf208e2aa62628838041ba8" category="list-text">스토리지 백엔드가 있는 작업에는 Astra Trident와 외부 스냅샷 컨트롤러가 필요합니다. 설치하려면 다음을 수행합니다.</block>
@@ -2132,4 +2115,47 @@
   <block id="5a5355eda2f1cf003d25254ee2c311a3" category="section-title">특정 스냅샷 컨트롤러 버전을 사용하는 Kubernetes 1.25 이상 클러스터의 경우 스냅샷이 실패할 수 있습니다</block>
   <block id="f9f1ea7c0040d9bdb077f9ce68de31e3" category="paragraph">버전 1.25 이상을 실행하는 Kubernetes 클러스터의 스냅샷은 버전 v1beta1 의 스냅샷 컨트롤러 API가 클러스터에 설치된 경우 실패할 수 있습니다.</block>
   <block id="2ad74d9f76ccccd37e4f9c6cb27f1cbd" category="paragraph">이 문제를 해결하려면 기존 Kubernetes 1.25 이상 설치를 업그레이드할 때 다음을 수행하십시오.</block>
+  <block id="3865e2c640ef43dc8b6cdde8577fdae3" category="summary">자가 관리 클러스터의 경우 올바른 Astra Trident 버전을 사용하고 있는지 확인해야 할 수 있습니다.</block>
+  <block id="c58984b36e9505bff0dfa89bc0d17033" category="doc">Astra Trident 버전을 확인합니다</block>
+  <block id="190b68a154719afc372800ea3a0b1df0" category="paragraph">스토리지 서비스에 Astra Trident를 사용하는 자체 관리 클러스터를 추가하려면 설치된 Astra Trident 버전이 최신인지 확인합니다.</block>
+  <block id="03ae56ea52e1d5c8f0588d85da03b245" category="paragraph">Astra Control Service를 사용하여 AKS의 프라이빗 Azure Kubernetes Service(AKS) 및 Red Hat OpenShift 클러스터를 관리할 수 있습니다. 이 지침에서는 이미 전용 AKS 또는 OpenShift 클러스터를 만들고 원격으로 액세스할 수 있는 안전한 방법을 준비했다고 가정합니다. 전용 AKS 또는 OpenShift 클러스터를 만들고 액세스하는 방법에 대한 자세한 내용은 다음 문서를 참조하십시오.</block>
+  <block id="e35275b4b4a62199b607326f4cc2e619" category="inline-link">아마존 EKS 문서</block>
+  <block id="e0ab955e38e9d09e11bb4ce661de116e" category="paragraph">Astra Control Service를 사용하여 전용 EKS(Amazon Elastic Kubernetes Service) 클러스터를 관리할 수 있습니다. 이 지침에서는 이미 전용 EKS 클러스터를 생성하고 원격으로 액세스할 수 있는 안전한 방법을 준비했다고 가정합니다. 전용 EKS 클러스터 생성 및 액세스에 대한 자세한 내용은 을 참조하십시오<block ref="25cfe69edfa7c63ce11681ed9b1756b6" category="inline-link-rx"></block>.</block>
+  <block id="74b1e5c348a848bb4ce21d77b42cc99d" category="list-text">Astra Connector 운영자 리포지토리의 config/samples 디렉토리에서 예제 구성 파일을 수정하여 다음 키에 대해 사용자 환경에 특정한 값을 포함시킵니다.</block>
+  <block id="68be0da5bed11ebd00d3c25f1c35fd33" category="list-text"><block ref="ee45b718b9170963d4b014935dcf1f92" prefix="" category="inline-code"></block></block>
+  <block id="706df4873c9abebfb12bbbce94eea59e" category="list-text"><block ref="e4906094d39f2d4e06b2ae62d33a367d" prefix="" category="inline-code"></block></block>
+  <block id="5da0e75e632878ad7543a7a3509a3b72" category="list-text"><block ref="1880aaef19ef807bec19563ae1d07a45" prefix="" category="inline-code"></block></block>
+  <block id="27f514d9b9bd32e1adf37803dc94ee77" category="list-text"><block ref="f5030bbb60417bae3aabe8040f9f6de4" prefix="" category="inline-code"></block></block>
+  <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">예를 들면 다음과 같습니다.</block>
+  <block id="f30fbd4ef5cb7bea87622409fb60cedc" category="paragraph">클러스터의 영구 스토리지를 구성합니다. 영구 스토리지 구성에 대한 자세한 내용은 시작 설명서를 참조하십시오.</block>
+  <block id="209360388d2327cf0da8f0db9d83d822" category="list-text">지원합니다</block>
+  <block id="b61e26b74720f596080e0b8b7cc19a51" category="list-text">CVS 서비스 유형을 사용하여 NetApp Cloud Volumes Service를 스토리지 백엔드로 사용하는 경우 볼륨을 프로비저닝하기 전에 스토리지 풀을 구성해야 합니다. 을 참조하십시오 <block ref="429770a6434e67b528ee2674b1263f6f" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
+  <block id="648076d1ba75a7ad5fece7ac72d037cb" category="list-text">하나의 컨텍스트 요소만 포함된 클러스터 kubecononfig 파일에 액세스할 수 있습니다. 를 따릅니다 <block ref="9d8ee3d0d4f5c967db921af26c4c5a7a" category="inline-link-macro-rx"></block> admin 클러스터 역할 kubecononfig 파일을 생성합니다.</block>
+  <block id="a70a43b113125b1448d1fcb519d36b91" category="inline-link-macro">최신 버전인지 확인하십시오</block>
+  <block id="c3c1443d616920fc43d7d7477292d060" category="list-text">* Astra Trident *: NetApp 스토리지를 사용 중이거나 사용할 계획이라면 Astra Trident의 최신 버전을 설치했는지 확인하십시오. Astra Trident가 이미 설치된 경우 <block ref="331db620f278bf6f4c96acfa252801e6" category="inline-link-macro-rx"></block>.</block>
+  <block id="84333d7ff615717c719381f57406a949" category="list-text">* Astra Trident 스토리지 백엔드가 구성됨 *: Astra Trident 스토리지 백엔드가 하나 이상 있어야 합니다<block ref="5225aa45493862e8671db3c546f615ec" category="inline-link-rx"></block> 클러스터에서.</block>
+  <block id="0df1bbdefb6c7ab54388f20e615d6ff6" category="list-text">* Astra Trident 스토리지 클래스가 구성됨 *: Astra Trident 스토리지 클래스가 하나 이상 있어야 합니다<block ref="56eee92baaddefbebda4bc1d0011f25b" category="inline-link-rx"></block> 클러스터에서. 기본 스토리지 클래스가 구성된 경우 하나의 스토리지 클래스에만 해당 주석이 있어야 합니다.</block>
+  <block id="eddf0b0c77ced4551605b01f9388baea" category="summary">자가 관리 클러스터용 관리자 역할 kubecononfig 파일을 생성해야 합니다.</block>
+  <block id="9dc913e0573023f0b54d8d304c10a592" category="doc">admin 클러스터 역할 kubecononfig 파일을 생성합니다</block>
+  <block id="8737bd0c30a0b2e2c8127074a8e8ff3b" category="paragraph">자가 관리 클러스터를 추가하려면 admin 클러스터 역할 kubecononfig 파일을 생성해야 합니다.</block>
+  <block id="ddc9715607fb981646b02ffaaae9d35b" category="section-title">Rancher, Upstream Kubernetes 및 Red Hat OpenShift 클러스터를 위한 kubecon무화과 파일을 생성합니다</block>
+  <block id="bacde2d5f8907c39cfce03260081b849" category="section-title">Amazon EKS 클러스터용 kubbeconfig 파일을 생성합니다</block>
+  <block id="b54e0018cc383761560c8cea8c440181" category="paragraph">아마존 문서의 지침에 따라 아마존 EKS 클러스터용 kubbeconfig 파일을 생성합니다.</block>
+  <block id="219018d1a7fc0ccfc7ae0919efd38830" category="inline-link">Amazon EKS 클러스터에 대한 kubbeconfig 파일을 생성하거나 업데이트합니다</block>
+  <block id="5efa640818add52a71a9634fe973dd16" category="paragraph"><block ref="5efa640818add52a71a9634fe973dd16" category="inline-link-rx"></block></block>
+  <block id="0f2007d7b4634d1a7885862c6f181b9a" category="paragraph">Astra Control Service는 영구 볼륨의 스토리지 백엔드 옵션으로 NetApp Cloud Volumes Service for Google Cloud, Google Persistent Disk 또는 NetApp Cloud Volumes ONTAP를 지원합니다.</block>
+  <block id="2bb207919bf6f4a923276cffca81d5b6" category="inline-link">Cloud Volumes Service 설명서</block>
+  <block id="f6badf2ea0b8925a32fd7a8939c49d76" category="admonition">Astra Trident 23.01 이상과 CVS 서비스 유형을 사용하는 경우 볼륨을 프로비저닝하기 전에 스토리지 풀을 구성해야 합니다. 스토리지 풀이 구성되지 않은 볼륨을 프로비저닝하는 경우 볼륨 프로비저닝이 실패합니다. 을 참조하십시오<block ref="c8e96960daef0620d62e613312bed1b3" category="inline-link-rx"></block> 볼륨 생성에 대한 자세한 내용은 를 참조하십시오.</block>
+  <block id="fe0e59bea1249a422ae632fb679a3eb4" category="section-title">2023년 5월 30일</block>
+  <block id="a3713717b03d2915f6765e05ed6b1408" category="list-text">전용 Amazon EKS 클러스터 지원</block>
+  <block id="bc5c44b285a0165e3fe1a37a7fb809b8" category="list-text">복원 또는 클론 복제 작업 중에 대상 스토리지 클래스를 선택할 수 있도록 지원합니다</block>
+  <block id="6b232a7c52529298a8d8659da49a6c55" category="inline-link">Azure 마켓플레이스에서 Astra Control Service 계획 및 가격을 확인하십시오</block>
+  <block id="561ecf6f2d051ab4729a8a9277ea7778" category="list-text"><block ref="561ecf6f2d051ab4729a8a9277ea7778" category="inline-link-rx"></block></block>
+  <block id="bcc2e0d21e0f1a00c0be8199d1e80246" category="list-text">로 이동합니다<block ref="6f6aa6ec8b4edd29e99f72f87495c932" category="inline-link-rx"></block>.</block>
+  <block id="cc5b03fa4f937c63363767c812feeb34" category="list-text">구매 옵션 보기 * 를 선택합니다.</block>
+  <block id="7934395fd856fdc8728077a88a0b2b96" category="list-text">메시지가 표시되면 AWS 계정에 로그인하거나 새 계정을 만듭니다.</block>
+  <block id="71cebf6cc339e547055d19b1ebb71cfb" category="list-text">* 새 네임스페이스로 복원 *: 이 절차를 사용하여 응용 프로그램을 다른 클러스터나 소스의 다른 네임스페이스로 복원할 수 있습니다. 이 절차를 사용하여 앱을 다른 스토리지 클래스로 마이그레이션할 수도 있습니다.</block>
+  <block id="a7a08622ee5c8019b57354b99b7693b2" category="list-text">다음 중 하나를 선택합니다.</block>
+  <block id="42f6c62242bb567ac4a309a82717d6e9" category="list-text">* 원래 스토리지 클래스를 사용하여 복원 *: 대상 클러스터에 없는 경우 응용 프로그램은 원래 연결된 스토리지 클래스를 사용합니다. 이 경우 클러스터의 기본 스토리지 클래스가 사용됩니다.</block>
+  <block id="cc9916e812cf950bc0992213a1e5cc57" category="list-text">* 다른 스토리지 클래스를 사용하여 복구 *: 타겟 클러스터에 존재하는 스토리지 클래스를 선택합니다. 원래 연결된 스토리지 클래스에 관계없이 모든 애플리케이션 볼륨은 복구의 일부로 이 서로 다른 스토리지 클래스로 마이그레이션됩니다.</block>
 </blocks>

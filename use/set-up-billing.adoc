@@ -71,6 +71,7 @@ Astra Control Service를 사용하여 AKS 클러스터를 관리할 경우 영�
 
 * https://azure.microsoft.com/en-us/pricing/details/netapp["Azure NetApp Files에 대한 가격 세부 정보를 봅니다"^].
 * https://azure.microsoft.com/en-us/pricing/details/storage/blobs["Microsoft Azure Blob 스토리지의 가격 세부 정보를 봅니다"^].
+* https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-astra-acs?tab=PlansAndPrice["Azure 마켓플레이스에서 Astra Control Service 계획 및 가격을 확인하십시오"]
 
 
 endif::azure[]
@@ -110,8 +111,9 @@ NOTE: Azure Marketplace 구독 프로세스에 대한 비디오 안내를 보려
 AWS Marketplace를 사용하여 Astra Control Service를 구독할 수 있습니다. 계정 및 청구 세부 정보는 마켓플레이스를 통해 관리됩니다.
 
 .단계
-. 로 이동합니다 https://aws.amazon.com/marketplace/["AWS 마켓플레이스 를 참조하십시오"^].
-. Continue to Subscribe * 를 선택합니다.
+. 로 이동합니다 https://aws.amazon.com/marketplace/pp/prodview-auupmqjoq43ey?sr=0-1&ref_=beagle&applicationId=AWSMPContessa["AWS 마켓플레이스 를 참조하십시오"^].
+. 구매 옵션 보기 * 를 선택합니다.
+. 메시지가 표시되면 AWS 계정에 로그인하거나 새 계정을 만듭니다.
 . 지침에 따라 계획을 구독합니다.
 
 

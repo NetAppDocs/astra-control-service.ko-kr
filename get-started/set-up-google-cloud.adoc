@@ -119,6 +119,7 @@ Google Cloud 지역:: Google Cloud용 Cloud Volumes Service를 스토리지 백�
 
 --
 GKE 클러스터의 작동 모드입니다:: 표준 작동 모드를 사용해야 합니다. 현재 Autopilot 모드가 테스트되지 않았습니다. link:https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes["작동 모드에 대해 자세히 알아보십시오"^].
+지원합니다:: CVS 서비스 유형을 사용하여 NetApp Cloud Volumes Service를 스토리지 백엔드로 사용하는 경우 볼륨을 프로비저닝하기 전에 스토리지 풀을 구성해야 합니다. 을 참조하십시오 link:../learn/choose-class-and-size.html#overview["서비스 유형, 스토리지 클래스 및 GKE 클러스터의 PV 크기입니다"^] 를 참조하십시오.
 
 
 

@@ -12,11 +12,19 @@ summary: 환경을 설정한 후에는 Kubernetes 클러스터를 생성하고 A
 
 
 [role="lead"]
+Astra Control Service를 사용하여 AKS의 프라이빗 Azure Kubernetes Service(AKS) 및 Red Hat OpenShift 클러스터를 관리할 수 있습니다. 이 지침에서는 이미 전용 AKS 또는 OpenShift 클러스터를 만들고 원격으로 액세스할 수 있는 안전한 방법을 준비했다고 가정합니다. 전용 AKS 또는 OpenShift 클러스터를 만들고 액세스하는 방법에 대한 자세한 내용은 다음 문서를 참조하십시오.
+
+* https://docs.microsoft.com/azure/aks/private-clusters["프라이빗 AKS 클러스터를 위한 Azure 설명서"^]
+* https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x["전용 OpenShift 클러스터를 위한 Azure 문서"^]
+
+
 Astra Control Service를 사용하여 AKS(프라이빗 Azure Kubernetes Service) 클러스터뿐 아니라 AKS의 프라이빗 Red Hat OpenShift 클러스터를 관리할 수 있습니다. 이 지침에서는 이미 전용 AKS 또는 OpenShift 클러스터를 만들고 원격으로 액세스할 수 있는 안전한 방법을 준비했다고 가정합니다. 전용 AKS 또는 OpenShift 클러스터를 만들고 액세스하는 방법에 대한 자세한 내용은 다음 문서를 참조하십시오.
 
 * https://docs.microsoft.com/azure/aks/private-clusters["프라이빗 AKS 클러스터를 위한 Azure 설명서"^]
 * https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x["전용 OpenShift 클러스터를 위한 Azure 문서"^]
 
+
+Astra Control Service를 사용하여 전용 EKS(Amazon Elastic Kubernetes Service) 클러스터를 관리할 수 있습니다. 이 지침에서는 이미 전용 EKS 클러스터를 생성하고 원격으로 액세스할 수 있는 안전한 방법을 준비했다고 가정합니다. 전용 EKS 클러스터 생성 및 액세스에 대한 자세한 내용은 을 참조하십시오 https://docs.aws.amazon.com/eks/latest/userguide/private-clusters.html["아마존 EKS 문서"^].
 
 
 
@@ -51,7 +59,15 @@ kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
 kubectl create ns astra-connector
 ----
 . 의 지침에 따라 Astra Control API 토큰을 생성합니다 https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra 자동화 문서"^].
-. 를 포함하도록 Astra Connector 운영자 리포지토리의 config/samples 디렉토리에서 예제 구성 파일을 수정합니다 `spec.natssync-client.cloud-bridge-url` 키. 예를 들면 다음과 같습니다.
+. Astra Connector 운영자 리포지토리의 config/samples 디렉토리에서 예제 구성 파일을 수정하여 다음 키에 대해 사용자 환경에 특정한 값을 포함시킵니다.
++
+** `spec.natssync-client.cloud-bridge-url`
+** `spec.astra.token`
+** `spec.astra.clusterName`
+** `spec.astra.accountId`
++
+예를 들면 다음과 같습니다.
+
 +
 [listing]
 ----
@@ -77,6 +93,8 @@ spec:
     accountId: <Astra Control account id>
     acceptEULA: yes
 ----
+
+
 . Astra Connector CRD(Custom Resource Definition)를 적용합니다.
 +
 [source, console]
@@ -90,7 +108,7 @@ kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
 kubectl get astraconnector astra-connector -n astra-connector
 ----
 +
-다음과 유사한 출력을 참조해야 합니다.
+다음과 유사한 출력이 표시됩니다.
 
 +
 [source, console]
@@ -104,11 +122,7 @@ astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 
 == 영구 스토리지를 설정합니다
 
-클러스터의 영구 스토리지를 구성합니다. Azure NetApp Files 또는 Azure 관리 디스크를 사용할 수 있습니다. 다음 옵션을 사용하여 Azure를 구성하는 방법에 대한 자세한 내용은 시작 설명서를 참조하십시오.
-
-* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-anf.html["Azure NetApp Files를 사용하여 Microsoft Azure를 설정합니다"]
-* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html["Azure 관리 디스크를 사용하여 Microsoft Azure를 설정합니다"]
-
+클러스터의 영구 스토리지를 구성합니다. 영구 스토리지 구성에 대한 자세한 내용은 시작 설명서를 참조하십시오.
 
 
 

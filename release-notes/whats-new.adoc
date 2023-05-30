@@ -16,6 +16,21 @@ NetApp은 새로운 기능, 개선 사항 및 버그 수정을 제공하기 위�
 
 
 
+== 2023년 5월 30일
+
+.새로운 기능 및 지원
+* 전용 Amazon EKS 클러스터 지원
++
+link:../get-started/manage-private-cluster.html["Astra Control Service에서 프라이빗 클러스터를 관리합니다"]
+
+* 복원 또는 클론 복제 작업 중에 대상 스토리지 클래스를 선택할 수 있도록 지원합니다
++
+link:../use/restore-apps.html["앱 복원"]
+
+
+
+
+
 == 2023년 5월 15일
 
 .새로운 기능 및 지원

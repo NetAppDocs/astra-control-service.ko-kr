@@ -26,8 +26,12 @@ entries:
   url: "/get-started/register.html"
 - title: 클러스터 관리
   url: "/get-started/add-first-cluster.html"
+  entries:
+  - title: Astra Trident 버전을 확인합니다
+    url: "/get-started/check-astra-trident-version.html"
+  - title: admin 클러스터 역할 kubecononfig 파일을 생성합니다
+    url: "/get-started/create-kubeconfig.html"
 - title: 프라이빗 클러스터 관리
-  flavor: azure
   url: "/get-started/manage-private-cluster.html"
 - title: 다음 단계
   url: "/get-started/whats-next.html"
