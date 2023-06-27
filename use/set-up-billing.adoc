@@ -29,7 +29,7 @@ Astra Control Service와 관련된 비용에는 두 가지 유형이 있습니�
 Astra Control Service는 다음과 같은 세 가지 계획을 제공합니다.
 
 무료 플랜:: 최대 10개의 네임스페이스를 무료로 관리할 수 있습니다.
-프리미엄 페이고:: 네임스페이스당 시간당 특정 비율로 무제한의 네임스페이스를 관리합니다.
+프리미엄 페이고:: 네임스페이스당 특정 속도로 무제한의 네임스페이스 관리
 프리미엄 구독:: 연 단위 가입으로 할인된 요금으로 선결제하면 _namespace pack_ 당 최대 10개의 네임스페이스를 관리할 수 있습니다. NetApp 세일즈 팀에 문의하여 조직에 필요한 만큼 팩을 구매합니다. 예를 들어, Astra Control Service에서 30개의 네임스페이스를 관리하기 위해 3개의 팩을 구입합니다. 연간 구독에서 허용하는 것보다 많은 네임스페이스를 관리하는 경우 추가 네임스페이스당 구독 종속 초과 요금이 부과됩니다.
 +
 --
@@ -50,7 +50,7 @@ ifdef::gcp[]
 
 === Google Cloud 청구
 
-Astra Control Service를 사용하여 GKE 클러스터를 관리할 경우, 영구 볼륨은 NetApp Cloud Volumes Service에 의해 백업되고 앱의 백업은 Google 클라우드 스토리지 버킷에 저장됩니다.
+영구 볼륨은 NetApp Cloud Volumes Service를 통해 지원되며, 앱의 백업은 Google 클라우드 스토리지 버킷에 저장됩니다.
 
 * https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs["Cloud Volumes Service에 대한 가격 세부 정보를 봅니다"^].
 +
@@ -67,12 +67,15 @@ ifdef::azure[]
 
 === Microsoft Azure 청구
 
-Astra Control Service를 사용하여 AKS 클러스터를 관리할 경우 영구 볼륨은 Azure NetApp Files에 의해 백업되고 앱 백업은 Azure Blob 컨테이너에 저장됩니다.
+영구 볼륨은 Azure NetApp Files에 의해 백업되고 앱 백업은 Azure Blob 컨테이너에 저장됩니다.
 
 * https://azure.microsoft.com/en-us/pricing/details/netapp["Azure NetApp Files에 대한 가격 세부 정보를 봅니다"^].
 * https://azure.microsoft.com/en-us/pricing/details/storage/blobs["Microsoft Azure Blob 스토리지의 가격 세부 정보를 봅니다"^].
 * https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-astra-acs?tab=PlansAndPrice["Azure 마켓플레이스에서 Astra Control Service 계획 및 가격을 확인하십시오"]
 
+
+
+NOTE: Astra Control Service에 대한 Azure 청구 요금은 시간당 청구되며, 사용 시간의 29분이 경과한 후 새로운 청구 시간이 시작됩니다.
 
 endif::azure[]
 
@@ -82,7 +85,7 @@ ifdef::aws[]
 
 === Amazon Web Services 청구
 
-Astra Control Service를 통해 AWS 클러스터를 관리할 경우, 영구적 볼륨은 EBS 또는 FSx for NetApp ONTAP를 통해 지원되며, 앱의 백업은 AWS 버킷에 저장됩니다.
+영구 볼륨은 EBS 또는 FSx for NetApp ONTAP에 의해 백업되고 앱 백업은 AWS 버킷에 저장됩니다.
 
 * https://aws.amazon.com/eks/pricing/["Amazon Web Services에 대한 가격 세부 정보를 봅니다"^].
 
