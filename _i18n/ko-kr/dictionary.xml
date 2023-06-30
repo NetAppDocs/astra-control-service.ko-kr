@@ -2148,7 +2148,6 @@
   <block id="a7a08622ee5c8019b57354b99b7693b2" category="list-text">다음 중 하나를 선택합니다.</block>
   <block id="42f6c62242bb567ac4a309a82717d6e9" category="list-text">* 원래 스토리지 클래스를 사용하여 복원 *: 대상 클러스터에 없는 경우 응용 프로그램은 원래 연결된 스토리지 클래스를 사용합니다. 이 경우 클러스터의 기본 스토리지 클래스가 사용됩니다.</block>
   <block id="cc9916e812cf950bc0992213a1e5cc57" category="list-text">* 다른 스토리지 클래스를 사용하여 복구 *: 타겟 클러스터에 존재하는 스토리지 클래스를 선택합니다. 원래 연결된 스토리지 클래스에 관계없이 모든 애플리케이션 볼륨은 복구의 일부로 이 서로 다른 스토리지 클래스로 마이그레이션됩니다.</block>
-  <block id="9d9af3135a71ef374583f995f07a2539" category="list-text">* 대상 볼륨 확인 *: 다른 스토리지 클래스로 복원하는 경우 스토리지 클래스가 동일한 영구 볼륨 액세스 모드(예: ReadWriteMany)를 사용하는지 확인합니다. 대상 영구 볼륨 액세스 모드가 다르면 복원 작업이 실패합니다.</block>
   <block id="5856d66908e22cf434dbd9afeccf641a" category="list-text">네임스페이스당 특정 속도로 무제한의 네임스페이스 관리</block>
   <block id="bf4f678d4a57f18576a93b45fbd878bd" category="paragraph">영구 볼륨은 NetApp Cloud Volumes Service를 통해 지원되며, 앱의 백업은 Google 클라우드 스토리지 버킷에 저장됩니다.</block>
   <block id="a56e21e29fdc4a1e8ca3d0fe83ad8ec3" category="paragraph">영구 볼륨은 Azure NetApp Files에 의해 백업되고 앱 백업은 Azure Blob 컨테이너에 저장됩니다.</block>
@@ -2170,4 +2169,7 @@
   <block id="b77235e640ab8b5a90390081c423e880" category="list-text">Azure Marketplace 구독은 이제 분당 요금이 아닌 시간당 청구됩니다</block>
   <block id="972d9f8e0e28ff88864515cf37f116b2" category="paragraph">시작하기 전에 시스템에 다음 사항이 있는지 확인하십시오.</block>
   <block id="e518ff6eca9962a9ad470732191bb026" category="list-text">kubbtl v1.23 이상이 설치되었습니다</block>
+  <block id="30136395f01879792198317c11831ea4" category="inline-link">쿠버네티스</block>
+  <block id="501a7b3c879675fb528c68e904b076d1" category="list-text">* 대상 볼륨 확인 *: 다른 스토리지 클래스로 복원하는 경우 스토리지 클래스가 동일한 영구 볼륨 액세스 모드(예: ReadWriteMany)를 사용하는지 확인합니다. 대상 영구 볼륨 액세스 모드가 다르면 복원 작업이 실패합니다. 예를 들어, 소스 영구 볼륨에서 rwx 액세스 모드를 사용하는 경우 Azure Managed Disks, AWS EBS, Google Persistent Disk 또는 와 같이 rwx를 제공할 수 없는 대상 스토리지 클래스를 선택합니다<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>, 복구 작업이 실패합니다. 영구 볼륨 액세스 모드에 대한 자세한 내용은 를 참조하십시오<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> 문서화:</block>
+  <block id="0f707c2e2c303edecbc57b2a451ad8a9" category="list-text">* 대상 볼륨 확인 *: 다른 스토리지 클래스에 클론을 생성하는 경우 스토리지 클래스가 동일한 영구 볼륨 액세스 모드(예: ReadWriteMany)를 사용하는지 확인합니다. 대상 영구 볼륨 액세스 모드가 다르면 클론 작업이 실패합니다. 예를 들어, 소스 영구 볼륨에서 rwx 액세스 모드를 사용하는 경우 Azure Managed Disks, AWS EBS, Google Persistent Disk 또는 와 같이 rwx를 제공할 수 없는 대상 스토리지 클래스를 선택합니다<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>, 클론 작업이 실패합니다. 영구 볼륨 액세스 모드에 대한 자세한 내용은 를 참조하십시오<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> 문서화:</block>
 </blocks>
