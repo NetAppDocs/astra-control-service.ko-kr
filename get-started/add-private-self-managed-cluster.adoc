@@ -1,0 +1,377 @@
+---
+sidebar: sidebar 
+permalink: get-started/add-private-self-managed-cluster.html 
+keywords: discover cluster, add cluster, add kubernetes cluster, discover kubernetes cluster, add cluster 
+summary: 환경을 설정한 후에는 Kubernetes 클러스터를 생성하고 Astra Control Service에 추가할 준비가 된 것입니다. 
+---
+= Astra Control Service에 프라이빗 자체 관리 클러스터를 추가합니다
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+환경을 설정한 후에는 Kubernetes 클러스터를 생성하고 Astra Control Service에 추가할 준비가 된 것입니다.
+
+자가 관리형 클러스터는 직접 프로비저닝하고 관리하는 클러스터입니다. Astra Control Service는 퍼블릭 클라우드 환경에서 실행되는 자체 관리형 클러스터를 지원합니다. A를 업로드하여 자가 관리 클러스터를 Astra Control Service에 추가할 수 있습니다 `kubeconfig.yaml` 파일. 클러스터가 여기에 설명된 요구 사항을 충족하는지 확인해야 합니다.
+
+
+
+== 지원되는 Kubernetes 배포
+
+Astra Control Service를 사용하여 다음과 같은 유형의 프라이빗, 자가 관리 클러스터를 관리할 수 있습니다.
+
+|===
+| Kubernetes 배포 | 지원되는 버전 
+
+
+| Azure Stack HCI 기반 Azure Kubernetes Service | AKS 1.23 및 1.24가 포함된 Azure Stack HCI 21H2 및 22H2 
+
+
+| Google Anthos | 1.12 ~ 1.14 
+
+
+| Kubernetes(업스트림) | 1.24 ~ 1.26(Kubernetes 1.25 이상의 경우 Astra Trident 22.10 이상 필요) 
+
+
+| RKE(Rancher Kubernetes Engine) | RKE 1.3 및 Rancher 2.6
+RKE 1.4 및 Rancher 2.7
+RKE 2 (v1.23.x), Rancher 2.6
+RKE 2 (v1.24.x), Rancher 2.7 
+
+
+| Red Hat OpenShift Container Platform | 4.10 ~ 4.12 
+
+
+| VMware Tanzu Kubernetes Grid를 참조하십시오 | 1.6 
+
+
+| VMware Tanzu Kubernetes Grid Integrated Edition을 참조하십시오 | 1.14 및 1.15 
+|===
+이 지침은 이미 프라이빗 클러스터를 생성하고 원격 액세스를 위한 보안 방법을 준비했다고 가정합니다.
+
+Astra Control Service에 프라이빗 클러스터를 추가하려면 다음 작업을 수행해야 합니다.
+
+* <<Astra Connector 운용자를 설치한다>>
+* <<영구 스토리지를 설정합니다>>
+* <<프라이빗 자체 관리 클러스터를 Astra Control Service에 추가합니다>>
+
+
+
+
+== Astra Connector 운용자를 설치한다
+
+프라이빗 클러스터에 Astra Connector 운영자를 설치해야 합니다. 방호 호스트를 사용하는 경우 방호 호스트의 명령줄에서 이러한 명령을 실행하십시오.
+
+.단계
+. Astra Connector operator GitHub 리포지토리 클론 생성:
++
+[source, console]
+----
+git clone https://github.com/NetApp/astra-connector-operator.git
+----
+. 목록을 압축을 푼 운영자 패키지의 최상위 수준으로 변경하여 "ls" 명령으로 "astraconnector_operator.yaML" 파일을 볼 수 있습니다.
+. Astra Connector 연산자에 대한 네임스페이스를 만듭니다.
++
+[source, console]
+----
+kubectl create ns astra-connector-operator
+----
+. astraconnector_operator.yaML 파일을 운용자 namespace에 적용한다.
++
+[source, console]
+----
+kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
+----
+. 프라이빗 클러스터 구성 요소의 네임스페이스를 생성합니다.
++
+[source, console]
+----
+kubectl create ns astra-connector
+----
+. 의 지침에 따라 Astra Control API 토큰을 생성합니다 https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra 자동화 문서"^].
+. Astra Connector 운영자 리포지토리의 config/samples 디렉토리에서 예제 구성 파일을 수정하여 다음 키에 대해 사용자 환경에 특정한 값을 포함시킵니다.
++
+** `spec.natssync-client.cloud-bridge-url`
+** `spec.astra.token`
+** `spec.astra.clusterName`
++
+
+NOTE: `spec.astra.clusterName` 개인 AKS 클러스터를 가져오고 kubeconfig 파일을 Astra Control Service에 제공하지 않는 경우에만 필요합니다. 그렇지 않은 경우 이 줄을 제거합니다.
+
+** `spec.astra.accountId`
++
+예를 들면 다음과 같습니다.
+
++
+[listing]
+----
+apiVersion: netapp.astraconnector.com/v1
+kind: AstraConnector
+metadata:
+  name: astra-connector
+spec:
+  natssync-client:
+    image: natssync-client:2.0
+    cloud-bridge-url: https://<your.astra.control.service.url>
+  nats:
+    image: nats:2.6.1-alpine3.14
+  httpproxy-client:
+    image: httpproxylet:2.0
+  echo-client:
+    image: echo-proxylet:2.0
+  imageRegistry:
+    name: theotw
+  astra:
+    token: <Astra Control API token>
+    clusterName: <your-private-AKS-cluster-name>
+    accountId: <Astra Control account id>
+    acceptEULA: yes
+----
+
+
+. Astra Connector CRD(Custom Resource Definition)를 적용합니다.
++
+[source, console]
+----
+kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
+----
+. Astra Connector의 상태를 확인한다.
++
+[source, console]
+----
+kubectl get astraconnector astra-connector -n astra-connector
+----
++
+다음과 유사한 출력이 표시됩니다.
+
++
+[source, console]
+----
+NAME              REGISTERED   ASTRACONNECTORID
+astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
+----
+
+
+
+
+== 영구 스토리지를 설정합니다
+
+클러스터의 영구 스토리지를 구성합니다. 영구 스토리지 구성에 대한 자세한 내용은 시작 설명서를 참조하십시오.
+
+ifdef::azure[]
+
+* link:set-up-microsoft-azure-with-anf.html["Azure NetApp Files를 사용하여 Microsoft Azure를 설정합니다"^]
+* link:set-up-microsoft-azure-with-amd.html["Azure 관리 디스크를 사용하여 Microsoft Azure를 설정합니다"^]
+
+
+endif::azure[]
+
+ifdef::aws[]
+
+* link:set-up-amazon-web-services.html["Amazon Web Services를 설정합니다"^]
+
+
+endif::aws[]
+
+ifdef::gcp[]
+
+* link:set-up-google-cloud.html["Google Cloud를 설정합니다"^]
+
+
+endif::gcp[]
+
+
+
+== 프라이빗 자체 관리 클러스터를 Astra Control Service에 추가합니다
+
+이제 Astra Control Service에 프라이빗 클러스터를 추가할 수 있습니다.
+
+.시작하기 전에
+[%collapsible%open]
+====
+자가 관리형 클러스터는 직접 프로비저닝하고 관리하는 클러스터입니다. Astra Control Service는 퍼블릭 클라우드 환경에서 실행되는 자체 관리형 클러스터를 지원합니다. 자체 관리 클러스터는 Astra Trident를 사용하여 NetApp 스토리지 서비스와 인터페이스하거나 CSI(컨테이너 스토리지 인터페이스) 드라이버를 사용하여 Amazon EBS(Elastic Block Store), Azure Managed Disks 및 Google Persistent Disk와 인터페이스할 수 있습니다.
+
+Astra Control Service는 다음과 같은 Kubernetes 배포를 사용하는 자체 관리 클러스터를 지원합니다.
+
+* Red Hat OpenShift Container Platform
+* Rancher Kubernetes 엔진
+* 업스트림 Kubernetes
+
+
+자가 관리형 클러스터는 다음 요구사항을 충족해야 합니다.
+
+* 클러스터를 인터넷을 통해 액세스할 수 있어야 합니다.
+* 클러스터는 사내 네트워크 내에서 호스팅할 수 없으며 퍼블릭 클라우드 환경에서 호스팅되어야 합니다.
+* CSI 드라이버로 활성화된 스토리지를 사용 중이거나 사용할 계획이면 해당 CSI 드라이버가 클러스터에 설치되어 있어야 합니다. CSI 드라이버를 사용하여 스토리지를 통합하는 방법에 대한 자세한 내용은 스토리지 서비스 설명서를 참조하십시오.
+* 하나의 컨텍스트 요소만 포함된 클러스터 kubecononfig 파일에 액세스할 수 있습니다. 를 따릅니다 link:create-kubeconfig.html["참조하십시오"^] kubecononfig 파일을 생성합니다.
+* * Rancher 전용 *: Rancher 환경에서 애플리케이션 클러스터를 관리할 때 Rancher가 제공하는 kubecon무화과 파일에서 애플리케이션 클러스터의 기본 컨텍스트를 수정하여 Rancher API 서버 컨텍스트 대신 컨트롤 플레인 컨텍스트를 사용합니다. 따라서 Rancher API 서버의 부하가 줄어들고 성능이 향상됩니다.
+* * Astra Trident *: NetApp 스토리지를 사용 중이거나 사용할 계획이라면 Astra Trident의 최신 버전을 설치했는지 확인하십시오. Astra Trident가 이미 설치된 경우 link:check-astra-trident-version.html["최신 버전인지 확인하십시오"^].
++
+
+NOTE: 가능합니다 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method["Astra Trident 구축"^] Trident 연산자(수동 또는 제어 차트 사용) 또는 를 사용합니다 `tridentctl`. Astra Trident를 설치 또는 업그레이드하기 전에 을 검토하십시오 https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html["지원되는 프런트엔드, 백엔드 및 호스트 구성"^].
+
++
+** * Astra Trident 스토리지 백엔드가 구성됨 *: Astra Trident 스토리지 백엔드가 하나 이상 있어야 합니다 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["구성됨"^] 클러스터에서.
+** * Astra Trident 스토리지 클래스가 구성됨 *: Astra Trident 스토리지 클래스가 하나 이상 있어야 합니다 https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["구성됨"^] 클러스터에서. 기본 스토리지 클래스가 구성된 경우 하나의 스토리지 클래스에만 해당 주석이 있어야 합니다.
+** * Astra Trident 볼륨 스냅샷 컨트롤러 및 볼륨 스냅샷 클래스 설치 및 구성 *: 볼륨 스냅샷 컨트롤러가 되어야 합니다 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["설치되어 있습니다"^] 따라서 Astra Control에서 스냅샷을 생성할 수 있습니다. Astra Trident가 하나 이상 있어야 합니다 `VolumeSnapshotClass` 있습니다 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["설정"^] 관리자의 경우.
+
+
+
+
+====
+.단계
+. 대시보드에서 * Kubernetes 클러스터 관리 * 를 선택합니다.
++
+표시되는 메시지에 따라 클러스터를 추가합니다.
+
+. * 공급자 *: * 기타 * 탭을 선택하여 자체 관리 클러스터에 대한 세부 정보를 추가합니다.
+. * 기타 *: 을 업로드하여 자체 관리되는 클러스터에 대한 세부 정보를 제공합니다 `kubeconfig.yaml` 파일을 클릭하거나 의 내용을 붙여 넣습니다 `kubeconfig.yaml` 파일을 클립보드에 저장합니다.
++
+
+NOTE: 직접 만드는 경우 `kubeconfig` 파일에서 * 하나의 * 컨텍스트 요소만 정의해야 합니다. 을 참조하십시오 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes 문서"^] 을 참조하십시오 `kubeconfig` 파일.
+
+. * 자격 증명 이름 *: Astra Control에 업로드하는 자가 관리 클러스터 자격 증명의 이름을 입력합니다. 기본적으로 자격 증명 이름은 클러스터 이름으로 자동 채워집니다.
+. * Private route identifier *: Astra Connector로부터 얻을 수 있는 private route identifier를 입력합니다. 을 통해 Astra Connector에 문의하면 `kubectl get` 명령, 전용 라우트 식별자를 라고 합니다 `ASTRACONNECTORID`.
++
+
+NOTE: 프라이빗 경로 식별자는 Astra Connector와 연결된 이름으로, 프라이빗 Kubernetes 클러스터를 Astra에서 관리할 수 있도록 합니다. 이런 맥락에서 프라이빗 클러스터는 API 서버를 인터넷에 노출하지 않는 Kubernetes 클러스터입니다.
+
+. 다음 * 을 선택합니다.
+. (선택 사항) * 스토리지 *: 선택적으로 이 클러스터에 Kubernetes 애플리케이션을 배포할 스토리지 클래스를 선택하여 기본적으로 사용하도록 합니다.
++
+.. 클러스터에 대한 새 기본 스토리지 클래스를 선택하려면 * 새 기본 스토리지 클래스 할당 * 확인란을 설정합니다.
+.. 목록에서 새 기본 스토리지 클래스를 선택합니다.
++
+[NOTE]
+====
+각 클라우드 공급자의 스토리지 서비스에는 다음과 같은 가격, 성능 및 복원력 정보가 표시됩니다.
+
+ifdef::gcp[]
+
+*** Google Cloud용 Cloud Volumes Service: 가격, 성능 및 복원력 정보
+*** Google 영구 디스크: 가격, 성능 또는 복원력 정보를 사용할 수 없습니다
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
+*** Azure NetApp Files: 성능 및 복원력 정보
+*** Azure 관리 디스크: 사용 가능한 가격, 성능 또는 복원력 정보가 없습니다
+
+
+endif::azure[]
+
+ifdef::aws[]
+
+*** Amazon Elastic Block Store: 가격, 성능 또는 복원력 정보를 사용할 수 없습니다
+*** NetApp ONTAP용 Amazon FSx: 가격, 성능 또는 복원력 정보 없음
+
+
+endif::aws[]
+
+*** NetApp Cloud Volumes ONTAP: 가격, 성능 또는 복원력 정보를 제공할 수 없습니다
+
+
+====
++
+각 스토리지 클래스는 다음 서비스 중 하나를 활용할 수 있습니다.
+
+
+
+
+
+ifdef::gcp[]
+
+* https://cloud.netapp.com/cloud-volumes-service-for-gcp["Google Cloud용 Cloud Volumes Service"^]
+* https://cloud.google.com/persistent-disk/["Google 영구 디스크"^]
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
+* https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure로 관리되는 디스크"^]
+
+
+endif::azure[]
+
+ifdef::aws[]
+
+* https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store를 클릭합니다"^]
+* https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["NetApp ONTAP용 Amazon FSx"^]
+
+
+endif::aws[]
+
+* https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/["NetApp Cloud Volumes ONTAP를 참조하십시오"^]
++
+에 대해 자세히 알아보십시오 link:../learn/aws-storage.html["Amazon Web Services 클러스터용 스토리지 클래스입니다"]. 에 대해 자세히 알아보십시오 link:../learn/azure-storage.html["AKS 클러스터용 스토리지 클래스입니다"]. 에 대해 자세히 알아보십시오 link:../learn/choose-class-and-size.html["GKE 클러스터용 저장소 클래스"].
+
++
+.. 다음 * 을 선택합니다.
+.. * 검토 및 승인 *: 구성 세부 정보를 검토합니다.
+.. 클러스터를 Astra Control Service에 추가하려면 * 추가 * 를 선택합니다.
+
+
+
+
+
+
+== 기본 스토리지 클래스를 변경합니다
+
+클러스터의 기본 스토리지 클래스를 변경할 수 있습니다.
+
+
+
+=== Astra Control을 사용하여 기본 스토리지 클래스를 변경합니다
+
+Astra Control 내에서 클러스터의 기본 스토리지 클래스를 변경할 수 있습니다. 클러스터에서 이전에 설치된 스토리지 백엔드 서비스를 사용하는 경우 이 방법을 사용하여 기본 스토리지 클래스를 변경하지 못할 수 있습니다(* 기본값으로 설정* 작업은 선택할 수 없음). 이 경우 를 사용할 수 있습니다 <<명령줄을 사용하여 기본 스토리지 클래스를 변경합니다>>.
+
+.단계
+. Astra Control Service UI에서 * Clusters * 를 선택합니다.
+. 클러스터 * 페이지에서 변경할 클러스터를 선택합니다.
+. Storage * 탭을 선택합니다.
+. 스토리지 클래스 * 범주를 선택합니다.
+. 기본값으로 설정할 스토리지 클래스에 대해 * Actions * 메뉴를 선택합니다.
+. Set as default * 를 선택합니다.
+
+
+
+
+=== 명령줄을 사용하여 기본 스토리지 클래스를 변경합니다
+
+Kubernetes 명령을 사용하여 클러스터의 기본 스토리지 클래스를 변경할 수 있습니다. 이 방법은 클러스터의 구성에 관계없이 작동합니다.
+
+.단계
+. Kubernetes 클러스터에 로그인합니다.
+. 클러스터의 스토리지 클래스를 나열합니다.
++
+[source, console]
+----
+kubectl get storageclass
+----
+. 기본 스토리지 클래스에서 기본 지정을 제거합니다. <SC_NAME>를 스토리지 클래스 이름으로 바꿉니다.
++
+[source, console]
+----
+kubectl patch storageclass <SC_NAME> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+----
+. 다른 스토리지 클래스를 기본값으로 표시합니다. <SC_NAME>를 스토리지 클래스 이름으로 바꿉니다.
++
+[source, console]
+----
+kubectl patch storageclass <SC_NAME> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+----
+. 새 기본 스토리지 클래스를 확인합니다.
++
+[source, console]
+----
+kubectl get storageclass
+----
+
+
+ifdef::azure[]

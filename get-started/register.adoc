@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: get-started/register.html 
 keywords: cloud central, sign up, log in, login, register, register for cloud central, create account, sign up for account, get an account, account, accounts 
-summary: Astra Control Service는 NetApp Cloud Central의 인증 서비스에 통합되어 있습니다. Cloud Central에 등록하시면 Astra Control Service와 NetApp의 기타 클라우드 서비스에 액세스할 수 있습니다. 
+summary: Astra Control Service는 NetApp Cloud Central의 인증 서비스에 통합되어 있습니다. Cloud Central에 등록하시면 Astra Control Service와 NetApp의 다른 클라우드 서비스에 액세스할 수 있습니다. 
 ---
 = Astra Control Service 계정에 등록하십시오
 :hardbreaks:
@@ -46,7 +46,7 @@ image:acs-registration-free-plan.png["무료 계획 옵션을 선택해야 하�
 
 == Cloud Central에 가입하십시오
 
-NetApp Cloud Central 계정이 없는 경우 Cloud Central에 등록하시면 Astra Control Service와 NetApp의 다른 클라우드 서비스에 액세스할 수 있습니다. Astra Control Service는 NetApp Cloud Central의 인증 서비스에 통합되어 있습니다. Cloud Central 계정이 이미 있고 등록을 완료한 경우 에 액세스할 수 있습니다 https://astra.netapp.io["Astra 제어 서비스"^] Cloud Central 자격 증명을 사용하여 직접 수행합니다.
+NetApp 클라우드 센트럴 계정이 아직 없는 경우, Cloud Central에 등록하시면 Astra Control Service와 NetApp의 다른 클라우드 서비스에 액세스할 수 있습니다. Astra Control Service는 NetApp Cloud Central의 인증 서비스에 통합되어 있습니다. Cloud Central 계정이 이미 있고 등록을 완료한 경우 에 액세스할 수 있습니다 https://astra.netapp.io["Astra 제어 서비스"^] Cloud Central 자격 증명을 사용하여 직접 수행합니다.
 
 
 TIP: Single Sign-On을 사용하여 회사 디렉터리(통합 ID)의 자격 증명을 사용하여 Cloud Central에 로그인할 수 있습니다. 자세한 내용은 로 이동하십시오 https://cloud.netapp.com/help-center["Cloud Central 도움말 센터"^] 그런 다음 * Cloud Central 로그인 옵션 * 을 선택합니다.
