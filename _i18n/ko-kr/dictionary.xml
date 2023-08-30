@@ -1003,15 +1003,11 @@
   <block id="2a531f6e1eec4782b314fc38a518cc75" category="list-text">* API *: Astra Control Service와 Astra Control Center는 동일한 Astra Control API를 사용합니다. API를 사용하면 UI를 사용할 때와 동일한 작업을 수행할 수 있습니다.</block>
   <block id="ff66234381e2d5213adaf96c742cb4c3" category="paragraph">또한 Astra Control Center를 사용하면 VM 환경 내에서 실행 중인 Kubernetes 클러스터를 관리, 마이그레이션 및 보호할 수 있습니다.</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">저작권</block>
-  <block id="09e95b77ffe81fe465a83ba99efad5c8" category="paragraph"><block ref="09e95b77ffe81fe465a83ba99efad5c8" category="inline-link-rx"></block></block>
   <block id="126a02652da6de02962cf1b654fd6376" category="section-title">상표</block>
   <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp, NetApp 로고, NetApp 상표 페이지에 나열된 마크는 NetApp Inc.의 상표입니다. 기타 회사 및 제품 이름은 해당 소유자의 상표일 수 있습니다.</block>
-  <block id="7aa531e9acfe2b98e34d2c92fe9846ff" category="paragraph"><block ref="7aa531e9acfe2b98e34d2c92fe9846ff" category="inline-link-rx"></block></block>
   <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">특허</block>
   <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">NetApp 소유 특허 목록은 다음 사이트에서 확인할 수 있습니다.</block>
-  <block id="d7f1fbcf9ce4e42f705add574d262b2c" category="paragraph"><block ref="d7f1fbcf9ce4e42f705add574d262b2c" category="inline-link-rx"></block></block>
   <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">개인 정보 보호 정책</block>
-  <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">오픈 소스</block>
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">통지 파일은 NetApp 소프트웨어에 사용된 타사의 저작권 및 라이센스에 대한 정보를 제공합니다.</block>
   <block id="5acfa2bc809db5956ea651edbf833ab3" category="summary">역할에 제약 조건을 추가하여 사용자 역할을 관리하는 방법에 대해 알아봅니다.</block>
@@ -2215,4 +2211,18 @@ RKE 2 (v1.24.x), Rancher 2.7</block>
   <block id="3dde386e52ee79140b11e62252e39b49" category="list-text">무료 요금제로 전환하여 프리미엄 요금제로 전환할 수 있습니다. <block ref="b344195451ae2e57f0e32003c4f1a80b" category="inline-link-macro-rx"></block>.</block>
   <block id="bea0a641d1ced5fe318717eadebe7ab8" category="section-title">네임스페이스 제약 조건을 가진 멤버 사용자는 관리자 사용자가 제약 조건에 네임스페이스를 추가할 때까지 복제되거나 복원된 앱에 액세스할 수 없습니다</block>
   <block id="33e9a46dfde5bb0f5a8b8327623cb998" category="paragraph">모두<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> 네임스페이스 이름/ID별 RBAC 제약 조건을 사용하는 사용자는 앱을 동일한 클러스터의 새 네임스페이스 또는 조직 계정의 다른 클러스터로 클론 복제 또는 복원할 수 있습니다. 그러나 동일한 사용자가 새 네임스페이스에서 복제되거나 복원된 앱에 액세스할 수 없습니다. 클론 또는 복원 작업을 통해 새 네임스페이스를 생성한 후 계정 관리자/소유자가 을 편집할 수 있습니다<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> 영향을 받는 사용자가 새 네임스페이스에 대한 액세스 권한을 부여하도록 사용자 계정 및 역할 제약 조건을 업데이트합니다.</block>
+  <block id="02e2841c6dc4823eaf981952fd28de5e" category="paragraph">Azure Kubernetes Service 및 Google Kubernetes Engine 클러스터를 관리할 때 Astra Trident 설치 및 라이프사이클 관리에 대한 두 가지 옵션이 있습니다.</block>
+  <block id="5764dae31663c1902496bfcba4c25c93" category="list-text">Astra Control Service를 사용하여 Astra Trident의 라이프사이클을 자동으로 관리할 수 있습니다. 이렇게 하려면 Astra Control Service로 관리할 클러스터에 Astra Trident가 설치되어 있지 않은지 확인하십시오. 이 경우 클러스터 관리를 시작할 때 Astra Trident가 Astra Trident를 자동으로 설치하며 Astra Trident 업그레이드는 자동으로 처리됩니다.</block>
+  <block id="26a8bbf329806efed3129a837ea8f4ca" category="list-text">Astra Trident의 라이프사이클을 직접 관리할 수 있습니다. 이렇게 하려면 Astra Control Service로 클러스터를 관리하기 전에 클러스터에 Astra Trident를 설치합니다. 이 경우 Astra Control Service는 Astra Trident가 이미 설치되어 있음을 감지하며 해당 Trident를 다시 설치하거나 Astra Trident 업그레이드를 관리하지 않습니다. 을 참조하십시오<block ref="0a4eeddcb63a166e3ea6149a4a33d4e7" category="inline-link-rx"></block> 를 참조하십시오.</block>
+  <block id="377a03900879b1a147cfef86a55b4b7b" category="paragraph">Astra Control Service를 통해 Amazon Web Services 클러스터를 관리하는 경우 Astra Trident를 통해 지원되는 스토리지 백엔드가 필요한 경우 Astra Control Service를 통해 클러스터를 관리하기 전에 클러스터에 Astra Trident를 수동으로 설치해야 합니다. 을 참조하십시오<block ref="0a4eeddcb63a166e3ea6149a4a33d4e7" category="inline-link-rx"></block> 를 참조하십시오.</block>
+  <block id="9036e11904e29e25ddfcd878beff46e6" category="list-text">(선택 사항) Amazon EKS 클러스터를 추가하거나 Astra Trident의 설치 및 업그레이드를 직접 관리하려는 경우 클러스터에 Astra Trident를 설치합니다. 을 참조하십시오<block ref="0a4eeddcb63a166e3ea6149a4a33d4e7" category="inline-link-rx"></block> 를 참조하십시오.</block>
+  <block id="03349a266f78934afc86e52b232cdc6d" category="list-text">브라우저에서 Astra Control Service 웹 UI를 엽니다.</block>
+  <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
+  <block id="a1a9afcf552a769c282769271829889a" category="paragraph"><block ref="a1a9afcf552a769c282769271829889a" category="inline-link-macro-rx"></block></block>
+  <block id="f99aa604031e5049799e73b5c3748a98" category="inline-link-macro"><block ref="f99aa604031e5049799e73b5c3748a98" category="inline-link-rx"></block></block>
+  <block id="5d545fe5152641e2ebe654e336e520e5" category="paragraph"><block ref="5d545fe5152641e2ebe654e336e520e5" category="inline-link-macro-rx"></block></block>
+  <block id="88e5eabd3917048b6927c42496b98f86" category="inline-link-macro"><block ref="88e5eabd3917048b6927c42496b98f86" category="inline-link-rx"></block></block>
+  <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
+  <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
+  <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
 </blocks>
