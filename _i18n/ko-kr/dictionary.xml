@@ -1476,7 +1476,6 @@
   <block id="e36d851dc2ff79e16c7cfbbb4e4fbe97" category="inline-link">Astra 자동화 문서</block>
   <block id="e9c498c38ce73fcff282ff152abd7d47" category="list-text">의 지침에 따라 Astra Control API 토큰을 생성합니다<block ref="c02899be0babfb1350e3b2576a6e8c97" category="inline-link-rx"></block>.</block>
   <block id="61ddd26ba79b5e63c1e52be1beb28889" category="section-title">영구 스토리지를 설정합니다</block>
-  <block id="f21f22dde0e0692333a7a28cce456b08" category="sidebar">모든 Astra 문서</block>
   <block id="6ef5565e71b748d07e8a7b0699a73b5a" category="paragraph"><block ref="6ef5565e71b748d07e8a7b0699a73b5a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="305b39af5cd987a6208b64358f967be3" category="list-text">하나 이상의 네임스페이스 내에 배포된 개별 응용 프로그램(이 예제에서는 H제어 3이 사용됨)</block>
   <block id="5200a678b94ac14cf371f3073027246a" category="list-text">하나 이상의 네임스페이스 내에서 Kubernetes 레이블로 식별되는 리소스 그룹입니다</block>
@@ -2225,4 +2224,5 @@ RKE 2 (v1.24.x), Rancher 2.7</block>
   <block id="f285f679ba0c90d91ce807d87ad3a50e" category="list-text">Astra Connector CRD(Custom Resource Definition) 적용:</block>
   <block id="c642f3e0823bc0255f23532494f80829" category="list-text">Astra Connector의 상태를 점검한다.</block>
   <block id="dce58385777428b5d9a30460fe36730a" category="list-text">개인 CA(인증 기관)를 참조하는 kubeconfig 파일을 사용하여 클러스터를 추가하는 경우 에 다음 줄을 추가합니다<block ref="06b2d4b91b5c9eaa8c20a1c270f95b3c" prefix=" " category="inline-code"></block> kubeconfig 파일의 섹션. 이를 통해 Astra Control이 클러스터를 추가할 수 있습니다.</block>
+  <block id="f4228b9bf977f4c9a1952ea84926975f" category="section-title">2023년 10월 2일</block>
 </blocks>
