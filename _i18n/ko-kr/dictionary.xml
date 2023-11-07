@@ -2162,9 +2162,6 @@ RKE 2 (v1.24.x), Rancher 2.7</block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="dce58385777428b5d9a30460fe36730a" category="list-text">개인 CA(인증 기관)를 참조하는 kubeconfig 파일을 사용하여 클러스터를 추가하는 경우 에 다음 줄을 추가합니다<block ref="06b2d4b91b5c9eaa8c20a1c270f95b3c" prefix=" " category="inline-code"></block> kubeconfig 파일의 섹션. 이를 통해 Astra Control이 클러스터를 추가할 수 있습니다.</block>
   <block id="f4228b9bf977f4c9a1952ea84926975f" category="section-title">2023년 10월 2일</block>
-  <block id="33a97eec462a14258b6a1fe63f943ec5" category="list-text">kubectl v1.25 이상이 설치되었습니다</block>
-  <block id="3b34edb55fd85d9b0636e2533b140b9f" category="list-text">Astra Control Center를 통해 추가하고 관리하려는 클러스터에 kubctl 액세스를 허용합니다</block>
-  <block id="d5b7f62a909e346c0e1cd08be571c54f" category="admonition">이 절차를 수행하려면 Astra Control Center를 실행 중인 클러스터에 kubectl을 액세스할 필요가 없습니다.</block>
   <block id="c49be33f592950e78d23dd417a4a75e5" category="list-text">활성 컨텍스트에 대한 클러스터 관리자 권한으로 관리하려는 클러스터에 대한 활성 kubecononfig입니다</block>
   <block id="565bfe8a9451afd10f3c41fe9fa4cf22" category="list-text">서비스 계정 생성:</block>
   <block id="5a20342984ee9d605acb505095dbcd0a" category="list-text">Astra Control에서 클러스터를 관리할 수 있는 충분한 권한을 가진 다음 클러스터 역할 중 하나를 생성합니다.</block>
@@ -2555,4 +2552,5 @@ RKE 2 (v1.26.x), Rancher 2.7 포함</block>
   <block id="b518803a746e06a4f19197ae81406970" category="paragraph">버킷의 보존 정책이 만료된 후 앱의 변경 불가능한 백업을 삭제하면 Astra Control에서 백업이 삭제되지만 버킷에서는 삭제되지 않습니다. 해결 방법으로, 애플리케이션에 대한 최신 백업이나 모든 백업을 삭제해야 하는 경우 스토리지 백엔드에서 백업을 수동으로 제거하십시오.</block>
   <block id="f318002a693e78e0cf366be52609a528" category="admonition">App에 대한 백업이 두 개 이상 있는 경우 최신 백업이나 App에 대한 모든 백업을 제거합니다. 중간 증분 백업을 제거하면 최신 백업에서 앱을 복구할 수 없습니다.</block>
   <block id="03281739854e4951c0f98529e54a24f2" category="sidebar">Astra Control Provisioner를 사용합니다</block>
+  <block id="49219ed727d5145cd828958ebce847fa" category="list-text">kubectl v1.26 이상이 설치되었습니다</block>
 </blocks>
