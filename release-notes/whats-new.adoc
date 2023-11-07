@@ -16,6 +16,44 @@ NetApp은 새로운 기능, 개선 사항 및 버그 수정을 제공하기 위�
 
 
 
+== 2023년 11월 7일
+
+[[nas-eco-backup-restore]]
+.새로운 기능 및 지원
+* * ONTAP-nas-이코노미 드라이버 기반 스토리지 백엔드를 사용하는 애플리케이션을 위한 백업 및 복원 기능 *: 에 대한 백업 및 복원 작업을 활성화합니다 `ontap-nas-economy` 몇 가지 link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["간단한 단계"^].
+* * 온프레미스 Red Hat OpenShift Container Platform 클러스터에 대한 Astra Control Service 지원 *
++
+link:../use/restore-apps.html["클러스터를 추가합니다"^]
+
+* * 변경 불가능한 백업 * : Astra Control이 이제 지원합니다 link:../concepts/data-protection.html#immutable-backups["변경 불가능한 읽기 전용 백업"^] 멀웨어 및 기타 위협에 대한 추가 보안 레이어로 사용됩니다.
+* * Astra Control Provisioner 소개 *
++
+23.10 릴리스와 함께 Astra Control은 Astra Control Provisioner라는 새로운 소프트웨어 구성 요소를 도입했으며 이 소프트웨어 구성 요소는 라이센스가 있는 모든 Astra Control 사용자가 사용할 수 있습니다. Astra Control Provisioner는 Astra Trident가 제공하는 기능을 능가하는 고급 관리 및 스토리지 프로비저닝 기능을 제공합니다. 이들 기능은 모든 Astra Control 고객에게 추가 비용 없이 제공됩니다.
+
++
+** * Astra Control Provisioner * 를 시작하십시오
+가능합니다 link:../use/enable-acp.html["Astra Control Provisioner를 활성화합니다"^] Astra Trident 23.10을 사용하도록 환경을 설치 및 구성한 경우
+** * Astra Control Provisioner 기능 *
++
+Astra Control Provisioner 23.10 릴리즈에서는 다음 기능을 사용할 수 있습니다.
+
++
+*** *Kerberos 5 암호화를 통한 향상된 스토리지 백엔드 보안*: 을(를) 사용하여 스토리지 보안을 향상시킬 수 있습니다 link:../use-acp/configure-storage-backend-encryption.html["암호화 활성화 중"^] 관리되는 클러스터와 스토리지 백엔드 사이의 트래픽에 사용됩니다. Astra Control Provisioner는 Red Hat OpenShift 클러스터에서 Azure NetApp Files 및 사내 ONTAP 볼륨으로의 NFSv4.1 연결을 통해 Kerberos 5 암호화를 지원합니다.
+*** * 스냅샷을 사용하여 데이터 복구 *: Astra Control Provisioner는 를 사용하여 스냅샷에서 신속하게 제자리에서 볼륨을 복원할 수 있습니다 `TridentActionSnapshotRestore` (TASR) CR
+*** * 를 사용하여 응용 프로그램을 위한 백업 및 복원 기능 `ontap-nas-economy` 드라이버 지원 스토리지 백엔드 *: 설명 참조 <<nas-eco-backup-restore,있습니다>>.
+
+
+
+
+* * AWS(ROSA) 클러스터 기반의 Red Hat OpenShift Service에 대한 Astra Control Service 지원 *
++
+link:../use/restore-apps.html["클러스터를 추가합니다"^]
+
+* * 실행 후크는 기본적으로 해제되어 있습니다. * :이 릴리스부터는 실행 후크 기능이 작동할 수 있습니다 link:../use/manage-app-execution-hooks.html#enable-the-execution-hooks-feature["활성화됨"] 또는 추가 보안을 위해 사용 안 함(기본적으로 사용 안 함)을 선택합니다. Astra Control에서 사용할 실행 후크를 아직 생성하지 않은 경우, 다음을 수행해야 합니다 link:../use/manage-app-execution-hooks.html#enable-the-execution-hooks-feature["실행 후크 기능을 활성화합니다"^] 후크를 만들기 시작합니다. 이 릴리스 이전에 실행 후크를 만든 경우 실행 후크 기능은 계속 사용할 수 있으며 평소처럼 후크를 사용할 수 있습니다.
+
+
+
+
 == 2023년 10월 2일
 
 .새로운 기능 및 지원

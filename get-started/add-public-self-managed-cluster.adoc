@@ -76,7 +76,6 @@ Astra Control Service는 다음과 같은 Kubernetes 배포를 사용하는 자�
 자가 관리형 클러스터는 다음 요구사항을 충족해야 합니다.
 
 * 클러스터를 인터넷을 통해 액세스할 수 있어야 합니다.
-* 클러스터는 사내 네트워크 내에서 호스팅할 수 없으며 퍼블릭 클라우드 환경에서 호스팅되어야 합니다.
 * CSI 드라이버로 활성화된 스토리지를 사용 중이거나 사용할 계획이면 해당 CSI 드라이버가 클러스터에 설치되어 있어야 합니다. CSI 드라이버를 사용하여 스토리지를 통합하는 방법에 대한 자세한 내용은 스토리지 서비스 설명서를 참조하십시오.
 * 하나의 컨텍스트 요소만 포함된 클러스터 kubecononfig 파일에 액세스할 수 있습니다. 를 따릅니다 link:create-kubeconfig.html["참조하십시오"^] kubecononfig 파일을 생성합니다.
 * 개인 CA(인증 기관)를 참조하는 kubeconfig 파일을 사용하여 클러스터를 추가하는 경우 에 다음 줄을 추가합니다 `cluster` kubeconfig 파일의 섹션. 이를 통해 Astra Control이 클러스터를 추가할 수 있습니다.
@@ -92,7 +91,7 @@ insecure-skip-tls-verify: true
 NOTE: 가능합니다 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method["Astra Trident 구축"^] Trident 연산자(수동 또는 제어 차트 사용) 또는 를 사용합니다 `tridentctl`. Astra Trident를 설치 또는 업그레이드하기 전에 을 검토하십시오 https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html["지원되는 프런트엔드, 백엔드 및 호스트 구성"^].
 
 +
-** * Astra Trident 스토리지 백엔드가 구성됨 *: Astra Trident 스토리지 백엔드가 하나 이상 있어야 합니다 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["구성됨"^] 클러스터에서.
+** * Astra Trident 스토리지 백엔드가 구성됨 *: Astra Trident 스토리지 백엔드가 하나 이상 있어야 합니다 https://docs.netapp.com/us-en/trident/trident-use/backends.html["구성됨"^] 클러스터에서.
 ** * Astra Trident 스토리지 클래스가 구성됨 *: Astra Trident 스토리지 클래스가 하나 이상 있어야 합니다 https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["구성됨"^] 클러스터에서. 기본 스토리지 클래스가 구성된 경우 하나의 스토리지 클래스에만 해당 주석이 있어야 합니다.
 ** * Astra Trident 볼륨 스냅샷 컨트롤러 및 볼륨 스냅샷 클래스 설치 및 구성 *: 볼륨 스냅샷 컨트롤러가 되어야 합니다 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["설치되어 있습니다"^] 따라서 Astra Control에서 스냅샷을 생성할 수 있습니다. Astra Trident가 하나 이상 있어야 합니다 `VolumeSnapshotClass` 있습니다 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["설정"^] 관리자의 경우.
 
@@ -100,6 +99,9 @@ NOTE: 가능합니다 https://docs.netapp.com/us-en/trident/trident-get-started/
 
 
 ====
+* * Astra Control Provisioner *: Astra Control 사용자만 액세스할 수 있는 Astra Control Provisioner 고급 관리 및 스토리지 프로비저닝 기능을 사용하려면 Astra Trident 23.10 이상을 설치하고 활성화해야 합니다 link:../use/enable-acp.html["Astra Control Provisioner 기능"].
+
+
 .단계
 . 대시보드에서 * Kubernetes 클러스터 관리 * 를 선택합니다.
 +

@@ -1,0 +1,137 @@
+---
+sidebar: sidebar 
+permalink: get-started/install-astra-connector.html 
+keywords: connector, install, astra connector, manage cluster, add cluster, cluster, add, manage 
+summary: Astra Connector를 설치하여 프라이빗 클러스터 관리를 지원할 수 있습니다. 
+---
+= 프라이빗 클러스터용 Astra Connector를 설치합니다
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Astra Control Service는 Astra Connector를 사용하여 Astra Control Service와 프라이빗 클러스터 간의 통신을 지원한다. 관리할 프라이빗 클러스터에 Astra Connector를 설치해야 합니다.
+
+Astra Connector는 다음과 같은 유형의 프라이빗 클러스터를 지원합니다.
+
+* Amazon Elastic Kubernetes Service(EKS)
+* Azure Kubernetes 서비스(AKS)
+* Google Kubernetes Engine(GKE)
+* AWS 기반 Red Hat OpenShift Service(ROSA)
+* AWS PrivateLink와 함께 Rosa
+* Red Hat OpenShift Container Platform 온-프레미스
+
+
+
+
+== Astra Connector를 설치합니다
+
+.이 작업에 대해
+* 이러한 단계를 수행할 때 Astra Control Service로 관리할 프라이빗 클러스터에 대해 다음 명령을 실행합니다.
+* 방호 호스트를 사용하는 경우 방호 호스트의 명령줄에서 이러한 명령을 실행하십시오.
+
+
+.시작하기 전에
+* Astra Control Service를 사용하여 관리할 프라이빗 클러스터에 액세스해야 합니다.
+* 클러스터에 Astra Connector 연산자를 설치하려면 Kubernetes 관리자 권한이 필요합니다.
+
+
+.단계
+. Astra Control Service로 관리할 프라이빗 클러스터에 Astra Connector 연산자를 설치합니다. 이 명령을 실행하면 네임스페이스가 생성됩니다 `astra-connector-operator` 이 만들어지고 구성이 네임스페이스에 적용됩니다.
++
+[source, console]
+----
+kubectl apply -f https://github.com/NetApp/astra-connector-operator/releases/download/23.07.0-202310251519/astraconnector_operator.yaml
+----
+. 작업자가 설치되어 있고 준비가 되었는지 확인합니다.
++
+[source, console]
+----
+kubectl get all -n astra-connector-operator
+----
+. Astra Control에서 API 토큰을 받습니다. 을 참조하십시오 https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra 자동화 문서"^] 를 참조하십시오.
+. Astra-Connector 네임스페이스를 생성합니다.
++
+[source, console]
+----
+kubectl create ns astra-connector
+----
+. Astra Connector CR 파일을 생성하고 이름을 지정합니다 `astra-connector-cr.yaml`. 괄호 <> 의 값을 Astra Control 환경 및 클러스터 구성과 일치하도록 업데이트합니다.
++
+** * <ASTRA_CONTROL_SERVICE_URL> * : Astra Control Service의 웹 UI URL.
+** * <ASTRA_CONTROL_SERVICE_API_TOKEN> *: 이전 단계에서 얻은 Astra Control API 토큰.
+** * <PRIVATE_AKS_CLUSTER_NAME> *: (AKS 클러스터만 해당) - 전용 Azure Kubernetes Service 클러스터의 클러스터 이름입니다. 전용 AKS 클러스터를 추가하는 경우에만 주석을 해제하고 이 줄을 채웁니다.
+** * <ASTRA_CONTROL_ACCOUNT_ID> *: Astra Control 웹 UI에서 가져옵니다. 페이지 오른쪽 상단의 그림 아이콘을 선택하고 * API 액세스 * 를 선택합니다.
++
+[source, yaml]
+----
+apiVersion: netapp.astraconnector.com/v1
+kind: AstraConnector
+metadata:
+  name: astra-connector
+  namespace: astra-connector
+spec:
+  natssync-client:
+    cloud-bridge-url: <ASTRA_CONTROL_SERVICE_URL>
+  imageRegistry:
+    name: theotw
+    secret: ""
+  astra:
+    token: <ASTRA_CONTROL_SERVICE_API_TOKEN>
+    #clusterName: <PRIVATE_AKS_CLUSTER_NAME>
+    accountId: <ASTRA_CONTROL_ACCOUNT_ID>
+    acceptEULA: yes
+----
+
+
+. 를 채운 후 `astra-connector-cr.yaml` 올바른 값이 있는 파일에 CR을 적용합니다.
++
+[source, console]
+----
+kubectl apply -f astra-connector-cr.yaml
+----
+. Astra Connector가 완전히 구축되었는지 확인:
++
+[source, console]
+----
+kubectl get all -n astra-connector
+----
+. 클러스터가 Astra Control에 등록되었는지 확인:
++
+[source, console]
+----
+kubectl get astraconnector -n astra-connector
+----
++
+다음과 유사한 출력이 표시됩니다.
+
++
+[listing]
+----
+NAME              REGISTERED   ASTRACONNECTORID                       STATUS
+astra-connector   true         be475ae5-1511-4eaa-9b9e-712f09b0d065   Registered with Astra
+----
++
+
+TIP: ASTRACONNECTORID를 기록해 둡니다. Astra Control에 클러스터를 추가할 때 필요합니다.
+
+
+
+
+
+== 다음 단계
+
+Astra Connector를 설치했으므로 이제 프라이빗 클러스터를 Astra Control Service에 추가할 준비가 되었습니다.
+
+* link:add-private-provider-managed-cluster.html["Astra Control Service에 프라이빗 공급자 관리 클러스터를 추가합니다"^]: 다음 단계를 수행하여 프라이빗 IP 주소가 있고 클라우드 공급자가 관리하는 클러스터를 추가할 수 있습니다. 클라우드 공급자의 서비스 주 계정, 서비스 계정 또는 사용자 계정이 필요합니다.
+* link:add-private-self-managed-cluster.html["Astra Control Service에 프라이빗 자체 관리 클러스터를 추가합니다"^]: 다음 단계를 사용하여 개인 IP 주소가 있고 조직에서 관리하는 클러스터를 추가할 수 있습니다. 추가하려는 클러스터에 대해 kubecononfig 파일을 생성해야 합니다.
+
+
+
+
+== 를 참조하십시오
+
+* link:add-first-cluster.html["클러스터를 추가합니다"^]
+

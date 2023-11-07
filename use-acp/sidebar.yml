@@ -1,0 +1,8 @@
+---
+section: use-acp
+title: Astra Control Provisioner를 사용합니다
+entries:
+- title: 스토리지 백엔드 암호화를 구성합니다
+  url: "/use-acp/configure-storage-backend-encryption.html"
+- title: 스냅샷을 사용하여 볼륨 데이터를 복구합니다
+  url: "/use-acp/acp-snap-restore.html"

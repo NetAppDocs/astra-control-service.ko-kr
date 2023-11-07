@@ -46,5 +46,7 @@ entries:
     url: "/use/close-account.html"
 - title: 클라우드 인스턴스 관리
   url: "/use/manage-cloud-instances.html"
+- title: Astra Control Provisioner를 활성화합니다
+  url: "/use/enable-acp.html"
 - title: 앱 및 클러스터 관리를 취소합니다
   url: "/use/unmanage.html"

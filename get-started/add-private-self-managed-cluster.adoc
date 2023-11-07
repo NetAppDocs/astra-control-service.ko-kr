@@ -26,127 +26,40 @@ Astra Control Service를 사용하여 다음과 같은 유형의 프라이빗, �
 | Kubernetes 배포 | 지원되는 버전 
 
 
-| Azure Stack HCI 기반 Azure Kubernetes Service | AKS 1.23 및 1.24가 포함된 Azure Stack HCI 21H2 및 22H2 
+| Azure Stack HCI 기반 Azure Kubernetes Service | AKS 1.24.x 및 1.25.x가 포함된 Azure Stack HCI 21H2 및 22H2 
 
 
-| Google Anthos | 1.12 ~ 1.14 
+| Google Anthos | 1.15 ~ 1.16 
 
 
-| Kubernetes(업스트림) | 1.24 ~ 1.26(Kubernetes 1.25 이상의 경우 Astra Trident 22.10 이상 필요) 
+| Kubernetes(업스트림) | 1.26 ~ 1.28 
 
 
-| RKE(Rancher Kubernetes Engine) | RKE 1.3 및 Rancher 2.6
-RKE 1.4 및 Rancher 2.7
-RKE 2 (v1.23.x), Rancher 2.6
-RKE 2 (v1.24.x), Rancher 2.7 
+| RKE(Rancher Kubernetes Engine) | RKE 1.3 Rancher Manager 2.6
+RKE 1.4 및 Rancher Manager 2.7
+RKE 2 (v1.24.x), Rancher 2.6 포함
+RKE 2 (v1.26.x), Rancher 2.7 포함 
 
 
-| Red Hat OpenShift Container Platform | 4.10 ~ 4.12 
+| Red Hat OpenShift Container Platform | 4.11 ~ 4.13 
 
 
-| VMware Tanzu Kubernetes Grid를 참조하십시오 | 1.6 
-
-
-| VMware Tanzu Kubernetes Grid Integrated Edition을 참조하십시오 | 1.14 및 1.15 
+| VMware Tanzu Kubernetes Grid Integrated Edition을 참조하십시오 | 1.16.x입니다 
 |===
 이 지침은 이미 프라이빗 클러스터를 생성하고 원격 액세스를 위한 보안 방법을 준비했다고 가정합니다.
 
 Astra Control Service에 프라이빗 클러스터를 추가하려면 다음 작업을 수행해야 합니다.
 
-* <<Astra Connector 운용자를 설치한다>>
-* <<영구 스토리지를 설정합니다>>
-* <<프라이빗 자체 관리 클러스터를 Astra Control Service에 추가합니다>>
+. <<Astra Connector를 설치합니다>>
+. <<영구 스토리지를 설정합니다>>
+. <<프라이빗 자체 관리 클러스터를 Astra Control Service에 추가합니다>>
 
 
 
 
-== Astra Connector 운용자를 설치한다
+== Astra Connector를 설치합니다
 
-프라이빗 클러스터에 Astra Connector 운영자를 설치해야 합니다. 방호 호스트를 사용하는 경우 방호 호스트의 명령줄에서 이러한 명령을 실행하십시오.
-
-.단계
-. Astra Connector operator GitHub 리포지토리 클론 생성:
-+
-[source, console]
-----
-git clone https://github.com/NetApp/astra-connector-operator.git
-----
-. 목록을 압축을 푼 운영자 패키지의 최상위 수준으로 변경하여 "ls" 명령으로 "astraconnector_operator.yaML" 파일을 볼 수 있습니다.
-. 를 적용합니다 `astraconnector_operator.yaml` 파일. 이 명령을 실행하면 Astra Connector 연산자에 대한 올바른 네임스페이스가 생성되고 구성이 네임스페이스에 적용됩니다.
-+
-[source, console]
-----
-kubectl apply -f astraconnector_operator.yaml
-----
-. 전용 클러스터 구성 요소의 네임스페이스를 생성합니다.
-+
-[source, console]
-----
-kubectl create ns astra-connector
-----
-. 의 지침에 따라 Astra Control API 토큰을 생성합니다 https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra 자동화 문서"^].
-. Astra Connector 운영자 리포지토리의 config/samples 디렉토리에서 예제 구성 파일을 수정하여 다음 키에 대해 사용자 환경에 특정한 값을 포함시킵니다.
-+
-** `spec.natssync-client.cloud-bridge-url`
-** `spec.astra.token`
-** `spec.astra.clusterName`
-+
-
-NOTE: `spec.astra.clusterName` 개인 AKS 클러스터를 가져오고 kubeconfig 파일을 Astra Control Service에 제공하지 않는 경우에만 필요합니다. 그렇지 않은 경우 이 줄을 제거합니다.
-
-** `spec.astra.accountId`
-+
-예를 들면 다음과 같습니다.
-
-+
-[listing]
-----
-apiVersion: netapp.astraconnector.com/v1
-kind: AstraConnector
-metadata:
-  name: astra-connector
-spec:
-  natssync-client:
-    image: natssync-client:2.0
-    cloud-bridge-url: https://<your.astra.control.service.url>
-  nats:
-    image: nats:2.6.1-alpine3.14
-  httpproxy-client:
-    image: httpproxylet:2.0
-  echo-client:
-    image: echo-proxylet:2.0
-  imageRegistry:
-    name: theotw
-  astra:
-    token: <Astra Control API token>
-    clusterName: <your-private-AKS-cluster-name>
-    accountId: <Astra Control account id>
-    acceptEULA: yes
-----
-
-
-. Astra Connector CRD(Custom Resource Definition) 적용:
-+
-[source, console]
-----
-kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
-----
-. Astra Connector의 상태를 점검한다.
-+
-[source, console]
-----
-kubectl get astraconnector astra-connector -n astra-connector
-----
-+
-다음과 유사한 출력이 표시됩니다.
-
-+
-[source, console]
-----
-NAME              REGISTERED   ASTRACONNECTORID
-astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
-----
-
+프라이빗 클러스터를 추가하기 전에 Astra Control이 클러스터와 통신할 수 있도록 클러스터에 Astra Connector를 설치해야 합니다. 을 참조하십시오 link:install-astra-connector.html["프라이빗 클러스터용 Astra Connector를 설치합니다"] 를 참조하십시오.
 
 
 
@@ -197,7 +110,6 @@ Astra Control Service는 다음과 같은 Kubernetes 배포를 사용하는 자�
 자가 관리형 클러스터는 다음 요구사항을 충족해야 합니다.
 
 * 클러스터를 인터넷을 통해 액세스할 수 있어야 합니다.
-* 클러스터는 사내 네트워크 내에서 호스팅할 수 없으며 퍼블릭 클라우드 환경에서 호스팅되어야 합니다.
 * CSI 드라이버로 활성화된 스토리지를 사용 중이거나 사용할 계획이면 해당 CSI 드라이버가 클러스터에 설치되어 있어야 합니다. CSI 드라이버를 사용하여 스토리지를 통합하는 방법에 대한 자세한 내용은 스토리지 서비스 설명서를 참조하십시오.
 * 하나의 컨텍스트 요소만 포함된 클러스터 kubecononfig 파일에 액세스할 수 있습니다. 를 따릅니다 link:create-kubeconfig.html["참조하십시오"^] kubecononfig 파일을 생성합니다.
 * 개인 CA(인증 기관)를 참조하는 kubeconfig 파일을 사용하여 클러스터를 추가하는 경우 에 다음 줄을 추가합니다 `cluster` kubeconfig 파일의 섹션. 이를 통해 Astra Control이 클러스터를 추가할 수 있습니다.
@@ -213,7 +125,7 @@ insecure-skip-tls-verify: true
 NOTE: 가능합니다 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method["Astra Trident 구축"^] Trident 연산자(수동 또는 제어 차트 사용) 또는 를 사용합니다 `tridentctl`. Astra Trident를 설치 또는 업그레이드하기 전에 을 검토하십시오 https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html["지원되는 프런트엔드, 백엔드 및 호스트 구성"^].
 
 +
-** * Astra Trident 스토리지 백엔드가 구성됨 *: Astra Trident 스토리지 백엔드가 하나 이상 있어야 합니다 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["구성됨"^] 클러스터에서.
+** * Astra Trident 스토리지 백엔드가 구성됨 *: Astra Trident 스토리지 백엔드가 하나 이상 있어야 합니다 https://docs.netapp.com/us-en/trident/trident-use/backends.html["구성됨"^] 클러스터에서.
 ** * Astra Trident 스토리지 클래스가 구성됨 *: Astra Trident 스토리지 클래스가 하나 이상 있어야 합니다 https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["구성됨"^] 클러스터에서. 기본 스토리지 클래스가 구성된 경우 하나의 스토리지 클래스에만 해당 주석이 있어야 합니다.
 ** * Astra Trident 볼륨 스냅샷 컨트롤러 및 볼륨 스냅샷 클래스 설치 및 구성 *: 볼륨 스냅샷 컨트롤러가 되어야 합니다 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["설치되어 있습니다"^] 따라서 Astra Control에서 스냅샷을 생성할 수 있습니다. Astra Trident가 하나 이상 있어야 합니다 `VolumeSnapshotClass` 있습니다 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["설정"^] 관리자의 경우.
 
@@ -221,6 +133,9 @@ NOTE: 가능합니다 https://docs.netapp.com/us-en/trident/trident-get-started/
 
 
 ====
+* * Astra Control Provisioner *: Astra Control 사용자만 액세스할 수 있는 Astra Control Provisioner 고급 관리 및 스토리지 프로비저닝 기능을 사용하려면 Astra Trident 23.10 이상을 설치하고 활성화해야 합니다 link:../use/enable-acp.html["Astra Control Provisioner 기능"].
+
+
 .단계
 . 대시보드에서 * Kubernetes 클러스터 관리 * 를 선택합니다.
 +
@@ -233,7 +148,7 @@ NOTE: 가능합니다 https://docs.netapp.com/us-en/trident/trident-get-started/
 NOTE: 직접 만드는 경우 `kubeconfig` 파일에서 * 하나의 * 컨텍스트 요소만 정의해야 합니다. 을 참조하십시오 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes 문서"^] 을 참조하십시오 `kubeconfig` 파일.
 
 . * 자격 증명 이름 *: Astra Control에 업로드하는 자가 관리 클러스터 자격 증명의 이름을 입력합니다. 기본적으로 자격 증명 이름은 클러스터 이름으로 자동 채워집니다.
-. * Private route identifier *: Astra Connector로부터 얻을 수 있는 private route identifier를 입력합니다. 을 통해 Astra Connector에 문의하면 `kubectl get` 명령, 전용 라우트 식별자를 라고 합니다 `ASTRACONNECTORID`.
+. * Private route identifier *: Astra Connector로부터 얻을 수 있는 private route identifier를 입력합니다. 을 통해 Astra Connector에 문의하면 `kubectl get astraconnector -n astra-connector` 명령, 전용 라우트 식별자를 라고 합니다 `ASTRACONNECTORID`.
 +
 
 NOTE: 프라이빗 경로 식별자는 Astra Connector와 연결된 이름으로, 프라이빗 Kubernetes 클러스터를 Astra에서 관리할 수 있도록 합니다. 이런 맥락에서 프라이빗 클러스터는 API 서버를 인터넷에 노출하지 않는 Kubernetes 클러스터입니다.

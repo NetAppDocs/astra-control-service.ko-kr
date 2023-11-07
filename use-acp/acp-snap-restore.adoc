@@ -1,0 +1,97 @@
+---
+sidebar: sidebar 
+permalink: use-acp/acp-snap-restore.html 
+keywords: snapshot restore, snapshot, astra control provisioner, TridentActionSnapshotRestore, 
+summary: 'Astra Control Provisioner는 를 사용하여 스냅샷에서 데이터를 데이터 이동 없이 빠르게 복원할 수 있도록 합니다 `TridentActionSnapshotRestore` (TASR) CR 이 CR은 필수 Kubernetes 조치로 작동하며 작업이 완료된 후에도 유지되지 않습니다.' 
+---
+= 스냅샷을 사용하여 볼륨 데이터를 복구합니다
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Astra Control Provisioner는 를 사용하여 스냅샷에서 데이터를 데이터 이동 없이 빠르게 복원할 수 있도록 합니다 `TridentActionSnapshotRestore` (TASR) CR 이 CR은 필수 Kubernetes 조치로 작동하며 작업이 완료된 후에도 유지되지 않습니다.
+
+Astra Control Provisioner는 에서 스냅샷 복원을 지원합니다 `ontap-san`, `ontap-san-economy`, `ontap-nas`, `ontap-nas-flexgroup`, `azure-netapp-files`, `gcp-cvs`, 및 `solidfire-san` 드라이버.
+
+.시작하기 전에
+바인딩된 PVC 및 사용 가능한 볼륨 스냅샷이 있어야 합니다.
+
+* PVC 상태가 Bound인지 확인한다.
++
+[listing]
+----
+kubectl get pvc
+----
+* 볼륨 스냅샷을 사용할 준비가 되었는지 확인합니다.
++
+[listing]
+----
+kubectl get vs
+----
+
+
+.단계
+. TASR CR을 생성합니다. 이 예에서는 PVC용 CR을 생성합니다 `pvc1` 및 볼륨 스냅샷 `pvc1-snapshot`.
++
+[listing]
+----
+cat tasr-pvc1-snapshot.yaml
+
+apiVersion: v1
+kind: TridentActionSnapshotRestore
+metadata:
+  name: this-doesnt-matter
+  namespace: trident
+spec:
+  pvcName: pvc1
+  volumeSnapshotName: pvc1-snapshot
+----
+. CR을 적용하여 스냅샷에서 복원합니다. 이 예는 스냅샷에서 복구합니다 `pvc1`.
++
+[listing]
+----
+kubectl create -f tasr-pvc1-snapshot.yaml
+
+tridentactionsnapshotrestore.trident.netapp.io/this-doesnt-matter created
+----
+
+
+.결과
+Astra Control Provisioner는 스냅샷에서 데이터를 복원합니다. 스냅샷 복구 상태를 확인할 수 있습니다.
+
+[listing]
+----
+kubectl get tasr -o yaml
+
+apiVersion: v1
+items:
+- apiVersion: trident.netapp.io/v1
+  kind: TridentActionSnapshotRestore
+  metadata:
+    creationTimestamp: "2023-04-14T00:20:33Z"
+    generation: 3
+    name: this-doesnt-matter
+    namespace: trident
+    resourceVersion: "3453847"
+    uid: <uid>
+  spec:
+    pvcName: pvc1
+    volumeSnapshotName: pvc1-snapshot
+  status:
+    startTime: "2023-04-14T00:20:34Z"
+    completionTime: "2023-04-14T00:20:37Z"
+    state: Succeeded
+kind: List
+metadata:
+  resourceVersion: ""
+----
+[NOTE]
+====
+* 대부분의 경우 Astra Control Provisioner는 장애 발생 시 작업을 자동으로 재시도하지 않습니다. 작업을 다시 수행해야 합니다.
+* 관리자 권한이 없는 Kubernetes 사용자는 애플리케이션 네임스페이스에서 TASR CR을 생성할 수 있는 관리자의 권한을 받아야 할 수 있습니다.
+
+
+====
