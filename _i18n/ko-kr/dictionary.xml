@@ -2522,9 +2522,7 @@ RKE 2 (v1.26.x), Rancher 2.7 포함</block>
   <block id="d19668a1d8d1bd385693755af3a4d795" category="inline-link-macro">간단한 단계</block>
   <block id="bc6535c6d6068b18ecf4b4c5c01c8d16" category="list-text">* ONTAP-nas-이코노미 드라이버 기반 스토리지 백엔드를 사용하는 애플리케이션을 위한 백업 및 복원 기능 *: 에 대한 백업 및 복원 작업을 활성화합니다<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 몇 가지 <block ref="5c67f35967a41efab494aadfd6ca6dff" category="inline-link-macro-rx"></block>.</block>
   <block id="1f6dc20a3ec1623fb44899872279643e" category="list-text">* 온프레미스 Red Hat OpenShift Container Platform 클러스터에 대한 Astra Control Service 지원 *</block>
-  <block id="3a1aaab6dcb181e61008309324075e63" category="paragraph"><block ref="3a1aaab6dcb181e61008309324075e63" category="inline-link-macro-rx"></block></block>
   <block id="5eadb99098f006f9c32869481704480a" category="inline-link-macro">변경 불가능한 읽기 전용 백업</block>
-  <block id="a630fe80f58480c62f875cc147ba8a94" category="list-text">* 변경 불가능한 백업 * : Astra Control이 이제 지원합니다 <block ref="64c93f29dbc4dc78bd1b2562147eccbb" category="inline-link-macro-rx"></block> 멀웨어 및 기타 위협에 대한 추가 보안 레이어로 사용됩니다.</block>
   <block id="9736ef1f9882cacf5ab2e28d88d9e5a6" category="list-text">* Astra Control Provisioner 소개 *</block>
   <block id="6620a1148fc74ef20fba3425d00efe86" category="paragraph">23.10 릴리스와 함께 Astra Control은 Astra Control Provisioner라는 새로운 소프트웨어 구성 요소를 도입했으며 이 소프트웨어 구성 요소는 라이센스가 있는 모든 Astra Control 사용자가 사용할 수 있습니다. Astra Control Provisioner는 Astra Trident가 제공하는 기능을 능가하는 고급 관리 및 스토리지 프로비저닝 기능을 제공합니다. 이들 기능은 모든 Astra Control 고객에게 추가 비용 없이 제공됩니다.</block>
   <block id="b8012be7d7bd1ed72622391312c910b2" category="list-text">* Astra Control Provisioner * 를 시작하십시오
@@ -2552,4 +2550,8 @@ RKE 2 (v1.26.x), Rancher 2.7 포함</block>
   <block id="03281739854e4951c0f98529e54a24f2" category="sidebar">Astra Control Provisioner를 사용합니다</block>
   <block id="49219ed727d5145cd828958ebce847fa" category="list-text">kubectl v1.26 이상이 설치되었습니다</block>
   <block id="3c4db63c6115c69942c67f6b04d8e645" category="paragraph">버킷의 보존 정책이 만료된 후 앱의 변경 불가능한 백업을 삭제하면 Astra Control에서 백업이 삭제되지만 버킷에서는 삭제되지 않습니다. 이 문제는 다음 릴리스에서 해결될 예정입니다.</block>
+  <block id="9d7917a6e561386b201cda34e605d752" category="paragraph"><block ref="9d7917a6e561386b201cda34e605d752" category="inline-link-macro-rx"></block></block>
+  <block id="3fcb22d3c98c7c79f0727de1eb084b1e" category="list-text">* 변경 불가능한 백업 * : Astra Control이 이제 지원합니다 <block ref="fe44ae92696e57533e10ffb7636ff94a" category="inline-link-macro-rx"></block> 멀웨어 및 기타 위협에 대한 추가 보안 레이어로 사용됩니다.</block>
+  <block id="ac4da6c6894a7c36281036138b93deac" category="list-text">* NVMe/TCP 스토리지를 사용하는 응용 프로그램 관리 지원 *
+Astra Control은 이제 NVMe/TCP를 통해 연결된 영구 볼륨의 지원을 받는 애플리케이션을 관리할 수 있다.</block>
 </blocks>
