@@ -12,7 +12,7 @@ summary: Astra Control Provisioner를 통해 고급 스토리지 프로비저닝
 
 
 [role="lead"]
-Astra Trident 버전 23.10 이상에는 라이센스를 보유한 Astra Control 사용자가 고급 스토리지 프로비저닝 기능에 액세스할 수 있도록 Astra Control Provisioner를 사용하는 옵션이 포함되어 있습니다. Astra Control Provisioner는 표준 Astra Trident CSI 기반 기능과 더불어 이 확장 기능을 제공합니다.
+Astra Trident 버전 23.10 이상에는 라이센스를 보유한 Astra Control 사용자가 고급 스토리지 프로비저닝 기능에 액세스할 수 있도록 Astra Control Provisioner를 사용하는 옵션이 포함되어 있습니다. Astra Control Provisioner는 표준 Astra Trident CSI 기반 기능과 더불어 이 확장 기능을 제공합니다. 이 절차를 사용하여 Astra Control Provisioner를 활성화하고 설치할 수 있습니다.
 
 Astra Control Service 구독에는 Astra Control Provisioner 사용에 대한 라이센스가 자동으로 포함됩니다.
 
@@ -38,9 +38,6 @@ Astra Control Provisioner가 없는 기존 Astra Trident가 있고 Astra Control
 * * Astra Trident 버전이 4개의 릴리즈 윈도우 내에 있는지 확인 *: Astra Trident가 버전 23.10의 4개의 릴리즈 윈도우 내에 있는 경우 Astra Control Provisioner를 사용하여 Astra Trident 23.10으로 직접 업그레이드할 수 있습니다. 예를 들어, Astra Trident 22.10에서 23.10으로 직접 업그레이드할 수 있습니다.
 * * 클러스터에 AMD64 시스템 아키텍처가 있는지 확인 *: Astra Control Provisioner 이미지는 AMD64 및 ARM64 CPU 아키텍처 모두에서 제공되지만 Astra Control에서는 AMD64만 지원됩니다.
 
-
-.Astra Control Provisioner 23.10으로 업그레이드하십시오
-Astra Trident를 버전 23.10으로 업그레이드한 경우 다음 절차를 사용하여 Astra Control Provisioner를 활성화하고 설치할 수 있습니다.
 
 .단계
 . NetApp Astra Control 이미지 레지스트리에 액세스:
