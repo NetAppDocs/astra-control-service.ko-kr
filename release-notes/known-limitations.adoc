@@ -30,7 +30,7 @@ Postgres Pod에서 작업을 수행할 때 psql 명령을 사용하기 위해 PO
 
 === 활동 페이지에는 최대 100,000개의 이벤트가 표시됩니다
 
-Astra Control Activity 페이지에는 최대 100,000개의 이벤트가 표시될 수 있습니다. 기록된 이벤트를 모두 보려면 를 사용하여 이벤트를 검색합니다 link:../rest-api/api-intro.html["Astra Control REST API"^].
+Astra Control Activity 페이지에는 최대 100,000개의 이벤트가 표시될 수 있습니다. 기록된 이벤트를 모두 보려면 를 사용하여 이벤트를 검색합니다 https://docs.netapp.com/us-en/astra-automation/["Astra Control REST API"^].
 
 ifdef::gcp[]
 

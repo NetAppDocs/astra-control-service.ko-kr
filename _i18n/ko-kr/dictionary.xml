@@ -1901,7 +1901,6 @@
   <block id="b909803838dd775bd8b8dcfbaf82fb87" category="list-text">데이터 전용 애플리케이션 관리 지원</block>
   <block id="5b8f884e708de51fd4946164326e802c" category="section-title">활동 페이지에는 최대 100,000개의 이벤트가 표시됩니다</block>
   <block id="676bd50e0f10e6725dc7a68e3041cfed" category="inline-link-macro">Astra Control REST API</block>
-  <block id="474be14e965990f35641a82fd1940bd1" category="paragraph">Astra Control Activity 페이지에는 최대 100,000개의 이벤트가 표시될 수 있습니다. 기록된 이벤트를 모두 보려면 를 사용하여 이벤트를 검색합니다 <block ref="65b0251af1492433290d52a893eea83e" category="inline-link-macro-rx"></block>.</block>
   <block id="92994eff0d2e1bf73c01841823660ef5" category="list-text">* Licensing *: 10개 이상의 네임스페이스를 관리하려면 Astra Control 가입이 필요합니다.</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="list-title">시작하기 전에</block>
   <block id="63d526831e75bdfe2a1b18d7e1752ca3" category="list-text">앱과 연결된 원래 저장소 클래스를 유지하거나 다른 저장소 클래스를 선택합니다.</block>
@@ -2554,4 +2553,5 @@ Astra Control은 이제 NVMe/TCP를 통해 연결된 영구 볼륨의 지원을 
   <block id="d5bd450a47d2497dc5f133703c0fab95" category="list-text">온프레미스 클러스터:</block>
   <block id="00ae925249b1dcd734cdb679b48bf8f7" category="list-text">NetApp ONTAP Select를 참조하십시오</block>
   <block id="488eba069a2619d48659ff6ffa6f538a" category="paragraph">Astra Trident 버전 23.10 이상에는 라이센스를 보유한 Astra Control 사용자가 고급 스토리지 프로비저닝 기능에 액세스할 수 있도록 Astra Control Provisioner를 사용하는 옵션이 포함되어 있습니다. Astra Control Provisioner는 표준 Astra Trident CSI 기반 기능과 더불어 이 확장 기능을 제공합니다. 이 절차를 사용하여 Astra Control Provisioner를 활성화하고 설치할 수 있습니다.</block>
+  <block id="3296ea02e6ef8200a85b529d14dc6282" category="paragraph">Astra Control Activity 페이지에는 최대 100,000개의 이벤트가 표시될 수 있습니다. 기록된 이벤트를 모두 보려면 를 사용하여 이벤트를 검색합니다<block ref="3f49e9a4af0b49133601252075c9bc37" category="inline-link-rx"></block>.</block>
 </blocks>
