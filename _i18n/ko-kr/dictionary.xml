@@ -2558,4 +2558,5 @@ Astra Control은 이제 NVMe/TCP를 통해 연결된 영구 볼륨의 지원을 
   <block id="cd27a1715aac859bc2a48a86ed2000c0" category="inline-link">롱혼</block>
   <block id="1752f949f63eb1f41cea70be24a2a732" category="list-text"><block ref="1752f949f63eb1f41cea70be24a2a732" category="inline-link-rx"></block></block>
   <block id="8da5e66f477d9799e7fb14fdf498f36a" category="admonition">직접 만드는 경우<block ref="deabc6332aa53495b56c51d2e3eca54f" prefix=" " category="inline-code"></block> 파일에서 * 하나의 * 컨텍스트 요소만 정의해야 합니다. 을 참조하십시오 <block ref="9d8ee3d0d4f5c967db921af26c4c5a7a" category="inline-link-macro-rx"></block> 을 참조하십시오<block ref="deabc6332aa53495b56c51d2e3eca54f" prefix=" " category="inline-code"></block> 파일.</block>
+  <block id="4aa0f8ba3923a0c903137a6f7e329b63" category="paragraph">실행 중인 Pod가 있는 스토리지 리소스가 포함된 앱 또는 실행 중인 Pod 없이 스토리지 리소스가 포함된 앱을 정의하고 관리할 수 있습니다. 실행 중인 Pod가 없는 앱을 데이터 전용 애플리케이션이라고 합니다.</block>
 </blocks>
