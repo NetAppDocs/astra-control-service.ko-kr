@@ -81,8 +81,8 @@ link:add-first-cluster.html["자가 관리 클러스터 요구사항에 대해 �
 == image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2개"] Astra Control 등록을 완료합니다
 
 [role="quick-margin-list"]
-. 을 생성합니다 https://cloud.netapp.com["NetApp Cloud Central에서"^] 계정.
-. Astra Control 계정을 생성할 때 NetApp Cloud Central 이메일 ID를 지정하십시오 https://cloud.netapp.com/astra["Astra 제품 페이지"^].
+. 을 생성합니다 https://cloud.netapp.com["NetApp BlueXP"^] 계정.
+. Astra Control 계정을 생성할 때 NetApp BlueXP 이메일 ID를 지정합니다 https://cloud.netapp.com/astra["Astra Control 제품 페이지에서 링크 삽입"^].
 
 
 [role="quick-margin-para"]

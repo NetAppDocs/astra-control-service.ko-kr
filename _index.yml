@@ -60,5 +60,5 @@ indexpage:
       url: https://cloud.netapp.com/blog/topic/astra
     - title: Astra Control - 하이브리드 클라우드를 위한 애플리케이션 데이터 관리를 간소화합니다
       url: https://cloud.netapp.com/blog/blg-astra-control-simplifying-kubernetes-application-data-management-for-the-hybrid-cloud
-    - title: Cloud Central의 Kubernetes Hub
+    - title: BlueXP의 Kubernetes Hub
       url: https://cloud.netapp.com/kubernetes-hub
