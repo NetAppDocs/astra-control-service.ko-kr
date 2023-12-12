@@ -67,7 +67,7 @@ crane auth login cr.astra.netapp.io -u <account-id> -p <api-token>
 
 
 ====
-. 원하는 방법에 따라 이미지를 사용자 지정 레지스트리로 이동합니다. 레지스트리를 사용하지 않는 경우 Trident 운영자 단계에 따라 암호를 설정하십시오.
+. 사용자 지정 레지스트리가 있는 경우 이미지를 사용자 지정 레지스트리로 이동하는 기본 방법에 대해 다음 단계를 따릅니다. 레지스트리를 사용하지 않는 경우 의 Trident 운영자 단계를 따르십시오 <<no-registry,다음 섹션을 참조하십시오>>.
 +
 
 NOTE: 다음 명령에 Docker 대신 Podman을 사용할 수 있습니다. Windows 환경을 사용하는 경우 PowerShell을 사용하는 것이 좋습니다.
@@ -85,7 +85,15 @@ NOTE: 가져온 이미지는 여러 플랫폼을 지원하지 않으며 Linux AM
 +
 [source, console]
 ----
-docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0
+docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0 --platform <cluster platform>
+----
++
+예:
+
++
+[listing]
+----
+docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0 --platform linux/amd64
 ----
 .. 이미지에 태그 지정:
 +
@@ -106,49 +114,9 @@ docker push <my_custom_registry>/trident-acp:23.10.0
 --
 .. Astra Control Provisioner 매니페스트를 사용자 지정 레지스트리에 복사합니다.
 +
-[listing]
+[source, crane]
 ----
 crane copy cr.astra.netapp.io/astra/trident-acp:23.10.0 <my_custom_registry>/trident-acp:23.10.0
-----
-
-
---
-.Astra Trident 운영자
---
-.. Docker 구성에 이 블록이 있는지 확인합니다.
-+
-[listing]
-----
-{
-    "auths": {
-        "https://cr.astra.netapp.io/": {
-            "auth": "c3R...zE2"
-        }
-    }
-}
-----
-.. [[pull-secrets]]]에 암호를 만듭니다 `trident` 네임스페이스:
-+
-[listing]
-----
-kubectl create secret -n <trident namespace> generic <secret name> \
-    --from-file=.dockerconfigjson=<path/to/.docker/config.json> \
-    --type=kubernetes.io/dockerconfigjson
-----
-.. Torc(Astra Trident Orchestrator)에 보안 기능 추가:
-+
-[listing]
-----
-apiVersion: trident.netapp.io/v1
-kind: TridentOrchestrator
-metadata:
-  name: trident
-spec:
-  debug: true
-  namespace: trident
-  tridentImage: netapp/trident:23.10.0
-  imagePullSecrets:
-  - <secret name>
 ----
 
 
@@ -164,14 +132,65 @@ WARNING: Helm을 사용하여 Astra Control Provisioner를 활성화하지 마�
 ====
 .Astra Trident 운영자
 --
+.. [[no-registry]]] 원래 배포에서 운영자를 제거한 경우 Astra Trident Orchestrator CRD를 다시 생성합니다.
++
+... https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#step-1-download-the-trident-installer-package["설치 프로그램을 다운로드하여 압축을 풉니다"^].
+... CRD를 다시 생성합니다.
++
+[source, console]
+----
+kubectl create -f deploy/crds/trident.netapp.io_tridentorchestrators_crd_post1.16.yaml
+----
+... 를 생성합니다 `trident` 필요한 경우 네임스페이스 다시 지정:
++
+[source, console]
+----
+kubectl create namespace trident
+----
+
+
+.. Astra Trident를 23.10.0으로 업데이트:
++
+
+NOTE: Kubernetes 1.24 이하 버전을 실행하는 클러스터의 경우, 를 사용합니다 `bundle_pre_1_25.yaml`. Kubernetes 1.25 이상을 실행하는 클러스터의 경우 를 사용합니다 `bundle_post_1_25.yaml`.
+
++
+[source, console]
+----
+kubectl -n trident apply -f trident-installer-23.10.0/deploy/<bundle-name.yaml>
+----
+.. Astra Trident가 실행 중인지 확인합니다.
++
+[source, console]
+----
+kubectl get torc -n trident
+----
++
+응답:
+
++
+[listing]
+----
+NAME      AGE
+trident   21m
+----
+.. [[pull-secrets]]] 비밀을 사용하는 레지스트리가 있는 경우 Astra Control Provisioner 이미지를 가져오는 데 사용할 비밀을 만듭니다.
++
+[source, console]
+----
+kubectl create secret docker-registry <secret_name> -n trident --docker-server=<my_custom_registry> --docker-username=<username> --docker-password=<token>
+----
 .. TridentOrchestrator CR을 편집하고 다음과 같이 편집합니다.
 +
-*** Astra Control Provisioner를 활성화합니다 (`enableACP: true`)
-*** Astra Control Provisioner 이미지의 레지스트리 위치를 설정합니다 (`acpImage: <my_custom_registry>/trident-acp:v23.10.0`)를 클릭합니다.
+[source, console]
+----
+kubectl edit torc trident
+----
 +
-
-NOTE: 를 설정했는지 확인합니다 <<pull-secrets,이미지 풀 암호>> 이 절차의 앞부분에서 이 방법을 사용할 수 있습니다 (`cr.astra.netapp.io/astra/trident-acp:23.10.0 imagePullSecrets: - <secret name>`)
-
+... Astra Trident 이미지에 대한 사용자 지정 레지스트리 위치를 설정하거나 Astra Control 레지스트리에서 가져옵니다 (`tridentImage: <my_custom_registry>/trident:23.10.0` 또는 `tridentImage: netapp/trident:23.10.0`)를 클릭합니다.
+... Astra Control Provisioner를 활성화합니다 (`enableACP: true`)를 클릭합니다.
+... Astra Control Provisioner 이미지의 사용자 지정 레지스트리 위치를 설정하거나 Astra Control 레지스트리에서 가져옵니다 (`acpImage: <my_custom_registry>/trident-acp:23.10.0` 또는 `acpImage: cr.astra.netapp.io/astra/trident-acp:23.10.0`)를 클릭합니다.
+... 를 설정했는지 확인합니다 <<pull-secrets,이미지 풀 암호>> 이 절차의 앞부분에서 여기에서 설정할 수 있습니다 (`imagePullSecrets: - <secret_name>`)를 클릭합니다. 이전 단계에서 설정한 것과 동일한 이름 암호 이름을 사용합니다.
 
 
 +
@@ -184,30 +203,18 @@ metadata:
 spec:
   debug: true
   namespace: trident
+  *tridentImage: <registry>/trident:23.10.0*
   *enableACP: true*
-  *acpImage: <my_custom_registry>/trident-acp:v23.10.0*
+  *acpImage: <registry>/trident-acp:23.10.0*
+  *imagePullSecrets:
+  - <secret_name>*
 ----
-.. 변경 사항 적용:
+.. 파일을 저장하고 종료합니다. 배포 프로세스가 자동으로 시작됩니다.
+.. 운영자, 배포 및 복제 세트가 생성되었는지 확인합니다.
 +
-[listing]
+[source, console]
 ----
-kubectl -n trident apply -f tridentorchestrator_cr.yaml
-----
-.. Astra Trident 구성을 업데이트하여 새로운 기능을 포함하십시오 `trident-acp` 컨테이너 배포:
-+
-
-NOTE: Kubernetes 1.24 이하 버전을 실행하는 클러스터의 경우, 를 사용합니다 `bundle_pre_1_25.yaml`. Kubernetes 1.25 이상을 실행하는 클러스터의 경우 를 사용합니다 `bundle_post_1_25.yaml`.
-
-+
-[listing]
-----
-kubectl -n trident apply -f trident-installer-23.10.0/deploy/<bundle-name.yaml>
-----
-.. 운영자, 배포 및 복제 생성 여부를 확인합니다.
-+
-[listing]
-----
-kubectl get all -n <operator-namespace>
+kubectl get all -n trident
 ----
 +
 
@@ -215,7 +222,7 @@ IMPORTANT: Kubernetes 클러스터에는 운영자의 인스턴스 * 하나가 �
 
 .. 를 확인합니다 `trident-acp` 컨테이너가 실행 중이며 `acpVersion` 있습니다 `23.10.0` 의 상태입니다 `Installed`:
 +
-[listing]
+[source, console]
 ----
 kubectl get torc -o yaml
 ----
@@ -229,7 +236,7 @@ status:
   acpVersion: 23.10.0
   currentInstallationParams:
     ...
-    acpImage: <my_custom_registry>/trident-acp:v23.10.0
+    acpImage: <registry>/trident-acp:v23.10.0
     enableACP: "true"
     ...
   ...
@@ -243,13 +250,13 @@ status:
 .. https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-tridentctl.html["Astra Trident를 제거합니다"^].
 .. Astra Control Provisioner를 활성화하여 Astra Trident를 다시 설치합니다 (`--enable-acp=true`):
 +
-[listing]
+[source, console]
 ----
 ./tridentctl -n trident install --enable-acp=true --acp-image=mycustomregistry/trident-acp:v23.10
 ----
 .. Astra Control Provisioner가 활성화되었는지 확인합니다.
 +
-[listing]
+[source, console]
 ----
 ./tridentctl -n trident version
 ----
