@@ -26,12 +26,6 @@ Astra Control Service를 사용하여 다음과 같은 유형의 퍼블릭, 자�
 | Kubernetes 배포 | 지원되는 버전 
 
 
-| Azure Stack HCI 기반 Azure Kubernetes Service | AKS 1.23 및 1.24가 포함된 Azure Stack HCI 21H2 및 22H2 
-
-
-| Google Anthos | 1.12 ~ 1.14 
-
-
 | Kubernetes(업스트림) | 1.24 ~ 1.26(Kubernetes 1.25 이상의 경우 Astra Trident 22.10 이상 필요) 
 
 
@@ -42,12 +36,6 @@ RKE 2 (v1.24.x), Rancher 2.7
 
 
 | Red Hat OpenShift Container Platform | 4.10 ~ 4.12 
-
-
-| VMware Tanzu Kubernetes Grid를 참조하십시오 | 1.6 
-
-
-| VMware Tanzu Kubernetes Grid Integrated Edition을 참조하십시오 | 1.14 및 1.15 
 |===
 이 지침에서는 이미 자체 관리형 클러스터를 생성했다고 가정합니다.
 

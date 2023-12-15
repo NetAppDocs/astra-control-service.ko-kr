@@ -26,12 +26,6 @@ Astra Control Service를 사용하여 다음과 같은 유형의 프라이빗, �
 | Kubernetes 배포 | 지원되는 버전 
 
 
-| Azure Stack HCI 기반 Azure Kubernetes Service | AKS 1.24.x 및 1.25.x가 포함된 Azure Stack HCI 21H2 및 22H2 
-
-
-| Google Anthos | 1.15 ~ 1.16 
-
-
 | Kubernetes(업스트림) | 1.26 ~ 1.28 
 
 
@@ -42,9 +36,6 @@ RKE 2 (v1.26.x), Rancher 2.7 포함
 
 
 | Red Hat OpenShift Container Platform | 4.11 ~ 4.13 
-
-
-| VMware Tanzu Kubernetes Grid Integrated Edition을 참조하십시오 | 1.16.x입니다 
 |===
 이 지침은 이미 프라이빗 클러스터를 생성하고 원격 액세스를 위한 보안 방법을 준비했다고 가정합니다.
 
