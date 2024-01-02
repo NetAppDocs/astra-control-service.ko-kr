@@ -35,7 +35,7 @@ RKE 2 (v1.24.x), Rancher 2.6 포함
 RKE 2 (v1.26.x), Rancher 2.7 포함 
 
 
-| Red Hat OpenShift Container Platform | 4.11 ~ 4.13 
+| Red Hat OpenShift Container Platform | 4.11 ~ 4.14 
 |===
 이 지침은 이미 프라이빗 클러스터를 생성하고 원격 액세스를 위한 보안 방법을 준비했다고 가정합니다.
 
