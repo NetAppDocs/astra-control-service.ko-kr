@@ -2214,13 +2214,11 @@ RKE 2 (v1.26.x), Rancher 2.7 포함</block>
   <block id="258c9b2ecd2a4147777d96a2577bb01d" category="list-text">* Private route identifier *: Astra Connector로부터 얻을 수 있는 private route identifier를 입력합니다. 을 통해 Astra Connector에 문의하면<block ref="e29c11c68aee82b23845c3b2bf3ce544" prefix=" " category="inline-code"></block> 명령, 전용 라우트 식별자를 라고 합니다<block ref="6205f02991df9d45acb59ccb61d7a0cb" prefix=" " category="inline-code"></block>.</block>
   <block id="1d740d5e28f5ec526ba0e21bd2c042ae" category="list-text"><block ref="d19f65bb3040b630d929eb2fd73ae249" category="inline-link-macro-rx"></block>.</block>
   <block id="615193f2c37d9fd054a61bf78b73ad01" category="section-title">변경 불가능한 백업</block>
-  <block id="213c28884ce4a2a71120000c783fcf82" category="paragraph">Astra Control Service는 다음 플랫폼 및 버킷 유형에 따라 변경 불가능한 백업 생성을 지원합니다.</block>
   <block id="10c409f776da63661445303239e693a2" category="list-text">S3 오브젝트 잠금이 구성된 Amazon S3 버킷을 사용하는 Amazon Web Services</block>
   <block id="beef1143f09010f8bcfdc72a883e9c08" category="list-text">보존 정책이 구성된 Azure 버킷을 사용하는 Microsoft Azure</block>
   <block id="a497c37cc42f059834689ec0fba7374a" category="list-text">보존 정책이 구성된 Google Cloud 스토리지 버킷을 사용하는 GKE(Google Kubernetes Engine</block>
   <block id="2068f70db106b56bd996eac3699fdfcf" category="list-text">S3 오브젝트 잠금이 구성된 S3 버킷을 사용하는 NetApp StorageGRID</block>
   <block id="81a25fa8f10fc7cec301084797002d71" category="paragraph">변경 불가능한 백업 작업 시 다음 사항에 유의하십시오.</block>
-  <block id="582c23d1f9cff824030194a7519dc569" category="list-text">지원되지 않는 플랫폼에서 WORM(Write Once Read Many) 버킷에 백업하거나 지원되지 않는 버킷 유형에 백업하는 경우 보존 시간이 경과해도 백업 삭제 실패와 같은 예기치 않은 결과가 발생할 수 있습니다.</block>
   <block id="046b0dc975ab97773b3ec3307b750bf6" category="list-text">Astra Control은 데이터 라이프사이클 관리 정책 또는 변경 불가능한 백업으로 사용하는 버킷의 오브젝트 수동 삭제를 지원하지 않습니다. 스토리지 백엔드가 Astra Control 스냅샷 또는 백업 데이터의 라이프사이클을 관리하도록 구성되지 않았는지 확인하십시오.</block>
   <block id="67fc69d0bf35fe0124a1937122bf3aec" category="summary">Astra Control과 스토리지 백엔드 간의 트래픽을 보호하도록 암호화를 구성할 수 있습니다.</block>
   <block id="341784bc72164a9576c48141a8457786" category="doc">스토리지 백엔드 암호화를 구성합니다</block>
@@ -2552,4 +2550,7 @@ Astra Control은 이제 NVMe/TCP를 통해 연결된 영구 볼륨의 지원을 
   <block id="00c4331aab8ed2101088511f96b6af8e" category="list-text"><block ref="f21e19b64d79b0da0ff48729d1b28669" category="inline-link-rx"></block>.</block>
   <block id="005a56f182fe268e9f6977b39114eab8" category="list-text">Astra Control Provisioner를 사용하도록 설정된 Astra Trident를 설치합니다 <block ref="87d6b9737ff6f9e44e3dd25c182cf495" prefix="(" category="inline-code"></block>):</block>
   <block id="89de75d28b7402eb7cc9790aa9e4f669" category="cell">4.11 ~ 4.14</block>
+  <block id="ab25e566dd860edad27ef68f7ef5b9e7" category="paragraph">변경 불가능한 백업은 지정된 기간 동안 변경하거나 삭제할 수 없는 백업입니다. 변경 불가능한 백업을 생성할 때 Astra Control은 사용 중인 버킷이 WORM(Write Once, Read Many) 버킷인지 확인하고, 그럴 경우 Astra Control에서 백업을 변경 가능한지 확인합니다.
+Astra Control Service는 다음 플랫폼 및 버킷 유형에 따라 변경 불가능한 백업 생성을 지원합니다.</block>
+  <block id="2d0336a0c7896d90ad095dbc30578198" category="list-text">지원되지 않는 플랫폼에서 WORM 버킷에 백업하거나 지원되지 않는 버킷 유형에 백업하는 경우 보존 시간이 경과해도 백업 삭제 실패와 같은 예상치 못한 결과가 발생할 수 있습니다.</block>
 </blocks>
