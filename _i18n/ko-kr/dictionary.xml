@@ -2553,4 +2553,11 @@ Astra Control은 이제 NVMe/TCP를 통해 연결된 영구 볼륨의 지원을 
   <block id="ab25e566dd860edad27ef68f7ef5b9e7" category="paragraph">변경 불가능한 백업은 지정된 기간 동안 변경하거나 삭제할 수 없는 백업입니다. 변경 불가능한 백업을 생성할 때 Astra Control은 사용 중인 버킷이 WORM(Write Once, Read Many) 버킷인지 확인하고, 그럴 경우 Astra Control에서 백업을 변경 가능한지 확인합니다.
 Astra Control Service는 다음 플랫폼 및 버킷 유형에 따라 변경 불가능한 백업 생성을 지원합니다.</block>
   <block id="2d0336a0c7896d90ad095dbc30578198" category="list-text">지원되지 않는 플랫폼에서 WORM 버킷에 백업하거나 지원되지 않는 버킷 유형에 백업하는 경우 보존 시간이 경과해도 백업 삭제 실패와 같은 예상치 못한 결과가 발생할 수 있습니다.</block>
+  <block id="2b298e0fe3f26bd15bd0a6fde1cc37ca" category="paragraph">Astra Control은 다음 드라이버를 통해 지원되는 스토리지 클래스를 사용하여 스냅샷 생성을 지원합니다.</block>
+  <block id="00055dac2ba112b87a95a368075b9561" category="list-text"><block ref="8321592ce24c8a122ecf26a63cfca407" prefix="" category="inline-code"></block></block>
+  <block id="cd17e7ed84c40a0ff5ecb8b625b1f186" category="list-text"><block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix="" category="inline-code"></block></block>
+  <block id="73b781a615cea2647a87ff2035e296b1" category="list-text"><block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix="" category="inline-code"></block></block>
+  <block id="7699a29541e69341e6490b2f436f651b" category="paragraph">Astra Control은 다음 드라이버를 통해 지원되는 스토리지 클래스를 사용하여 백업 생성을 지원합니다.</block>
+  <block id="cecdaed309330a9e7dea16b2076957ee" category="list-text"><block ref="caafdf62a2c609bfa5316118231a1007" prefix="" category="inline-code"></block></block>
+  <block id="d5011d1ec3e5cf71761411134c41a9cd" category="list-text">* 지원되는 스토리지 클래스 드라이버 *: Astra Control은 다음 드라이버로 지원되는 스토리지 클래스를 사용하여 백업 복원을 지원합니다.</block>
 </blocks>
