@@ -22,11 +22,12 @@ summary: 환경을 설정한 후에는 Kubernetes 클러스터를 생성하고 A
 
 Astra Control Service를 사용하여 다음과 같은 유형의 퍼블릭, 자가 관리 클러스터를 관리할 수 있습니다.
 
+[cols="2*"]
 |===
 | Kubernetes 배포 | 지원되는 버전 
 
 
-| Kubernetes(업스트림) | 1.24 ~ 1.26(Kubernetes 1.25 이상의 경우 Astra Trident 22.10 이상 필요) 
+| Kubernetes(업스트림) | 1.26 ~ 1.28(Astra Trident 23.04 이상) 
 
 
 | RKE(Rancher Kubernetes Engine) | RKE 1.3 및 Rancher 2.6
@@ -35,7 +36,7 @@ RKE 2 (v1.23.x), Rancher 2.6
 RKE 2 (v1.24.x), Rancher 2.7 
 
 
-| Red Hat OpenShift Container Platform | 4.10 ~ 4.12 
+| Red Hat OpenShift Container Platform | 4.11 ~ 4.14 
 |===
 이 지침에서는 이미 자체 관리형 클러스터를 생성했다고 가정합니다.
 
