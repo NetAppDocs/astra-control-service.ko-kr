@@ -60,7 +60,7 @@ Astra Control은 온보딩 섹션에서 정확한 고객 정보를 제공해야 
 
 * Astra Control Service에 추가하기 전에 내 클러스터에 CSI 드라이버를 설치해야 합니까? *
 
-아니요 클러스터가 Astra Control에 추가되면 서비스가 Kubernetes 클러스터에 NetApp의 Trident Container Storage Interface(CSI) 드라이버를 자동으로 설치합니다. 이 CSI 드라이버는 클라우드 공급자가 지원하는 클러스터에 영구 볼륨을 프로비저닝하는 데 사용됩니다.
+아니요 클러스터를 Astra Control에 추가하면 서비스에서 Kubernetes 클러스터에 Astra Trident Container Storage Interface(CSI) 드라이버를 자동으로 설치합니다. 이 CSI 드라이버는 클라우드 공급자가 지원하는 클러스터에 영구 볼륨을 프로비저닝하는 데 사용됩니다.
 
 * Astra Control Service에 추가한 후 클러스터에 작업자 노드를 추가해야 합니다. 어떻게 해야 합니까? *
 
@@ -145,9 +145,8 @@ WARNING: GCP를 통해 삭제하기 전에 항상 Astra Control에서 클러스�
 
 endif::gcp[]
 
-* Astra Control에서 클러스터를 제거할 때 Astra Trident가 제거됩니까? *
-
-Astra Control에서 클러스터를 제거하면 Astra Trident가 클러스터에서 제거되지 않습니다.
+* Astra Control Provisioner는 관리를 취소할 때 클러스터에서 자동으로 제거됩니까? *
+Astra Control Center에서 클러스터를 관리 취소하면 Astra Control Provisioner 또는 Astra Trident가 클러스터에서 자동으로 제거되지 않습니다. Astra Control Provisioner 및 해당 구성 요소 또는 Astra Trident를 제거하려면 다음을 수행해야 합니다 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["다음 단계에 따라 Astra Control Provisioner 서비스가 포함된 Astra Trident 인스턴스를 제거하십시오"^].
 
 
 
@@ -203,26 +202,21 @@ endif::gcp[]
 Astra Control Provisioner는 Astra Control의 일부로 오픈 소스 Astra Trident에서 사용할 수 없는 상위 스토리지 프로비저닝 기능을 지원합니다. 이러한 기능은 오픈 소스 Trident에서 사용할 수 있는 모든 기능에 추가됩니다.
 
 * Astra Control Provisioner가 Astra Trident를 대체합니까? *
-
-향후 Astra Control 업데이트에서 Astra Control Provisioner는 Astra Control 아키텍처의 스토리지 프로비저닝 및 오케스트레이터로 Astra Trident를 대체할 것입니다. 따라서 Astra Control을 사용하는 것이 좋습니다 link:../use/enable-acp.html["Astra Control Provisioner를 활성화합니다"]. Astra Trident는 오픈 소스를 계속 유지하며, NetApp의 새로운 CSI 및 기타 기능으로 릴리즈, 유지, 지원 및 업데이트될 것입니다.
+Astra Control Provisioner는 Astra Control 아키텍처에서 스토리지 프로비저닝 및 오케스트레이터로 대체되었습니다. Astra Control 사용자가 수행해야 합니다 link:../use/enable-acp.html["Astra Control Provisioner를 활성화합니다"] Astra Control을 사용하려면 Astra Trident는 이 릴리즈에서 계속 지원되지만 향후 릴리즈에서 지원되지는 않습니다. Astra Trident는 오픈 소스를 그대로 유지하며 NetApp의 새로운 CSI 및 기타 기능으로 릴리즈, 유지, 지원 및 업데이트됩니다. 하지만 Astra Control Provisioner에는 Astra Trident CSI 기능과 함께 확장 스토리지 관리 기능이 포함되어 있는 Astra Control Provisioner만 사용할 수 있습니다.
 
 * Astra Trident에 대한 비용을 지불해야 합니까? *
 
-아니요 Astra Trident는 계속해서 오픈 소스이며 무료로 다운로드할 수 있습니다.
+아니요 Astra Trident는 계속해서 오픈 소스이며 무료로 다운로드할 수 있습니다. Astra Control Provisioner 기능을 사용하려면 이제 Astra Control 라이센스가 필요합니다.
 
 * Astra Control을 모두 설치 및 사용하지 않고 Astra Control의 스토리지 관리 및 프로비저닝 기능을 사용할 수 있습니까? *
 
-예, Astra Trident 23.10 이상으로 업그레이드하고 Astra Control 데이터 관리 기능의 전체 기능 세트를 사용하지 않으려는 경우에도 Astra Control Provisioner 기능을 활성화할 수 있습니다.
+예, Astra Control 데이터 관리 기능의 전체 기능을 사용하지 않으려는 경우에도 Astra Control Provisioner로 업그레이드하고 기능을 사용할 수 있습니다.
 
-* 고급 스토리지 관리 및 프로비저닝 기능을 사용하기 위해 기존 Trident 사용자가 된 상태에서 Astra Control으로 전환하려면 어떻게 해야 합니까? *
-
-기존 Trident 사용자(퍼블릭 클라우드에 Astra Trident 사용자 포함)인 경우 먼저 Astra Control 라이센스를 취득해야 합니다. 그런 다음 Astra Control Provisioner 번들, Astra Trident 업그레이드 및 를 다운로드할 수 있습니다 link:../use/enable-acp.html["Astra Control Provisioner 기능을 활성화합니다"].
-
-* Astra Control Provisioner가 내 클러스터에서 Astra Trident를 대체했는지 어떻게 알 수 있습니까? *
+[[running-ACP-check]] * Astra Control Provisioner가 내 클러스터에서 Astra Trident를 대체했는지 어떻게 알 수 있습니까? *
 
 Astra Control Provisioner를 설치하면 Astra Control UI의 호스트 클러스터에 가 표시됩니다 `ACP version` 을 사용하지 마십시오 `Trident version` 필드 및 현재 설치된 버전 번호
 
-image:ac-acp-version.png["UI에서 ACP 버전 위치를 보여 주는 스크린샷"]
+image:ac-acp-version.png["UI에서 Astra Control Provisioner 버전 위치를 보여 주는 스크린샷"]
 
 UI에 액세스할 수 없는 경우 다음 방법을 사용하여 설치를 확인할 수 있습니다.
 
@@ -230,7 +224,7 @@ UI에 액세스할 수 없는 경우 다음 방법을 사용하여 설치를 확
 ====
 .Astra Trident 운영자
 --
-를 확인합니다 `trident-acp` 컨테이너가 실행 중이며 `acpVersion` 있습니다 `23.10.0` 의 상태입니다 `Installed`:
+를 확인합니다 `trident-acp` 컨테이너가 실행 중이며 `acpVersion` 있습니다 `23.10.0` 또는 이후 의 상태로 표시됩니다 `Installed`:
 
 [listing]
 ----

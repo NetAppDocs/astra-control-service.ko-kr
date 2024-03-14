@@ -24,6 +24,7 @@ Astra Control은 Kubernetes 애플리케이션 데이터 라이프사이클 관�
 * 애플리케이션 인식 필요 시 스냅샷과 백업을 생성합니다
 * 정책 기반 스냅샷 및 백업 작업 자동화
 * Kubernetes 클러스터 간에 애플리케이션 및 데이터를 마이그레이션합니다
+* NetApp SnapMirror 기술(Astra Control Center)을 사용하여 원격 시스템에 애플리케이션 복제
 * 스테이징 환경에서 운영 환경으로 애플리케이션 클론 생성
 * 애플리케이션 상태 및 보호 상태를 시각화합니다
 * 웹 UI 또는 API를 사용하여 백업 및 마이그레이션 워크플로우를 구현합니다
@@ -59,45 +60,76 @@ Astra Control은 두 가지 배포 모델로 제공됩니다.
 
 
 
+| 지원되는 Kubernetes 배포는 무엇입니까?  a| 
+* * 클라우드 공급자 *
++
+** Amazon Web Services에서 직접 지원합니다
++
+*** Amazon Elastic Kubernetes Service(EKS)
+
+
+** Google 클라우드
++
+*** Google Kubernetes Engine(GKE)
+
+
+** Microsoft Azure를 참조하십시오
++
+*** Azure Kubernetes 서비스(AKS)
+
+
+
+
+* * 자가 관리형 클러스터 *
++
+** Kubernetes(업스트림)
+** RKE(Rancher Kubernetes Engine)
+** Red Hat OpenShift Container Platform
+
+
+* * 온-프레미스 클러스터 *
++
+** Red Hat OpenShift Container Platform 온-프레미스
+
+
+
+ a| 
+* Azure Stack HCI 기반 Azure Kubernetes Service
+* Google Anthos
+* Kubernetes(업스트림)
+* RKE(Rancher Kubernetes Engine)
+* Red Hat OpenShift Container Platform
+
+
+
+
 | 지원되는 스토리지 백엔드는 무엇입니까?  a| 
-* Amazon 웹 서비스:
+* * 클라우드 공급자 *
 +
-** Amazon EBS
-** NetApp ONTAP용 Amazon FSx
-** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["Cloud Volumes ONTAP"^]
-
-
-
-
-endif::aws[]
-
-ifdef::gcp[]
-
-* Google 클라우드:
+** Amazon Web Services에서 직접 지원합니다
 +
-** Google 영구 디스크
-** NetApp Cloud Volumes Service를 참조하십시오
-** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["Cloud Volumes ONTAP"^]
+*** Amazon EBS
+*** NetApp ONTAP용 Amazon FSx
+*** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["Cloud Volumes ONTAP"^]
 
 
-
-
-endif::gcp[]
-
-ifdef::azure[]
-
-* Microsoft Azure:
+** Google 클라우드
 +
-** Azure 관리 디스크
-** Azure NetApp Files
-** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html["Cloud Volumes ONTAP"^]
+*** Google 영구 디스크
+*** NetApp Cloud Volumes Service를 참조하십시오
+*** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["Cloud Volumes ONTAP"^]
+
+
+** Microsoft Azure를 참조하십시오
++
+*** Azure 관리 디스크
+*** Azure NetApp Files
+*** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html["Cloud Volumes ONTAP"^]
 
 
 
 
-endif::azure[]
-
-* 자가 관리 클러스터:
+* * 자가 관리형 클러스터 *
 +
 ** Amazon EBS
 ** Azure 관리 디스크
@@ -107,7 +139,7 @@ endif::azure[]
 ** https://longhorn.io/["롱혼"^]
 
 
-* 온프레미스 클러스터:
+* * 온-프레미스 클러스터 *
 +
 ** NetApp MetroCluster
 ** NetApp ONTAP AFF 및 FAS 시스템
@@ -121,6 +153,7 @@ endif::azure[]
 * NetApp ONTAP AFF 및 FAS 시스템
 * NetApp ONTAP Select를 참조하십시오
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
+* https://longhorn.io/["롱혼"^]
 
 
 |===
@@ -167,8 +200,8 @@ Azure에서 Astra Control Service는 Blob 컨테이너용 리소스 그룹, 스�
 endif::azure[]
 
 * 클러스터에 새 관리 역할 및 Kubernetes 서비스 계정을 생성합니다.
-* 에서는 새 관리자 역할을 사용하여 를 설치합니다 https://docs.netapp.com/us-en/trident/index.html["아스트라 트리덴트"^] 를 클릭하여 하나 이상의 스토리지 클래스를 생성합니다.
-* NetApp 클라우드 서비스 스토리지 오퍼링을 스토리지 백엔드로 사용하는 경우, Astra Control Service는 Astra Trident를 사용하여 앱에 영구 볼륨을 프로비저닝합니다. Amazon EBS 또는 Azure 관리 디스크를 스토리지 백엔드로 사용하는 경우 공급자별 CSI 드라이버를 설치해야 합니다. 설치 지침은 에 나와 있습니다 link:set-up-amazon-web-services.html["Amazon Web Services를 설정합니다"^] 및 link:set-up-microsoft-azure-with-amd.html["Azure 관리 디스크를 사용하여 Microsoft Azure를 설정합니다"^].
+* 에서는 해당 새 관리자 역할을 사용하여 클러스터에 link../conceptions/architecture #Astra-control-components[Astra Control Provisioner]를 설치하고 하나 이상의 스토리지 클래스를 생성합니다.
+* NetApp 클라우드 서비스 스토리지 오퍼링을 스토리지 백엔드로 사용하는 경우 Astra Control Service는 Astra Control Provisioner를 사용하여 앱에 영구 볼륨을 프로비저닝합니다. Amazon EBS 또는 Azure 관리 디스크를 스토리지 백엔드로 사용하는 경우 공급자별 CSI 드라이버를 설치해야 합니다. 설치 지침은 에 나와 있습니다 link:set-up-amazon-web-services.html["Amazon Web Services를 설정합니다"^] 및 link:set-up-microsoft-azure-with-amd.html["Azure 관리 디스크를 사용하여 Microsoft Azure를 설정합니다"^].
 +
 ** 이때 클러스터에서 앱을 정의할 수 있습니다. 영구 볼륨은 새로운 기본 스토리지 클래스를 통해 스토리지 백엔드에서 프로비저닝됩니다.
 ** 그런 다음 Astra Control Service를 사용하여 이러한 애플리케이션을 관리하고 스냅샷, 백업 및 클론 생성을 시작합니다.
@@ -184,7 +217,7 @@ Astra Control의 무료 플랜을 사용하면 최대 10개의 네임스페이�
 
 Astra Control Center는 프라이빗 클라우드에서 로컬로 실행됩니다.
 
-Astra Control Center는 ONTAP 9.5 이상의 스토리지 백엔드를 포함하는 Trident 기반 스토리지 클래스를 사용하여 Kubernetes 클러스터를 지원합니다.
+Astra Control Center는 ONTAP 스토리지 백엔드와 함께 Astra Control Provisioner 구성 스토리지 클래스를 통해 Kubernetes 클러스터를 지원합니다.
 
 클라우드 연결 환경에서 Astra Control Center는 Cloud Insights를 사용하여 고급 모니터링 및 원격 측정 기능을 제공합니다. Cloud Insights 연결이 없을 경우 Astra Control Center에서 제한된(7일 메트릭) 모니터링 및 원격 측정 기능을 사용할 수 있으며, 개방형 메트릭 엔드 포인트를 통해 Kubernetes 기본 모니터링 툴(예: Prometheus 및 Grafana)으로 내보낼 수 있습니다.
 
@@ -215,11 +248,10 @@ Astra Control Center는 다음과 같이 높은 수준에서 작동합니다.
 
 == 를 참조하십시오
 
-* https://docs.netapp.com/us-en/astra-family/["NetApp Astra 제품군 관련 문서"^]
-* https://docs.netapp.com/us-en/astra/index.html["Astra Control Service 문서"^]
+* https://docs.netapp.com/us-en/astra-family/["NetApp Astra 제품군 설명서"^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Astra Control Center 문서"^]
+* https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API 설명서"^]
 * https://docs.netapp.com/us-en/trident/index.html["Astra Trident 문서"^]
-* https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API를 사용합니다"^]
 * https://docs.netapp.com/us-en/cloudinsights/["Cloud Insights 설명서"^]
 * https://docs.netapp.com/us-en/ontap/index.html["ONTAP 설명서"^]
 

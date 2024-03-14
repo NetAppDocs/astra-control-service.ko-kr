@@ -21,4 +21,5 @@ summary: Astra Control에 로그인하고 클러스터를 추가했으므로 이
 * link:../use/manage-users.html["사용자를 초대하고 관리합니다"]
 * link:../use/manage-credentials.html["클라우드 공급자 자격 증명을 관리합니다"]
 * link:../use/manage-notifications.html["알림을 관리합니다"]
+* link:../use/deploy-astra-control-center.html["Astra Control의 자체 관리형 인스턴스를 구축"]
 

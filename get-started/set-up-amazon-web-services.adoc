@@ -77,18 +77,18 @@ Astra Control Service로 자격 증명을 가져올 수 있도록 IAM 사용자�
 
 Kubernetes 클러스터는 Astra Control Service에서 검색 및 관리할 수 있도록 다음 요구사항을 충족해야 합니다.
 
-Kubernetes 버전:: 클러스터는 1.23~1.25 범위의 Kubernetes 버전을 실행해야 합니다.
+Kubernetes 버전:: 클러스터는 1.25~1.28 범위의 Kubernetes 버전을 실행해야 합니다.
 이미지 유형:: 각 작업자 노드의 이미지 유형은 Linux여야 합니다.
 클러스터 상태입니다:: 클러스터가 정상 상태에서 실행되고 있어야 하며 오류가 발생한 상태의 작업자 노드가 없는 온라인 작업자 노드가 하나 이상 있어야 합니다.
 
 
-아스트라 트리덴트:: 스토리지 백엔드가 있는 작업에는 Astra Trident와 외부 스냅샷 컨트롤러가 필요합니다. 설치하려면 다음을 수행합니다.
+Astra Control Provisioner:: 스토리지 백엔드 작업을 수행하려면 Astra Control Provisioner 및 외부 스냅샷 컨트롤러가 필요합니다. 이러한 작업을 활성화하려면 다음을 수행합니다.
 
 
 [%collapsible%open]
 ====
-. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["스냅샷 CRD 및 스냅샷 컨트롤러를 설치합니다"^].
-. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["최신 Astra Trident 버전을 설치합니다"^].
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller["스냅샷 CRD 및 스냅샷 컨트롤러를 설치합니다"^].
+. link:../use/enable-acp.html["Astra Control Provisioner를 활성화합니다"].
 . https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass["VolumeSnapshotClass를 생성합니다"^].
 
 
@@ -101,7 +101,7 @@ CSI 드라이버 설치에 대한 지침은 단계를 참조하십시오.
 [%collapsible%open]
 ====
 .외부 스냅샷 프로그램을 설치합니다
-아직 수행하지 않았다면 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["스냅샷 CRD 및 스냅샷 컨트롤러를 설치합니다"^].
+아직 수행하지 않았다면 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller["스냅샷 CRD 및 스냅샷 컨트롤러를 설치합니다"^].
 
 .CSI 드라이버를 Amazon EKS 애드온으로 설치합니다
 . 서비스 계정에 대한 Amazon EBS CSI 드라이버 IAM 역할을 생성합니다. 지침을 따릅니다 https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html["아마존 문서"^]의 지침에 따라 AWS CLI 명령을 사용합니다.

@@ -97,7 +97,7 @@ Astra Control은 "pass-by-reference" 아키텍처(예: CockroachDB 운영자)로
 
 먼저 해 link:../get-started/add-first-cluster.html["클러스터가 추가되었습니다"] Astra Control은 클러스터에서 앱을 설치하거나 기존 앱을 관리할 수 있습니다. 하나 이상의 네임스페이스로 범위가 지정된 모든 앱을 관리할 수 있습니다.
 
-Astra Control은 스토리지가 Astra Control에서 지원하는 스토리지 클래스에 있는 경우에만 상태 저장 앱을 관리합니다. Astra Control Service는 Astra Trident 또는 일반 CSI 드라이버에서 지원하는 모든 스토리지 클래스를 지원합니다.
+Astra Control은 스토리지가 Astra Control에서 지원하는 스토리지 클래스에 있는 경우에만 상태 저장 앱을 관리합니다. Astra Control Service는 Astra Control Provisioner 또는 일반 CSI 드라이버에서 지원하는 모든 스토리지 클래스를 지원합니다.
 
 ifdef::gcp[]
 

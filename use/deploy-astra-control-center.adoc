@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: use/deploy-astra-control-center.html 
+keywords: get started, manage apps, manage account 
+summary: Astra Control의 자체 관리형 독립 실행형 인스턴스를 구축합니다. 
+---
+= Astra Control의 자체 관리형 인스턴스를 구축
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+네트워크 안에 있는 Astra Control의 자체 관리형 인스턴스를 원하는 경우 Astra Control Service에서 Astra Control Center를 직접 구축할 수 있습니다.
+
+.단계
+. 대시보드의 Getting Started 영역에서 * Astra Control의 자가 관리형 인스턴스 배포 * 를 선택합니다.
+. 다음 중 하나를 수행합니다.
++
+** Generate * 를 선택하여 새 API 토큰을 생성합니다.
+** 기존 Astra Control REST API 토큰에 붙여 넣습니다. 을 참조하십시오 https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra 자동화 문서"^] API 토큰 생성에 대한 지침을 참조하십시오.
+
+
+. Astra Control Center * 배포 창의 지침을 따릅니다.
+

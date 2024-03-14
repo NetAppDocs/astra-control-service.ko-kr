@@ -120,7 +120,7 @@ Astra Control에서 리소스 또는 기능에 대한 사용자 액세스를 제
 
 . 기존 스냅샷 CRD 및 기존 스냅샷 컨트롤러를 모두 제거합니다.
 . https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Astra Trident를 제거합니다"^].
-. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["스냅샷 CRD 및 스냅샷 컨트롤러를 설치합니다"^].
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller["스냅샷 CRD 및 스냅샷 컨트롤러를 설치합니다"^].
 . https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["최신 Astra Trident 버전을 설치합니다"^].
 . https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass["VolumeSnapshotClass를 생성합니다"^].
 

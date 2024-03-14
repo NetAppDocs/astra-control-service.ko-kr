@@ -50,3 +50,5 @@ entries:
   url: "/use/enable-acp.html"
 - title: 앱 및 클러스터 관리를 취소합니다
   url: "/use/unmanage.html"
+- title: Astra Control의 자체 관리형 인스턴스를 구축
+  url: "/use/deploy-astra-control-center.html"

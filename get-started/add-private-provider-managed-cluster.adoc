@@ -73,13 +73,13 @@ endif::gcp[]
 
 이제 Astra Control Service에 프라이빗 클러스터를 추가할 수 있습니다.
 
-Azure Kubernetes Service 및 Google Kubernetes Engine 클러스터를 관리할 때 Astra Trident 설치 및 라이프사이클 관리에 대한 두 가지 옵션이 있습니다.
+Azure Kubernetes Service 및 Google Kubernetes Engine 클러스터를 관리할 때 Astra Control Provisioner 설치 및 라이프사이클 관리에 대한 두 가지 옵션이 있습니다.
 
-* Astra Control Service를 사용하여 Astra Trident의 라이프사이클을 자동으로 관리할 수 있습니다. 이렇게 하려면 Astra Control Service로 관리할 클러스터에 Astra Trident가 설치되어 있지 않은지 확인하십시오. 이 경우 클러스터 관리를 시작할 때 Astra Trident가 Astra Trident를 자동으로 설치하며 Astra Trident 업그레이드는 자동으로 처리됩니다.
-* Astra Trident의 라이프사이클을 직접 관리할 수 있습니다. 이렇게 하려면 Astra Control Service로 클러스터를 관리하기 전에 클러스터에 Astra Trident를 설치합니다. 이 경우 Astra Control Service는 Astra Trident가 이미 설치되어 있음을 감지하며 해당 Trident를 다시 설치하거나 Astra Trident 업그레이드를 관리하지 않습니다. 을 참조하십시오 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident 문서"^] 를 참조하십시오.
+* Astra Control Service를 사용하여 Astra Control Provisioner의 라이프사이클을 자동으로 관리할 수 있습니다. 이렇게 하려면 Astra Trident가 설치되어 있지 않고 Astra Control Service를 사용하여 관리하려는 클러스터에 Astra Control Provisioner가 활성화되어 있지 않아야 합니다. 이 경우 클러스터 관리를 시작할 때 Astra Control Service가 Astra Control Provisioner를 자동으로 활성화하며 Astra Control Provisioner 업그레이드는 자동으로 처리됩니다.
+* Astra Control Provisioner의 라이프사이클을 직접 관리할 수 있습니다. 이렇게 하려면 Astra Control Service로 클러스터를 관리하기 전에 클러스터에서 Astra Control Provisioner를 활성화합니다. 이 경우 Astra Control Service는 Astra Control Provisioner가 이미 활성화되었음을 감지하여 Astra Control Provisioner 업그레이드를 다시 설치하거나 관리하지 않습니다. 을 참조하십시오 link:../use/enable-acp.html["Astra Control Provisioner를 활성화합니다"^] 단계를 위해 Astra Control Provisioner를 활성화합니다.
 
 
-Astra Control Service를 통해 Amazon Web Services 클러스터를 관리하는 경우 Astra Trident를 통해 지원되는 스토리지 백엔드가 필요한 경우 Astra Control Service를 통해 클러스터를 관리하기 전에 클러스터에 Astra Trident를 수동으로 설치해야 합니다. 을 참조하십시오 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident 문서"^] 를 참조하십시오.
+Astra Control Service를 사용하여 Amazon Web Services 클러스터를 관리할 때 Astra Control Provisioner에서만 사용할 수 있는 스토리지 백엔드가 필요한 경우 Astra Control Service를 통해 클러스터를 관리하기 전에 클러스터에서 Astra Control Provisioner를 수동으로 활성화해야 합니다. 을 참조하십시오 link:../use/enable-acp.html["Astra Control Provisioner를 활성화합니다"^] Astra Control Provisioner를 활성화하는 단계에 대해 알아보십시오.
 
 .시작하기 전에
 [%collapsible%open]
@@ -88,7 +88,7 @@ ifdef::aws[]
 
 .Amazon Web Services에서 직접 지원합니다
 * 클러스터를 생성한 IAM 사용자의 자격 증명이 포함된 JSON 파일이 있어야 합니다. link:../get-started/set-up-amazon-web-services.html#create-an-iam-user["IAM 사용자를 생성하는 방법을 알아봅니다"].
-* NetApp ONTAP용 Amazon FSx에는 Astra Trident가 필요합니다. NetApp ONTAP용 Amazon FSx를 EKS 클러스터의 스토리지 백엔드로 사용하려는 경우 의 Astra Trident 정보를 참조하십시오 link:set-up-amazon-web-services.html#eks-cluster-requirements["EKS 클러스터 요구 사항"].
+* Amazon FSx for NetApp ONTAP에는 Astra Control Provisioner가 필요합니다. Amazon FSx for NetApp ONTAP를 EKS 클러스터의 스토리지 백엔드로 사용할 계획인 경우 에서 Astra Control Provisioner 정보를 참조하십시오 link:set-up-amazon-web-services.html#eks-cluster-requirements["EKS 클러스터 요구 사항"].
 * (선택 사항) 제공해야 하는 경우 `kubectl` 클러스터 생성자가 아닌 다른 IAM 사용자에 대한 클러스터에 대한 명령 액세스는 의 지침을 참조하십시오 https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/["Amazon EKS에서 클러스터를 생성한 후 다른 IAM 사용자 및 역할에 대한 액세스를 제공하려면 어떻게 해야 합니까?"^].
 * NetApp Cloud Volumes ONTAP를 스토리지 백엔드로 사용하려는 경우 Amazon Web Services와 연동되도록 Cloud Volumes ONTAP를 구성해야 합니다. Cloud Volumes ONTAP를 참조하십시오 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["설치 설명서"^].
 
@@ -124,7 +124,7 @@ endif::gcp[]
 
 ====
 .단계
-. (선택 사항) Amazon EKS 클러스터를 추가하거나 Astra Trident의 설치 및 업그레이드를 직접 관리하려는 경우 클러스터에 Astra Trident를 설치합니다. 을 참조하십시오 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident 문서"^] 를 참조하십시오.
+. (선택 사항) Amazon EKS 클러스터를 추가하거나 Astra Control Provisioner의 설치 및 업그레이드를 직접 관리하려는 경우 클러스터에서 Astra Control Provisioner를 활성화합니다. 을 참조하십시오 link:../use/enable-acp.html["Astra Control Provisioner를 활성화합니다"^] 참조하십시오.
 . 브라우저에서 Astra Control Service 웹 UI를 엽니다.
 . 대시보드에서 * Kubernetes 클러스터 관리 * 를 선택합니다.
 +
