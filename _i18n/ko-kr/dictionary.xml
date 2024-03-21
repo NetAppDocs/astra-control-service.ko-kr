@@ -1429,10 +1429,8 @@
   <block id="6d55356ca8cb9b27cfa6e2bb46ebb089" category="paragraph">샘플 반응:</block>
   <block id="5f85438ae0f2c9122a5cf54e8e098c98" category="list-text">다음과 같이 서비스 계정을 생성합니다.</block>
   <block id="4ab759267d2877902a521921e10f5f5b" category="list-text">라는 서비스 계정 파일을 생성합니다<block ref="a22dad5601b31427598f571133fb2aed" prefix=" " category="inline-code"></block>.</block>
-  <block id="210c5331ab46caa141e6ac9d5aeb1bee" category="paragraph">필요에 따라 이름 및 네임스페이스를 조정합니다. 여기에서 변경한 경우 다음 단계에서 동일한 변경 사항을 적용해야 합니다.</block>
   <block id="605443509a67749999ab3b0d3ba43e8b" category="list-text">서비스 계정 적용:</block>
   <block id="b29afe741178d8d4966c07c97f9892db" category="list-text">을 생성합니다<block ref="e866afd8290d5c73cda6260e04e6eef0" prefix=" " category="inline-code"></block> 파일을 호출했습니다<block ref="79e1486667eff2c5e1915f58701f3a18" prefix=" " category="inline-code"></block>.</block>
-  <block id="51980eaff0de60f578593fb8ae77f9b3" category="paragraph">필요에 따라 서비스 계정을 생성할 때 수정된 모든 이름과 네임스페이스를 조정합니다.</block>
   <block id="c6c2bc2133c73ae2516508de9a2b5869" category="list-text">클러스터 역할 바인딩을 적용합니다.</block>
   <block id="f087976277d273660b942918b43af841" category="paragraph">출력의 끝은 다음과 유사합니다.</block>
   <block id="d3727d544efa902d0381ec79cec3d488" category="list-text">다음과 같이 kubecononfig를 생성합니다.</block>
@@ -1943,10 +1941,8 @@
   <block id="0c4c0773122e9387cad53cff8068b18b" category="list-text">토큰 암호 검색:</block>
   <block id="84233ef8b39305d023ce1d5e237bbe9d" category="list-text">를 교체합니다<block ref="ee11cbb19052e40b07aac0ca060c23ee" prefix=" " category="inline-code"></block> 다음 예제에서와 같이 토큰이 있는 AWS EKS kubecononfig 파일의 섹션입니다.</block>
   <block id="393c821bd73b2367663c50c77fd00df6" category="section-title">다른 유형의 클러스터에 사용할 kubecononfig 파일을 생성합니다</block>
-  <block id="2b30723c9e7134241d748eae9faa73a6" category="paragraph">다음 지침에 따라 Rancher, Upstream Kubernetes 및 Red Hat OpenShift 클러스터를 위한 kubecon무화과 파일을 생성합니다.</block>
   <block id="e6bab5933e86bee96753d8079fcceaed" category="section-title">2023년 6월 26일</block>
   <block id="b77235e640ab8b5a90390081c423e880" category="list-text">Azure Marketplace 구독은 이제 분당 요금이 아닌 시간당 청구됩니다</block>
-  <block id="972d9f8e0e28ff88864515cf37f116b2" category="paragraph">시작하기 전에 시스템에 다음 사항이 있는지 확인하십시오.</block>
   <block id="30136395f01879792198317c11831ea4" category="inline-link">쿠버네티스</block>
   <block id="501a7b3c879675fb528c68e904b076d1" category="list-text">* 대상 볼륨 확인 *: 다른 스토리지 클래스로 복원하는 경우 스토리지 클래스가 동일한 영구 볼륨 액세스 모드(예: ReadWriteMany)를 사용하는지 확인합니다. 대상 영구 볼륨 액세스 모드가 다르면 복원 작업이 실패합니다. 예를 들어, 소스 영구 볼륨에서 rwx 액세스 모드를 사용하는 경우 Azure Managed Disks, AWS EBS, Google Persistent Disk 또는 와 같이 rwx를 제공할 수 없는 대상 스토리지 클래스를 선택합니다<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>, 복구 작업이 실패합니다. 영구 볼륨 액세스 모드에 대한 자세한 내용은 를 참조하십시오<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> 문서화:</block>
   <block id="0f707c2e2c303edecbc57b2a451ad8a9" category="list-text">* 대상 볼륨 확인 *: 다른 스토리지 클래스에 클론을 생성하는 경우 스토리지 클래스가 동일한 영구 볼륨 액세스 모드(예: ReadWriteMany)를 사용하는지 확인합니다. 대상 영구 볼륨 액세스 모드가 다르면 클론 작업이 실패합니다. 예를 들어, 소스 영구 볼륨에서 rwx 액세스 모드를 사용하는 경우 Azure Managed Disks, AWS EBS, Google Persistent Disk 또는 와 같이 rwx를 제공할 수 없는 대상 스토리지 클래스를 선택합니다<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>, 클론 작업이 실패합니다. 영구 볼륨 액세스 모드에 대한 자세한 내용은 를 참조하십시오<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> 문서화:</block>
@@ -2067,18 +2063,13 @@
   <block id="c49be33f592950e78d23dd417a4a75e5" category="list-text">활성 컨텍스트에 대한 클러스터 관리자 권한으로 관리하려는 클러스터에 대한 활성 kubecononfig입니다</block>
   <block id="565bfe8a9451afd10f3c41fe9fa4cf22" category="list-text">서비스 계정 생성:</block>
   <block id="5a20342984ee9d605acb505095dbcd0a" category="list-text">Astra Control에서 클러스터를 관리할 수 있는 충분한 권한을 가진 다음 클러스터 역할 중 하나를 생성합니다.</block>
-  <block id="0b696bdc9519b9e33f740fc665813fa2" category="list-text">* 제한된 클러스터 역할 *: 이 역할에는 Astra Control에서 클러스터를 관리하는 데 필요한 최소 권한이 포함되어 있습니다.</block>
-  <block id="00b512051a8fb53936e77b3e435be5d9" category="example-title">단계를 위해 확장합니다</block>
   <block id="d2c5b496305d8a36011fc2b1e55dcde3" category="list-text">을 생성합니다<block ref="d7d354d0f9d0780e168c895c92a32c24" prefix=" " category="inline-code"></block> 호출되는 파일(예:<block ref="b7bb4a27d91c967fbba0bb19f36a3533" prefix=" " category="inline-code"></block>.</block>
-  <block id="929489f64fa726fbcdd3058dc505444e" category="list-text">(OpenShift 클러스터에만 해당) OpenShift 클러스터용 kubeconfig를 생성하는 경우 에서 마지막 줄의 주석 처리를 해제합니다<block ref="b7bb4a27d91c967fbba0bb19f36a3533" prefix=" " category="inline-code"></block> 다음 파일<block ref="7da59f03b6be2daf1bf5fd19ecc78050" prefix=" " category="inline-code"></block> 섹션:</block>
   <block id="d2f7aa8c006dd5e0b027cb6e32926a4e" category="list-text">클러스터 역할 적용:</block>
-  <block id="558249c196c0445933dcab3f8c5ccf78" category="list-text">* 확장된 클러스터 역할 *: 이 역할에는 Astra Control에서 관리할 클러스터에 대한 확장된 권한이 포함됩니다. 여러 컨텍스트를 사용하고 설치 중에 구성된 기본 Astra Control kubecononfig를 사용할 수 없거나 단일 컨텍스트의 제한된 역할을 사용할 수 없는 경우 이 역할을 사용할 수 있습니다.</block>
   <block id="5e2febea168e23172b29251a6258dec8" category="admonition">다음 사항을 참조하십시오<block ref="d7d354d0f9d0780e168c895c92a32c24" prefix=" " category="inline-code"></block> 일반 Kubernetes의 예는 단계입니다. 사용자 환경에 대한 지침은 Kubernetes 배포 문서를 참조하십시오.</block>
   <block id="a30ca90c640932dfa98b3ac560bb10ab" category="list-text">클러스터 역할에 대한 클러스터 역할 바인딩을 서비스 계정에 생성합니다.</block>
   <block id="c1865e8db7245bcc1648e67fb250eba4" category="list-text">토큰 암호 생성 및 적용:</block>
   <block id="11afc91177361b2eafbbec4287518195" category="list-text">라는 토큰 비밀 파일을 만듭니다<block ref="7cdd7450df0359169a360b93d3cb369f" prefix=" " category="inline-code"></block>.</block>
   <block id="9c8324622cc9e060ba0702fa13261b48" category="list-text">토큰 암호를 에 추가하여 서비스 계정에 추가합니다<block ref="7de38f3c3d3baa7ca58a366f09577586" prefix=" " category="inline-code"></block> 배열(다음 예제의 마지막 줄):</block>
-  <block id="4dc4c64180b058c5c9c94b6a7886e5f1" category="paragraph">의 각 요소에 대한 인덱스입니다<block ref="7de38f3c3d3baa7ca58a366f09577586" prefix=" " category="inline-code"></block> 어레이는 0으로 시작합니다. 위의 예에서 의 인덱스입니다<block ref="b91e4862bb487ade8bbd4f9eefe0618e" prefix=" " category="inline-code"></block> 는 0이고 의 인덱스입니다<block ref="ce8dd462bb623b9902ba4f0151eb2f1b" prefix=" " category="inline-code"></block> 1입니다. 출력에서 서비스 계정의 인덱스 번호를 기록해 둡니다. 다음 단계에서는 이 인덱스 번호가 필요합니다.</block>
   <block id="28f4058b3debe49781dd1cccb1354c1e" category="list-text">(선택 사항) kubeconfig의 이름을 클러스터의 의미 있는 이름으로 바꿉니다.</block>
   <block id="9c49078ac4ccf12dfc1098df25ab224d" category="paragraph">아니요 청구는 프리미엄 요금제로 업그레이드한 시점부터 시작됩니다.</block>
   <block id="c16414f27a3fbc340c306e2dd0fa7d5d" category="paragraph">예, 클라우드 공급자로부터 클러스터에서 사용하는 영구 볼륨에 대한 비용이 청구됩니다.</block>
@@ -2399,7 +2390,6 @@
   <block id="758aed03fde11e3337f4a8ddce7d4f37" category="admonition">NFSv4 볼륨에서 Kerberos 전송 중 암호화를 사용하는 경우 NFSv4 볼륨에서 올바른 설정을 사용하고 있는지 확인하십시오. 의 NetApp NFSv4 도메인 구성 섹션(13페이지)을 참조하십시오<block ref="fcbfe3012009d21ef9ba8407142f85b6" category="inline-link-rx"></block>.</block>
   <block id="9e586fb8e7af6f105f029bce05abcad4" category="section-title">백업 데이터는 보존 정책이 만료된 버킷에 대해 삭제 후에도 버킷에 남아 있습니다</block>
   <block id="03281739854e4951c0f98529e54a24f2" category="sidebar">Astra Control Provisioner를 사용합니다</block>
-  <block id="49219ed727d5145cd828958ebce847fa" category="list-text">kubectl v1.26 이상이 설치되었습니다</block>
   <block id="3c4db63c6115c69942c67f6b04d8e645" category="paragraph">버킷의 보존 정책이 만료된 후 앱의 변경 불가능한 백업을 삭제하면 Astra Control에서 백업이 삭제되지만 버킷에서는 삭제되지 않습니다. 이 문제는 다음 릴리스에서 해결될 예정입니다.</block>
   <block id="9d7917a6e561386b201cda34e605d752" category="paragraph"><block ref="9d7917a6e561386b201cda34e605d752" category="inline-link-macro-rx"></block></block>
   <block id="3fcb22d3c98c7c79f0727de1eb084b1e" category="list-text">* 변경 불가능한 백업 * : Astra Control이 이제 지원합니다 <block ref="fe44ae92696e57533e10ffb7636ff94a" category="inline-link-macro-rx"></block> 멀웨어 및 기타 위협에 대한 추가 보안 레이어로 사용됩니다.</block>
@@ -2590,8 +2580,6 @@ Astra Control Provisioner는 Astra Control 아키텍처에서 스토리지 프�
   <block id="4795c928314a82e5be360b646a3a3aac" category="list-text">Trident 네임스페이스</block>
   <block id="dae8ace18bdcbcc6ae5aece263e14fe8" category="list-title">옵션</block>
   <block id="804c8c9903e49e8cab0717f41b883f9a" category="list-text">레지스트리가 없는 이미지</block>
-  <block id="c4ffea098f78924a9b9331b8f5e9c8b4" category="list-text">하나의 레지스트리에 있는 이미지</block>
-  <block id="4847c552b2ff9251806e41c8fa907e19" category="list-text">다른 레지스트리의 이미지</block>
   <block id="d75fdc8e85ddcd7e9dc9f367168dec11" category="paragraph">을 사용할 수 있습니다<block ref="cd4140d3de30b520500459331d08d2bf" prefix=" " category="inline-code"></block> 이름, 네임스페이스, 차트, 상태, 앱 버전과 같은 설치 세부 정보를 검토하려면 수정본 번호.</block>
   <block id="d09a3f23170df63b9065e78b7eb80224" category="paragraph">Helm을 사용하여 Trident를 구축하는 데 문제가 있는 경우 다음 명령을 실행하여 Astra Trident를 완전히 제거합니다.</block>
   <block id="3897d04922674a762953f58e38463cb0" category="inline-link">Astra Trident CRD를 완전히 제거합니다</block>
@@ -2675,4 +2663,24 @@ Astra Control Provisioner는 Astra Control 아키텍처에서 스토리지 프�
   <block id="4eecab048a7c90cfb92e0f04884686e8" category="section-title">ONTAP이 오프라인일 때 미러 관계를 업데이트합니다</block>
   <block id="e3b68b1c19a14af5fcb94e147290aec6" category="paragraph">Astra Control이 ONTAP 클러스터에 직접 연결되지 않은 상태에서 CRD를 사용하여 SnapMirror 업데이트를 수행할 수 있습니다. 다음 TridentActionMirrorUpdate 예제 형식을 참조하십시오.</block>
   <block id="bc08468157c4a9e3a30eed7ba64cc309" category="paragraph"><block ref="1f9dfae8a369525bce4996df40963532" prefix="" category="inline-code"></block> TridentActionMirrorUpdate CRD의 상태를 반영합니다. 이 값은 _SUCCEEDED_,_In Progress_ 또는_Failed_에서 가져올 수 있습니다.</block>
+  <block id="3e10c4dd91af2dc1835b50343bc5fbd0" category="list-text">하나 이상의 레지스트리에 있는 이미지</block>
+  <block id="0c7c921ada3cbbcba19a21fa3f908e76" category="paragraph">다음 지침에 따라 Rancher, Upstream Kubernetes 및 Red Hat OpenShift 클러스터에 대한 제한적이거나 확장된 역할 kubeconfig 파일을 생성합니다.</block>
+  <block id="da47e8602567190062ec46757d8008b5" category="paragraph">kubeconfig를 사용하여 관리되는 클러스터의 경우 Astra Control Service에 대해 제한된 권한 또는 확장된 권한 관리자 역할을 선택적으로 생성할 수 있습니다.</block>
+  <block id="68745652f0af53baa161bea4f62fb73c" category="paragraph">다음 시나리오 중 하나가 사용자 환경에 적용되는 경우 이 절차를 통해 별도의 kubecononfig를 생성할 수 있습니다.</block>
+  <block id="78c177d59986391da5ddcec775dfc373" category="list-text">관리하는 클러스터에 대한 Astra Control 권한을 제한하려고 합니다</block>
+  <block id="6d71102c1ab33d36986e4d5b5545a278" category="list-text">여러 개의 컨텍스트를 사용하며 설치 중에 구성된 기본 Astra Control kubecononfig를 사용할 수 없거나, 단일 컨텍스트의 제한된 역할은 사용자 환경에서 작동하지 않습니다</block>
+  <block id="2691c8d1f292681c444c4ccb255290d3" category="paragraph">절차 단계를 완료하기 전에 관리하려는 클러스터에 대해 다음 사항을 확인해야 합니다.</block>
+  <block id="989f15ab4fafcbe33b5c793f7c17921f" category="inline-link-macro">지원되는 버전입니다</block>
+  <block id="4e83b5c233591816a508994f3e122ee6" category="list-text">A <block ref="c838ece7714ec2fb9994f5b6fc5dba70" category="inline-link-macro-rx"></block> kubectl이 설치되어 있습니다.</block>
+  <block id="0a2bc83852a032a14ba97276f44576a3" category="list-text">Astra Control Service를 사용하여 추가하고 관리하려는 클러스터에 대한 kubectl 액세스</block>
+  <block id="87c1d3b1af02b76a8ea6cc975f5e9d22" category="admonition">이 절차를 수행하려면 Astra Control Service를 실행하는 클러스터에 액세스할 필요가 없습니다.</block>
+  <block id="821d16d291e1c446281bf26a1f161ce3" category="open-title">제한된 클러스터 역할</block>
+  <block id="22ebdb40791f129f5c31cde00c7f4eab" category="paragraph">이 역할에는 Astra Control에서 관리할 클러스터를 관리하는 데 필요한 최소 권한이 포함되어 있습니다.</block>
+  <block id="03af53c262f33cd7a040764e24c068eb" category="list-text">(OpenShift 클러스터에만 해당) 의 끝에 다음을 추가합니다<block ref="b7bb4a27d91c967fbba0bb19f36a3533" prefix=" " category="inline-code"></block> 파일:</block>
+  <block id="10a5da7af2547b1937abcbf640714c8f" category="open-title">클러스터 역할이 확장되었습니다</block>
+  <block id="f35854a1b62a4d6417a44ff5456f2776" category="paragraph">이 역할에는 Astra Control에서 관리할 클러스터에 대한 확장된 권한이 포함됩니다. 여러 컨텍스트를 사용하고 설치 중에 구성된 기본 Astra Control kubecononfig를 사용할 수 없거나 단일 컨텍스트의 제한된 역할을 사용할 수 없는 경우 이 역할을 사용할 수 있습니다.</block>
+  <block id="b6e00a7dda090ccd5afd1c904d80548c" category="list-text">교체 서비스 계정 암호를 나열합니다<block ref="af16c4db277e0498b5fa9e30613367f1" prefix=" " category="inline-code"></block> 올바른 설치 상황:</block>
+  <block id="8af6183c9bdfc7399cee2ffcfafecbd2" category="paragraph">의 각 요소에 대한 인덱스입니다<block ref="7de38f3c3d3baa7ca58a366f09577586" prefix=" " category="inline-code"></block> 어레이는 0으로 시작합니다. 위의 예에서 의 인덱스입니다<block ref="b91e4862bb487ade8bbd4f9eefe0618e" prefix=" " category="inline-code"></block> 는 0이고 의 인덱스입니다<block ref="ce8dd462bb623b9902ba4f0151eb2f1b" prefix=" " category="inline-code"></block> 1입니다. 출력에서 서비스 계정의 인덱스 번호를 기록해 둡니다. 다음 단계에서는 이 인덱스 번호가 필요합니다.</block>
+  <block id="a40c084314b74a686572312dc71c4738" category="list-text">을 생성합니다<block ref="3d3f9b7a5974a7898593a3d2f5549f15" prefix=" " category="inline-code"></block> 파일.</block>
+  <block id="23ed633c6130c18f08608b6efce84dc4" category="list-text">대치<block ref="089d02fba2ffcdb49a91320ff506dfa3" prefix=" " category="inline-code"></block> 다음 스크립트의 시작 부분에 올바른 값이 있습니다.</block>
 </blocks>
