@@ -1,0 +1,2894 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head class="at-element-marker">
+  <title>앱 실행 후크 관리 | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="앱 실행 후크 관리 | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ko-kr/astra-control-service/use/manage-app-execution-hooks.html" />
+	<meta property="og:description" content="실행 후크는 관리되는 앱의 스냅샷 전후에 실행할 수 있는 사용자 지정 스크립트입니다." />
+  <meta property="og:image" content="https://docs.netapp.com/ko-kr/astra-control-service/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="실행 후크는 관리되는 앱의 스냅샷 전후에 실행할 수 있는 사용자 지정 스크립트입니다.">
+  <meta name="keywords" content=" execution hook, hook, script, snapshot, backup, freeze, thaw, database"><!-- Icons -->
+  <link rel="icon" href="/ko-kr/astra-control-service/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/ko-kr/astra-control-service/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/astra-control-service/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/ko-kr/astra-control-service/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ko-kr/astra-control-service/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/ko-kr/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/astra-control-service/use/manage-app-execution-hooks.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ko-kr/astra-control-service/js/na-search.js'></script><script src='/ko-kr/astra-control-service/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/ko-kr/astra-control-service/js/custom-dropdown.js'></script>
+  <script src='/ko-kr/astra-control-service/js/FileSaver.min.js'></script>
+  <script src='/ko-kr/astra-control-service/js/jszip-utils.min.js'></script>
+  <script src='/ko-kr/astra-control-service/js/jszip.min.js'></script><script src='/ko-kr/astra-control-service/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor="gcp">
+    <div class="skip-to-main">
+      <a href="#main" >Skip to main content</a>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/ko-kr/astra-control-service/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/kr">
+                <image id="ie-header-logo" src="/ko-kr/astra-control-service/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/support-and-training/documentation/">문서</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/ko-kr/astra-control-service/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">한국어</span>
+                    <img src="/ko-kr/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/ko-kr/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/ko-kr/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/us-en/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ja-jp/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-tw/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/it-it/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/ko-kr/astra-control-service/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">모든 NetApp</span>
+                    <img src="/ko-kr/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/ko-kr/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">지원</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">기술 자료</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/ko/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">교육</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/ko-kr/astra-control-service/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/ko-kr/astra-control-service/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">모든 문서</a>
+    </li>
+    
+    
+    <li class="">
+      <a href="https://docs.netapp.com/us-en/cloud/">클라우드 문서</a>
+    </li>
+    
+
+    
+    <li class="">
+      <a href="https://docs.netapp.com/ko-kr/astra-family/">
+        Astra
+      </a>
+    </li>
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/ko-kr/astra-control-service/">-->
+      Astra Control Service
+    <!--</a>-->
+  </div>
+</div>
+
+            
+<div id="ie-selectors">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ko-kr/astra-control-service/use/manage-app-execution-hooks.html">
+  
+  
+  <div class="custom-dropdown-select selected" title="Google 클라우드">
+    <label>클라우드 공급자</label>
+    <div>Google 클라우드</div>  
+    <img src="/ko-kr/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown flavor invisible" />
+    <img src="/ko-kr/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup flavor" />
+    <!--<img src="/ko-kr/astra-control-service/images/dismiss.svg" class="custom-icon selected" id="remove-flavor" alt="" />-->
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/ko-kr/astra-control-service/aws/use/manage-app-execution-hooks.html">Amazon Web Services에서 직접 지원합니다
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/ko-kr/astra-control-service/gcp/use/manage-app-execution-hooks.html">Google 클라우드
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ko-kr/astra-control-service/azure/use/manage-app-execution-hooks.html">Microsoft Azure를 참조하십시오
+    </li>
+    
+    
+    <li data-url="/ko-kr/astra-control-service/use/manage-app-execution-hooks.html">모든 클라우드 공급자</li>
+  </ul>
+</div>
+</div>
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/ko-kr/astra-control-service/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/ko-kr/astra-control-service/gcp/search.html" 
+        data-type="widget"
+        data-placeholder="설명서 검색"
+        data-no-results-found="{query}에 대한 결과를 찾을 수 없습니다"
+        data-did-you-mean="{suggestion}을(를) 검색하십시오."
+        data-no-results-found-did-you-mean="{query}에 대한 결과가 없습니다. {suggestion}을(를) 찾고 계시는 건가요?"
+        data-results-found="{hitCount}개의 결과를 찾았습니다"
+        data-error-message="오류가 발생했습니다. 다시 시도해 주십시오."
+        data-error-reset="검색 재설정"
+        data-sk-es-pf-indexes="" 
+        data-flavor="gcp">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control Service 문서"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ko-kr/astra-control-service/gcp/index.html">
+        Astra Control Service 문서
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="릴리스 정보"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 릴리스 정보</div>-->
+         릴리스 정보
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="새로운 소식"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/release-notes/whats-new.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/release-notes/whats-new.html">
+        새로운 소식
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="알려진 문제"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/release-notes/known-issues.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/release-notes/known-issues.html">
+        알려진 문제
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="알려진 제한 사항"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/release-notes/known-limitations.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/release-notes/known-limitations.html">
+        알려진 제한 사항
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="시작하십시오"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 시작하십시오</div>-->
+         시작하십시오
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control에 대해 알아보십시오"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/intro.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/get-started/intro.html">
+        Astra Control에 대해 알아보십시오
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="지원되는 Kubernetes 구축"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/supported-deployments.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/get-started/supported-deployments.html">
+        지원되는 Kubernetes 구축
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="빠른 시작"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/quick-start.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/get-started/quick-start.html">
+        빠른 시작
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="클라우드 공급자를 설정합니다"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 클라우드 공급자를 설정합니다</div>-->
+         클라우드 공급자를 설정합니다
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Google Cloud를 설정합니다"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/set-up-google-cloud.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/get-started/set-up-google-cloud.html">
+        Google Cloud를 설정합니다
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="계정을 등록하십시오"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/register.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/get-started/register.html">
+        계정을 등록하십시오
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="클러스터를 추가합니다"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/add-first-cluster.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/get-started/add-first-cluster.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 클러스터를 추가합니다</div>-->
+         클러스터를 추가합니다
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="프라이빗 클러스터용 Astra Connector를 설치합니다"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/install-astra-connector.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/get-started/install-astra-connector.html">
+        프라이빗 클러스터용 Astra Connector를 설치합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="공급자 관리 클러스터를 추가합니다"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-3  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 공급자 관리 클러스터를 추가합니다</div>-->
+         공급자 관리 클러스터를 추가합니다
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="공용 공급자 관리 클러스터를 추가합니다"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/add-public-provider-managed-cluster.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ko-kr/astra-control-service/gcp/get-started/add-public-provider-managed-cluster.html">
+        공용 공급자 관리 클러스터를 추가합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="프라이빗 공급자가 관리하는 클러스터를 추가합니다"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/add-private-provider-managed-cluster.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ko-kr/astra-control-service/gcp/get-started/add-private-provider-managed-cluster.html">
+        프라이빗 공급자가 관리하는 클러스터를 추가합니다
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="자가 관리 클러스터를 추가합니다"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-3  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 자가 관리 클러스터를 추가합니다</div>-->
+         자가 관리 클러스터를 추가합니다
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="퍼블릭 자가 관리 클러스터를 추가합니다"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/add-public-self-managed-cluster.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ko-kr/astra-control-service/gcp/get-started/add-public-self-managed-cluster.html">
+        퍼블릭 자가 관리 클러스터를 추가합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="자체 관리되는 프라이빗 클러스터를 추가합니다"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/add-private-self-managed-cluster.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ko-kr/astra-control-service/gcp/get-started/add-private-self-managed-cluster.html">
+        자체 관리되는 프라이빗 클러스터를 추가합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Trident 버전을 확인합니다"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/check-astra-trident-version.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ko-kr/astra-control-service/gcp/get-started/check-astra-trident-version.html">
+        Astra Trident 버전을 확인합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="kubecononfig 파일을 생성합니다"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/create-kubeconfig.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ko-kr/astra-control-service/gcp/get-started/create-kubeconfig.html">
+        kubecononfig 파일을 생성합니다
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="다음 단계"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/whats-next.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/get-started/whats-next.html">
+        다음 단계
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="비디오"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/videos.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/get-started/videos.html">
+        비디오
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="FAQ 를 참조하십시오"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/faq.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/get-started/faq.html">
+        FAQ 를 참조하십시오
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="개념"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 개념</div>-->
+         개념
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="아키텍처 및 구성 요소"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/learn/architecture.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/learn/architecture.html">
+        아키텍처 및 구성 요소
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="데이터 보호"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/learn/data-protection.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/learn/data-protection.html">
+        데이터 보호
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="GKE 클러스터용 스토리지"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/learn/choose-class-and-size.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/learn/choose-class-and-size.html">
+        GKE 클러스터용 스토리지
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="애플리케이션 관리"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/learn/app-management.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/learn/app-management.html">
+        애플리케이션 관리
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="사용자 역할 및 네임스페이스"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/learn/user-roles-namespaces.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/learn/user-roles-namespaces.html">
+        사용자 역할 및 네임스페이스
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control Service를 사용합니다"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Astra Control Service를 사용합니다</div>-->
+         Astra Control Service를 사용합니다
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="로그인합니다"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/log-in.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/use/log-in.html">
+        로그인합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="애플리케이션 관리 및 보호"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 애플리케이션 관리 및 보호</div>-->
+         애플리케이션 관리 및 보호
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="앱 관리를 시작합니다"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/manage-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/use/manage-apps.html">
+        앱 관리를 시작합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="앱 보호"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/protect-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/use/protect-apps.html">
+        앱 보호
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="앱 복원"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/restore-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/use/restore-apps.html">
+        앱 복원
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="애플리케이션 클론 복제 및 마이그레이션"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/clone-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/use/clone-apps.html">
+        애플리케이션 클론 복제 및 마이그레이션
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="앱 실행 후크 관리"
+      data-li-level="3#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/manage-app-execution-hooks.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/use/manage-app-execution-hooks.html">
+        앱 실행 후크 관리
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="앱 및 컴퓨팅 상태 보기"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 앱 및 컴퓨팅 상태 보기</div>-->
+         앱 및 컴퓨팅 상태 보기
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="대시보드 요약"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/view-dashboard.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/use/view-dashboard.html">
+        대시보드 요약
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="클러스터 상태 및 세부 정보"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/view-clusters.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/use/view-clusters.html">
+        클러스터 상태 및 세부 정보
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="앱 상태 및 세부 정보"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/view-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/use/view-apps.html">
+        앱 상태 및 세부 정보
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="버킷을 관리합니다"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/manage-buckets.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/use/manage-buckets.html">
+        버킷을 관리합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="실행 중인 작업을 모니터링합니다"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/monitor-running-tasks.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/use/monitor-running-tasks.html">
+        실행 중인 작업을 모니터링합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="계정을 관리합니다"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 계정을 관리합니다</div>-->
+         계정을 관리합니다
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="대금 청구를 설정합니다"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/set-up-billing.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/use/set-up-billing.html">
+        대금 청구를 설정합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="사용자를 초대하고 관리합니다"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/manage-users.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/use/manage-users.html">
+        사용자를 초대하고 관리합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="역할을 관리합니다"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/manage-roles.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/use/manage-roles.html">
+        역할을 관리합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="클라우드 공급자 자격 증명을 관리합니다"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/manage-credentials.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/use/manage-credentials.html">
+        클라우드 공급자 자격 증명을 관리합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="계정 활동을 모니터링합니다"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/monitor-account-activity.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/use/monitor-account-activity.html">
+        계정 활동을 모니터링합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="알림을 관리합니다"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/manage-notifications.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/use/manage-notifications.html">
+        알림을 관리합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="계정을 닫습니다"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/close-account.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ko-kr/astra-control-service/gcp/use/close-account.html">
+        계정을 닫습니다
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="클라우드 인스턴스 관리"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/manage-cloud-instances.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/use/manage-cloud-instances.html">
+        클라우드 인스턴스 관리
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control Provisioner를 활성화합니다"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/enable-acp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/use/enable-acp.html">
+        Astra Control Provisioner를 활성화합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="앱 및 클러스터 관리를 취소합니다"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/unmanage.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/use/unmanage.html">
+        앱 및 클러스터 관리를 취소합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control의 자체 관리형 인스턴스를 구축"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/deploy-astra-control-center.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/use/deploy-astra-control-center.html">
+        Astra Control의 자체 관리형 인스턴스를 구축
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control Provisioner를 사용합니다"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Astra Control Provisioner를 사용합니다</div>-->
+         Astra Control Provisioner를 사용합니다
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="스토리지 백엔드 암호화를 구성합니다"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use-acp/configure-storage-backend-encryption.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/use-acp/configure-storage-backend-encryption.html">
+        스토리지 백엔드 암호화를 구성합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="스냅샷을 사용하여 볼륨 데이터를 복구합니다"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use-acp/acp-snap-restore.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/use-acp/acp-snap-restore.html">
+        스냅샷을 사용하여 볼륨 데이터를 복구합니다
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="SnapMirror를 사용하여 볼륨을 복제합니다"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use-acp/acp-volume-replicate.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/use-acp/acp-volume-replicate.html">
+        SnapMirror를 사용하여 볼륨을 복제합니다
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control REST API로 자동화"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/automation.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ko-kr/astra-control-service/gcp/automation.html">
+        Astra Control REST API로 자동화
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="지식 및 지원"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ko-kr/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ko-kr/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 지식 및 지원</div>-->
+         지식 및 지원
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="지원을 위해 등록하십시오"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/support/register-support.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/support/register-support.html">
+        지원을 위해 등록하십시오
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="문제 해결"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/support/troubleshooting.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/support/troubleshooting.html">
+        문제 해결
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="도움을 받으십시오"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/support/get-help.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ko-kr/astra-control-service/gcp/support/get-help.html">
+        도움을 받으십시오
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="법적 고지"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/legal-notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ko-kr/astra-control-service/gcp/legal-notices.html">
+        법적 고지
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/ko-kr/astra-control-service"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/ko-kr/astra-control-service"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <img src="/ko-kr/astra-control-service/images/notification-icons.svg" class="luci-icon" alt="" />
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> 본 한국어 번역은 사용자 편의를 위해 제공되는 기계 번역입니다. 영어 버전과 한국어 버전이 서로 어긋나는 경우에는 언제나 영어 버전이 우선합니다. </span>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+    </span>
+  </div><div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">앱 실행 후크 관리</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2024-03-11 22:31:11 +0000">03/11/2024</time>
+        
+    
+    
+        <span>기여자
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/ko-kr/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />변경 제안</span>
+        <img src="/ko-kr/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/ko-kr/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/astra-control-service.ko-kr/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/ko-kr/astra-control-service/use/manage-app-execution-hooks.html&page-title=앱 실행 후크 관리" class="page-nav-contribute-link" role="button">문서 변경사항 요청</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/use/manage-app-execution-hooks.adoc" class="page-nav-contribute-link" role="button">이 페이지 편집</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >기여하는 방법 알아보기</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/ko-kr/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>PDF<img src="/ko-kr/astra-control-service/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/ko-kr/astra-control-service/pdfs/gcp/fullsite-sidebar/Astra_Control_Service_문서.pdf" >
+                    <img src="/ko-kr/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>이 문서 사이트의 PDF</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/astra-control-service/pdfs/gcp/sidebar/릴리스_정보.pdf" 
+            
+          >
+            <img src="/ko-kr/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            릴리스 정보
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/astra-control-service/pdfs/gcp/sidebar/시작하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            시작하십시오
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/astra-control-service/pdfs/gcp/sidebar/클라우드_공급자를_설정합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            클라우드 공급자를 설정합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/astra-control-service/pdfs/gcp/sidebar/클러스터를_추가합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            클러스터를 추가합니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/astra-control-service/pdfs/gcp/sidebar/공급자_관리_클러스터를_추가합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            공급자 관리 클러스터를 추가합니다
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/astra-control-service/pdfs/gcp/sidebar/자가_관리_클러스터를_추가합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            자가 관리 클러스터를 추가합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/astra-control-service/pdfs/gcp/sidebar/개념.pdf" 
+            
+          >
+            <img src="/ko-kr/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            개념
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/astra-control-service/pdfs/gcp/sidebar/Astra_Control_Service를_사용합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Astra Control Service를 사용합니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/astra-control-service/pdfs/gcp/sidebar/애플리케이션_관리_및_보호.pdf" 
+            
+          >
+            <img src="/ko-kr/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            애플리케이션 관리 및 보호
+          </a>
+          
+
+
+
+
+
+
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/astra-control-service/pdfs/gcp/sidebar/앱_및_컴퓨팅_상태_보기.pdf" 
+            
+          >
+            <img src="/ko-kr/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            앱 및 컴퓨팅 상태 보기
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/astra-control-service/pdfs/gcp/sidebar/계정을_관리합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            계정을 관리합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/astra-control-service/pdfs/gcp/sidebar/Astra_Control_Provisioner를_사용합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Astra Control Provisioner를 사용합니다
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ko-kr/astra-control-service/pdfs/gcp/sidebar/지식_및_지원.pdf" 
+            
+          >
+            <img src="/ko-kr/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            지식 및 지원
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/ko-kr/astra-control-service/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>별도의 PDF 문서 모음<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+
+
+
+<div class="content-to-index">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>실행 후크는 관리되는 앱의 데이터 보호 작업과 함께 실행되도록 구성할 수 있는 사용자 지정 작업입니다. 예를 들어 데이터베이스 앱이 있는 경우 실행 후크를 사용하여 스냅샷 전에 모든 데이터베이스 트랜잭션을 일시 중지하고 스냅샷이 완료된 후 트랜잭션을 다시 시작할 수 있습니다. 따라서 애플리케이션 정합성이 보장되는 스냅샷이 보장됩니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="실행-후크-유형">실행 후크 유형</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control Service는 실행 가능한 시점을 기준으로 다음과 같은 유형의 실행 후크를 지원합니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>사전 스냅샷</p>
+</li>
+<li>
+<p>사후 스냅샷</p>
+</li>
+<li>
+<p>사전 백업</p>
+</li>
+<li>
+<p>백업 후</p>
+</li>
+<li>
+<p>사후 복원</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="실행-후크-필터">실행 후크 필터</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>실행 후크를 응용 프로그램에 추가하거나 편집할 때 실행 후크에 필터를 추가하여 후크가 일치시킬 컨테이너를 관리할 수 있습니다. 필터는 모든 컨테이너에서 동일한 컨테이너 이미지를 사용하는 응용 프로그램에 유용하지만 각 이미지를 다른 용도(예: Elasticsearch)로 사용할 수 있습니다. 필터를 사용하면 실행 후크가 실행되는 시나리오를 만들 수 있습니다. 단, 모든 동일한 컨테이너를 실행하는 것은 아닙니다. 단일 실행 후크에 대해 여러 개의 필터를 만들면 논리적 필터 및 연산자와 결합됩니다. 실행 후크당 최대 10개의 활성 필터를 사용할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>실행 후크에 추가하는 각 필터는 클러스터의 컨테이너와 일치시키기 위해 정규식을 사용합니다. 후크가 컨테이너와 일치하면 후크는 해당 컨테이너에서 연결된 스크립트를 실행합니다. 필터에 대한 정규식은 정규식 2(RE2) 구문을 사용합니다. 이 구문은 일치 목록에서 컨테이너를 제외하는 필터를 만드는 것을 지원하지 않습니다. Astra Control이 실행 후크 필터의 정규식에 대해 지원하는 구문에 대한 자세한 내용은 을 참조하십시오 <a href="https://github.com/google/re2/wiki/Syntax" target="_blank" rel="noopener">"정규식 2(RE2) 구문 지원"</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="참고">
+</td>
+<td class="content">
+복원 또는 클론 작업 후에 실행되는 실행 후크에 네임스페이스 필터를 추가하고 복원 또는 클론 소스와 대상이 서로 다른 네임스페이스에 있는 경우 네임스페이스 필터는 대상 네임스페이스에만 적용됩니다.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="사용자-정의-실행-후크에-대한-중요-참고-사항">사용자 정의 실행 후크에 대한 중요 참고 사항</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>앱에 대한 실행 후크를 계획할 때 다음 사항을 고려하십시오.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="참고">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>실행 후크는 실행 중인 응용 프로그램의 기능을 줄이거나 완전히 비활성화하기 때문에 사용자 지정 실행 후크가 실행되는 시간을 최소화해야 합니다.<br>
+연결된 실행 후크와 함께 백업 또는 스냅샷 작업을 시작한 다음 취소하면 백업 또는 스냅샷 작업이 이미 시작된 경우에도 후크를 실행할 수 있습니다. 즉, 백업 후 실행 후크에 사용되는 논리는 백업이 완료된 것으로 가정할 수 없습니다.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>새 Astra Control 구축 환경에서는 실행 후크 기능이 기본적으로 비활성화되어 있습니다.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>실행 후크를 사용하려면 먼저 실행 후크 기능을 활성화해야 합니다.</p>
+</li>
+<li>
+<p>소유자 또는 관리자 사용자는 현재 Astra Control 계정에 정의된 모든 사용자에 대해 실행 후크 기능을 활성화하거나 비활성화할 수 있습니다. 을 참조하십시오 <a href="#실행-후크-기능을-활성화합니다">실행 후크 기능을 활성화합니다</a> 및 <a href="#실행-후크-기능을-비활성화합니다">실행 후크 기능을 비활성화합니다</a> 를 참조하십시오.</p>
+</li>
+<li>
+<p>Astra Control 업그레이드 중에 기능 지원 상태가 유지됩니다.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>실행 후크는 스크립트를 사용하여 작업을 수행해야 합니다. 많은 실행 후크가 동일한 스크립트를 참조할 수 있습니다.</p>
+</li>
+<li>
+<p>Astra Control에는 실행 후크가 실행 가능한 셸 스크립트 형식으로 기록하는 데 사용하는 스크립트가 필요합니다.</p>
+</li>
+<li>
+<p>스크립트 크기는 96KB로 제한됩니다.</p>
+</li>
+<li>
+<p>Astra Control은 실행 후크 설정과 모든 일치 기준을 사용하여 스냅샷, 백업 또는 복구 작업에 적용할 수 있는 후크를 결정합니다.</p>
+</li>
+<li>
+<p>모든 실행 후크 장애는 소프트 장애이며, 후크가 실패하더라도 다른 후크와 데이터 보호 작업은 계속 시도됩니다. 그러나 후크가 실패하면 * Activity * 페이지 이벤트 로그에 경고 이벤트가 기록됩니다.</p>
+</li>
+<li>
+<p>실행 후크를 생성, 편집 또는 삭제하려면 소유자, 관리자 또는 구성원 권한이 있는 사용자여야 합니다.</p>
+</li>
+<li>
+<p>실행 후크를 실행하는 데 25분 이상 걸리는 경우 후크에 장애가 발생하고 반환 코드가 "N/A"인 이벤트 로그 항목이 생성됩니다. 영향을 받는 모든 스냅샷은 시간 초과되어 실패로 표시되며, 그 결과 이벤트 로그 항목이 시간 초과를 나타냅니다.</p>
+</li>
+<li>
+<p>임시 데이터 보호 작업의 경우 모든 후크 이벤트가 생성되고 * Activity * 페이지 이벤트 로그에 저장됩니다. 그러나 예약된 데이터 보호 작업의 경우 후크 장애 이벤트만 이벤트 로그에 기록됩니다(예약된 데이터 보호 작업 자체에서 생성되는 이벤트는 계속 기록됨).</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="실행-순서">실행 순서</h3>
+<div class="paragraph">
+<p>데이터 보호 작업이 실행되면 실행 후크 이벤트가 다음 순서로 발생합니다.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>해당되는 모든 사용자 정의 사전 작업 실행 후크는 해당 컨테이너에서 실행됩니다. 필요한 만큼 사용자 지정 사전 작업 후크를 만들고 실행할 수 있지만, 이 후크의 실행 순서는 보장되거나 구성할 수 없습니다.</p>
+</li>
+<li>
+<p>데이터 보호 작업이 수행됩니다.</p>
+</li>
+<li>
+<p>해당되는 모든 사용자 지정 작업 후 실행 후크는 해당 컨테이너에서 실행됩니다. 필요한 만큼 사용자 지정 사후 작업 후크를 만들고 실행할 수 있지만 작업 후 후크의 실행 순서는 보장되거나 구성할 수 없습니다.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>같은 유형의 실행 후크를 여러 개 생성하는 경우(예: 사전 스냅샷) 해당 후크의 실행 순서는 보장되지 않습니다. 그러나 다른 유형의 후크를 실행하는 순서는 보장됩니다. 예를 들어, 서로 다른 모든 유형의 후크가 있는 구성의 실행 순서는 다음과 같습니다.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>예비 후크가 실행되었습니다</p>
+</li>
+<li>
+<p>사전 스냅샷 후크가 실행되었습니다</p>
+</li>
+<li>
+<p>사후 스냅샷 후크가 실행되었습니다</p>
+</li>
+<li>
+<p>백업 후 후크가 실행되었습니다</p>
+</li>
+<li>
+<p>복원 후 후크가 실행되었습니다</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>시나리오 번호 2에서 이 구성의 예를 볼 수 있습니다 <a href="#후크가-실행될지-여부를-결정합니다">후크가 실행될지 여부를 결정합니다</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="참고">
+</td>
+<td class="content">
+운영 환경에서 실행 후크 스크립트를 사용하려면 항상 해당 스크립트를 테스트해야 합니다. 'kubbeck exec' 명령을 사용하여 스크립트를 편리하게 테스트할 수 있습니다. 운영 환경에서 실행 후크를 사용하도록 설정한 후 결과 스냅샷과 백업을 테스트하여 정합성이 보장되는지 확인합니다. 앱을 임시 네임스페이스에 클론 복제하고, 스냅샷 또는 백업을 복원한 다음 앱을 테스트하여 이 작업을 수행할 수 있습니다.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="후크가-실행될지-여부를-결정합니다">후크가 실행될지 여부를 결정합니다</h3>
+<div class="paragraph">
+<p>다음 표를 사용하여 사용자 지정 실행 후크가 앱에 대해 실행되는지 여부를 확인할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>모든 상위 수준 앱 작업은 스냅샷, 백업 또는 복원의 기본 작업 중 하나를 실행하는 것으로 구성됩니다. 시나리오에 따라 클론 작업은 이러한 작업의 다양한 조합으로 구성되므로 클론 작업이 실행되는 실행 후크는 달라집니다.</p>
+</div>
+<div class="paragraph">
+<p>데이터 이동 없이 복원 작업을 수행하려면 기존 스냅샷 또는 백업이 필요하므로 이러한 작업은 스냅샷 또는 백업 후크를 실행하지 않습니다.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="참고">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>를 시작한 다음 스냅샷이 포함된 백업을 취소하고 연결된 실행 후크가 있는 경우 일부 후크가 실행될 수 있고 그렇지 않은 백업이 있을 수 있습니다. 즉, 백업 후 실행 후크는 백업이 완료된 것으로 가정할 수 없습니다. 연결된 실행 후크와 함께 취소된 백업의 경우 다음 사항에 유의하십시오.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>예비 백업 및 예비 후크는 항상 실행됩니다.</p>
+</li>
+<li>
+<p>백업에 새 스냅샷이 포함되어 있고 스냅샷이 시작된 경우 사전 스냅샷 및 사후 스냅샷 후크가 실행됩니다.</p>
+</li>
+<li>
+<p>스냅샷을 시작하기 전에 백업을 취소하면 사전 스냅샷 및 사후 스냅샷 후크가 실행되지 않습니다.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1112%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">시나리오</th>
+<th class="tableblock halign-left valign-top">작동</th>
+<th class="tableblock halign-left valign-top">기존 스냅샷</th>
+<th class="tableblock halign-left valign-top">더 많은 워크로드 추가/제거</th>
+<th class="tableblock halign-left valign-top">네임스페이스</th>
+<th class="tableblock halign-left valign-top">클러스터</th>
+<th class="tableblock halign-left valign-top">스냅샷 후크가 실행됩니다</th>
+<th class="tableblock halign-left valign-top">백업 후크가 실행됩니다</th>
+<th class="tableblock halign-left valign-top">후크 실행을 복원합니다</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">복제</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">신규</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">동일합니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">복제</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">신규</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">다릅니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">복제 또는 복원</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">신규</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">동일합니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">복제 또는 복원</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">신규</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">동일합니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">복제 또는 복원</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">신규</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">다릅니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">복제 또는 복원</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">신규</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">다릅니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">복원</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">기존</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">동일합니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">복원</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">기존</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">동일합니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">스냅샷</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">백업</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">백업</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">예</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">해당 없음</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="실행-후크-예">실행 후크 예</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>를 방문하십시오 <a href="https://github.com/NetApp/Verda">"NetApp Verda GitHub 프로젝트"</a> Apache Cassandra 및 Elasticsearch와 같은 인기 있는 앱의 실제 실행 후크를 다운로드하려면 다음을 수행합니다. 예제를 보고 사용자 지정 실행 후크를 구조화하는 아이디어를 얻을 수도 있습니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="실행-후크-기능을-활성화합니다">실행 후크 기능을 활성화합니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>소유자 또는 관리자 사용자인 경우 실행 후크 기능을 활성화할 수 있습니다. 이 기능을 활성화하면 이 Astra Control 계정에 정의된 모든 사용자가 실행 후크를 사용하고 기존 실행 후크와 후크 스크립트를 볼 수 있습니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>응용 프로그램 * 으로 이동한 다음 관리되는 응용 프로그램의 이름을 선택합니다.</p>
+</li>
+<li>
+<p>Execution hook * 탭을 선택합니다.</p>
+</li>
+<li>
+<p>실행 후크 활성화 * 를 선택합니다.</p>
+<div class="paragraph">
+<p>계정 * &gt; * 기능 설정 * 탭이 나타납니다.</p>
+</div>
+</li>
+<li>
+<p>Execution Hooks * 창에서 설정 메뉴를 선택합니다.</p>
+</li>
+<li>
+<p>활성화 * 를 선택합니다.</p>
+</li>
+<li>
+<p>나타나는 보안 경고를 확인합니다.</p>
+</li>
+<li>
+<p>Yes, enable execution hook * 를 선택합니다.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="실행-후크-기능을-비활성화합니다">실행 후크 기능을 비활성화합니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>소유자 또는 관리자 사용자인 경우 이 Astra Control 계정에 정의된 모든 사용자에 대해 실행 후크 기능을 비활성화할 수 있습니다. 실행 후크 기능을 비활성화하려면 먼저 기존 실행 후크를 모두 삭제해야 합니다. 을 참조하십시오 <a href="#실행-후크를-삭제합니다">실행 후크를 삭제합니다</a> 기존 실행 후크를 삭제하는 방법에 대한 지침은 을 참조하십시오.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>계정 * 으로 이동한 다음 * 기능 설정 * 탭을 선택합니다.</p>
+</li>
+<li>
+<p>Execution hook * 탭을 선택합니다.</p>
+</li>
+<li>
+<p>Execution Hooks * 창에서 설정 메뉴를 선택합니다.</p>
+</li>
+<li>
+<p>비활성화 * 를 선택합니다.</p>
+</li>
+<li>
+<p>나타나는 경고를 확인합니다.</p>
+</li>
+<li>
+<p>유형 <code>disable</code> 모든 사용자에 대해 이 기능을 사용하지 않도록 설정할 것인지 확인합니다.</p>
+</li>
+<li>
+<p>예, 사용 안 함 * 을 선택합니다.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="기존-실행-후크를-봅니다">기존 실행 후크를 봅니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>앱의 기존 사용자 지정 실행 후크를 볼 수 있습니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>응용 프로그램 * 으로 이동한 다음 관리되는 응용 프로그램의 이름을 선택합니다.</p>
+</li>
+<li>
+<p>Execution hook * 탭을 선택합니다.</p>
+<div class="paragraph">
+<p>결과 목록에서 사용 가능하거나 비활성화된 실행 후크를 모두 볼 수 있습니다. 후크의 상태, 일치하는 컨테이너 수, 생성 시간 및 실행 시간(사전 또는 사후 작업)을 확인할 수 있습니다. 를 선택할 수 있습니다 <code>+</code> 실행할 컨테이너 목록을 확장하려면 후크 이름 옆에 있는 아이콘을 클릭합니다. 이 응용 프로그램의 실행 후크를 둘러싼 이벤트 로그를 보려면 * Activity * 탭으로 이동하십시오.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="기존-스크립트-보기">기존 스크립트 보기</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>업로드된 기존 스크립트를 볼 수 있습니다. 또한 이 페이지에서 사용 중인 스크립트와 해당 스크립트를 사용하는 후크를 확인할 수 있습니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>계정 * 으로 이동합니다.</p>
+</li>
+<li>
+<p>스크립트 * 탭을 선택합니다.</p>
+<div class="paragraph">
+<p>이 페이지에서는 업로드된 기존 스크립트 목록을 볼 수 있습니다. Used By* 열에는 각 스크립트를 사용하는 실행 후크가 표시됩니다.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="스크립트를-추가합니다">스크립트를 추가합니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>각 실행 후크는 스크립트를 사용하여 작업을 수행해야 합니다. 실행 후크가 참조할 수 있는 스크립트를 하나 이상 추가할 수 있습니다. 많은 실행 후크가 동일한 스크립트를 참조할 수 있으므로 하나의 스크립트만 변경하여 여러 실행 후크를 업데이트할 수 있습니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>실행 후크 기능이 인지 확인합니다 <a href="#실행-후크-기능을-활성화합니다">활성화됨</a>.</p>
+</li>
+<li>
+<p>계정 * 으로 이동합니다.</p>
+</li>
+<li>
+<p>스크립트 * 탭을 선택합니다.</p>
+</li>
+<li>
+<p>추가 * 를 선택합니다.</p>
+</li>
+<li>
+<p>다음 중 하나를 수행합니다.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>사용자 지정 스크립트를 업로드합니다.</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>파일 업로드 * 옵션을 선택합니다.</p>
+</li>
+<li>
+<p>파일을 찾아 업로드합니다.</p>
+</li>
+<li>
+<p>스크립트에 고유한 이름을 지정합니다.</p>
+</li>
+<li>
+<p>(선택 사항) 다른 관리자가 스크립트에 대해 알아야 하는 참고 사항을 입력합니다.</p>
+</li>
+<li>
+<p>Save script * 를 선택합니다.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>클립보드에서 사용자 정의 스크립트를 붙여 넣습니다.</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>붙여넣기 또는 형식 * 옵션을 선택합니다.</p>
+</li>
+<li>
+<p>텍스트 필드를 선택하고 필드에 스크립트 텍스트를 붙여 넣습니다.</p>
+</li>
+<li>
+<p>스크립트에 고유한 이름을 지정합니다.</p>
+</li>
+<li>
+<p>(선택 사항) 다른 관리자가 스크립트에 대해 알아야 하는 참고 사항을 입력합니다.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Save script * 를 선택합니다.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">결과</div>
+<p>새 스크립트가 * 스크립트 * 탭의 목록에 나타납니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="스크립트를-삭제합니다">스크립트를 삭제합니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>스크립트가 더 이상 필요하지 않고 실행 후크에서 사용되지 않는 경우 시스템에서 스크립트를 제거할 수 있습니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>계정 * 으로 이동합니다.</p>
+</li>
+<li>
+<p>스크립트 * 탭을 선택합니다.</p>
+</li>
+<li>
+<p>제거할 스크립트를 선택하고 * Actions * 열에서 메뉴를 선택합니다.</p>
+</li>
+<li>
+<p>삭제 * 를 선택합니다.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="참고">
+</td>
+<td class="content">
+스크립트가 하나 이상의 실행 후크에 연결되어 있으면 * 삭제 * 작업을 사용할 수 없습니다. 스크립트를 삭제하려면 먼저 연결된 실행 후크를 편집하여 다른 스크립트에 연결합니다.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="사용자-지정-실행-후크를-만듭니다">사용자 지정 실행 후크를 만듭니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>앱에 대한 사용자 정의 실행 후크를 생성하여 Astra Control에 추가할 수 있습니다. 을 참조하십시오 <a href="#실행-후크-예">실행 후크 예</a> 후크 예 실행 후크를 만들려면 소유자, 관리자 또는 구성원 권한이 있어야 합니다.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="참고">
+</td>
+<td class="content">
+실행 후크로 사용할 사용자 정의 쉘 스크립트를 작성할 때는 특정 명령을 실행하거나 실행 파일에 대한 전체 경로를 제공하지 않는 한 파일 시작 부분에 적절한 셸을 지정해야 합니다.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>실행 후크 기능이 인지 확인합니다 <a href="#실행-후크-기능을-활성화합니다">활성화됨</a>.</p>
+</li>
+<li>
+<p>응용 프로그램 * 을 선택한 다음 관리되는 응용 프로그램의 이름을 선택합니다.</p>
+</li>
+<li>
+<p>Execution hook * 탭을 선택합니다.</p>
+</li>
+<li>
+<p>추가 * 를 선택합니다.</p>
+</li>
+<li>
+<p>후크 세부 정보 * 영역에서:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>작업 * 드롭다운 메뉴에서 작업 유형을 선택하여 후크를 언제 실행해야 하는지 결정합니다.</p>
+</li>
+<li>
+<p>후크의 고유한 이름을 입력합니다.</p>
+</li>
+<li>
+<p>(선택 사항) 실행 중에 후크에 전달할 인수를 입력하고 각 인수 뒤에 Enter 키를 눌러 각 인수를 기록합니다.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>(선택 사항) * Hook Filter Details * 영역에서 실행 후크가 실행되는 컨테이너를 제어하는 필터를 추가할 수 있습니다.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>필터 추가 * 를 선택합니다.</p>
+</li>
+<li>
+<p>Hook filter type * 열의 드롭다운 메뉴에서 필터링할 특성을 선택합니다.</p>
+</li>
+<li>
+<p>Regex * 열에 필터로 사용할 정규식을 입력합니다. Astra Control은 를 사용합니다 <a href="https://github.com/google/re2/wiki/Syntax" target="_blank" rel="noopener">"정규식 2(RE2) regex 구문"</a>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="참고">
+</td>
+<td class="content">
+정규식 필드에 다른 텍스트가 없는 특성(예: pod 이름)의 정확한 이름을 필터링하면 부분 문자열 일치가 수행됩니다. 정확한 이름과 해당 이름만 일치시키려면 정확한 문자열 일치 구문(예: <code>^exact_podname$</code>)를 클릭합니다.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>필터를 더 추가하려면 * 필터 추가 * 를 선택합니다.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="참고">
+</td>
+<td class="content">
+실행 후크에 대한 여러 필터가 논리 및 연산자와 결합됩니다. 실행 후크당 최대 10개의 활성 필터를 사용할 수 있습니다.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>완료되면 * Next * 를 선택합니다.</p>
+</li>
+<li>
+<p>Script * 영역에서 다음 중 하나를 수행합니다.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>새 스크립트를 추가합니다.</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>추가 * 를 선택합니다.</p>
+</li>
+<li>
+<p>다음 중 하나를 수행합니다.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>사용자 지정 스크립트를 업로드합니다.</p>
+<div class="olist upperroman">
+<ol class="upperroman" type="I">
+<li>
+<p>파일 업로드 * 옵션을 선택합니다.</p>
+</li>
+<li>
+<p>파일을 찾아 업로드합니다.</p>
+</li>
+<li>
+<p>스크립트에 고유한 이름을 지정합니다.</p>
+</li>
+<li>
+<p>(선택 사항) 다른 관리자가 스크립트에 대해 알아야 하는 참고 사항을 입력합니다.</p>
+</li>
+<li>
+<p>Save script * 를 선택합니다.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>클립보드에서 사용자 정의 스크립트를 붙여 넣습니다.</p>
+<div class="olist upperroman">
+<ol class="upperroman" type="I">
+<li>
+<p>붙여넣기 또는 형식 * 옵션을 선택합니다.</p>
+</li>
+<li>
+<p>텍스트 필드를 선택하고 필드에 스크립트 텍스트를 붙여 넣습니다.</p>
+</li>
+<li>
+<p>스크립트에 고유한 이름을 지정합니다.</p>
+</li>
+<li>
+<p>(선택 사항) 다른 관리자가 스크립트에 대해 알아야 하는 참고 사항을 입력합니다.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>목록에서 기존 스크립트를 선택합니다.</p>
+<div class="paragraph">
+<p>이렇게 하면 실행 후크에 이 스크립트를 사용하도록 지시합니다.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>다음 * 을 선택합니다.</p>
+</li>
+<li>
+<p>실행 후크 구성을 검토합니다.</p>
+</li>
+<li>
+<p>추가 * 를 선택합니다.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="실행-후크의-상태를-확인합니다">실행 후크의 상태를 확인합니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>스냅샷, 백업 또는 복원 작업이 실행된 후에 작업의 일부로 실행된 실행 후크의 상태를 확인할 수 있습니다. 이 상태 정보를 사용하여 실행 후크를 유지할지, 수정하거나 삭제할 것인지 결정할 수 있습니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>응용 프로그램 * 을 선택한 다음 관리되는 응용 프로그램의 이름을 선택합니다.</p>
+</li>
+<li>
+<p>데이터 보호 * 탭을 선택합니다.</p>
+</li>
+<li>
+<p>스냅샷 * 을 선택하여 실행 중인 스냅샷을 보거나 * 백업 * 을 선택하여 실행 중인 백업을 확인합니다.</p>
+<div class="paragraph">
+<p>후크 상태 * 는 작업이 완료된 후 실행 후크의 상태를 표시합니다. 상태 위로 마우스를 가져가면 자세한 정보를 볼 수 있습니다. 예를 들어, 스냅샷 중에 실행 후크 오류가 발생한 경우 해당 스냅샷의 후크 상태 위로 마우스를 이동하면 실패한 실행 후크 목록이 표시됩니다. 각 오류의 원인을 확인하려면 왼쪽 탐색 영역의 * Activity * 페이지를 확인하십시오.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="스크립트-사용을-봅니다">스크립트 사용을 봅니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control 웹 UI에서 특정 스크립트를 사용하는 실행 후크를 확인할 수 있습니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>계정 * 을 선택합니다.</p>
+</li>
+<li>
+<p>스크립트 * 탭을 선택합니다.</p>
+<div class="paragraph">
+<p>스크립트 목록의 * Used By * 열에 목록의 각 스크립트를 사용하는 후크에 대한 세부 정보가 포함되어 있습니다.</p>
+</div>
+</li>
+<li>
+<p>관심 있는 스크립트에 대해 * Used By *(사용 대상 *) 열에서 정보를 선택합니다.</p>
+<div class="paragraph">
+<p>스크립트를 사용하는 후크의 이름 및 스크립트를 실행하도록 구성된 작업 유형과 함께 더 자세한 목록이 나타납니다.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="실행-후크를-편집합니다">실행 후크를 편집합니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>실행 후크를 편집하여 속성, 필터 또는 사용하는 스크립트를 변경할 수 있습니다. 실행 후크를 편집하려면 소유자, 관리자 또는 구성원 권한이 있어야 합니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>응용 프로그램 * 을 선택한 다음 관리되는 응용 프로그램의 이름을 선택합니다.</p>
+</li>
+<li>
+<p>Execution hook * 탭을 선택합니다.</p>
+</li>
+<li>
+<p>편집할 후크의 경우 * Actions * 열에서 옵션 메뉴를 선택합니다.</p>
+</li>
+<li>
+<p>편집 * 을 선택합니다.</p>
+</li>
+<li>
+<p>필요한 사항을 변경하고 각 섹션을 완료한 후 * 다음 * 을 선택합니다.</p>
+</li>
+<li>
+<p>저장 * 을 선택합니다.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="실행-후크를-비활성화합니다">실행 후크를 비활성화합니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>앱 스냅샷 전후에 실행 후크가 실행되지 않도록 임시로 설정하려면 실행 후크를 사용하지 않도록 설정할 수 있습니다. 실행 후크를 비활성화하려면 소유자, 관리자 또는 구성원 권한이 있어야 합니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>응용 프로그램 * 을 선택한 다음 관리되는 응용 프로그램의 이름을 선택합니다.</p>
+</li>
+<li>
+<p>Execution hook * 탭을 선택합니다.</p>
+</li>
+<li>
+<p>비활성화할 후크의 경우 * Actions * 열에서 옵션 메뉴를 선택합니다.</p>
+</li>
+<li>
+<p>비활성화 * 를 선택합니다.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="실행-후크를-삭제합니다">실행 후크를 삭제합니다</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>더 이상 필요 없는 경우 실행 후크를 완전히 제거할 수 있습니다. 실행 후크를 삭제하려면 소유자, 관리자 또는 구성원 권한이 있어야 합니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>응용 프로그램 * 을 선택한 다음 관리되는 응용 프로그램의 이름을 선택합니다.</p>
+</li>
+<li>
+<p>Execution hook * 탭을 선택합니다.</p>
+</li>
+<li>
+<p>삭제할 후크의 경우 * Actions * 열에서 옵션 메뉴를 선택합니다.</p>
+</li>
+<li>
+<p>삭제 * 를 선택합니다.</p>
+</li>
+<li>
+<p>결과 대화 상자에 "delete"를 입력하여 확인합니다.</p>
+</li>
+<li>
+<p>예, 실행 후크 삭제 * 를 선택합니다.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="를-참조하십시오">를 참조하십시오</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/NetApp/Verda">"NetApp Verda GitHub 프로젝트"</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/ko-kr/astra-control-service/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/ko-kr/astra-control-service/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">이 페이지에서</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2024 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">이용 약관</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">개인 정보 보호 정책</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">쿠키 정책</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">쿠키 설정</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">이 페이지에 대한 피드백 보내기</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ko-kr/astra-control-service/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ko-kr/astra-control-service/js/prism.js'></script>
+      <script type="text/javascript" src='/ko-kr/astra-control-service/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ko-kr/astra-control-service/js/ie-tabbed-blocks.js'></script>
+    <script src='/ko-kr/astra-control-service/js/ie-sidebar.js'></script>
+  </body>
+
+</html>
