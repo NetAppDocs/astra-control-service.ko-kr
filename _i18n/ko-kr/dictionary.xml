@@ -1399,7 +1399,6 @@
   <block id="2e0924d60f841b17b95f6a2808bdd804" category="doc">Astra Control Service에서 프라이빗 클러스터를 관리합니다</block>
   <block id="e36d851dc2ff79e16c7cfbbb4e4fbe97" category="inline-link">Astra 자동화 문서</block>
   <block id="61ddd26ba79b5e63c1e52be1beb28889" category="section-title">영구 스토리지를 설정합니다</block>
-  <block id="6ef5565e71b748d07e8a7b0699a73b5a" category="paragraph"><block ref="6ef5565e71b748d07e8a7b0699a73b5a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="305b39af5cd987a6208b64358f967be3" category="list-text">하나 이상의 네임스페이스 내에 배포된 개별 응용 프로그램(이 예제에서는 H제어 3이 사용됨)</block>
   <block id="5200a678b94ac14cf371f3073027246a" category="list-text">하나 이상의 네임스페이스 내에서 Kubernetes 레이블로 식별되는 리소스 그룹입니다</block>
   <block id="e7ee212d9bc4dca7907f427fe053cfd0" category="paragraph">* 무료 플랜에서 프리미엄 PayGO 플랜으로 업그레이드했습니다. 처음 10개의 네임스페이스에 대한 비용이 청구됩니까? *</block>
@@ -2683,4 +2682,5 @@ Astra Control Provisioner는 Astra Control 아키텍처에서 스토리지 프�
   <block id="df3d75a39182fab8d217744cdb76529e" category="list-text">*Kerberos 5 암호화를 통한 향상된 스토리지 백엔드 보안*: 을(를) 사용하여 스토리지 보안을 향상시킬 수 있습니다 <block ref="63a1519b1e13a139789d4589996b0d00" category="inline-link-macro-rx"></block> 관리되는 클러스터와 스토리지 백엔드 사이의 트래픽에 사용됩니다. Astra Control Provisioner는 Red Hat OpenShift 클러스터에서 Azure NetApp Files 및 사내 ONTAP 볼륨으로의 NFSv4.1 연결을 통해 Kerberos 5 암호화를 지원합니다.</block>
   <block id="931459f37abea3d820afa0fcf0ecfef7" category="list-text">Astra 제어 센터
 Astra Control은 이제 새로운 배포 모델로 제공됩니다. _Astra Control Center_는 데이터 센터에 설치하고 운영하여 온프레미스 Kubernetes 클러스터의 Kubernetes 애플리케이션 라이프사이클 관리를 관리할 수 있는 자체 관리형 소프트웨어입니다.</block>
+  <block id="b4cdc34d8767d1d4b7a24fbb97a1d8a7" category="paragraph"><block ref="b4cdc34d8767d1d4b7a24fbb97a1d8a7" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
