@@ -21,7 +21,7 @@ Astra Connector는 다음과 같은 유형의 프라이빗 클러스터를 지�
 * Google Kubernetes Engine(GKE)
 * AWS 기반 Red Hat OpenShift Service(ROSA)
 * AWS PrivateLink와 함께 Rosa
-* Red Hat OpenShift Container Platform 온-프레미스
+* Red Hat OpenShift Container Platform 온프레미스
 
 
 

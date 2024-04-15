@@ -87,9 +87,9 @@ Astra Control은 두 가지 배포 모델로 제공됩니다.
 ** Red Hat OpenShift Container Platform
 
 
-* * 온-프레미스 클러스터 *
+* * 온프레미스 클러스터 *
 +
-** Red Hat OpenShift Container Platform 온-프레미스
+** Red Hat OpenShift Container Platform 온프레미스
 
 
 
@@ -139,7 +139,7 @@ Astra Control은 두 가지 배포 모델로 제공됩니다.
 ** https://longhorn.io/["롱혼"^]
 
 
-* * 온-프레미스 클러스터 *
+* * 온프레미스 클러스터 *
 +
 ** NetApp MetroCluster
 ** NetApp ONTAP AFF 및 FAS 시스템

@@ -1365,7 +1365,6 @@
   <block id="461f26d1f3faec3478ece1e0d794f9cc" category="list-text">실행 후크가 있는 스크립트 이벤트 Astra Control은 응용 프로그램의 스냅샷을 생성하기 전이나 후에 실행할 수 있는 사용자 지정 스크립트를 지원합니다. 따라서 데이터베이스 앱의 스냅샷이 일관성을 유지하도록 데이터베이스 트랜잭션을 일시 중지하는 등의 작업을 수행할 수 있습니다.</block>
   <block id="a20299ad7f2e64a95e7cc3284a9906a5" category="list-text">운영자로 구축된 앱 Astra Control은 운영자와 함께 배포할 때 일부 앱을 지원합니다.</block>
   <block id="d64b4db98e014f5440d1f843fea08e3e" category="list-text">리소스 그룹 범위가 Astra Control Service 인 서비스 보안 주체는 이제 리소스 그룹 범위를 사용하는 서비스 보안 주체를 지원합니다.</block>
-  <block id="d965fac9eadc89088435d79a0e46882b" category="list-text">Astra Control Center Astra Control은 이제 새로운 배포 모델로 제공됩니다. _Astra Control Center_ 는 데이터 센터에 설치하여 운영하는 자체 관리 소프트웨어로, 사내 Kubernetes 클러스터의 Kubernetes 애플리케이션 라이프사이클 관리를 관리할 수 있습니다.</block>
   <block id="1966afd91050d7e96fceb59f9fd13f32" category="inline-link">Astra Control Center 문서로 이동합니다</block>
   <block id="80bfdf6309549a7797f10098e05bccc1" category="paragraph">자세한 내용은<block ref="ba5556fa094f10e77f4fa7086cec4749" category="inline-link-rx"></block>.</block>
   <block id="eb98a9a286b93bcf890e03ce1c9063eb" category="list-text">이제 고유한 버킷을 가져오십시오. Astra가 백업 및 복제에 사용하는 버킷을 관리하려면 다른 버킷을 추가하고 클라우드 공급자의 Kubernetes 클러스터의 기본 버킷을 변경하면 됩니다.</block>
@@ -2090,7 +2089,6 @@
   <block id="974030a30a48754684d05541fd5e96c9" category="list-text">Google Kubernetes Engine(GKE)</block>
   <block id="445b99028268202ea6dce47e9f8a85a0" category="list-text">AWS 기반 Red Hat OpenShift Service(ROSA)</block>
   <block id="5272b1b73b7b8f46f79fa9cdaadca15e" category="list-text">AWS PrivateLink와 함께 Rosa</block>
-  <block id="d1398a9488bb275cd91d0cb20ce8d256" category="list-text">Red Hat OpenShift Container Platform 온-프레미스</block>
   <block id="df19c91edd9b2d860753f42efea5673b" category="section-title">Astra Connector를 설치합니다</block>
   <block id="cd6d7cc4ca7e276970cfd8898e2ee94d" category="list-text">이러한 단계를 수행할 때 Astra Control Service로 관리할 프라이빗 클러스터에 대해 다음 명령을 실행합니다.</block>
   <block id="1edf1f850fb1dd3ecb6ec5a68b931d8a" category="list-text">방호 호스트를 사용하는 경우 방호 호스트의 명령줄에서 이러한 명령을 실행하십시오.</block>
@@ -2135,12 +2133,8 @@
   <block id="341784bc72164a9576c48141a8457786" category="doc">스토리지 백엔드 암호화를 구성합니다</block>
   <block id="876580b79932af82226561f24b11688f" category="paragraph">Astra Control Provisioner를 사용하면 관리형 클러스터와 스토리지 백엔드 간의 트래픽 암호화를 활성화하여 데이터 액세스 보안을 개선할 수 있습니다.</block>
   <block id="976a1386596f05796be42a064d0422a1" category="paragraph">Astra Control Provisioner는 두 가지 유형의 스토리지 백엔드에 대해 Kerberos 암호화를 지원합니다.</block>
-  <block id="c0e152193948fa32b98363da93fdd8ae" category="list-text">* 온 프레미스 ONTAP * - Astra Control Provisioner는 Red Hat OpenShift 및 업스트림 Kubernetes 클러스터에서 온-프레미스 ONTAP 볼륨까지 NFSv3 및 NFSv4 연결을 통해 Kerberos 암호화를 지원합니다.</block>
   <block id="efd821ece7f5d1edb285cc1f077325d0" category="list-text">* Azure NetApp Files * - Astra Control Provisioner는 업스트림 Kubernetes 클러스터에서 Azure NetApp Files 볼륨으로의 NFSv4.1 연결을 통한 Kerberos 암호화를 지원합니다.</block>
   <block id="0a710c309a5f6dc65b056833a5208521" category="paragraph">따라서 스냅샷을 생성하고, 삭제하고, 크기 조정하고, 스냅샷, 클론 읽기 전용 클론 생성 및 NFS 암호화를 사용하는 볼륨 가져오기</block>
-  <block id="2aff02c8ceb99a9445937af9d4d8f286" category="section-title">사내 ONTAP 볼륨을 사용하여 전송 중인 Kerberos 암호화를 구성합니다</block>
-  <block id="330282591e8caa9814eb88ec524b89cf" category="paragraph">관리 클러스터와 온프레미스 ONTAP 스토리지 백엔드 사이의 스토리지 트래픽에 Kerberos 암호화를 활성화할 수 있습니다.</block>
-  <block id="daf34fb0fcb74d9bcf85abcebcc8e1f2" category="admonition">온-프레미스 ONTAP 스토리지 백엔드를 통한 NFS 트래픽에 대한 Kerberos 암호화는 를 통해서만 지원됩니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 스토리지 드라이버.</block>
   <block id="bf08e3747af8cdb14b7eaf98563b8d7e" category="inline-link-macro">Astra Control Provisioner를 활성화합니다</block>
   <block id="0ff02d27ae5cac1a12c6c403fd55443c" category="list-text">에 액세스할 수 있는지 확인합니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> 유틸리티.</block>
   <block id="bef890ed7cc869346d4b483cd3e3ab00" category="list-text">ONTAP 스토리지 백엔드에 대한 관리자 액세스 권한이 있어야 합니다.</block>
@@ -2360,7 +2354,6 @@
   <block id="a28c4973c51793fba9a52bb919793c55" category="list-text">* Astra Control Provisioner 기능 *</block>
   <block id="e04a039dab89abe32a55e462186f4be5" category="paragraph">Astra Control Provisioner 23.10 릴리즈에서는 다음 기능을 사용할 수 있습니다.</block>
   <block id="c935990e28d9a826be6bb8ad7cbaa9c1" category="inline-link-macro">암호화 활성화 중</block>
-  <block id="c0f1ffff2a89df254e7675f2a875147f" category="list-text">*Kerberos 5 암호화를 통한 향상된 스토리지 백엔드 보안*: 을(를) 사용하여 스토리지 보안을 향상시킬 수 있습니다 <block ref="63a1519b1e13a139789d4589996b0d00" category="inline-link-macro-rx"></block> 관리되는 클러스터와 스토리지 백엔드 사이의 트래픽에 사용됩니다. Astra Control Provisioner는 Red Hat OpenShift 클러스터에서 Azure NetApp Files 및 사내 ONTAP 볼륨으로의 NFSv4.1 연결을 통해 Kerberos 5 암호화를 지원합니다.</block>
   <block id="ab52bbefe9879da9b800f9792291f5a4" category="list-text">* 스냅샷을 사용하여 데이터 복구 *: Astra Control Provisioner는 를 사용하여 스냅샷에서 신속하게 제자리에서 볼륨을 복원할 수 있습니다<block ref="2aabb3b01d0d54317a9eeef910e001f6" prefix=" " category="inline-code"></block> (TASR) CR</block>
   <block id="55a9d6aa251e3c334db4ab4055a4a004" category="inline-xref">있습니다</block>
   <block id="ffada8bf4e89c89a39c9186528693015" category="list-text">* 를 사용하여 응용 프로그램을 위한 백업 및 복원 기능<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 드라이버 지원 스토리지 백엔드 *: 설명 참조 <block ref="abf023a9d67df445290faa3fe3686bc6" category="inline-xref-macro-rx"></block>.</block>
@@ -2515,7 +2508,6 @@ Astra Control Provisioner는 Astra Control 아키텍처에서 스토리지 프�
   <block id="5d169abc26c5e6f92958752c40a56358" category="cell">지원되는 Kubernetes 배포는 무엇입니까?</block>
   <block id="41f1a6b80fe46fb30f51ab1b61f1a992" category="list-text">* 클라우드 공급자 *</block>
   <block id="57c997cc6378705850c1e534b71a042d" category="list-text">* 자가 관리형 클러스터 *</block>
-  <block id="bab5ccef18c501c42d7cf94c7aaa84b3" category="list-text">* 온-프레미스 클러스터 *</block>
   <block id="22ec69733e61456fac578b2f6fcc2856" category="list-text">Azure Stack HCI 기반 Azure Kubernetes Service</block>
   <block id="1c4dff0a00340691e103ef63154df371" category="list-text">Google Anthos</block>
   <block id="408bc02fc5ae5048343ebe28f7180f1e" category="list-text">에서는 해당 새 관리자 역할을 사용하여 클러스터에 link../conceptions/architecture #Astra-control-components[Astra Control Provisioner]를 설치하고 하나 이상의 스토리지 클래스를 생성합니다.</block>
@@ -2682,4 +2674,13 @@ Astra Control Provisioner는 Astra Control 아키텍처에서 스토리지 프�
   <block id="a34b088697717e6985d362f6f34cb3cd" category="list-text">제품 라인으로 * Astra Control Service * 를 선택합니다.</block>
   <block id="e41e554158031f0f3160a545e232ed02" category="list-text">captcha 값을 입력합니다.</block>
   <block id="6ea2f3e9291aa9fe05308c7ef844a5f2" category="list-text">확인란을 선택하여 NetApp 개인 정보 보호 정책을 읽었는지 확인합니다.</block>
+  <block id="fae11419c337e3427841a0c9b9d592f9" category="list-text">Red Hat OpenShift Container Platform 온프레미스</block>
+  <block id="8e9845a2b1617722638d4b2716d9e349" category="list-text">* 온프레미스 클러스터 *</block>
+  <block id="08451abaef86ef74512d1771c506741a" category="list-text">* 온프레미스 ONTAP * - Astra Control Provisioner는 Red Hat OpenShift 및 업스트림 Kubernetes 클러스터에서 사내 ONTAP 볼륨까지 NFSv3 및 NFSv4 연결을 통해 Kerberos 암호화를 지원합니다.</block>
+  <block id="0b660ae85d215a9e70834a4e745fe95b" category="section-title">사내 ONTAP 볼륨과 전송 중인 Kerberos 암호화를 구성합니다</block>
+  <block id="7c139dfc85d7e4497d2109fff4d0893f" category="paragraph">관리 클러스터와 온프레미스 ONTAP 스토리지 백엔드 사이의 스토리지 트래픽에 Kerberos 암호화를 활성화할 수 있습니다.</block>
+  <block id="4733fee3df7d4e6e25e68e5ad7d2adf0" category="admonition">온프레미스 ONTAP 스토리지 백엔드를 통한 NFS 트래픽에 대한 Kerberos 암호화는 를 사용해야만 지원됩니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 스토리지 드라이버.</block>
+  <block id="df3d75a39182fab8d217744cdb76529e" category="list-text">*Kerberos 5 암호화를 통한 향상된 스토리지 백엔드 보안*: 을(를) 사용하여 스토리지 보안을 향상시킬 수 있습니다 <block ref="63a1519b1e13a139789d4589996b0d00" category="inline-link-macro-rx"></block> 관리되는 클러스터와 스토리지 백엔드 사이의 트래픽에 사용됩니다. Astra Control Provisioner는 Red Hat OpenShift 클러스터에서 Azure NetApp Files 및 사내 ONTAP 볼륨으로의 NFSv4.1 연결을 통해 Kerberos 5 암호화를 지원합니다.</block>
+  <block id="931459f37abea3d820afa0fcf0ecfef7" category="list-text">Astra 제어 센터
+Astra Control은 이제 새로운 배포 모델로 제공됩니다. _Astra Control Center_는 데이터 센터에 설치하고 운영하여 온프레미스 Kubernetes 클러스터의 Kubernetes 애플리케이션 라이프사이클 관리를 관리할 수 있는 자체 관리형 소프트웨어입니다.</block>
 </blocks>
