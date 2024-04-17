@@ -2683,4 +2683,30 @@ Astra Control Provisioner는 Astra Control 아키텍처에서 스토리지 프�
   <block id="931459f37abea3d820afa0fcf0ecfef7" category="list-text">Astra 제어 센터
 Astra Control은 이제 새로운 배포 모델로 제공됩니다. _Astra Control Center_는 데이터 센터에 설치하고 운영하여 온프레미스 Kubernetes 클러스터의 Kubernetes 애플리케이션 라이프사이클 관리를 관리할 수 있는 자체 관리형 소프트웨어입니다.</block>
   <block id="b4cdc34d8767d1d4b7a24fbb97a1d8a7" category="paragraph"><block ref="b4cdc34d8767d1d4b7a24fbb97a1d8a7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a1932721112c7fa6e0a220f8d12316b9" category="summary">클러스터의 모든 네임스페이스가 보호되도록 전체 클러스터 백업을 예약하여 앱을 보호합니다.</block>
+  <block id="71a086a5ae784c9162639b628b47f232" category="doc">[기술 미리 보기] 전체 클러스터를 보호합니다</block>
+  <block id="55663ff2954ae71700f6f717aacad2a3" category="paragraph">클러스터에서 관리되지 않는 네임스페이스의 예약 및 자동 백업을 생성할 수 있습니다. 이러한 워크플로우는 NetApp에서 Kubernetes 서비스 계정, 역할 바인딩 및 cron 작업으로 제공되며 Python 스크립트로 조정됩니다.</block>
+  <block id="9ffdb95250e26c7a6b468126ac7c75b0" category="section-title">작동 방식</block>
+  <block id="5802e6b0af2e6482a64feeddbae90420" category="paragraph">전체 클러스터 백업 워크플로우를 구성하고 설치하면 cron 작업이 주기적으로 실행되고 아직 관리되지 않은 모든 네임스페이스를 보호하므로 설치 중에 선택한 일정에 따라 보호 정책이 자동으로 생성됩니다.</block>
+  <block id="b5f80c63a9b3f7187b8a71e3279b1d40" category="paragraph">전체 클러스터 백업 워크플로우로 클러스터의 모든 관리되지 않는 네임스페이스를 보호하지 않으려면 레이블 기반 백업 워크플로우를 활용할 수 있습니다. 레이블 기반 백업 워크플로는 또한 cron 작업을 사용하지만 관리되지 않는 모든 네임스페이스를 보호하는 대신 브론즈, 실버 또는 골드 백업 정책을 기반으로 선택적으로 네임스페이스를 보호하기 위해 제공하는 레이블을 통해 네임스페이스를 식별합니다.</block>
+  <block id="3215156b98c07a49699d09346585d0f8" category="paragraph">선택한 워크플로의 범위에 속하는 새 네임스페이스가 만들어지면 관리자 작업 없이 자동으로 보호됩니다. 이러한 워크플로는 클러스터 단위로 구현되므로 클러스터의 중요도에 따라 각 클러스터에서 고유한 보호 수준을 가진 워크플로우를 사용할 수 있습니다.</block>
+  <block id="4f3bac614b10b9269eff9557644b9d68" category="paragraph-title">예: 전체 클러스터 보호</block>
+  <block id="823f5a690316e8d8db6de2fd88676b37" category="paragraph">예를 들어, 전체 클러스터 백업 워크플로우를 구성하고 설치하면 네임스페이스의 모든 앱이 관리자의 추가 작업 없이 주기적으로 관리 및 보호됩니다. 워크플로를 설치할 때 네임스페이스가 존재할 필요가 없습니다. 나중에 네임스페이스가 추가되면 네임스페이스가 보호됩니다.</block>
+  <block id="20220274e3d349d98f94f4af6c1d54cf" category="paragraph-title">예: 레이블 기반 보호</block>
+  <block id="ab9b4add4c2750df9ea518f6cfe58c09" category="paragraph">더 세분화하려면 레이블 기반 워크플로를 사용할 수 있습니다. 예를 들어 이 워크플로를 설치하고 필요한 보호 수준에 따라 보호할 네임스페이스에 여러 레이블 중 하나를 적용하도록 사용자에게 지시할 수 있습니다. 따라서 사용자는 이러한 레이블 중 하나로 네임스페이스를 만들 수 있으며 관리자에게 알릴 필요가 없습니다. 새로운 네임스페이스와 IT 내의 모든 앱이 자동으로 보호됩니다.</block>
+  <block id="07b045e6ed11320210f203c982fd829d" category="section-title">모든 네임스페이스의 예약된 백업을 생성합니다</block>
+  <block id="8332335e5e8bddc0b81921741539149a" category="paragraph">전체 클러스터 백업 워크플로우를 사용하여 클러스터의 모든 네임스페이스에 대해 예약된 백업을 생성할 수 있습니다.</block>
+  <block id="20ebd9eda05c23de72572e3c4aa298f5" category="list-text">클러스터에 대한 네트워크 액세스 권한이 있는 시스템에 다음 파일을 다운로드합니다.</block>
+  <block id="b8d3f43c1b8b6847ecf7255053992be6" category="inline-link">components.yaml CRD 파일</block>
+  <block id="e50ee5d787cfb185cfc2734fce798446" category="list-text"><block ref="e50ee5d787cfb185cfc2734fce798446" category="inline-link-rx"></block></block>
+  <block id="ac728b04543286ddda4fc836c6e98155" category="inline-link">protectCluster.py Python 스크립트</block>
+  <block id="7b1407a1eec5953c774bcc2d3d8908ab" category="list-text"><block ref="7b1407a1eec5953c774bcc2d3d8908ab" category="inline-link-rx"></block></block>
+  <block id="a9bd07d5dee89e8f8d63365bf38ed3ae" category="inline-link">포함된 지침을 따릅니다</block>
+  <block id="5c3f07c159adb2641838be3ccfa6f663" category="list-text">툴킷을 구성하고 설치하려면<block ref="f14b0785043f5fca456d2804860e2da9" category="inline-link-rx"></block>.</block>
+  <block id="0e770ae52a7daab5fccefca84b2322ce" category="section-title">특정 네임스페이스의 예약된 백업을 생성합니다</block>
+  <block id="8a6d3ef96a37da0f9a9d95b72a87049a" category="paragraph">레이블 기반 백업 워크플로우를 사용하여 레이블을 기준으로 특정 네임스페이스의 예약된 백업을 만들 수 있습니다.</block>
+  <block id="25c5f7a0ed30f3d017ebfd4b8f0b50a4" category="list-text"><block ref="25c5f7a0ed30f3d017ebfd4b8f0b50a4" category="inline-link-rx"></block></block>
+  <block id="b68db3e0a56f3b8c81ba53790b675138" category="list-text"><block ref="b68db3e0a56f3b8c81ba53790b675138" category="inline-link-rx"></block></block>
+  <block id="df3bb36ac44fafa7502c4bf87e8770ea" category="list-text">툴킷을 구성하고 설치하려면<block ref="ce6ac21e909840a69102ba43afa6cfb6" category="inline-link-rx"></block>.</block>
+  <block id="6a96f7d929fa0abae3976fe12471f4f9" category="sidebar">전체 클러스터를 보호합니다</block>
 </blocks>
