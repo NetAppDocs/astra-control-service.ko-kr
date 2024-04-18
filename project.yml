@@ -34,6 +34,8 @@ sidebar:
   - title: Astra Control REST API로 자동화
     url: "/automation.html"
   - section: support
+  - title: FAQ 를 참조하십시오
+    url: "/get-started/faq.html"
   - title: 법적 고지
     url: "/legal-notices.html"
 product-family:

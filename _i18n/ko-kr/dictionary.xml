@@ -567,33 +567,20 @@
   <block id="7408a50737fd936622eeec54bbeb439c" category="list-text">등록 * 을 선택합니다.</block>
   <block id="e721d9b72eb394adc96253d65253d0e6" category="list-text">전자 메일이 도착하면 전자 메일의 링크를 선택하여 전자 메일 주소를 확인합니다.</block>
   <block id="b1151aae9531d2f5e85d085e8878cea6" category="summary">이 FAQ는 질문에 대한 간단한 답변을 찾는 경우에 도움이 될 수 있습니다.</block>
-  <block id="8de7ff5f7f2186929bf88ea5dcfc0fb3" category="doc">Astra Control Service에 대한 질문과 대답</block>
   <block id="7138c9866f92caa6559eeb16dedcead9" category="paragraph">다음 섹션에서는 Astra Control을 사용할 때 나타날 수 있는 몇 가지 추가 질문에 대한 답변을 제공합니다. 자세한 내용은 astra.feedback@netapp.com 으로 문의하십시오</block>
   <block id="3783e7bdb365c30dbefc88440e625d44" category="section-title">Astra Control에 액세스합니다</block>
-  <block id="03069a991fdd2077c62785ce41219767" category="paragraph">* Astra Control에 등록할 때 왜 그렇게 많은 세부 정보를 제공해야 하나요? *</block>
   <block id="210f37c32bd0a904a147316532fe278a" category="paragraph">등록 시 Astra Control에 정확한 고객 정보가 필요합니다. 이 정보는 글로벌 무역 규정 준수(GTC) 확인을 거쳐야 합니다.</block>
-  <block id="9cd70118795cf5a9e6a24b6fa97bb7ec" category="paragraph">* Astra Control에 등록할 때 "등록 실패" 오류가 발생하는 이유는 무엇입니까? *</block>
   <block id="e536f2d0f23e9ecd1c6d0f34cb91879f" category="paragraph">Astra Control은 온보딩 섹션에서 정확한 고객 정보를 제공해야 합니다. 잘못된 정보를 입력하면 "등록 실패" 오류가 표시됩니다. 자신이 속한 다른 계정도 잠깁니다.</block>
-  <block id="b2b7d115fca8188e00942f74004f6315" category="paragraph">* Astra Control Service URL은 무엇입니까? *</block>
   <block id="bfed83f9776b9cffcb89ba03cfc123b6" category="paragraph">에서 Astra Control Service에 액세스할 수 있습니다<block ref="8c65d1fc4cf122e461b28ceccd26064c" category="inline-link-rx"></block>.</block>
-  <block id="8b5023dd95de9062815ee098ef81fc8a" category="paragraph">* 동료에게 이메일 초대를 보냈지만 받은 적이 없습니다. 어떻게 해야 합니까? *</block>
   <block id="e17fe64b172b99fcc59af763f07b9782" category="paragraph">스팸 폴더에서 do-not-reply@netapp.com 이메일을 확인하거나 받은 편지함에서 "초대장"을 검색하도록 요청하십시오. 사용자를 제거하고 다시 추가할 수도 있습니다.</block>
-  <block id="12e5e74341c47b0e02245229810cdaff" category="paragraph">* 한 달 이내에 프리미엄 PayGO 계획으로 업그레이드했습니다. 월 한 달 동안 요금이 청구되나요? *</block>
-  <block id="f18b7956b816c9fe4217adec72e97c14" category="paragraph">* 무료 플랜을 사용 중입니다. 영구 볼륨 청구에 대한 요금이 청구됩니까? *</block>
   <block id="b892fe302a6a7df4519761ccd72b7c2f" category="section-title">Kubernetes 클러스터를 등록하는 중입니다</block>
-  <block id="b588fb2a2e55643a23cbafdb1879e478" category="paragraph">* Astra Control Service에 추가하기 전에 내 클러스터에 CSI 드라이버를 설치해야 합니까? *</block>
-  <block id="a48e52ca315005bd57971ddff57c7bf1" category="paragraph">* Astra Control Service에 추가한 후 클러스터에 작업자 노드를 추가해야 합니다. 어떻게 해야 합니까? *</block>
   <block id="14404c0506ad155270835b42ac26b048" category="inline-link">인증된 네트워크</block>
-  <block id="952200664143e727f3f65397759fe5e8" category="paragraph">* 내 GKE 클러스터가 공유 VPC에 상주할 수 있습니까? *</block>
   <block id="5d346778751cb328795e29ad6aed29a4" category="inline-link-macro">공유 VPC 구성을 위해 Astra 서비스 계정을 설정하는 방법에 대해 알아보십시오</block>
-  <block id="829e16b22728d9cc77125c1682a81ee7" category="paragraph">* GCP에서 서비스 계정 자격 증명을 어디에서 찾을 수 있습니까? *</block>
   <block id="c922f94b242e01ca5ff1ea0504c38cec" category="inline-link-macro">Google Cloud for Astra Control을 설정하는 방법</block>
   <block id="89786972ebb5d82191ae05695b18af61" category="inline-link">Google Cloud Console을 선택합니다</block>
   <block id="3b7c0140ffbf1360b77a6097417a3066" category="paragraph">에 로그인한 후<block ref="e94913b2471950c8dc101d7e8d795192" category="inline-link-rx"></block>서비스 계정 세부 정보는 * IAM 및 Admin * 섹션에서 확인할 수 있습니다. 자세한 내용은 을 참조하십시오 <block ref="8bbc24aeb37c65ac01202e37261ba8ea" category="inline-link-macro-rx"></block>.</block>
-  <block id="8ddf6502ee6252d1c8f0f8a5f078fe5f" category="paragraph">* 다른 GCP 프로젝트의 다른 GKE 클러스터를 추가하고 싶습니다. Astra Control에서 지원됩니까? *</block>
   <block id="c4a3f82dbfc065caa7a7179a9a2e8776" category="paragraph">아니요. 이 구성은 지원되지 않습니다. 하나의 GCP 프로젝트만 지원됩니다.</block>
   <block id="4e35c512bb8095cfcd8cee32d40b802c" category="section-title">클러스터를 제거하는 중입니다</block>
-  <block id="b9723d5d96158122fac0543366bf9b55" category="paragraph">* 올바르게 등록 취소하고, 클러스터를 가져오고, 관련 볼륨을 삭제하려면 어떻게 해야 합니까? *</block>
   <block id="cdb2726825d8ca6b1fbc495e1769be38" category="inline-link-macro">Astra Control에서 애플리케이션을 관리합니다</block>
   <block id="bfde4228559e1dc730ccb3f1710371f6" category="list-text"><block ref="819731d94d9a0720df36a3fc1b85d024" category="inline-link-macro-rx"></block>.</block>
   <block id="21a301641f60afe52f6d844a16411108" category="inline-link-macro">Astra Control에서 클러스터 등록을 취소합니다</block>
@@ -601,25 +588,18 @@
   <block id="ac91efe0f7c777283d4aa8496a021658" category="inline-link-macro">영구 볼륨 클레임을 삭제합니다</block>
   <block id="4bfb4aec5593e6e5438f1cc386d7016a" category="list-text"><block ref="da04ffeea2a9f763e144903904e2107d" category="inline-link-macro-rx"></block>.</block>
   <block id="5f1133c91558de54a6d46ea1610e831b" category="list-text">클러스터를 삭제합니다.</block>
-  <block id="58e7a1631bced81042ee450415ba603c" category="paragraph">* Astra Control에서 클러스터를 제거한 후 애플리케이션과 데이터는 어떻게 됩니까? *</block>
   <block id="10be26eaab62888691ad07dfd7af43b8" category="paragraph">Astra Control에서 클러스터를 제거해도 클러스터의 구성(애플리케이션 및 영구 스토리지)은 변경되지 않습니다. Astra Control 스냅샷 또는 해당 클러스터의 애플리케이션 백업을 복구할 수 없습니다. 스토리지 백엔드 내에 저장된 볼륨 스냅샷 데이터는 제거되지 않습니다. Astra Control에서 생성한 영구 스토리지 백업은 클라우드 공급자의 오브젝트 저장소 내에 남아 있지만 복원에는 사용할 수 없습니다.</block>
   <block id="ebbe7b49b4dfb4e04de74f7b82444433" category="admonition">GCP를 통해 삭제하기 전에 항상 Astra Control에서 클러스터를 제거하십시오. Astra Control에서 관리하는 동안 GCP에서 클러스터를 삭제하면 Astra Control 계정에 문제가 발생할 수 있습니다.</block>
   <block id="f75d983d4bc87e1a244c894a4357e93a" category="section-title">응용 프로그램 관리</block>
-  <block id="eaeb56aabe324b7270ae7355bb58edcb" category="paragraph">* Astra Control이 응용 프로그램을 배포할 수 있습니까? *</block>
   <block id="48df7f09a242df239385ebae869133b8" category="paragraph">Astra Control은 애플리케이션을 배포하지 않습니다. 응용 프로그램은 Astra Control 외부에서 배포해야 합니다.</block>
   <block id="a90204b381b7967a04938156531da34e" category="paragraph">Astra Trident 운영자는 Astra Control에 성공적으로 추가된 후 기본 스토리지 클래스를 'NetApp-cvs-perf-premium'으로 설정합니다. 애플리케이션의 PVC가 Cloud Volumes Service for Google Cloud에 바인딩되지 않은 경우 다음과 같은 몇 가지 단계를 수행할 수 있습니다.</block>
   <block id="baaf63e6e2361e11fa4ae44151218b4e" category="list-text">kubeck get SC를 실행하고 기본 스토리지 클래스를 확인합니다.</block>
   <block id="c5f298a00c4f6a85ebf65b24eef94a12" category="list-text">애플리케이션 배포에 사용된 YAML 파일 또는 H제어 차트를 확인하고 다른 스토리지 클래스가 정의되어 있는지 확인하십시오.</block>
-  <block id="44379fcc25f304b4401a09a7641dd567" category="paragraph">* Astra Control에서 관리를 중지한 후 응용 프로그램은 어떻게 됩니까? *</block>
   <block id="61cd231bb056b77c37c6a7acab17451a" category="paragraph">기존 백업 또는 스냅샷이 삭제됩니다. 애플리케이션과 데이터는 사용 가능한 상태로 유지됩니다. 관리되지 않는 응용 프로그램 또는 해당 응용 프로그램에 속한 백업 또는 스냅숏에는 데이터 관리 작업을 사용할 수 없습니다.</block>
   <block id="6b1a3a19f3f025ff9c844910c80c100e" category="section-title">데이터 관리 작업</block>
-  <block id="be9dbc276a4b73040099b74812ef9a11" category="paragraph">* Astra Control은 어디에서 오브젝트 저장소 버킷을 생성합니까? *</block>
   <block id="ee258cc51fd8d77c270d309d42e1e91c" category="inline-link-macro">추가 버킷을 추가합니다</block>
   <block id="080b8b96134b3479ee1b832683e73f7f" category="paragraph">첫 번째 관리되는 클러스터의 지리적 위치에 따라 오브젝트 저장소의 위치가 결정됩니다. 예를 들어, 추가한 첫 번째 클러스터가 유럽 구역에 있는 경우 해당 지역에서 버킷이 생성됩니다. 필요한 경우, 할 수 있습니다 <block ref="4f6248a5a34b77d4064c987204932c98" category="inline-link-macro-rx"></block>.</block>
-  <block id="f29fc395a645dd9357f1b54e4c7e1f67" category="paragraph">* 내 계정에 생성하지 않은 스냅샷이 있습니다. 어디에서 왔습니까? *</block>
   <block id="f86869b91c2862dbaafa6e55f5952968" category="paragraph">경우에 따라 Astra Control은 다른 프로세스를 수행할 때 스냅샷을 자동으로 생성합니다. 스냅샷이 몇 분 이상 오래된 경우 안전하게 삭제할 수 있습니다.</block>
-  <block id="f48c2d460dc1a0ef0ec9aa4169e8c272" category="paragraph">* My Application은 여러 PVS를 사용합니다. Astra Control이 이러한 모든 PVC의 스냅샷 및 백업을 수행할까요? *</block>
-  <block id="5fabf021c8fb95cd2d38139cc7c5ff89" category="paragraph">* 클라우드 공급업체를 통해 Astra Control에서 생성한 스냅샷을 직접 관리할 수 있습니까? *</block>
   <block id="dd8bffb9f01b6b0228b1dd2776302148" category="summary">Astra Control Service로 Google Kubernetes Engine 클러스터를 관리하려면 Google Cloud 프로젝트를 준비하기 위해 몇 가지 단계가 필요합니다.</block>
   <block id="17bdc960e77c5de3d2f3da5e6e1affeb" category="admonition">Google Cloud용 Google Cloud Volumes Service를 스토리지 백엔드로 사용하지 않고 나중에 사용할 계획이라면 Google Cloud용 Google Cloud Volumes Service를 지금 구성하는 데 필요한 단계를 완료해야 합니다. 나중에 서비스 계정을 생성하면 기존 스토리지 버킷에 대한 액세스가 손실될 수 있습니다.</block>
   <block id="34d2a25ad50e70e09e72aeff2a894d06" category="section-title">Google Cloud 설정을 빠르게 시작합니다</block>
@@ -1003,7 +983,6 @@
   <block id="ba2f6425b8f267dbd5a2f8ddb2f7116a" category="list-text">예, 버킷 제거 * 를 선택합니다.</block>
   <block id="9c83e144e5481ac6766f4055e566594d" category="section-title">자세한 내용을 확인하십시오</block>
   <block id="ea2708b459fc0cad6936ec216bd9405e" category="paragraph">Astra Control Center는 AutoSupport 및 Active IQ 에코시스템에 완전히 통합되어 사용자와 NetApp 지원에 문제 해결 및 사용 정보를 제공합니다.</block>
-  <block id="970cfe22b76fecaa99669dbc6dd2643e" category="paragraph">"Astra Control Service에 개인 AKS 클러스터를 추가할 수 있습니까?" *</block>
   <block id="0cc78d43619515d263f8e91071f2ed83" category="paragraph">52.188.218.166/32</block>
   <block id="f26ee8a93c95de7a50a14b73f85172c5" category="paragraph">Astra Control의 사용자 역할 및 네임스페이스, 그리고 이를 사용하여 조직의 리소스에 대한 액세스를 제어하는 방법에 대해 알아봅니다.</block>
   <block id="f4040f71a7d553f2519487070892b115" category="section-title">사용자 역할</block>
@@ -1043,7 +1022,6 @@
   <block id="a57d95e33fbdffe3b4bd71d5b0be74cd" category="list-text">스토리지 클래스 * 범주를 선택합니다.</block>
   <block id="b76660fac98aeb4fc46b77e989e6d8b0" category="list-text">기본값으로 설정할 스토리지 클래스에 대해 * Actions * 메뉴를 선택합니다.</block>
   <block id="b4789b0ec041cd5e51f32c2f901a0951" category="list-text">Set as default * 를 선택합니다.</block>
-  <block id="2dd2a1bdae3516df1950c153f6135366" category="paragraph">* Active Directory를 사용하여 AKS 클러스터에 대한 인증을 관리할 수 있습니까? *</block>
   <block id="e4b4463df81090495a7820578ac936d9" category="paragraph">예. 인증 및 ID 관리에 Azure Active Directory(Azure AD)를 사용하도록 AKS 클러스터를 구성할 수 있습니다. 클러스터를 생성할 때 의 지침을 따릅니다<block ref="ba1ce5a57a4d347a0e1e2ecf2a2c91ba" category="inline-link-rx"></block> Azure AD를 사용하도록 클러스터를 구성합니다. 클러스터가 AKS로 관리되는 Azure AD 통합에 대한 요구 사항을 충족하는지 확인해야 합니다.</block>
   <block id="35766360770e699f50fa8f51d1c6ff36" category="doc">Astra Control에 대해 알아보십시오</block>
   <block id="87e0c6ecd728fb0d791237540ebc2d13" category="section-title">선택 사항: Azure 백업 버킷의 중복성을 구성합니다</block>
@@ -1109,7 +1087,6 @@
   <block id="043e32602230f742d954f613b7b5ce25" category="inline-link">Amazon EKS에서 클러스터를 생성한 후 다른 IAM 사용자 및 역할에 대한 액세스를 제공하려면 어떻게 해야 합니까?</block>
   <block id="03505e86c100771649c5c405d210f3de" category="paragraph">+** Amazon EKS 클러스터의 경우 Astra Control Service가 사용합니다<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> 또는<block ref="554e81ff0c0b44a91e38efe479d6c57c" category="inline-link-rx"></block> 영구 볼륨의 스토리지 백엔드로 사용됩니다.</block>
   <block id="9ab46041ac5136f2300b8e64c19f0964" category="section-title">EKS(Elastic Kubernetes Service) 클러스터를 등록하는 중입니다</block>
-  <block id="cfab7aa3599d78d5f3c56857f2175c5f" category="paragraph">"Astra Control Service에 개인 EKS 클러스터를 추가할 수 있습니까?" *</block>
   <block id="5802142fb14713d93859bda03cc52eb3" category="section-title">Azure Kubernetes Service(AKS) 클러스터를 등록 중입니다</block>
   <block id="2c932845e362039bca422bb4b59eea27" category="section-title">GKE(Google Kubernetes Engine) 클러스터를 등록하는 중입니다</block>
   <block id="de67786285afec6fafad0eaf1b94a4b7" category="summary">Astra Control Service로 Amazon Elastic Kubernetes Service 클러스터를 관리하려면 Amazon Web Services 프로젝트를 준비하기 위해 몇 가지 단계가 필요합니다.</block>
@@ -1397,7 +1374,6 @@
   <block id="61ddd26ba79b5e63c1e52be1beb28889" category="section-title">영구 스토리지를 설정합니다</block>
   <block id="305b39af5cd987a6208b64358f967be3" category="list-text">하나 이상의 네임스페이스 내에 배포된 개별 응용 프로그램(이 예제에서는 H제어 3이 사용됨)</block>
   <block id="5200a678b94ac14cf371f3073027246a" category="list-text">하나 이상의 네임스페이스 내에서 Kubernetes 레이블로 식별되는 리소스 그룹입니다</block>
-  <block id="e7ee212d9bc4dca7907f427fe053cfd0" category="paragraph">* 무료 플랜에서 프리미엄 PayGO 플랜으로 업그레이드했습니다. 처음 10개의 네임스페이스에 대한 비용이 청구됩니까? *</block>
   <block id="a851ae746dac71e034dd92d612caa0fd" category="paragraph">예. Premium Plan으로 업그레이드한 후 Astra Control에서 계정의 관리되는 모든 네임스페이스에 대해 요금을 부과하기 시작합니다.</block>
   <block id="6f010557b55fefd84ac5e20c2db5a8ae" category="paragraph">새 작업자 노드를 기존 풀에 추가하거나 가 있는 한 새 풀을 생성할 수 있습니다<block ref="bba3d88d28186b91a2b3165d6143a600" prefix=" " category="inline-code"></block> 이미지 유형. 이러한 정보는 Astra Control에서 자동으로 발견됩니다. Astra Control에서 새 노드가 보이지 않으면 새 작업자 노드가 지원되는 이미지 유형을 실행하고 있는지 확인합니다. 을 사용하여 새 작업자 노드의 상태를 확인할 수도 있습니다<block ref="1513e62b9eb7bbfc46c1be1a91a2ab76" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="3c7ad3a476ad730cdda13eafe57f371e" category="list-text">GKE 버전 1.24 이상은 Docker 기반 노드 이미지를 지원하지 않습니다. GKE의 작업자 노드 이미지 유형이 인지 확인합니다<block ref="bba3d88d28186b91a2b3165d6143a600" prefix=" " category="inline-code"></block> 그리고 NFS 마운트가 성공했습니다.</block>
@@ -1639,7 +1615,6 @@
   <block id="7acb8defb656ebd5f9decf15c05926ca" category="paragraph-title">모두 끝냈군요</block>
   <block id="08f1e852f149dc9bdf3a724bc95ed61a" category="list-text">컨테이너를 Astra Control Service에 버킷으로 추가합니다. 을 참조하십시오 <block ref="3ecbb82ace41389a409b1cc92181a5a8" category="inline-link-macro-rx"></block>.</block>
   <block id="1d7c1d2f297451f6eaf4e76901db96d2" category="list-text">(선택 사항) 새로 생성한 버킷을 Azure 백업의 기본 버킷으로 사용하려면 이 버킷을 Azure의 기본 버킷으로 설정합니다. 을 참조하십시오 <block ref="d1523cf11113b501cc0e7216254bf527" category="inline-link-macro-rx"></block>.</block>
-  <block id="0f0939624ea35d3dd7896d9216bee5d4" category="paragraph">* 응용 프로그램의 PVC가 GCP CVS에 바인딩된 것은 보이지 않습니다. 무엇이 문제입니까? *</block>
   <block id="0ab04539adb80fe9a1c9f5dc0be183d2" category="section-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Amazon Web Services에 대한 Astra Control 서비스 요구 사항을 검토합니다</block>
   <block id="dd8153a2eaefa2ca6b22e74080a45577" category="section-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 아마존 계정을 생성합니다</block>
   <block id="d2d49f8b074c326544953d30a666756a" category="section-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> Amazon Web Services CLI를 설치합니다</block>
@@ -1928,7 +1903,6 @@
   <block id="501a7b3c879675fb528c68e904b076d1" category="list-text">* 대상 볼륨 확인 *: 다른 스토리지 클래스로 복원하는 경우 스토리지 클래스가 동일한 영구 볼륨 액세스 모드(예: ReadWriteMany)를 사용하는지 확인합니다. 대상 영구 볼륨 액세스 모드가 다르면 복원 작업이 실패합니다. 예를 들어, 소스 영구 볼륨에서 rwx 액세스 모드를 사용하는 경우 Azure Managed Disks, AWS EBS, Google Persistent Disk 또는 와 같이 rwx를 제공할 수 없는 대상 스토리지 클래스를 선택합니다<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>, 복구 작업이 실패합니다. 영구 볼륨 액세스 모드에 대한 자세한 내용은 를 참조하십시오<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> 문서화:</block>
   <block id="0f707c2e2c303edecbc57b2a451ad8a9" category="list-text">* 대상 볼륨 확인 *: 다른 스토리지 클래스에 클론을 생성하는 경우 스토리지 클래스가 동일한 영구 볼륨 액세스 모드(예: ReadWriteMany)를 사용하는지 확인합니다. 대상 영구 볼륨 액세스 모드가 다르면 클론 작업이 실패합니다. 예를 들어, 소스 영구 볼륨에서 rwx 액세스 모드를 사용하는 경우 Azure Managed Disks, AWS EBS, Google Persistent Disk 또는 와 같이 rwx를 제공할 수 없는 대상 스토리지 클래스를 선택합니다<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>, 클론 작업이 실패합니다. 영구 볼륨 액세스 모드에 대한 자세한 내용은 를 참조하십시오<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> 문서화:</block>
   <block id="a6c02bceb9754a343a62ee6831e410ff" category="paragraph">예, Astra Control Service에 전용 EKS 클러스터를 추가할 수 있습니다. 전용 EKS 클러스터를 추가하려면 을 참조하십시오 <block ref="d51718998c7312025a3cf72e62416cc2" category="inline-link-macro-rx"></block>.</block>
-  <block id="af2b33bb637866cca13ababa2653601d" category="paragraph">* 개인 GKE 클러스터를 Astra Control Service에 추가할 수 있습니까? *</block>
   <block id="6622fcb5d45cfc45bd9176f732c6ff48" category="paragraph">전용 GKE 클러스터에는 가 있어야 합니다<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> Astra Control IP 주소를 허용하도록 설정합니다.</block>
   <block id="cfc5109ab7ff42dc4040fd043f178632" category="summary">Astra Control에 로그인하고 클러스터를 추가했으므로 이제 Astra Control의 애플리케이션 데이터 관리 기능을 사용할 준비가 되었습니다.</block>
   <block id="9a0ee0d50da1e4f3e59551eb08363dfe" category="paragraph">이제 Astra Control에 로그인하여 클러스터를 추가하면 Astra Control의 애플리케이션 데이터 관리 기능을 사용할 수 있습니다.</block>
@@ -2059,11 +2033,8 @@
   <block id="d92ad56b4462b38e4df701caeeffd38a" category="paragraph">예. Astra Control은 공유 VPC에 상주하는 클러스터를 관리할 수 있다. <block ref="12cc1ce3ba4d58645c4f3bfe8f445bfc" category="inline-link-macro-rx"></block>.</block>
   <block id="da3896d1bd14d90f23119c4f4e1c15a3" category="paragraph">아니요 Astra Control에서 생성된 스냅샷 및 백업은 Astra Control을 통해서만 관리할 수 있다.</block>
   <block id="4c58fde327564dd131d9bda17203e9c0" category="section-title">Astra Control Provisioner</block>
-  <block id="9a0966df6fce07aa3deb33fa2cd5da9f" category="paragraph">* Astra Control Provisioner의 스토리지 프로비저닝 기능은 Astra Trident의 스토리지 프로비저닝 기능과 어떻게 다릅니까? *</block>
   <block id="dc918830fd0bda72f7a7d0f6e208b17e" category="paragraph">Astra Control Provisioner는 Astra Control의 일부로 오픈 소스 Astra Trident에서 사용할 수 없는 상위 스토리지 프로비저닝 기능을 지원합니다. 이러한 기능은 오픈 소스 Trident에서 사용할 수 있는 모든 기능에 추가됩니다.</block>
   <block id="ad1ed8a22f0b210e932f280697114063" category="inline-link-macro">Astra Control Provisioner를 활성화합니다</block>
-  <block id="d4a584de43e0998448679fdc7be156af" category="paragraph">* Astra Trident에 대한 비용을 지불해야 합니까? *</block>
-  <block id="b8481a0cbd8ab968ce47b6bacfc1ad58" category="paragraph">* Astra Control을 모두 설치 및 사용하지 않고 Astra Control의 스토리지 관리 및 프로비저닝 기능을 사용할 수 있습니까? *</block>
   <block id="6f04a726f4038aea2cb90f4951cba4a2" category="paragraph">Astra Control Provisioner를 설치하면 Astra Control UI의 호스트 클러스터에 가 표시됩니다<block ref="47f79829be244bd727d1881108343390" prefix=" " category="inline-code"></block> 을 사용하지 마십시오<block ref="f1112223b41fddc71fd6a626582dfb78" prefix=" " category="inline-code"></block> 필드 및 현재 설치된 버전 번호</block>
   <block id="b705f14969fa7c55d16aa5c0ef9c37a0" category="inline-image-macro">UI에서 ACP 버전 위치를 보여 주는 스크린샷</block>
   <block id="298c14088e0ed4580971821ac46240ba" category="paragraph"><block ref="298c14088e0ed4580971821ac46240ba" category="inline-image-macro-rx" type="image"></block></block>
@@ -2475,13 +2446,8 @@ RKE 2: Rancher Manager 2.7.9 포함 버전 1.24.17, 1.25.14, 1.26.9</block>
   <block id="0465f53aa4ae4c5a9a86033a6e53038b" category="paragraph">Astra Control Service를 사용하여 Amazon Web Services 클러스터를 관리할 때 Astra Control Provisioner에서만 사용할 수 있는 스토리지 백엔드가 필요한 경우 Astra Control Service를 통해 클러스터를 관리하기 전에 클러스터에서 Astra Control Provisioner를 수동으로 활성화해야 합니다. 을 참조하십시오 <block ref="09bb7a105629f922c89dc5bfe800e3ad" category="inline-link-macro-rx"></block> Astra Control Provisioner를 활성화하는 단계에 대해 알아보십시오.</block>
   <block id="afb15fc00f8b4ac20b5b892ab1c9aa7d" category="paragraph">아니요 클러스터를 Astra Control에 추가하면 서비스에서 Kubernetes 클러스터에 Astra Trident Container Storage Interface(CSI) 드라이버를 자동으로 설치합니다. 이 CSI 드라이버는 클라우드 공급자가 지원하는 클러스터에 영구 볼륨을 프로비저닝하는 데 사용됩니다.</block>
   <block id="c103c1b613b979158e5cb38bf6ed5f16" category="inline-link">다음 단계에 따라 Astra Control Provisioner 서비스가 포함된 Astra Trident 인스턴스를 제거하십시오</block>
-  <block id="6f494d3d3ab6addde987af35a6b39453" category="paragraph">* Astra Control Provisioner는 관리를 취소할 때 클러스터에서 자동으로 제거됩니까? *
-Astra Control Center에서 클러스터를 관리 취소하면 Astra Control Provisioner 또는 Astra Trident가 클러스터에서 자동으로 제거되지 않습니다. Astra Control Provisioner 및 해당 구성 요소 또는 Astra Trident를 제거하려면 다음을 수행해야 합니다<block ref="20ce5e359d2a1fb9fe63ec6fbc3432ca" category="inline-link-rx"></block>.</block>
-  <block id="555a1239c2a1c0c929e5163ef6b8bd8d" category="paragraph">* Astra Control Provisioner가 Astra Trident를 대체합니까? *
-Astra Control Provisioner는 Astra Control 아키텍처에서 스토리지 프로비저닝 및 오케스트레이터로 대체되었습니다. Astra Control 사용자가 수행해야 합니다 <block ref="ff2bbb7428b8f99317648669d291554d" category="inline-link-macro-rx"></block> Astra Control을 사용하려면 Astra Trident는 이 릴리즈에서 계속 지원되지만 향후 릴리즈에서 지원되지는 않습니다. Astra Trident는 오픈 소스를 그대로 유지하며 NetApp의 새로운 CSI 및 기타 기능으로 릴리즈, 유지, 지원 및 업데이트됩니다. 하지만 Astra Control Provisioner에는 Astra Trident CSI 기능과 함께 확장 스토리지 관리 기능이 포함되어 있는 Astra Control Provisioner만 사용할 수 있습니다.</block>
   <block id="b2e63d361f13f7c7a6953e6d716921b8" category="paragraph">아니요 Astra Trident는 계속해서 오픈 소스이며 무료로 다운로드할 수 있습니다. Astra Control Provisioner 기능을 사용하려면 이제 Astra Control 라이센스가 필요합니다.</block>
   <block id="f7674e11004b268d07981c0956e67fe1" category="paragraph">예, Astra Control 데이터 관리 기능의 전체 기능을 사용하지 않으려는 경우에도 Astra Control Provisioner로 업그레이드하고 기능을 사용할 수 있습니다.</block>
-  <block id="d8272a56355a60a1ca520a3d6649207f" category="paragraph">[[running-ACP-check]] * Astra Control Provisioner가 내 클러스터에서 Astra Trident를 대체했는지 어떻게 알 수 있습니까? *</block>
   <block id="5c06389afe2ac88223b5ed747dc58668" category="inline-image-macro">UI에서 Astra Control Provisioner 버전 위치를 보여 주는 스크린샷</block>
   <block id="02a9d2702f20af4981fc27f25359bc43" category="paragraph"><block ref="02a9d2702f20af4981fc27f25359bc43" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ad474921e3019f83ed5e493076ec8133" category="paragraph">를 확인합니다<block ref="49c9f6c98d04c8c76aee7448fd9136ed" prefix=" " category="inline-code"></block> 컨테이너가 실행 중이며<block ref="507c6bbca2ad57c69e89a97ee8714536" prefix=" " category="inline-code"></block> 있습니다<block ref="84976609aebb6439476255d5ef8280bb" prefix=" " category="inline-code"></block> 또는 이후 의 상태로 표시됩니다<block ref="98dd43dfae05b11befe1f140e0ec787a" prefix=" " category="inline-code"></block>:</block>
@@ -2705,4 +2671,38 @@ Astra Control은 이제 새로운 배포 모델로 제공됩니다. _Astra Contr
   <block id="df3bb36ac44fafa7502c4bf87e8770ea" category="list-text">툴킷을 구성하고 설치하려면<block ref="ce6ac21e909840a69102ba43afa6cfb6" category="inline-link-rx"></block>.</block>
   <block id="6a96f7d929fa0abae3976fe12471f4f9" category="sidebar">전체 클러스터를 보호합니다</block>
   <block id="c6549ebb7cd213e64b91aa2f6576c5f6" category="paragraph">Astra Control은 Kubernetes 네이티브 애플리케이션의 애플리케이션 데이터 라이프사이클 관리 작업을 단순화하는 것을 목표로 합니다. Astra Control Service는 여러 클라우드 공급자 환경에서 실행되는 Kubernetes 클러스터를 지원합니다.</block>
+  <block id="af2a4d2810d86aa0169c117f82682f9a" category="doc">자주 묻는 질문</block>
+  <block id="e2ba85373a43ff83523544e3c8b20cac" category="paragraph-title">Astra Control에 등록할 때 이렇게 많은 세부 정보를 제공해야 하는 이유는 무엇입니까?</block>
+  <block id="48a8ba7464567f29c363a814219f7e86" category="paragraph-title">Astra Control에 등록할 때 "등록 실패" 오류가 발생하는 이유는 무엇입니까?</block>
+  <block id="b231617ec636773574fda7f2f3f71590" category="paragraph-title">Astra Control Service URL이란?</block>
+  <block id="83536486243739fea4e7386d1547ac37" category="paragraph-title">동료에게 이메일 초대장을 보냈지만 받지 못했습니다. 어떻게 해야 합니까?</block>
+  <block id="d0b31c853fcf0fac7e52a6b7681a6d5b" category="paragraph-title">무료 요금제에서 프리미엄 PayGO 요금제로 업그레이드했습니다. 처음 10개의 네임스페이스에 대한 비용이 청구됩니까?</block>
+  <block id="33f5815cc5cfd5877253ed77622f0007" category="paragraph-title">한 달 중순에 프리미엄 PayGO 플랜으로 업그레이드했습니다. 한 달 동안 요금이 부과됩니까?</block>
+  <block id="2f4f1be084dd738c079ff8c6c035ac1d" category="paragraph-title">무료 요금제를 사용하고 있습니다. 영구 볼륨 청구에 대한 요금이 부과됩니까?</block>
+  <block id="84d8b806753a0920b4173b1358282c19" category="paragraph-title">Astra Control Service에 CSI 드라이버를 추가하기 전에 클러스터에 설치해야 합니까?</block>
+  <block id="87aba5b6abffa83e102cfce68467a91f" category="paragraph-title">Astra Control Service에 추가한 후 클러스터에 작업자 노드를 추가해야 합니다. 어떻게 해야 합니까?</block>
+  <block id="71741f57e0ef60c355e46181b86f6486" category="paragraph-title">프라이빗 EKS 클러스터를 Astra Control Service에 추가할 수 있습니까?</block>
+  <block id="f97a24ca8fd59c19e4a1adb26020e9a2" category="paragraph-title">프라이빗 AKS 클러스터를 Astra Control Service에 추가할 수 있습니까?</block>
+  <block id="5d6fe13b86aa0eb0b0fceadfba4b244e" category="paragraph-title">Active Directory를 사용하여 내 AKS 클러스터의 인증을 관리할 수 있습니까?</block>
+  <block id="8eb3ff627df9a47638fb622f65f91c63" category="paragraph-title">프라이빗 GKE 클러스터를 Astra Control Service에 추가할 수 있습니까?</block>
+  <block id="41f2fddc9e2a5165c173e0d3bc7b2f09" category="paragraph-title">GKE 클러스터가 공유 VPC에 상주할 수 있습니까?</block>
+  <block id="cf847ce591998095de7e84567bd8b17a" category="paragraph-title">GCP에서 서비스 계정 자격 증명을 어디서 찾을 수 있습니까?</block>
+  <block id="2927a523854de3dbef1f98b96201e888" category="paragraph-title">서로 다른 GCP 프로젝트의 서로 다른 GKE 클러스터를 추가하려고 합니다. Astra Control에서 지원됩니까?</block>
+  <block id="f7e99a45e43eb95d65b73567098604bd" category="list-title">올바르게 등록을 취소하고 클러스터를 종료하며 연결된 볼륨을 삭제하려면 어떻게 해야 합니까?</block>
+  <block id="18517a8ddd1451d8eae0f79685ae69c3" category="paragraph-title">Astra Control에서 클러스터를 제거한 후 애플리케이션 및 데이터는 어떻게 됩니까?</block>
+  <block id="2ea85804838c4a7c9bf4a8feb5343932" category="paragraph-title">Astra Control Provisioner는 관리를 취소할 때 클러스터에서 자동으로 제거됩니까?</block>
+  <block id="6e97758e2a7f18315bc2dd21ba2fb822" category="paragraph">Astra Control Center에서 클러스터를 관리 취소하면 Astra Control Provisioner 또는 Astra Trident가 클러스터에서 자동으로 제거되지 않습니다. Astra Control Provisioner 및 해당 구성 요소 또는 Astra Trident를 제거하려면 다음을 수행해야 합니다<block ref="20ce5e359d2a1fb9fe63ec6fbc3432ca" category="inline-link-rx"></block>.</block>
+  <block id="9c571c6fb937319efe65b3c9d020edc8" category="paragraph-title">Astra Control에서 애플리케이션을 구축할 수 있습니까?</block>
+  <block id="5a00e266405339524a709ed124e68977" category="paragraph-title">GCP CVS에 바인딩된 애플리케이션의 PVC가 표시되지 않습니다. 무엇이 문제입니까?</block>
+  <block id="a7fec8f073e339fb7794287e8e5663a0" category="paragraph-title">Astra Control에서 애플리케이션 관리를 중지하면 애플리케이션은 어떻게 됩니까?</block>
+  <block id="6b59b068724f323c0baa61747c1ba713" category="paragraph-title">Astra Control에서 오브젝트 저장소 버킷을 생성하는 위치는 어디입니까?</block>
+  <block id="8afa2fae393366d6b197ab7eae5782a9" category="paragraph-title">내 계정에 생성하지 않은 스냅샷이 있습니다. 그들은 어디에서 왔습니까?</block>
+  <block id="b9a7bae01f76ff8a887e3e03377895be" category="paragraph-title">애플리케이션에서 여러 PVS를 사용합니다. Astra Control은 이러한 모든 PVC의 스냅샷과 백업을 수행합니까?</block>
+  <block id="5139a5d999f1bbac2fb5e1e029b14429" category="paragraph-title">Astra Control에서 생성한 스냅샷을 클라우드 공급자를 통해 직접 관리할 수 있습니까?</block>
+  <block id="ee8d37ab9ce413b000f7a6f1c6831e25" category="paragraph-title">Astra Control Provisioner의 스토리지 프로비저닝 기능은 Astra Trident의 스토리지 프로비저닝 기능과 어떻게 다릅니까?</block>
+  <block id="36057914e1173ce157bef770560c4d14" category="paragraph-title">Astra Control Provisioner가 Astra Trident를 대체합니까?</block>
+  <block id="1545b138340a043e294238b4a34d04cb" category="paragraph">Astra Control Provisioner는 Astra Control 아키텍처에서 스토리지 프로비저닝 및 오케스트레이터로 대체되었습니다. Astra Control 사용자가 수행해야 합니다 <block ref="ff2bbb7428b8f99317648669d291554d" category="inline-link-macro-rx"></block> Astra Control을 사용하려면 Astra Trident는 이 릴리즈에서 계속 지원되지만 향후 릴리즈에서 지원되지는 않습니다. Astra Trident는 오픈 소스를 그대로 유지하며 NetApp의 새로운 CSI 및 기타 기능으로 릴리즈, 유지, 지원 및 업데이트됩니다. 하지만 Astra Control Provisioner에는 Astra Trident CSI 기능과 함께 확장 스토리지 관리 기능이 포함되어 있는 Astra Control Provisioner만 사용할 수 있습니다.</block>
+  <block id="6080a9c8227972613444a9ebc88e3b3c" category="paragraph-title">Astra Trident에 대한 비용을 지불해야 합니까?</block>
+  <block id="369842d22c436a81bf21800576abee8b" category="paragraph-title">모든 Astra Control을 설치 및 사용하지 않고 Astra Control의 스토리지 관리 및 프로비저닝 기능을 사용할 수 있습니까?</block>
+  <block id="63bdba47639989b6e534ecb34c5f142e" category="paragraph-title">Astra Control Provisioner가 클러스터에서 Astra Trident를 대체했는지 어떻게 알 수 있습니까?</block>
 </blocks>
