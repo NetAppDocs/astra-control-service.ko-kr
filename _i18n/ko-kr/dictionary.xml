@@ -925,14 +925,11 @@
   <block id="4a2ab62188738135163aaaaeab1d6cfe" category="list-text"><block ref="4a2ab62188738135163aaaaeab1d6cfe" category="inline-link-rx"></block></block>
   <block id="d418042930eb178009f4c27360b349f6" category="inline-link">Astra Control API를 사용합니다</block>
   <block id="35e127abdc4e59a01dd3fd4f63603bf1" category="list-text"><block ref="35e127abdc4e59a01dd3fd4f63603bf1" category="inline-link-rx"></block></block>
-  <block id="5858ee4031acd7b896faa2d3d2c1a299" category="inline-link">Cloud Insights 설명서</block>
-  <block id="2b93b48daf034e4100d00b85950e109d" category="list-text"><block ref="2b93b48daf034e4100d00b85950e109d" category="inline-link-rx"></block></block>
   <block id="eb75aeb3b4b2b9734ba3e52f5483f0b2" category="inline-link">ONTAP 설명서</block>
   <block id="8217522f2b9eea86f1099a2aba54aebd" category="list-text"><block ref="8217522f2b9eea86f1099a2aba54aebd" category="inline-link-rx"></block></block>
   <block id="60f694f21643599c137f6c610e48124e" category="paragraph">이 슬라이드에는 Astra Control 환경의 다양한 구성 요소에 대한 개요가 나와 있습니다.</block>
   <block id="51d249216b03414f10b242b851af7951" category="section-title">Astra Control 구성 요소</block>
   <block id="a8d77bbb11d2e1a349811767d194e9ba" category="list-text">* Kubernetes 클러스터 *: Kubernetes는 컨테이너식 워크로드 및 서비스를 관리할 수 있는 확장 가능한 휴대용 오픈 소스 플랫폼으로, 선언적 구성과 자동화를 모두 지원합니다. Astra는 Kubernetes 클러스터에서 호스팅되는 애플리케이션에 관리 서비스를 제공합니다.</block>
-  <block id="415ba7b6a21fb373d9c5b72207313c1c" category="list-text">* Cloud Insights *: NetApp 클라우드 인프라 모니터링 툴인 Cloud Insights를 사용하면 Astra Control Center에서 관리하는 Kubernetes 클러스터의 성능과 활용률을 모니터링할 수 있습니다. Cloud Insights는 스토리지 사용량과 워크로드를 상호 연관시킵니다. Astra Control Center에서 Cloud Insights 연결을 활성화하면 Astra Control Center UI 페이지에 원격 측정 정보가 표시됩니다.</block>
   <block id="de0c45e94d4b178203631d55e65d1b62" category="section-title">Astra Control 인터페이스</block>
   <block id="d015aca78df45458ee1d6533c5246919" category="paragraph">다른 인터페이스를 사용하여 작업을 완료할 수 있습니다.</block>
   <block id="085434e07821849d9d71c59516ad591f" category="list-text">* 웹 UI(사용자 인터페이스) *: Astra Control Service와 Astra Control Center는 동일한 웹 기반 UI를 사용하여 앱을 관리, 마이그레이션 및 보호할 수 있습니다. UI를 사용하여 사용자 계정 및 구성 설정을 관리할 수도 있습니다.</block>
@@ -1072,7 +1069,6 @@
   <block id="c5e2734ed937951c4604f55129ebf6bb" category="list-text">Azure 관리 디스크: 사용 가능한 가격, 성능 또는 복원력 정보가 없습니다</block>
   <block id="368def07c6bfa29b38f6913d1a01d925" category="paragraph">+** GKE 클러스터의 경우 Astra Control Service가 사용합니다<block ref="33441d63a8e7ace6860eab2024320819" category="inline-link-rx"></block> 또는 Google 영구 디스크를 영구 볼륨의 스토리지 백엔드로 사용합니다.</block>
   <block id="eb1ac977ae8f3dc0832dd982e309d50b" category="paragraph">Azure에서 Astra Control Service는 Blob 컨테이너용 리소스 그룹, 스토리지 계정 및 키도 생성합니다.</block>
-  <block id="47de31b9013ca59e1620936759a1c481" category="paragraph">Astra Control은 Kubernetes 네이티브 애플리케이션을 위한 애플리케이션 데이터 라이프사이클 관리 운영을 간소화하고자 합니다. Astra Control Service는 여러 클라우드 공급자 환경에서 실행되는 Kubernetes 클러스터를 지원합니다.</block>
   <block id="e29d7c0b36af68edd13ebac84f15b44b" category="sidebar">클라우드 공급자</block>
   <block id="46aef2e5080a5347df1ce7546e1be1df" category="sidebar">모든 클라우드 공급자</block>
   <block id="56ef2682280ac110060b881925a87b80" category="sidebar">Google 클라우드</block>
@@ -1611,7 +1607,6 @@
   <block id="934c5edffa8e732ecb866cb319c8454a" category="doc">애플리케이션 관리</block>
   <block id="516729a7c0562425406a22cfe6a2c163" category="list-text">Amazon EBS</block>
   <block id="79c9c43a409053927cc323915dbf1c06" category="list-text">Azure 관리 디스크</block>
-  <block id="43e71b094d6e4df1d87b41898754d340" category="paragraph">클라우드 연결 환경에서 Astra Control Center는 Cloud Insights를 사용하여 고급 모니터링 및 원격 측정 기능을 제공합니다. Cloud Insights 연결이 없을 경우 Astra Control Center에서 제한된(7일 메트릭) 모니터링 및 원격 측정 기능을 사용할 수 있으며, 개방형 메트릭 엔드 포인트를 통해 Kubernetes 기본 모니터링 툴(예: Prometheus 및 Grafana)으로 내보낼 수 있습니다.</block>
   <block id="736df34727d37ee0029df106be139889" category="paragraph">클러스터에 애플리케이션을 추가할 수 있습니다. 클러스터에 이미 관리 중인 일부 애플리케이션이 있는 경우 Astra Control Center를 사용하여 관리할 수 있습니다. 그런 다음 Astra Control Center를 사용하여 스냅샷, 백업, 클론 및 복제 관계를 생성합니다.</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">결과</block>
   <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">1개</block>
@@ -2709,4 +2704,5 @@ Astra Control은 이제 새로운 배포 모델로 제공됩니다. _Astra Contr
   <block id="b68db3e0a56f3b8c81ba53790b675138" category="list-text"><block ref="b68db3e0a56f3b8c81ba53790b675138" category="inline-link-rx"></block></block>
   <block id="df3bb36ac44fafa7502c4bf87e8770ea" category="list-text">툴킷을 구성하고 설치하려면<block ref="ce6ac21e909840a69102ba43afa6cfb6" category="inline-link-rx"></block>.</block>
   <block id="6a96f7d929fa0abae3976fe12471f4f9" category="sidebar">전체 클러스터를 보호합니다</block>
+  <block id="c6549ebb7cd213e64b91aa2f6576c5f6" category="paragraph">Astra Control은 Kubernetes 네이티브 애플리케이션의 애플리케이션 데이터 라이프사이클 관리 작업을 단순화하는 것을 목표로 합니다. Astra Control Service는 여러 클라우드 공급자 환경에서 실행되는 Kubernetes 클러스터를 지원합니다.</block>
 </blocks>

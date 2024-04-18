@@ -219,8 +219,6 @@ Astra Control Center는 프라이빗 클라우드에서 로컬로 실행됩니�
 
 Astra Control Center는 ONTAP 스토리지 백엔드와 함께 Astra Control Provisioner 구성 스토리지 클래스를 통해 Kubernetes 클러스터를 지원합니다.
 
-클라우드 연결 환경에서 Astra Control Center는 Cloud Insights를 사용하여 고급 모니터링 및 원격 측정 기능을 제공합니다. Cloud Insights 연결이 없을 경우 Astra Control Center에서 제한된(7일 메트릭) 모니터링 및 원격 측정 기능을 사용할 수 있으며, 개방형 메트릭 엔드 포인트를 통해 Kubernetes 기본 모니터링 툴(예: Prometheus 및 Grafana)으로 내보낼 수 있습니다.
-
 Astra Control Center는 AutoSupport 및 Active IQ 에코시스템에 완전히 통합되어 사용자와 NetApp 지원에 문제 해결 및 사용 정보를 제공합니다.
 
 90일 평가판 라이센스를 사용하여 Astra Control Center를 사용해 볼 수 있습니다. 평가판 버전은 전자 메일 및 커뮤니티 옵션을 통해 지원됩니다. 또한 제품 내 지원 대시보드에서 Knowledgebase 문서 및 문서에 액세스할 수 있습니다.
@@ -252,6 +250,5 @@ Astra Control Center는 다음과 같이 높은 수준에서 작동합니다.
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Astra Control Center 문서"^]
 * https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API 설명서"^]
 * https://docs.netapp.com/us-en/trident/index.html["Astra Trident 문서"^]
-* https://docs.netapp.com/us-en/cloudinsights/["Cloud Insights 설명서"^]
 * https://docs.netapp.com/us-en/ontap/index.html["ONTAP 설명서"^]
 
