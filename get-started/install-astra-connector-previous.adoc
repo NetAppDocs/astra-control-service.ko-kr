@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: get-started/install-astra-connector.html 
+permalink: get-started/install-astra-connector-previous.html 
 keywords: connector, install, astra connector, manage cluster, add cluster, cluster, add, manage 
 summary: Astra Connector를 설치하여 프라이빗 클러스터 관리를 지원할 수 있습니다. 
 ---
-= 프라이빗 클러스터용 Astra Connector를 설치합니다
+= 이전 버전의 Astra Connector를 설치합니다
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,21 +12,17 @@ summary: Astra Connector를 설치하여 프라이빗 클러스터 관리를 지
 
 
 [role="lead"]
-Astra Control Service는 Astra Connector를 사용하여 Astra Control Service와 프라이빗 클러스터 간의 통신을 지원한다. 관리할 프라이빗 클러스터에 Astra Connector를 설치해야 합니다.
+Astra Control Service는 이전 버전의 Astra Connector를 사용하여 Kubernetes가 아닌 네이티브 워크플로우로 관리되는 프라이빗 클러스터 와 Astra Control Service 간의 통신을 지원합니다. Kubernetes가 아닌 네이티브 워크플로우로 관리하려는 프라이빗 클러스터에 Astra Connector를 설치해야 합니다.
 
-Astra Connector는 다음과 같은 유형의 프라이빗 클러스터를 지원합니다.
+이전 버전의 Astra Connector는 Kubernetes가 아닌 네이티브 워크플로로 관리되는 다음 유형의 프라이빗 클러스터를 지원합니다.
 
 * Amazon Elastic Kubernetes Service(EKS)
 * Azure Kubernetes 서비스(AKS)
 * Google Kubernetes Engine(GKE)
 * AWS 기반 Red Hat OpenShift Service(ROSA)
 * AWS PrivateLink와 함께 Rosa
-* Red Hat OpenShift Container Platform 온프레미스
+* Red Hat OpenShift Container Platform 온-프레미스
 
-
-
-
-== Astra Connector를 설치합니다
 
 .이 작업에 대해
 * 이러한 단계를 수행할 때 Astra Control Service로 관리할 프라이빗 클러스터에 대해 다음 명령을 실행합니다.
@@ -39,7 +35,7 @@ Astra Connector는 다음과 같은 유형의 프라이빗 클러스터를 지�
 
 
 .단계
-. Astra Control Service로 관리할 프라이빗 클러스터에 Astra Connector 연산자를 설치합니다. 이 명령을 실행하면 네임스페이스가 생성됩니다 `astra-connector-operator` 이 만들어지고 구성이 네임스페이스에 적용됩니다.
+. Kubernetes가 아닌 네이티브 워크플로로 관리할 프라이빗 클러스터에 이전 Astra Connector 연산자를 설치합니다. 이 명령을 실행하면 네임스페이스가 생성됩니다 `astra-connector-operator` 이 만들어지고 구성이 네임스페이스에 적용됩니다.
 +
 [source, console]
 ----

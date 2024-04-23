@@ -1,0 +1,130 @@
+---
+sidebar: sidebar 
+permalink: get-started/install-astra-connector-declarative.html 
+keywords: connector, install, astra connector, manage cluster, add cluster, cluster, add, manage 
+summary: Astra Connector를 설치하여 프라이빗 클러스터 관리를 지원할 수 있습니다. 
+---
+= (기술 미리 보기) 선언적 Kubernetes Astra Connector를 설치합니다
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+선언적 Kubernetes 워크플로우를 사용하여 관리되는 클러스터는 Astra Connector를 사용하여 관리형 클러스터와 Astra Control 간의 통신을 지원합니다. 선언적 Kubernetes 워크플로로 관리할 모든 클러스터에 Astra Connector를 설치해야 합니다.
+
+Kubernetes 명령 및 CR(Custom Resource) 파일을 사용하여 선언적 Kubernetes Astra Connector를 설치합니다.
+
+.이 작업에 대해
+* 이러한 단계를 수행할 때 Astra Control으로 관리하려는 클러스터에서 다음 명령을 실행합니다.
+* 방호 호스트를 사용하는 경우 방호 호스트의 명령줄에서 이러한 명령을 실행하십시오.
+
+
+.시작하기 전에
+* Astra Control을 사용하여 관리할 클러스터에 액세스해야 합니다.
+* 클러스터에 Astra Connector 연산자를 설치하려면 Kubernetes 관리자 권한이 필요합니다.
+
+
+
+NOTE: Kubernetes 1.25 이상 클러스터의 기본값인 Pod 보안 승인 적용을 사용하여 클러스터를 구성한 경우 해당 네임스페이스에 PSA 제한을 활성화해야 합니다. 을 참조하십시오 link:prep-for-cluster-management.html["Astra Control을 사용하여 클러스터 관리를 위한 환경을 준비합니다"] 를 참조하십시오.
+
+.단계
+. 선언적 Kubernetes 워크플로로 관리할 클러스터에 Astra Connector 연산자를 설치합니다. 이 명령을 실행하면 네임스페이스가 생성됩니다 `astra-connector-operator` 이 만들어지고 구성이 네임스페이스에 적용됩니다.
++
+[source, console]
+----
+kubectl apply -f https://github.com/NetApp/astra-connector-operator/releases/download/24.02.0-202403151353/astraconnector_operator.yaml
+----
+. 작업자가 설치되어 있고 준비가 되었는지 확인합니다.
++
+[source, console]
+----
+kubectl get all -n astra-connector-operator
+----
+. Astra Control에서 API 토큰을 받습니다. 을 참조하십시오 https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra 자동화 문서"^] 를 참조하십시오.
+. 토큰을 사용하여 암호를 생성합니다. <API_TOKEN>를 Astra Control에서 받은 토큰으로 대체:
++
+[source, console]
+----
+kubectl create secret generic astra-token \
+--from-literal=apiToken=<API_TOKEN> \
+-n astra-connector
+----
+. Astra Connector 이미지를 가져오는 데 사용할 Docker 암호를 생성합니다. 괄호 안의 값을 사용자 환경의 정보로 대체:
++
+
+NOTE: <ASTRA_CONTROL_ACCOUNT_ID>는 Astra Control 웹 UI에서 찾을 수 있습니다. 웹 UI에서 페이지 오른쪽 상단의 그림 아이콘을 선택하고 * API access * 를 선택합니다.
+
++
+[source, console]
+----
+kubectl create secret docker-registry regcred \
+--docker-username=<ASTRA_CONTROL_ACCOUNT_ID> \
+--docker-password=<API_TOKEN> \
+-n astra-connector \
+--docker-server=cr.astra.netapp.io
+----
+. Astra Connector CR 파일을 생성하고 이름을 지정합니다 `astra-connector-cr.yaml`. 괄호 <> 의 값을 Astra Control 환경 및 클러스터 구성과 일치하도록 업데이트합니다.
++
+** <ASTRA_CONTROL_ACCOUNT_ID>: 이전 단계에서 Astra Control 웹 UI에서 구함.
+** <CLUSTER_NAME>: Astra Control에서 이 클러스터를 할당해야 하는 이름입니다.
+** <ASTRA_CONTROL_URL>: Astra Control의 웹 UI URL입니다. 예를 들면 다음과 같습니다.
++
+[listing]
+----
+https://astra.control.url
+----
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: AstraConnector
+metadata:
+  name: astra-connector
+  namespace: astra-connector
+spec:
+  astra:
+    accountId: <ASTRA_CONTROL_ACCOUNT_ID>
+    clusterName: <CLUSTER_NAME>
+    #Only set `skipTLSValidation` to `true` when using the default self-signed
+    #certificate in a proof-of-concept environment.
+    skipTLSValidation: false #Should be set to false in production environments
+    tokenRef: astra-token
+  natsSyncClient:
+    cloudBridgeURL: <ASTRA_CONTROL_HOST_URL>
+  imageRegistry:
+    name: cr.astra.netapp.io
+    secret: regcred
+----
+
+
+. 를 채운 후 `astra-connector-cr.yaml` 올바른 값이 있는 파일에 CR을 적용합니다.
++
+[source, console]
+----
+kubectl apply -n astra-connector -f astra-connector-cr.yaml
+----
+. Astra Connector가 완전히 구축되었는지 확인:
++
+[source, console]
+----
+kubectl get all -n astra-connector
+----
+. 클러스터가 Astra Control에 등록되었는지 확인:
++
+[source, console]
+----
+kubectl get astraconnectors.astra.netapp.io -A
+----
++
+다음과 유사한 출력이 표시됩니다.
+
++
+[listing]
+----
+NAMESPACE         NAME              REGISTERED   ASTRACONNECTORID                       STATUS
+astra-connector   astra-connector   true         00ac8-2cef-41ac-8777-ed0583e   Registered with Astra
+----
+. Astra Control 웹 UI의 * 클러스터 * 페이지에서 관리되는 클러스터 목록에 클러스터가 나타나는지 확인합니다.
+

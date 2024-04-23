@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: get-started/astra-connector-overview.html 
+keywords: connector, install, astra connector, manage cluster, add cluster, cluster, add, manage 
+summary: Astra Control을 사용하여 클러스터를 관리하려면 Astra Connector를 설치해야 합니다. 
+---
+= Astra Connector를 설치하여 클러스터를 관리한다
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Astra Connector는 관리형 클러스터에 상주하는 소프트웨어로, 관리형 클러스터와 Astra Control 간의 통신을 지원합니다. Astra Control Service를 사용하여 관리되는 클러스터의 경우 Astra Connector에 사용할 수 있는 2가지 버전이 있습니다.
+
+* * 이전 버전의 Astra Connector *: link:install-astra-connector-previous.html["이전 버전의 Astra Connector를 설치합니다"] Kubernetes 네이티브가 아닌 워크플로우를 통해 클러스터를 관리하려는 경우, 클러스터에 위치한다.
+* [기술 미리보기] * 선언 Kubernetes Astra Connector *: link:install-astra-connector-declarative.html["선언적 Kubernetes 워크플로로 관리되는 클러스터용 Astra Connector를 설치합니다"] 선언적 Kubernetes 워크플로우를 사용하여 클러스터를 관리하려는 경우 클러스터에 두어야 합니다. 클러스터에 Astra Connector를 설치하면 클러스터가 Astra Control에 자동으로 추가됩니다.
+
+
+
+NOTE: 선언적 Kubernetes Astra Connector는 Astra Control EAP(Early Adopter Program)의 일부로만 제공됩니다. 에 가입하는 방법에 대한 자세한 내용은 NetApp 영업 담당자에게 문의하십시오.

@@ -27,8 +27,13 @@ entries:
 - title: 클러스터를 추가합니다
   url: "/get-started/add-first-cluster.html"
   entries:
-  - title: 프라이빗 클러스터용 Astra Connector를 설치합니다
-    url: "/get-started/install-astra-connector.html"
+  - title: Astra Connector를 설치하여 클러스터를 관리한다
+    url: "/get-started/astra-connector-overview.html"
+    entries:
+    - title: 이전 버전의 Astra Connector for 프라이빗 클러스터를 설치합니다
+      url: "/get-started/install-astra-connector-previous.html"
+    - title: 선언적 Kubernetes 클러스터를 위한 Astra Connector를 설치합니다
+      url: "/get-started/install-astra-connector-declarative.html"
   - title: 공급자 관리 클러스터를 추가합니다
     entries:
     - title: 공용 공급자 관리 클러스터를 추가합니다

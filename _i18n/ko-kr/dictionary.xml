@@ -364,11 +364,9 @@
   <block id="dea95de7f2633f161384f311ab180946" category="list-text">데이터 보호 * 를 선택합니다.</block>
   <block id="991b4d6d3f0be95d8e0ca4853eea90a9" category="list-text">보호 정책 구성 * 을 선택합니다.</block>
   <block id="a080c1d6ad4654d9b12e290cb531df28" category="list-text">시간별, 일별, 주별 및 월별 스케줄에 대해 유지할 스냅샷 및 백업 수를 선택하여 보호 스케줄을 정의합니다.</block>
-  <block id="3c87cbf934c17bb682cfb8503e06cba9" category="paragraph">시간별, 일별, 주별 및 월별 스케줄을 동시에 정의할 수 있습니다. 스냅샷 및 백업에 대한 보존 레벨을 설정하기 전에는 스케줄이 활성화되지 않습니다.</block>
   <block id="5c1427e50f55ee41de824edbb1570947" category="paragraph">백업의 보존 레벨을 설정할 때 백업을 저장할 버킷을 선택할 수 있습니다.</block>
   <block id="51ef5dbf6271c393f6d97e405ca64acb" category="paragraph">다음 예에서는 스냅샷 및 백업의 경우 매시간, 일별, 주별 및 월별로 4개의 보호 스케줄을 설정합니다.</block>
   <block id="24dbaabc8acdace35cfc98c9178faeb5" category="inline-image-macro">시간별, 일별, 주별 또는 월별 기준으로 스냅샷 및 백업을 수행하도록 선택할 수 있는 샘플 구성 정책의 스크린샷</block>
-  <block id="9433a2dfbb0db6b2b8a07db04f4febd4" category="paragraph"><block ref="9433a2dfbb0db6b2b8a07db04f4febd4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b99a9a5879442c5ad3ae30c94964ccb3" category="list-text">Review * 를 선택합니다.</block>
   <block id="ea4ebf424434e7ebdf07f2247bd94dd6" category="paragraph">Astra Control은 정의한 스케줄 및 보존 정책을 사용하여 스냅샷 및 백업을 생성하고 유지함으로써 데이터 보호 정책을 구현합니다.</block>
   <block id="af9c364e0933200b7b8c1e7e13947ccf" category="section-title">스냅샷을 생성합니다</block>
@@ -1540,7 +1538,6 @@
   <block id="49507728a783fa319e52827452a8c306" category="list-text">네임스페이스로 청구 내역을 보려면 * 청구 내역 * 을 선택합니다.</block>
   <block id="09ea52ceb771c5d3a7dbc11021104012" category="paragraph">Astra Control은 각 네임스페이스의 사용 시간 및 비용을 보여 줍니다. 사용 시간은 Astra Control이 청구 기간 동안 네임스페이스를 관리하는 시간(분)입니다.</block>
   <block id="203528de7353cc2eb54ffc07e54122d7" category="list-text">Astra Control 청구서에는 네임스페이스 관리에 대한 비용이 포함되어 있습니다. 영구 볼륨의 스토리지 백엔드는 클라우드 공급자가 별도로 요금을 부과합니다.</block>
-  <block id="5c6e486607b402b2c91fc889e966340e" category="list-text">보호 정책 설정 * 을 선택합니다.</block>
   <block id="8cf5def8eede43ff4c75800399b44fb7" category="list-text">원하는 앱의 * Actions * 열에 있는 옵션 메뉴에서 * Snapshot * 을 선택합니다.</block>
   <block id="e731b69194fb461b61a50d70056eadeb" category="list-text">스냅샷 이름을 사용자 지정하고 * 다음 * 을 선택합니다.</block>
   <block id="932f89164903be81ff337dd1df9741eb" category="list-text">스냅샷 요약을 검토하고 * Snapshot * 을 선택합니다.</block>
@@ -1548,7 +1545,6 @@
   <block id="9916507b3209a34b61365719daccee17" category="list-text">원하는 앱의 * Actions * 열에 있는 옵션 메뉴에서 * Back Up * 을 선택합니다.</block>
   <block id="154044900ec18a9168786e9732e60aea" category="list-text">백업 이름을 사용자 지정합니다.</block>
   <block id="693e02c2755e3bd5aa6c9cd127fef46e" category="list-text">기존 스냅샷에서 앱을 백업할지 여부를 선택합니다. 이 옵션을 선택하면 기존 스냅샷 목록에서 선택할 수 있습니다.</block>
-  <block id="137c45611597ee2966a295d2c5bed2ba" category="list-text">스토리지 버킷 목록에서 백업할 대상 버킷을 선택합니다.</block>
   <block id="0a976f3c5cd8c23ef9a0b4e7978580fa" category="list-text">백업 요약을 검토하고 * 백업 * 을 선택합니다.</block>
   <block id="6644c65dfe41666f4430ec48ffb52324" category="admonition">실행 중인 백업을 취소해야 하는 경우 의 지침을 따릅니다 <block ref="d36d12c984fabf8d0626a7b2539983bf" category="inline-xref-macro-rx"></block>. 백업을 삭제하려면 백업이 완료될 때까지 기다린 다음 의 지침을 따르십시오 <block ref="da28e1f6ad1e5135aab14ac0664600c6" category="inline-xref-macro-rx"></block>.</block>
   <block id="57cec2186373e15c3082b81aa26022cc" category="list-text">원하는 스냅샷에 대한 * Actions * 열의 Options 메뉴에서 * Delete snapshot * 을 선택합니다.</block>
@@ -1828,7 +1824,6 @@
   <block id="0a7a7f4a53adc5b0553b40b1e29b0ba0" category="list-text">* Kind *: 드롭다운 목록에서 필터에 사용할 Kubernetes 리소스 유형에 대한 오브젝트 스키마를 선택합니다.</block>
   <block id="8267e7bf8eea35734f6959fde07b17d9" category="list-text">* 버전 *: Kubernetes API 버전을 선택합니다.</block>
   <block id="e9f8a964cfe8d148cfb0e30848e5fa69" category="admonition">원하는 만큼 리소스 포함 및 제외 규칙을 만들 수 있습니다. 작업을 시작하기 전에 복원 애플리케이션 요약에 규칙이 나타납니다.</block>
-  <block id="45ad0235a77627fe6b23b64997cecf69" category="paragraph">보호 정책은 정의된 일정에 따라 스냅샷, 백업 또는 둘 다를 생성하여 앱을 보호합니다. 시간별, 일별, 주별 및 월별 스냅샷과 백업을 생성하도록 선택할 수 있으며, 보존할 복제본 수를 지정할 수 있습니다.</block>
   <block id="ea4406d0295c7a1fc18318721ed0eb77" category="paragraph">시간당 한 번 이상 백업 또는 스냅샷을 자주 실행해야 하는 경우 를 수행할 수 있습니다<block ref="e7190f2033c7866ebb246bbdd297729e" category="inline-link-rx"></block>.</block>
   <block id="24de3392d815c86d9bc54afa43409615" category="inline-link-macro">애플리케이션 백업</block>
   <block id="e68b36f1fd0d0f8bbe23162e44e442d1" category="paragraph">Azure NetApp Files 스토리지에서 호스트되는 애플리케이션을 백업할 때 스토리지 공간이 처리되는 방식에 유의하십시오. 을 참조하십시오 <block ref="7bb90b7122f027c565a9c95a353052fc" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
@@ -2046,9 +2041,6 @@
   <block id="5cf8b5937cb82a5351c4c73d39637045" category="paragraph">자체 클러스터를 관리하고 있지만 클라우드 공급자가 호스팅하지 않는 경우, 자체 관리 클러스터에 대한 요구사항을 검토하십시오.
 <block ref="a9fe61a91bc6d7fb0348dcee66b62bae" category="inline-link-macro-rx"></block>.</block>
   <block id="a3c5aa86ee838da565b2cd95a4d4050f" category="summary">Astra Connector를 설치하여 프라이빗 클러스터 관리를 지원할 수 있습니다.</block>
-  <block id="47855f6445b935349857dbfd8122b3a9" category="doc">프라이빗 클러스터용 Astra Connector를 설치합니다</block>
-  <block id="86a177c8b0866600fff2490a0bf1203f" category="paragraph">Astra Control Service는 Astra Connector를 사용하여 Astra Control Service와 프라이빗 클러스터 간의 통신을 지원한다. 관리할 프라이빗 클러스터에 Astra Connector를 설치해야 합니다.</block>
-  <block id="753382fed028d041553f0851f19678e7" category="paragraph">Astra Connector는 다음과 같은 유형의 프라이빗 클러스터를 지원합니다.</block>
   <block id="480c9b5f979d1ce95ea2a58b09826d1b" category="list-text">Amazon Elastic Kubernetes Service(EKS)</block>
   <block id="f28c5620810ae2a6961a1811277a7ff8" category="list-text">Azure Kubernetes 서비스(AKS)</block>
   <block id="974030a30a48754684d05541fd5e96c9" category="list-text">Google Kubernetes Engine(GKE)</block>
@@ -2059,7 +2051,6 @@
   <block id="1edf1f850fb1dd3ecb6ec5a68b931d8a" category="list-text">방호 호스트를 사용하는 경우 방호 호스트의 명령줄에서 이러한 명령을 실행하십시오.</block>
   <block id="46f84f76c193988a23a05e2533e85012" category="list-text">Astra Control Service를 사용하여 관리할 프라이빗 클러스터에 액세스해야 합니다.</block>
   <block id="3ba9d4444750a5b9f273108e52fab161" category="list-text">클러스터에 Astra Connector 연산자를 설치하려면 Kubernetes 관리자 권한이 필요합니다.</block>
-  <block id="ddf67d6bca798cdb05a03cd3e8c353a5" category="list-text">Astra Control Service로 관리할 프라이빗 클러스터에 Astra Connector 연산자를 설치합니다. 이 명령을 실행하면 네임스페이스가 생성됩니다<block ref="c6ead53be77481f9e0a3f904f9a88686" prefix=" " category="inline-code"></block> 이 만들어지고 구성이 네임스페이스에 적용됩니다.</block>
   <block id="df6b3ae9d235c55e4852987eb13aca3a" category="list-text">작업자가 설치되어 있고 준비가 되었는지 확인합니다.</block>
   <block id="de2197712ea8457243c4dd6357e2765e" category="list-text">Astra Control에서 API 토큰을 받습니다. 을 참조하십시오<block ref="c02899be0babfb1350e3b2576a6e8c97" category="inline-link-rx"></block> 를 참조하십시오.</block>
   <block id="9606554dacabd47ad1eea6bf025ec9f2" category="list-text">Astra-Connector 네임스페이스를 생성합니다.</block>
@@ -2084,7 +2075,6 @@
   <block id="b2f16d028eefb97c311806a92cfd1819" category="list-text">교체 서비스 계정 암호를 나열합니다<block ref="b7deaaa7156445a472f0757516cd1509" prefix=" " category="inline-code"></block> 올바른 설치 상황:</block>
   <block id="a46411d662ebd15db7079553439dbcdc" category="paragraph">의 각 요소에 대한 인덱스입니다<block ref="7de38f3c3d3baa7ca58a366f09577586" prefix=" " category="inline-code"></block> 어레이는 0으로 시작합니다. 위의 예에서 의 인덱스입니다<block ref="5bb15412e9504feb0711be74d8c6ed33" prefix=" " category="inline-code"></block> 는 0이고 의 인덱스입니다<block ref="ce8dd462bb623b9902ba4f0151eb2f1b" prefix=" " category="inline-code"></block> 1입니다. 출력에서 서비스 계정의 인덱스 번호를 기록해 둡니다. 다음 단계에서는 이 인덱스 번호가 필요합니다.</block>
   <block id="ca492be8d9c67f790505b17ed0272fa9" category="list-text"><block ref="43d42a1bad9233e3772b4daeb39d1495" category="inline-xref-macro-rx"></block></block>
-  <block id="8ab37db051796602226f25a5530aeaca" category="paragraph">프라이빗 클러스터를 추가하기 전에 Astra Control이 클러스터와 통신할 수 있도록 클러스터에 Astra Connector를 설치해야 합니다. 을 참조하십시오 <block ref="5c81995f6b8f1946f7d874c3b5f608ab" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
   <block id="258c9b2ecd2a4147777d96a2577bb01d" category="list-text">* Private route identifier *: Astra Connector로부터 얻을 수 있는 private route identifier를 입력합니다. 을 통해 Astra Connector에 문의하면<block ref="e29c11c68aee82b23845c3b2bf3ce544" prefix=" " category="inline-code"></block> 명령, 전용 라우트 식별자를 라고 합니다<block ref="6205f02991df9d45acb59ccb61d7a0cb" prefix=" " category="inline-code"></block>.</block>
   <block id="1d740d5e28f5ec526ba0e21bd2c042ae" category="list-text"><block ref="d19f65bb3040b630d929eb2fd73ae249" category="inline-link-macro-rx"></block>.</block>
   <block id="615193f2c37d9fd054a61bf78b73ad01" category="section-title">변경 불가능한 백업</block>
@@ -2705,4 +2695,161 @@ Astra Control은 이제 새로운 배포 모델로 제공됩니다. _Astra Contr
   <block id="6080a9c8227972613444a9ebc88e3b3c" category="paragraph-title">Astra Trident에 대한 비용을 지불해야 합니까?</block>
   <block id="369842d22c436a81bf21800576abee8b" category="paragraph-title">모든 Astra Control을 설치 및 사용하지 않고 Astra Control의 스토리지 관리 및 프로비저닝 기능을 사용할 수 있습니까?</block>
   <block id="63bdba47639989b6e534ecb34c5f142e" category="paragraph-title">Astra Control Provisioner가 클러스터에서 Astra Trident를 대체했는지 어떻게 알 수 있습니까?</block>
+  <block id="899ffe13f2bb16a187ce9807836e3d5f" category="paragraph">보호 정책은 정의된 일정에 따라 스냅샷, 백업 또는 둘 다를 생성하여 앱을 보호합니다. 시간별, 일별, 주별 및 월별 스냅샷과 백업을 생성하도록 선택할 수 있으며, 보존할 복제본 수를 지정할 수 있습니다. Astra Control 웹 UI 또는 맞춤형 리소스(CR) 파일을 사용하여 보호 정책을 정의할 수 있습니다.</block>
+  <block id="69f7fefc112d0cd0af937e058f3df889" category="admonition">백업 및 복제 일정을 오프셋하여 일정이 겹치지 않도록 합니다. 예를 들어, 매시간 맨 위에서 백업을 수행하고 5분 오프셋 및 10분 간격으로 복제를 시작하도록 예약합니다.</block>
+  <block id="d306a8d55f523487d15819734d6cfba4" category="open-title">웹 UI를 사용하여 보호 정책을 구성합니다</block>
+  <block id="a2327a6ff4730e78bedb7d226cc38d2b" category="paragraph">시간별, 일별, 주별 및 월별 스케줄을 동시에 정의할 수 있습니다. 보존 레벨을 설정하기 전에는 스케줄이 활성화되지 않습니다.</block>
+  <block id="db49e5314c2b4fd9bc9299afc637aa12" category="paragraph"><block ref="db49e5314c2b4fd9bc9299afc637aa12" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9f33a2042fc3e70dae9f8c5507596e07" category="list-text">[* Tech preview *] 스토리지 버킷 목록에서 백업 또는 스냅샷의 대상 버킷을 선택합니다.</block>
+  <block id="7754a3e7b00b1d0b1394a3ce015c6110" category="list-text">보호 정책 설정 * 을 선택합니다</block>
+  <block id="c45e50979034e4d37ed1ea77e95e8476" category="open-title">[Tech Preview] CR을 사용하여 보호 정책을 구성합니다</block>
+  <block id="0a0f328bd1b4a1ac5f356ea87a31c3fa" category="list-text">CR(사용자 정의 리소스) 파일을 만들고 이름을 지정합니다<block ref="534821cc2d5862b328eea0ae3958ad02" prefix=" " category="inline-code"></block>. Astra Control 환경, 클러스터 구성 및 데이터 보호 요구사항에 맞게 괄호 &lt;&gt; 의 값을 업데이트합니다.</block>
+  <block id="9461963df02697b9fc35206ce7f9895a" category="list-text">&lt;CR_NAME&gt;: 이 사용자 지정 리소스의 이름입니다. 환경에 맞는 고유하고 합리적인 이름을 선택하십시오.</block>
+  <block id="ad7895edfca0c0da33bbb180a1ec8ba2" category="list-text">&lt;APPLICATION_NAME&gt;: 백업할 애플리케이션의 Kubernetes 이름입니다.</block>
+  <block id="c05cc64c85777c45bbf22594c1f2be5b" category="list-text">&lt;APPVAULT_NAME&gt;: 백업 컨텐츠를 저장해야 하는 AppVault의 이름입니다.</block>
+  <block id="69c143beb182925943165b22d17ae5de" category="list-text">&lt;BACKUPS_RETAINED&gt;: 보존할 백업 수 0은 백업을 생성하지 않아야 함을 나타냅니다.</block>
+  <block id="085d94d71675ee9e4831b3f3c5088f97" category="list-text">&lt;SNAPSHOTS_RETAINED&gt;: 보존할 스냅샷 수입니다. 0은 스냅샷을 생성하지 않아야 함을 나타냅니다.</block>
+  <block id="121bace18f96f31d6350b5a13306a2d0" category="list-text">&lt;GRANULARITY&gt;: 스케줄이 실행되는 빈도입니다. 가능한 값과 필수 관련 필드:</block>
+  <block id="682d677bcf1ee88366ae753c477ace2d" category="list-text"><block ref="745fd0ea7f576f350a0eed4b8c48a8e2" prefix="" category="inline-code"></block> (을(를) 지정해야 합니다<block ref="aadd5cec42dbc02d51f62a1095401f59" prefix=" " category="inline-code"></block>)</block>
+  <block id="a1fbdfda9f5f05dbe5b05383881f400f" category="list-text"><block ref="bea79186fd7af2da67e59b4b15df5a26" prefix="" category="inline-code"></block> (을(를) 지정해야 합니다<block ref="aadd5cec42dbc02d51f62a1095401f59" prefix=" " category="inline-code"></block> 및<block ref="9199af27775b1a2a876e6d7b25540711" prefix=" " category="inline-code"></block>)</block>
+  <block id="658b1c98606e33324a33b76f12a8227b" category="list-text"><block ref="4a11fc05ed694c195f0703605b64da90" prefix="" category="inline-code"></block> (을(를) 지정해야 합니다<block ref="aadd5cec42dbc02d51f62a1095401f59" prefix=" " category="inline-code"></block>,<block ref="9199af27775b1a2a876e6d7b25540711" prefix=" " category="inline-code"></block>, 및<block ref="4a04848e0e6e9423892ebc93ae61842d" prefix=" " category="inline-code"></block>)</block>
+  <block id="fcac3dfd31718b4bc1aca2266ebb4cf6" category="list-text"><block ref="708638881f3bac9d9c8c742c79502811" prefix="" category="inline-code"></block> (을(를) 지정해야 합니다<block ref="aadd5cec42dbc02d51f62a1095401f59" prefix=" " category="inline-code"></block>,<block ref="9199af27775b1a2a876e6d7b25540711" prefix=" " category="inline-code"></block>, 및<block ref="9a7606959f42328ceeef95d70c353158" prefix=" " category="inline-code"></block>)</block>
+  <block id="3c3e2b331ed38c2b4f91c0e6e005c232" category="list-text">&lt;DAY_OF_MONTH&gt;: _ (선택 사항) _ 일정을 실행할 요일(1-31)입니다. 세분화가 로 설정된 경우 이 필드는 필수입니다<block ref="708638881f3bac9d9c8c742c79502811" prefix=" " category="inline-code"></block>.</block>
+  <block id="83a25bd356e4b2b1791a70e7a3d5686d" category="list-text">&lt;DAY_OF_WEEK&gt;: _ (선택 사항) _ 일정을 실행할 요일(0-7). 0 또는 7의 값은 일요일을 나타냅니다. 세분화가 로 설정된 경우 이 필드는 필수입니다<block ref="4a11fc05ed694c195f0703605b64da90" prefix=" " category="inline-code"></block>.</block>
+  <block id="a214309740c5fce73f555efb0f57e3b0" category="list-text">&lt;HOUR_OF_DAY&gt;: _ (선택 사항) _ 일정이 실행되는 시간(0 - 23)입니다. 세분화가 로 설정된 경우 이 필드는 필수입니다<block ref="bea79186fd7af2da67e59b4b15df5a26" prefix=" " category="inline-code"></block>,<block ref="4a11fc05ed694c195f0703605b64da90" prefix=" " category="inline-code"></block>, 또는<block ref="708638881f3bac9d9c8c742c79502811" prefix=" " category="inline-code"></block>.</block>
+  <block id="b528ecefdd7d1b08f11f79cf2fff599a" category="list-text">&lt;MINUTE_OF_HOUR&gt;: _ (선택 사항) _ 스케줄이 실행될 시간(0-59)입니다. 세분화가 로 설정된 경우 이 필드는 필수입니다<block ref="745fd0ea7f576f350a0eed4b8c48a8e2" prefix=" " category="inline-code"></block>,<block ref="bea79186fd7af2da67e59b4b15df5a26" prefix=" " category="inline-code"></block>,<block ref="4a11fc05ed694c195f0703605b64da90" prefix=" " category="inline-code"></block>, 또는<block ref="708638881f3bac9d9c8c742c79502811" prefix=" " category="inline-code"></block>.</block>
+  <block id="62c1134a4dd5a6f3b144823808bb9be6" category="list-text">를 채운 후<block ref="534821cc2d5862b328eea0ae3958ad02" prefix=" " category="inline-code"></block> 올바른 값이 있는 파일에 CR을 적용합니다.</block>
+  <block id="d9febddf6562311d8624eeb4e58744b8" category="open-title">웹 UI를 사용하여 스냅샷을 만듭니다</block>
+  <block id="fcb86323ae9c4068f3f947debdbd82eb" category="list-text">[* Tech preview *] 스토리지 버킷 목록에서 스냅샷의 대상 버킷을 선택합니다.</block>
+  <block id="655ce779ad9dd1131dd074820f73722a" category="open-title">[기술 미리보기] CR을 사용하여 스냅샷을 생성합니다</block>
+  <block id="721baa84468e1b3151168d2e7f280e27" category="list-text">CR(사용자 정의 리소스) 파일을 만들고 이름을 지정합니다<block ref="0663444b0cf552b14d10b5610dccad23" prefix=" " category="inline-code"></block>. 괄호 &lt;&gt; 의 값을 Astra Control 환경 및 클러스터 구성과 일치하도록 업데이트합니다.</block>
+  <block id="83f2d981711626f79fc196e471c75cee" category="list-text">&lt;APPLICATION_NAME&gt;: 스냅샷을 생성할 애플리케이션의 Kubernetes 이름입니다.</block>
+  <block id="f030ba1730d76a142cf9fabffedee017" category="list-text">&lt;APPVAULT_NAME&gt;: 스냅샷 컨텐츠를 저장해야 하는 AppVault의 이름입니다.</block>
+  <block id="25acb3ac28bce3019c433b02088d833e" category="list-text">&lt;RECLAIM_POLICY&gt;: _ (선택 사항) _ 스냅샷 CR을 삭제할 때 스냅샷에 어떤 일이 발생하는지 정의합니다. 유효한 옵션:</block>
+  <block id="0219cebc6ab6bc045fd44c689e3508dd" category="list-text"><block ref="afece4245269582cb2f1009d4fb52047" prefix="" category="inline-code"></block></block>
+  <block id="eced49573e92b0138aa5161875ff0f1e" category="list-text"><block ref="f2a6c498fb90ee345d997f888fce3b18" prefix="" category="inline-code"></block> (기본값)</block>
+  <block id="1d175f34d0a8dd047617222b41b6b00a" category="list-text">를 채운 후<block ref="0663444b0cf552b14d10b5610dccad23" prefix=" " category="inline-code"></block> 올바른 값이 있는 파일에 CR을 적용합니다.</block>
+  <block id="fc6d173005cab506ffbeb8c0d3455f3b" category="open-title">웹 UI를 사용하여 백업을 만듭니다</block>
+  <block id="e6bd281e2969b57f2aeb891a41b9effd" category="list-text">[* Tech preview *] 스토리지 버킷 목록에서 백업할 대상 버킷을 선택합니다.</block>
+  <block id="9c5c1631394c2d4015e998dcaa9aa668" category="open-title">[기술 미리보기] CR을 사용하여 백업을 생성합니다</block>
+  <block id="9124beb314d23f8cdcaae61ae4998da0" category="list-text">CR(사용자 정의 리소스) 파일을 만들고 이름을 지정합니다<block ref="3a82584d62d84a13b61332b383bf82f7" prefix=" " category="inline-code"></block>. 괄호 &lt;&gt; 의 값을 Astra Control 환경 및 클러스터 구성과 일치하도록 업데이트합니다.</block>
+  <block id="435455e544bd4209e44cee568e575a9c" category="list-text">를 채운 후<block ref="3a82584d62d84a13b61332b383bf82f7" prefix=" " category="inline-code"></block> 올바른 값이 있는 파일에 CR을 적용합니다.</block>
+  <block id="13af4e3ac91a9ef7750f92e0b37e63e4" category="section-title">[기술 미리보기] Kubernetes 맞춤형 리소스를 사용하여 애플리케이션을 정의합니다</block>
+  <block id="357204803719793ed0da30746b6bc5f4" category="paragraph">Astra Control을 통해 관리할 Kubernetes 리소스를 사용자 지정 리소스(CR)를 사용하여 애플리케이션으로 정의하여 지정할 수 있습니다. 예를 들어, 특정 네임스페이스의 모든 리소스를 비슷한 방식으로 공통 간격으로 관리 및 보호하려는 경우, 해당 리소스를 개별적으로 또는 모든 Kubernetes 리소스를 네임스페이스에서 관리하려는 경우 클러스터 범위 리소스를 추가할 수 있습니다.</block>
+  <block id="17b3b1a1bf7937e2bd6f64482e4bb4b9" category="list-text">사용자 정의 리소스(CR) 파일을 만들고 이름을 지정합니다(예:<block ref="6a9e31a9ccfc563d5424113ed9b98e26" prefix=" " category="inline-code"></block>)를 클릭합니다.</block>
+  <block id="52787e86804c9d6c9c6c75659472cbe1" category="list-text">애플리케이션 이름을 에 지정합니다<block ref="765cecee8002899c6cc0bea7842f7fe5" prefix=" " category="inline-code"></block>.</block>
+  <block id="dc8859823f6bb6d73e0e05746c4687d0" category="list-text">관리할 애플리케이션 리소스 정의:</block>
+  <block id="af167f2ec857ea34e3a4b00ea3398743" category="open-title">spec.includedClusterScopedResources</block>
+  <block id="740c8865342027f8f41789f16c7ba59f" category="paragraph">Astra Control에 자동으로 포함되는 리소스 유형 외에 클러스터 범위 리소스 유형 포함</block>
+  <block id="126bdd98fac353e3f02ee55ddbc2c4dd" category="list-text">*spec.includedClusterScopedResources*: _ (선택 사항) _ 포함할 클러스터 범위 리소스 유형의 목록입니다.</block>
+  <block id="bff11da3e4b4ee861cf8a3090ea6463a" category="list-text">*groupVersionKind*:_(선택 사항) _ 종류를 명확하게 식별합니다.</block>
+  <block id="66b2c618e769b771604d433574711e1d" category="list-text">* group *: _ (groupVersionKind가 사용되는 경우 필수) _ 포함할 리소스의 API 그룹입니다.</block>
+  <block id="8bde402f4657c0dc86fe3eb5bb339750" category="list-text">* VERSION *: _ (groupVersionKind를 사용하는 경우 필수) _ 포함할 리소스의 API 버전입니다.</block>
+  <block id="95589b0e167ff303f21f81b16c6b759b" category="list-text">* kind *: _ (groupVersionKind를 사용하는 경우 필수) _ 포함할 리소스의 종류.</block>
+  <block id="54727b98d5345ddc8edc0d2731cd1a2f" category="list-text">* labelSelector *: _ (선택 사항) _ 리소스 집합에 대한 레이블 쿼리입니다. 레이블과 일치하는 리소스만 검색하는 데 사용됩니다. 레이블을 제공하지 않으면 Astra Control은 해당 클러스터에 대해 지정된 리소스 유형의 모든 인스턴스를 수집합니다. MatchLabels 및 MatchExpressions의 결과는 ANDed입니다.</block>
+  <block id="75ebaac795307ecf0b4e138b62380a19" category="list-text">* matchLabels *: _ (선택 사항) _ {key, value} 쌍의 맵입니다. matchLabels 맵의 단일 {key,value}은 키 필드가 "key"이고 연산자는 "in"이고 값 배열만 포함하는 matchExpressions의 요소와 같습니다. 요구 사항은 ANDed입니다.</block>
+  <block id="a3c831c873315dfca75a1f211c9ad655" category="list-text">* matchExpressions *:_(선택 사항) _ 라벨 선택기 요구 사항 목록입니다. 요구 사항은 ANDed입니다.</block>
+  <block id="511c5b020a02430e6bb355cf4308b59d" category="list-text">* key *: _ (matchExpressions를 사용하는 경우 필수) _ 라벨 선택기와 관련된 라벨 키입니다.</block>
+  <block id="1c5403520c5189df3c10b68d47ab9c32" category="list-text">* operator *: _ (matchExpressions를 사용하는 경우 필수) _ 값 집합에 대한 키의 관계를 나타냅니다. 유효한 연산자는 다음과 같습니다<block ref="efeb369cccbd560588a756610865664c" prefix=" " category="inline-code"></block>,<block ref="c949090e2cb12faab4dabb4621dd6c9e" prefix=" " category="inline-code"></block>,<block ref="2a8eb028670e972535e8e246be645821" prefix=" " category="inline-code"></block> 및<block ref="c47c93cf49de211bba5d62d65225f128" prefix=" " category="inline-code"></block>.</block>
+  <block id="3e3e7264b90d2650f1ec138144702991" category="list-text">* values *: _ (matchExpressions를 사용하는 경우 필수) _ 문자열 값의 배열입니다. 오퍼레이터가 인 경우<block ref="efeb369cccbd560588a756610865664c" prefix=" " category="inline-code"></block> 또는<block ref="c949090e2cb12faab4dabb4621dd6c9e" prefix=" " category="inline-code"></block>값 배열은 반드시 _not_이어야 합니다. 오퍼레이터가 인 경우<block ref="2a8eb028670e972535e8e246be645821" prefix=" " category="inline-code"></block> 또는<block ref="c47c93cf49de211bba5d62d65225f128" prefix=" " category="inline-code"></block>값 배열은 비어 있어야 합니다.</block>
+  <block id="433654d93a8bceecdfef9ae705b9a053" category="open-title">spec.includedNamespaces</block>
+  <block id="4e421b0bb17858a1de67bedae22fc10f" category="paragraph">응용 프로그램의 해당 리소스 내에 네임스페이스와 리소스를 포함합니다.</block>
+  <block id="616733fb8bb6db3b287cdf462685d0fc" category="list-text">*spec.includedNamespaces*: _ (필수) _ 리소스 선택을 위한 네임스페이스 및 선택적 필터를 정의합니다.</block>
+  <block id="adaf8816823a4ba8dd2cb506ce3314ba" category="list-text">* namespace *: _ (필수) _ Astra Control을 사용하여 관리하려는 앱 리소스가 포함된 네임스페이스입니다.</block>
+  <block id="3dd4f818996bed4e859fa3a9a12d63fc" category="list-text">* matchExpressions *:_(선택 사항) _ 라벨 선택기 요구 사항 목록입니다.<block ref="3c6e0b8a9c15224a8228b9a98ca1531d" prefix=" " category="inline-code"></block> 및<block ref="4b583376b2767b923c3e1da60d10de59" prefix=" " category="inline-code"></block> 필수 항목입니다. 요구 사항은 ANDed입니다.</block>
+  <block id="83a4334df2d568f08135301519e0294d" category="list-text">* values *: _ (matchExpressions를 사용하는 경우 필수) _ 문자열 값의 배열입니다. 오퍼레이터가 인 경우<block ref="efeb369cccbd560588a756610865664c" prefix=" " category="inline-code"></block> 또는<block ref="c949090e2cb12faab4dabb4621dd6c9e" prefix=" " category="inline-code"></block>값 배열은 반드시 _not_이어야 합니다. 오퍼레이터가 인 경우<block ref="2a8eb028670e972535e8e246be645821" prefix=" " category="inline-code"></block> 또는<block ref="c47c93cf49de211bba5d62d65225f128" prefix=" " category="inline-code"></block>값 배열은 비어 있어야 합니다.</block>
+  <block id="139f344cca23a89c521bc7cc6c7100b8" category="paragraph">YAML 예:</block>
+  <block id="e1580e3f854017c65e242047bf63a3cd" category="list-text">를 채운 후<block ref="6a9e31a9ccfc563d5424113ed9b98e26" prefix=" " category="inline-code"></block> 올바른 값이 있는 파일에 CR을 적용합니다.</block>
+  <block id="a23ad0e7e9c822577ac47cc696fd68bd" category="section-title">[기술 미리보기] 사용자 지정 리소스(CR)를 사용하여 백업에서 복원</block>
+  <block id="589c3ffbeb874692bc987f25471bdec5" category="paragraph">사용자 지정 리소스(CR) 파일을 사용하여 백업에서 데이터를 다른 네임스페이스 또는 원래 소스 네임스페이스로 복원할 수 있습니다.</block>
+  <block id="45ff81bf0afcefe9451aab9b611c1934" category="open-title">CR을 사용하여 백업에서 복원합니다</block>
+  <block id="0291eb75f7d9f722c1c83050970a021f" category="list-text">CR(사용자 정의 리소스) 파일을 만들고 이름을 지정합니다<block ref="5cdae9ef2c57d39bfd2be879e506f5ce" prefix=" " category="inline-code"></block>. 괄호 &lt;&gt; 의 값을 Astra Control 환경 및 클러스터 구성과 일치하도록 업데이트합니다.</block>
+  <block id="607cb816902b97513f9f07eaf1cf9526" category="list-text">&lt;CR_NAME&gt;: 이 CR 작업의 이름입니다. 환경에 적합한 이름을 선택하십시오.</block>
+  <block id="32c38c61b072ed7be99e03554fcc5dc7" category="list-text">&lt;APPVAULT_NAME&gt;: 백업 컨텐츠가 저장되는 AppVault의 이름입니다.</block>
+  <block id="b6f7c06130923ff859915637bdd832de" category="list-text">&lt;BACKUP_PATH&gt;: 백업 컨텐츠가 저장되는 AppVault 내부의 경로입니다. 예를 들면 다음과 같습니다.</block>
+  <block id="98766ce59cde6328ee287141ac6463fc" category="list-text">&lt;SOURCE_NAMESPACE&gt;: 복구 작업의 소스 네임스페이스입니다.</block>
+  <block id="2de12cc712c3180de4a36bafe4b03d27" category="list-text">&lt;DESTINATION_NAMESPACE&gt;: 복구 작업의 대상 네임스페이스입니다.</block>
+  <block id="68394cd490bb116e95fb9fa813fc64ac" category="paragraph">&lt;stdin&gt;-include:../_include/selective-restore-cr.adoc [ ] 의 해결되지 않은 지시문</block>
+  <block id="fb72d03a8b8ac14ae1e7d9aa1f047e05" category="list-text">를 채운 후<block ref="5cdae9ef2c57d39bfd2be879e506f5ce" prefix=" " category="inline-code"></block> 올바른 값이 있는 파일에 CR을 적용합니다.</block>
+  <block id="4f6d84376015daa09c05aaa62c5169b3" category="open-title">CR을 사용하여 백업에서 원래 네임스페이스로 복원합니다</block>
+  <block id="d21e7e879c0776ee09e7586ce29d2898" category="list-text">CR(사용자 정의 리소스) 파일을 만들고 이름을 지정합니다<block ref="eb9b00b26a03b44f5f2897edcd77fbc2" prefix=" " category="inline-code"></block>. 괄호 &lt;&gt; 의 값을 Astra Control 환경 및 클러스터 구성과 일치하도록 업데이트합니다.</block>
+  <block id="5348fdd12f57331552ca99bd9874fb9e" category="list-text">를 채운 후<block ref="eb9b00b26a03b44f5f2897edcd77fbc2" prefix=" " category="inline-code"></block> 올바른 값이 있는 파일에 CR을 적용합니다.</block>
+  <block id="59996d3ba6c2c9c9164c73f5f9dbaaef" category="section-title">[기술 미리보기] 사용자 정의 리소스(CR)를 사용하여 스냅샷에서 복원</block>
+  <block id="7708c3b204f347f9a3f6641e7484ab47" category="paragraph">사용자 지정 리소스(CR) 파일을 사용하여 스냅샷에서 데이터를 다른 네임스페이스 또는 원래 소스 네임스페이스로 복원할 수 있습니다.</block>
+  <block id="713a47b0e743ef100957f9dbf7a7b970" category="open-title">CR을 사용하여 스냅샷에서 복원합니다</block>
+  <block id="c0f816a602a40acd8086ff72e41b3c9c" category="list-text">CR(사용자 정의 리소스) 파일을 만들고 이름을 지정합니다<block ref="47c8c017693706f1deca4469c915fc62" prefix=" " category="inline-code"></block>. 괄호 &lt;&gt; 의 값을 Astra Control 환경 및 클러스터 구성과 일치하도록 업데이트합니다.</block>
+  <block id="9698c53c78d261962a4a1c26b913eee1" category="list-text">를 채운 후<block ref="47c8c017693706f1deca4469c915fc62" prefix=" " category="inline-code"></block> 올바른 값이 있는 파일에 CR을 적용합니다.</block>
+  <block id="b78248634602cda93bac3dff3aaa9393" category="open-title">CR을 사용하여 스냅샷에서 원래 네임스페이스로 복원합니다</block>
+  <block id="c32ab7b52b53095f9f5158cc1e448576" category="list-text">CR(사용자 정의 리소스) 파일을 만들고 이름을 지정합니다<block ref="7789d21ba00a1b12ae9d85f219dabda2" prefix=" " category="inline-code"></block>. 괄호 &lt;&gt; 의 값을 Astra Control 환경 및 클러스터 구성과 일치하도록 업데이트합니다.</block>
+  <block id="375b1db65557163f2d0e23f660a3d7f9" category="list-text">를 채운 후<block ref="7789d21ba00a1b12ae9d85f219dabda2" prefix=" " category="inline-code"></block> 올바른 값이 있는 파일에 CR을 적용합니다.</block>
+  <block id="c9d43c9d4ce1936591207cd7ff5311cb" category="section-title">[기술 미리보기] 사용자 지정 리소스를 사용하여 버킷을 관리합니다</block>
+  <block id="e2af1d5e5fa116233e71ad721f3e307b" category="paragraph">애플리케이션 클러스터에서 Astra Control CR(사용자 지정 리소스)을 사용하여 버킷을 추가할 수 있습니다. 애플리케이션과 영구 스토리지를 백업하려는 경우나 클러스터 간에 애플리케이션을 클론 복제하려는 경우에는 오브젝트 저장소 버킷 공급자를 추가하는 것이 중요합니다. Astra Control은 이러한 백업 또는 클론을 정의한 오브젝트 저장소 버킷에 저장합니다. 사용자 지정 리소스 방법을 사용하는 경우 애플리케이션 스냅샷 기능을 사용하려면 버킷이 필요합니다.</block>
+  <block id="e397375a1991bd3b78d0436ce29592b7" category="paragraph">애플리케이션 구성과 영구 스토리지를 동일한 클러스터에 클론 복제하려는 경우 Astra Control에 버킷이 필요하지 않습니다.</block>
+  <block id="d8b0a07b7fa1af1e74af87346ff33870" category="paragraph">Astra Control의 버킷 맞춤형 리소스를 AppVault라고 합니다. 이 CR에는 보호 작업에 사용되는 버킷에 필요한 구성이 포함되어 있습니다.</block>
+  <block id="590fc6039a76d3145b15d507ca5bcb69" category="list-text">Astra Control Center에서 관리하는 클러스터에서 연결할 수 있는 버킷이 있어야 합니다.</block>
+  <block id="4a32b7d8f42a393453794c007946d6fe" category="list-text">버킷에 대한 자격 증명이 있는지 확인하십시오.</block>
+  <block id="3f23a4c261d25b12e00f6171fdb38359" category="list-text">버킷이 다음 유형 중 하나인지 확인합니다.</block>
+  <block id="cc76a05fe8cbb45b45b1139e841822bd" category="admonition">AWS(Amazon Web Services) 및 GCP(Google Cloud Platform)는 일반 S3 버킷 유형을 사용합니다.</block>
+  <block id="3443da831f646641a051400a8359fced" category="admonition">Astra Control Center는 Amazon S3를 일반 S3 버킷 공급자로 지원하지만, Astra Control Center는 Amazon의 S3 지원을 주장하는 모든 오브젝트 저장소 공급업체를 지원하지 않을 수 있습니다.</block>
+  <block id="45a79ca58f818fe6f7e34d3ad01781ce" category="list-text">사용자 정의 리소스(CR) 파일을 만들고 이름을 지정합니다(예:<block ref="056c513f9078872b92d07c3cc704b909" prefix=" " category="inline-code"></block>)를 클릭합니다.</block>
+  <block id="18924d9e76d2dc9a88bddb772904461d" category="list-text">다음 특성을 구성합니다.</block>
+  <block id="1224dce1461236a797d84749d37c9491" category="list-text">*metadata.name*: _ (필수) _ AppVault 사용자 정의 리소스의 이름입니다.</block>
+  <block id="69b5be000688679a9ee2fef5a4c0c6e5" category="list-text">* spec.prefix *: _ (선택 사항) _ AppVault에 저장된 모든 요소의 이름 앞에 붙는 경로입니다.</block>
+  <block id="fcbc6a61a9db33b3fae0293b3f248d8b" category="list-text">*spec.providerConfig*: _ (필수) _ 지정된 공급자를 사용하여 AppVault에 액세스하는 데 필요한 구성을 저장합니다.</block>
+  <block id="2bda4ec158506a5cc3faac161d6d620d" category="list-text">*spec.providerCredentials*: _ (필수) _ 지정된 공급자를 사용하여 AppVault에 액세스하는 데 필요한 자격 증명에 대한 참조를 저장합니다.</block>
+  <block id="343fc86e1ff54e13706200b99b851d91" category="list-text">*spec.providerCredentials.valueFromSecret*: _ (선택 사항) _ 자격 증명 값이 비밀에서 와야 함을 나타냅니다.</block>
+  <block id="2d32c7aa536ab1e00f078fb24a7eb990" category="list-text">* KEY *: _ (valueFromSecret을 사용하는 경우 필수) _ 선택할 암호의 유효한 키입니다.</block>
+  <block id="d1b4714eb6d54919b20d4d6f82d1acb4" category="list-text">* name *: _ (valueFromSecret을 사용하는 경우 필수) _ 이 필드의 값을 포함하는 암호의 이름입니다. 같은 네임스페이스에 있어야 합니다.</block>
+  <block id="9c20f9a97f5024f7f0cbeebb01127512" category="list-text">*spec.providerType*: _ (필수) _ 백업을 제공하는 항목을 결정합니다(예: NetApp ONTAP S3 또는 Microsoft Azure).</block>
+  <block id="a7f829a367be9439add4237b61a50388" category="list-text">를 채운 후<block ref="056c513f9078872b92d07c3cc704b909" prefix=" " category="inline-code"></block> 올바른 값이 있는 파일에 CR을 적용합니다.</block>
+  <block id="e9a2cf6bcc4b5dac4132bd23653461f4" category="inline-link-macro">다른 기본 버킷을 설정합니다</block>
+  <block id="70c54cfcee3c9263e59ee7de13eaba8a" category="admonition">버킷을 추가하면 Astra Control이 기본 버킷 표시기로 하나의 버킷을 표시합니다. 사용자가 만든 첫 번째 버킷이 기본 버킷이 됩니다. 양동이 추가될 때 나중에 결정할 수 있습니다 <block ref="f83337d9020c8fbb1074e1310043d277" category="inline-link-macro-rx"></block>.</block>
+  <block id="52431bbd389e0fa547d3457c7623dfdb" category="paragraph-title">(기술 미리 보기) 선언적 Kubernetes 워크플로</block>
+  <block id="a70f47b04c91a98499e8d350fa135250" category="paragraph">이 Astra Control Center 릴리즈에는 기본 Kubernetes 맞춤형 리소스(CR)에서 데이터 관리를 수행할 수 있는 선언적 Kubernetes 기능이 포함되어 있습니다.</block>
+  <block id="0addefdac9fea093ab0631c42bf63154" category="paragraph">이 기능은 Astra Control Service EAP(Early Adopter Program) 인스턴스에서만 사용할 수 있습니다. 에 가입하는 방법에 대한 자세한 내용은 NetApp 영업 담당자에게 문의하십시오.</block>
+  <block id="1d649712f351065ae3623bc575a29774" category="inline-link-macro">Astra 커넥터</block>
+  <block id="9edf27bb0e7572b9900e7980f47a9346" category="paragraph">를 설치한 후 <block ref="124c0a76592741cd24122aa865f475c8" category="inline-link-macro-rx"></block> 관리하려는 클러스터에서 UI 또는 CR에서 다음 CR 기반 클러스터 작업을 수행할 수 있습니다.</block>
+  <block id="04bba2bce404c3f162c566f599d5a5f0" category="inline-link-macro">사용자 지정 리소스를 사용하여 응용 프로그램을 정의합니다</block>
+  <block id="f1e93254db114ec09dfb4e798efbd486" category="list-text"><block ref="f1e93254db114ec09dfb4e798efbd486" category="inline-link-macro-rx"></block></block>
+  <block id="7552906db45dd4810da20c3ab62fd315" category="inline-link-macro">버킷을 정의합니다</block>
+  <block id="a806d7f7605195d7e64e704b2059885c" category="list-text"><block ref="a806d7f7605195d7e64e704b2059885c" category="inline-link-macro-rx"></block></block>
+  <block id="adeac59ad1862a3e0c4f40cfe863ae90" category="list-text"><block ref="adeac59ad1862a3e0c4f40cfe863ae90" category="inline-link-macro-rx"></block></block>
+  <block id="c0ddbdd4dd215b4d8e8c8b37f50bee6e" category="inline-link-macro">응용 프로그램을 백업합니다</block>
+  <block id="3201e6dd0f57980edf66d0f7c4dc08ed" category="list-text"><block ref="3201e6dd0f57980edf66d0f7c4dc08ed" category="inline-link-macro-rx"></block></block>
+  <block id="a1525043f13c3444c6cf8185256e95b6" category="list-text"><block ref="a1525043f13c3444c6cf8185256e95b6" category="inline-link-macro-rx"></block></block>
+  <block id="c9bc674578c656555f1074d9bceeb427" category="inline-link-macro">스냅샷 또는 백업에 대한 스케줄을 생성합니다</block>
+  <block id="430bc38f66ff95df230db47441847e3e" category="list-text"><block ref="430bc38f66ff95df230db47441847e3e" category="inline-link-macro-rx"></block></block>
+  <block id="89e886bcb189a0f892c41a8565bbf540" category="inline-link-macro">스냅샷 또는 백업에서 애플리케이션을 복원합니다</block>
+  <block id="efbaf254e1ec98ba6d53c22597ae4b1d" category="list-text"><block ref="efbaf254e1ec98ba6d53c22597ae4b1d" category="inline-link-macro-rx"></block></block>
+  <block id="781392df556bdfd6e27dbfef443453b2" category="summary">Astra Control을 사용하여 클러스터를 관리하려면 Astra Connector를 설치해야 합니다.</block>
+  <block id="06877d6aa63b21abc5ce55f40de7ee52" category="doc">Astra Connector를 설치하여 클러스터를 관리한다</block>
+  <block id="d6ad3b571e0f464e77d6c9b3c1a0bba0" category="paragraph">Astra Connector는 관리형 클러스터에 상주하는 소프트웨어로, 관리형 클러스터와 Astra Control 간의 통신을 지원합니다. Astra Control Service를 사용하여 관리되는 클러스터의 경우 Astra Connector에 사용할 수 있는 2가지 버전이 있습니다.</block>
+  <block id="0cc4b3b8046b530020e26e2380506f6e" category="inline-link-macro">이전 버전의 Astra Connector를 설치합니다</block>
+  <block id="e4616ecb2775b9808fd4b78fb4fe1885" category="list-text">* 이전 버전의 Astra Connector *: <block ref="d9f90a4052b642b7c706a424bd9589eb" category="inline-link-macro-rx"></block> Kubernetes 네이티브가 아닌 워크플로우를 통해 클러스터를 관리하려는 경우, 클러스터에 위치한다.</block>
+  <block id="3787453d1199ecd94f5fa3196160ae7c" category="inline-link-macro">선언적 Kubernetes 워크플로로 관리되는 클러스터용 Astra Connector를 설치합니다</block>
+  <block id="f87f3d1e5ddd3a702395cb1b396cc179" category="list-text">[기술 미리보기] * 선언 Kubernetes Astra Connector *: <block ref="89ba4d4f19bfeda98bc4487268f84956" category="inline-link-macro-rx"></block> 선언적 Kubernetes 워크플로우를 사용하여 클러스터를 관리하려는 경우 클러스터에 두어야 합니다. 클러스터에 Astra Connector를 설치하면 클러스터가 Astra Control에 자동으로 추가됩니다.</block>
+  <block id="2e6b95d2857110cd03ac586959cc4347" category="admonition">선언적 Kubernetes Astra Connector는 Astra Control EAP(Early Adopter Program)의 일부로만 제공됩니다. 에 가입하는 방법에 대한 자세한 내용은 NetApp 영업 담당자에게 문의하십시오.</block>
+  <block id="0bc1501dc6ef7b7d1bfe536d5f848cb6" category="doc">(기술 미리 보기) 선언적 Kubernetes Astra Connector를 설치합니다</block>
+  <block id="fa7bba9dc1b5d46fa6e83a75a0ece441" category="paragraph">선언적 Kubernetes 워크플로우를 사용하여 관리되는 클러스터는 Astra Connector를 사용하여 관리형 클러스터와 Astra Control 간의 통신을 지원합니다. 선언적 Kubernetes 워크플로로 관리할 모든 클러스터에 Astra Connector를 설치해야 합니다.</block>
+  <block id="3bdf80685767528cf0c6a3f961534f3c" category="paragraph">Kubernetes 명령 및 CR(Custom Resource) 파일을 사용하여 선언적 Kubernetes Astra Connector를 설치합니다.</block>
+  <block id="cd766c5429e11347a117de2f27183aa1" category="list-text">이러한 단계를 수행할 때 Astra Control으로 관리하려는 클러스터에서 다음 명령을 실행합니다.</block>
+  <block id="26fe73fe65da416c905dcda6ebf96d41" category="list-text">Astra Control을 사용하여 관리할 클러스터에 액세스해야 합니다.</block>
+  <block id="e79045292ac242d3c1a91d2615c41ef8" category="inline-link-macro">Astra Control을 사용하여 클러스터 관리를 위한 환경을 준비합니다</block>
+  <block id="dadca91e6ec143a55e85acab971da96f" category="admonition">Kubernetes 1.25 이상 클러스터의 기본값인 Pod 보안 승인 적용을 사용하여 클러스터를 구성한 경우 해당 네임스페이스에 PSA 제한을 활성화해야 합니다. 을 참조하십시오 <block ref="43de17e09b552a43292c1bd8c4ae14f6" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
+  <block id="43ab194768f3f7aeec2a16d677b90acc" category="list-text">선언적 Kubernetes 워크플로로 관리할 클러스터에 Astra Connector 연산자를 설치합니다. 이 명령을 실행하면 네임스페이스가 생성됩니다<block ref="c6ead53be77481f9e0a3f904f9a88686" prefix=" " category="inline-code"></block> 이 만들어지고 구성이 네임스페이스에 적용됩니다.</block>
+  <block id="bb067eb8af0a21790f055c64251d9a79" category="list-text">토큰을 사용하여 암호를 생성합니다. &lt;API_TOKEN&gt;를 Astra Control에서 받은 토큰으로 대체:</block>
+  <block id="99d56ece0d76a0aaa456be40a57654b9" category="list-text">Astra Connector 이미지를 가져오는 데 사용할 Docker 암호를 생성합니다. 괄호 안의 값을 사용자 환경의 정보로 대체:</block>
+  <block id="c0e44c19b002d338ea7349bbebc6b185" category="admonition">&lt;ASTRA_CONTROL_ACCOUNT_ID&gt;는 Astra Control 웹 UI에서 찾을 수 있습니다. 웹 UI에서 페이지 오른쪽 상단의 그림 아이콘을 선택하고 * API access * 를 선택합니다.</block>
+  <block id="fff80cdd2f7437a87cfb1039bab24adf" category="list-text">&lt;ASTRA_CONTROL_ACCOUNT_ID&gt;: 이전 단계에서 Astra Control 웹 UI에서 구함.</block>
+  <block id="418e0bc869410b7cea5c4ec2f7cfedad" category="list-text">&lt;CLUSTER_NAME&gt;: Astra Control에서 이 클러스터를 할당해야 하는 이름입니다.</block>
+  <block id="02919393c3215473898bd73efdcab254" category="list-text">&lt;ASTRA_CONTROL_URL&gt;: Astra Control의 웹 UI URL입니다. 예를 들면 다음과 같습니다.</block>
+  <block id="152bd63676ee23bad02f75c472aadc5c" category="list-text">Astra Control 웹 UI의 * 클러스터 * 페이지에서 관리되는 클러스터 목록에 클러스터가 나타나는지 확인합니다.</block>
+  <block id="ae145a4e59321514fcc818f6234d42ea" category="paragraph">Astra Control Service는 이전 버전의 Astra Connector를 사용하여 Kubernetes가 아닌 네이티브 워크플로우로 관리되는 프라이빗 클러스터 와 Astra Control Service 간의 통신을 지원합니다. Kubernetes가 아닌 네이티브 워크플로우로 관리하려는 프라이빗 클러스터에 Astra Connector를 설치해야 합니다.</block>
+  <block id="dc1e99798a3474c6f53219c06f7195f2" category="paragraph">이전 버전의 Astra Connector는 Kubernetes가 아닌 네이티브 워크플로로 관리되는 다음 유형의 프라이빗 클러스터를 지원합니다.</block>
+  <block id="d1398a9488bb275cd91d0cb20ce8d256" category="list-text">Red Hat OpenShift Container Platform 온-프레미스</block>
+  <block id="36d5f594791128c06a9a2e269fe98439" category="list-text">Kubernetes가 아닌 네이티브 워크플로로 관리할 프라이빗 클러스터에 이전 Astra Connector 연산자를 설치합니다. 이 명령을 실행하면 네임스페이스가 생성됩니다<block ref="c6ead53be77481f9e0a3f904f9a88686" prefix=" " category="inline-code"></block> 이 만들어지고 구성이 네임스페이스에 적용됩니다.</block>
+  <block id="93e728f3cef8a701d22805c3347d946a" category="inline-link-macro">Kubernetes가 아닌 네이티브 워크플로우로 관리되는 프라이빗 클러스터용 Astra Connector의 이전 버전을 설치합니다</block>
+  <block id="8dc028a3d902834a7e6f010e1a35e554" category="paragraph">프라이빗 클러스터를 추가하기 전에 Astra Control이 클러스터와 통신할 수 있도록 클러스터에 Astra Connector를 설치해야 합니다. 을 참조하십시오 <block ref="12c939bcb32d435c20b0ec67c951c270" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
+  <block id="9b06baba613e90a3ed72891e00a4cdf1" category="sidebar">이전 버전의 Astra Connector for 프라이빗 클러스터를 설치합니다</block>
+  <block id="d3cb2575aeb827f8b18b8b3f4aef77de" category="sidebar">선언적 Kubernetes 클러스터를 위한 Astra Connector를 설치합니다</block>
 </blocks>

@@ -18,8 +18,21 @@ NetApp은 새로운 기능, 개선 사항 및 버그 수정을 제공하기 위�
 
 == 2024년 3월 14일
 
-.새로운 기능 및 지원
-이것은 사소한 버그 수정 릴리스입니다.
+.(기술 미리 보기) 선언적 Kubernetes 워크플로
+이 Astra Control Center 릴리즈에는 기본 Kubernetes 맞춤형 리소스(CR)에서 데이터 관리를 수행할 수 있는 선언적 Kubernetes 기능이 포함되어 있습니다.
+
+이 기능은 Astra Control Service EAP(Early Adopter Program) 인스턴스에서만 사용할 수 있습니다. 에 가입하는 방법에 대한 자세한 내용은 NetApp 영업 담당자에게 문의하십시오.
+
+를 설치한 후 link:../get-started/install-astra-connector-declarative.html["Astra 커넥터"] 관리하려는 클러스터에서 UI 또는 CR에서 다음 CR 기반 클러스터 작업을 수행할 수 있습니다.
+
+* link:../use/manage-apps.html#tech-preview-define-an-application-using-a-kubernetes-custom-resource["사용자 지정 리소스를 사용하여 응용 프로그램을 정의합니다"]
+* link:../use/manage-buckets.html#tech-preview-manage-a-bucket-using-a-custom-resource["버킷을 정의합니다"]
+* link:../use/back-up-full-cluster.html["전체 클러스터를 보호합니다"]
+* link:../use/protect-apps.html#create-a-backup["응용 프로그램을 백업합니다"]
+* link:../use/protect-apps.html#create-a-snapshot["스냅샷을 생성합니다"]
+* link:../use/protect-apps.html#configure-a-protection-policy["스냅샷 또는 백업에 대한 스케줄을 생성합니다"]
+* link:../use/restore-apps.html["스냅샷 또는 백업에서 애플리케이션을 복원합니다"]
+
 
 
 

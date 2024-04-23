@@ -265,6 +265,106 @@ NOTE: 기본적으로 앱 관리에 사용되지 않는 시스템 네임스페�
 
 
 
+=== [기술 미리보기] Kubernetes 맞춤형 리소스를 사용하여 애플리케이션을 정의합니다
+
+Astra Control을 통해 관리할 Kubernetes 리소스를 사용자 지정 리소스(CR)를 사용하여 애플리케이션으로 정의하여 지정할 수 있습니다. 예를 들어, 특정 네임스페이스의 모든 리소스를 비슷한 방식으로 공통 간격으로 관리 및 보호하려는 경우, 해당 리소스를 개별적으로 또는 모든 Kubernetes 리소스를 네임스페이스에서 관리하려는 경우 클러스터 범위 리소스를 추가할 수 있습니다.
+
+.단계
+. 사용자 정의 리소스(CR) 파일을 만들고 이름을 지정합니다(예: `astra_mysql_app.yaml`)를 클릭합니다.
+. 애플리케이션 이름을 에 지정합니다 `metadata.name`.
+. 관리할 애플리케이션 리소스 정의:
++
+[role="tabbed-block"]
+====
+.spec.includedClusterScopedResources
+--
+Astra Control에 자동으로 포함되는 리소스 유형 외에 클러스터 범위 리소스 유형 포함
+
+** *spec.includedClusterScopedResources*: _ (선택 사항) _ 포함할 클러스터 범위 리소스 유형의 목록입니다.
++
+*** *groupVersionKind*:_(선택 사항) _ 종류를 명확하게 식별합니다.
++
+**** * group *: _ (groupVersionKind가 사용되는 경우 필수) _ 포함할 리소스의 API 그룹입니다.
+**** * VERSION *: _ (groupVersionKind를 사용하는 경우 필수) _ 포함할 리소스의 API 버전입니다.
+**** * kind *: _ (groupVersionKind를 사용하는 경우 필수) _ 포함할 리소스의 종류.
+
+
+*** * labelSelector *: _ (선택 사항) _ 리소스 집합에 대한 레이블 쿼리입니다. 레이블과 일치하는 리소스만 검색하는 데 사용됩니다. 레이블을 제공하지 않으면 Astra Control은 해당 클러스터에 대해 지정된 리소스 유형의 모든 인스턴스를 수집합니다. MatchLabels 및 MatchExpressions의 결과는 ANDed입니다.
++
+**** * matchLabels *: _ (선택 사항) _ {key, value} 쌍의 맵입니다. matchLabels 맵의 단일 {key,value}은 키 필드가 "key"이고 연산자는 "in"이고 값 배열만 포함하는 matchExpressions의 요소와 같습니다. 요구 사항은 ANDed입니다.
+**** * matchExpressions *:_(선택 사항) _ 라벨 선택기 요구 사항 목록입니다. 요구 사항은 ANDed입니다.
++
+***** * key *: _ (matchExpressions를 사용하는 경우 필수) _ 라벨 선택기와 관련된 라벨 키입니다.
+***** * operator *: _ (matchExpressions를 사용하는 경우 필수) _ 값 집합에 대한 키의 관계를 나타냅니다. 유효한 연산자는 다음과 같습니다 `In`, `NotIn`, `Exists` 및 `DoesNotExist`.
+***** * values *: _ (matchExpressions를 사용하는 경우 필수) _ 문자열 값의 배열입니다. 오퍼레이터가 인 경우 `In` 또는 `NotIn`값 배열은 반드시 _not_이어야 합니다. 오퍼레이터가 인 경우 `Exists` 또는 `DoesNotExist`값 배열은 비어 있어야 합니다.
+
+
+
+
+
+
+
+
+--
+.spec.includedNamespaces
+--
+응용 프로그램의 해당 리소스 내에 네임스페이스와 리소스를 포함합니다.
+
+** *spec.includedNamespaces*: _ (필수) _ 리소스 선택을 위한 네임스페이스 및 선택적 필터를 정의합니다.
++
+*** * namespace *: _ (필수) _ Astra Control을 사용하여 관리하려는 앱 리소스가 포함된 네임스페이스입니다.
+*** * labelSelector *: _ (선택 사항) _ 리소스 집합에 대한 레이블 쿼리입니다. 레이블과 일치하는 리소스만 검색하는 데 사용됩니다. 레이블을 제공하지 않으면 Astra Control은 해당 클러스터에 대해 지정된 리소스 유형의 모든 인스턴스를 수집합니다. MatchLabels 및 MatchExpressions의 결과는 ANDed입니다.
++
+**** * matchLabels *: _ (선택 사항) _ {key, value} 쌍의 맵입니다. matchLabels 맵의 단일 {key,value}은 키 필드가 "key"이고 연산자는 "in"이고 값 배열만 포함하는 matchExpressions의 요소와 같습니다. 요구 사항은 ANDed입니다.
+**** * matchExpressions *:_(선택 사항) _ 라벨 선택기 요구 사항 목록입니다. `key` 및 `operator` 필수 항목입니다. 요구 사항은 ANDed입니다.
++
+***** * key *: _ (matchExpressions를 사용하는 경우 필수) _ 라벨 선택기와 관련된 라벨 키입니다.
+***** * operator *: _ (matchExpressions를 사용하는 경우 필수) _ 값 집합에 대한 키의 관계를 나타냅니다. 유효한 연산자는 다음과 같습니다 `In`, `NotIn`, `Exists` 및 `DoesNotExist`.
+***** * values *: _ (matchExpressions를 사용하는 경우 필수) _ 문자열 값의 배열입니다. 오퍼레이터가 인 경우 `In` 또는 `NotIn`값 배열은 반드시 _not_이어야 합니다. 오퍼레이터가 인 경우 `Exists` 또는 `DoesNotExist`값 배열은 비어 있어야 합니다.
+
+
+
+
+
+
+
+
+--
+====
++
+YAML 예:
+
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: Application
+metadata:
+  name: astra_mysql_app
+spec:
+  includedNamespaces:
+    - namespace: astra_mysql_app
+      labelSelector:
+        matchLabels:
+          app: nginx
+          env: production
+        matchExpressions:
+          - key: tier
+            operator: In
+            values:
+              - frontend
+              - backend
+----
+. 를 채운 후 `astra_mysql_app.yaml` 올바른 값이 있는 파일에 CR을 적용합니다.
++
+[source, console]
+----
+kubectl apply -f astra_mysql_app.yaml -n astra-connector
+----
+
+
+
+
 == 시스템 네임스페이스는 어떻습니까?
 
 Astra Control은 Kubernetes 클러스터에서 시스템 네임스페이스를 검색합니다. 기본적으로 이러한 시스템 네임스페이스는 표시되지 않습니다. 시스템 앱 리소스를 백업해야 하는 경우는 드뭅니다.

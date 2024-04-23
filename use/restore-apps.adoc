@@ -94,6 +94,190 @@ NOTE: 포함 및 제외 규칙 구성에 대한 자세한 내용은 을 참조�
 . 복원 작업에 대한 세부 정보를 주의 깊게 검토하고 "restore"를 입력하고(메시지가 나타나면) * Restore * 를 선택합니다.
 
 
+
+
+== [기술 미리보기] 사용자 지정 리소스(CR)를 사용하여 백업에서 복원
+
+사용자 지정 리소스(CR) 파일을 사용하여 백업에서 데이터를 다른 네임스페이스 또는 원래 소스 네임스페이스로 복원할 수 있습니다.
+
+[role="tabbed-block"]
+====
+.CR을 사용하여 백업에서 복원합니다
+--
+.단계
+. CR(사용자 정의 리소스) 파일을 만들고 이름을 지정합니다 `astra-control-backup-restore-cr.yaml`. 괄호 <> 의 값을 Astra Control 환경 및 클러스터 구성과 일치하도록 업데이트합니다.
++
+** <CR_NAME>: 이 CR 작업의 이름입니다. 환경에 적합한 이름을 선택하십시오.
+** <APPVAULT_NAME>: 백업 컨텐츠가 저장되는 AppVault의 이름입니다.
+** <BACKUP_PATH>: 백업 컨텐츠가 저장되는 AppVault 내부의 경로입니다. 예를 들면 다음과 같습니다.
++
+[listing]
+----
+ONTAP-S3_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+----
+** <SOURCE_NAMESPACE>: 복구 작업의 소스 네임스페이스입니다.
+** <DESTINATION_NAMESPACE>: 복구 작업의 대상 네임스페이스입니다.
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: BackupRestore
+metadata:
+  name: <CR_NAME>
+  namespace: astra-connector
+spec:
+  appVaultRef: <APPVAULT_NAME>
+  appArchivePath: <BACKUP_PATH>
+  namespaceMapping: [{"source": "<SOURCE_NAMESPACE>", "destination": "<DESTINATION_NAMESPACE>"}]
+----
+
+
+
+
+<stdin>-include:../_include/selective-restore-cr.adoc [ ] 의 해결되지 않은 지시문
+
+. 를 채운 후 `astra-control-backup-restore-cr.yaml` 올바른 값이 있는 파일에 CR을 적용합니다.
++
+[source, console]
+----
+kubectl apply -f astra-control-backup-restore-cr.yaml
+----
+
+
+--
+.CR을 사용하여 백업에서 원래 네임스페이스로 복원합니다
+--
+.단계
+. CR(사용자 정의 리소스) 파일을 만들고 이름을 지정합니다 `astra-control-backup-ipr-cr.yaml`. 괄호 <> 의 값을 Astra Control 환경 및 클러스터 구성과 일치하도록 업데이트합니다.
++
+** <CR_NAME>: 이 CR 작업의 이름입니다. 환경에 적합한 이름을 선택하십시오.
+** <APPVAULT_NAME>: 백업 컨텐츠가 저장되는 AppVault의 이름입니다.
+** <BACKUP_PATH>: 백업 컨텐츠가 저장되는 AppVault 내부의 경로입니다. 예를 들면 다음과 같습니다.
++
+[listing]
+----
+ONTAP-S3_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+----
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: BackupInplaceRestore
+metadata:
+  name: <CR_NAME>
+  namespace: astra-connector
+spec:
+  appVaultRef: <APPVAULT_NAME>
+  appArchivePath: <BACKUP_PATH>
+----
+
+
+
+
+<stdin>-include:../_include/selective-restore-cr.adoc [ ] 의 해결되지 않은 지시문
+
+. 를 채운 후 `astra-control-backup-ipr-cr.yaml` 올바른 값이 있는 파일에 CR을 적용합니다.
++
+[source, console]
+----
+kubectl apply -f astra-control-backup-ipr-cr.yaml
+----
+
+
+--
+====
+
+
+== [기술 미리보기] 사용자 정의 리소스(CR)를 사용하여 스냅샷에서 복원
+
+사용자 지정 리소스(CR) 파일을 사용하여 스냅샷에서 데이터를 다른 네임스페이스 또는 원래 소스 네임스페이스로 복원할 수 있습니다.
+
+[role="tabbed-block"]
+====
+.CR을 사용하여 스냅샷에서 복원합니다
+--
+.단계
+. CR(사용자 정의 리소스) 파일을 만들고 이름을 지정합니다 `astra-control-snapshot-restore-cr.yaml`. 괄호 <> 의 값을 Astra Control 환경 및 클러스터 구성과 일치하도록 업데이트합니다.
++
+** <CR_NAME>: 이 CR 작업의 이름입니다. 환경에 적합한 이름을 선택하십시오.
+** <APPVAULT_NAME>: 백업 컨텐츠가 저장되는 AppVault의 이름입니다.
+** <BACKUP_PATH>: 백업 컨텐츠가 저장되는 AppVault 내부의 경로입니다. 예를 들면 다음과 같습니다.
++
+[listing]
+----
+ONTAP-S3_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+----
+** <SOURCE_NAMESPACE>: 복구 작업의 소스 네임스페이스입니다.
+** <DESTINATION_NAMESPACE>: 복구 작업의 대상 네임스페이스입니다.
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: SnapshotRestore
+metadata:
+  name: <CR_NAME>
+  namespace: astra-connector
+spec:
+  appArchivePath: <BACKUP_PATH>
+  appVaultRef: <APPVAULT_NAME>
+  namespaceMapping: [{"source": "<SOURCE_NAMESPACE>", "destination": "<DESTINATION_NAMESPACE>"}]
+----
+
+
+
+
+<stdin>-include:../_include/selective-restore-cr.adoc [ ] 의 해결되지 않은 지시문
+
+. 를 채운 후 `astra-control-snapshot-restore-cr.yaml` 올바른 값이 있는 파일에 CR을 적용합니다.
++
+[source, console]
+----
+kubectl apply -f astra-control-snapshot-restore-cr.yaml
+----
+
+
+--
+.CR을 사용하여 스냅샷에서 원래 네임스페이스로 복원합니다
+--
+.단계
+. CR(사용자 정의 리소스) 파일을 만들고 이름을 지정합니다 `astra-control-snapshot-ipr-cr.yaml`. 괄호 <> 의 값을 Astra Control 환경 및 클러스터 구성과 일치하도록 업데이트합니다.
++
+** <CR_NAME>: 이 CR 작업의 이름입니다. 환경에 적합한 이름을 선택하십시오.
+** <APPVAULT_NAME>: 백업 컨텐츠가 저장되는 AppVault의 이름입니다.
+** <BACKUP_PATH>: 백업 컨텐츠가 저장되는 AppVault 내부의 경로입니다. 예를 들면 다음과 같습니다.
++
+[listing]
+----
+ONTAP-S3_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+----
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: SnapshotInplaceRestore
+metadata:
+  name: <CR_NAME>
+  namespace: astra-connector
+spec:
+  appArchivePath: <BACKUP_PATH>
+  appVaultRef: <APPVAULT_NAME>
+----
+
+
+
+
+<stdin>-include:../_include/selective-restore-cr.adoc [ ] 의 해결되지 않은 지시문
+
+. 를 채운 후 `astra-control-snapshot-ipr-cr.yaml` 올바른 값이 있는 파일에 CR을 적용합니다.
++
+[source, console]
+----
+kubectl apply -f astra-control-snapshot-ipr-cr.yaml
+----
+
+
+--
+====
 .결과
 Astra Control은 사용자가 제공한 정보를 기반으로 앱을 복원합니다. 앱을 제자리에 복원한 경우 기존 영구 볼륨의 콘텐츠가 복원된 앱의 영구 볼륨 콘텐츠로 바뀝니다.
 
