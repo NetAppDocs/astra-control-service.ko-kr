@@ -19,7 +19,7 @@ NetApp은 새로운 기능, 개선 사항 및 버그 수정을 제공하기 위�
 == 2024년 3월 14일
 
 .(기술 미리 보기) 선언적 Kubernetes 워크플로
-이 Astra Control Center 릴리즈에는 기본 Kubernetes 맞춤형 리소스(CR)에서 데이터 관리를 수행할 수 있는 선언적 Kubernetes 기능이 포함되어 있습니다.
+이 Astra Control Service 릴리즈에는 기본 Kubernetes 맞춤형 리소스(CR)에서 데이터 관리를 수행할 수 있는 선언적 Kubernetes 기능이 포함되어 있습니다.
 
 이 기능은 Astra Control Service EAP(Early Adopter Program) 인스턴스에서만 사용할 수 있습니다. 에 가입하는 방법에 대한 자세한 내용은 NetApp 영업 담당자에게 문의하십시오.
 

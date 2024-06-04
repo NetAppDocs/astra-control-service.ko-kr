@@ -2307,7 +2307,6 @@
   <block id="25c0fc647d4495551197e1366ffb88c1" category="inline-link-macro">실행 후크 기능을 활성화합니다</block>
   <block id="d18d82128e00bde35f6e0d2869d5bf4d" category="list-text">* 실행 후크는 기본적으로 해제되어 있습니다. * :이 릴리스부터는 실행 후크 기능이 작동할 수 있습니다 <block ref="5fbd6d349444ac17373b392afcdaf677" category="inline-link-macro-rx"></block> 또는 추가 보안을 위해 사용 안 함(기본적으로 사용 안 함)을 선택합니다. Astra Control에서 사용할 실행 후크를 아직 생성하지 않은 경우, 다음을 수행해야 합니다 <block ref="85c1cb9c60d373b225cb02cebdd0fa71" category="inline-link-macro-rx"></block> 후크를 만들기 시작합니다. 이 릴리스 이전에 실행 후크를 만든 경우 실행 후크 기능은 계속 사용할 수 있으며 평소처럼 후크를 사용할 수 있습니다.</block>
   <block id="cbcb0d5fc851d3d299a5b4094fe28e88" category="paragraph">모두<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> 네임스페이스 이름/ID별 RBAC 제약 조건을 사용하는 사용자는 앱을 동일한 클러스터의 새 네임스페이스 또는 조직 계정의 다른 클러스터로 클론 복제 또는 복원할 수 있습니다. 그러나 동일한 사용자가 새 네임스페이스에서 복제되거나 복원된 앱에 액세스할 수 없습니다. 클론 또는 복구 작업에서 새 네임스페이스를 생성한 후 계정 관리자/소유자가 을 편집할 수 있습니다<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> 영향을 받는 사용자가 새 네임스페이스에 대한 액세스 권한을 부여하도록 사용자 계정 및 역할 제약 조건을 업데이트합니다.</block>
-  <block id="212a5202776ec83aae2e348c300b284e" category="list-text"><block ref="ba01bb34315cdda27da30f151a6b3a93" category="inline-xref-macro-rx"></block></block>
   <block id="2a9637886ec18ac79339d54fd59c3dac" category="list-text"><block ref="e6692a6ca085ac5ca4d1b661f3b80574" category="inline-xref-macro-rx"></block></block>
   <block id="6d00a00b6023f439cef44dc10b9b46f4" category="list-text"><block ref="025a13f8160290a685803adf4afe8791" category="inline-xref-macro-rx"></block></block>
   <block id="389f816f6fc3ba34f8ccf0ecdb3fcbb6" category="section-title">ONTAP의 데이터 이동 없이 복원 작업 - NAS 이코노미 스토리지 클래스에 장애가 발생했습니다</block>
@@ -2794,7 +2793,6 @@ Astra Control은 이제 새로운 배포 모델로 제공됩니다. _Astra Contr
   <block id="e9a2cf6bcc4b5dac4132bd23653461f4" category="inline-link-macro">다른 기본 버킷을 설정합니다</block>
   <block id="70c54cfcee3c9263e59ee7de13eaba8a" category="admonition">버킷을 추가하면 Astra Control이 기본 버킷 표시기로 하나의 버킷을 표시합니다. 사용자가 만든 첫 번째 버킷이 기본 버킷이 됩니다. 양동이 추가될 때 나중에 결정할 수 있습니다 <block ref="f83337d9020c8fbb1074e1310043d277" category="inline-link-macro-rx"></block>.</block>
   <block id="52431bbd389e0fa547d3457c7623dfdb" category="paragraph-title">(기술 미리 보기) 선언적 Kubernetes 워크플로</block>
-  <block id="a70f47b04c91a98499e8d350fa135250" category="paragraph">이 Astra Control Center 릴리즈에는 기본 Kubernetes 맞춤형 리소스(CR)에서 데이터 관리를 수행할 수 있는 선언적 Kubernetes 기능이 포함되어 있습니다.</block>
   <block id="0addefdac9fea093ab0631c42bf63154" category="paragraph">이 기능은 Astra Control Service EAP(Early Adopter Program) 인스턴스에서만 사용할 수 있습니다. 에 가입하는 방법에 대한 자세한 내용은 NetApp 영업 담당자에게 문의하십시오.</block>
   <block id="1d649712f351065ae3623bc575a29774" category="inline-link-macro">Astra 커넥터</block>
   <block id="9edf27bb0e7572b9900e7980f47a9346" category="paragraph">를 설치한 후 <block ref="124c0a76592741cd24122aa865f475c8" category="inline-link-macro-rx"></block> 관리하려는 클러스터에서 UI 또는 CR에서 다음 CR 기반 클러스터 작업을 수행할 수 있습니다.</block>
@@ -2886,4 +2884,5 @@ Astra Control은 이제 새로운 배포 모델로 제공됩니다. _Astra Contr
   <block id="e84bb7e947a5b25481546110f575734a" category="list-text"><block ref="e84bb7e947a5b25481546110f575734a" category="inline-link-rx"></block></block>
   <block id="5858ee4031acd7b896faa2d3d2c1a299" category="inline-link">Cloud Insights 설명서</block>
   <block id="2b93b48daf034e4100d00b85950e109d" category="list-text"><block ref="2b93b48daf034e4100d00b85950e109d" category="inline-link-rx"></block></block>
+  <block id="20186cef4fc96e59fa1bf8ee82f413ce" category="paragraph">이 Astra Control Service 릴리즈에는 기본 Kubernetes 맞춤형 리소스(CR)에서 데이터 관리를 수행할 수 있는 선언적 Kubernetes 기능이 포함되어 있습니다.</block>
 </blocks>
